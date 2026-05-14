@@ -9,6 +9,26 @@ const matches = [
   { id: 8, date: "2026-07-19 18:00", home: "Ganador SF1", away: "Ganador SF2", phase: "Final", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "pendiente" }
 ];
 
+const flags = {
+  Alemania: "de",
+  Argentina: "ar",
+  Brasil: "br",
+  Canada: "ca",
+  Corea: "kr",
+  Espana: "es",
+  "Estados Unidos": "us",
+  Francia: "fr",
+  Ghana: "gh",
+  Inglaterra: "gb-eng",
+  Japon: "jp",
+  Marruecos: "ma",
+  Mexico: "mx",
+  "Paises Bajos": "nl",
+  Portugal: "pt",
+  Suecia: "se",
+  Uruguay: "uy"
+};
+
 const users = [
   { name: "Mariana R.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
   { name: "Diego M.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
@@ -68,6 +88,17 @@ const predictions = [];
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+function teamLabel(team) {
+  const code = flags[team];
+  if (!code) return `<span class="team-label"><span>${team}</span></span>`;
+  return `
+    <span class="team-label">
+      <img class="flag-img" src="https://flagcdn.com/w40/${code}.png" alt="Bandera de ${team}" loading="lazy" />
+      <span>${team}</span>
+    </span>
+  `;
+}
+
 function setPage(page) {
   $$(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.page === page));
   $$(".page").forEach((section) => section.classList.toggle("active", section.id === `page-${page}`));
@@ -100,9 +131,9 @@ function renderCountdown() {
 function renderMatches() {
   $("#homeMatches").innerHTML = matches.slice(0, 4).map((match) => `
     <article class="match-card">
-      <div><strong>${match.home}</strong><br><small>${match.city}</small></div>
+      <div><strong>${teamLabel(match.home)}</strong><br><small>${match.city}</small></div>
       <span class="score-chip">${formatDate(match.date)}</span>
-      <div class="team-away"><strong>${match.away}</strong><br><small>${match.phase}</small></div>
+      <div class="team-away"><strong>${teamLabel(match.away)}</strong><br><small>${match.phase}</small></div>
     </article>
   `).join("");
 
@@ -115,7 +146,7 @@ function renderMatches() {
   $("#calendarRows").innerHTML = filtered.map((match) => `
     <tr>
       <td>${formatDate(match.date)}</td>
-      <td><strong>${match.home}</strong> vs <strong>${match.away}</strong></td>
+      <td><div class="fixture-label"><strong>${teamLabel(match.home)}</strong><span>vs</span><strong>${teamLabel(match.away)}</strong></div></td>
       <td>${match.phase}</td>
       <td>${match.stadium}</td>
       <td>${match.city}</td>
@@ -190,7 +221,7 @@ function renderGroups() {
           <thead><tr><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th><th>Estado</th></tr></thead>
           <tbody>
             ${rows.map(([team, points, diff]) => `
-              <tr><td>${team}</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>${diff}</td><td>${points}</td><td>Pendiente</td></tr>
+              <tr><td>${teamLabel(team)}</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>${diff}</td><td>${points}</td><td>Pendiente</td></tr>
             `).join("")}
           </tbody>
         </table>
@@ -205,7 +236,7 @@ function renderGroups() {
         ${round.matches.map(([home, away], index) => `
           <article class="round-match">
             <span>Partido ${index + 1}</span>
-            <strong>${home} vs ${away}</strong>
+            <strong><span>${teamLabel(home)}</span> vs <span>${teamLabel(away)}</span></strong>
             <small>Resultado pendiente · sede y hora por confirmar</small>
           </article>
         `).join("")}
@@ -216,7 +247,7 @@ function renderGroups() {
 
 function renderScorers() {
   $("#scorersRows").innerHTML = scorers.map((row) => `
-    <tr><td><strong>${row[0]}</strong></td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td><td>${row[4]}</td></tr>
+    <tr><td><strong>${row[0]}</strong></td><td>${teamLabel(row[1])}</td><td>${row[2]}</td><td>${row[3]}</td><td>${row[4]}</td></tr>
   `).join("");
 }
 
@@ -233,8 +264,8 @@ function renderBracket() {
       <h3>${round.name}</h3>
       ${round.matches.map(([home, away]) => `
         <article class="bracket-match">
-          <div class="bracket-team"><span>${home}</span><strong>-</strong></div>
-          <div class="bracket-team"><span>${away}</span><strong>-</strong></div>
+          <div class="bracket-team"><span>${teamLabel(home)}</span><strong>-</strong></div>
+          <div class="bracket-team"><span>${teamLabel(away)}</span><strong>-</strong></div>
         </article>
       `).join("")}
     </section>

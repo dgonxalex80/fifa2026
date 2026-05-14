@@ -159,6 +159,7 @@ Funciones disponibles:
 - Registro de pronosticos en memoria durante la sesion del navegador.
 - Exportacion CSV desde el boton `Exportar CSV`.
 - Graficos renderizados con Canvas.
+- Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
 ## Exportaciones
 

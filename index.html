@@ -48,6 +48,13 @@
             <div class="search-box">
               <input id="globalSearch" type="search" placeholder="Buscar equipo, usuario o partido" />
             </div>
+            <select class="theme-select" id="themeSelect" aria-label="Seleccionar tema visual">
+              <option value="classic">Tema clasico</option>
+              <option value="light">Tema claro</option>
+              <option value="pitch">Tema cancha</option>
+              <option value="midnight">Tema medianoche</option>
+              <option value="gold">Tema dorado</option>
+            </select>
             <button class="primary-button" id="exportPage">Exportar CSV</button>
           </div>
         </header>
@@ -57,15 +64,15 @@
             <div>
               <p class="eyebrow">Cuenta regresiva</p>
               <h2>Rumbo al Mundial FIFA 2026</h2>
-              <p>Centro operativo para pronósticos, ranking, calendario, llaves y analítica del torneo.</p>
+              <p>Centro operativo previo al torneo para registrar pronosticos, consultar calendario y preparar competencias.</p>
             </div>
             <div class="countdown" id="countdown"></div>
           </div>
           <div class="kpi-grid">
-            <article class="kpi"><span>Usuarios</span><strong>1,284</strong><small>+18 esta semana</small></article>
-            <article class="kpi"><span>Pronósticos</span><strong>8,942</strong><small>73% bloqueados a tiempo</small></article>
-            <article class="kpi"><span>Exactos</span><strong>21.8%</strong><small>marcadores perfectos</small></article>
-            <article class="kpi"><span>Líder</span><strong>Mariana R.</strong><small>342 puntos</small></article>
+            <article class="kpi"><span>Usuarios</span><strong>1,284</strong><small>inscritos antes del inicio</small></article>
+            <article class="kpi"><span>Pronosticos</span><strong>Abiertos</strong><small>editables hasta el bloqueo</small></article>
+            <article class="kpi"><span>Resultados</span><strong>Sin iniciar</strong><small>no hay marcadores oficiales</small></article>
+            <article class="kpi"><span>Ranking</span><strong>0 pts</strong><small>todos empiezan empatados</small></article>
           </div>
           <div class="dashboard-grid">
             <section class="panel span-2">
@@ -194,7 +201,7 @@
               <div class="panel-head"><h3>Cargar resultado</h3></div>
               <form class="prediction-form">
                 <label>Partido<select><option>México vs Canadá</option><option>Brasil vs Japón</option></select></label>
-                <div class="score-inputs"><label>Local<input type="number" value="2" /></label><label>Visitante<input type="number" value="1" /></label></div>
+                <div class="score-inputs"><label>Local<input type="number" placeholder="-" /></label><label>Visitante<input type="number" placeholder="-" /></label></div>
                 <button class="primary-button" type="button">Publicar resultado</button>
               </form>
             </section>

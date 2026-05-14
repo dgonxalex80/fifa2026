@@ -1,8 +1,8 @@
 const matches = [
   { id: 1, date: "2026-06-11 20:00", home: "Mexico", away: "Canada", phase: "Grupos", stadium: "Estadio Azteca", city: "Ciudad de Mexico", status: "pendiente" },
   { id: 2, date: "2026-06-12 17:00", home: "Estados Unidos", away: "Japon", phase: "Grupos", stadium: "SoFi Stadium", city: "Los Angeles", status: "pendiente" },
-  { id: 3, date: "2026-06-13 15:00", home: "Brasil", away: "Marruecos", phase: "Grupos", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "en juego" },
-  { id: 4, date: "2026-06-14 18:00", home: "Argentina", away: "Francia", phase: "Grupos", stadium: "AT&T Stadium", city: "Dallas", status: "finalizado", score: "2-2" },
+  { id: 3, date: "2026-06-13 15:00", home: "Brasil", away: "Marruecos", phase: "Grupos", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "pendiente" },
+  { id: 4, date: "2026-06-14 18:00", home: "Argentina", away: "Francia", phase: "Grupos", stadium: "AT&T Stadium", city: "Dallas", status: "pendiente" },
   { id: 5, date: "2026-06-22 20:00", home: "Espana", away: "Uruguay", phase: "Octavos", stadium: "Hard Rock Stadium", city: "Miami", status: "pendiente" },
   { id: 6, date: "2026-07-04 19:00", home: "Inglaterra", away: "Portugal", phase: "Cuartos", stadium: "BC Place", city: "Vancouver", status: "pendiente" },
   { id: 7, date: "2026-07-09 20:00", home: "Alemania", away: "Paises Bajos", phase: "Semifinal", stadium: "Mercedes-Benz Stadium", city: "Atlanta", status: "pendiente" },
@@ -10,27 +10,23 @@ const matches = [
 ];
 
 const users = [
-  { name: "Mariana R.", points: 342, hits: 48, accuracy: 71, trend: "sube" },
-  { name: "Diego M.", points: 331, hits: 45, accuracy: 68, trend: "sube" },
-  { name: "Laura S.", points: 319, hits: 44, accuracy: 66, trend: "baja" },
-  { name: "Andres C.", points: 304, hits: 41, accuracy: 63, trend: "sube" },
-  { name: "Sofia P.", points: 299, hits: 39, accuracy: 61, trend: "baja" },
-  { name: "Camilo T.", points: 286, hits: 38, accuracy: 59, trend: "sube" }
+  { name: "Mariana R.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
+  { name: "Diego M.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
+  { name: "Laura S.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
+  { name: "Andres C.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
+  { name: "Sofia P.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
+  { name: "Camilo T.", points: 0, hits: 0, accuracy: 0, trend: "igual" }
 ];
 
 const scorers = [
-  ["Kylian Mbappe", "Francia", 7, 3, 610],
-  ["Vinicius Jr.", "Brasil", 6, 4, 590],
-  ["Julian Alvarez", "Argentina", 5, 2, 544],
-  ["Harry Kane", "Inglaterra", 5, 1, 620],
-  ["Santiago Gimenez", "Mexico", 4, 2, 502]
+  ["Sin registros", "-", "-", "-", "-"]
 ];
 
 const groups = {
-  A: [["Mexico", 7, 4, true], ["Canada", 5, 1, true], ["Japon", 3, -1, false], ["Marruecos", 1, -4, false]],
-  B: [["Brasil", 9, 7, true], ["Uruguay", 6, 2, true], ["Espana", 3, 0, false], ["Corea", 0, -9, false]],
-  C: [["Argentina", 7, 5, true], ["Francia", 7, 4, true], ["Ghana", 2, -3, false], ["Suecia", 0, -6, false]],
-  D: [["Inglaterra", 6, 3, true], ["Portugal", 6, 2, true], ["Alemania", 4, 1, false], ["Paises Bajos", 1, -6, false]]
+  A: [["Mexico", 0, 0], ["Canada", 0, 0], ["Japon", 0, 0], ["Marruecos", 0, 0]],
+  B: [["Brasil", 0, 0], ["Uruguay", 0, 0], ["Espana", 0, 0], ["Corea", 0, 0]],
+  C: [["Argentina", 0, 0], ["Francia", 0, 0], ["Ghana", 0, 0], ["Suecia", 0, 0]],
+  D: [["Inglaterra", 0, 0], ["Portugal", 0, 0], ["Alemania", 0, 0], ["Paises Bajos", 0, 0]]
 };
 
 const rules = [
@@ -54,6 +50,12 @@ function setPage(page) {
   if (page === "analitica") drawCharts();
 }
 
+function setTheme(theme) {
+  document.body.dataset.theme = theme;
+  localStorage.setItem("fifa2026-theme", theme);
+  if ($("#themeSelect")) $("#themeSelect").value = theme;
+}
+
 function renderCountdown() {
   const target = new Date("2026-06-11T20:00:00-05:00");
   const diff = Math.max(target - new Date(), 0);
@@ -73,7 +75,7 @@ function renderMatches() {
   $("#homeMatches").innerHTML = matches.slice(0, 4).map((match) => `
     <article class="match-card">
       <div><strong>${match.home}</strong><br><small>${match.city}</small></div>
-      <span class="score-chip">${match.score || formatDate(match.date)}</span>
+      <span class="score-chip">${formatDate(match.date)}</span>
       <div class="team-away"><strong>${match.away}</strong><br><small>${match.phase}</small></div>
     </article>
   `).join("");
@@ -111,7 +113,7 @@ function renderRanking() {
         <td>${user.points}</td>
         <td>${user.hits}</td>
         <td>${user.accuracy}%</td>
-        <td class="${user.trend === "sube" ? "trend-up" : "trend-down"}">${user.trend === "sube" ? "Sube" : "Baja"}</td>
+        <td class="trend-neutral">Sin cambios</td>
       </tr>
     `).join("");
 }
@@ -139,8 +141,8 @@ function renderGroups() {
         <table>
           <thead><tr><th>Equipo</th><th>Pts</th><th>DG</th><th>Estado</th></tr></thead>
           <tbody>
-            ${rows.map(([team, points, diff, qualified]) => `
-              <tr><td>${team}</td><td>${points}</td><td>${diff > 0 ? "+" : ""}${diff}</td><td>${qualified ? "Clasifica" : "En disputa"}</td></tr>
+            ${rows.map(([team, points, diff]) => `
+              <tr><td>${team}</td><td>${points}</td><td>${diff}</td><td>Pendiente</td></tr>
             `).join("")}
           </tbody>
         </table>
@@ -174,8 +176,8 @@ function renderBracket() {
       <h3>${name}</h3>
       ${roundMatches.map(([home, away]) => `
         <article class="bracket-match">
-          <div class="bracket-team"><span>${home}</span><strong>${Math.floor(Math.random() * 4)}</strong></div>
-          <div class="bracket-team"><span>${away}</span><strong>${Math.floor(Math.random() * 4)}</strong></div>
+          <div class="bracket-team"><span>${home}</span><strong>-</strong></div>
+          <div class="bracket-team"><span>${away}</span><strong>-</strong></div>
         </article>
       `).join("")}
     </section>
@@ -194,13 +196,13 @@ function drawLineChart(canvas) {
   const height = canvas.height = 220 * devicePixelRatio;
   ctx.scale(devicePixelRatio, devicePixelRatio);
   ctx.clearRect(0, 0, width, height);
-  const points = [42, 68, 72, 118, 146, 178, 226, 281, 342];
+  const points = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   ctx.strokeStyle = "#d8b75f";
   ctx.lineWidth = 3;
   ctx.beginPath();
   points.forEach((point, index) => {
     const x = 24 + index * ((canvas.offsetWidth - 48) / (points.length - 1));
-    const y = 200 - (point / 360) * 170;
+    const y = 188 - (point / 360) * 170;
     if (index === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
@@ -217,7 +219,7 @@ function drawBarChart(canvas) {
   canvas.height = 220 * devicePixelRatio;
   ctx.scale(devicePixelRatio, devicePixelRatio);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const values = [64, 58, 47, 52, 39];
+  const values = [0, 0, 0, 0, 0];
   values.forEach((value, index) => {
     const h = value * 2.25;
     const x = 24 + index * 48;
@@ -263,6 +265,7 @@ function bindEvents() {
     $("#rankingSearch").value = event.target.value;
     renderRanking();
   });
+  $("#themeSelect").addEventListener("change", (event) => setTheme(event.target.value));
   $("#predictionForm").addEventListener("submit", (event) => {
     event.preventDefault();
     const match = matches.find((item) => item.id === Number($("#predictionMatch").value));
@@ -279,6 +282,7 @@ function bindEvents() {
 }
 
 function init() {
+  setTheme(localStorage.getItem("fifa2026-theme") || "classic");
   bindEvents();
   renderCountdown();
   renderMatches();

@@ -13,6 +13,54 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+body[data-theme="light"] {
+  --bg: #f5f7f7;
+  --surface: #ffffff;
+  --surface-2: #edf2f1;
+  --line: rgba(14, 28, 25, 0.14);
+  --text: #0b1715;
+  --muted: #60736d;
+  --gold: #b88a24;
+  --blue: #155ea8;
+  --green: #118454;
+}
+
+body[data-theme="pitch"] {
+  --bg: #061b12;
+  --surface: #0b2a1b;
+  --surface-2: #103823;
+  --line: rgba(202, 255, 223, 0.14);
+  --text: #f4fff8;
+  --muted: #a9cbb8;
+  --gold: #e2c15d;
+  --blue: #1976a9;
+  --green: #25b96e;
+}
+
+body[data-theme="midnight"] {
+  --bg: #050916;
+  --surface: #0b1324;
+  --surface-2: #121d33;
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f8fbff;
+  --muted: #9aa8c2;
+  --gold: #d4b76f;
+  --blue: #3d7bd9;
+  --green: #22a87a;
+}
+
+body[data-theme="gold"] {
+  --bg: #151107;
+  --surface: #211a0b;
+  --surface-2: #2e2410;
+  --line: rgba(255, 224, 145, 0.18);
+  --text: #fffaf0;
+  --muted: #cdbf9d;
+  --gold: #f0c85a;
+  --blue: #24618e;
+  --green: #269261;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,6 +94,18 @@ select {
   background: rgba(7, 18, 15, 0.92);
   border-right: 1px solid var(--line);
   backdrop-filter: blur(18px);
+}
+
+body[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+body[data-theme="light"] .sidebar-card,
+body[data-theme="light"] .panel,
+body[data-theme="light"] .kpi,
+body[data-theme="light"] .hero-panel,
+body[data-theme="light"] .table-wrap {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .brand {
@@ -97,6 +157,16 @@ select {
   text-align: left;
   cursor: pointer;
   padding: 0 12px;
+}
+
+body[data-theme="light"] input,
+body[data-theme="light"] select {
+  background: #ffffff;
+}
+
+.theme-select {
+  width: auto;
+  min-width: 158px;
 }
 
 .nav-item.active,
@@ -336,6 +406,15 @@ select {
   padding: 12px;
 }
 
+body[data-theme="light"] .match-card,
+body[data-theme="light"] .rank-row,
+body[data-theme="light"] .prediction-card,
+body[data-theme="light"] .rule-card,
+body[data-theme="light"] .news-grid article,
+body[data-theme="light"] .timeline p {
+  background: rgba(9, 22, 19, 0.04);
+}
+
 .match-card {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -437,6 +516,10 @@ tr:last-child td {
 
 .trend-down {
   color: #ff9a9a;
+}
+
+.trend-neutral {
+  color: var(--muted);
 }
 
 .heatmap {

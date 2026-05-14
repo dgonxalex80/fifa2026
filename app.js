@@ -246,16 +246,50 @@ function renderMatches() {
     (status === "todos" || match.status === status) &&
     (phase === "todas" || match.phase === phase)
   );
+  renderCalendarGrid(filtered);
   $("#calendarRows").innerHTML = filtered.map((match) => `
-    <tr>
-      <td>${formatDate(match.date)}</td>
-      <td><div class="fixture-label"><strong>${teamLabel(match.home)}</strong><span>vs</span><strong>${teamLabel(match.away)}</strong></div></td>
-      <td>${match.phase}</td>
-      <td>${match.stadium}</td>
-      <td>${match.city}</td>
-      <td><span class="status-pill">${match.status}</span></td>
-    </tr>
+    <article class="calendar-list-item">
+      <strong>${formatDate(match.date)}</strong>
+      <div class="fixture-label">${teamLabel(match.home)}<span>vs</span>${teamLabel(match.away)}</div>
+      <small>${match.phase} · ${match.stadium} · ${match.city}</small>
+    </article>
   `).join("");
+}
+
+function renderCalendarGrid(filteredMatches) {
+  const year = 2026;
+  const month = 5;
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const startOffset = (firstDay.getDay() + 6) % 7;
+  const totalCells = Math.ceil((startOffset + lastDay.getDate()) / 7) * 7;
+  const dayNames = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
+  const cells = Array.from({ length: totalCells }, (_, index) => {
+    const day = index - startOffset + 1;
+    if (day < 1 || day > lastDay.getDate()) {
+      return `<article class="calendar-cell muted-cell"></article>`;
+    }
+    const dayMatches = filteredMatches.filter((match) => new Date(match.date.replace(" ", "T")).getDate() === day);
+    return `
+      <article class="calendar-cell">
+        <strong class="calendar-day">${day}</strong>
+        <div class="calendar-events">
+          ${dayMatches.map((match) => `
+            <button class="calendar-event" type="button" title="${match.stadium}, ${match.city}">
+              <span>${teamLabel(match.home)}</span>
+              <span>${teamLabel(match.away)}</span>
+              <small>${new Date(match.date.replace(" ", "T")).toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" })}</small>
+            </button>
+          `).join("")}
+        </div>
+      </article>
+    `;
+  });
+
+  $("#calendarGrid").innerHTML = `
+    ${dayNames.map((day) => `<div class="calendar-head">${day}</div>`).join("")}
+    ${cells.join("")}
+  `;
 }
 
 function renderRanking() {

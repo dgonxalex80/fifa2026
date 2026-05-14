@@ -533,6 +533,80 @@ body[data-theme="light"] .timeline p {
   margin-bottom: 14px;
 }
 
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(140px, 1fr));
+  gap: 1px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.calendar-head,
+.calendar-cell {
+  background: var(--surface);
+}
+
+.calendar-head {
+  min-height: 38px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.calendar-cell {
+  min-height: 132px;
+  padding: 9px;
+}
+
+.muted-cell {
+  opacity: 0.42;
+}
+
+.calendar-day {
+  display: inline-flex;
+  margin-bottom: 8px;
+}
+
+.calendar-events {
+  display: grid;
+  gap: 6px;
+}
+
+.calendar-event {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(216, 183, 95, 0.1);
+  color: var(--text);
+  cursor: pointer;
+  padding: 7px;
+  text-align: left;
+}
+
+.calendar-event small {
+  color: var(--muted);
+}
+
+.calendar-list {
+  display: none;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.calendar-list-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 12px;
+}
+
 .signup-panel {
   margin-bottom: 14px;
 }
@@ -866,5 +940,13 @@ body[data-theme="light"] .standing-row {
 
   .team-away {
     text-align: left;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, minmax(180px, 1fr));
+  }
+
+  .calendar-list {
+    display: grid;
   }
 }

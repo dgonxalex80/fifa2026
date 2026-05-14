@@ -14,6 +14,7 @@ const flags = {
   Argentina: "ar",
   Brasil: "br",
   Canada: "ca",
+  Colombia: "co",
   Corea: "kr",
   Espana: "es",
   "Estados Unidos": "us",
@@ -88,6 +89,14 @@ const predictions = [];
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+function normalizeText(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 function teamLabel(team) {
   const code = flags[team];
   if (!code) return `<span class="team-label"><span>${team}</span></span>`;
@@ -111,6 +120,69 @@ function setTheme(theme) {
   document.body.dataset.theme = theme;
   localStorage.setItem("fifa2026-theme", theme);
   if ($("#themeSelect")) $("#themeSelect").value = theme;
+}
+
+function getSearchIndex() {
+  const pages = [
+    ["Inicio", "Pagina", "inicio"],
+    ["Calendario", "Pagina", "calendario"],
+    ["Pronosticos", "Pagina", "pronosticos"],
+    ["Posiciones", "Pagina", "posiciones"],
+    ["Goleadores", "Pagina", "goleadores"],
+    ["Ranking", "Pagina", "ranking"],
+    ["Analitica", "Pagina", "analitica"],
+    ["Llaves", "Pagina", "llaves"],
+    ["Admin", "Pagina", "admin"]
+  ];
+  const teams = [...new Set([
+    ...Object.keys(flags),
+    ...matches.flatMap((match) => [match.home, match.away]),
+    ...Object.values(groups).flatMap((rows) => rows.map(([team]) => team))
+  ])]
+    .filter((team) => !team.startsWith("Ganador"))
+    .map((team) => [team, "Pais", "posiciones"]);
+  const fixtures = matches.map((match) => [`${match.home} vs ${match.away}`, `${match.phase} · ${formatDate(match.date)}`, "calendario"]);
+  const participants = users.map((user) => [user.name, "Usuario", "ranking"]);
+  return [...teams, ...fixtures, ...participants, ...pages].map(([label, type, page]) => ({
+    label,
+    type,
+    page,
+    key: normalizeText(label)
+  }));
+}
+
+function renderSearchResults(query) {
+  const resultsBox = $("#searchResults");
+  const term = normalizeText(query);
+  if (!term) {
+    resultsBox.classList.remove("open");
+    resultsBox.innerHTML = "";
+    return;
+  }
+  const results = getSearchIndex()
+    .filter((item) => item.key.startsWith(term) || item.key.includes(term))
+    .sort((a, b) => Number(!a.key.startsWith(term)) - Number(!b.key.startsWith(term)) || a.label.localeCompare(b.label))
+    .slice(0, 8);
+
+  resultsBox.innerHTML = results.length ? results.map((item) => `
+    <button class="search-result" type="button" data-page="${item.page}" data-label="${item.label}">
+      <span>${teamLabel(item.label)}</span>
+      <small>${item.type}</small>
+    </button>
+  `).join("") : `<div class="search-empty">Sin coincidencias</div>`;
+  resultsBox.classList.add("open");
+}
+
+function selectSearchResult(button) {
+  const page = button.dataset.page;
+  const label = button.dataset.label;
+  $("#globalSearch").value = label;
+  $("#searchResults").classList.remove("open");
+  setPage(page);
+  if (page === "ranking") {
+    $("#rankingSearch").value = label;
+    renderRanking();
+  }
 }
 
 function renderCountdown() {
@@ -350,8 +422,19 @@ function bindEvents() {
   $("#rankingSearch").addEventListener("input", renderRanking);
   $("#exportPage").addEventListener("click", exportCurrentPage);
   $("#globalSearch").addEventListener("input", (event) => {
-    $("#rankingSearch").value = event.target.value;
-    renderRanking();
+    renderSearchResults(event.target.value);
+  });
+  $("#globalSearch").addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+    const firstResult = $("#searchResults .search-result");
+    if (firstResult) selectSearchResult(firstResult);
+  });
+  $("#searchResults").addEventListener("click", (event) => {
+    const button = event.target.closest(".search-result");
+    if (button) selectSearchResult(button);
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".search-box")) $("#searchResults").classList.remove("open");
   });
   $("#themeSelect").addEventListener("change", (event) => setTheme(event.target.value));
   $("#predictionForm").addEventListener("submit", (event) => {

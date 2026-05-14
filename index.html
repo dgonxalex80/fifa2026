@@ -33,7 +33,7 @@
         <div class="sidebar-card">
           <span>Competencia activa</span>
           <strong>Oficina Qatar Legacy</strong>
-          <small>128 participantes</small>
+          <small><span id="sidebarParticipants">0</span> participantes</small>
         </div>
       </aside>
 
@@ -70,7 +70,7 @@
             <div class="countdown" id="countdown"></div>
           </div>
           <div class="kpi-grid">
-            <article class="kpi"><span>Usuarios</span><strong>1,284</strong><small>inscritos antes del inicio</small></article>
+            <article class="kpi"><span>Usuarios</span><strong id="registeredUsersCount">0</strong><small>inscritos antes del inicio</small></article>
             <article class="kpi"><span>Pronosticos</span><strong>Abiertos</strong><small>editables hasta el bloqueo</small></article>
             <article class="kpi"><span>Resultados</span><strong>Sin iniciar</strong><small>no hay marcadores oficiales</small></article>
             <article class="kpi"><span>Ranking</span><strong>0 pts</strong><small>todos empiezan empatados</small></article>
@@ -181,6 +181,17 @@
         </section>
 
         <section class="page" id="page-ranking">
+          <section class="panel signup-panel">
+            <div class="panel-head">
+              <h3>Inscripcion de participante</h3>
+              <span class="status-pill">Requerida para aparecer en el ranking</span>
+            </div>
+            <form class="signup-form" id="signupForm">
+              <label>Nombre<input id="signupName" type="text" placeholder="Nombre del participante" required /></label>
+              <label>Correo<input id="signupEmail" type="email" placeholder="correo@ejemplo.com" required /></label>
+              <button class="primary-button" type="submit">Inscribirme</button>
+            </form>
+          </section>
           <div class="toolbar">
             <input id="rankingSearch" type="search" placeholder="Buscar participante" />
             <select id="rankingScope"><option>Global</option><option>Diario</option><option>Fase de grupos</option><option>Mi liga</option></select>
@@ -195,10 +206,10 @@
 
         <section class="page" id="page-analitica">
           <div class="kpi-grid">
-            <article class="kpi"><span>Predicción colectiva</span><strong>62%</strong><small>favorece al local</small></article>
-            <article class="kpi"><span>Partido difícil</span><strong>ARG vs FRA</strong><small>42% dispersión</small></article>
-            <article class="kpi"><span>Equipo confiable</span><strong>Brasil</strong><small>78% acierto ganador</small></article>
-            <article class="kpi"><span>Usuario estable</span><strong>Diego M.</strong><small>9 jornadas en top 10</small></article>
+            <article class="kpi"><span>Prediccion colectiva</span><strong>0%</strong><small>sin pronosticos registrados</small></article>
+            <article class="kpi"><span>Partido dificil</span><strong>Pendiente</strong><small>sin dispersion calculada</small></article>
+            <article class="kpi"><span>Equipo confiable</span><strong>Pendiente</strong><small>sin resultados oficiales</small></article>
+            <article class="kpi"><span>Usuario estable</span><strong>Sin usuarios</strong><small>requiere inscripcion</small></article>
           </div>
           <div class="dashboard-grid">
             <section class="panel span-2"><div class="panel-head"><h3>Evolución del ranking</h3></div><canvas id="lineChart" height="220"></canvas></section>

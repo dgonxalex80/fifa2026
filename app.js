@@ -56,14 +56,7 @@ const flags = {
   Uruguay: "uy"
 };
 
-const users = [
-  { name: "Mariana R.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
-  { name: "Diego M.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
-  { name: "Laura S.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
-  { name: "Andres C.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
-  { name: "Sofia P.", points: 0, hits: 0, accuracy: 0, trend: "igual" },
-  { name: "Camilo T.", points: 0, hits: 0, accuracy: 0, trend: "igual" }
-];
+let users = JSON.parse(localStorage.getItem("fifa2026-users") || "[]");
 
 const scorers = [
   ["Sin registros", "-", "-", "-", "-"]
@@ -266,13 +259,15 @@ function renderMatches() {
 }
 
 function renderRanking() {
-  $("#quickRanking").innerHTML = users.slice(0, 5).map((user, index) => `
+  $("#registeredUsersCount").textContent = users.length;
+  $("#sidebarParticipants").textContent = users.length;
+  $("#quickRanking").innerHTML = users.length ? users.slice(0, 5).map((user, index) => `
     <div class="rank-row"><strong>${index + 1}</strong><span>${user.name}</span><strong>${user.points}</strong></div>
-  `).join("");
+  `).join("") : `<p class="prediction-card">Aun no hay participantes inscritos.</p>`;
 
-  const term = ($("#rankingSearch")?.value || "").toLowerCase();
-  $("#rankingRows").innerHTML = users
-    .filter((user) => user.name.toLowerCase().includes(term))
+  const term = normalizeText($("#rankingSearch")?.value || "");
+  const filteredUsers = users.filter((user) => normalizeText(user.name).includes(term) || normalizeText(user.email).includes(term));
+  $("#rankingRows").innerHTML = filteredUsers.length ? filteredUsers
     .map((user, index) => `
       <tr>
         <td>${index + 1}</td>
@@ -282,7 +277,29 @@ function renderRanking() {
         <td>${user.accuracy}%</td>
         <td class="trend-neutral">Sin cambios</td>
       </tr>
-    `).join("");
+    `).join("") : `
+      <tr>
+        <td colspan="6" class="empty-table">No hay usuarios inscritos. Usa el formulario de inscripcion para aparecer en el ranking.</td>
+      </tr>
+    `;
+}
+
+function registerUser(name, email) {
+  const normalizedEmail = normalizeText(email);
+  if (users.some((user) => normalizeText(user.email) === normalizedEmail)) {
+    alert("Este correo ya esta inscrito.");
+    return;
+  }
+  users.push({
+    name: name.trim(),
+    email: email.trim(),
+    points: 0,
+    hits: 0,
+    accuracy: 0,
+    trend: "igual"
+  });
+  localStorage.setItem("fifa2026-users", JSON.stringify(users));
+  renderRanking();
 }
 
 function renderPredictions() {
@@ -477,6 +494,11 @@ function bindEvents() {
   });
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".search-box")) $("#searchResults").classList.remove("open");
+  });
+  $("#signupForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    registerUser($("#signupName").value, $("#signupEmail").value);
+    event.target.reset();
   });
   $("#themeSelect").addEventListener("change", (event) => setTheme(event.target.value));
   $("#predictionForm").addEventListener("submit", (event) => {

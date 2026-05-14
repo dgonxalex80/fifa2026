@@ -1,32 +1,58 @@
 const matches = [
-  { id: 1, date: "2026-06-11 20:00", home: "Mexico", away: "Canada", phase: "Grupos", stadium: "Estadio Azteca", city: "Ciudad de Mexico", status: "pendiente" },
-  { id: 2, date: "2026-06-12 17:00", home: "Estados Unidos", away: "Japon", phase: "Grupos", stadium: "SoFi Stadium", city: "Los Angeles", status: "pendiente" },
+  { id: 1, date: "2026-06-11 20:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", stadium: "Estadio Azteca", city: "Ciudad de Mexico", status: "pendiente" },
+  { id: 2, date: "2026-06-12 17:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", stadium: "SoFi Stadium", city: "Los Angeles", status: "pendiente" },
   { id: 3, date: "2026-06-13 15:00", home: "Brasil", away: "Marruecos", phase: "Grupos", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "pendiente" },
-  { id: 4, date: "2026-06-14 18:00", home: "Argentina", away: "Francia", phase: "Grupos", stadium: "AT&T Stadium", city: "Dallas", status: "pendiente" },
-  { id: 5, date: "2026-06-22 20:00", home: "Espana", away: "Uruguay", phase: "Octavos", stadium: "Hard Rock Stadium", city: "Miami", status: "pendiente" },
-  { id: 6, date: "2026-07-04 19:00", home: "Inglaterra", away: "Portugal", phase: "Cuartos", stadium: "BC Place", city: "Vancouver", status: "pendiente" },
-  { id: 7, date: "2026-07-09 20:00", home: "Alemania", away: "Paises Bajos", phase: "Semifinal", stadium: "Mercedes-Benz Stadium", city: "Atlanta", status: "pendiente" },
-  { id: 8, date: "2026-07-19 18:00", home: "Ganador SF1", away: "Ganador SF2", phase: "Final", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "pendiente" }
+  { id: 4, date: "2026-06-14 18:00", home: "Espana", away: "Uruguay", phase: "Grupos", stadium: "AT&T Stadium", city: "Dallas", status: "pendiente" },
+  { id: 5, date: "2026-06-15 20:00", home: "Colombia", away: "Portugal", phase: "Grupos", stadium: "Hard Rock Stadium", city: "Miami", status: "pendiente" },
+  { id: 6, date: "2026-06-16 19:00", home: "Inglaterra", away: "Croacia", phase: "Grupos", stadium: "BC Place", city: "Vancouver", status: "pendiente" },
+  { id: 7, date: "2026-06-17 20:00", home: "Francia", away: "Senegal", phase: "Grupos", stadium: "Mercedes-Benz Stadium", city: "Atlanta", status: "pendiente" },
+  { id: 8, date: "2026-06-18 18:00", home: "Argentina", away: "Argelia", phase: "Grupos", stadium: "MetLife Stadium", city: "New York/New Jersey", status: "pendiente" }
 ];
 
 const flags = {
+  "Arabia Saudita": "sa",
   Alemania: "de",
+  Argelia: "dz",
   Argentina: "ar",
+  Australia: "au",
+  Austria: "at",
+  Belgica: "be",
   Brasil: "br",
+  "Cabo Verde": "cv",
   Canada: "ca",
+  Catar: "qa",
   Colombia: "co",
   Corea: "kr",
+  "Corea del Sur": "kr",
+  Croacia: "hr",
+  Curazao: "cw",
+  Ecuador: "ec",
+  Egipto: "eg",
   Espana: "es",
   "Estados Unidos": "us",
   Francia: "fr",
   Ghana: "gh",
+  Haiti: "ht",
   Inglaterra: "gb-eng",
+  Iran: "ir",
+  Jordania: "jo",
   Japon: "jp",
   Marruecos: "ma",
   Mexico: "mx",
+  Noruega: "no",
+  "Nueva Zelanda": "nz",
+  Panama: "pa",
+  Paraguay: "py",
   "Paises Bajos": "nl",
   Portugal: "pt",
+  "Costa de Marfil": "ci",
+  Escocia: "gb-sct",
+  Senegal: "sn",
+  Sudafrica: "za",
+  Suiza: "ch",
   Suecia: "se",
+  Tunez: "tn",
+  Uzbekistan: "uz",
   Uruguay: "uy"
 };
 
@@ -44,18 +70,30 @@ const scorers = [
 ];
 
 const groups = {
-  A: [["Mexico", 0, 0], ["Canada", 0, 0], ["Japon", 0, 0], ["Marruecos", 0, 0]],
-  B: [["Brasil", 0, 0], ["Uruguay", 0, 0], ["Espana", 0, 0], ["Corea", 0, 0]],
-  C: [["Argentina", 0, 0], ["Francia", 0, 0], ["Ghana", 0, 0], ["Suecia", 0, 0]],
-  D: [["Inglaterra", 0, 0], ["Portugal", 0, 0], ["Alemania", 0, 0], ["Paises Bajos", 0, 0]]
+  A: [["Mexico", 0, 0], ["Sudafrica", 0, 0], ["Corea del Sur", 0, 0], ["Ganador Play-off D", 0, 0]],
+  B: [["Canada", 0, 0], ["Ganador Play-off A", 0, 0], ["Catar", 0, 0], ["Suiza", 0, 0]],
+  C: [["Brasil", 0, 0], ["Marruecos", 0, 0], ["Haiti", 0, 0], ["Escocia", 0, 0]],
+  D: [["Estados Unidos", 0, 0], ["Paraguay", 0, 0], ["Australia", 0, 0], ["Ganador Play-off C", 0, 0]],
+  E: [["Alemania", 0, 0], ["Curazao", 0, 0], ["Costa de Marfil", 0, 0], ["Ecuador", 0, 0]],
+  F: [["Paises Bajos", 0, 0], ["Japon", 0, 0], ["Ganador Play-off B", 0, 0], ["Tunez", 0, 0]],
+  G: [["Belgica", 0, 0], ["Egipto", 0, 0], ["Iran", 0, 0], ["Nueva Zelanda", 0, 0]],
+  H: [["Espana", 0, 0], ["Cabo Verde", 0, 0], ["Arabia Saudita", 0, 0], ["Uruguay", 0, 0]],
+  I: [["Francia", 0, 0], ["Senegal", 0, 0], ["Ganador Play-off 2", 0, 0], ["Noruega", 0, 0]],
+  J: [["Argentina", 0, 0], ["Argelia", 0, 0], ["Austria", 0, 0], ["Jordania", 0, 0]],
+  K: [["Portugal", 0, 0], ["Ganador Play-off 1", 0, 0], ["Uzbekistan", 0, 0], ["Colombia", 0, 0]],
+  L: [["Inglaterra", 0, 0], ["Croacia", 0, 0], ["Ghana", 0, 0], ["Panama", 0, 0]]
 };
 
 const knockoutRounds = [
   {
+    name: "Dieciseisavos",
+    matches: Array.from({ length: 16 }, (_, index) => [`Clasificado ${index * 2 + 1}`, `Clasificado ${index * 2 + 2}`])
+  },
+  {
     name: "Octavos de final",
     matches: [
-      ["1A", "2B"], ["1C", "2D"], ["1E", "2F"], ["1G", "2H"],
-      ["1B", "2A"], ["1D", "2C"], ["1F", "2E"], ["1H", "2G"]
+      ["Ganador D16-1", "Ganador D16-2"], ["Ganador D16-3", "Ganador D16-4"], ["Ganador D16-5", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"],
+      ["Ganador D16-9", "Ganador D16-10"], ["Ganador D16-11", "Ganador D16-12"], ["Ganador D16-13", "Ganador D16-14"], ["Ganador D16-15", "Ganador D16-16"]
     ]
   },
   {
@@ -280,24 +318,28 @@ function renderGroups() {
   $("#groupSummaryGrid").innerHTML = Object.entries(groups).map(([group, rows]) => `
     <article class="summary-card">
       <strong>Grupo ${group}</strong>
-      <p>Lider: pendiente</p>
-      <small>${rows.length} equipos · 0 partidos jugados · sin goles registrados</small>
+      <div class="compact-team-list">
+        ${rows.map(([team]) => teamLabel(team)).join("")}
+      </div>
+      <small>0 PJ · 0 goles · clasificacion pendiente</small>
     </article>
   `).join("");
 
   $("#groupsGrid").innerHTML = Object.entries(groups).map(([group, rows]) => `
     <section class="panel group-card">
-      <h3>Grupo ${group}</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th><th>Estado</th></tr></thead>
-          <tbody>
-            ${rows.map(([team, points, diff]) => `
-              <tr><td>${teamLabel(team)}</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>${diff}</td><td>${points}</td><td>Pendiente</td></tr>
-            `).join("")}
-          </tbody>
-        </table>
+      <div class="panel-head">
+        <h3>Grupo ${group}</h3>
+        <span class="status-pill">0 pts</span>
       </div>
+      <div class="simple-standings">
+        ${rows.map(([team, points]) => `
+          <article class="standing-row">
+            <span>${teamLabel(team)}</span>
+            <strong>${points}</strong>
+          </article>
+        `).join("")}
+      </div>
+      <small class="group-note">PJ 0 · DG 0 · resultados pendientes</small>
     </section>
   `).join("");
 

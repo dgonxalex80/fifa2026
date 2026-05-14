@@ -29,6 +29,32 @@ const groups = {
   D: [["Inglaterra", 0, 0], ["Portugal", 0, 0], ["Alemania", 0, 0], ["Paises Bajos", 0, 0]]
 };
 
+const knockoutRounds = [
+  {
+    name: "Octavos de final",
+    matches: [
+      ["1A", "2B"], ["1C", "2D"], ["1E", "2F"], ["1G", "2H"],
+      ["1B", "2A"], ["1D", "2C"], ["1F", "2E"], ["1H", "2G"]
+    ]
+  },
+  {
+    name: "Cuartos de final",
+    matches: [["Ganador OF1", "Ganador OF2"], ["Ganador OF3", "Ganador OF4"], ["Ganador OF5", "Ganador OF6"], ["Ganador OF7", "Ganador OF8"]]
+  },
+  {
+    name: "Semifinales",
+    matches: [["Ganador CF1", "Ganador CF2"], ["Ganador CF3", "Ganador CF4"]]
+  },
+  {
+    name: "Tercer puesto",
+    matches: [["Perdedor SF1", "Perdedor SF2"]]
+  },
+  {
+    name: "Final",
+    matches: [["Ganador SF1", "Ganador SF2"]]
+  }
+];
+
 const rules = [
   ["Marcador exacto", 5],
   ["Ganador correcto", 3],
@@ -134,18 +160,55 @@ function renderPredictions() {
 }
 
 function renderGroups() {
+  const groupMatches = matches.filter((match) => match.phase === "Grupos");
+  const pendingGroupMatches = groupMatches.filter((match) => match.status === "pendiente").length;
+  const totalTeams = Object.values(groups).reduce((total, rows) => total + rows.length, 0);
+  const totalGroups = Object.keys(groups).length;
+
+  $("#groupResultsSummary").innerHTML = [
+    ["Partidos de grupos", groupMatches.length, `${pendingGroupMatches} pendientes`],
+    ["Resultados oficiales", 0, "sin marcadores cargados"],
+    ["Grupos configurados", totalGroups, `${totalTeams} equipos en seguimiento`],
+    ["Clasificados", 0, "se definirán al terminar la fase"]
+  ].map(([label, value, detail]) => `
+    <article class="kpi"><span>${label}</span><strong>${value}</strong><small>${detail}</small></article>
+  `).join("");
+
+  $("#groupSummaryGrid").innerHTML = Object.entries(groups).map(([group, rows]) => `
+    <article class="summary-card">
+      <strong>Grupo ${group}</strong>
+      <p>Lider: pendiente</p>
+      <small>${rows.length} equipos · 0 partidos jugados · sin goles registrados</small>
+    </article>
+  `).join("");
+
   $("#groupsGrid").innerHTML = Object.entries(groups).map(([group, rows]) => `
     <section class="panel group-card">
       <h3>Grupo ${group}</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Equipo</th><th>Pts</th><th>DG</th><th>Estado</th></tr></thead>
+          <thead><tr><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th><th>Estado</th></tr></thead>
           <tbody>
             ${rows.map(([team, points, diff]) => `
-              <tr><td>${team}</td><td>${points}</td><td>${diff}</td><td>Pendiente</td></tr>
+              <tr><td>${team}</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>${diff}</td><td>${points}</td><td>Pendiente</td></tr>
             `).join("")}
           </tbody>
         </table>
+      </div>
+    </section>
+  `).join("");
+
+  $("#knockoutSummary").innerHTML = knockoutRounds.map((round) => `
+    <section class="round-summary">
+      <h4>${round.name}</h4>
+      <div class="round-match-list">
+        ${round.matches.map(([home, away], index) => `
+          <article class="round-match">
+            <span>Partido ${index + 1}</span>
+            <strong>${home} vs ${away}</strong>
+            <small>Resultado pendiente · sede y hora por confirmar</small>
+          </article>
+        `).join("")}
       </div>
     </section>
   `).join("");
@@ -165,16 +228,10 @@ function renderHeatmap() {
 }
 
 function renderBracket() {
-  const rounds = [
-    ["Octavos", [["Mexico", "Espana"], ["Brasil", "Japon"], ["Argentina", "Canada"], ["Francia", "Uruguay"]]],
-    ["Cuartos", [["Mexico", "Brasil"], ["Argentina", "Francia"]]],
-    ["Semifinal", [["Brasil", "Argentina"]]],
-    ["Final", [["Brasil", "Ganador SF2"]]]
-  ];
-  $("#bracket").innerHTML = rounds.map(([name, roundMatches]) => `
+  $("#bracket").innerHTML = knockoutRounds.map((round) => `
     <section class="round">
-      <h3>${name}</h3>
-      ${roundMatches.map(([home, away]) => `
+      <h3>${round.name}</h3>
+      ${round.matches.map(([home, away]) => `
         <article class="bracket-match">
           <div class="bracket-team"><span>${home}</span><strong>-</strong></div>
           <div class="bracket-team"><span>${away}</span><strong>-</strong></div>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIFA 2026 Predictor Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">26</div>
+          <div>
+            <strong>WorldCup Hub</strong>
+            <span>Pronósticos FIFA 2026</span>
+          </div>
+        </div>
+        <nav class="nav-list" aria-label="Navegación principal">
+          <button class="nav-item active" data-page="inicio">Inicio</button>
+          <button class="nav-item" data-page="calendario">Calendario</button>
+          <button class="nav-item" data-page="pronosticos">Pronósticos</button>
+          <button class="nav-item" data-page="posiciones">Posiciones</button>
+          <button class="nav-item" data-page="goleadores">Goleadores</button>
+          <button class="nav-item" data-page="ranking">Ranking</button>
+          <button class="nav-item" data-page="analitica">Analítica</button>
+          <button class="nav-item" data-page="llaves">Llaves</button>
+          <button class="nav-item" data-page="admin">Admin</button>
+        </nav>
+        <div class="sidebar-card">
+          <span>Competencia activa</span>
+          <strong>Oficina Qatar Legacy</strong>
+          <small>128 participantes</small>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button menu-toggle" id="menuToggle" aria-label="Abrir menu">Menu</button>
+          <div>
+            <p class="eyebrow">Dashboard deportivo</p>
+            <h1 id="pageTitle">Inicio</h1>
+          </div>
+          <div class="topbar-actions">
+            <div class="search-box">
+              <input id="globalSearch" type="search" placeholder="Buscar equipo, usuario o partido" />
+            </div>
+            <button class="primary-button" id="exportPage">Exportar CSV</button>
+          </div>
+        </header>
+
+        <section class="page active" id="page-inicio">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">Cuenta regresiva</p>
+              <h2>Rumbo al Mundial FIFA 2026</h2>
+              <p>Centro operativo para pronósticos, ranking, calendario, llaves y analítica del torneo.</p>
+            </div>
+            <div class="countdown" id="countdown"></div>
+          </div>
+          <div class="kpi-grid">
+            <article class="kpi"><span>Usuarios</span><strong>1,284</strong><small>+18 esta semana</small></article>
+            <article class="kpi"><span>Pronósticos</span><strong>8,942</strong><small>73% bloqueados a tiempo</small></article>
+            <article class="kpi"><span>Exactos</span><strong>21.8%</strong><small>marcadores perfectos</small></article>
+            <article class="kpi"><span>Líder</span><strong>Mariana R.</strong><small>342 puntos</small></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel span-2">
+              <div class="panel-head">
+                <h3>Próximos partidos</h3>
+                <button class="ghost-button" data-jump="calendario">Ver todos</button>
+              </div>
+              <div class="match-list" id="homeMatches"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Ranking rápido</h3></div>
+              <div class="mini-ranking" id="quickRanking"></div>
+            </section>
+            <section class="panel span-3">
+              <div class="panel-head"><h3>Noticias y alertas</h3></div>
+              <div class="news-grid">
+                <article><strong>Reglas actualizadas</strong><p>El bonus por campeón se liquida al cierre de la final.</p></article>
+                <article><strong>Bloqueo automático</strong><p>Los pronósticos se cierran 5 minutos antes del inicio.</p></article>
+                <article><strong>Integración futura</strong><p>La capa de datos está preparada para APIs deportivas oficiales.</p></article>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-calendario">
+          <div class="toolbar">
+            <select id="matchStatusFilter">
+              <option value="todos">Todos los estados</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="en juego">En juego</option>
+              <option value="finalizado">Finalizado</option>
+            </select>
+            <select id="phaseFilter">
+              <option value="todas">Todas las fases</option>
+              <option>Grupos</option>
+              <option>Octavos</option>
+              <option>Cuartos</option>
+              <option>Semifinal</option>
+              <option>Final</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Fecha</th><th>Partido</th><th>Fase</th><th>Estadio</th><th>Ciudad</th><th>Estado</th></tr></thead>
+              <tbody id="calendarRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page" id="page-pronosticos">
+          <div class="dashboard-grid">
+            <section class="panel span-2">
+              <div class="panel-head">
+                <h3>Formulario de pronóstico</h3>
+                <span class="status-pill">Editable antes del inicio</span>
+              </div>
+              <form class="prediction-form" id="predictionForm">
+                <label>Partido<select id="predictionMatch"></select></label>
+                <div class="score-inputs">
+                  <label>Local<input type="number" min="0" max="15" value="1" id="homeScore" /></label>
+                  <label>Visitante<input type="number" min="0" max="15" value="0" id="awayScore" /></label>
+                </div>
+                <label>Clasifica<select id="qualifier"><option>Equipo local</option><option>Equipo visitante</option><option>No aplica</option></select></label>
+                <label>Goleador bonus<input type="text" placeholder="Nombre del jugador" id="scorerBonus" /></label>
+                <button class="primary-button" type="submit">Guardar pronóstico</button>
+              </form>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Mis predicciones</h3></div>
+              <div class="prediction-list" id="predictionList"></div>
+            </section>
+            <section class="panel span-3">
+              <div class="panel-head"><h3>Reglas de puntuación</h3></div>
+              <div class="rules-grid" id="rulesGrid"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-posiciones">
+          <div class="groups-grid" id="groupsGrid"></div>
+        </section>
+
+        <section class="page" id="page-goleadores">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Jugador</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>Minutos</th></tr></thead>
+              <tbody id="scorersRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page" id="page-ranking">
+          <div class="toolbar">
+            <input id="rankingSearch" type="search" placeholder="Buscar participante" />
+            <select id="rankingScope"><option>Global</option><option>Diario</option><option>Fase de grupos</option><option>Mi liga</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Usuario</th><th>Puntos</th><th>Aciertos</th><th>Efectividad</th><th>Tendencia</th></tr></thead>
+              <tbody id="rankingRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page" id="page-analitica">
+          <div class="kpi-grid">
+            <article class="kpi"><span>Predicción colectiva</span><strong>62%</strong><small>favorece al local</small></article>
+            <article class="kpi"><span>Partido difícil</span><strong>ARG vs FRA</strong><small>42% dispersión</small></article>
+            <article class="kpi"><span>Equipo confiable</span><strong>Brasil</strong><small>78% acierto ganador</small></article>
+            <article class="kpi"><span>Usuario estable</span><strong>Diego M.</strong><small>9 jornadas en top 10</small></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel span-2"><div class="panel-head"><h3>Evolución del ranking</h3></div><canvas id="lineChart" height="220"></canvas></section>
+            <section class="panel"><div class="panel-head"><h3>Aciertos por fase</h3></div><canvas id="barChart" height="220"></canvas></section>
+            <section class="panel span-3"><div class="panel-head"><h3>Mapa de calor de dificultad</h3></div><div class="heatmap" id="heatmap"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-llaves">
+          <div class="bracket" id="bracket"></div>
+        </section>
+
+        <section class="page" id="page-admin">
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-head"><h3>Cargar resultado</h3></div>
+              <form class="prediction-form">
+                <label>Partido<select><option>México vs Canadá</option><option>Brasil vs Japón</option></select></label>
+                <div class="score-inputs"><label>Local<input type="number" value="2" /></label><label>Visitante<input type="number" value="1" /></label></div>
+                <button class="primary-button" type="button">Publicar resultado</button>
+              </form>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Reglas editables</h3></div>
+              <div class="admin-rules" id="adminRules"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Actividad</h3></div>
+              <div class="timeline">
+                <p><strong>12:42</strong> 34 pronósticos bloqueados.</p>
+                <p><strong>12:18</strong> Ranking recalculado.</p>
+                <p><strong>11:50</strong> Exportación PDF solicitada.</p>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

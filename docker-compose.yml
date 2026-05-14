@@ -1,0 +1,7 @@
+services:
+  fifa2026-predictor:
+    build: .
+    container_name: fifa2026-predictor
+    ports:
+      - "8080:80"
+    restart: unless-stopped

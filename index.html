@@ -25,16 +25,14 @@
           <button class="nav-item" data-page="pronosticos">Pronósticos</button>
           <button class="nav-item" data-page="posiciones">Posiciones</button>
           <button class="nav-item" data-page="goleadores">Goleadores</button>
+          <button class="nav-item" data-page="jugadores">Jugadores</button>
           <button class="nav-item" data-page="ranking">Ranking</button>
           <button class="nav-item" data-page="analitica">Analítica</button>
+          <button class="nav-item" data-page="historial">Historial</button>
           <button class="nav-item" data-page="llaves">Llaves</button>
           <button class="nav-item" data-page="admin">Admin</button>
         </nav>
-        <div class="sidebar-card">
-          <span>Competencia activa</span>
-          <strong>Oficina Qatar Legacy</strong>
-          <small><span id="sidebarParticipants">0</span> participantes</small>
-        </div>
+        <div class="sidebar-counter"><span id="sidebarParticipants">0</span> participantes</div>
       </aside>
 
       <main class="main">
@@ -109,15 +107,17 @@
             <select id="phaseFilter">
               <option value="todas">Todas las fases</option>
               <option>Grupos</option>
+              <option>Dieciseisavos</option>
               <option>Octavos</option>
               <option>Cuartos</option>
               <option>Semifinal</option>
+              <option>Tercer puesto</option>
               <option>Final</option>
             </select>
           </div>
           <section class="panel">
             <div class="panel-head">
-              <h3>Junio 2026</h3>
+              <h3>Calendario 2026</h3>
               <span class="status-pill">Vista por semanas</span>
             </div>
             <div class="calendar-grid" id="calendarGrid"></div>
@@ -183,6 +183,27 @@
           </div>
         </section>
 
+        <section class="page" id="page-jugadores">
+          <div class="toolbar">
+            <input id="playerSearch" type="search" placeholder="Buscar jugador, seleccion o codigo Panini" />
+            <select id="playerTeamFilter" aria-label="Filtrar por seleccion"></select>
+            <select id="playerPositionFilter" aria-label="Filtrar por estado de datos"></select>
+          </div>
+          <section class="panel players-summary">
+            <div class="panel-head">
+              <h3>Checklist Panini por seleccion</h3>
+              <span class="status-pill" id="playersCount">0 jugadores</span>
+            </div>
+            <div class="player-card-grid" id="playerCards"></div>
+          </section>
+          <div class="table-wrap players-table-wrap">
+            <table>
+              <thead><tr><th>Foto</th><th>Nombre completo</th><th>Seleccion</th><th>Edad</th><th>Estatura</th><th>Club</th><th>Posicion</th></tr></thead>
+              <tbody id="playerRows"></tbody>
+            </table>
+          </div>
+        </section>
+
         <section class="page" id="page-ranking">
           <section class="panel signup-panel">
             <div class="panel-head">
@@ -221,6 +242,40 @@
           </div>
         </section>
 
+
+        <section class="page" id="page-historial">
+          <div class="kpi-grid" id="worldCupHistorySummary"></div>
+          <div class="dashboard-grid history-dashboard">
+            <section class="panel span-2">
+              <div class="panel-head">
+                <h3>Mundiales anteriores</h3>
+                <span class="status-pill">1930-2022</span>
+              </div>
+              <div class="table-wrap compact-table-wrap">
+                <table>
+                  <thead><tr><th>Año</th><th>Sede</th><th>Campeón</th><th>Finalista</th><th>Partidos</th><th>Goles</th><th>Goleador</th></tr></thead>
+                  <tbody id="worldCupHistoryRows"></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Campeones</h3></div>
+              <div class="champions-list" id="worldCupChampionList"></div>
+            </section>
+            <section class="panel span-3 colombia-history-panel">
+              <div class="panel-head">
+                <h3>Colombia en los Mundiales</h3>
+                <span class="status-pill">6 participaciones</span>
+              </div>
+              <div class="colombia-history-note" id="colombiaWorldCupNote"></div>
+            </section>
+            <section class="panel span-3">
+              <div class="panel-head"><h3>Récords históricos</h3></div>
+              <div class="history-record-grid" id="worldCupRecords"></div>
+            </section>
+          </div>
+        </section>
+
         <section class="page" id="page-llaves">
           <div class="bracket" id="bracket"></div>
         </section>
@@ -229,10 +284,13 @@
           <div class="dashboard-grid">
             <section class="panel">
               <div class="panel-head"><h3>Cargar resultado</h3></div>
-              <form class="prediction-form">
-                <label>Partido<select><option>México vs Canadá</option><option>Brasil vs Japón</option></select></label>
-                <div class="score-inputs"><label>Local<input type="number" placeholder="-" /></label><label>Visitante<input type="number" placeholder="-" /></label></div>
-                <button class="primary-button" type="button">Publicar resultado</button>
+              <form class="prediction-form" id="resultForm">
+                <label>Partido<select id="resultMatch"></select></label>
+                <div class="score-inputs">
+                  <label>Local<input type="number" min="0" max="30" placeholder="-" id="resultHomeScore" required /></label>
+                  <label>Visitante<input type="number" min="0" max="30" placeholder="-" id="resultAwayScore" required /></label>
+                </div>
+                <button class="primary-button" type="submit">Publicar resultado</button>
               </form>
             </section>
             <section class="panel">

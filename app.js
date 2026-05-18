@@ -153,40 +153,384 @@ const scorers = [
 
 
 const worldCupHistory = [
-  { year: 1930, host: "Uruguay", champion: "Uruguay", runnerUp: "Argentina", teams: 13, matches: 18, goals: 70, topScorer: "Guillermo Stabile", topScorerGoals: 8 },
-  { year: 1934, host: "Italia", champion: "Italia", runnerUp: "Checoslovaquia", teams: 16, matches: 17, goals: 70, topScorer: "Oldrich Nejedly", topScorerGoals: 5 },
-  { year: 1938, host: "Francia", champion: "Italia", runnerUp: "Hungria", teams: 15, matches: 18, goals: 84, topScorer: "Leonidas", topScorerGoals: 7 },
-  { year: 1950, host: "Brasil", champion: "Uruguay", runnerUp: "Brasil", teams: 13, matches: 22, goals: 88, topScorer: "Ademir", topScorerGoals: 8 },
-  { year: 1954, host: "Suiza", champion: "Alemania Federal", runnerUp: "Hungria", teams: 16, matches: 26, goals: 140, topScorer: "Sandor Kocsis", topScorerGoals: 11 },
-  { year: 1958, host: "Suecia", champion: "Brasil", runnerUp: "Suecia", teams: 16, matches: 35, goals: 126, topScorer: "Just Fontaine", topScorerGoals: 13 },
-  { year: 1962, host: "Chile", champion: "Brasil", runnerUp: "Checoslovaquia", teams: 16, matches: 32, goals: 89, topScorer: "Seis jugadores", topScorerGoals: 4 },
-  { year: 1966, host: "Inglaterra", champion: "Inglaterra", runnerUp: "Alemania Federal", teams: 16, matches: 32, goals: 89, topScorer: "Eusebio", topScorerGoals: 9 },
-  { year: 1970, host: "Mexico", champion: "Brasil", runnerUp: "Italia", teams: 16, matches: 32, goals: 95, topScorer: "Gerd Muller", topScorerGoals: 10 },
-  { year: 1974, host: "Alemania Federal", champion: "Alemania Federal", runnerUp: "Paises Bajos", teams: 16, matches: 38, goals: 97, topScorer: "Grzegorz Lato", topScorerGoals: 7 },
-  { year: 1978, host: "Argentina", champion: "Argentina", runnerUp: "Paises Bajos", teams: 16, matches: 38, goals: 102, topScorer: "Mario Kempes", topScorerGoals: 6 },
-  { year: 1982, host: "Espana", champion: "Italia", runnerUp: "Alemania Federal", teams: 24, matches: 52, goals: 146, topScorer: "Paolo Rossi", topScorerGoals: 6 },
-  { year: 1986, host: "Mexico", champion: "Argentina", runnerUp: "Alemania Federal", teams: 24, matches: 52, goals: 132, topScorer: "Gary Lineker", topScorerGoals: 6 },
-  { year: 1990, host: "Italia", champion: "Alemania Federal", runnerUp: "Argentina", teams: 24, matches: 52, goals: 115, topScorer: "Salvatore Schillaci", topScorerGoals: 6 },
-  { year: 1994, host: "Estados Unidos", champion: "Brasil", runnerUp: "Italia", teams: 24, matches: 52, goals: 141, topScorer: "Hristo Stoichkov y Oleg Salenko", topScorerGoals: 6 },
-  { year: 1998, host: "Francia", champion: "Francia", runnerUp: "Brasil", teams: 32, matches: 64, goals: 171, topScorer: "Davor Suker", topScorerGoals: 6 },
-  { year: 2002, host: "Corea del Sur y Japon", champion: "Brasil", runnerUp: "Alemania", teams: 32, matches: 64, goals: 161, topScorer: "Ronaldo", topScorerGoals: 8 },
-  { year: 2006, host: "Alemania", champion: "Italia", runnerUp: "Francia", teams: 32, matches: 64, goals: 147, topScorer: "Miroslav Klose", topScorerGoals: 5 },
-  { year: 2010, host: "Sudafrica", champion: "Espana", runnerUp: "Paises Bajos", teams: 32, matches: 64, goals: 145, topScorer: "Thomas Muller", topScorerGoals: 5 },
-  { year: 2014, host: "Brasil", champion: "Alemania", runnerUp: "Argentina", teams: 32, matches: 64, goals: 171, topScorer: "James Rodriguez", topScorerGoals: 6 },
-  { year: 2018, host: "Rusia", champion: "Francia", runnerUp: "Croacia", teams: 32, matches: 64, goals: 169, topScorer: "Harry Kane", topScorerGoals: 6 },
-  { year: 2022, host: "Catar", champion: "Argentina", runnerUp: "Francia", teams: 32, matches: 64, goals: 172, topScorer: "Kylian Mbappe", topScorerGoals: 8 }
+  {
+    "year": 1930,
+    "host": "Uruguay",
+    "champion": "Uruguay",
+    "runnerUp": "Argentina",
+    "third": "Estados Unidos",
+    "fourth": "Yugoslavia",
+    "teams": 13,
+    "matches": 18,
+    "goals": 70,
+    "topScorer": "Guillermo Stabile",
+    "topScorerGoals": 8,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1934,
+    "host": "Italia",
+    "champion": "Italia",
+    "runnerUp": "Checoslovaquia",
+    "third": "Alemania",
+    "fourth": "Austria",
+    "teams": 16,
+    "matches": 17,
+    "goals": 70,
+    "topScorer": "Oldrich Nejedly",
+    "topScorerGoals": 5,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1938,
+    "host": "Francia",
+    "champion": "Italia",
+    "runnerUp": "Hungria",
+    "third": "Brasil",
+    "fourth": "Suecia",
+    "teams": 15,
+    "matches": 18,
+    "goals": 84,
+    "topScorer": "Leonidas",
+    "topScorerGoals": 7,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1950,
+    "host": "Brasil",
+    "champion": "Uruguay",
+    "runnerUp": "Brasil",
+    "third": "Suecia",
+    "fourth": "Espana",
+    "teams": 13,
+    "matches": 22,
+    "goals": 88,
+    "topScorer": "Ademir",
+    "topScorerGoals": 8,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1954,
+    "host": "Suiza",
+    "champion": "Alemania Federal",
+    "runnerUp": "Hungria",
+    "third": "Austria",
+    "fourth": "Uruguay",
+    "teams": 16,
+    "matches": 26,
+    "goals": 140,
+    "topScorer": "Sandor Kocsis",
+    "topScorerGoals": 11,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1958,
+    "host": "Suecia",
+    "champion": "Brasil",
+    "runnerUp": "Suecia",
+    "third": "Francia",
+    "fourth": "Alemania Federal",
+    "teams": 16,
+    "matches": 35,
+    "goals": 126,
+    "topScorer": "Just Fontaine",
+    "topScorerGoals": 13,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1962,
+    "host": "Chile",
+    "champion": "Brasil",
+    "runnerUp": "Checoslovaquia",
+    "third": "Chile",
+    "fourth": "Yugoslavia",
+    "teams": 16,
+    "matches": 32,
+    "goals": 89,
+    "topScorer": "Seis jugadores",
+    "topScorerGoals": 4,
+    "keeper": "No oficial",
+    "colombiaPosition": "14.º"
+  },
+  {
+    "year": 1966,
+    "host": "Inglaterra",
+    "champion": "Inglaterra",
+    "runnerUp": "Alemania Federal",
+    "third": "Portugal",
+    "fourth": "Unión Soviética",
+    "teams": 16,
+    "matches": 32,
+    "goals": 89,
+    "topScorer": "Eusebio",
+    "topScorerGoals": 9,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1970,
+    "host": "Mexico",
+    "champion": "Brasil",
+    "runnerUp": "Italia",
+    "third": "Alemania Federal",
+    "fourth": "Uruguay",
+    "teams": 16,
+    "matches": 32,
+    "goals": 95,
+    "topScorer": "Gerd Muller",
+    "topScorerGoals": 10,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1974,
+    "host": "Alemania Federal",
+    "champion": "Alemania Federal",
+    "runnerUp": "Paises Bajos",
+    "third": "Polonia",
+    "fourth": "Brasil",
+    "teams": 16,
+    "matches": 38,
+    "goals": 97,
+    "topScorer": "Grzegorz Lato",
+    "topScorerGoals": 7,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1978,
+    "host": "Argentina",
+    "champion": "Argentina",
+    "runnerUp": "Paises Bajos",
+    "third": "Brasil",
+    "fourth": "Italia",
+    "teams": 16,
+    "matches": 38,
+    "goals": 102,
+    "topScorer": "Mario Kempes",
+    "topScorerGoals": 6,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1982,
+    "host": "Espana",
+    "champion": "Italia",
+    "runnerUp": "Alemania Federal",
+    "third": "Polonia",
+    "fourth": "Francia",
+    "teams": 24,
+    "matches": 52,
+    "goals": 146,
+    "topScorer": "Paolo Rossi",
+    "topScorerGoals": 6,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1986,
+    "host": "Mexico",
+    "champion": "Argentina",
+    "runnerUp": "Alemania Federal",
+    "third": "Francia",
+    "fourth": "Bélgica",
+    "teams": 24,
+    "matches": 52,
+    "goals": 132,
+    "topScorer": "Gary Lineker",
+    "topScorerGoals": 6,
+    "keeper": "No oficial",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 1990,
+    "host": "Italia",
+    "champion": "Alemania Federal",
+    "runnerUp": "Argentina",
+    "third": "Italia",
+    "fourth": "Inglaterra",
+    "teams": 24,
+    "matches": 52,
+    "goals": 115,
+    "topScorer": "Salvatore Schillaci",
+    "topScorerGoals": 6,
+    "keeper": "No oficial",
+    "colombiaPosition": "14.º"
+  },
+  {
+    "year": 1994,
+    "host": "Estados Unidos",
+    "champion": "Brasil",
+    "runnerUp": "Italia",
+    "third": "Suecia",
+    "fourth": "Bulgaria",
+    "teams": 24,
+    "matches": 52,
+    "goals": 141,
+    "topScorer": "Hristo Stoichkov y Oleg Salenko",
+    "topScorerGoals": 6,
+    "keeper": "Michel Preudhomme",
+    "colombiaPosition": "19.º"
+  },
+  {
+    "year": 1998,
+    "host": "Francia",
+    "champion": "Francia",
+    "runnerUp": "Brasil",
+    "third": "Croacia",
+    "fourth": "Paises Bajos",
+    "teams": 32,
+    "matches": 64,
+    "goals": 171,
+    "topScorer": "Davor Suker",
+    "topScorerGoals": 6,
+    "keeper": "Fabien Barthez",
+    "colombiaPosition": "21.º"
+  },
+  {
+    "year": 2002,
+    "host": "Corea del Sur y Japon",
+    "champion": "Brasil",
+    "runnerUp": "Alemania",
+    "third": "Turquia",
+    "fourth": "Corea del Sur",
+    "teams": 32,
+    "matches": 64,
+    "goals": 161,
+    "topScorer": "Ronaldo",
+    "topScorerGoals": 8,
+    "keeper": "Oliver Kahn",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 2006,
+    "host": "Alemania",
+    "champion": "Italia",
+    "runnerUp": "Francia",
+    "third": "Alemania",
+    "fourth": "Portugal",
+    "teams": 32,
+    "matches": 64,
+    "goals": 147,
+    "topScorer": "Miroslav Klose",
+    "topScorerGoals": 5,
+    "keeper": "Gianluigi Buffon",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 2010,
+    "host": "Sudafrica",
+    "champion": "Espana",
+    "runnerUp": "Paises Bajos",
+    "third": "Alemania",
+    "fourth": "Uruguay",
+    "teams": 32,
+    "matches": 64,
+    "goals": 145,
+    "topScorer": "Thomas Muller",
+    "topScorerGoals": 5,
+    "keeper": "Iker Casillas",
+    "colombiaPosition": "No participó"
+  },
+  {
+    "year": 2014,
+    "host": "Brasil",
+    "champion": "Alemania",
+    "runnerUp": "Argentina",
+    "third": "Paises Bajos",
+    "fourth": "Brasil",
+    "teams": 32,
+    "matches": 64,
+    "goals": 171,
+    "topScorer": "James Rodriguez",
+    "topScorerGoals": 6,
+    "keeper": "Manuel Neuer",
+    "colombiaPosition": "5.º"
+  },
+  {
+    "year": 2018,
+    "host": "Rusia",
+    "champion": "Francia",
+    "runnerUp": "Croacia",
+    "third": "Bélgica",
+    "fourth": "Inglaterra",
+    "teams": 32,
+    "matches": 64,
+    "goals": 169,
+    "topScorer": "Harry Kane",
+    "topScorerGoals": 6,
+    "keeper": "Thibaut Courtois",
+    "colombiaPosition": "9.º"
+  },
+  {
+    "year": 2022,
+    "host": "Catar",
+    "champion": "Argentina",
+    "runnerUp": "Francia",
+    "third": "Croacia",
+    "fourth": "Marruecos",
+    "teams": 32,
+    "matches": 64,
+    "goals": 172,
+    "topScorer": "Kylian Mbappe",
+    "topScorerGoals": 8,
+    "keeper": "Emiliano Martinez",
+    "colombiaPosition": "No participó"
+  }
 ];
-
 
 
 const colombiaWorldCupHistory = [
-  { year: 1962, host: "Chile", result: "Fase de grupos", note: "Primer Mundial de Colombia; empató 4-4 contra la Unión Soviética." },
-  { year: 1990, host: "Italia", result: "Octavos de final", note: "Regresó tras 28 años y avanzó por primera vez a eliminación directa." },
-  { year: 1994, host: "Estados Unidos", result: "Fase de grupos", note: "Llegó con alta expectativa, pero quedó eliminada en primera ronda." },
-  { year: 1998, host: "Francia", result: "Fase de grupos", note: "Tercera participación consecutiva de la generación de los años noventa." },
-  { year: 2014, host: "Brasil", result: "Cuartos de final", note: "Mejor actuación histórica; James Rodríguez fue goleador del torneo con 6 goles." },
-  { year: 2018, host: "Rusia", result: "Octavos de final", note: "Ganó su grupo y cayó por penales ante Inglaterra." }
+  {
+    "year": 1962,
+    "host": "Chile",
+    "position": "14.º",
+    "result": "Fase de grupos",
+    "note": "Primer Mundial de Colombia; empató 4-4 contra la Unión Soviética."
+  },
+  {
+    "year": 1990,
+    "host": "Italia",
+    "position": "14.º",
+    "result": "Octavos de final",
+    "note": "Regresó tras 28 años y avanzó por primera vez a eliminación directa."
+  },
+  {
+    "year": 1994,
+    "host": "Estados Unidos",
+    "position": "19.º",
+    "result": "Fase de grupos",
+    "note": "Llegó con alta expectativa, pero quedó eliminada en primera ronda."
+  },
+  {
+    "year": 1998,
+    "host": "Francia",
+    "position": "21.º",
+    "result": "Fase de grupos",
+    "note": "Tercera participación consecutiva de la generación de los años noventa."
+  },
+  {
+    "year": 2014,
+    "host": "Brasil",
+    "position": "5.º",
+    "result": "Cuartos de final",
+    "note": "Mejor actuación histórica; James Rodríguez fue goleador del torneo con 6 goles."
+  },
+  {
+    "year": 2018,
+    "host": "Rusia",
+    "position": "9.º",
+    "result": "Octavos de final",
+    "note": "Ganó su grupo y cayó por penales ante Inglaterra."
+  }
 ];
+
 
 const selectedPlayers = [
   {
@@ -11936,18 +12280,266 @@ const knockoutRounds = [
   }
 ];
 
-const rules = [
-  ["Marcador exacto", 5],
-  ["Ganador correcto", 3],
-  ["Diferencia de goles", 2],
-  ["Goleador bonus", 2],
-  ["Campeon acertado", 12]
-];
+let predictions = JSON.parse(localStorage.getItem("fifa2026-predictions") || "[]");
 
-const predictions = [];
+const rules = [
+  { name: "Marcador exacto", pts: 5 },
+  { name: "Ganador correcto", pts: 3 },
+  { name: "Diferencia de goles", pts: 2 },
+  { name: "Goleador bonus", pts: 2 },
+  { name: "Clasificado", pts: 4 },
+  { name: "Campeon acertado", pts: 12 }
+];
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
+
+// --- SERVICIOS DE LÓGICA DE NEGOCIO ---
+const TournamentService = {
+  calculateStandings(groupMatches) {
+    const standings = {};
+    // Inicializar tablas basadas en la configuración de grupos
+    Object.entries(groups).forEach(([code, teams]) => {
+      standings[code] = teams.map(([team]) => ({
+        team, played: 0, won: 0, drawn: 0, lost: 0,
+        goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0
+      }));
+    });
+
+    groupMatches.filter(getMatchResult).forEach(match => {
+      const table = standings[match.group];
+      if (!table) return;
+      const home = table.find(r => r.team === match.home);
+      const away = table.find(r => r.team === match.away);
+      
+      this._updateRow(home, match.homeScore, match.awayScore);
+      this._updateRow(away, match.awayScore, match.homeScore);
+    });
+
+    Object.values(standings).forEach(table => table.sort(compareStandingRows));
+    return standings;
+  },
+
+  calculateUserPoints() {
+    users.forEach(user => {
+      let totalPoints = 0;
+      let hits = 0;
+      const userPreds = predictions.filter(p => p.userEmail === user.email);
+
+      userPreds.forEach(pred => {
+        const match = matches.find(m => m.id === pred.matchId);
+        if (!match || match.status !== "finalizado") return;
+
+        const actualH = match.homeScore;
+        const actualA = match.awayScore;
+        const predH = parseInt(pred.homeScore);
+        const predA = parseInt(pred.awayScore);
+
+        if (actualH === predH && actualA === predA) {
+          totalPoints += rules.find(r => r.name === "Marcador exacto").pts;
+          hits++;
+        } else {
+          const actualWin = actualH > actualA ? "H" : actualH < actualA ? "A" : "D";
+          const predWin = predH > predA ? "H" : predH < predA ? "A" : "D";
+
+          if (actualWin === predWin) {
+            totalPoints += rules.find(r => r.name === "Ganador correcto").pts;
+            hits++;
+            if ((actualH - actualA) === (predH - predA)) {
+              totalPoints += rules.find(r => r.name === "Diferencia de goles").pts;
+            }
+          }
+        }
+      });
+
+      // Lógica de Clasificado (para fases de eliminación directa)
+      userPreds.forEach(pred => {
+        const match = matches.find(m => m.id === pred.matchId);
+        if (!match || match.status !== "finalizado" || match.phase === "Grupos") return;
+        
+        const actualWinner = getWinner(match);
+        const userChoice = pred.qualifier === "Equipo local" ? match.home : (pred.qualifier === "Equipo visitante" ? match.away : null);
+        if (actualWinner && userChoice === actualWinner) {
+          totalPoints += rules.find(r => r.name === "Clasificado")?.pts || 0;
+        }
+      });
+
+      user.points = totalPoints;
+      user.hits = hits;
+      user.accuracy = userPreds.length > 0 ? Math.round((hits / userPreds.length) * 100) : 0;
+
+      // Initialize pointHistory if it doesn't exist
+      if (!user.pointHistory) {
+        user.pointHistory = [];
+      }
+      // Add current points to history if different from the last entry
+      const lastHistoryEntry = user.pointHistory[user.pointHistory.length - 1];
+      if (!lastHistoryEntry || lastHistoryEntry.points !== totalPoints) {
+        user.pointHistory.push({ timestamp: new Date().toISOString(), points: totalPoints });
+      }
+    });
+
+    users.sort((a, b) => b.points - a.points || b.hits - a.hits);
+    localStorage.setItem("fifa2026-users", JSON.stringify(users));
+    renderRanking();
+  },
+
+  simulateRandomResults() {
+    const statusDiv = $("#simulationStatus");
+    const message = $("#simulationMessage");
+    const progress = $("#simulationProgress");
+    const button = $("#simulateResults");
+
+    if (!statusDiv || !message || !progress || !button) return;
+
+    // Bloquear UI e iniciar
+    button.disabled = true;
+    statusDiv.style.display = "block";
+    progress.style.width = "0%";
+
+    const steps = [
+      {
+        msg: "Creando 20 usuarios competidores...",
+        fn: () => {
+          if (users.length < 10) {
+            for (let i = 1; i <= 20; i++) {
+              const email = `demo_user_${i}@fifa2026.test`;
+              if (!users.some(u => u.email === email)) {
+                users.push({
+                  name: `Competidor Demo ${i}`,
+                  email: email,
+                  points: 0, hits: 0, accuracy: 0, trend: "igual",
+                  pointHistory: []
+                });
+              }
+            }
+          }
+        }
+      },
+      {
+        msg: "Generando ~1,500 pronósticos aleatorios...",
+        fn: () => {
+          predictions.length = 0;
+          users.forEach(user => {
+            matches.forEach(match => {
+              if (Math.random() > 0.15) {
+                predictions.push({
+                  matchId: match.id,
+                  matchLabel: `${match.home} vs ${match.away}`,
+                  userEmail: user.email,
+                  userName: user.name,
+                  homeScore: Math.floor(Math.random() * 4).toString(),
+                  awayScore: Math.floor(Math.random() * 4).toString(),
+                  qualifier: Math.random() > 0.5 ? "Equipo local" : "Equipo visitante",
+                  scorer: "Jugador Random"
+                });
+              }
+            });
+          });
+          localStorage.setItem("fifa2026-predictions", JSON.stringify(predictions));
+        }
+      },
+      {
+        msg: "Simulando resultados oficiales del Mundial...",
+        fn: () => {
+          matches.forEach(match => {
+            const hs = Math.floor(Math.random() * 5);
+            const as = Math.floor(Math.random() * 5);
+            matchResults[match.id] = { homeScore: hs, awayScore: as };
+          });
+          localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
+        }
+      },
+      {
+        msg: "Procesando puntuaciones y llaves eliminatorias...",
+        fn: () => {
+          applyStoredMatchResults();
+          updateKnockoutCalendar();
+          this.calculateUserPoints();
+        }
+      },
+      {
+        msg: "Actualizando todos los tableros y analíticas...",
+        fn: () => {
+          memoizedSearchIndex = null;
+          renderMatches(); renderGroups(); renderBracket(); renderPredictions(); renderResultForm();
+          if ($(".page.active")?.id === "page-analitica") drawCharts();
+        }
+      }
+    ];
+
+    let currentStep = 0;
+
+    const runStep = () => {
+      if (currentStep < steps.length) {
+        const step = steps[currentStep];
+        message.textContent = step.msg;
+        progress.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+        
+        // Usamos un pequeño delay para que el ojo humano perciba el cambio de mensaje
+        setTimeout(() => {
+          try {
+            step.fn();
+            currentStep++;
+            runStep();
+          } catch (error) {
+            console.error("Error en la simulacion:", error);
+            message.textContent = "La simulacion se detuvo: " + error.message;
+            button.disabled = false;
+          }
+        }, 600);
+      } else {
+        message.textContent = "¡Simulación completada con éxito!";
+        progress.style.width = "100%";
+        button.disabled = false;
+
+        // Disparar celebración de confeti con los colores del tema
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#F4B400', '#0057B8', '#2E7D32']
+          });
+        }
+
+        // Reproducir sonido de aplausos/estadio
+        const applauseSound = new Audio('assets/applause.mp3'); // Asegúrate de tener este archivo de sonido en tu proyecto
+        applauseSound.volume = Number($("#effectsVolume")?.value || 0.7);
+        applauseSound.play().catch(e => console.error("Error al reproducir el sonido:", e));
+
+
+        setTimeout(() => {
+          statusDiv.style.display = "none";
+          alert(`Simulación exitosa: 20 usuarios y ${predictions.length} pronósticos procesados.`);
+        }, 1000);
+      }
+    };
+
+    runStep();
+  },
+
+  resetApplication() {
+    if (confirm("¿Estás seguro de que quieres reiniciar la aplicación? Esto borrará todos los usuarios, pronósticos y resultados guardados.")) {
+      localStorage.removeItem("fifa2026-users");
+      localStorage.removeItem("fifa2026-predictions");
+      localStorage.removeItem("fifa2026-results");
+      // Recargar la página para reiniciar completamente la aplicación
+      window.location.reload();
+    }
+  },
+
+
+  _updateRow(row, gf, ga) {
+    row.played++;
+    row.goalsFor += gf;
+    row.goalsAgainst += ga;
+    row.goalDifference = row.goalsFor - row.goalsAgainst;
+    if (gf > ga) row.points += 3;
+    else if (gf === ga) row.points += 1;
+    else row.lost++;
+  }
+};
 
 function normalizeText(value) {
   return String(value)
@@ -12187,7 +12779,7 @@ function teamLabel(team) {
   if (!code) return `<span class="team-label"><span>${team}</span></span>`;
   return `
     <span class="team-label">
-      <img class="flag-img" src="https://flagcdn.com/w40/${code}.png" alt="Bandera de ${team}" loading="lazy" />
+      <img class="flag-img" src="https://flagcdn.com/w40/${code}.png" alt="" aria-hidden="true" loading="lazy" width="20" height="15" />
       <span>${team}</span>
     </span>
   `;
@@ -12207,6 +12799,7 @@ function setTheme(theme) {
   if ($("#themeSelect")) $("#themeSelect").value = theme;
 }
 
+let memoizedSearchIndex = null;
 function getSearchIndex() {
   const pages = [
     ["Inicio", "Pagina", "inicio"],
@@ -12238,12 +12831,14 @@ function getSearchIndex() {
     [`Mundial ${item.year}`, `${item.host} · campeon ${item.champion}`, "historial"],
     [item.champion, `Campeon ${item.year}`, "historial"]
   ]);
-  return [...teams, ...fixtures, ...participants, ...playerItems, ...historyItems, ...pages].map(([label, type, page]) => ({
+  
+  memoizedSearchIndex = [...teams, ...fixtures, ...participants, ...playerItems, ...historyItems, ...pages].map(([label, type, page]) => ({
     label,
     type,
     page,
     key: normalizeText(label)
   }));
+  return memoizedSearchIndex;
 }
 
 function renderSearchResults(query) {
@@ -12395,12 +12990,12 @@ function renderRanking() {
   $("#rankingRows").innerHTML = filteredUsers.length ? filteredUsers
     .map((user, index) => `
       <tr>
-        <td>${index + 1}</td>
-        <td><strong>${user.name}</strong></td>
-        <td>${user.points}</td>
-        <td>${user.hits}</td>
-        <td>${user.accuracy}%</td>
-        <td class="trend-neutral">Sin cambios</td>
+        <td data-label="#">${index + 1}</td>
+        <td data-label="Usuario"><strong>${user.name}</strong></td>
+        <td data-label="Puntos">${user.points}</td>
+        <td data-label="Aciertos">${user.hits}</td>
+        <td data-label="Efectividad">${user.accuracy}%</td>
+        <td data-label="Tendencia" class="trend-neutral">Sin cambios</td>
       </tr>
     `).join("") : `
       <tr>
@@ -12428,17 +13023,25 @@ function registerUser(name, email) {
 }
 
 function renderPredictions() {
-  $("#predictionMatch").innerHTML = matches.map((match) => `<option value="${match.id}">${match.home} vs ${match.away} - ${match.phase}</option>`).join("");
+  $("#predictionMatch").innerHTML = matches.map((match) => `<option value="${match.id}">${match.home} vs ${match.away} (${match.phase})</option>`).join("");
+  
+  // Actualizar la lista de participantes en el selector
+  const userSelect = $("#predictionUser");
+  if (userSelect) {
+    userSelect.innerHTML = users.length 
+      ? users.map(u => `<option value="${u.email}">${u.name}</option>`).join("")
+      : `<option value="">Registrate en Ranking primero</option>`;
+  }
+
   $("#predictionList").innerHTML = predictions.length ? predictions.map((item) => `
     <article class="prediction-card">
-      <strong>${item.match}</strong>
-      <p>${item.homeScore}-${item.awayScore} · Clasifica: ${item.qualifier}</p>
-      <small>Bonus: ${item.scorer || "sin goleador"}</small>
+      <strong>${item.userName}: ${item.matchLabel}</strong><br>
+      <small>Marcador: ${item.homeScore}-${item.awayScore} · Clasifica: ${item.qualifier || 'N/A'}</small>
     </article>
-  `).join("") : `<p class="prediction-card">Todavia no hay pronosticos guardados.</p>`;
-  $("#rulesGrid").innerHTML = rules.map(([name, points]) => `<article class="rule-card"><strong>${points} pts</strong><p>${name}</p></article>`).join("");
-  $("#adminRules").innerHTML = rules.map(([name, points]) => `
-    <label>${name}<input type="number" value="${points}" min="0" max="30" /></label>
+  `).join("") : `<p class="prediction-card">Todavía no hay pronósticos guardados.</p>`;
+  $("#rulesGrid").innerHTML = rules.map((r) => `<article class="rule-card"><strong>${r.pts} pts</strong><p>${r.name}</p></article>`).join("");
+  $("#adminRules").innerHTML = rules.map((r) => `
+    <label>${r.name}<input type="number" value="${r.pts}" min="0" max="30" /></label>
   `).join("");
 }
 
@@ -12472,6 +13075,7 @@ function saveMatchResult(matchId, homeScore, awayScore) {
   match.status = "finalizado";
   matchResults[match.id] = { homeScore, awayScore };
   localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
+  TournamentService.calculateUserPoints(); // Recalcular puntos al guardar resultado
   updateKnockoutCalendar();
   renderMatches();
   renderPredictions();
@@ -12517,17 +13121,19 @@ function renderGroups() {
   $("#groupsGrid").innerHTML = Object.entries(standings).map(([group, rows]) => {
     const groupComplete = rows.every((row) => row.played === 3);
     return `
-    <section class="panel group-card">
+    <section class="panel group-card mobile-friendly-table">
       <div class="panel-head">
         <h3>Grupo ${group}</h3>
         <span class="status-pill">${groupComplete ? "cerrado" : "en curso"}</span>
       </div>
       <div class="simple-standings">
         ${rows.map((row, index) => `
-          <article class="standing-row">
-            <span>${index + 1}. ${teamLabel(row.team)}</span>
-            <strong>${row.points}</strong>
-            <small>PJ ${row.played} · DG ${row.goalDifference} · GF ${row.goalsFor}</small>
+          <article class="standing-row" data-label="Posición ${index + 1}">
+            <span class="team-cell">${index + 1}. ${teamLabel(row.team)}</span>
+            <div class="stats-cell">
+              <strong>${row.points} pts</strong>
+              <small>PJ:${row.played} DG:${row.goalDifference} GF:${row.goalsFor}</small>
+            </div>
           </article>
         `).join("")}
       </div>
@@ -12554,24 +13160,116 @@ function renderGroups() {
 
 function renderScorers() {
   $("#scorersRows").innerHTML = scorers.map((row) => `
-    <tr><td><strong>${row[0]}</strong></td><td>${teamLabel(row[1])}</td><td>${row[2]}</td><td>${row[3]}</td><td>${row[4]}</td></tr>
+    <tr><td data-label="Jugador"><strong>${row[0]}</strong></td><td data-label="Equipo">${teamLabel(row[1])}</td><td data-label="Goles">${row[2]}</td><td data-label="Asistencias">${row[3]}</td><td data-label="Minutos">${row[4]}</td></tr>
   `).join("");
 }
 
 
+const curatedPlayerOverrides = {
+  Colombia: {
+    "camilo vargas": { name: "Camilo Vargas", birthDate: "1989-03-09", height: "1.85 m", club: "Atlas", position: "Guardameta" },
+    "david ospina": { name: "David Ospina", birthDate: "1988-08-31", height: "1.83 m", club: "Atlético Nacional", position: "Guardameta" },
+    "davinson sanchez": { name: "Dávinson Sánchez", birthDate: "1996-06-12", height: "1.88 m", club: "Galatasaray", position: "Defensa central" },
+    "dávinson sánchez": { name: "Dávinson Sánchez", birthDate: "1996-06-12", height: "1.88 m", club: "Galatasaray", position: "Defensa central" },
+    "yerry mina": { name: "Yerry Mina", birthDate: "1994-09-23", height: "1.95 m", club: "Cagliari", position: "Defensa central" },
+    "daniel munoz": { name: "Daniel Muñoz", birthDate: "1996-05-25", height: "1.80 m", club: "Crystal Palace", position: "Lateral derecho" },
+    "daniel muñoz": { name: "Daniel Muñoz", birthDate: "1996-05-25", height: "1.80 m", club: "Crystal Palace", position: "Lateral derecho" },
+    "johan mojica": { name: "Johan Mojica", birthDate: "1992-08-21", height: "1.82 m", club: "Mallorca", position: "Lateral izquierdo" },
+    "jhon lucumi": { name: "Jhon Lucumí", birthDate: "1998-06-26", height: "1.87 m", club: "Bologna", position: "Defensa central" },
+    "jhon lucumí": { name: "Jhon Lucumí", birthDate: "1998-06-26", height: "1.87 m", club: "Bologna", position: "Defensa central" },
+    "santiago arias": { name: "Santiago Arias", birthDate: "1992-01-13", height: "1.75 m", club: "Independiente", position: "Lateral derecho" },
+    "jefferson lerma": { name: "Jefferson Lerma", birthDate: "1994-10-25", height: "1.79 m", club: "Crystal Palace", position: "Mediocampista" },
+    "kevin castano": { name: "Kevin Castaño", birthDate: "2000-09-29", height: "1.77 m", club: "River Plate", position: "Mediocampista" },
+    "kevin castaño": { name: "Kevin Castaño", birthDate: "2000-09-29", height: "1.77 m", club: "River Plate", position: "Mediocampista" },
+    "richard rios": { name: "Richard Ríos", birthDate: "2000-06-02", height: "1.85 m", club: "Benfica", position: "Mediocampista" },
+    "richard ríos": { name: "Richard Ríos", birthDate: "2000-06-02", height: "1.85 m", club: "Benfica", position: "Mediocampista" },
+    "james rodriguez": { name: "James Rodríguez", birthDate: "1991-07-12", height: "1.80 m", club: "Minnesota United", position: "Mediocampista ofensivo" },
+    "james rodríguez": { name: "James Rodríguez", birthDate: "1991-07-12", height: "1.80 m", club: "Minnesota United", position: "Mediocampista ofensivo" },
+    "juan fernando quintero": { name: "Juan Fernando Quintero", birthDate: "1993-01-18", height: "1.68 m", club: "River Plate", position: "Mediocampista ofensivo" },
+    "jorge carrascal": { name: "Jorge Carrascal", birthDate: "1998-05-25", height: "1.80 m", club: "Flamengo", position: "Mediocampista ofensivo" },
+    "jon arias": { name: "Jhon Arias", birthDate: "1997-09-21", height: "1.68 m", club: "Palmeiras", position: "Extremo" },
+    "jhon arias": { name: "Jhon Arias", birthDate: "1997-09-21", height: "1.68 m", club: "Palmeiras", position: "Extremo" },
+    "jhon cordova": { name: "Jhon Córdoba", birthDate: "1993-05-11", height: "1.88 m", club: "Krasnodar", position: "Delantero" },
+    "jhon córdoba": { name: "Jhon Córdoba", birthDate: "1993-05-11", height: "1.88 m", club: "Krasnodar", position: "Delantero" },
+    "luis suarez": { name: "Luis Suárez", birthDate: "1997-12-02", height: "1.85 m", club: "Sporting CP", position: "Delantero" },
+    "luis suárez": { name: "Luis Suárez", birthDate: "1997-12-02", height: "1.85 m", club: "Sporting CP", position: "Delantero" },
+    "luis diaz": { name: "Luis Díaz", birthDate: "1997-01-13", height: "1.80 m", club: "Bayern Munich", position: "Extremo izquierdo" },
+    "luis díaz": { name: "Luis Díaz", birthDate: "1997-01-13", height: "1.80 m", club: "Bayern Munich", position: "Extremo izquierdo" }
+  }
+};
+
+function getValidBirthDate(birthDate) {
+  if (!birthDate) return "";
+  const birth = new Date(String(birthDate) + "T00:00:00");
+  const year = birth.getFullYear();
+  return Number.isNaN(birth.getTime()) || year < 1980 || year > 2010 ? "" : birthDate;
+}
+
+function getValidHeight(height) {
+  if (!height) return "";
+  const value = Number(String(height).replace(",", ".").match(/\d+(?:\.\d+)?/)?.[0]);
+  if (!value) return "";
+  const meters = value > 3 ? value / 100 : value;
+  return meters < 1.45 || meters > 2.2 ? "" : meters.toFixed(2) + " m";
+}
+
+function getValidClub(club) {
+  if (!club) return "";
+  const normalized = normalizeText(club);
+  const invalidTerms = ["rugby", "orioles", "baltimore", "hc bili tygri", "basketball"];
+  return invalidTerms.some((term) => normalized.includes(term)) ? "" : club;
+}
+
+function isMissingPlayerField(value) {
+  return !value || String(value).trim() === "" || String(value).trim() === "Por confirmar";
+}
+
 function calculateAge(birthDate) {
-  if (!birthDate) return "-";
+  const validBirthDate = getValidBirthDate(birthDate);
+  if (!validBirthDate) return "Por confirmar";
   const today = new Date();
-  const birth = new Date(`${birthDate}T00:00:00`);
+  const birth = new Date(String(validBirthDate) + "T00:00:00");
   let age = today.getFullYear() - birth.getFullYear();
   const birthdayThisYear = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
   if (today < birthdayThisYear) age -= 1;
   return age;
 }
 
-function getFeaturedPlayerDetails(name) {
+function inferPositionFromCode(code) {
+  const number = Number(String(code).match(/\d+/)?.[0]);
+  if (!number) return "Por confirmar";
+  if (number <= 3) return "Guardameta";
+  if (number <= 8) return "Defensa";
+  if (number <= 14) return "Mediocampista";
+  return "Delantero";
+}
+
+function normalizePlayerPosition(position, code) {
+  const value = normalizeText(position || "");
+  if (!value) return inferPositionFromCode(code);
+  if (value.includes("guardameta") || value.includes("arquero") || value.includes("portero")) return "Guardameta";
+  if (value.includes("defensor central")) return "Defensa central";
+  if (value.includes("central")) return "Defensa central";
+  if (value.includes("lateral")) return "Lateral";
+  if (value.includes("defensa")) return "Defensa";
+  if (value.includes("attacking midfielder")) return "Mediocampista ofensivo";
+  if (value === "base" || value.includes("alero") || value.includes("jardinero")) return inferPositionFromCode(code);
+  if (value.includes("volante") || value.includes("centrocampista")) return "Mediocampista";
+  if (value.includes("extremo izquierdo")) return "Extremo izquierdo";
+  if (value.includes("extremo")) return "Extremo";
+  if (value.includes("segundo delantero")) return "Segundo delantero";
+  if (value.includes("delantero")) return "Delantero";
+  return position.charAt(0).toUpperCase() + position.slice(1);
+}
+
+function completePlayerField(value, fallback = "Por confirmar") {
+  return value && String(value).trim() ? value : fallback;
+}
+
+function getCuratedPlayerDetails(name, teamName) {
   const key = normalizeText(name);
-  if (paniniPlayerDetails[key]) return paniniPlayerDetails[key];
+  const teamOverride = curatedPlayerOverrides[teamName]?.[key];
+  if (teamOverride) return teamOverride;
   return selectedPlayers.find((player) =>
     normalizeText(player.commonName) === key ||
     normalizeText(player.name) === key ||
@@ -12580,9 +13278,29 @@ function getFeaturedPlayerDetails(name) {
   );
 }
 
+function mergePlayerDetails(base = {}, curated = {}) {
+  return {
+    ...base,
+    name: completePlayerField(base.name, curated.name || curated.commonName || ""),
+    birthDate: getValidBirthDate(base.birthDate) || getValidBirthDate(curated.birthDate),
+    height: getValidHeight(base.height) || getValidHeight(curated.height),
+    club: getValidClub(base.club) || getValidClub(curated.club),
+    position: completePlayerField(base.position, curated.position || "")
+  };
+}
+
+function getFeaturedPlayerDetails(name, teamName) {
+  const key = normalizeText(name);
+  const teamOverride = curatedPlayerOverrides[teamName]?.[key];
+  if (teamOverride) return mergePlayerDetails({}, teamOverride);
+  const curated = getCuratedPlayerDetails(name, teamName) || {};
+  return mergePlayerDetails({}, curated);
+}
+
 function getPaniniPlayerRecords() {
   return paniniAlbumTeams.flatMap((team) => team.players.map((player, index) => {
-    const details = getFeaturedPlayerDetails(player.name);
+    const details = getFeaturedPlayerDetails(player.name, team.team);
+    const birthDate = getValidBirthDate(details?.birthDate);
     return {
       ...player,
       order: index + 1,
@@ -12590,15 +13308,23 @@ function getPaniniPlayerRecords() {
       teamCode: team.code,
       sourceTeam: team.sourceTeam,
       commonName: player.name,
-      fullName: details?.name || player.name,
-      birthDate: details?.birthDate || "",
-      age: calculateAge(details?.birthDate),
-      height: details?.height || "Por completar",
-      club: details?.club || "Por completar",
-      position: details?.position || "Por completar",
-      photo: details?.photo || ""
+      fullName: completePlayerField(details?.name, player.name),
+      birthDate,
+      displayBirthDate: completePlayerField(birthDate),
+      age: calculateAge(birthDate),
+      height: completePlayerField(getValidHeight(details?.height)),
+      club: completePlayerField(getValidClub(details?.club), "Selección de " + team.team),
+      position: normalizePlayerPosition(details?.position, player.code)
     };
   }));
+}
+
+function hasCompletePlayerData(player) {
+  return Boolean(player.birthDate) &&
+    !isMissingPlayerField(player.height) &&
+    !isMissingPlayerField(player.club) &&
+    !String(player.club).startsWith("Selección de ") &&
+    !isMissingPlayerField(player.position);
 }
 
 function getFilteredPlayers() {
@@ -12609,7 +13335,7 @@ function getFilteredPlayers() {
     const searchText = normalizeText([player.code, player.fullName, player.commonName, player.team, player.club, player.position].join(" "));
     return (!term || searchText.includes(term)) &&
       (team === "todos" || player.team === team) &&
-      (detailScope === "todos" || (detailScope === "completos" ? player.birthDate : !player.birthDate));
+      (detailScope === "todos" || (detailScope === "completos" ? hasCompletePlayerData(player) : !hasCompletePlayerData(player)));
   });
 }
 
@@ -12628,59 +13354,20 @@ function renderPlayerFilters() {
   $("#playerPositionFilter").value = ["todos", "completos", "pendientes"].includes(selectedScope) ? selectedScope : "todos";
 }
 
-function playerPhotoMarkup(player, className = "player-table-photo") {
-  if (player.photo) return `<img class="${className}" src="${player.photo}" alt="Foto de ${player.commonName}" loading="lazy" />`;
-  return `
-    <svg class="${className} player-photo-placeholder" viewBox="0 0 160 210" role="img" aria-label="Foto generica de jugador" xmlns="http://www.w3.org/2000/svg">
-      <rect width="160" height="210" rx="0" fill="#f2c230" />
-      <circle cx="80" cy="58" r="31" fill="#f7f4df" />
-      <path d="M30 184c5-45 26-74 50-74s45 29 50 74" fill="#f7f4df" />
-      <path d="M47 184c4-29 16-50 33-50s29 21 33 50" fill="#123f82" opacity="0.9" />
-      <path d="M62 122h36l-18 32z" fill="#f2c230" />
-    </svg>
-  `;
-}
-
-function playerFlagMarkup(player, className = "sticker-flag") {
-  const code = flags[player.team];
-  if (!code) return `<span class="${className}" aria-label="${player.team}">${player.teamCode}</span>`;
-  return `<img class="${className}" src="https://flagcdn.com/w40/${code}.png" alt="Bandera de ${player.team}" loading="lazy" />`;
-}
-
 function renderPlayers() {
-  if (!$("#playerCards")) return;
+  if (!document.querySelector("#playerRows")) return;
   const players = getFilteredPlayers();
 
-  $("#playersCount").textContent = `${players.length} jugadores`;
-  $("#playerCards").innerHTML = players.length ? players.map((player) => `
-    <article class="player-card">
-      <div class="sticker-code">${player.code}</div>
-      <div class="sticker-number">26</div>
-      <div class="sticker-fifa">FIFA</div>
-      <div class="sticker-player-photo">
-        ${playerPhotoMarkup(player, "sticker-photo")}
-      </div>
-      <div class="sticker-side-mark" aria-hidden="true">2026</div>
-      <div class="sticker-flag-wrap">${playerFlagMarkup(player)}</div>
-      <div class="sticker-nameplate">
-        <strong>${player.commonName}</strong>
-        <span>${player.birthDate || "Fecha por completar"} | ${player.height} | ${player.age}</span>
-      </div>
-      <div class="sticker-club">${player.club}</div>
-    </article>
-  `).join("") : `<p class="prediction-card">No hay jugadores que coincidan con los filtros.</p>`;
-
-  $("#playerRows").innerHTML = players.length ? players.map((player) => `
+  document.querySelector("#playerRows").innerHTML = players.length ? players.map((player) => `
     <tr>
-      <td>${playerPhotoMarkup(player)}</td>
-      <td><strong>${player.fullName}</strong><br><small>${player.code} · ${player.commonName}</small></td>
-      <td>${teamLabel(player.team)}</td>
-      <td>${player.age}</td>
-      <td>${player.height}</td>
-      <td>${player.club}</td>
-      <td>${player.position}</td>
+      <td data-label="Nombre"><strong>${player.fullName}</strong><br><small>${player.code} · ${player.commonName}</small></td>
+      <td data-label="Selección">${teamLabel(player.team)}</td>
+      <td data-label="Edad">${player.age}</td>
+      <td data-label="Estatura">${player.height}</td>
+      <td data-label="Club">${player.club}</td>
+      <td data-label="Posición">${player.position}</td>
     </tr>
-  `).join("") : `<tr><td colspan="7" class="empty-table">No hay jugadores que coincidan con los filtros.</td></tr>`;
+  `).join("") : `<tr><td colspan="6" class="empty-table">No hay jugadores que coincidan con los filtros.</td></tr>`;
 }
 
 
@@ -12707,17 +13394,30 @@ function renderWorldCupHistory() {
     <article class="kpi"><span>Último campeón</span><strong>${worldCupHistory.at(-1).champion}</strong><small>${worldCupHistory.at(-1).year} · sede ${worldCupHistory.at(-1).host}</small></article>
   `;
 
-  $("#worldCupHistoryRows").innerHTML = worldCupHistory.map((item) => `
-    <tr>
-      <td><strong>${item.year}</strong></td>
-      <td>${item.host}</td>
-      <td>${item.champion}</td>
-      <td>${item.runnerUp}</td>
-      <td>${item.matches}</td>
-      <td>${item.goals}</td>
-      <td>${item.topScorer} <small>${item.topScorerGoals}</small></td>
-    </tr>
-  `).join("");
+  $("#worldCupHistoryRows").innerHTML = worldCupHistory.map((item) => {
+    const goalsPerMatch = (item.goals / item.matches).toFixed(2);
+    return `
+      <tr>
+        <td data-label="Año"><strong>${item.year}</strong></td>
+        <td data-label="Sede">${item.host}</td>
+        <td data-label="Top 4">
+          <div class="worldcup-top4">
+            <strong>1. ${item.champion}</strong>
+            <span>2. ${item.runnerUp}</span>
+            <span>3. ${item.third}</span>
+            <span>4. ${item.fourth}</span>
+          </div>
+        </td>
+        <td data-label="Equipos">${item.teams}</td>
+        <td data-label="Partidos">${item.matches}</td>
+        <td data-label="Goles">${item.goals}</td>
+        <td data-label="Prom. gol">${goalsPerMatch}</td>
+        <td data-label="Goleador">${item.topScorer} <small>(${item.topScorerGoals})</small></td>
+        <td data-label="Arquero destacado">${item.keeper}</td>
+        <td data-label="Colombia">${item.colombiaPosition}</td>
+      </tr>
+    `;
+  }).join("");
 
   $("#worldCupChampionList").innerHTML = Object.entries(championCounts)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
@@ -12736,6 +13436,7 @@ function renderWorldCupHistory() {
         <article>
           <strong>${item.year}</strong>
           <span>${item.host} · ${item.result}</span>
+          <small>Puesto final: ${item.position}</small>
           <small>${item.note}</small>
         </article>
       `).join("")}
@@ -12750,11 +13451,71 @@ function renderWorldCupHistory() {
   `;
 }
 
-function renderHeatmap() {
-  $("#heatmap").innerHTML = Array.from({ length: 48 }, (_, index) => {
-    const alpha = 0.18 + ((index * 17) % 80) / 100;
-    return `<div class="heat-cell" title="Dificultad ${Math.round(alpha * 100)}%" style="background: rgba(216, 183, 95, ${alpha})"></div>`;
-  }).join("");
+function getPredictionOutcome(homeScore, awayScore) {
+  const home = Number(homeScore);
+  const away = Number(awayScore);
+  if (!Number.isFinite(home) || !Number.isFinite(away)) return "";
+  if (home > away) return "H";
+  if (home < away) return "A";
+  return "D";
+}
+
+function getMatchDifficulty(match) {
+  const matchPredictions = predictions.filter((prediction) => prediction.matchId === match.id);
+  if (matchPredictions.length < 3) return null;
+
+  const outcomeCounts = { H: 0, D: 0, A: 0 };
+  matchPredictions.forEach((prediction) => {
+    const outcome = getPredictionOutcome(prediction.homeScore, prediction.awayScore);
+    if (outcome) outcomeCounts[outcome] += 1;
+  });
+
+  const total = matchPredictions.length;
+  const maxShare = Math.max(...Object.values(outcomeCounts)) / total;
+  const scoreSpread = matchPredictions.reduce((sum, prediction) => {
+    return sum + Math.abs(Number(prediction.homeScore) - Number(prediction.awayScore));
+  }, 0) / total;
+  const disagreement = 1 - maxShare;
+  const difficulty = Math.min(100, Math.round((disagreement * 82) + Math.min(scoreSpread, 4) * 4.5));
+
+  const favorite = Object.entries(outcomeCounts).sort((a, b) => b[1] - a[1])[0];
+  const labelByOutcome = { H: "local", D: "empate", A: "visitante" };
+  return {
+    match,
+    total,
+    difficulty,
+    reason: Math.round(maxShare * 100) + "% eligió " + labelByOutcome[favorite[0]] + "; promedio de diferencia " + scoreSpread.toFixed(1) + " goles"
+  };
+}
+
+function renderDifficultyList() {
+  const container = $("#difficultyList");
+  if (!container) return;
+
+  const items = matches
+    .map(getMatchDifficulty)
+    .filter(Boolean)
+    .sort((a, b) => b.difficulty - a.difficulty || b.total - a.total)
+    .slice(0, 8);
+
+  if (!items.length) {
+    container.innerHTML = '<p class="prediction-card">No hay suficientes pronósticos para calcular dificultad. Se necesitan al menos 3 pronósticos por partido.</p>';
+    return;
+  }
+
+  container.innerHTML = items.map((item) => `
+    <article class="difficulty-row">
+      <div class="difficulty-match">
+        <strong>${item.match.home} vs ${item.match.away}</strong>
+        <small>${item.match.phase} · ${formatDate(item.match.date)}</small>
+      </div>
+      <div class="difficulty-meter">
+        <div class="difficulty-track"><div class="difficulty-fill" style="width: ${item.difficulty}%"></div></div>
+        <span class="difficulty-reason">${item.reason} · ${item.total} pronósticos</span>
+      </div>
+      <strong class="difficulty-score">${item.difficulty}%</strong>
+    </article>
+  `).join("");
 }
 
 function renderBracket() {
@@ -12783,39 +13544,169 @@ function drawLineChart(canvas) {
   const height = canvas.height = 220 * devicePixelRatio;
   ctx.scale(devicePixelRatio, devicePixelRatio);
   ctx.clearRect(0, 0, width, height);
-  const points = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  const topUser = users.length > 0 ? users[0] : null; // Asumiendo que users ya está ordenado por puntos
+  if (!topUser || !topUser.pointHistory || topUser.pointHistory.length < 2) {
+    ctx.fillStyle = "rgba(255,255,255,0.65)";
+    ctx.font = "12px Inter";
+    ctx.fillText("No hay datos suficientes para la evolución del ranking", 24, 22);
+    return;
+  }
+
+  const historyPoints = topUser.pointHistory.map(entry => entry.points);
+  const maxPoints = Math.max(...historyPoints);
+  const minPoints = Math.min(...historyPoints);
+  const range = maxPoints - minPoints > 0 ? maxPoints - minPoints : 1; // Evitar división por cero
+
   ctx.strokeStyle = "#d8b75f";
   ctx.lineWidth = 3;
   ctx.beginPath();
-  points.forEach((point, index) => {
-    const x = 24 + index * ((canvas.offsetWidth - 48) / (points.length - 1));
-    const y = 188 - (point / 360) * 170;
+
+  // Definir padding para el área del gráfico
+  const paddingX = 24;
+  const paddingY = 20;
+  const chartWidth = canvas.offsetWidth - 2 * paddingX;
+  const chartHeight = 170; // Altura máxima para la línea, dejando espacio para texto y padding
+
+  historyPoints.forEach((point, index) => {
+    const x = paddingX + index * (chartWidth / (historyPoints.length - 1));
+    // Invertir el eje Y para dibujar de abajo hacia arriba
+    const y = (canvas.offsetHeight - paddingY) - ((point - minPoints) / range) * chartHeight;
     if (index === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
   ctx.stroke();
+
+  // Dibujar puntos como círculos
+  ctx.fillStyle = "#d8b75f";
+  historyPoints.forEach((point, index) => {
+    const x = paddingX + index * (chartWidth / (historyPoints.length - 1));
+    const y = (canvas.offsetHeight - paddingY) - ((point - minPoints) / range) * chartHeight;
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
   ctx.fillStyle = "rgba(255,255,255,0.65)";
   ctx.font = "12px Inter";
-  ctx.fillText("Puntos acumulados", 24, 22);
+  ctx.fillText(`Evolución de puntos (${topUser.name})`, paddingX, paddingY);
 }
 
 function drawBarChart(canvas) {
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
-  canvas.width = canvas.offsetWidth * devicePixelRatio;
-  canvas.height = 220 * devicePixelRatio;
-  ctx.scale(devicePixelRatio, devicePixelRatio);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const values = [0, 0, 0, 0, 0];
-  values.forEach((value, index) => {
-    const h = value * 2.25;
-    const x = 24 + index * 48;
-    ctx.fillStyle = index % 2 ? "#18a05e" : "#0e4d92";
-    ctx.fillRect(x, 190 - h, 30, h);
+  const width = Math.max(canvas.offsetWidth, 320);
+  const height = 220;
+  canvas.width = width * devicePixelRatio;
+  canvas.height = height * devicePixelRatio;
+  ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  ctx.clearRect(0, 0, width, height);
+
+  const phaseAccuracy = {};
+  const phaseOrder = ["Grupos", "Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final"];
+  phaseOrder.forEach((phase) => {
+    phaseAccuracy[phase] = { correct: 0, total: 0 };
   });
+
+  predictions.forEach((pred) => {
+    const match = matches.find((m) => m.id === pred.matchId);
+    if (!match || match.status !== "finalizado") return;
+
+    const phase = match.phase;
+    if (!phaseAccuracy[phase]) phaseAccuracy[phase] = { correct: 0, total: 0 };
+    phaseAccuracy[phase].total++;
+
+    const actualH = match.homeScore;
+    const actualA = match.awayScore;
+    const predH = parseInt(pred.homeScore);
+    const predA = parseInt(pred.awayScore);
+
+    if (actualH === predH && actualA === predA) {
+      phaseAccuracy[phase].correct++;
+    } else {
+      const actualOutcome = actualH > actualA ? "home" : actualH < actualA ? "away" : "draw";
+      const predOutcome = predH > predA ? "home" : predH < predA ? "away" : "draw";
+      if (actualOutcome === predOutcome) phaseAccuracy[phase].correct++;
+    }
+  });
+
+  const labels = [];
+  const values = [];
+  phaseOrder.forEach((phase) => {
+    if (phaseAccuracy[phase]?.total > 0) {
+      labels.push(phase);
+      values.push(Math.round((phaseAccuracy[phase].correct / phaseAccuracy[phase].total) * 100));
+    }
+  });
+
+  if (values.length === 0) {
+    ctx.fillStyle = "rgba(255,255,255,0.65)";
+    ctx.font = "12px Inter";
+    ctx.fillText("No hay pronósticos finalizados para analizar", 24, 22);
+    return;
+  }
+
+  const chart = {
+    left: 28,
+    right: 18,
+    top: 38,
+    bottom: 52
+  };
+  const chartWidth = width - chart.left - chart.right;
+  const chartBottom = height - chart.bottom;
+  const maxBarHeight = chartBottom - chart.top;
+  const slotWidth = chartWidth / values.length;
+  const barWidth = Math.max(18, Math.min(42, slotWidth * 0.48));
+  const labelAliases = {
+    Dieciseisavos: "D16",
+    "Tercer puesto": "3er puesto"
+  };
+
   ctx.fillStyle = "rgba(255,255,255,0.65)";
   ctx.font = "12px Inter";
-  ctx.fillText("% acierto", 24, 22);
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  ctx.fillText("% acierto", chart.left, 22);
+
+  values.forEach((value, index) => {
+    const barHeight = (value / 100) * maxBarHeight;
+    const slotX = chart.left + index * slotWidth;
+    const barX = slotX + (slotWidth - barWidth) / 2;
+    const centerX = slotX + slotWidth / 2;
+
+    ctx.fillStyle = index % 2 ? "#18a05e" : "#0e4d92";
+    ctx.fillRect(barX, chartBottom - barHeight, barWidth, barHeight);
+
+    ctx.fillStyle = "rgba(255,255,255,0.86)";
+    ctx.font = "10px Inter";
+    ctx.textAlign = "center";
+    ctx.fillText(`${value}%`, centerX, chartBottom - barHeight - 6);
+
+    drawChartLabel(ctx, labelAliases[labels[index]] || labels[index], centerX, chartBottom + 13, Math.max(34, slotWidth - 6));
+  });
+}
+
+function drawChartLabel(ctx, label, centerX, y, maxWidth) {
+  ctx.fillStyle = "rgba(255,255,255,0.64)";
+  ctx.font = "9px Inter";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+
+  const words = label.split(" ");
+  const lines = [];
+  words.forEach((word) => {
+    const current = lines[lines.length - 1];
+    const candidate = current ? `${current} ${word}` : word;
+    if (!current || ctx.measureText(candidate).width <= maxWidth) {
+      lines[lines.length - 1] = candidate;
+    } else {
+      lines.push(word);
+    }
+  });
+
+  lines.slice(0, 2).forEach((line, index) => {
+    ctx.fillText(line, centerX, y + index * 11);
+  });
 }
 
 function exportCurrentPage() {
@@ -12874,19 +13765,35 @@ function bindEvents() {
   $("#signupForm").addEventListener("submit", (event) => {
     event.preventDefault();
     registerUser($("#signupName").value, $("#signupEmail").value);
+    TournamentService.calculateUserPoints(); // Recalcular puntos para el nuevo usuario
+    memoizedSearchIndex = null; // Invalidar caché al añadir usuario
     event.target.reset();
   });
   $("#themeSelect").addEventListener("change", (event) => setTheme(event.target.value));
+  $("#simulateResults")?.addEventListener("click", () => TournamentService.simulateRandomResults());
+  $("#effectsVolume")?.addEventListener("input", (event) => {
+    localStorage.setItem("fifa2026-volume", event.target.value);
+  });
+  $("#resetApp")?.addEventListener("click", () => TournamentService.resetApplication());
   $("#predictionForm").addEventListener("submit", (event) => {
     event.preventDefault();
-    const match = matches.find((item) => item.id === Number($("#predictionMatch").value));
+    const matchId = Number($("#predictionMatch").value);
+    const match = matches.find((m) => m.id === matchId);
+    const userEmail = $("#predictionUser").value;
+    const user = users.find(u => u.email === userEmail);
+    
     predictions.unshift({
-      match: `${match.home} vs ${match.away}`,
+      matchId,
+      matchLabel: `${match.home} vs ${match.away}`,
+      userEmail,
+      userName: user.name,
       homeScore: $("#homeScore").value,
       awayScore: $("#awayScore").value,
       qualifier: $("#qualifier").value,
       scorer: $("#scorerBonus").value
     });
+    localStorage.setItem("fifa2026-predictions", JSON.stringify(predictions));
+    TournamentService.calculateUserPoints();
     renderPredictions();
   });
   $("#resultForm").addEventListener("submit", (event) => {
@@ -12902,6 +13809,10 @@ function bindEvents() {
 
 function init() {
   setTheme(localStorage.getItem("fifa2026-theme") || "classic");
+  const savedVolume = localStorage.getItem("fifa2026-volume");
+  if (savedVolume !== null && $("#effectsVolume")) {
+    $("#effectsVolume").value = savedVolume;
+  }
   applyStoredMatchResults();
   updateKnockoutCalendar();
   bindEvents();
@@ -12915,7 +13826,7 @@ function init() {
   renderPlayerFilters();
   renderPlayers();
   renderWorldCupHistory();
-  renderHeatmap();
+  renderDifficultyList();
   renderBracket();
   setInterval(renderCountdown, 1000);
 }

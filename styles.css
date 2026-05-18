@@ -526,7 +526,6 @@ select {
 .news-grid article:hover,
 .calendar-event:hover,
 .standing-row:hover,
-.player-card:hover,
 .bracket-match:hover {
   transform: translateY(-2px);
   border-color: rgba(244, 180, 0, 0.38);
@@ -714,229 +713,8 @@ body[data-theme="light"] .timeline p {
 }
 
 
-.players-summary {
-  margin-bottom: 14px;
-}
-
-.player-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
-  gap: 18px;
-  align-items: start;
-}
-
-.player-card {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  aspect-ratio: 0.69;
-  min-height: 308px;
-  overflow: hidden;
-  border: 1px solid rgba(118, 238, 232, 0.78);
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.24), transparent 25%),
-    linear-gradient(135deg, #46cdd0 0%, #24b8bf 52%, #36c7c5 100%);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-}
-
-.player-card::before {
-  content: "26";
-  position: absolute;
-  top: 24px;
-  right: 20px;
-  z-index: 1;
-  color: #ffffff;
-  font-family: Oswald, Inter, sans-serif;
-  font-size: 5.7rem;
-  font-weight: 800;
-  line-height: 0.74;
-  letter-spacing: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.player-card::after {
-  content: "FIFA";
-  position: absolute;
-  top: 93px;
-  right: 37px;
-  z-index: 2;
-  color: #159ba4;
-  font-family: Oswald, Inter, sans-serif;
-  font-size: 1.02rem;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.player-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.94);
-  background:
-    radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.24), transparent 25%),
-    linear-gradient(135deg, #46cdd0 0%, #24b8bf 52%, #36c7c5 100%);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.34);
-}
-
-.sticker-code {
-  position: absolute;
-  top: 12px;
-  left: 24px;
-  z-index: 4;
-  min-width: 54px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  color: #ffffff;
-  font-family: Oswald, Inter, sans-serif;
-  font-size: 0.62rem;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.sticker-number,
-.sticker-fifa {
-  display: none;
-}
-
-.sticker-player-photo {
-  position: absolute;
-  inset: 28px 22px 76px 22px;
-  z-index: 3;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.sticker-photo {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 0;
-  object-fit: contain;
-  object-position: center bottom;
-  background: transparent;
-  filter: drop-shadow(0 9px 13px rgba(0, 58, 66, 0.2));
-}
-
-.sticker-photo.player-photo-placeholder {
-  display: grid;
-  place-items: center;
-  object-fit: contain;
-}
-
-.sticker-side-mark {
-  display: none;
-}
-
-.sticker-flag-wrap {
-  position: absolute;
-  right: 22px;
-  bottom: 84px;
-  z-index: 5;
-  display: grid;
-  width: 42px;
-  height: 28px;
-  place-items: center;
-  overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.82);
-  border-radius: 999px;
-  background: #ffffff;
-}
-
-.sticker-flag {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  color: #08323b;
-  font-size: 0.68rem;
-  font-weight: 900;
-}
-
-.sticker-nameplate {
-  position: absolute;
-  left: 12px;
-  right: 38px;
-  bottom: 35px;
-  z-index: 5;
-  display: grid;
-  gap: 2px;
-  min-height: 42px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #aa003c, #c30046 62%, #9b0038);
-  color: #ffffff;
-  padding: 7px 18px 6px;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 4px 10px rgba(88, 0, 35, 0.22);
-}
-
-.sticker-nameplate strong {
-  overflow: hidden;
-  font-family: Oswald, Inter, sans-serif;
-  font-size: 1.02rem;
-  font-weight: 500;
-  line-height: 1;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sticker-nameplate strong::first-letter {
-  font-weight: 500;
-}
-
-.sticker-nameplate span {
-  overflow: hidden;
-  font-size: 0.58rem;
-  font-weight: 700;
-  line-height: 1.05;
-  opacity: 0.94;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sticker-club {
-  position: absolute;
-  left: 12px;
-  right: 76px;
-  bottom: 10px;
-  z-index: 5;
-  overflow: hidden;
-  border-radius: 999px 999px 0 999px;
-  background: linear-gradient(90deg, #aa003c, #c30046 62%, #9b0038);
-  color: #ffffff;
-  font-size: 0.62rem;
-  font-weight: 700;
-  line-height: 1.25;
-  padding: 5px 12px;
-  text-align: center;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.player-table-photo {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  object-fit: cover;
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .players-table-wrap {
   margin-top: 14px;
-}
-
-body[data-theme="light"] .player-card {
-  box-shadow: 0 16px 34px rgba(25, 72, 78, 0.22);
-}
-
-.player-photo-placeholder {
-  display: inline-grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--gold), #ffcf4a);
 }
 
 .signup-panel {
@@ -1150,17 +928,56 @@ body[data-theme="light"] .standing-row {
   color: var(--muted);
 }
 
-.heatmap {
+.difficulty-list {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 6px;
+  gap: 10px;
 }
 
-.heat-cell {
-  aspect-ratio: 1;
-  border-radius: 4px;
-  background: var(--green);
-  box-shadow: 0 0 18px rgba(244, 180, 0, 0.12);
+.difficulty-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.4fr) minmax(160px, 2fr) auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 11px 12px;
+}
+
+.difficulty-match strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.difficulty-match small,
+.difficulty-reason {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.difficulty-meter {
+  display: grid;
+  gap: 5px;
+}
+
+.difficulty-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.difficulty-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #18a05e, #d8b75f, #ff8b8b);
+}
+
+.difficulty-score {
+  color: var(--gold);
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.2rem;
+  white-space: nowrap;
 }
 
 
@@ -1170,6 +987,28 @@ body[data-theme="light"] .standing-row {
 
 .history-dashboard {
   align-items: start;
+}
+
+.history-table-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.worldcup-top4 {
+  display: grid;
+  gap: 3px;
+  min-width: 180px;
+}
+
+.worldcup-top4 strong {
+  color: var(--gold);
+}
+
+.worldcup-top4 span {
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .champions-list {
@@ -1285,14 +1124,21 @@ body[data-theme="light"] .standing-row {
   grid-template-columns: repeat(4, minmax(180px, 1fr));
   gap: 18px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
+
+.bracket::-webkit-scrollbar { height: 6px; }
+.bracket::-webkit-scrollbar-thumb { background: var(--line); border-radius: 10px; }
 
 .round {
   display: grid;
   align-content: center;
   gap: 18px;
   min-width: 180px;
+  scroll-snap-align: start;
+  padding: 0 10px;
 }
 
 .bracket-match {
@@ -1339,10 +1185,6 @@ body[data-theme="light"] .standing-row {
   .dashboard-grid,
   .groups-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .player-card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
   }
 
   .span-2,
@@ -1397,11 +1239,6 @@ body[data-theme="light"] .standing-row {
   .groups-grid,
   .rules-grid {
     grid-template-columns: 1fr;
-  }
-
-  .player-card-grid {
-    grid-template-columns: minmax(168px, 220px);
-    justify-content: center;
   }
 
   .group-summary-grid,

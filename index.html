@@ -134,6 +134,7 @@
                 <span class="status-pill">Editable antes del inicio</span>
               </div>
               <form class="prediction-form" id="predictionForm">
+                <label>Participante<select id="predictionUser"></select></label>
                 <label>Partido<select id="predictionMatch"></select></label>
                 <div class="score-inputs">
                   <label>Local<input type="number" min="0" max="15" value="1" id="homeScore" /></label>
@@ -189,16 +190,9 @@
             <select id="playerTeamFilter" aria-label="Filtrar por seleccion"></select>
             <select id="playerPositionFilter" aria-label="Filtrar por estado de datos"></select>
           </div>
-          <section class="panel players-summary">
-            <div class="panel-head">
-              <h3>Checklist Panini por seleccion</h3>
-              <span class="status-pill" id="playersCount">0 jugadores</span>
-            </div>
-            <div class="player-card-grid" id="playerCards"></div>
-          </section>
           <div class="table-wrap players-table-wrap">
             <table>
-              <thead><tr><th>Foto</th><th>Nombre completo</th><th>Seleccion</th><th>Edad</th><th>Estatura</th><th>Club</th><th>Posicion</th></tr></thead>
+              <thead><tr><th>Nombre completo</th><th>Seleccion</th><th>Edad</th><th>Estatura</th><th>Club</th><th>Posicion</th></tr></thead>
               <tbody id="playerRows"></tbody>
             </table>
           </div>
@@ -238,7 +232,7 @@
           <div class="dashboard-grid">
             <section class="panel span-2"><div class="panel-head"><h3>Evolución del ranking</h3></div><canvas id="lineChart" height="220"></canvas></section>
             <section class="panel"><div class="panel-head"><h3>Aciertos por fase</h3></div><canvas id="barChart" height="220"></canvas></section>
-            <section class="panel span-3"><div class="panel-head"><h3>Mapa de calor de dificultad</h3></div><div class="heatmap" id="heatmap"></div></section>
+            <section class="panel span-3"><div class="panel-head"><h3>Partidos más difíciles de pronosticar</h3><span class="status-pill">Basado en pronósticos</span></div><div class="difficulty-list" id="difficultyList"></div></section>
           </div>
         </section>
 
@@ -251,9 +245,10 @@
                 <h3>Mundiales anteriores</h3>
                 <span class="status-pill">1930-2022</span>
               </div>
+              <p class="history-table-note">Arquero destacado muestra el premio oficial de mejor guardameta desde 1994; antes de esa edición no se registra un ganador oficial comparable.</p>
               <div class="table-wrap compact-table-wrap">
                 <table>
-                  <thead><tr><th>Año</th><th>Sede</th><th>Campeón</th><th>Finalista</th><th>Partidos</th><th>Goles</th><th>Goleador</th></tr></thead>
+                  <thead><tr><th>Año</th><th>Sede</th><th>Top 4</th><th>Equipos</th><th>Partidos</th><th>Goles</th><th>Prom. gol</th><th>Goleador</th><th>Arquero destacado</th><th>Colombia</th></tr></thead>
                   <tbody id="worldCupHistoryRows"></tbody>
                 </table>
               </div>
@@ -298,6 +293,25 @@
               <div class="admin-rules" id="adminRules"></div>
             </section>
             <section class="panel">
+              <div class="panel-head"><h3>Simulador de Datos</h3></div>
+              <p>Genera automáticamente 20 usuarios y pronósticos para todos los partidos para probar el ranking y las gráficas con datos masivos.</p>
+              <button class="primary-button" id="simulateResults">Simular Torneo Masivo</button>
+              <div style="margin-top: 16px;">
+                <label style="font-size: 0.86rem; color: var(--muted); display: block; margin-bottom: 4px;">Volumen de celebración</label>
+                <input type="range" id="effectsVolume" min="0" max="1" step="0.1" value="0.7" style="cursor: pointer; width: 100%;">
+              </div>
+              <div id="simulationStatus" style="display: none; margin-top: 16px;">
+                <p id="simulationMessage" style="font-size: 0.86rem; color: var(--muted); margin-bottom: 8px;">Iniciando simulación...</p>
+                <div style="height: 6px; background: var(--line); border-radius: 3px; overflow: hidden;">
+                  <div id="simulationProgress" style="width: 0%; height: 100%; background: var(--gold); transition: width 0.3s ease;"></div>
+                </div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h3>Reiniciar Aplicación</h3></div>
+              <button class="primary-button" id="resetApp">Reset Total</button>
+            </section>
+            <section class="panel">
               <div class="panel-head"><h3>Actividad</h3></div>
               <div class="timeline">
                 <p><strong>12:42</strong> 34 pronósticos bloqueados.</p>
@@ -309,6 +323,7 @@
         </section>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

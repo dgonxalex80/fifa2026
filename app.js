@@ -667,71 +667,103 @@ const paniniAlbumTeams = [
       },
       {
         "code": "ALG 3",
-        "name": "Ramy Bensebaini"
+        "name": "Anthony Mandréa"
       },
       {
         "code": "ALG 4",
-        "name": "Youcef Atal"
+        "name": "Luca Zidane"
       },
       {
         "code": "ALG 5",
-        "name": "Rayan Aït-Nouri"
+        "name": "Kilian Belazzoug"
       },
       {
         "code": "ALG 6",
-        "name": "Mohamed Amine Tougai"
+        "name": "Ramy Bensebaini"
       },
       {
         "code": "ALG 7",
-        "name": "Aïssa Mandi"
+        "name": "Youcef Atal"
       },
       {
         "code": "ALG 8",
-        "name": "Ismael Bennacer"
+        "name": "Rayan Aït-Nouri"
       },
       {
         "code": "ALG 9",
-        "name": "Houssem Aquar"
+        "name": "Mohamed Amine Tougai"
       },
       {
         "code": "ALG 10",
-        "name": "Hicham Boudaoui"
+        "name": "Aïssa Mandi"
       },
       {
         "code": "ALG 11",
-        "name": "Ramiz Zerrouki"
+        "name": "Jaouen Hadjam"
       },
       {
         "code": "ALG 12",
-        "name": "Nabil Bentalab"
+        "name": "Zinedine Belaïd"
+      },
+      {
+        "code": "ALG 13",
+        "name": "Mohamed Farsi"
       },
       {
         "code": "ALG 14",
-        "name": "Farés Chaibi"
+        "name": "Ismael Bennacer"
       },
       {
         "code": "ALG 15",
-        "name": "Riyad Mahrez"
+        "name": "Houssem Aouar"
       },
       {
         "code": "ALG 16",
-        "name": "Said Benrahma"
+        "name": "Hicham Boudaoui"
       },
       {
         "code": "ALG 17",
-        "name": "Anis Hadj Moussa"
+        "name": "Ramiz Zerrouki"
       },
       {
         "code": "ALG 18",
-        "name": "Amine Gouiri"
+        "name": "Nabil Bentalab"
       },
       {
         "code": "ALG 19",
-        "name": "Baghdad Bounedjah"
+        "name": "Ibrahim Maza"
       },
       {
         "code": "ALG 20",
+        "name": "Farés Chaibi"
+      },
+      {
+        "code": "ALG 21",
+        "name": "Riyad Mahrez"
+      },
+      {
+        "code": "ALG 22",
+        "name": "Said Benrahma"
+      },
+      {
+        "code": "ALG 23",
+        "name": "Anis Hadj Moussa"
+      },
+      {
+        "code": "ALG 24",
+        "name": "Amine Gouiri"
+      },
+      {
+        "code": "ALG 25",
+        "name": "Baghdad Bounedjah"
+      },
+      {
+        "code": "ALG 26",
         "name": "Mohammed Amoura"
+      },
+      {
+        "code": "ALG 27",
+        "name": "Amin Chiakha"
       }
     ]
   },

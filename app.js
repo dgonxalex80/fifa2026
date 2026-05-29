@@ -657,198 +657,308 @@ const selectedPlayers = [
 
 const paniniAlbumTeams = [
   {
-    "code": "ALG",
     "team": "Argelia",
+    "code": "ALG",
     "sourceTeam": "Algeria",
     "players": [
       {
         "code": "ALG 2",
-        "name": "Alexis Guendouz"
+        "name": "Alexis Guendouz",
+        "club": "MC Alger",
+        "position": "Portero"
       },
       {
         "code": "ALG 3",
-        "name": "Anthony Mandréa"
+        "name": "Anthony Mandréa",
+        "club": "Caen",
+        "position": "Portero"
       },
       {
         "code": "ALG 4",
-        "name": "Luca Zidane"
+        "name": "Luca Zidane",
+        "club": "Granada",
+        "position": "Portero"
       },
       {
         "code": "ALG 5",
-        "name": "Kilian Belazzoug"
+        "name": "Kilian Belazzoug",
+        "club": "Selección de Argelia",
+        "position": "Portero"
       },
       {
         "code": "ALG 6",
-        "name": "Ramy Bensebaini"
+        "name": "Ramy Bensebaini",
+        "club": "Borussia Dortmund",
+        "position": "Defensa"
       },
       {
         "code": "ALG 7",
-        "name": "Youcef Atal"
+        "name": "Youcef Atal",
+        "club": "Al-Sadd",
+        "position": "Defensa"
       },
       {
         "code": "ALG 8",
-        "name": "Rayan Aït-Nouri"
+        "name": "Rayan Aït-Nouri",
+        "club": "Manchester City",
+        "position": "Defensa"
       },
       {
         "code": "ALG 9",
-        "name": "Mohamed Amine Tougai"
+        "name": "Mohamed Amine Tougai",
+        "club": "Espérance de Tunis",
+        "position": "Defensa"
       },
       {
         "code": "ALG 10",
-        "name": "Aïssa Mandi"
+        "name": "Aïssa Mandi",
+        "club": "Lille",
+        "position": "Defensa"
       },
       {
         "code": "ALG 11",
-        "name": "Jaouen Hadjam"
+        "name": "Jaouen Hadjam",
+        "club": "Young Boys",
+        "position": "Defensa"
       },
       {
         "code": "ALG 12",
-        "name": "Zinedine Belaïd"
+        "name": "Zinedine Belaïd",
+        "club": "Sint-Truiden",
+        "position": "Defensa"
       },
       {
         "code": "ALG 13",
-        "name": "Mohamed Farsi"
+        "name": "Mohamed Farsi",
+        "club": "Columbus Crew",
+        "position": "Defensa"
       },
       {
         "code": "ALG 14",
-        "name": "Ismael Bennacer"
+        "name": "Ismaël Bennacer",
+        "club": "Dinamo Zagreb",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 15",
-        "name": "Houssem Aouar"
+        "name": "Houssem Aouar",
+        "club": "Al-Ittihad",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 16",
-        "name": "Hicham Boudaoui"
+        "name": "Hicham Boudaoui",
+        "club": "Nice",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 17",
-        "name": "Ramiz Zerrouki"
+        "name": "Ramiz Zerrouki",
+        "club": "Twente",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 18",
-        "name": "Nabil Bentalab"
+        "name": "Nabil Bentaleb",
+        "club": "Lille",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 19",
-        "name": "Ibrahim Maza"
+        "name": "Ibrahim Maza",
+        "club": "Hertha Berlin",
+        "position": "Mediocampista"
       },
       {
         "code": "ALG 20",
-        "name": "Farés Chaibi"
+        "name": "Fares Chaibi",
+        "club": "Eintracht Frankfurt",
+        "position": "Delantero"
       },
       {
         "code": "ALG 21",
-        "name": "Riyad Mahrez"
+        "name": "Riyad Mahrez",
+        "club": "Al-Ahli",
+        "position": "Delantero"
       },
       {
         "code": "ALG 22",
-        "name": "Said Benrahma"
+        "name": "Said Benrahma",
+        "club": "Neom SC",
+        "position": "Delantero"
       },
       {
         "code": "ALG 23",
-        "name": "Anis Hadj Moussa"
+        "name": "Anis Hadj Moussa",
+        "club": "Feyenoord",
+        "position": "Delantero"
       },
       {
         "code": "ALG 24",
-        "name": "Amine Gouiri"
+        "name": "Amine Gouiri",
+        "club": "Olympique de Marsella",
+        "position": "Delantero"
       },
       {
         "code": "ALG 25",
-        "name": "Baghdad Bounedjah"
+        "name": "Baghdad Bounedjah",
+        "club": "Al-Shamal",
+        "position": "Delantero"
       },
       {
         "code": "ALG 26",
-        "name": "Mohammed Amoura"
+        "name": "Mohamed Amoura",
+        "club": "Wolfsburg",
+        "position": "Delantero"
       },
       {
         "code": "ALG 27",
-        "name": "Amin Chiakha"
+        "name": "Amin Chiakha",
+        "club": "Copenhague",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "ARG",
     "team": "Argentina",
+    "code": "ARG",
     "sourceTeam": "Argentina",
     "players": [
       {
         "code": "ARG 2",
-        "name": "Emiliano Martinez"
+        "name": "Emiliano Martínez",
+        "position": "Portero"
       },
       {
         "code": "ARG 3",
-        "name": "Nahuel Molina"
+        "name": "Gerónimo Rulli",
+        "position": "Portero"
       },
       {
         "code": "ARG 4",
-        "name": "Cristian Romero"
+        "name": "Juan Musso",
+        "position": "Portero"
       },
       {
         "code": "ARG 5",
-        "name": "Nicolas Otamendi"
+        "name": "Walter Benítez",
+        "position": "Portero"
       },
       {
         "code": "ARG 6",
-        "name": "Nicolas Tagliafico"
+        "name": "Facundo Cambeses",
+        "position": "Portero"
       },
       {
         "code": "ARG 7",
-        "name": "Leonardo Balerdi"
+        "name": "Santiago Beltrán",
+        "position": "Portero"
       },
       {
         "code": "ARG 8",
-        "name": "Enzo Fernandez"
+        "name": "Agustín Giay",
+        "position": "Defensa"
       },
       {
         "code": "ARG 9",
-        "name": "Alexis Mac Allister"
+        "name": "Gonzalo Montiel",
+        "position": "Defensa"
       },
       {
         "code": "ARG 10",
-        "name": "Rodrigo De Paul"
+        "name": "Nahuel Molina",
+        "position": "Defensa"
       },
       {
         "code": "ARG 11",
-        "name": "Exequiel Palacios"
+        "name": "Nicolás Capaldo",
+        "position": "Defensa"
       },
       {
         "code": "ARG 12",
-        "name": "Leandro Paredes"
+        "name": "Kevin Mac Allister",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 13",
+        "name": "Lucas Martínez Quarta",
+        "position": "Defensa"
       },
       {
         "code": "ARG 14",
-        "name": "Nico Paz"
+        "name": "Marcos Senesi",
+        "position": "Defensa"
       },
       {
         "code": "ARG 15",
-        "name": "Franco Mastantuono"
+        "name": "Lisandro Martínez",
+        "position": "Defensa"
       },
       {
         "code": "ARG 16",
-        "name": "Nico Gonzalez"
+        "name": "Nicolás Otamendi",
+        "position": "Defensa"
       },
       {
         "code": "ARG 17",
-        "name": "Lionel Messi"
+        "name": "Germán Pezzella",
+        "position": "Defensa"
       },
       {
         "code": "ARG 18",
-        "name": "Lautaro Martinez"
+        "name": "Leonardo Balerdi",
+        "position": "Defensa"
       },
       {
         "code": "ARG 19",
-        "name": "Julian Alvarez"
+        "name": "Cristian Romero",
+        "position": "Defensa"
       },
       {
         "code": "ARG 20",
-        "name": "Giuliano Simeone"
+        "name": "Lautaro Di Lollo",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 21",
+        "name": "Zaid Romero",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 22",
+        "name": "Facundo Medina",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 23",
+        "name": "Marcos Acuña",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 24",
+        "name": "Nicolás Tagliafico",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 25",
+        "name": "Gabriel Rojas",
+        "position": "Defensa"
+      },
+      {
+        "code": "ARG 26",
+        "name": "Máximo Perrone",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "ARG 27",
+        "name": "Leandro Paredes",
+        "position": "Mediocampista"
       }
     ]
   },
   {
-    "code": "AUS",
     "team": "Australia",
+    "code": "AUS",
     "sourceTeam": "Australia",
     "players": [
       {
@@ -896,354 +1006,661 @@ const paniniAlbumTeams = [
         "name": "Riley McGree"
       },
       {
-        "code": "AUS 14",
+        "code": "AUS 13",
         "name": "Aiden O'Neill"
       },
       {
-        "code": "AUS 15",
+        "code": "AUS 14",
         "name": "Connor Metcalfe"
       },
       {
-        "code": "AUS 16",
+        "code": "AUS 15",
         "name": "Patrick Yazbek"
       },
       {
-        "code": "AUS 17",
+        "code": "AUS 16",
         "name": "Craig Goodwin"
       },
       {
-        "code": "AUS 18",
+        "code": "AUS 17",
         "name": "Kusini Vengi"
       },
       {
-        "code": "AUS 19",
+        "code": "AUS 18",
         "name": "Nestory Irankunda"
       },
       {
-        "code": "AUS 20",
+        "code": "AUS 19",
         "name": "Mohamed Touré"
+      },
+      {
+        "code": "AUS 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "AUS 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Australia",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "AUT",
     "team": "Austria",
+    "code": "AUT",
     "sourceTeam": "Austria",
     "players": [
       {
         "code": "AUT 2",
-        "name": "Alexander Schlager"
+        "name": "Patrick Pentz",
+        "position": "Portero"
       },
       {
         "code": "AUT 3",
-        "name": "Patrick Pentz"
+        "name": "Alexander Schlage",
+        "position": "Portero"
       },
       {
         "code": "AUT 4",
-        "name": "David Alaba"
+        "name": "Florian Wiegele",
+        "position": "Portero"
       },
       {
         "code": "AUT 5",
-        "name": "Kevin Danso"
+        "name": "David Affengruber",
+        "position": "Defensa"
       },
       {
         "code": "AUT 6",
-        "name": "Philipp Lienhart"
+        "name": "David Alaba",
+        "position": "Defensa"
       },
       {
         "code": "AUT 7",
-        "name": "Stefan Posch"
+        "name": "Kevin Danso",
+        "position": "Defensa"
       },
       {
         "code": "AUT 8",
-        "name": "Phillipp Mwene"
+        "name": "Marco Friedl",
+        "position": "Defensa"
       },
       {
         "code": "AUT 9",
-        "name": "Alexander Prass"
+        "name": "Philipp Lienhart",
+        "position": "Defensa"
       },
       {
         "code": "AUT 10",
-        "name": "Xaver Schlager"
+        "name": "Phillipp Mwene",
+        "position": "Defensa"
       },
       {
         "code": "AUT 11",
-        "name": "Marcel Sabitzer"
+        "name": "Stefan Posch",
+        "position": "Defensa"
       },
       {
         "code": "AUT 12",
-        "name": "Konrad Laimer"
+        "name": "Alexander Prass",
+        "position": "Defensa"
+      },
+      {
+        "code": "AUT 13",
+        "name": "Michael Svoboda",
+        "position": "Defensa"
       },
       {
         "code": "AUT 14",
-        "name": "Florian Grillitsch"
+        "name": "Christoph Baumgartner",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 15",
-        "name": "Nicolas Seiwald"
+        "name": "Carney Chukwuemeka",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 16",
-        "name": "Romano Schmid"
+        "name": "Florian Grillitsh",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 17",
-        "name": "Patrick Wimmer"
+        "name": "Konrad Laimer",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 18",
-        "name": "Christoph Baumgartner"
+        "name": "Marcel Sabitzer",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 19",
-        "name": "Michael Gregoritsch"
+        "name": "Xaver Schlager",
+        "position": "Mediocampista"
       },
       {
         "code": "AUT 20",
-        "name": "Marko Arnautović"
+        "name": "Romano Schmid",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "AUT 21",
+        "name": "Alessandro Schöpf",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "AUT 22",
+        "name": "Nicolas Seiwald",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "AUT 23",
+        "name": "Paul Wanner",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "AUT 24",
+        "name": "Patrick Wimmer",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "AUT 25",
+        "name": "Marko Arnautovic",
+        "position": "Delantero"
+      },
+      {
+        "code": "AUT 26",
+        "name": "Michael Gregoritsh",
+        "position": "Delantero"
+      },
+      {
+        "code": "AUT 27",
+        "name": "Sasa Kalajdzic",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "BEL",
     "team": "Belgica",
+    "code": "BEL",
     "sourceTeam": "Belgium",
     "players": [
       {
         "code": "BEL 2",
-        "name": "Thibaut Courtois"
+        "name": "Thibaut Courtois",
+        "position": "Portero"
       },
       {
         "code": "BEL 3",
-        "name": "Arthur Theate"
+        "name": "Senne Lammens yMike Penders",
+        "position": "Portero"
       },
       {
         "code": "BEL 4",
-        "name": "Timothy Castagne"
+        "name": "Timothy Castagne",
+        "position": "Defensa"
       },
       {
         "code": "BEL 5",
-        "name": "Zeno Debast"
+        "name": "Zenón Debast",
+        "position": "Defensa"
       },
       {
         "code": "BEL 6",
-        "name": "Brandon Mechele"
+        "name": "Maxim De Cuyper",
+        "position": "Defensa"
       },
       {
         "code": "BEL 7",
-        "name": "Maxim De Cuyper"
+        "name": "Koni De Winter",
+        "position": "Defensa"
       },
       {
         "code": "BEL 8",
-        "name": "Thomas Meunier"
+        "name": "Brandon Mechele",
+        "position": "Defensa"
       },
       {
         "code": "BEL 9",
-        "name": "Youri Tielemans"
+        "name": "Thomas Meunier",
+        "position": "Defensa"
       },
       {
         "code": "BEL 10",
-        "name": "Amadou Onana"
+        "name": "Nathan Ngoy",
+        "position": "Defensa"
       },
       {
         "code": "BEL 11",
-        "name": "Nicolas Raskin"
+        "name": "Joaquín Seys",
+        "position": "Defensa"
       },
       {
         "code": "BEL 12",
-        "name": "Alexis Saelemaekers"
+        "name": "Teatro Arthur",
+        "position": "Defensa"
+      },
+      {
+        "code": "BEL 13",
+        "name": "Kevin De Bruyne",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 14",
-        "name": "Hans Vanaken"
+        "name": "Amadou Onana",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 15",
-        "name": "Kevin De Bruyne"
+        "name": "Nicolás Raskin",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 16",
-        "name": "Jérémy Doku"
+        "name": "Youri Tielemans",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 17",
-        "name": "Charles De Ketelaere"
+        "name": "Hans Vanaken",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 18",
-        "name": "Leandro Trossard"
+        "name": "Axel Witsel",
+        "position": "Mediocampista"
       },
       {
         "code": "BEL 19",
-        "name": "Loïs Openda"
+        "name": "Charles De Ketelaere",
+        "position": "Delantero"
       },
       {
         "code": "BEL 20",
-        "name": "Romelu Lukaku"
+        "name": "Jeremy Doku",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 21",
+        "name": "Matías Fernández Pardo",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 22",
+        "name": "Romelu Lukaku",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 23",
+        "name": "Dodi Lukebakio",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 24",
+        "name": "Diego Moreira",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 25",
+        "name": "Alexis Saelemaekers",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 26",
+        "name": "Leandro Trossard",
+        "position": "Delantero"
+      },
+      {
+        "code": "BEL 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Belgica",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "BIH",
     "team": "Bosnia y Herzegovina",
+    "code": "BIH",
     "sourceTeam": "Bosnia and Herzegovina",
     "players": [
       {
         "code": "BIH 2",
-        "name": "Nikola Vasilj"
+        "name": "Nikola Vasilj",
+        "club": "FC St. Pauli, ALE",
+        "position": "Portero"
       },
       {
         "code": "BIH 3",
-        "name": "Amer Dedic"
+        "name": "Martin Zlomislić",
+        "club": "HNK Rijeka, CRO",
+        "position": "Portero"
       },
       {
         "code": "BIH 4",
-        "name": "Sead Kolasinac"
+        "name": "Osman Hadžikić",
+        "club": "NK Slaven Belupo, CRO",
+        "position": "Portero"
       },
       {
         "code": "BIH 5",
-        "name": "Tarik Muharemovic"
+        "name": "Sead Kolašinac",
+        "club": "Atalanta, ITA",
+        "position": "Defensa"
       },
       {
         "code": "BIH 6",
-        "name": "Nihad Mujakic"
+        "name": "Amar Dedić",
+        "club": "Benfica, POR",
+        "position": "Defensa"
       },
       {
         "code": "BIH 7",
-        "name": "Nikola Katic"
+        "name": "Nihad Mujakić",
+        "club": "Gaziantep, TUR",
+        "position": "Defensa"
       },
       {
         "code": "BIH 8",
-        "name": "Amir Hadziahmetovic"
+        "name": "Nikola Katić",
+        "club": "Schalke 04, ALE",
+        "position": "Defensa"
       },
       {
         "code": "BIH 9",
-        "name": "Benjamin Tahirovic"
+        "name": "Tarik Muharemović",
+        "club": "Sassuolo, ITA",
+        "position": "Defensa"
       },
       {
         "code": "BIH 10",
-        "name": "Armin Gigovic"
+        "name": "Stjepan Radeljić",
+        "club": "HNK Rijeka, CRO",
+        "position": "Defensa"
       },
       {
         "code": "BIH 11",
-        "name": "Ivan Sunjic"
+        "name": "Dennis Hadžikadunić",
+        "club": "Sampdoria, ITA",
+        "position": "Defensa"
       },
       {
         "code": "BIH 12",
-        "name": "Ivan Basic"
+        "name": "Nidal Čelik",
+        "club": "Lens, FRA",
+        "position": "Defensa"
+      },
+      {
+        "code": "BIH 13",
+        "name": "Amir Hadžiahmetović",
+        "club": "Hull City, ING",
+        "position": "Defensa"
       },
       {
         "code": "BIH 14",
-        "name": "Dzenis Burnic"
+        "name": "Ivan Šunjić",
+        "club": "Pafos, CHI",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 15",
-        "name": "Esmir Bajraktarevic"
+        "name": "Ivan Bašić",
+        "club": "Astana, KZJ",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 16",
-        "name": "Amar Memic"
+        "name": "Dženis Burnić",
+        "club": "Karlsruher, ALE",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 17",
-        "name": "Ermedin Demirovic"
+        "name": "Ermin Mahmić",
+        "club": "Slovan Liberec, RPC",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 18",
-        "name": "Edin Dzeko"
+        "name": "Benjamin Tahirović",
+        "club": "Brøndby IF, DIN",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 19",
-        "name": "Samed Bazdar"
+        "name": "Amar Memić",
+        "club": "Viktoria Plzeň, RPC",
+        "position": "Mediocampista"
       },
       {
         "code": "BIH 20",
-        "name": "Haris Tabakovic"
+        "name": "Armin Gigović",
+        "club": "Young Boys, SUI",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "BIH 21",
+        "name": "Kerim Alajbegović",
+        "club": "Salzburgo, AUS",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "BIH 22",
+        "name": "Esmir Bajraktarević",
+        "club": "PSV, PBJ",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "BIH 23",
+        "name": "Ermedin Demirović",
+        "club": "Stuttgart, ALE",
+        "position": "Delantero"
+      },
+      {
+        "code": "BIH 24",
+        "name": "Jovo Lukić",
+        "club": "Universitatea Cluj, RUM",
+        "position": "Delantero"
+      },
+      {
+        "code": "BIH 25",
+        "name": "Samed Baždar",
+        "club": "Jagiellonia Bialystok, POL",
+        "position": "Delantero"
+      },
+      {
+        "code": "BIH 26",
+        "name": "Haris Tabaković",
+        "club": "Borussia Mönchengladbach, ALE",
+        "position": "Delantero"
+      },
+      {
+        "code": "BIH 27",
+        "name": "Edin Džeko",
+        "club": "Schalke 04",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "BRA",
     "team": "Brasil",
+    "code": "BRA",
     "sourceTeam": "Brazil",
     "players": [
       {
         "code": "BRA 2",
-        "name": "Alisson"
+        "name": "Alisson",
+        "position": "Portero"
       },
       {
         "code": "BRA 3",
-        "name": "Bento"
+        "name": "Ederson",
+        "position": "Portero"
       },
       {
         "code": "BRA 4",
-        "name": "Marquinhos"
+        "name": "Weverton",
+        "position": "Portero"
       },
       {
         "code": "BRA 5",
-        "name": "Éder Militão"
+        "name": "Danilo",
+        "position": "Defensa"
       },
       {
         "code": "BRA 6",
-        "name": "Gabriel Magalhães"
+        "name": "Wesley",
+        "position": "Defensa"
       },
       {
         "code": "BRA 7",
-        "name": "Danilo"
+        "name": "Marquinhos",
+        "position": "Defensa"
       },
       {
         "code": "BRA 8",
-        "name": "Wesley"
+        "name": "Gabriel Magalhaes",
+        "position": "Defensa"
       },
       {
         "code": "BRA 9",
-        "name": "Lucas Paquetá"
+        "name": "Léo Pereira",
+        "position": "Defensa"
       },
       {
         "code": "BRA 10",
-        "name": "Casemiro"
+        "name": "Bremer",
+        "position": "Defensa"
       },
       {
         "code": "BRA 11",
-        "name": "Bruno Guimarães"
+        "name": "Ibáñez",
+        "position": "Defensa"
       },
       {
         "code": "BRA 12",
-        "name": "Luiz Henrique"
+        "name": "Alex Sandro",
+        "position": "Defensa"
+      },
+      {
+        "code": "BRA 13",
+        "name": "Douglas Santos",
+        "position": "Defensa"
       },
       {
         "code": "BRA 14",
-        "name": "Vinicius Júnior"
+        "name": "Casemiro",
+        "position": "Mediocampista"
       },
       {
         "code": "BRA 15",
-        "name": "Rodrygo"
+        "name": "Bruno Guimaraes",
+        "position": "Mediocampista"
       },
       {
         "code": "BRA 16",
-        "name": "João Pedro"
+        "name": "Danilo",
+        "position": "Mediocampista"
       },
       {
         "code": "BRA 17",
-        "name": "Matheus Cunha"
+        "name": "Fabinho",
+        "position": "Mediocampista"
       },
       {
         "code": "BRA 18",
-        "name": "Gabriel Martinelli"
+        "name": "Paquetá",
+        "position": "Mediocampista"
       },
       {
         "code": "BRA 19",
-        "name": "Raphinha"
+        "name": "Vinicius Jr",
+        "position": "Delantero"
       },
       {
         "code": "BRA 20",
-        "name": "Estévão"
+        "name": "Matheus Cunha",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 21",
+        "name": "Neymar Jr",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 22",
+        "name": "Raphinha",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 23",
+        "name": "Rayan",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 24",
+        "name": "Igor Thiago",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 25",
+        "name": "Luiz Henrique",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 26",
+        "name": "Gabriel Martinelli",
+        "position": "Delantero"
+      },
+      {
+        "code": "BRA 27",
+        "name": "Endrick",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "CAN",
     "team": "Canada",
+    "code": "CAN",
     "sourceTeam": "Canada",
     "players": [
       {
@@ -1291,591 +1708,1073 @@ const paniniAlbumTeams = [
         "name": "Jonathan Osorio"
       },
       {
-        "code": "CAN 14",
+        "code": "CAN 13",
         "name": "Jacob Shaffelburg"
       },
       {
-        "code": "CAN 15",
+        "code": "CAN 14",
         "name": "Mathieu Choinière"
       },
       {
-        "code": "CAN 16",
+        "code": "CAN 15",
         "name": "Niko Sigur"
       },
       {
-        "code": "CAN 17",
+        "code": "CAN 16",
         "name": "Tajon Buchanan"
       },
       {
-        "code": "CAN 18",
+        "code": "CAN 17",
         "name": "Liam Millar"
       },
       {
-        "code": "CAN 19",
+        "code": "CAN 18",
         "name": "Cyle Larin"
       },
       {
-        "code": "CAN 20",
+        "code": "CAN 19",
         "name": "Jonathan David"
+      },
+      {
+        "code": "CAN 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CAN 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Canada",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "CIV",
     "team": "Costa de Marfil",
+    "code": "CIV",
     "sourceTeam": "Côte d'Ivoire",
     "players": [
       {
         "code": "CIV 2",
-        "name": "Yahia Fofana"
+        "name": "Yahia Fofana",
+        "club": "Çaykur Rizespor",
+        "position": "Portero"
       },
       {
         "code": "CIV 3",
-        "name": "Ghislain Konan"
+        "name": "Mohamed Kone",
+        "club": "Charleroi",
+        "position": "Portero"
       },
       {
         "code": "CIV 4",
-        "name": "Wilfried Singo"
+        "name": "Alban Lafont",
+        "club": "Panathinaikos",
+        "position": "Portero"
       },
       {
         "code": "CIV 5",
-        "name": "Odilon Kossounou"
+        "name": "Emmanuel Agbadou",
+        "club": "Besiktas",
+        "position": "Defensa"
       },
       {
         "code": "CIV 6",
-        "name": "Evan Ndicka"
+        "name": "Clement Akpa",
+        "club": "Auxerre",
+        "position": "Defensa"
       },
       {
         "code": "CIV 7",
-        "name": "Willy Boly"
+        "name": "Ousmane Diomande",
+        "club": "Sporting CP",
+        "position": "Defensa"
       },
       {
         "code": "CIV 8",
-        "name": "Emmanuel Agbadou"
+        "name": "Guela Doue",
+        "club": "Strasbourg",
+        "position": "Defensa"
       },
       {
         "code": "CIV 9",
-        "name": "Ousmane Diomande"
+        "name": "Ghislain Konan",
+        "club": "Gil Vicente",
+        "position": "Defensa"
       },
       {
         "code": "CIV 10",
-        "name": "Franck Kessie"
+        "name": "Odilon Kossounou",
+        "club": "Atalanta",
+        "position": "Defensa"
       },
       {
         "code": "CIV 11",
-        "name": "Seko Fofana"
+        "name": "Wilfried Singo",
+        "club": "Galatasaray",
+        "position": "Defensa"
       },
       {
         "code": "CIV 12",
-        "name": "Ibrahim Sangare"
+        "name": "Evan Ndicka",
+        "club": "Roma",
+        "position": "Defensa"
+      },
+      {
+        "code": "CIV 13",
+        "name": "Seko Fofana",
+        "club": "Porto",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 14",
-        "name": "Jean-Philippe Gbamin"
+        "name": "Parfait Guiagon",
+        "club": "Charleroi",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 15",
-        "name": "Amad Diallo"
+        "name": "Christ Inao Oulai",
+        "club": "Trabzonspor",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 16",
-        "name": "Sébastien Haller"
+        "name": "Franck Kessie",
+        "club": "Al-Ahli",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 17",
-        "name": "Simon Adingra"
+        "name": "Ibrahim Sangare",
+        "club": "Nottingham Forest",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 18",
-        "name": "Yan Diomande"
+        "name": "Jean Michael Seri",
+        "club": "Maribor",
+        "position": "Mediocampista"
       },
       {
         "code": "CIV 19",
-        "name": "Evann Guessand"
+        "name": "Simon Adingra",
+        "club": "Monaco",
+        "position": "Delantero"
       },
       {
         "code": "CIV 20",
-        "name": "Oumar Diakite"
+        "name": "Ange-Yoan Bonny",
+        "club": "Inter",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 21",
+        "name": "Amad Diallo",
+        "club": "Manchester United",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 22",
+        "name": "Oumar Diakité",
+        "club": "Cercle Brugge",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 23",
+        "name": "Yan Diomande",
+        "club": "RB Leipzig",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 24",
+        "name": "Evann Guessand",
+        "club": "Crystal Palace",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 25",
+        "name": "Nicolas Pepe",
+        "club": "Villarreal",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 26",
+        "name": "Bazoumana Toure",
+        "club": "TSG Hoffenheim",
+        "position": "Delantero"
+      },
+      {
+        "code": "CIV 27",
+        "name": "Elye Wahi",
+        "club": "Nice",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "COD",
     "team": "Republica Democratica del Congo",
+    "code": "COD",
     "sourceTeam": "DR Congo",
     "players": [
       {
         "code": "COD 2",
-        "name": "Lionel Mpasi"
+        "name": "Matthieu Epolo",
+        "position": "Portero"
       },
       {
         "code": "COD 3",
-        "name": "Aaron Wan-Bissaka"
+        "name": "Timothy Fayulu",
+        "position": "Portero"
       },
       {
         "code": "COD 4",
-        "name": "Axel Tuanzebe"
+        "name": "Lionel Mpasi",
+        "position": "Portero"
       },
       {
         "code": "COD 5",
-        "name": "Arthur Masuaku"
+        "name": "Dylan Batubinsika",
+        "position": "Defensa"
       },
       {
         "code": "COD 6",
-        "name": "Chancel Mbemba"
+        "name": "Rocky Bushiri",
+        "position": "Defensa"
       },
       {
         "code": "COD 7",
-        "name": "Joris Kayembe"
+        "name": "Gedoon Kalulu",
+        "position": "Defensa"
       },
       {
         "code": "COD 8",
-        "name": "Charles Pickel"
+        "name": "Steve Kapuadi",
+        "position": "Defensa"
       },
       {
         "code": "COD 9",
-        "name": "Ngal'ayel Mukau"
+        "name": "Joris Kayeme",
+        "position": "Defensa"
       },
       {
         "code": "COD 10",
-        "name": "Edo Kayembe"
+        "name": "Arthur Masuaku",
+        "position": "Defensa"
       },
       {
         "code": "COD 11",
-        "name": "Samuel Moutoussamy"
+        "name": "Chancel Mbemba",
+        "position": "Defensa"
       },
       {
         "code": "COD 12",
-        "name": "Noah Sadiki"
+        "name": "Axel Tuanzebe",
+        "position": "Defensa"
+      },
+      {
+        "code": "COD 13",
+        "name": "Aaron Wan-Bissaka",
+        "position": "Defensa"
       },
       {
         "code": "COD 14",
-        "name": "Théo Bongonda"
+        "name": "Theo Bongonda",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 15",
-        "name": "Meschak Elia"
+        "name": "Brian Cipenga",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 16",
-        "name": "Yoane Wissa"
+        "name": "Meshack Elia",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 17",
-        "name": "Brian Cipenga"
+        "name": "Gael Kakuta",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 18",
-        "name": "Fiston Mayele"
+        "name": "Edo Kayembe",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 19",
-        "name": "Cédric Bakambu"
+        "name": "Nathanael Mbuku",
+        "position": "Mediocampista"
       },
       {
         "code": "COD 20",
-        "name": "Nathanaël Mbuku"
+        "name": "Samuel Moutoussamy",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "COD 21",
+        "name": "Ngal'ayel Mukau",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "COD 22",
+        "name": "Charles Pickel",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "COD 23",
+        "name": "Noah Sadiki",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "COD 24",
+        "name": "Cédric Bakambu",
+        "position": "Delantero"
+      },
+      {
+        "code": "COD 25",
+        "name": "Simon Banza",
+        "position": "Delantero"
+      },
+      {
+        "code": "COD 26",
+        "name": "Fiston Mayele",
+        "position": "Delantero"
+      },
+      {
+        "code": "COD 27",
+        "name": "Yoane Wissa",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "COL",
     "team": "Colombia",
+    "code": "COL",
     "sourceTeam": "Colombia",
     "players": [
       {
         "code": "COL 2",
-        "name": "Camilo Vargas"
+        "name": "David Ospina",
+        "position": "Portero"
       },
       {
         "code": "COL 3",
-        "name": "David Ospina"
+        "name": "Álvaro Montero",
+        "position": "Portero"
       },
       {
         "code": "COL 4",
-        "name": "Dávinson Sánchez"
+        "name": "Camilo Vargas",
+        "position": "Portero"
       },
       {
         "code": "COL 5",
-        "name": "Yerry Mina"
+        "name": "Daniel Muñoz",
+        "position": "Defensa"
       },
       {
         "code": "COL 6",
-        "name": "Daniel Munoz"
+        "name": "Jhon Lucumí",
+        "position": "Defensa"
       },
       {
         "code": "COL 7",
-        "name": "Johan Mojica"
+        "name": "Álvaro Angulo",
+        "position": "Defensa"
       },
       {
         "code": "COL 8",
-        "name": "Jhon Lucumí"
+        "name": "Santiago Arias",
+        "position": "Defensa"
       },
       {
         "code": "COL 9",
-        "name": "Santiago Arias"
+        "name": "Davinson Sánchez",
+        "position": "Defensa"
       },
       {
         "code": "COL 10",
-        "name": "Jefferson Lerma"
+        "name": "Johan Mojica",
+        "position": "Defensa"
       },
       {
         "code": "COL 11",
-        "name": "Kevin Castaño"
+        "name": "Willer Ditta",
+        "position": "Defensa"
       },
       {
         "code": "COL 12",
-        "name": "Richard Rios"
+        "name": "Deiver Machado",
+        "position": "Defensa"
+      },
+      {
+        "code": "COL 13",
+        "name": "James Rodríguez",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 14",
-        "name": "James Rodriguez"
+        "name": "Jorge Carrascal",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 15",
-        "name": "Juan Fernando Quintero"
+        "name": "Kevin Castaño",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 16",
-        "name": "Jorge Carrascal"
+        "name": "Juan Fernando Quintero",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 17",
-        "name": "Jon Arias"
+        "name": "Juan Camilo Portilla",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 18",
-        "name": "Jhon Cordova"
+        "name": "Jefferson Lerma",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 19",
-        "name": "Luis Suarez"
+        "name": "Richard Ríos",
+        "position": "Mediocampista"
       },
       {
         "code": "COL 20",
-        "name": "Luis Diaz"
+        "name": "Jhon Arias",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "COL 21",
+        "name": "Luis Díaz",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 22",
+        "name": "Jhon Córdoba",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 23",
+        "name": "Luis Suárez",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 24",
+        "name": "Jhon Durán",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 25",
+        "name": "Andrés Gómez",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 26",
+        "name": "Jaminton Campaz",
+        "position": "Delantero"
+      },
+      {
+        "code": "COL 27",
+        "name": "Cucho Hernández",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "CPV",
     "team": "Cabo Verde",
+    "code": "CPV",
     "sourceTeam": "Cape Verde",
     "players": [
       {
         "code": "CPV 2",
-        "name": "Vozinha"
+        "name": "Josimar Dias",
+        "position": "Portero"
       },
       {
         "code": "CPV 3",
-        "name": "Logan Costa"
+        "name": "Márcio da Rosa",
+        "position": "Portero"
       },
       {
         "code": "CPV 4",
-        "name": "Pico"
+        "name": "Carlos Santos",
+        "position": "Portero"
       },
       {
         "code": "CPV 5",
-        "name": "Diney"
+        "name": "Steven Moreira",
+        "position": "Defensa"
       },
       {
         "code": "CPV 6",
-        "name": "Steven Moreira"
+        "name": "Wagner Pina",
+        "position": "Defensa"
       },
       {
         "code": "CPV 7",
-        "name": "Wagner Pina"
+        "name": "Joao Fernandes",
+        "position": "Defensa"
       },
       {
         "code": "CPV 8",
-        "name": "Joao Paulo"
+        "name": "Sidny Lopes",
+        "position": "Defensa"
       },
       {
         "code": "CPV 9",
-        "name": "Yannick Semedo"
+        "name": "Logan Costa",
+        "position": "Defensa"
       },
       {
         "code": "CPV 10",
-        "name": "Kevin Pina"
+        "name": "Roberto Lopes",
+        "position": "Defensa"
       },
       {
         "code": "CPV 11",
-        "name": "Patrick Andrade"
+        "name": "Kelvin Pires",
+        "position": "Defensa"
       },
       {
         "code": "CPV 12",
-        "name": "Jamiro Monteiro"
+        "name": "Ianique Tavares",
+        "position": "Defensa"
+      },
+      {
+        "code": "CPV 13",
+        "name": "Edilson Borges",
+        "position": "Defensa"
       },
       {
         "code": "CPV 14",
-        "name": "Deroy Duarte"
+        "name": "Jamiro Monteiro",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 15",
-        "name": "Garry Rodrigues"
+        "name": "Telmo Arcanjo",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 16",
-        "name": "Jovane Cabral"
+        "name": "Yannick Semedo",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 17",
-        "name": "Ryan Mendes"
+        "name": "Laros Duarte",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 18",
-        "name": "Dailon Livramento"
+        "name": "Deroy Duarte",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 19",
-        "name": "Willy Semedo"
+        "name": "Kevin Pina",
+        "position": "Mediocampista"
       },
       {
         "code": "CPV 20",
-        "name": "Bebe"
+        "name": "Ryan Mendes",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 21",
+        "name": "Willy Semedo",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 22",
+        "name": "Garry Rodrigues",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 23",
+        "name": "Jovane Cabral",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 24",
+        "name": "Nuno da Costa",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 25",
+        "name": "Dailon Livramento",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 26",
+        "name": "Gilson Benchimol",
+        "position": "Delantero"
+      },
+      {
+        "code": "CPV 27",
+        "name": "Hélio Varela",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "CRO",
     "team": "Croacia",
+    "code": "CRO",
     "sourceTeam": "Croatia",
     "players": [
       {
         "code": "CRO 2",
-        "name": "Dominik Livaković"
+        "name": "Dominik Livakovic",
+        "position": "Portero"
       },
       {
         "code": "CRO 3",
-        "name": "Duje Caleta-Car"
+        "name": "Dominik Kotarski e Ivor Pandur",
+        "position": "Portero"
       },
       {
         "code": "CRO 4",
-        "name": "Josko Gvardiol"
+        "name": "Josko Gvardiol",
+        "position": "Defensa"
       },
       {
         "code": "CRO 5",
-        "name": "Josip Stanišić"
+        "name": "Duje Caleta-Car",
+        "position": "Defensa"
       },
       {
         "code": "CRO 6",
-        "name": "Luka Vušković"
+        "name": "Josip Satula",
+        "position": "Defensa"
       },
       {
         "code": "CRO 7",
-        "name": "Josip Sutalo"
+        "name": "Josip Stanisic",
+        "position": "Defensa"
       },
       {
         "code": "CRO 8",
-        "name": "Kristijan Jakic"
+        "name": "Marin Pongracic",
+        "position": "Defensa"
       },
       {
         "code": "CRO 9",
-        "name": "Luka Modrić"
+        "name": "Martin Erlic",
+        "position": "Defensa"
       },
       {
         "code": "CRO 10",
-        "name": "Mateo Kovacic"
+        "name": "Lukas Vuskovic",
+        "position": "Defensa"
       },
       {
         "code": "CRO 11",
-        "name": "Martin Baturina"
+        "name": "Luka Modric",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 12",
-        "name": "Lovro Majer"
+        "name": "Mateo Kovacic",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CRO 13",
+        "name": "Mario Pasalic",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 14",
-        "name": "Mario Pasalic"
+        "name": "Nikola Vlasic",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 15",
-        "name": "Petar Sucic"
+        "name": "Luka Sucic",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 16",
-        "name": "Ivan Perišić"
+        "name": "Martin Baturina",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 17",
-        "name": "Marco Pasalic"
+        "name": "Kristijan Jakic",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 18",
-        "name": "Ante Budimir"
+        "name": "Petar Sucic",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 19",
-        "name": "Andrej Kramarić"
+        "name": "Nikola Moro",
+        "position": "Mediocampista"
       },
       {
         "code": "CRO 20",
-        "name": "Franjo Ivanovic"
+        "name": "Toni Fruk",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CRO 21",
+        "name": "Ivan Perisic",
+        "position": "Delantero"
+      },
+      {
+        "code": "CRO 22",
+        "name": "Andrej Kramaric",
+        "position": "Delantero"
+      },
+      {
+        "code": "CRO 23",
+        "name": "Ante Budimir",
+        "position": "Delantero"
+      },
+      {
+        "code": "CRO 24",
+        "name": "Marco Pasalic",
+        "position": "Delantero"
+      },
+      {
+        "code": "CRO 25",
+        "name": "Petar Musa e Igor Matanovic",
+        "position": "Delantero"
+      },
+      {
+        "code": "CRO 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Croacia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "CRO 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Croacia",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "CUW",
     "team": "Curazao",
+    "code": "CUW",
     "sourceTeam": "Curaçao",
     "players": [
       {
         "code": "CUW 2",
-        "name": "Eloy Room"
+        "name": "Eloy Room",
+        "position": "Portero"
       },
       {
         "code": "CUW 3",
-        "name": "Armando Obispo"
+        "name": "Tyrick Bodak",
+        "position": "Portero"
       },
       {
         "code": "CUW 4",
-        "name": "Sherel Floranus"
+        "name": "Trevor Doornbusch",
+        "position": "Portero"
       },
       {
         "code": "CUW 5",
-        "name": "Jurien Gaari"
+        "name": "Riechedly Bazder",
+        "position": "Defensa"
       },
       {
         "code": "CUW 6",
-        "name": "Joshua Brenet"
+        "name": "Joshua Brenet",
+        "position": "Defensa"
       },
       {
         "code": "CUW 7",
-        "name": "Roshon Van Eijma"
+        "name": "Roshon Van Eijma",
+        "position": "Defensa"
       },
       {
         "code": "CUW 8",
-        "name": "Shurandy Sambo"
+        "name": "Sherel Floranus",
+        "position": "Defensa"
       },
       {
         "code": "CUW 9",
-        "name": "Livano Comenencia"
+        "name": "Deveron Fonville",
+        "position": "Defensa"
       },
       {
         "code": "CUW 10",
-        "name": "Godfried Roemeratoe"
+        "name": "Jurien Gaari",
+        "position": "Defensa"
       },
       {
         "code": "CUW 11",
-        "name": "Juninho Bacuna"
+        "name": "Armando Obispo",
+        "position": "Defensa"
       },
       {
         "code": "CUW 12",
-        "name": "Leandro Bacuna"
+        "name": "Shurandy Sambo",
+        "position": "Defensa"
+      },
+      {
+        "code": "CUW 13",
+        "name": "Leandro Bacuna",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 14",
-        "name": "Tahith Chong"
+        "name": "Juninho Bacuna",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 15",
-        "name": "Kenji Gorre"
+        "name": "Livano Comenencia",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 16",
-        "name": "Jearl Margaritha"
+        "name": "Kevin Felida",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 17",
-        "name": "Jurgen Locadia"
+        "name": "Ar'jany Martha",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 18",
-        "name": "Jeremy Antonisse"
+        "name": "Tyrese Noslin",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 19",
-        "name": "Gervane Kastaneer"
+        "name": "Godfried Roemeratoe",
+        "position": "Mediocampista"
       },
       {
         "code": "CUW 20",
-        "name": "Sontje Hansen"
+        "name": "Jerey Antonisse",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 21",
+        "name": "Tahith Chong",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 22",
+        "name": "Kenji Gorré",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 23",
+        "name": "Sontje Hansen",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 24",
+        "name": "Gervane Kastaneer",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 25",
+        "name": "Brandley Kuwas",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 26",
+        "name": "Jürgen Locadia",
+        "position": "Delantero"
+      },
+      {
+        "code": "CUW 27",
+        "name": "Jearl Margaritha",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "CZE",
     "team": "Republica Checa",
+    "code": "CZE",
     "sourceTeam": "Czechia",
     "players": [
       {
         "code": "CZE 2",
-        "name": "Matej Kovar"
+        "name": "Lukas Hornicek",
+        "position": "Portero"
       },
       {
         "code": "CZE 3",
-        "name": "Jindrich Stanek"
+        "name": "Matej Kovar",
+        "position": "Portero"
       },
       {
         "code": "CZE 4",
-        "name": "Ladislav Krejci"
+        "name": "Jindrich Stanek",
+        "position": "Portero"
       },
       {
         "code": "CZE 5",
-        "name": "Vladimir Coufal"
+        "name": "Vladimir Coufal",
+        "position": "Defensa"
       },
       {
         "code": "CZE 6",
-        "name": "Jaroslav Zeleny"
+        "name": "David Doudera",
+        "position": "Defensa"
       },
       {
         "code": "CZE 7",
-        "name": "Tomas Holes"
+        "name": "Tomás Holes",
+        "position": "Defensa"
       },
       {
         "code": "CZE 8",
-        "name": "David Zima"
+        "name": "Robin Hranác",
+        "position": "Defensa"
       },
       {
         "code": "CZE 9",
-        "name": "Michal Sadilek"
+        "name": "Tepán Chaloupek",
+        "position": "Defensa"
       },
       {
         "code": "CZE 10",
-        "name": "Lukas Provod"
+        "name": "David Jurásek",
+        "position": "Defensa"
       },
       {
         "code": "CZE 11",
-        "name": "Lukas Cerv"
+        "name": "Ladislav Krejcí",
+        "position": "Defensa"
       },
       {
         "code": "CZE 12",
-        "name": "Tomas Soucek"
+        "name": "Jaroslav Zelený",
+        "position": "Defensa"
+      },
+      {
+        "code": "CZE 13",
+        "name": "David Zima",
+        "position": "Defensa"
       },
       {
         "code": "CZE 14",
-        "name": "Pavel Sulc"
+        "name": "Pavel Bucha",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 15",
-        "name": "Matej Vydra"
+        "name": "Lukas Cerv",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 16",
-        "name": "Vasil Kusej"
+        "name": "Vladimír Darida",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 17",
-        "name": "Tomas Chory"
+        "name": "Tomás Ladra",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 18",
-        "name": "Vaclav Cerny"
+        "name": "Lukas Provod",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 19",
-        "name": "Adam Hlozek"
+        "name": "Michal Sadílek",
+        "position": "Mediocampista"
       },
       {
         "code": "CZE 20",
-        "name": "Patrik Schick"
+        "name": "Hugo Sochurek",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CZE 21",
+        "name": "Alexandr Sojka",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CZE 22",
+        "name": "Tomá Soucek",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CZE 23",
+        "name": "Pavel Ulc",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CZE 24",
+        "name": "Denis Viinský",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "CZE 25",
+        "name": "Adam Hloek",
+        "position": "Delantero"
+      },
+      {
+        "code": "CZE 26",
+        "name": "Tomá Chorý",
+        "position": "Delantero"
+      },
+      {
+        "code": "CZE 27",
+        "name": "Mojmír Chytil",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "ECU",
     "team": "Ecuador",
+    "code": "ECU",
     "sourceTeam": "Ecuador",
     "players": [
       {
@@ -1923,433 +2822,772 @@ const paniniAlbumTeams = [
         "name": "Pedro Vite"
       },
       {
-        "code": "ECU 14",
+        "code": "ECU 13",
         "name": "John Veboah"
       },
       {
-        "code": "ECU 15",
+        "code": "ECU 14",
         "name": "Leonardo Campana"
       },
       {
-        "code": "ECU 16",
+        "code": "ECU 15",
         "name": "Gonzalo Plata"
       },
       {
-        "code": "ECU 17",
+        "code": "ECU 16",
         "name": "Nilson Angulo"
       },
       {
-        "code": "ECU 18",
+        "code": "ECU 17",
         "name": "Alan Minda"
       },
       {
-        "code": "ECU 19",
+        "code": "ECU 18",
         "name": "Kevin Rodriguez"
       },
       {
-        "code": "ECU 20",
+        "code": "ECU 19",
         "name": "Enner Valencia"
+      },
+      {
+        "code": "ECU 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "ECU 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Ecuador",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "EGY",
     "team": "Egipto",
+    "code": "EGY",
     "sourceTeam": "Egypt",
     "players": [
       {
         "code": "EGY 2",
-        "name": "Mohamed El Shenawy"
+        "name": "Mohamed El Shennawy",
+        "position": "Portero"
       },
       {
         "code": "EGY 3",
-        "name": "Mohamed Hany"
+        "name": "Mostafa Shobeir",
+        "position": "Portero"
       },
       {
         "code": "EGY 4",
-        "name": "Mohamed Hamdy"
+        "name": "El Mahdy Soliman",
+        "position": "Portero"
       },
       {
         "code": "EGY 5",
-        "name": "Yasser Ibrahim"
+        "name": "Mohamed Alla",
+        "position": "Portero"
       },
       {
         "code": "EGY 6",
-        "name": "Khaled Sobhi"
+        "name": "Mohamed Hany",
+        "position": "Defensa"
       },
       {
         "code": "EGY 7",
-        "name": "Ramy Rabia"
+        "name": "Tarek Alaa",
+        "position": "Defensa"
       },
       {
         "code": "EGY 8",
-        "name": "Hossam Abdelmaguid"
+        "name": "Hamdi Fathi",
+        "position": "Defensa"
       },
       {
         "code": "EGY 9",
-        "name": "Ahmed Fatouh"
+        "name": "Ramy Rabia",
+        "position": "Defensa"
       },
       {
         "code": "EGY 10",
-        "name": "Marwan Attia"
+        "name": "Yasser Ibrahim",
+        "position": "Defensa"
       },
       {
         "code": "EGY 11",
-        "name": "Zizo"
+        "name": "Hossam Abdelmaguid",
+        "position": "Defensa"
       },
       {
         "code": "EGY 12",
-        "name": "Hamdy Fathy"
+        "name": "Mohamed Abeldmonem",
+        "position": "Defensa"
+      },
+      {
+        "code": "EGY 13",
+        "name": "Ahmed Fattouh",
+        "position": "Defensa"
       },
       {
         "code": "EGY 14",
-        "name": "Mohamed Lasheen"
+        "name": "Karim Hafez",
+        "position": "Defensa"
       },
       {
         "code": "EGY 15",
-        "name": "Emam Ashour"
+        "name": "Marwan Attia",
+        "position": "Mediocampista"
       },
       {
         "code": "EGY 16",
-        "name": "Osama Faisal"
+        "name": "Mohannad Lasheen",
+        "position": "Mediocampista"
       },
       {
         "code": "EGY 17",
-        "name": "Mohamed Salah"
+        "name": "Nabil Amad Dunga",
+        "position": "Mediocampista"
       },
       {
         "code": "EGY 18",
-        "name": "Mostafa Mohamed"
+        "name": "Mahmoud Saber",
+        "position": "Mediocampista"
       },
       {
         "code": "EGY 19",
-        "name": "Trezeguet"
+        "name": "Ahmed Sayed Zizo",
+        "position": "Mediocampista"
       },
       {
         "code": "EGY 20",
-        "name": "Omar Marmoush"
+        "name": "Mahmoud Trezeguet",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "EGY 21",
+        "name": "Ibrahim Adel",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "EGY 22",
+        "name": "Haitham Hassan",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "EGY 23",
+        "name": "Mohamed Salah",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "EGY 24",
+        "name": "Omar Marmoush",
+        "position": "Delantero"
+      },
+      {
+        "code": "EGY 25",
+        "name": "Aktay Abdullah",
+        "position": "Delantero"
+      },
+      {
+        "code": "EGY 26",
+        "name": "Hazam Abdel Klarim",
+        "position": "Delantero"
+      },
+      {
+        "code": "EGY 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Egipto",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "ENG",
     "team": "Inglaterra",
+    "code": "ENG",
     "sourceTeam": "England",
     "players": [
       {
         "code": "ENG 2",
-        "name": "Jordan Pickford"
+        "name": "Dean Henderson",
+        "position": "Portero"
       },
       {
         "code": "ENG 3",
-        "name": "John Stones"
+        "name": "Jordan Pickford",
+        "position": "Portero"
       },
       {
         "code": "ENG 4",
-        "name": "Marc Guéhi"
+        "name": "James Trafford",
+        "position": "Portero"
       },
       {
         "code": "ENG 5",
-        "name": "Ezri Konsa"
+        "name": "Dan Burn",
+        "position": "Defensa"
       },
       {
         "code": "ENG 6",
-        "name": "Trent Alexander-Arnold"
+        "name": "Marc Guéhi",
+        "position": "Defensa"
       },
       {
         "code": "ENG 7",
-        "name": "Reece James"
+        "name": "Reece James",
+        "position": "Defensa"
       },
       {
         "code": "ENG 8",
-        "name": "Dan Burn"
+        "name": "Ezri Konsa",
+        "position": "Defensa"
       },
       {
         "code": "ENG 9",
-        "name": "Jordan Henderson"
+        "name": "Tino Livramento",
+        "position": "Defensa"
       },
       {
         "code": "ENG 10",
-        "name": "Declan Rice"
+        "name": "Nico O'Reilly",
+        "position": "Defensa"
       },
       {
         "code": "ENG 11",
-        "name": "Jude Bellingham"
+        "name": "Jarell Quansah",
+        "position": "Defensa"
       },
       {
         "code": "ENG 12",
-        "name": "Cole Palmer"
+        "name": "Djed Spence",
+        "position": "Defensa"
+      },
+      {
+        "code": "ENG 13",
+        "name": "John Stones",
+        "position": "Defensa"
       },
       {
         "code": "ENG 14",
-        "name": "Morgan Rogers"
+        "name": "Elliot Anderson",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 15",
-        "name": "Anthony Gordon"
+        "name": "Jude Bellingham",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 16",
-        "name": "Phil Foden"
+        "name": "Eberechi Eze",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 17",
-        "name": "Bukayo Saka"
+        "name": "Jordan Henderson",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 18",
-        "name": "Harry Kane"
+        "name": "Kobbie Mainoo",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 19",
-        "name": "Marcus Rashford"
+        "name": "Declan Rice",
+        "position": "Mediocampista"
       },
       {
         "code": "ENG 20",
-        "name": "Ollie Watkins"
+        "name": "Morgan Rogers",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "ENG 21",
+        "name": "Anthony Gordon",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 22",
+        "name": "Harry Kane",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 23",
+        "name": "Noni Madueke",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 24",
+        "name": "Marcus Rashford",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 25",
+        "name": "Bukayo Saka",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 26",
+        "name": "Ivan Toney",
+        "position": "Delantero"
+      },
+      {
+        "code": "ENG 27",
+        "name": "Ollie Watkins",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "ESP",
     "team": "Espana",
+    "code": "ESP",
     "sourceTeam": "Spain",
     "players": [
       {
         "code": "ESP 2",
-        "name": "Unai Simon"
+        "name": "Unai Simón",
+        "position": "Portero"
       },
       {
         "code": "ESP 3",
-        "name": "Robin Le Normand"
+        "name": "David Raya",
+        "position": "Portero"
       },
       {
         "code": "ESP 4",
-        "name": "Aymeric Laporte"
+        "name": "Joan García",
+        "position": "Portero"
       },
       {
         "code": "ESP 5",
-        "name": "Dean Huijsen"
+        "name": "Marc Cucurella",
+        "position": "Defensa"
       },
       {
         "code": "ESP 6",
-        "name": "Pedro Porro"
+        "name": "Alejandro Grimaldo",
+        "position": "Defensa"
       },
       {
         "code": "ESP 7",
-        "name": "Dani Carvajal"
+        "name": "Pau Cubarsi",
+        "position": "Defensa"
       },
       {
         "code": "ESP 8",
-        "name": "Marc Cucurella"
+        "name": "Aymeric Laporte",
+        "position": "Defensa"
       },
       {
         "code": "ESP 9",
-        "name": "Martín Zubimendi"
+        "name": "Marc Pubill",
+        "position": "Defensa"
       },
       {
         "code": "ESP 10",
-        "name": "Rodri"
+        "name": "Eric García",
+        "position": "Defensa"
       },
       {
         "code": "ESP 11",
-        "name": "Pedri"
+        "name": "Marcos Llorente",
+        "position": "Defensa"
       },
       {
         "code": "ESP 12",
-        "name": "Fabian Ruiz"
+        "name": "Pedro Porro",
+        "position": "Defensa"
+      },
+      {
+        "code": "ESP 13",
+        "name": "Pedri",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 14",
-        "name": "Mikel Merino"
+        "name": "Fabián Ruiz",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 15",
-        "name": "Lamine Yamal"
+        "name": "Martín Zubimendi",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 16",
-        "name": "Dani Olmo"
+        "name": "Gavi",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 17",
-        "name": "Nico Williams"
+        "name": "Rodrigo Hernández",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 18",
-        "name": "Ferran Torres"
+        "name": "Álex Baena",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 19",
-        "name": "Álvaro Morata"
+        "name": "Mikel Merino",
+        "position": "Mediocampista"
       },
       {
         "code": "ESP 20",
-        "name": "Mikel Oyarzabal"
+        "name": "Mikel Oyarzabal",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "ESP 21",
+        "name": "Dani Olmo",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 22",
+        "name": "Nico Williams",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 23",
+        "name": "Yeremy Pino",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 24",
+        "name": "Ferran Torres",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 25",
+        "name": "Borja Iglesias",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 26",
+        "name": "Víctor Muñoz",
+        "position": "Delantero"
+      },
+      {
+        "code": "ESP 27",
+        "name": "Lamine Yamal",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "FRA",
     "team": "Francia",
+    "code": "FRA",
     "sourceTeam": "France",
     "players": [
       {
         "code": "FRA 2",
-        "name": "Mike Maignan"
+        "name": "Mike Maignan",
+        "position": "Portero"
       },
       {
         "code": "FRA 3",
-        "name": "Theo Hernandez"
+        "name": "Robin Risser",
+        "position": "Portero"
       },
       {
         "code": "FRA 4",
-        "name": "William Saliba"
+        "name": "Brice Samba",
+        "position": "Portero"
       },
       {
         "code": "FRA 5",
-        "name": "Jules Kounde"
+        "name": "Lucas Digne",
+        "position": "Defensa"
       },
       {
         "code": "FRA 6",
-        "name": "Ibrahima Konate"
+        "name": "Malo Gusto",
+        "position": "Defensa"
       },
       {
         "code": "FRA 7",
-        "name": "Dayot Upamecano"
+        "name": "Lucas Hernandez",
+        "position": "Defensa"
       },
       {
         "code": "FRA 8",
-        "name": "Lucas Digne"
+        "name": "Theo Hernandez",
+        "position": "Defensa"
       },
       {
         "code": "FRA 9",
-        "name": "Aurélien Tchouaméni"
+        "name": "Ibrahima Konate",
+        "position": "Defensa"
       },
       {
         "code": "FRA 10",
-        "name": "Eduardo Camavinga"
+        "name": "Jules Kounde",
+        "position": "Defensa"
       },
       {
         "code": "FRA 11",
-        "name": "Manu Kone"
+        "name": "Maxence Lacroix",
+        "position": "Defensa"
       },
       {
         "code": "FRA 12",
-        "name": "Adrien Rabiot"
+        "name": "William Saliba",
+        "position": "Defensa"
+      },
+      {
+        "code": "FRA 13",
+        "name": "Dayot Upamecano",
+        "position": "Defensa"
       },
       {
         "code": "FRA 14",
-        "name": "Michael Olise"
+        "name": "N'Golo Kante",
+        "position": "Mediocampista"
       },
       {
         "code": "FRA 15",
-        "name": "Ousmane Dembele"
+        "name": "Manu Kone",
+        "position": "Mediocampista"
       },
       {
         "code": "FRA 16",
-        "name": "Bradley Barcola"
+        "name": "Adrien Rabiot",
+        "position": "Mediocampista"
       },
       {
         "code": "FRA 17",
-        "name": "Désiré Doué"
+        "name": "Aurelien Tchouameni",
+        "position": "Mediocampista"
       },
       {
         "code": "FRA 18",
-        "name": "Kingsley Coman"
+        "name": "Warren Zaire-Emery",
+        "position": "Mediocampista"
       },
       {
         "code": "FRA 19",
-        "name": "Hugo Ekitike"
+        "name": "Maghnes Akliouche",
+        "position": "Delantero"
       },
       {
         "code": "FRA 20",
-        "name": "Kylian Mbappe"
+        "name": "Bradley Barcola",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 21",
+        "name": "Rayan Cherki",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 22",
+        "name": "Ousmane Dembele",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 23",
+        "name": "Desire Doue",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 24",
+        "name": "Jean-Philippe Mateta",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 25",
+        "name": "Kylian Mbappe",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 26",
+        "name": "Michael Olise",
+        "position": "Delantero"
+      },
+      {
+        "code": "FRA 27",
+        "name": "Marcus Thuram",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "GER",
     "team": "Alemania",
+    "code": "GER",
     "sourceTeam": "Germany",
     "players": [
       {
         "code": "GER 2",
-        "name": "Marc-André ter Stegen"
+        "name": "Oliver Baumann",
+        "position": "Portero"
       },
       {
         "code": "GER 3",
-        "name": "Jonathan Tah"
+        "name": "Manuel Neuer",
+        "position": "Portero"
       },
       {
         "code": "GER 4",
-        "name": "David Raum"
+        "name": "Alexander Nübel",
+        "position": "Portero"
       },
       {
         "code": "GER 5",
-        "name": "Nico Schlotterbeck"
+        "name": "Waldemar Anton",
+        "position": "Defensa"
       },
       {
         "code": "GER 6",
-        "name": "Antonio Rüdiger"
+        "name": "Nathanael Brown",
+        "position": "Defensa"
       },
       {
         "code": "GER 7",
-        "name": "Waldemar Anton"
+        "name": "David Raum",
+        "position": "Defensa"
       },
       {
         "code": "GER 8",
-        "name": "Ridle Baku"
+        "name": "Antonio Rüdiger",
+        "position": "Defensa"
       },
       {
         "code": "GER 9",
-        "name": "Maximilian Mittelstadt"
+        "name": "Nico Schlotterbeck",
+        "position": "Defensa"
       },
       {
         "code": "GER 10",
-        "name": "Joshua Kimmich"
+        "name": "Jonathan Tah",
+        "position": "Defensa"
       },
       {
         "code": "GER 11",
-        "name": "Florian Wirtz"
+        "name": "Malick Thiaw",
+        "position": "Defensa"
       },
       {
         "code": "GER 12",
-        "name": "Felix Nmecha"
+        "name": "Pascal Gross",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "GER 13",
+        "name": "Joshua Kimmich",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 14",
-        "name": "Leon Goretzka"
+        "name": "Felix Nmecha",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 15",
-        "name": "Jamal Musiala"
+        "name": "Aleksandar Pavlovic",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 16",
-        "name": "Serge Gnabry"
+        "name": "Angelo Stiller",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 17",
-        "name": "Kai Havertz"
+        "name": "Ndiem Amiri",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 18",
-        "name": "Leroy Sane"
+        "name": "Leon Goretzka",
+        "position": "Mediocampista"
       },
       {
         "code": "GER 19",
-        "name": "Karim Adeyemi"
+        "name": "Kai Habertz",
+        "position": "Delantero"
       },
       {
         "code": "GER 20",
-        "name": "Nick Woltemade"
+        "name": "Lennart Karl",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 21",
+        "name": "Jamal Musiala",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 22",
+        "name": "Florian Wirtz",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 23",
+        "name": "Maximilian Beier",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 24",
+        "name": "Jamie Leweling",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 25",
+        "name": "Leroy Sané",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 26",
+        "name": "Deniz Undav",
+        "position": "Delantero"
+      },
+      {
+        "code": "GER 27",
+        "name": "Nick Woltemade",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "GHA",
     "team": "Ghana",
+    "code": "GHA",
     "sourceTeam": "Ghana",
     "players": [
       {
@@ -2397,117 +3635,223 @@ const paniniAlbumTeams = [
         "name": "Kamaldeen Sulemana"
       },
       {
-        "code": "GHA 14",
+        "code": "GHA 13",
         "name": "Mohammed Kudus"
       },
       {
-        "code": "GHA 15",
+        "code": "GHA 14",
         "name": "Inaki Williams"
       },
       {
-        "code": "GHA 16",
+        "code": "GHA 15",
         "name": "Jordan Ayew"
       },
       {
-        "code": "GHA 17",
+        "code": "GHA 16",
         "name": "Andrew Ayew"
       },
       {
-        "code": "GHA 18",
+        "code": "GHA 17",
         "name": "Joseph Paintsil"
       },
       {
-        "code": "GHA 19",
+        "code": "GHA 18",
         "name": "Osman Bukari"
       },
       {
-        "code": "GHA 20",
+        "code": "GHA 19",
         "name": "Antoine Semenyo"
+      },
+      {
+        "code": "GHA 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "GHA 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Ghana",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "HAI",
     "team": "Haiti",
+    "code": "HAI",
     "sourceTeam": "Haiti",
     "players": [
       {
         "code": "HAI 2",
-        "name": "Johny Placide"
+        "name": "Jhony Placide",
+        "position": "Portero"
       },
       {
         "code": "HAI 3",
-        "name": "Carlens Arcus"
+        "name": "Alexandre Pierre",
+        "position": "Portero"
       },
       {
         "code": "HAI 4",
-        "name": "Martin Expérience"
+        "name": "Josue Duverger",
+        "position": "Portero"
       },
       {
         "code": "HAI 5",
-        "name": "Jean-Kevin Duverne"
+        "name": "Carlens Arcus",
+        "position": "Defensa"
       },
       {
         "code": "HAI 6",
-        "name": "Ricardo Adé"
+        "name": "Wilguens Paugain",
+        "position": "Defensa"
       },
       {
         "code": "HAI 7",
-        "name": "Duke Lacroix"
+        "name": "Duke Lacroix",
+        "position": "Defensa"
       },
       {
         "code": "HAI 8",
-        "name": "Garven Metusala"
+        "name": "Martin Experience",
+        "position": "Defensa"
       },
       {
         "code": "HAI 9",
-        "name": "Hannes Delcroix"
+        "name": "Jean-Kévin Duverne",
+        "position": "Defensa"
       },
       {
         "code": "HAI 10",
-        "name": "Leverton Pierre"
+        "name": "Ricardo Ade",
+        "position": "Defensa"
       },
       {
         "code": "HAI 11",
-        "name": "Danley Jean Jacques"
+        "name": "Hannes Delcroix",
+        "position": "Defensa"
       },
       {
         "code": "HAI 12",
-        "name": "Jean-Ricner Bellegarde"
+        "name": "Keeto Thermoncy",
+        "position": "Defensa"
+      },
+      {
+        "code": "HAI 13",
+        "name": "Carl Fred Sainté",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 14",
-        "name": "Christopher Attys"
+        "name": "Leverton Pierre",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 15",
-        "name": "Derrick Etienne Jr"
+        "name": "Danley Jean Jacques",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 16",
-        "name": "Josue Casimir"
+        "name": "Jean-Ricner Bellegarde",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 17",
-        "name": "Ruben Providence"
+        "name": "Woodensky Pierre",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 18",
-        "name": "Duckens Nazon"
+        "name": "Dominique Simon",
+        "position": "Mediocampista"
       },
       {
         "code": "HAI 19",
-        "name": "Louicius Deedson"
+        "name": "Don Deedson Louicius",
+        "position": "Delantero"
       },
       {
         "code": "HAI 20",
-        "name": "Frantzdy Pierrot"
+        "name": "Josue Casimir",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 21",
+        "name": "Derrick Etienne",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 22",
+        "name": "Ruben Providence",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 23",
+        "name": "Duckens Nazon",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 24",
+        "name": "Frantzdy Pierrot",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 25",
+        "name": "Wilson Isidor",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 26",
+        "name": "Yassin Fortuné",
+        "position": "Delantero"
+      },
+      {
+        "code": "HAI 27",
+        "name": "Lenny Joseph",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "IRN",
     "team": "Iran",
+    "code": "IRN",
     "sourceTeam": "Iran",
     "players": [
       {
@@ -2555,38 +3899,86 @@ const paniniAlbumTeams = [
         "name": "Saman Ghoddos"
       },
       {
-        "code": "IRN 14",
+        "code": "IRN 13",
         "name": "Omid Noorafkan"
       },
       {
-        "code": "IRN 15",
+        "code": "IRN 14",
         "name": "Roozbeh Cheshmi"
       },
       {
-        "code": "IRN 16",
+        "code": "IRN 15",
         "name": "Mohammad Mohebi"
       },
       {
-        "code": "IRN 17",
+        "code": "IRN 16",
         "name": "Sardar Azmoun"
       },
       {
-        "code": "IRN 18",
+        "code": "IRN 17",
         "name": "Mehdi Taremi"
       },
       {
-        "code": "IRN 19",
+        "code": "IRN 18",
         "name": "Alireza Jahanbakhsh"
       },
       {
-        "code": "IRN 20",
+        "code": "IRN 19",
         "name": "Ali Gholizadeh"
+      },
+      {
+        "code": "IRN 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRN 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Iran",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "IRQ",
     "team": "Irak",
+    "code": "IRQ",
     "sourceTeam": "Iraq",
     "players": [
       {
@@ -2634,38 +4026,86 @@ const paniniAlbumTeams = [
         "name": "Ali Jasim"
       },
       {
-        "code": "IRQ 14",
+        "code": "IRQ 13",
         "name": "Youssef Amyn"
       },
       {
-        "code": "IRQ 15",
+        "code": "IRQ 14",
         "name": "Aimar Sher"
       },
       {
-        "code": "IRQ 16",
+        "code": "IRQ 15",
         "name": "Marko Farji"
       },
       {
-        "code": "IRQ 17",
+        "code": "IRQ 16",
         "name": "Osama Rashid"
       },
       {
-        "code": "IRQ 18",
+        "code": "IRQ 17",
         "name": "Ali Al-Hamadi"
       },
       {
-        "code": "IRQ 19",
+        "code": "IRQ 18",
         "name": "Aymen Hussein"
       },
       {
-        "code": "IRQ 20",
+        "code": "IRQ 19",
         "name": "Mohanad Ali"
+      },
+      {
+        "code": "IRQ 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "IRQ 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Irak",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "JOR",
     "team": "Jordania",
+    "code": "JOR",
     "sourceTeam": "Jordan",
     "players": [
       {
@@ -2713,749 +4153,1371 @@ const paniniAlbumTeams = [
         "name": "Mohannad Abu Taha"
       },
       {
-        "code": "JOR 14",
+        "code": "JOR 13",
         "name": "Amer Jamous"
       },
       {
-        "code": "JOR 15",
+        "code": "JOR 14",
         "name": "Musa Al-Taamari"
       },
       {
-        "code": "JOR 16",
+        "code": "JOR 15",
         "name": "Yazan Al-Naimat"
       },
       {
-        "code": "JOR 17",
+        "code": "JOR 16",
         "name": "Mahmoud Al-Mardi"
       },
       {
-        "code": "JOR 18",
+        "code": "JOR 17",
         "name": "Ali Olwan"
       },
       {
-        "code": "JOR 19",
+        "code": "JOR 18",
         "name": "Mohammad Abu Zrayq"
       },
       {
-        "code": "JOR 20",
+        "code": "JOR 19",
         "name": "Ibrahim Sabra"
+      },
+      {
+        "code": "JOR 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "JOR 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Jordania",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "JPN",
     "team": "Japon",
+    "code": "JPN",
     "sourceTeam": "Japan",
     "players": [
       {
         "code": "JPN 2",
-        "name": "Zion Suzuki"
+        "name": "Tomoki Hayakawa",
+        "position": "Portero"
       },
       {
         "code": "JPN 3",
-        "name": "Henry Heroki Mochizuki"
+        "name": "Keisuke Osako",
+        "position": "Portero"
       },
       {
         "code": "JPN 4",
-        "name": "Ayumu Seko"
+        "name": "Zion Suzuki",
+        "position": "Portero"
       },
       {
         "code": "JPN 5",
-        "name": "Junnosuke Suzuki"
+        "name": "Ko Itakura",
+        "position": "Defensa"
       },
       {
         "code": "JPN 6",
-        "name": "Shogo Taniguchi"
+        "name": "Hiroki Ito",
+        "position": "Defensa"
       },
       {
         "code": "JPN 7",
-        "name": "Tsuyoshi Watanabe"
+        "name": "Yuto Nagatomo",
+        "position": "Defensa"
       },
       {
         "code": "JPN 8",
-        "name": "Kaishu Sano"
+        "name": "Ayumu Seko",
+        "position": "Defensa"
       },
       {
         "code": "JPN 9",
-        "name": "Yuki Soma"
+        "name": "Yukinari Sugawara",
+        "position": "Defensa"
       },
       {
         "code": "JPN 10",
-        "name": "Ao Tanaka"
+        "name": "Junnosuke Suzuki",
+        "position": "Defensa"
       },
       {
         "code": "JPN 11",
-        "name": "Daichi Kamada"
+        "name": "Shogo Taniguchi",
+        "position": "Defensa"
       },
       {
         "code": "JPN 12",
-        "name": "Takefusa Kubo"
+        "name": "Takehiro Tomiyasu",
+        "position": "Defensa"
+      },
+      {
+        "code": "JPN 13",
+        "name": "Tsuyoshi Watanabe",
+        "position": "Defensa"
       },
       {
         "code": "JPN 14",
-        "name": "Ritsu Doan"
+        "name": "Ritsu Doan",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 15",
-        "name": "Keito Nakamura"
+        "name": "Wataru Endo",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 16",
-        "name": "Takumi Minamino"
+        "name": "Junya Ito",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 17",
-        "name": "Shuto Machino"
+        "name": "Daichi Kamada",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 18",
-        "name": "Junya Ito"
+        "name": "Takefusa Kubo",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 19",
-        "name": "Koki Ogawa"
+        "name": "Keito Nakamura",
+        "position": "Mediocampista"
       },
       {
         "code": "JPN 20",
-        "name": "Ayase Ueda"
+        "name": "Kaishu Sano",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "JPN 21",
+        "name": "Ao Tanaka",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "JPN 22",
+        "name": "Keisuke Goto",
+        "position": "Delantero"
+      },
+      {
+        "code": "JPN 23",
+        "name": "Daizen Maeda",
+        "position": "Delantero"
+      },
+      {
+        "code": "JPN 24",
+        "name": "Koki Ogawa",
+        "position": "Delantero"
+      },
+      {
+        "code": "JPN 25",
+        "name": "Kento Shiogai",
+        "position": "Delantero"
+      },
+      {
+        "code": "JPN 26",
+        "name": "Yuito Suzuki",
+        "position": "Delantero"
+      },
+      {
+        "code": "JPN 27",
+        "name": "Ayase Ueda",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "KOR",
     "team": "Corea del Sur",
+    "code": "KOR",
     "sourceTeam": "South Korea",
     "players": [
       {
         "code": "KOR 2",
-        "name": "Hyeon-woo Jo"
+        "name": "Kim Seung-gyu",
+        "club": "FC Tokio/JPN",
+        "position": "Portero"
       },
       {
         "code": "KOR 3",
-        "name": "Seung-Gyu Kim"
+        "name": "Bum-keun Song",
+        "club": "Jeonbuk",
+        "position": "Portero"
       },
       {
         "code": "KOR 4",
-        "name": "Min-jae Kim"
+        "name": "Hyeon-woo Jo",
+        "club": "Ulsan",
+        "position": "Portero"
       },
       {
         "code": "KOR 5",
-        "name": "Yu-min Cho"
+        "name": "Kim Moon-hwan",
+        "club": "Daejeon",
+        "position": "Defensa"
       },
       {
         "code": "KOR 6",
-        "name": "Young-woo Seol"
+        "name": "Kim Min-jae",
+        "club": "Bayern Múnich/GER",
+        "position": "Defensa"
       },
       {
         "code": "KOR 7",
-        "name": "Han-beom Lee"
+        "name": "Kim Tae-hyeon",
+        "club": "Kashima Antlers/JPN",
+        "position": "Defensa"
       },
       {
         "code": "KOR 8",
-        "name": "Tae-seok Lee"
+        "name": "Jin-seop Park",
+        "club": "Zhejiang/CHN",
+        "position": "Defensa"
       },
       {
         "code": "KOR 9",
-        "name": "Myung-jae Lee"
+        "name": "Young-woo Seol",
+        "club": "Estrella Roja/SRB",
+        "position": "Defensa"
       },
       {
         "code": "KOR 10",
-        "name": "Jae-sung Lee"
+        "name": "Jens Castrop",
+        "club": "Borussia Mönchengladbach/GER",
+        "position": "Defensa"
       },
       {
         "code": "KOR 11",
-        "name": "In-beom Hwang"
+        "name": "Ki-hyuk Lee",
+        "club": "Gangwon",
+        "position": "Defensa"
       },
       {
         "code": "KOR 12",
-        "name": "Kang-in Lee"
+        "name": "Tae-seok Lee",
+        "club": "Austria Viena/AUT",
+        "position": "Defensa"
+      },
+      {
+        "code": "KOR 13",
+        "name": "Han-beom Lee",
+        "club": "Midtjylland/DIN",
+        "position": "Defensa"
       },
       {
         "code": "KOR 14",
-        "name": "Seung-ho Paik"
+        "name": "Yu-min Cho",
+        "club": "Al Sharjah/EAU",
+        "position": "Defensa"
       },
       {
         "code": "KOR 15",
-        "name": "Jens Castrop"
+        "name": "Kim Jin-gyu",
+        "club": "Jeonbuk",
+        "position": "Mediocampista"
       },
       {
         "code": "KOR 16",
-        "name": "Dongg-yeong Lee"
+        "name": "Jun-ho Bae",
+        "club": "Stoke City/ING",
+        "position": "Mediocampista"
       },
       {
         "code": "KOR 17",
-        "name": "Gue-sung Cho"
+        "name": "Seung-ho Paik",
+        "club": "Birmingham/ING",
+        "position": "Mediocampista"
       },
       {
         "code": "KOR 18",
-        "name": "Heung-min Son"
+        "name": "Hyun-jun Yang",
+        "club": "Celtic Glasgow/ESC",
+        "position": "Mediocampista"
       },
       {
         "code": "KOR 19",
-        "name": "Hee-chan Hwang"
+        "name": "Ji-sung Eom",
+        "club": "Swansea/ING",
+        "position": "Mediocampista"
       },
       {
         "code": "KOR 20",
-        "name": "Hyeon-Gyu Oh"
+        "name": "Kang-in Lee",
+        "club": "PSG/FRA",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KOR 21",
+        "name": "Dong-gyeong Lee",
+        "club": "Ulsan",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KOR 22",
+        "name": "Jae-sung Lee",
+        "club": "Mainz/GER",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KOR 23",
+        "name": "In-beom Hwang",
+        "club": "Feyenoord/NED",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KOR 24",
+        "name": "Hee-chan Hwang",
+        "club": "Wolverhampton/ING",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KOR 25",
+        "name": "Heung-min Son",
+        "club": "LAFC/USA",
+        "position": "Delantero"
+      },
+      {
+        "code": "KOR 26",
+        "name": "Hyeon-gyu Oh",
+        "club": "Besiktas/TUR",
+        "position": "Delantero"
+      },
+      {
+        "code": "KOR 27",
+        "name": "Gue-sung Cho",
+        "club": "Midtjylland/DIN",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "KSA",
     "team": "Arabia Saudita",
+    "code": "KSA",
     "sourceTeam": "Saudi Arabia",
     "players": [
       {
         "code": "KSA 2",
-        "name": "Nawaf Alaqidi"
+        "name": "Ahmed Al Kassar",
+        "position": "Portero"
       },
       {
         "code": "KSA 3",
-        "name": "Abdulrahman Al-Sanbi"
+        "name": "Mohammed Al Owais",
+        "position": "Portero"
       },
       {
         "code": "KSA 4",
-        "name": "Saud Abdulhamid"
+        "name": "Nawaf Al Aqidi",
+        "position": "Portero"
       },
       {
         "code": "KSA 5",
-        "name": "Nawaf Bouwashl"
+        "name": "Abdulqudus Attia",
+        "position": "Portero"
       },
       {
         "code": "KSA 6",
-        "name": "Jihad Thakri"
+        "name": "Saud Abdulhamid",
+        "position": "Defensa"
       },
       {
         "code": "KSA 7",
-        "name": "Moteb Al-Harbi"
+        "name": "Mohammed Abu Al Shamat",
+        "position": "Defensa"
       },
       {
         "code": "KSA 8",
-        "name": "Hassan Altambakti"
+        "name": "Khalid Al Ghannam",
+        "position": "Defensa"
       },
       {
         "code": "KSA 9",
-        "name": "Musab Aljuwayr"
+        "name": "Moteb Al Harbi",
+        "position": "Defensa"
       },
       {
         "code": "KSA 10",
-        "name": "Ziyad Aljohani"
+        "name": "Abdulelah Al Amri",
+        "position": "Defensa"
       },
       {
         "code": "KSA 11",
-        "name": "Abdullah Alkhaibari"
+        "name": "Nawaf Boushal",
+        "position": "Defensa"
       },
       {
         "code": "KSA 12",
-        "name": "Nasser Aldawsari"
+        "name": "Zakaria Hawsawi",
+        "position": "Defensa"
+      },
+      {
+        "code": "KSA 13",
+        "name": "Hassan Kadesh",
+        "position": "Defensa"
       },
       {
         "code": "KSA 14",
-        "name": "Saleh Abu Alshamat"
+        "name": "Ali Lajami",
+        "position": "Defensa"
       },
       {
         "code": "KSA 15",
-        "name": "Marwan Alsahafi"
+        "name": "Ali Majrashi",
+        "position": "Defensa"
       },
       {
         "code": "KSA 16",
-        "name": "Salem Aldawsari"
+        "name": "Hassan Tambakti",
+        "position": "Defensa"
       },
       {
         "code": "KSA 17",
-        "name": "Abdulrahman Al-Aboud"
+        "name": "Jehad Thikri",
+        "position": "Defensa"
       },
       {
         "code": "KSA 18",
-        "name": "Feras Akbrikan"
+        "name": "Nasser Al Dawsari",
+        "position": "Mediocampista"
       },
       {
         "code": "KSA 19",
-        "name": "Saleh Alshehri"
+        "name": "Alaa Al Hajji",
+        "position": "Mediocampista"
       },
       {
         "code": "KSA 20",
-        "name": "Abdullah Al-Hamdan"
+        "name": "Ziyad Al Johani",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 21",
+        "name": "Musab Al Juwayr",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 22",
+        "name": "Abdullah Al Khaibari",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 23",
+        "name": "Saleh Abu Al Shamat",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 24",
+        "name": "Mohammed Kanno",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 25",
+        "name": "Sultan Mandash",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 26",
+        "name": "Ayman Yahya",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "KSA 27",
+        "name": "Feras Al Brikan",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "MAR",
     "team": "Marruecos",
+    "code": "MAR",
     "sourceTeam": "Morocco",
     "players": [
       {
         "code": "MAR 2",
-        "name": "Yassine Bounou"
+        "name": "Yassine Bounou",
+        "position": "Portero"
       },
       {
         "code": "MAR 3",
-        "name": "Munir El Kajoui"
+        "name": "Munir El Kajoui",
+        "position": "Portero"
       },
       {
         "code": "MAR 4",
-        "name": "Achraf Hakimi"
+        "name": "Ajmed Reda Tagnaouti",
+        "position": "Portero"
       },
       {
         "code": "MAR 5",
-        "name": "Noussair Mazraoui"
+        "name": "Achraf Hakimi",
+        "position": "Defensa"
       },
       {
         "code": "MAR 6",
-        "name": "Nayef Aguerd"
+        "name": "Nayef Aguerd",
+        "position": "Defensa"
       },
       {
         "code": "MAR 7",
-        "name": "Roman Saiss"
+        "name": "Noussair Mazraoui",
+        "position": "Defensa"
       },
       {
         "code": "MAR 8",
-        "name": "Jawad El Yamio"
+        "name": "Anass Salah-Eddine",
+        "position": "Defensa"
       },
       {
         "code": "MAR 9",
-        "name": "Adam Masina"
+        "name": "Chadi Riad",
+        "position": "Defensa"
       },
       {
         "code": "MAR 10",
-        "name": "Sofyan Amrabat"
+        "name": "Youssef Belammari",
+        "position": "Defensa"
       },
       {
         "code": "MAR 11",
-        "name": "Azzedine Ounahi"
+        "name": "Issa Diop",
+        "position": "Defensa"
       },
       {
         "code": "MAR 12",
-        "name": "Eliesse Ben Seghir"
+        "name": "Redouane Hahlal",
+        "position": "Defensa"
+      },
+      {
+        "code": "MAR 13",
+        "name": "Zakaria El Ouahdi",
+        "position": "Defensa"
       },
       {
         "code": "MAR 14",
-        "name": "Bilal El Khannouss"
+        "name": "Sofyan Amrabat",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 15",
-        "name": "Ismael Saibari"
+        "name": "Ismael Saibari",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 16",
-        "name": "Youssef En-Nesyri"
+        "name": "Neil El Aynaoui",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 17",
-        "name": "Abde Ezzalzouli"
+        "name": "Bilal El Khannouss",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 18",
-        "name": "Soufiane Rahimi"
+        "name": "Azzedine Ounahi",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 19",
-        "name": "Brahim Diaz"
+        "name": "Bouaddi",
+        "position": "Mediocampista"
       },
       {
         "code": "MAR 20",
-        "name": "Ayoub El Kaabi"
+        "name": "Samir El Mourabet",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MAR 21",
+        "name": "Brahim Díaz",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 22",
+        "name": "Chemsdine Talbi",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 23",
+        "name": "Ayoub El Kaabi",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 24",
+        "name": "Soufiane Rahimi",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 25",
+        "name": "Abde Ezzalzouli",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 26",
+        "name": "Ayoube Amaimouni",
+        "position": "Delantero"
+      },
+      {
+        "code": "MAR 27",
+        "name": "Yassine Gessime",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "MEX",
     "team": "Mexico",
+    "code": "MEX",
     "sourceTeam": "Mexico",
     "players": [
       {
         "code": "MEX 2",
-        "name": "Luis Malagón"
+        "name": "Raúl Rangel",
+        "club": "Chivas, MEX",
+        "position": "Portero"
       },
       {
         "code": "MEX 3",
-        "name": "Johan Vasquez"
+        "name": "Carlos Acevedo",
+        "club": "Santos, MEX",
+        "position": "Portero"
       },
       {
         "code": "MEX 4",
-        "name": "Jorge Sánchez"
+        "name": "Antonio Rodríguez",
+        "club": "Tijuana, MEX",
+        "position": "Portero"
       },
       {
         "code": "MEX 5",
-        "name": "Cesar Montes"
+        "name": "Carlos Moreno",
+        "club": "Pachuca, MEX",
+        "position": "Portero"
       },
       {
         "code": "MEX 6",
-        "name": "Jesus Gallardo"
+        "name": "Guillermo Ochoa",
+        "club": "Ael Limassol, CYP",
+        "position": "Portero"
       },
       {
         "code": "MEX 7",
-        "name": "Israel Reyes"
+        "name": "Alex Padilla",
+        "club": "Bilbao, ESP",
+        "position": "Portero"
       },
       {
         "code": "MEX 8",
-        "name": "Diego Lainez"
+        "name": "Bryan González",
+        "club": "Pachuca, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 9",
-        "name": "Carlos Rodriguez"
+        "name": "César Montes",
+        "club": "Lokomotiv, RUS",
+        "position": "Defensa"
       },
       {
         "code": "MEX 10",
-        "name": "Edson Alvarez"
+        "name": "Edson Álvarez",
+        "club": "Fenerbahce, TUR",
+        "position": "Defensa"
       },
       {
         "code": "MEX 11",
-        "name": "Orbelin Pineda"
+        "name": "Everardo López",
+        "club": "Toluca, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 12",
-        "name": "Marcel Ruiz"
+        "name": "Israel Reyes",
+        "club": "América, MEX",
+        "position": "Defensa"
+      },
+      {
+        "code": "MEX 13",
+        "name": "Jesús Angulo",
+        "club": "Tigres, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 14",
-        "name": "Érick Sánchez"
+        "name": "Jesús Gallardo",
+        "club": "Toluca, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 15",
-        "name": "Hirving Lozano"
+        "name": "Jesús Gómez",
+        "club": "Tijuana, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 16",
-        "name": "Santiago Giménez"
+        "name": "Johan Vásquez (Genoa, ITA) Jorge Sánchez",
+        "club": "PAOK, GRE",
+        "position": "Defensa"
       },
       {
         "code": "MEX 17",
-        "name": "Raúl Jiménez"
+        "name": "Julián Araujo",
+        "club": "Celtic, SCO",
+        "position": "Defensa"
       },
       {
         "code": "MEX 18",
-        "name": "Alexis Vega"
+        "name": "Mateo Chávez",
+        "club": "AZ Alkmaar, NED",
+        "position": "Defensa"
       },
       {
         "code": "MEX 19",
-        "name": "Roberto Alvarado"
+        "name": "Ramón Juárez",
+        "club": "América, MEX",
+        "position": "Defensa"
       },
       {
         "code": "MEX 20",
-        "name": "Cesar Huerta"
+        "name": "Richard Ledezma",
+        "club": "Chivas, MEX",
+        "position": "Defensa"
+      },
+      {
+        "code": "MEX 21",
+        "name": "Víctor Guzmán",
+        "club": "Monterrey, MEX",
+        "position": "Defensa"
+      },
+      {
+        "code": "MEX 22",
+        "name": "Alexei Domínguez",
+        "club": "Pachuca, MEX",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MEX 23",
+        "name": "Alexis Gutiérrez",
+        "club": "América, MEX",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MEX 24",
+        "name": "Álvaro Fidalgo",
+        "club": "Real Betis, MEX",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MEX 25",
+        "name": "Brian Gutiérrez",
+        "club": "Chivas, MEX",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MEX 26",
+        "name": "Carlos Rodríguez",
+        "club": "Cruz Azul, MEX",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "MEX 27",
+        "name": "Denzell García",
+        "club": "FC Juárez, MEX",
+        "position": "Mediocampista"
       }
     ]
   },
   {
-    "code": "NED",
     "team": "Paises Bajos",
+    "code": "NED",
     "sourceTeam": "Netherlands",
     "players": [
       {
         "code": "NED 2",
-        "name": "Bart Verbruggen"
+        "name": "Mark Flekken",
+        "position": "Portero"
       },
       {
         "code": "NED 3",
-        "name": "Virgil van Dijk"
+        "name": "Robin Roefs",
+        "position": "Portero"
       },
       {
         "code": "NED 4",
-        "name": "Micky van de Ven"
+        "name": "Bart Verbruggen",
+        "position": "Portero"
       },
       {
         "code": "NED 5",
-        "name": "Jurrien Timber"
+        "name": "Nathan Ake",
+        "position": "Defensa"
       },
       {
         "code": "NED 6",
-        "name": "Denzel Dumfries"
+        "name": "Denzel Dumfries",
+        "position": "Defensa"
       },
       {
         "code": "NED 7",
-        "name": "Nathan Aké"
+        "name": "Jorrel Hato",
+        "position": "Defensa"
       },
       {
         "code": "NED 8",
-        "name": "Jeremie Frimpong"
+        "name": "Jurrien Timber",
+        "position": "Defensa"
       },
       {
         "code": "NED 9",
-        "name": "Jan Paul van Hecke"
+        "name": "Jan Paul van Hecke",
+        "position": "Defensa"
       },
       {
         "code": "NED 10",
-        "name": "Tijjani Reijnders"
+        "name": "Virgil van Dijk",
+        "position": "Defensa"
       },
       {
         "code": "NED 11",
-        "name": "Ryan Gravenberch"
+        "name": "Micky van de Ven",
+        "position": "Defensa"
       },
       {
         "code": "NED 12",
-        "name": "Teun Koopmeiners"
+        "name": "Frenkie de Jong",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NED 13",
+        "name": "Marten de Roon",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 14",
-        "name": "Frenkie de Jong"
+        "name": "Ryan Gravenberch",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 15",
-        "name": "Xavi Simons"
+        "name": "Teun Koopmeiners",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 16",
-        "name": "Justin Kluivert"
+        "name": "Tijjani Reijnders",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 17",
-        "name": "Memphis Depay"
+        "name": "Guus Til",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 18",
-        "name": "Donyell Malen"
+        "name": "Quinten Timber",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 19",
-        "name": "Wout Weghorst"
+        "name": "Mats Wieffer",
+        "position": "Mediocampista"
       },
       {
         "code": "NED 20",
-        "name": "Cody Gakpo"
+        "name": "Brian Brobbey",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 21",
+        "name": "Memphis Depay",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 22",
+        "name": "Cody Gakpo",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 23",
+        "name": "Justin Kluivert",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 24",
+        "name": "Noa Lang",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 25",
+        "name": "Donyell Malen",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 26",
+        "name": "Crysencio Summerville",
+        "position": "Delantero"
+      },
+      {
+        "code": "NED 27",
+        "name": "Wout Weghorst",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "NOR",
     "team": "Noruega",
+    "code": "NOR",
     "sourceTeam": "Norway",
     "players": [
       {
         "code": "NOR 2",
-        "name": "Orjan Nyland"
+        "name": "Orjan Haskjold Nyland",
+        "position": "Portero"
       },
       {
         "code": "NOR 3",
-        "name": "Julian Ryerson"
+        "name": "Egil Selvik",
+        "position": "Portero"
       },
       {
         "code": "NOR 4",
-        "name": "Leo Ostigård"
+        "name": "Sander Tangvik",
+        "position": "Portero"
       },
       {
         "code": "NOR 5",
-        "name": "Kristoffer Vassbakk Ajer"
+        "name": "Kristoffer Vassbakk Ajer",
+        "position": "Defensa"
       },
       {
         "code": "NOR 6",
-        "name": "Marcus Holmgren Pedersen"
+        "name": "Fredrik Bjorkan",
+        "position": "Defensa"
       },
       {
         "code": "NOR 7",
-        "name": "David Møller Wolfe"
+        "name": "Henrik Falchener",
+        "position": "Defensa"
       },
       {
         "code": "NOR 8",
-        "name": "Torbjørn Heggem"
+        "name": "Sondre Langas",
+        "position": "Defensa"
       },
       {
         "code": "NOR 9",
-        "name": "Morten Thorsby"
+        "name": "Torbjorn Heggen",
+        "position": "Defensa"
       },
       {
         "code": "NOR 10",
-        "name": "Martin Ødegaard"
+        "name": "Marcus Holmgren",
+        "position": "Defensa"
       },
       {
         "code": "NOR 11",
-        "name": "Sander Berge"
+        "name": "Julian Ryerson",
+        "position": "Defensa"
       },
       {
         "code": "NOR 12",
-        "name": "Andreas Schjelderup"
+        "name": "David Moller",
+        "position": "Defensa"
+      },
+      {
+        "code": "NOR 13",
+        "name": "Leo Ostigard",
+        "position": "Defensa"
       },
       {
         "code": "NOR 14",
-        "name": "Patrick Berg"
+        "name": "Thelonious Aasgaard",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 15",
-        "name": "Erling Haaland"
+        "name": "Fredrik Aursens",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 16",
-        "name": "Alexander Sørloth"
+        "name": "Patrick Berg",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 17",
-        "name": "Aron Dønnum"
+        "name": "Sander Berge",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 18",
-        "name": "Jorgen Strand Larsen"
+        "name": "Oscar Bobb",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 19",
-        "name": "Antonio Nusa"
+        "name": "Jens Petter Hauge",
+        "position": "Mediocampista"
       },
       {
         "code": "NOR 20",
-        "name": "Oscar Bobb"
+        "name": "Antonio Nusa",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NOR 21",
+        "name": "Andreas Schjelderup",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NOR 22",
+        "name": "Morten Thorsby",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NOR 23",
+        "name": "Kristian Thorstvedt",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NOR 24",
+        "name": "Martin Odegaard",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NOR 25",
+        "name": "Erling Haaland",
+        "position": "Delantero"
+      },
+      {
+        "code": "NOR 26",
+        "name": "Jorgen Larsen",
+        "position": "Delantero"
+      },
+      {
+        "code": "NOR 27",
+        "name": "Alexander Sorloth",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "NZL",
     "team": "Nueva Zelanda",
+    "code": "NZL",
     "sourceTeam": "New Zealand",
     "players": [
       {
         "code": "NZL 2",
-        "name": "Max Crocombe Payne"
+        "name": "Max Crocombe",
+        "position": "Portero"
       },
       {
         "code": "NZL 3",
-        "name": "Alex Paulsen"
+        "name": "Alex Paulsen",
+        "position": "Portero"
       },
       {
         "code": "NZL 4",
-        "name": "Michael Boxall"
+        "name": "Michael Woud",
+        "position": "Portero"
       },
       {
         "code": "NZL 5",
-        "name": "Liberato Cacace"
+        "name": "Tyler Bindon",
+        "position": "Defensa"
       },
       {
         "code": "NZL 6",
-        "name": "Tim Payne"
+        "name": "Michael Boxall",
+        "position": "Defensa"
       },
       {
         "code": "NZL 7",
-        "name": "Tyler Bindon"
+        "name": "Liberato Cacace",
+        "position": "Defensa"
       },
       {
         "code": "NZL 8",
-        "name": "Francis de Vries"
+        "name": "Francis de Vries",
+        "position": "Defensa"
       },
       {
         "code": "NZL 9",
-        "name": "Finn Surman"
+        "name": "Callan Elliot",
+        "position": "Defensa"
       },
       {
         "code": "NZL 10",
-        "name": "Joe Bell"
+        "name": "Tim Payne",
+        "position": "Defensa"
       },
       {
         "code": "NZL 11",
-        "name": "Sarpreet Singh"
+        "name": "Nando Pijnaker",
+        "position": "Defensa"
       },
       {
         "code": "NZL 12",
-        "name": "Ryan Thomas"
+        "name": "Tommy Smith",
+        "position": "Defensa"
+      },
+      {
+        "code": "NZL 13",
+        "name": "Finn Surman",
+        "position": "Defensa"
       },
       {
         "code": "NZL 14",
-        "name": "Matthew Garbett"
+        "name": "Lachlan Bayliss",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 15",
-        "name": "Marko Stamenić"
+        "name": "Joe Bell",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 16",
-        "name": "Ben Old"
+        "name": "Matt Garbett",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 17",
-        "name": "Chris Wood"
+        "name": "Eli Just",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 18",
-        "name": "Elijah Just"
+        "name": "Callum McCowatt",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 19",
-        "name": "Callum McCowatt"
+        "name": "Ben Old",
+        "position": "Mediocampista"
       },
       {
         "code": "NZL 20",
-        "name": "Kosta Barbarouses"
+        "name": "Alex Rufer",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NZL 21",
+        "name": "Marko Stamenic",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NZL 22",
+        "name": "Sarpreet Singh",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NZL 23",
+        "name": "Ryan Thomas",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "NZL 24",
+        "name": "Kosta Barbarouses",
+        "position": "Delantero"
+      },
+      {
+        "code": "NZL 25",
+        "name": "Jesse Randall",
+        "position": "Delantero"
+      },
+      {
+        "code": "NZL 26",
+        "name": "Ben Waine",
+        "position": "Delantero"
+      },
+      {
+        "code": "NZL 27",
+        "name": "Chris Wood",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "PAN",
     "team": "Panama",
+    "code": "PAN",
     "sourceTeam": "Panama",
     "players": [
       {
         "code": "PAN 2",
-        "name": "Orlando Mosquera"
+        "name": "Orlando Mosquera",
+        "position": "Portero"
       },
       {
         "code": "PAN 3",
-        "name": "Luis Mejia"
+        "name": "Luis Mejía",
+        "position": "Portero"
       },
       {
         "code": "PAN 4",
-        "name": "Fidel Escobar"
+        "name": "César Samudio",
+        "position": "Portero"
       },
       {
         "code": "PAN 5",
-        "name": "Andres Andrade"
+        "name": "César Blackman",
+        "position": "Defensa"
       },
       {
         "code": "PAN 6",
-        "name": "Michael Amir Murillo"
+        "name": "Jorge Gutiérrez",
+        "position": "Defensa"
       },
       {
         "code": "PAN 7",
-        "name": "Eric Davis"
+        "name": "Amir Murillo",
+        "position": "Defensa"
       },
       {
         "code": "PAN 8",
-        "name": "Jose Cordoba"
+        "name": "Fidel Escobar",
+        "position": "Defensa"
       },
       {
         "code": "PAN 9",
-        "name": "Cesar Blackman"
+        "name": "Andrés Andrade",
+        "position": "Defensa"
       },
       {
         "code": "PAN 10",
-        "name": "Cristian Martinez"
+        "name": "Edgardo Fariña",
+        "position": "Defensa"
       },
       {
         "code": "PAN 11",
-        "name": "Aníbal Godoy"
+        "name": "José Córdoba",
+        "position": "Defensa"
       },
       {
         "code": "PAN 12",
-        "name": "Adalberto Carrasquilla"
+        "name": "Eric Davis",
+        "position": "Defensa"
+      },
+      {
+        "code": "PAN 13",
+        "name": "Jiovany Ramos",
+        "position": "Defensa"
       },
       {
         "code": "PAN 14",
-        "name": "Édgar Bárcenas"
+        "name": "Roderick Miller",
+        "position": "Defensa"
       },
       {
         "code": "PAN 15",
-        "name": "Carlos Harvey"
+        "name": "Aníbal Godoy",
+        "position": "Mediocampista"
       },
       {
         "code": "PAN 16",
-        "name": "Ismael Díaz"
+        "name": "Carlos Harvey",
+        "position": "Mediocampista"
       },
       {
         "code": "PAN 17",
-        "name": "Jose Fajardo"
+        "name": "Cristian Martínez",
+        "position": "Mediocampista"
       },
       {
         "code": "PAN 18",
-        "name": "Cecilio Waterman"
+        "name": "José Luis Rodríguez",
+        "position": "Mediocampista"
       },
       {
         "code": "PAN 19",
-        "name": "Jose Luiz Rodriguez"
+        "name": "César Yanis",
+        "position": "Mediocampista"
       },
       {
         "code": "PAN 20",
-        "name": "Alberto Quintero"
+        "name": "Yoel Bárcenas",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "PAN 21",
+        "name": "Azarías Lodoño",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "PAN 22",
+        "name": "Adalberto Carrasquilla",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "PAN 23",
+        "name": "Alberto Quintero",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "PAN 24",
+        "name": "Ismael Díaz",
+        "position": "Delantero"
+      },
+      {
+        "code": "PAN 25",
+        "name": "Cecilio Waterman",
+        "position": "Delantero"
+      },
+      {
+        "code": "PAN 26",
+        "name": "José Fajardo",
+        "position": "Delantero"
+      },
+      {
+        "code": "PAN 27",
+        "name": "Tomás Rodríguez",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "PAR",
     "team": "Paraguay",
+    "code": "PAR",
     "sourceTeam": "Paraguay",
     "players": [
       {
@@ -3503,670 +5565,1236 @@ const paniniAlbumTeams = [
         "name": "Andres Cubas"
       },
       {
-        "code": "PAR 14",
+        "code": "PAR 13",
         "name": "Matias Galarza Fonda"
       },
       {
-        "code": "PAR 15",
+        "code": "PAR 14",
         "name": "Julio Enciso"
       },
       {
-        "code": "PAR 16",
+        "code": "PAR 15",
         "name": "Alejandro Romero Gamarra"
       },
       {
-        "code": "PAR 17",
+        "code": "PAR 16",
         "name": "Miguel Almirón"
       },
       {
-        "code": "PAR 18",
+        "code": "PAR 17",
         "name": "Ramon Sosa"
       },
       {
-        "code": "PAR 19",
+        "code": "PAR 18",
         "name": "Angel Romero"
       },
       {
-        "code": "PAR 20",
+        "code": "PAR 19",
         "name": "Antonio Sanabria"
+      },
+      {
+        "code": "PAR 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "PAR 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Paraguay",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "POR",
     "team": "Portugal",
+    "code": "POR",
     "sourceTeam": "Portugal",
     "players": [
       {
         "code": "POR 2",
-        "name": "Diogo Costa"
+        "name": "Diogo Costa",
+        "position": "Portero"
       },
       {
         "code": "POR 3",
-        "name": "Jose Sa"
+        "name": "José Sá",
+        "position": "Portero"
       },
       {
         "code": "POR 4",
-        "name": "Ruben Dias"
+        "name": "Rui Silva",
+        "position": "Portero"
       },
       {
         "code": "POR 5",
-        "name": "João Cancelo"
+        "name": "Ricardo Velho",
+        "position": "Portero"
       },
       {
         "code": "POR 6",
-        "name": "Diogo Dalot"
+        "name": "Diogo Dalot",
+        "position": "Defensa"
       },
       {
         "code": "POR 7",
-        "name": "Nuno Mendes"
+        "name": "Matheus Nunes",
+        "position": "Defensa"
       },
       {
         "code": "POR 8",
-        "name": "Gonçalo Inácio"
+        "name": "Nélson Semedo",
+        "position": "Defensa"
       },
       {
         "code": "POR 9",
-        "name": "Bernardo Silva"
+        "name": "Joao Cancelo",
+        "position": "Defensa"
       },
       {
         "code": "POR 10",
-        "name": "Bruno Fernandes"
+        "name": "Nuno Mendes",
+        "position": "Defensa"
       },
       {
         "code": "POR 11",
-        "name": "Ruben Neves"
+        "name": "Goncalo Inácio",
+        "position": "Defensa"
       },
       {
         "code": "POR 12",
-        "name": "Vitinha"
+        "name": "Renato Veiga",
+        "position": "Defensa"
+      },
+      {
+        "code": "POR 13",
+        "name": "Rubén Dias",
+        "position": "Defensa"
       },
       {
         "code": "POR 14",
-        "name": "João Neves"
+        "name": "Tomás Araújo",
+        "position": "Defensa"
       },
       {
         "code": "POR 15",
-        "name": "Cristiano Ronaldo"
+        "name": "Rubén Neves",
+        "position": "Mediocampista"
       },
       {
         "code": "POR 16",
-        "name": "Francisco Trincao"
+        "name": "Samuel Costa",
+        "position": "Mediocampista"
       },
       {
         "code": "POR 17",
-        "name": "João Felix"
+        "name": "Joao Neves",
+        "position": "Mediocampista"
       },
       {
         "code": "POR 18",
-        "name": "Gonçalo Ramos"
+        "name": "Vitinha",
+        "position": "Mediocampista"
       },
       {
         "code": "POR 19",
-        "name": "Pedro Neto"
+        "name": "Bruno Fernandes",
+        "position": "Mediocampista"
       },
       {
         "code": "POR 20",
-        "name": "Rafael Leão"
+        "name": "Bernardo Silva",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "POR 21",
+        "name": "Joao Félix",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 22",
+        "name": "Trincao",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 23",
+        "name": "Francis Conceicao",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 24",
+        "name": "Rafael Leao",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 25",
+        "name": "Pedro Neto",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 26",
+        "name": "Gonzalo Guedes",
+        "position": "Delantero"
+      },
+      {
+        "code": "POR 27",
+        "name": "Gonzalo Ramos",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "QAT",
     "team": "Catar",
+    "code": "QAT",
     "sourceTeam": "Qatar",
     "players": [
       {
         "code": "QAT 2",
-        "name": "Meshaal Barsham"
+        "name": "Shehab Ellethy",
+        "position": "Portero"
       },
       {
         "code": "QAT 3",
-        "name": "Sultan Albrake"
+        "name": "Salah Zakaria",
+        "position": "Portero"
       },
       {
         "code": "QAT 4",
-        "name": "Lucas Mendes"
+        "name": "Meshaal Barsham",
+        "position": "Portero"
       },
       {
         "code": "QAT 5",
-        "name": "Homam Ahmed"
+        "name": "Mahmud Abunada",
+        "position": "Portero"
       },
       {
         "code": "QAT 6",
-        "name": "Boualem Khoukhi"
+        "name": "Bassam Al Rawi",
+        "position": "Defensa"
       },
       {
         "code": "QAT 7",
-        "name": "Pedro Miguel"
+        "name": "Boualem Khoukhi",
+        "position": "Defensa"
       },
       {
         "code": "QAT 8",
-        "name": "Tarek Salman"
+        "name": "Hashmi Al Hussain",
+        "position": "Defensa"
       },
       {
         "code": "QAT 9",
-        "name": "Mohamed Al-Mannai"
+        "name": "Homam El Amin",
+        "position": "Defensa"
       },
       {
         "code": "QAT 10",
-        "name": "Karim Boudiaf"
+        "name": "Issa Laye",
+        "position": "Defensa"
       },
       {
         "code": "QAT 11",
-        "name": "Assim Madibo"
+        "name": "Jassem Gaber",
+        "position": "Defensa"
       },
       {
         "code": "QAT 12",
-        "name": "Ahmed Fatehi"
+        "name": "Lucas Mendes",
+        "position": "Defensa"
+      },
+      {
+        "code": "QAT 13",
+        "name": "Niall Mason",
+        "position": "Defensa"
       },
       {
         "code": "QAT 14",
-        "name": "Mohammed Waad"
+        "name": "Pedro Miguel",
+        "position": "Defensa"
       },
       {
         "code": "QAT 15",
-        "name": "Abdulaziz Hatem"
+        "name": "Rayyan Ahmed Al Ali",
+        "position": "Defensa"
       },
       {
         "code": "QAT 16",
-        "name": "Hassan Al-Haydos"
+        "name": "Sultan Al Brake",
+        "position": "Defensa"
       },
       {
         "code": "QAT 17",
-        "name": "Edmilson Junior"
+        "name": "Tarek Salman",
+        "position": "Defensa"
       },
       {
         "code": "QAT 18",
-        "name": "Akram Hassan Afif"
+        "name": "Abdulaziz Hatem",
+        "position": "Mediocampista"
       },
       {
         "code": "QAT 19",
-        "name": "Ahmed Al Ganehi"
+        "name": "Ahmed Fathy",
+        "position": "Mediocampista"
       },
       {
         "code": "QAT 20",
-        "name": "Almoez Ali"
+        "name": "Assim Madibo",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "QAT 21",
+        "name": "Ayoub Al Ouwi",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "QAT 22",
+        "name": "Karim Boudiaf",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "QAT 23",
+        "name": "Mohammad Al Mannai",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "QAT 24",
+        "name": "Mohammed Waad",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "QAT 25",
+        "name": "Ahmed Al Ganehi",
+        "position": "Delantero"
+      },
+      {
+        "code": "QAT 26",
+        "name": "Ahmed Alaa",
+        "position": "Delantero"
+      },
+      {
+        "code": "QAT 27",
+        "name": "Akram Afif",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "RSA",
     "team": "Sudafrica",
+    "code": "RSA",
     "sourceTeam": "South Africa",
     "players": [
       {
         "code": "RSA 2",
-        "name": "Ronwen Williams"
+        "name": "Ronwen Williams",
+        "position": "Portero"
       },
       {
         "code": "RSA 3",
-        "name": "Sipho Chaine"
+        "name": "Ricardo Goss",
+        "position": "Portero"
       },
       {
         "code": "RSA 4",
-        "name": "Aubrey Modiba"
+        "name": "Sipho Chaine",
+        "position": "Portero"
       },
       {
         "code": "RSA 5",
-        "name": "Samukele Kabini"
+        "name": "Khuliso Mudau",
+        "position": "Defensa"
       },
       {
         "code": "RSA 6",
-        "name": "Mbekezeli Mbokazi"
+        "name": "Olwethu Makhanya",
+        "position": "Defensa"
       },
       {
         "code": "RSA 7",
-        "name": "Khulumani Ndamane"
+        "name": "Bradley Cross",
+        "position": "Defensa"
       },
       {
         "code": "RSA 8",
-        "name": "Siyabonga Ngezana"
+        "name": "Thabang Matuludi",
+        "position": "Defensa"
       },
       {
         "code": "RSA 9",
-        "name": "Khuliso Mudau"
+        "name": "Nkosinathi Sibisi",
+        "position": "Defensa"
       },
       {
         "code": "RSA 10",
-        "name": "Nkosinathi Sibisi"
+        "name": "Khulumani Ndamane",
+        "position": "Defensa"
       },
       {
         "code": "RSA 11",
-        "name": "Teboho Mokoena"
+        "name": "Ime Okon",
+        "position": "Defensa"
       },
       {
         "code": "RSA 12",
-        "name": "Thalente Mbatha"
+        "name": "Samukele Kabini",
+        "position": "Defensa"
+      },
+      {
+        "code": "RSA 13",
+        "name": "Mbekezeli Mbokazi",
+        "position": "Defensa"
       },
       {
         "code": "RSA 14",
-        "name": "Bathasi Aubaas"
+        "name": "Teboho Mokoena",
+        "position": "Mediocampista"
       },
       {
         "code": "RSA 15",
-        "name": "Yaya Sithole"
+        "name": "Jayden Adams",
+        "position": "Mediocampista"
       },
       {
         "code": "RSA 16",
-        "name": "Sipho Mbule"
+        "name": "Thalente Mbatha",
+        "position": "Mediocampista"
       },
       {
         "code": "RSA 17",
-        "name": "Lyle Foster"
+        "name": "Sphephelo Sithole",
+        "position": "Mediocampista"
       },
       {
         "code": "RSA 18",
-        "name": "Iqraam Rayners"
+        "name": "Oswin Appollis",
+        "position": "Delantero"
       },
       {
         "code": "RSA 19",
-        "name": "Mohau Nkota"
+        "name": "Tshepang Moremi",
+        "position": "Delantero"
       },
       {
         "code": "RSA 20",
-        "name": "Oswin Appollis"
+        "name": "Evidence Makgopa",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 21",
+        "name": "Lyle Foster",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 22",
+        "name": "Iqraam Rayners",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 23",
+        "name": "Relebohile Mofokeng",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 24",
+        "name": "Themba Zwane",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 25",
+        "name": "Thapelo Maseko",
+        "position": "Delantero"
+      },
+      {
+        "code": "RSA 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Sudafrica",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "RSA 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Sudafrica",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "SCO",
     "team": "Escocia",
+    "code": "SCO",
     "sourceTeam": "Scotland",
     "players": [
       {
         "code": "SCO 2",
-        "name": "Angus Gunn"
+        "name": "Craig Gordon",
+        "position": "Portero"
       },
       {
         "code": "SCO 3",
-        "name": "Jack Hendry"
+        "name": "Angus Gunn",
+        "position": "Portero"
       },
       {
         "code": "SCO 4",
-        "name": "Kieran Tierney"
+        "name": "Liam Kelly",
+        "position": "Portero"
       },
       {
         "code": "SCO 5",
-        "name": "Aaron Hickey"
+        "name": "Grant Hanley",
+        "position": "Defensa"
       },
       {
         "code": "SCO 6",
-        "name": "Andrew Robertson"
+        "name": "Jack Hendry",
+        "position": "Defensa"
       },
       {
         "code": "SCO 7",
-        "name": "Scott McKenna"
+        "name": "Aaron Hickey",
+        "position": "Defensa"
       },
       {
         "code": "SCO 8",
-        "name": "John Souttar"
+        "name": "Dominic Hyam",
+        "position": "Defensa"
       },
       {
         "code": "SCO 9",
-        "name": "Anthony Ralston"
+        "name": "Scott McKenna",
+        "position": "Defensa"
       },
       {
         "code": "SCO 10",
-        "name": "Grant Hanley"
+        "name": "Nathan Patterson",
+        "position": "Defensa"
       },
       {
         "code": "SCO 11",
-        "name": "Scott McTominay"
+        "name": "Anthony Ralston",
+        "position": "Defensa"
       },
       {
         "code": "SCO 12",
-        "name": "Billy Gilmour"
+        "name": "Andy Robertson",
+        "position": "Defensa"
+      },
+      {
+        "code": "SCO 13",
+        "name": "John Souttar",
+        "position": "Defensa"
       },
       {
         "code": "SCO 14",
-        "name": "Lewis Ferguson"
+        "name": "Kieran Tierney",
+        "position": "Defensa"
       },
       {
         "code": "SCO 15",
-        "name": "Ryan Christie"
+        "name": "Ryan Christie",
+        "position": "Mediocampista"
       },
       {
         "code": "SCO 16",
-        "name": "Kenny McLean"
+        "name": "Findlay Curtis",
+        "position": "Mediocampista"
       },
       {
         "code": "SCO 17",
-        "name": "John McGinn"
+        "name": "Lewis Ferguson",
+        "position": "Mediocampista"
       },
       {
         "code": "SCO 18",
-        "name": "Lyndon Dykes"
+        "name": "Ben Gannon-Doak",
+        "position": "Mediocampista"
       },
       {
         "code": "SCO 19",
-        "name": "Che Adams"
+        "name": "Billy Gilmour",
+        "position": "Mediocampista"
       },
       {
         "code": "SCO 20",
-        "name": "Ben Gannon-Doak"
+        "name": "John McGinn",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SCO 21",
+        "name": "Kenny McLean",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SCO 22",
+        "name": "Scott McTominay",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SCO 23",
+        "name": "Che Adams",
+        "position": "Delantero"
+      },
+      {
+        "code": "SCO 24",
+        "name": "Lyndon Dykes",
+        "position": "Delantero"
+      },
+      {
+        "code": "SCO 25",
+        "name": "George Hirst",
+        "position": "Delantero"
+      },
+      {
+        "code": "SCO 26",
+        "name": "Lawrence Shankland",
+        "position": "Delantero"
+      },
+      {
+        "code": "SCO 27",
+        "name": "Ross Stewart",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "SEN",
     "team": "Senegal",
+    "code": "SEN",
     "sourceTeam": "Senegal",
     "players": [
       {
         "code": "SEN 2",
-        "name": "Edouard Mendy"
+        "name": "Edouard Mendy",
+        "position": "Portero"
       },
       {
         "code": "SEN 3",
-        "name": "Yehvann Diouf"
+        "name": "Mory Diaw",
+        "position": "Portero"
       },
       {
         "code": "SEN 4",
-        "name": "Moussa Niakhaté"
+        "name": "Yehvann Diouf",
+        "position": "Portero"
       },
       {
         "code": "SEN 5",
-        "name": "Abdoulaye Seck"
+        "name": "Krépin Diatta",
+        "position": "Defensa"
       },
       {
         "code": "SEN 6",
-        "name": "Ismail Jakobs"
+        "name": "Antoine Mendy",
+        "position": "Defensa"
       },
       {
         "code": "SEN 7",
-        "name": "El Hadji Malick Diouf"
+        "name": "Kalidou Koulibaly",
+        "position": "Defensa"
       },
       {
         "code": "SEN 8",
-        "name": "Kalidou Koulibaly"
+        "name": "El Hadji Malick Diouf",
+        "position": "Defensa"
       },
       {
         "code": "SEN 9",
-        "name": "Idrissa Gana Gueye"
+        "name": "Mamadou Sarr",
+        "position": "Defensa"
       },
       {
         "code": "SEN 10",
-        "name": "Pape Matar Sarr"
+        "name": "Mousaa Niakhaté",
+        "position": "Defensa"
       },
       {
         "code": "SEN 11",
-        "name": "Pape Gueye"
+        "name": "Moustapha Mbow",
+        "position": "Defensa"
       },
       {
         "code": "SEN 12",
-        "name": "Habib Diarra"
+        "name": "Abdoulaye Seck",
+        "position": "Defensa"
+      },
+      {
+        "code": "SEN 13",
+        "name": "Ismail Jakobs e Ilay Camara",
+        "position": "Defensa"
       },
       {
         "code": "SEN 14",
-        "name": "Lamine Camara"
+        "name": "Idrissa Gana Gueye",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 15",
-        "name": "Sadio Mane"
+        "name": "Pape Gueye",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 16",
-        "name": "Ismaïla Sarr"
+        "name": "Lamine Camara",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 17",
-        "name": "Boulaye Dia"
+        "name": "Habib Diarra",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 18",
-        "name": "Iliman Ndiaye"
+        "name": "Pathé Ciss",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 19",
-        "name": "Nicolas Jackson"
+        "name": "Pape Matar Sarr",
+        "position": "Mediocampista"
       },
       {
         "code": "SEN 20",
-        "name": "Krepin Diatta"
+        "name": "Bara Sapoko Ndiaye",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SEN 21",
+        "name": "Sadio Mané",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 22",
+        "name": "Ismaïla Sarr",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 23",
+        "name": "Assane Diao",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 24",
+        "name": "Ibrahim Mbaye",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 25",
+        "name": "Nicolas Jackson",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 26",
+        "name": "Bamba Dieng",
+        "position": "Delantero"
+      },
+      {
+        "code": "SEN 27",
+        "name": "Chérif Ndiaye",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "SUI",
     "team": "Suiza",
+    "code": "SUI",
     "sourceTeam": "Switzerland",
     "players": [
       {
         "code": "SUI 2",
-        "name": "Gregor Kobel"
+        "name": "Gregor Kobel",
+        "position": "Portero"
       },
       {
         "code": "SUI 3",
-        "name": "Yvon Mvogo"
+        "name": "Yvon Mvogo",
+        "position": "Portero"
       },
       {
         "code": "SUI 4",
-        "name": "Manuel Akanji"
+        "name": "Marvin Keller",
+        "position": "Portero"
       },
       {
         "code": "SUI 5",
-        "name": "Ricardo Rodriguez"
+        "name": "Manuel Akanji",
+        "position": "Defensa"
       },
       {
         "code": "SUI 6",
-        "name": "Nico Elvedi"
+        "name": "Nico Elvedi",
+        "position": "Defensa"
       },
       {
         "code": "SUI 7",
-        "name": "Aurèle Amenda"
+        "name": "Ricardo Rodríguez",
+        "position": "Defensa"
       },
       {
         "code": "SUI 8",
-        "name": "Silvan Widmer"
+        "name": "Silvan Widmer",
+        "position": "Defensa"
       },
       {
         "code": "SUI 9",
-        "name": "Granit Xhaka"
+        "name": "Miro Muheim",
+        "position": "Defensa"
       },
       {
         "code": "SUI 10",
-        "name": "Denis Zakaria"
+        "name": "Aurele Amenda",
+        "position": "Defensa"
       },
       {
         "code": "SUI 11",
-        "name": "Remo Freuler"
+        "name": "Eray Cömert",
+        "position": "Defensa"
       },
       {
         "code": "SUI 12",
-        "name": "Fabian Rieder"
+        "name": "Lucas Jaquez",
+        "position": "Defensa"
+      },
+      {
+        "code": "SUI 13",
+        "name": "Granit Xhaka",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 14",
-        "name": "Ardon Jashari"
+        "name": "Johan Manzambi",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 15",
-        "name": "Johan Manzambi"
+        "name": "Remo Freuler",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 16",
-        "name": "Michel Aebischer"
+        "name": "Denis Zakaria",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 17",
-        "name": "Breel Embolo"
+        "name": "Ardon Jashari",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 18",
-        "name": "Ruben Vargas"
+        "name": "Djibril Sow",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 19",
-        "name": "Dan Ndoye"
+        "name": "Christian Fassnacht",
+        "position": "Mediocampista"
       },
       {
         "code": "SUI 20",
-        "name": "Zeki Amdouni"
+        "name": "Michel Aebischer",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SUI 21",
+        "name": "Fabian Rieder",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SUI 22",
+        "name": "Rubén Vargas",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SUI 23",
+        "name": "Breel Embolo",
+        "position": "Delantero"
+      },
+      {
+        "code": "SUI 24",
+        "name": "Noah Okafor",
+        "position": "Delantero"
+      },
+      {
+        "code": "SUI 25",
+        "name": "Dan Ndoye",
+        "position": "Delantero"
+      },
+      {
+        "code": "SUI 26",
+        "name": "Zeki Amdouni",
+        "position": "Delantero"
+      },
+      {
+        "code": "SUI 27",
+        "name": "Cedric Itten",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "SWE",
     "team": "Suecia",
+    "code": "SWE",
     "sourceTeam": "Sweden",
     "players": [
       {
         "code": "SWE 2",
-        "name": "Victor Johansson"
+        "name": "Viktor Johansson",
+        "club": "Stoke City, ING",
+        "position": "Portero"
       },
       {
         "code": "SWE 3",
-        "name": "Isak Hien"
+        "name": "Kristoffer Nordfeldt",
+        "club": "AIK, SUE",
+        "position": "Portero"
       },
       {
         "code": "SWE 4",
-        "name": "Gabriel Gudmundsson"
+        "name": "Jacob Widell Zetterström",
+        "club": "Derby County, ING",
+        "position": "Portero"
       },
       {
         "code": "SWE 5",
-        "name": "Emil Holm"
+        "name": "Hjalmar Ekdal",
+        "club": "Burnley, ING",
+        "position": "Defensa"
       },
       {
         "code": "SWE 6",
-        "name": "Victor Nilsson Lindelöf"
+        "name": "Gabriel Gudmundsson",
+        "club": "Lille, FRA",
+        "position": "Defensa"
       },
       {
         "code": "SWE 7",
-        "name": "Gustaf Lagerbielke"
+        "name": "Isak Hien",
+        "club": "Atalanta, ITA",
+        "position": "Defensa"
       },
       {
         "code": "SWE 8",
-        "name": "Lucas Bergvall"
+        "name": "Emil Holm",
+        "club": "Juventus, ITA",
+        "position": "Defensa"
       },
       {
         "code": "SWE 9",
-        "name": "Hugo Larsson"
+        "name": "Gustaf Lagerbielke",
+        "club": "Celtic, ESC",
+        "position": "Defensa"
       },
       {
         "code": "SWE 10",
-        "name": "Jesper Karlström"
+        "name": "Victor Lindelöf",
+        "club": "Manchester United, ING",
+        "position": "Defensa"
       },
       {
         "code": "SWE 11",
-        "name": "Yasin Ayari"
+        "name": "Eric Smith",
+        "club": "FC St. Pauli, ALE",
+        "position": "Defensa"
       },
       {
         "code": "SWE 12",
-        "name": "Mattias Svanberg"
+        "name": "Carl Starfelt",
+        "club": "Celta de Vigo, ESP",
+        "position": "Defensa"
+      },
+      {
+        "code": "SWE 13",
+        "name": "Elliot Stroud",
+        "club": "Mjällby AIF, SUE",
+        "position": "Defensa"
       },
       {
         "code": "SWE 14",
-        "name": "Daniel Svensson"
+        "name": "Daniel Svensson",
+        "club": "Borussia Dortmund, ALE",
+        "position": "Defensa"
       },
       {
         "code": "SWE 15",
-        "name": "Ken Sema"
+        "name": "Yasin Ayari",
+        "club": "Brighton, ING",
+        "position": "Mediocampista"
       },
       {
         "code": "SWE 16",
-        "name": "Roony Bardghji"
+        "name": "Lucas Bergvall",
+        "club": "Tottenham, ING",
+        "position": "Mediocampista"
       },
       {
         "code": "SWE 17",
-        "name": "Dejan Kulusevski"
+        "name": "Jesper Karlström",
+        "club": "Udinese, ITA",
+        "position": "Mediocampista"
       },
       {
         "code": "SWE 18",
-        "name": "Anthony Elanga"
+        "name": "Mattias Svanberg",
+        "club": "Wolfsburg, ALE",
+        "position": "Mediocampista"
       },
       {
         "code": "SWE 19",
-        "name": "Alexander Isak"
+        "name": "Besfort Zeneli",
+        "club": "Union Saint-Gilloise, SUE",
+        "position": "Mediocampista"
       },
       {
         "code": "SWE 20",
-        "name": "Viktor Gyökeres"
+        "name": "Ken Sema",
+        "club": "Pafos, CHI",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "SWE 21",
+        "name": "Taha Ali",
+        "club": "Malmo FF, SUE",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 22",
+        "name": "Alexander Bernhardsson",
+        "club": "Holstein Kiel, ALE",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 23",
+        "name": "Anthony Elanga",
+        "club": "Newcastle United, ING",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 24",
+        "name": "Viktor Gyökeres",
+        "club": "Arsenal, ING",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 25",
+        "name": "Alexander Isak",
+        "club": "Liverpool, ING",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 26",
+        "name": "Gustaf Nilsson",
+        "club": "Brujas, BEL",
+        "position": "Delantero"
+      },
+      {
+        "code": "SWE 27",
+        "name": "Benjamin Nygren",
+        "club": "Celtic, ESC",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "TUN",
     "team": "Tunez",
+    "code": "TUN",
     "sourceTeam": "Tunisia",
     "players": [
       {
         "code": "TUN 2",
-        "name": "Bechir Ben Said"
+        "name": "Aymen Dahmene",
+        "club": "CS Sfaxien",
+        "position": "Portero"
       },
       {
         "code": "TUN 3",
-        "name": "Aymen Dahmen"
+        "name": "Sabri Ben Hassan",
+        "club": "Étoile du Sahel",
+        "position": "Portero"
       },
       {
         "code": "TUN 4",
-        "name": "Yan Valery"
+        "name": "Abdelmouhib Chamakh",
+        "club": "Club Africain",
+        "position": "Portero"
       },
       {
         "code": "TUN 5",
-        "name": "Montassar Talbi"
+        "name": "Montassar Talbi",
+        "club": "Lorient",
+        "position": "Defensa"
       },
       {
         "code": "TUN 6",
-        "name": "Yassine Meriah"
+        "name": "Dylan Bronn",
+        "club": "Servette FC",
+        "position": "Defensa"
       },
       {
         "code": "TUN 7",
-        "name": "Ali Abdi"
+        "name": "Omar Rekik",
+        "club": "NK Maribor",
+        "position": "Defensa"
       },
       {
         "code": "TUN 8",
-        "name": "Dylan Bronn"
+        "name": "Adem Arous",
+        "club": "Kasımpaşa",
+        "position": "Defensa"
       },
       {
         "code": "TUN 9",
-        "name": "Ellyes Skhiri"
+        "name": "Raed Chikhaoui",
+        "club": "US Monastirienne",
+        "position": "Defensa"
       },
       {
         "code": "TUN 10",
-        "name": "Aissa Laidouni"
+        "name": "Yan Valery",
+        "club": "Young Boys",
+        "position": "Defensa"
       },
       {
         "code": "TUN 11",
-        "name": "Ferjani Sassi"
+        "name": "Moutaz Neffati",
+        "club": "IFK Norrköping",
+        "position": "Defensa"
       },
       {
         "code": "TUN 12",
-        "name": "Mohamed Ali Ben Romdhane"
+        "name": "Mohamed Amine Ben Hamida",
+        "club": "Espérance de Tunis",
+        "position": "Defensa"
+      },
+      {
+        "code": "TUN 13",
+        "name": "Ali Abdi",
+        "club": "Nice",
+        "position": "Defensa"
       },
       {
         "code": "TUN 14",
-        "name": "Hannibal Mejbri"
+        "name": "Ellyes Skhiri",
+        "club": "Francfort",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 15",
-        "name": "Elias Achouri"
+        "name": "Rani Khedira",
+        "club": "Union Berlin",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 16",
-        "name": "Elias Saad"
+        "name": "Hadj Mahmoud",
+        "club": "Lugano",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 17",
-        "name": "Hazem Mastouri"
+        "name": "Ismaël Gharbi",
+        "club": "Augsbourg",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 18",
-        "name": "Ismael Gharbi"
+        "name": "Hannibal Mejbri",
+        "club": "Burnley",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 19",
-        "name": "Sayfallah Ltaief"
+        "name": "Anis Ben Slimane",
+        "club": "Norwich",
+        "position": "Mediocampista"
       },
       {
         "code": "TUN 20",
-        "name": "Naim Sliti"
+        "name": "Mortadha Ben Ouanes",
+        "club": "Kasımpaşa",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "TUN 21",
+        "name": "Sebastian Tounekti",
+        "club": "Celtic",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 22",
+        "name": "Elias Saad",
+        "club": "Hanovre 96",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 23",
+        "name": "Elias Achouri",
+        "club": "Copenhague",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 24",
+        "name": "Khalil Ayari",
+        "club": "PSG",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 25",
+        "name": "Rayan Elloumi",
+        "club": "Vancouver",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 26",
+        "name": "Hazem Mastouri",
+        "club": "Dinamo Makhatchkala",
+        "position": "Delantero"
+      },
+      {
+        "code": "TUN 27",
+        "name": "Firas Chaouat",
+        "club": "Club Africain",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "TUR",
     "team": "Turquia",
+    "code": "TUR",
     "sourceTeam": "Turkey",
     "players": [
       {
@@ -4214,38 +6842,86 @@ const paniniAlbumTeams = [
         "name": "Orkun Kokcu"
       },
       {
-        "code": "TUR 14",
+        "code": "TUR 13",
         "name": "Arda Guler"
       },
       {
-        "code": "TUR 15",
+        "code": "TUR 14",
         "name": "Irfan Can Kahveci"
       },
       {
-        "code": "TUR 16",
+        "code": "TUR 15",
         "name": "Yunus Akgun"
       },
       {
-        "code": "TUR 17",
+        "code": "TUR 16",
         "name": "Can Uzun"
       },
       {
-        "code": "TUR 18",
+        "code": "TUR 17",
         "name": "Baris Alper Yilmaz"
       },
       {
-        "code": "TUR 19",
+        "code": "TUR 18",
         "name": "Kerem Akturkoglu"
       },
       {
-        "code": "TUR 20",
+        "code": "TUR 19",
         "name": "Kenan Yildiz"
+      },
+      {
+        "code": "TUR 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "TUR 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Turquia",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "URU",
     "team": "Uruguay",
+    "code": "URU",
     "sourceTeam": "Uruguay",
     "players": [
       {
@@ -4293,117 +6969,223 @@ const paniniAlbumTeams = [
         "name": "Rodrigo Bentancur"
       },
       {
-        "code": "URU 14",
+        "code": "URU 13",
         "name": "Manuel Ugarte"
       },
       {
-        "code": "URU 15",
+        "code": "URU 14",
         "name": "Nicolás de la Cruz"
       },
       {
-        "code": "URU 16",
+        "code": "URU 15",
         "name": "Maxi Araujo"
       },
       {
-        "code": "URU 17",
+        "code": "URU 16",
         "name": "Darwin Núñez"
       },
       {
-        "code": "URU 18",
+        "code": "URU 17",
         "name": "Federico Viñas"
       },
       {
-        "code": "URU 19",
+        "code": "URU 18",
         "name": "Rodrigo Aguirre"
       },
       {
-        "code": "URU 20",
+        "code": "URU 19",
         "name": "Facundo Pellistri"
+      },
+      {
+        "code": "URU 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "URU 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Uruguay",
+        "position": "Por confirmar"
       }
     ]
   },
   {
-    "code": "USA",
     "team": "Estados Unidos",
+    "code": "USA",
     "sourceTeam": "United States",
     "players": [
       {
         "code": "USA 2",
-        "name": "Math Freese"
+        "name": "Matt Freese",
+        "position": "Portero"
       },
       {
         "code": "USA 3",
-        "name": "Chris Richards"
+        "name": "Matt Turner",
+        "position": "Portero"
       },
       {
         "code": "USA 4",
-        "name": "Tim Ream"
+        "name": "Chris Brady",
+        "position": "Portero"
       },
       {
         "code": "USA 5",
-        "name": "Mark McKenzie"
+        "name": "Max Arfsten",
+        "position": "Defensa"
       },
       {
         "code": "USA 6",
-        "name": "Alex Freeman"
+        "name": "Sergiño Dest",
+        "position": "Defensa"
       },
       {
         "code": "USA 7",
-        "name": "Antonee Robinson"
+        "name": "Alex Freeman",
+        "position": "Defensa"
       },
       {
         "code": "USA 8",
-        "name": "Tyler Adams"
+        "name": "Mark McKenzie",
+        "position": "Defensa"
       },
       {
         "code": "USA 9",
-        "name": "Tanner Tessmann"
+        "name": "Tim Ream",
+        "position": "Defensa"
       },
       {
         "code": "USA 10",
-        "name": "Weston McKenny"
+        "name": "Chris Richards",
+        "position": "Defensa"
       },
       {
         "code": "USA 11",
-        "name": "Christian Roldan"
+        "name": "Antonee Robinson",
+        "position": "Defensa"
       },
       {
         "code": "USA 12",
-        "name": "Timothy Weah"
+        "name": "Miles Robinson",
+        "position": "Defensa"
+      },
+      {
+        "code": "USA 13",
+        "name": "Joe Scally",
+        "position": "Defensa"
       },
       {
         "code": "USA 14",
-        "name": "Diego Luna"
+        "name": "Auston Trusty",
+        "position": "Defensa"
       },
       {
         "code": "USA 15",
-        "name": "Malik Tillman"
+        "name": "Tyler Adams",
+        "position": "Mediocampista"
       },
       {
         "code": "USA 16",
-        "name": "Christian Pulisic"
+        "name": "Sebastian Berhalter",
+        "position": "Mediocampista"
       },
       {
         "code": "USA 17",
-        "name": "Brenden Aaronson"
+        "name": "Weston McKennie",
+        "position": "Mediocampista"
       },
       {
         "code": "USA 18",
-        "name": "Ricardo Pepi"
+        "name": "Cristian Roldán",
+        "position": "Mediocampista"
       },
       {
         "code": "USA 19",
-        "name": "Haji Wright"
+        "name": "Brenden Aaronson",
+        "position": "Mediocampista"
       },
       {
         "code": "USA 20",
-        "name": "Folarin Balogun"
+        "name": "Christian Pulisic",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "USA 21",
+        "name": "Gio Reyna",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "USA 22",
+        "name": "Malik Tillman",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "USA 23",
+        "name": "Tim Wean",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "USA 24",
+        "name": "Alejandro Zendejas",
+        "position": "Mediocampista"
+      },
+      {
+        "code": "USA 25",
+        "name": "Folarin Balogun",
+        "position": "Delantero"
+      },
+      {
+        "code": "USA 26",
+        "name": "Ricardo Pepi",
+        "position": "Delantero"
+      },
+      {
+        "code": "USA 27",
+        "name": "Haji Wright",
+        "position": "Delantero"
       }
     ]
   },
   {
-    "code": "UZB",
     "team": "Uzbekistan",
+    "code": "UZB",
     "sourceTeam": "Uzbekistan",
     "players": [
       {
@@ -4451,36 +7233,1215 @@ const paniniAlbumTeams = [
         "name": "Jamshid Iskanderov"
       },
       {
-        "code": "UZB 14",
+        "code": "UZB 13",
         "name": "Azizbek Turgunboev"
       },
       {
-        "code": "UZB 15",
+        "code": "UZB 14",
         "name": "Khojimat Erkinov"
       },
       {
-        "code": "UZB 16",
+        "code": "UZB 15",
         "name": "Eldor Shomurodov"
       },
       {
-        "code": "UZB 17",
+        "code": "UZB 16",
         "name": "Oston Urunov"
       },
       {
-        "code": "UZB 18",
+        "code": "UZB 17",
         "name": "Jaloliddin Masharipov"
       },
       {
-        "code": "UZB 19",
+        "code": "UZB 18",
         "name": "Igor Sergeev"
       },
       {
-        "code": "UZB 20",
+        "code": "UZB 19",
         "name": "Abbosbek Fayzullaev"
+      },
+      {
+        "code": "UZB 20",
+        "name": "Jugador por confirmar 19",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 21",
+        "name": "Jugador por confirmar 20",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 22",
+        "name": "Jugador por confirmar 21",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 23",
+        "name": "Jugador por confirmar 22",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 24",
+        "name": "Jugador por confirmar 23",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 25",
+        "name": "Jugador por confirmar 24",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 26",
+        "name": "Jugador por confirmar 25",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
+      },
+      {
+        "code": "UZB 27",
+        "name": "Jugador por confirmar 26",
+        "club": "Selección de Uzbekistan",
+        "position": "Por confirmar"
       }
     ]
   }
 ];
+
+const localPlayerImages = {
+  "byCode": {
+    "ALG 1": "img/figuras/alg-01-riyad-mahrez.png",
+    "ALG 2": "img/figuras/alg-01-riyad-mahrez.png",
+    "ALG 3": "img/figuras/alg-02-ismael-bennacer.png",
+    "ALG 4": "img/figuras/alg-03-ramy-bensebaini.png",
+    "ALG 5": "img/figuras/alg-04-aymen-mahious.png",
+    "ALG 6": "img/figuras/alg-05-mohamed-amoura.png",
+    "ALG 7": "img/figuras/alg-06-fares-chaibi.png",
+    "ALG 8": "img/figuras/alg-07-anis-hadj-moussa.png",
+    "ALG 9": "img/figuras/alg-08-yacine-benzia.png",
+    "ALG 10": "img/figuras/alg-09-houssem-aouar.png",
+    "ALG 11": "img/figuras/alg-10-adam-zorgane.png",
+    "ALG 12": "img/figuras/alg-11-haris-belkebla.png",
+    "ALG 13": "img/figuras/alg-12-nabil-bentaleb.png",
+    "ALG 14": "img/figuras/alg-13-sofiane-feghouli.png",
+    "ALG 15": "img/figuras/alg-14-said-benrahma.png",
+    "ALG 16": "img/figuras/alg-15-youcef-atal.png",
+    "ALG 17": "img/figuras/alg-16-mohamed-fares.png",
+    "ALG 18": "img/figuras/alg-17-ahmed-touba.png",
+    "ALG 19": "img/figuras/alg-18-zinedine-belaid.png",
+    "ALG 20": "img/figuras/alg-19-antar-yahia.png",
+    "ALG 21": "img/figuras/alg-20-aissa-mandi.png",
+    "ALG 22": "img/figuras/alg-21-alexis-guendouz.png",
+    "ALG 23": "img/figuras/alg-22-kevin-guitoun.png",
+    "ALG 24": "img/figuras/alg-23-anthony-mandrea.png",
+    "ALG 25": "img/figuras/alg-24-alexandre-oukidja.png",
+    "ALG 26": "img/figuras/alg-25-rais-m'bolhi.png",
+    "ARG 1": "img/figuras/arg_01_emiliano-martinez.png",
+    "ARG 2": "img/figuras/arg_01_emiliano-martinez.png",
+    "ARG 3": "img/figuras/arg_02_lionel-messi.png",
+    "ARG 4": "img/figuras/arg_03_nico-gonzalez.png",
+    "ARG 5": "img/figuras/arg_04_giuliano-simeone.png",
+    "ARG 6": "img/figuras/arg_05_julian-alvarez.png",
+    "ARG 7": "img/figuras/arg_06_lautaro-martinez.png",
+    "ARG 8": "img/figuras/arg_07_franco-mastantuono.png",
+    "ARG 9": "img/figuras/arg_08_enzo-fernandez.png",
+    "ARG 10": "img/figuras/arg_09_fal.png",
+    "ARG 11": "img/figuras/arg_10_nico-paz.png",
+    "ARG 12": "img/figuras/arg_11_leandro-paredes.png",
+    "ARG 13": "img/figuras/arg_12_rodrigo-de-paul.png",
+    "ARG 14": "img/figuras/arg_13_exequiel-palacios.png",
+    "ARG 15": "img/figuras/arg_14_cristian-romero.png",
+    "ARG 16": "img/figuras/arg_15_leonardo-balerdi.png",
+    "ARG 17": "img/figuras/arg_16_nicolas-otamendi.png",
+    "ARG 18": "img/figuras/arg_17_nahuel-molina.png",
+    "ARG 19": "img/figuras/arg_18_nicolas-tagliafico.png",
+    "BIH 2": "img/figuras/bih_02_7-ma-4.png",
+    "BIH 3": "img/figuras/bih_02_7-ma-4.png",
+    "BIH 4": "img/figuras/bih_03_2-ee-rd.png",
+    "BIH 5": "img/figuras/bih_04_i.png",
+    "BIH 6": "img/figuras/bih_05_ar-viva-mhoivils-ite.png",
+    "BIH 7": "img/figuras/bih_06_a-a.png",
+    "BIH 8": "img/figuras/bih_07_pa-h-7.png",
+    "BIH 9": "img/figuras/bih_08_samed-bazdar-a.png",
+    "BIH 10": "img/figuras/bih_09_nikola-vasilj.png",
+    "BIH 11": "img/figuras/bih_10_o-o-o-o-es-ee-ee-es-on-eee.png",
+    "BIH 12": "img/figuras/bih_11_4-y.png",
+    "BIH 13": "img/figuras/bih_12_haris-tabakovic-3.png",
+    "BIH 14": "img/figuras/bih_13_ah-a-nn-er-y.png",
+    "BIH 15": "img/figuras/bih_14_dzenis-burnic.png",
+    "BIH 16": "img/figuras/bih_15_amar-dedig.png",
+    "BIH 17": "img/figuras/bih_16_esmir-bajraktarevic.png",
+    "BIH 18": "img/figuras/bih_17_nikola-katic.png",
+    "BIH 19": "img/figuras/bih_18_armin-gigovic.png",
+    "BRA 2": "img/figuras/bra_02_bento.png",
+    "BRA 3": "img/figuras/bra_02_bento.png",
+    "BRA 4": "img/figuras/bra_03_marquinhos.png",
+    "BRA 5": "img/figuras/bra_04_wesley.png",
+    "BRA 6": "img/figuras/bra_05_eder-militao.png",
+    "BRA 7": "img/figuras/bra_06_gabriel-magalhaes.png",
+    "BRA 8": "img/figuras/bra_07_danilo.png",
+    "BRA 9": "img/figuras/bra_08_bruno-guimaraes.png",
+    "BRA 10": "img/figuras/bra_10_casemiro.png",
+    "BRA 11": "img/figuras/bra_10_casemiro.png",
+    "BRA 12": "img/figuras/bra_11_uiz-henriou.png",
+    "BRA 13": "img/figuras/bra_12_vinicius-junior.png",
+    "BRA 14": "img/figuras/bra_13_gabriel-martinelli.png",
+    "BRA 15": "img/figuras/bra_14_raphinha.png",
+    "BRA 16": "img/figuras/bra_15_estevao.png",
+    "BRA 17": "img/figuras/bra_16_matheus-cunha.png",
+    "BRA 18": "img/figuras/bra_17_rodrygo.png",
+    "BRA 19": "img/figuras/bra_18_joao-pedro.png",
+    "CAN 1": "img/figuras/can_01_dayne-st-clair.png",
+    "CAN 2": "img/figuras/can_01_dayne-st-clair.png",
+    "CAN 3": "img/figuras/can_02_if-e-y-en.png",
+    "CAN 4": "img/figuras/can_03_pe-ro.png",
+    "CAN 5": "img/figuras/can_04_io-4-el.png",
+    "CAN 6": "img/figuras/can_05_es.png",
+    "CAN 7": "img/figuras/can_06_fy-f-e-7.png",
+    "CAN 8": "img/figuras/can_07_ut-aa-o.png",
+    "CAN 9": "img/figuras/can_08_y-y.png",
+    "CAN 10": "img/figuras/can_09_no.png",
+    "CAN 11": "img/figuras/can_10_j-oe-3-ad.png",
+    "CAN 12": "img/figuras/can_11_e-pa.png",
+    "CAN 13": "img/figuras/can_12_si-nx-ls.png",
+    "CAN 14": "img/figuras/can_13_tajon-buchanan.png",
+    "CAN 15": "img/figuras/can_14_jonathan-david.png",
+    "CAN 16": "img/figuras/can_15_cyle-larin.png",
+    "CAN 17": "img/figuras/can_16_1.png",
+    "CAN 18": "img/figuras/can_17_pr-a-an.png",
+    "CAN 19": "img/figuras/can_18_richie-larvea.png",
+    "CIV 1": "img/figuras/civ_01_emmanuel-agbadou.png",
+    "CIV 2": "img/figuras/civ_01_emmanuel-agbadou.png",
+    "CIV 3": "img/figuras/civ_02_amad-diallo.png",
+    "CIV 4": "img/figuras/civ_03_ea.png",
+    "CIV 5": "img/figuras/civ_05_sebastien-haller.png",
+    "CIV 6": "img/figuras/civ_05_sebastien-haller.png",
+    "CIV 7": "img/figuras/civ_06_simon-adingra.png",
+    "CIV 8": "img/figuras/civ_07_seko-fofana.png",
+    "CIV 9": "img/figuras/civ_08_oumar-diakite-ei.png",
+    "CIV 10": "img/figuras/civ_09_van-diomande-q.png",
+    "CIV 11": "img/figuras/civ_10_seko-fofana.png",
+    "CIV 12": "img/figuras/civ_11_wilfried-singo.png",
+    "CIV 13": "img/figuras/civ_12_jean-philippe-gbamin.png",
+    "CIV 14": "img/figuras/civ_13_ousmane-diomande.png",
+    "CIV 15": "img/figuras/civ_14_e-o.png",
+    "CIV 16": "img/figuras/civ_15_jean-philippe-gbamin.png",
+    "CIV 17": "img/figuras/civ_16_evann-guessand.png",
+    "CIV 18": "img/figuras/civ_17_ibrahim-sangare.png",
+    "CIV 19": "img/figuras/civ_18_franck-kessie.png",
+    "COL 1": "img/figuras/col_01_david-ospina.png",
+    "COL 2": "img/figuras/col_01_david-ospina.png",
+    "COL 3": "img/figuras/col_02_camilo-vargas.png",
+    "COL 4": "img/figuras/col_03_e-o.png",
+    "COL 5": "img/figuras/col_04_jhon-cordoba.png",
+    "COL 6": "img/figuras/col_05_jhon-arias.png",
+    "COL 7": "img/figuras/col_06_luis-suarez.png",
+    "COL 8": "img/figuras/col_07_jorge-carrascal.png",
+    "COL 9": "img/figuras/col_08_richard-rios.png",
+    "COL 10": "img/figuras/col_09_juan-fernando-quintero.png",
+    "COL 11": "img/figuras/col_10_james-rodriguez.png",
+    "COL 12": "img/figuras/col_11_kevin-castano.png",
+    "COL 13": "img/figuras/col_12_jefferson-lerma.png",
+    "COL 14": "img/figuras/col_13_santiago-arias.png",
+    "COL 15": "img/figuras/col_14_daniel-munoz.png",
+    "COL 16": "img/figuras/col_15_verry-mina.png",
+    "COL 17": "img/figuras/col_16_johan-mojica.png",
+    "COL 18": "img/figuras/col_17_davinson-sanchez.png",
+    "COL 19": "img/figuras/col_18_jhon-lucumi.png",
+    "CRO 1": "img/figuras/cro_01_dominik-livakovi.png",
+    "CRO 2": "img/figuras/cro_01_dominik-livakovi.png",
+    "CRO 3": "img/figuras/cro_02_duje-caleta-car.png",
+    "CRO 4": "img/figuras/cro_03_marco-pasalic.png",
+    "CRO 5": "img/figuras/cro_04_josip-stanii.png",
+    "CRO 6": "img/figuras/cro_05_luka-vukovi.png",
+    "CRO 7": "img/figuras/cro_06_luka-modricg.png",
+    "CRO 8": "img/figuras/cro_07_vn-ie.png",
+    "CRO 9": "img/figuras/cro_08_martin-baturina.png",
+    "CRO 10": "img/figuras/cro_09_mario-pasalic.png",
+    "CRO 11": "img/figuras/cro_10_petar-sugig.png",
+    "CRO 12": "img/figuras/cro_11_ivan-perisig.png",
+    "CRO 13": "img/figuras/cro_12_kristijan-jakig.png",
+    "CRO 14": "img/figuras/cro_13_duje-galeta-car.png",
+    "CRO 15": "img/figuras/cro_14_josip-stanisic.png",
+    "CRO 16": "img/figuras/cro_15_luka-vuskovic.png",
+    "CRO 17": "img/figuras/cro_16_josip-sutalo.png",
+    "CRO 18": "img/figuras/cro_17_lovro-majer.png",
+    "CRO 19": "img/figuras/cro_18_josko-gvardiol.png",
+    "CZE 1": "img/figuras/cze_01_tomas-soucek.png",
+    "CZE 2": "img/figuras/cze_01_tomas-soucek.png",
+    "CZE 3": "img/figuras/cze_02_pavel-sulc.png",
+    "CZE 4": "img/figuras/cze_03_matej-vydra.png",
+    "CZE 5": "img/figuras/cze_04_vasil-kusej.png",
+    "CZE 6": "img/figuras/cze_05_tomas-chory.png",
+    "CZE 7": "img/figuras/cze_06_vaclav-gerny.png",
+    "CZE 8": "img/figuras/cze_07_veneer.png",
+    "CZE 9": "img/figuras/cze_08_jaroslav-zelenv.png",
+    "CZE 10": "img/figuras/cze_09_matej-kovar.png",
+    "CZE 11": "img/figuras/cze_10_lukas-cerv.png",
+    "CZE 12": "img/figuras/cze_11_vladimir-coufal.png",
+    "CZE 13": "img/figuras/cze_12_michal-sadilek.png",
+    "CZE 14": "img/figuras/cze_13_lukas-provod.png",
+    "CZE 15": "img/figuras/cze_14_david-zima.png",
+    "CZE 16": "img/figuras/cze_15_jindrich-stanek.png",
+    "CZE 17": "img/figuras/cze_16_paihia-quran.png",
+    "CZE 18": "img/figuras/cze_17_lura-ah.png",
+    "CZE 19": "img/figuras/cze_18_laviolav-arevu.png",
+    "ECU 1": "img/figuras/ecu_01_miao-foe.png",
+    "ECU 2": "img/figuras/ecu_01_miao-foe.png",
+    "ECU 3": "img/figuras/ecu_02_gonzalo-valle.png",
+    "ECU 4": "img/figuras/ecu_03_enner-valencia.png",
+    "ECU 5": "img/figuras/ecu_04_kevin-rodriguez.png",
+    "ECU 6": "img/figuras/ecu_05_alan-minda.png",
+    "ECU 7": "img/figuras/ecu_06_nilson-angulo.png",
+    "ECU 8": "img/figuras/ecu_07_gonzalo-plata.png",
+    "ECU 9": "img/figuras/ecu_08_leonardo-campana.png",
+    "ECU 10": "img/figuras/ecu_09_wnarathon-wh.png",
+    "ECU 11": "img/figuras/ecu_10_kendry-paez.png",
+    "ECU 12": "img/figuras/ecu_11_alan-franco.png",
+    "ECU 13": "img/figuras/ecu_12_alan-franco.png",
+    "ECU 14": "img/figuras/ecu_13_moises-caicedo.png",
+    "ECU 15": "img/figuras/ecu_14_joel-ordonez.png",
+    "ECU 16": "img/figuras/ecu_15_john-veboah.png",
+    "ECU 17": "img/figuras/ecu_16_pervis-estupinan.png",
+    "ECU 18": "img/figuras/ecu_17_willian-pacho.png",
+    "ECU 19": "img/figuras/ecu_18_piero-hincapie.png",
+    "ENG 1": "img/figuras/eng_01_jordan-pickford.png",
+    "ENG 2": "img/figuras/eng_01_jordan-pickford.png",
+    "ENG 3": "img/figuras/eng_02_harry-kane.png",
+    "ENG 4": "img/figuras/eng_03_marc-guehi.png",
+    "ENG 5": "img/figuras/eng_04_ezri-konsa.png",
+    "ENG 6": "img/figuras/eng_05_ollie-watkins.png",
+    "ENG 7": "img/figuras/eng_06_duratu-vara.png",
+    "ENG 8": "img/figuras/eng_07_anthony-gordon.png",
+    "ENG 9": "img/figuras/eng_08_morgan-rogers.png",
+    "ENG 10": "img/figuras/eng_09_jude-bellingham.png",
+    "ENG 11": "img/figuras/eng_10_jordan-henderson.png",
+    "ENG 12": "img/figuras/eng_11_cole-palmer.png",
+    "ENG 13": "img/figuras/eng_12_declan-rice.png",
+    "ENG 14": "img/figuras/eng_13_declan-rice.png",
+    "ENG 15": "img/figuras/eng_14_dan-burn.png",
+    "ENG 16": "img/figuras/eng_15_john-stones.png",
+    "ENG 17": "img/figuras/eng_16_reece-james.png",
+    "ENG 18": "img/figuras/eng_17_marcus-rashford.png",
+    "ENG 19": "img/figuras/eng_18_ollie-watkins.png",
+    "ESP 1": "img/figuras/esp_01_unai-simon.png",
+    "ESP 2": "img/figuras/esp_01_unai-simon.png",
+    "ESP 3": "img/figuras/esp_02_robin-le-normand.png",
+    "ESP 4": "img/figuras/esp_03_ferran-torres.png",
+    "ESP 5": "img/figuras/esp_04_nico-williams.png",
+    "ESP 6": "img/figuras/esp_05_i-dani-olmo.png",
+    "ESP 7": "img/figuras/esp_06_alvaro-morata.png",
+    "ESP 8": "img/figuras/esp_07_mikel-ovarzabal.png",
+    "ESP 9": "img/figuras/esp_08_mikel-merino.png",
+    "ESP 10": "img/figuras/esp_09_fabian-ruiz.png",
+    "ESP 11": "img/figuras/esp_10_pedri.png",
+    "ESP 12": "img/figuras/esp_11_rodri.png",
+    "ESP 13": "img/figuras/esp_12_rodri.png",
+    "ESP 14": "img/figuras/esp_13_martin-zubimendi.png",
+    "ESP 15": "img/figuras/esp_14_dani-olmo.png",
+    "ESP 16": "img/figuras/esp_15_nico-williams.png",
+    "ESP 17": "img/figuras/esp_16_pedro-porro.png",
+    "ESP 18": "img/figuras/esp_17_dean-huijsen.png",
+    "ESP 19": "img/figuras/esp_18_aymeric-laporte.png",
+    "FRA 1": "img/figuras/fra_01_mike-maignan.png",
+    "FRA 2": "img/figuras/fra_01_mike-maignan.png",
+    "FRA 3": "img/figuras/fra_02_kylian-mbappe.png",
+    "FRA 4": "img/figuras/fra_03_hugo-ekitike.png",
+    "FRA 5": "img/figuras/fra_04_kingsley-coman.png",
+    "FRA 6": "img/figuras/fra_05_desire-doue-is.png",
+    "FRA 7": "img/figuras/fra_06_bradley-barcola.png",
+    "FRA 8": "img/figuras/fra_07_ousmane-dembele-r.png",
+    "FRA 9": "img/figuras/fra_08_aurelien-tchouameni.png",
+    "FRA 10": "img/figuras/fra_09_eduardo-camavinga.png",
+    "FRA 11": "img/figuras/fra_10_manu-kone.png",
+    "FRA 12": "img/figuras/fra_11_adrien-rabiot.png",
+    "FRA 13": "img/figuras/fra_12_michael-olise.png",
+    "FRA 14": "img/figuras/fra_13_ousmane-dembele.png",
+    "FRA 15": "img/figuras/fra_14_bradley-barcola.png",
+    "FRA 16": "img/figuras/fra_15_desire-doue.png",
+    "FRA 17": "img/figuras/fra_16_kingsley-coman.png",
+    "FRA 18": "img/figuras/fra_17_hugo-ekitike.png",
+    "FRA 19": "img/figuras/fra_18_kylian-mbappe.png",
+    "GER 1": "img/figuras/ger_01_marc-andre-ter-stegen.png",
+    "GER 2": "img/figuras/ger_01_marc-andre-ter-stegen.png",
+    "GER 3": "img/figuras/ger_02_jonathan-tah.png",
+    "GER 4": "img/figuras/ger_03_david-raum.png",
+    "GER 5": "img/figuras/ger_04_serge-gnabry.png",
+    "GER 6": "img/figuras/ger_05_karim-adeyemi.png",
+    "GER 7": "img/figuras/ger_06_waldemar-anton.png",
+    "GER 8": "img/figuras/ger_07_leon-goretzka.png",
+    "GER 9": "img/figuras/ger_08_florian-wirtz.png",
+    "GER 10": "img/figuras/ger_09_joshua-kimmich.png",
+    "GER 11": "img/figuras/ger_10_joshua-kimmich.png",
+    "GER 12": "img/figuras/ger_11_felix-nmecha.png",
+    "GER 13": "img/figuras/ger_12_leon-goretzka.png",
+    "GER 14": "img/figuras/ger_13_david-raum.png",
+    "GER 15": "img/figuras/ger_14_jamal-musiala.png",
+    "GER 16": "img/figuras/ger_15_waldemar-anton.png",
+    "GER 17": "img/figuras/ger_16_leroy-sane.png",
+    "GER 18": "img/figuras/ger_17_karim-adeyemi.png",
+    "GER 19": "img/figuras/ger_18_maximilian-mittelstadt.png",
+    "HAI 1": "img/figuras/hai_01_johny-placide.png",
+    "HAI 2": "img/figuras/hai_01_johny-placide.png",
+    "HAI 3": "img/figuras/hai_02_hannes-delcroix.png",
+    "HAI 4": "img/figuras/hai_03_ricardo-ade.png",
+    "HAI 5": "img/figuras/hai_04_caeta-wy.png",
+    "HAI 6": "img/figuras/hai_05_derrick-etienne-jr.png",
+    "HAI 7": "img/figuras/hai_06_duckens-nazon.png",
+    "HAI 8": "img/figuras/hai_07_martin-experience.png",
+    "HAI 9": "img/figuras/hai_08_louicius-deedson.png",
+    "HAI 10": "img/figuras/hai_09_christopher-attvs.png",
+    "HAI 11": "img/figuras/hai_10_leverton-pierre.png",
+    "HAI 12": "img/figuras/hai_11_danley-jean-jacques.png",
+    "HAI 13": "img/figuras/hai_12_carlens-arcus.png",
+    "HAI 14": "img/figuras/hai_13_johny-placide.png",
+    "HAI 15": "img/figuras/hai_14_duke-lacroix.png",
+    "HAI 16": "img/figuras/hai_15_jean-kevin-duverne.png",
+    "HAI 17": "img/figuras/hai_16_jean-ricner-bellegarde.png",
+    "HAI 18": "img/figuras/hai_17_ruben-providence.png",
+    "HAI 19": "img/figuras/hai_18_frantzdy-pierrot.png",
+    "JPN 1": "img/figuras/jpn_01_ritsu-doan.png",
+    "JPN 2": "img/figuras/jpn_01_ritsu-doan.png",
+    "JPN 3": "img/figuras/jpn_02_keito-nakamura.png",
+    "JPN 4": "img/figuras/jpn_03_takefusa-kubo.png",
+    "JPN 5": "img/figuras/jpn_04_daich-kamada.png",
+    "JPN 6": "img/figuras/jpn_05_shogo-taniguchi.png",
+    "JPN 7": "img/figuras/jpn_06_shuto-machino.png",
+    "JPN 8": "img/figuras/jpn_07_junya-ito.png",
+    "JPN 9": "img/figuras/jpn_08_kok-ogawa.png",
+    "JPN 10": "img/figuras/jpn_09_ayase-ueda.png",
+    "JPN 11": "img/figuras/jpn_10_zion-suzuki.png",
+    "JPN 12": "img/figuras/jpn_11_henry-herok-mochizuki.png",
+    "JPN 13": "img/figuras/jpn_12_ayumu-seko.png",
+    "JPN 14": "img/figuras/jpn_13_keito-nakamura.png",
+    "JPN 15": "img/figuras/jpn_14_kaishu-sano.png",
+    "JPN 16": "img/figuras/jpn_15_yuk-soma.png",
+    "JPN 17": "img/figuras/jpn_16_junya-ito.png",
+    "JPN 18": "img/figuras/jpn_17_shogo-taniguchi.png",
+    "JPN 19": "img/figuras/jpn_18_tsuyosh-watanabe.png",
+    "KOR 1": "img/figuras/kor_01_hyeonwoo-jo-ie.png",
+    "KOR 2": "img/figuras/kor_01_hyeonwoo-jo-ie.png",
+    "KOR 3": "img/figuras/kor_02_seunggyu-kim-ee.png",
+    "KOR 4": "img/figuras/kor_03_heungmin-son.png",
+    "KOR 5": "img/figuras/kor_04_minjae-kim.png",
+    "KOR 6": "img/figuras/kor_05_hanbeom-lee.png",
+    "KOR 7": "img/figuras/kor_06_taeseok-lee.png",
+    "KOR 8": "img/figuras/kor_07_tae-seok-lee.png",
+    "KOR 9": "img/figuras/kor_08_jaesung-lee.png",
+    "KOR 10": "img/figuras/kor_09_inbeom-hwang.png",
+    "KOR 11": "img/figuras/kor_10_kangin-lee.png",
+    "KOR 12": "img/figuras/kor_11_yumin-gho.png",
+    "KOR 13": "img/figuras/kor_12_donggyeong-lee.png",
+    "KOR 14": "img/figuras/kor_13_jens-castrop.png",
+    "KOR 15": "img/figuras/kor_14_youngwoo0-seol.png",
+    "KOR 16": "img/figuras/kor_15_jens-castrop.png",
+    "KOR 17": "img/figuras/kor_16_seungho-paik.png",
+    "KOR 18": "img/figuras/kor_17_hyeongyu-oh.png",
+    "KOR 19": "img/figuras/kor_18_heechan-hwang.png",
+    "MAR 1": "img/figuras/mar_01_assine-bounou.png",
+    "MAR 2": "img/figuras/mar_01_assine-bounou.png",
+    "MAR 3": "img/figuras/mar_02_youssef-en-nesvri.png",
+    "MAR 4": "img/figuras/mar_03_abde-ezzalzoul.png",
+    "MAR 5": "img/figuras/mar_04_noussair-mazraoui.png",
+    "MAR 6": "img/figuras/mar_05_brahim-diaz.png",
+    "MAR 7": "img/figuras/mar_06_roman-saiss.png",
+    "MAR 8": "img/figuras/mar_07_ion-i.png",
+    "MAR 9": "img/figuras/mar_08_adam-masina.png",
+    "MAR 10": "img/figuras/mar_09_sofyan-amrabat.png",
+    "MAR 11": "img/figuras/mar_10_bilal-el-khannouss.png",
+    "MAR 12": "img/figuras/mar_11_eliesse-ben-seghir.png",
+    "MAR 13": "img/figuras/mar_12_achraf-hakimi.png",
+    "MAR 14": "img/figuras/mar_13_ismael-saibari.png",
+    "MAR 15": "img/figuras/mar_14_youssef-en-nesyri.png",
+    "MAR 16": "img/figuras/mar_15_munir-el-kajou.png",
+    "MAR 17": "img/figuras/mar_16_navef-aguerd.png",
+    "MAR 18": "img/figuras/mar_17_brahim-diaz.png",
+    "MAR 19": "img/figuras/mar_18_ayoub-el-kaabi.png",
+    "MEX 1": "img/figuras/mex_01_ad-bm-ty.png",
+    "MEX 2": "img/figuras/mex_01_ad-bm-ty.png",
+    "MEX 3": "img/figuras/mex_02_johan-vasquez.png",
+    "MEX 4": "img/figuras/mex_03_jorge-sanchez.png",
+    "MEX 5": "img/figuras/mex_04_cesar-montes.png",
+    "MEX 6": "img/figuras/mex_05_jesus-gallardo.png",
+    "MEX 7": "img/figuras/mex_06_israel-reyes.png",
+    "MEX 8": "img/figuras/mex_07_diego-lainez.png",
+    "MEX 9": "img/figuras/mex_08_carlos-rodriguez.png",
+    "MEX 10": "img/figuras/mex_09_edson-alvarez.png",
+    "MEX 11": "img/figuras/mex_10_orbelin-pineda.png",
+    "MEX 12": "img/figuras/mex_11_marcel-ruiz.png",
+    "MEX 13": "img/figuras/mex_12_erick-sanchez.png",
+    "MEX 14": "img/figuras/mex_13_raul-jimenez.png",
+    "MEX 15": "img/figuras/mex_14_santiago-gimenez.png",
+    "MEX 16": "img/figuras/mex_15_raul-jimenez.png",
+    "MEX 17": "img/figuras/mex_16_alexis-vega.png",
+    "MEX 18": "img/figuras/mex_17_le-ee-mexico.png",
+    "MEX 19": "img/figuras/mex_18_y-mexico.png",
+    "NED 1": "img/figuras/ned_01_bart-verbruggen.png",
+    "NED 2": "img/figuras/ned_01_bart-verbruggen.png",
+    "NED 3": "img/figuras/ned_02_virgil-van-dijk.png",
+    "NED 4": "img/figuras/ned_03_micky-van-de-ven.png",
+    "NED 5": "img/figuras/ned_04_jurrien-timber.png",
+    "NED 6": "img/figuras/ned_05_denzel-dumfries.png",
+    "NED 7": "img/figuras/ned_06_ay-aseave.png",
+    "NED 8": "img/figuras/ned_07_jeremie-frimpong.png",
+    "NED 9": "img/figuras/ned_08_jan-paul-van-hecke.png",
+    "NED 10": "img/figuras/ned_09_tijjani-reijnders.png",
+    "NED 11": "img/figuras/ned_10_ay-aseave.png",
+    "NED 12": "img/figuras/ned_11_ryan-gravenberch.png",
+    "NED 13": "img/figuras/ned_12_tiwjani-reiunders.png",
+    "NED 14": "img/figuras/ned_13_teun-koopmeiners.png",
+    "NED 15": "img/figuras/ned_14_frenkie-de-jong.png",
+    "NED 16": "img/figuras/ned_15_denzel-dumfries.png",
+    "NED 17": "img/figuras/ned_16_jan-paul-van-hecke.png",
+    "NED 18": "img/figuras/ned_17_virgil-van-dijk.png",
+    "NED 19": "img/figuras/ned_18_micky-van-de-ven.png",
+    "NOR 1": "img/figuras/nor_01_orjan-nyland.png",
+    "NOR 2": "img/figuras/nor_01_orjan-nyland.png",
+    "NOR 3": "img/figuras/nor_02_julian-ryerson.png",
+    "NOR 4": "img/figuras/nor_03_leo-ostigrd.png",
+    "NOR 5": "img/figuras/nor_04_kristoffer-vassbakk-ajer.png",
+    "NOR 6": "img/figuras/nor_05_marcus-holmgren-pedersen.png",
+    "NOR 7": "img/figuras/nor_06_oscar-bobb.png",
+    "NOR 8": "img/figuras/nor_07_torbjrn-heggem.png",
+    "NOR 9": "img/figuras/nor_08_morten-thorsby.png",
+    "NOR 10": "img/figuras/nor_09_morten-thorsby.png",
+    "NOR 11": "img/figuras/nor_10_patrick-berg.png",
+    "NOR 12": "img/figuras/nor_11_sander-berge.png",
+    "NOR 13": "img/figuras/nor_12_andreas-sghjelderup.png",
+    "NOR 14": "img/figuras/nor_13_torbuorn-heggem.png",
+    "NOR 15": "img/figuras/nor_14_kristoffer-vassbakk-ajer.png",
+    "NOR 16": "img/figuras/nor_15_leo-sstigard.png",
+    "NOR 17": "img/figuras/nor_16_david-mooller-wolfe.png",
+    "NOR 18": "img/figuras/nor_17_marcus-holmgren-pedersen.png",
+    "NOR 19": "img/figuras/nor_18_julian-ryerson.png",
+    "PAR 1": "img/figuras/par_01_omar-alderete.png",
+    "PAR 2": "img/figuras/par_01_omar-alderete.png",
+    "PAR 3": "img/figuras/par_02_andres-cubas.png",
+    "PAR 4": "img/figuras/par_03_junior-alonso.png",
+    "PAR 5": "img/figuras/par_04_angel-romero.png",
+    "PAR 6": "img/figuras/par_05_juan-jose-caceres.png",
+    "PAR 7": "img/figuras/par_06_miguel-almiron.png",
+    "PAR 8": "img/figuras/par_07_julio-enciso.png",
+    "PAR 9": "img/figuras/par_08_mathias-villasanti.png",
+    "PAR 10": "img/figuras/par_09_juan-jose-caceres.png",
+    "PAR 11": "img/figuras/par_10_fabian-balbuena.png",
+    "PAR 12": "img/figuras/par_11_andres-cubas.png",
+    "PAR 13": "img/figuras/par_12_p-foberto-fernandez.png",
+    "PAR 14": "img/figuras/par_13_diego-gomez.png",
+    "PAR 15": "img/figuras/par_14_gustavo-gomez.png",
+    "PAR 16": "img/figuras/par_15_damian-bobadilla.png",
+    "PAR 17": "img/figuras/par_16_ramon-sosa.png",
+    "PAR 18": "img/figuras/par_17_antonio-sanabria.png",
+    "PAR 19": "img/figuras/par_18_matias-galarza-fonda.png",
+    "POR 1": "img/figuras/por_01_diogo-costa.png",
+    "POR 2": "img/figuras/por_01_diogo-costa.png",
+    "POR 3": "img/figuras/por_02_jose-sa.png",
+    "POR 4": "img/figuras/por_03_joao-felix.png",
+    "POR 5": "img/figuras/por_04_francisco-trincao.png",
+    "POR 6": "img/figuras/por_05_joao-neves.png",
+    "POR 7": "img/figuras/por_06_nuno-mendes.png",
+    "POR 8": "img/figuras/por_07_gonalo-inacio.png",
+    "POR 9": "img/figuras/por_08_bernardo-silva.png",
+    "POR 10": "img/figuras/por_09_bruno-fernandes.png",
+    "POR 11": "img/figuras/por_10_gongalo-inacio.png",
+    "POR 12": "img/figuras/por_11_vitinha.png",
+    "POR 13": "img/figuras/por_12_joao-neves.png",
+    "POR 14": "img/figuras/por_13_joao-cancelo.png",
+    "POR 15": "img/figuras/por_14_francisco-trincao.png",
+    "POR 16": "img/figuras/por_15_joao-felix.png",
+    "POR 17": "img/figuras/por_16_rafael-leao.png",
+    "POR 18": "img/figuras/por_17_pedro-neto.png",
+    "POR 19": "img/figuras/por_18_gongalo-ramos.png",
+    "QAT 1": "img/figuras/qat_01_meshaal-barsham.png",
+    "QAT 2": "img/figuras/qat_01_meshaal-barsham.png",
+    "QAT 3": "img/figuras/qat_02_almoez-ali.png",
+    "QAT 4": "img/figuras/qat_03_lucas-mendes.png",
+    "QAT 5": "img/figuras/qat_04_homam-ahmed.png",
+    "QAT 6": "img/figuras/qat_05_boualem-khoukhi.png",
+    "QAT 7": "img/figuras/qat_06_pedro-miguel.png",
+    "QAT 8": "img/figuras/qat_07_tarek-salman.png",
+    "QAT 9": "img/figuras/qat_08_f-mohammed-waad.png",
+    "QAT 10": "img/figuras/qat_09_karim-boudiaf.png",
+    "QAT 11": "img/figuras/qat_10_assim-madibo.png",
+    "QAT 12": "img/figuras/qat_11_ahmed-fatehi.png",
+    "QAT 13": "img/figuras/qat_12_mohammed-waad.png",
+    "QAT 14": "img/figuras/qat_13_edmilson-junior.png",
+    "QAT 15": "img/figuras/qat_14_akram-hassan-afif.png",
+    "RSA 1": "img/figuras/rsa_01_y-sipho-chaine-y.png",
+    "RSA 2": "img/figuras/rsa_01_y-sipho-chaine-y.png",
+    "RSA 3": "img/figuras/rsa_02_samukele-kabini.png",
+    "RSA 4": "img/figuras/rsa_03_khuliso-mudau.png",
+    "RSA 5": "img/figuras/rsa_04_teboho-mokoena.png",
+    "RSA 6": "img/figuras/rsa_05_thalente-mbatha.png",
+    "RSA 7": "img/figuras/rsa_06_bathus-aubaas.png",
+    "RSA 8": "img/figuras/rsa_07_ioraam-rayners.png",
+    "RSA 9": "img/figuras/rsa_08_oswin-appollis.png",
+    "RSA 10": "img/figuras/rsa_09_lyle-foster.png",
+    "RSA 11": "img/figuras/rsa_10_sipho-mbule.png",
+    "RSA 12": "img/figuras/rsa_11_mohau-nkota.png",
+    "RSA 13": "img/figuras/rsa_12_bathasi-aubaas.png",
+    "RSA 14": "img/figuras/rsa_13_mbekezeli-mbokazi.png",
+    "RSA 15": "img/figuras/rsa_14_f-ronwen-williams-a.png",
+    "RSA 16": "img/figuras/rsa_15_yaya-sithole.png",
+    "RSA 17": "img/figuras/rsa_16_khulumani-ndamane.png",
+    "RSA 18": "img/figuras/rsa_17_sipho-sibisi.png",
+    "RSA 19": "img/figuras/rsa_18_siyabonga-ngezana.png",
+    "SCO 1": "img/figuras/sco_01_scott-mckenna.png",
+    "SCO 2": "img/figuras/sco_01_scott-mckenna.png",
+    "SCO 3": "img/figuras/sco_02_angus-gunn.png",
+    "SCO 4": "img/figuras/sco_03_john-mcginn.png",
+    "SCO 5": "img/figuras/sco_04_john-souttar.png",
+    "SCO 6": "img/figuras/sco_05_7-wy-by-a.png",
+    "SCO 7": "img/figuras/sco_06_lewis-ferguson.png",
+    "SCO 8": "img/figuras/sco_07_john-souttar.png",
+    "SCO 9": "img/figuras/sco_08_anthony-ralston.png",
+    "SCO 10": "img/figuras/sco_09_grant-hanley.png",
+    "SCO 11": "img/figuras/sco_10_scott-mctominay.png",
+    "SCO 12": "img/figuras/sco_11_jack-hendry.png",
+    "SCO 13": "img/figuras/sco_12_lewis-ferguson.png",
+    "SCO 14": "img/figuras/sco_13_che-adams.png",
+    "SCO 15": "img/figuras/sco_14_ben-gannon-doak.png",
+    "SCO 16": "img/figuras/sco_15_billy-gilmour.png",
+    "SCO 17": "img/figuras/sco_16_kieran-tierney.png",
+    "SCO 18": "img/figuras/sco_17_aaron-higkey.png",
+    "SCO 19": "img/figuras/sco_18_andrew-robertson.png",
+    "SEN 1": "img/figuras/sen_01_edouard-mendy.png",
+    "SEN 2": "img/figuras/sen_01_edouard-mendy.png",
+    "SEN 3": "img/figuras/sen_02_yehvann-diouf.png",
+    "SEN 4": "img/figuras/sen_03_moussa-niakhate.png",
+    "SEN 5": "img/figuras/sen_04_abdoulaye-seck.png",
+    "SEN 6": "img/figuras/sen_05_ismail-jakobs.png",
+    "SEN 7": "img/figuras/sen_06_el-hadji-malick-diouf.png",
+    "SEN 8": "img/figuras/sen_07_kalidou-koulibaly.png",
+    "SEN 9": "img/figuras/sen_08_idrissa-gana-gueye.png",
+    "SEN 10": "img/figuras/sen_09_pape-matar-sarr.png",
+    "SEN 11": "img/figuras/sen_10_pape-gueye.png",
+    "SEN 12": "img/figuras/sen_11_habib-diarra.png",
+    "SEN 13": "img/figuras/sen_12_lamine-camara.png",
+    "SEN 14": "img/figuras/sen_13_sadio-mane-se.png",
+    "SEN 15": "img/figuras/sen_14_omala-sarr.png",
+    "SEN 16": "img/figuras/sen_15_boulaye-dia.png",
+    "SEN 17": "img/figuras/sen_16_iliman-ndiaye.png",
+    "SEN 18": "img/figuras/sen_17_w-eliis-jarrson.png",
+    "SEN 19": "img/figuras/sen_18_krepin-diatta.png",
+    "SUI 1": "img/figuras/sui_01_gregor-kobel.png",
+    "SUI 2": "img/figuras/sui_01_gregor-kobel.png",
+    "SUI 3": "img/figuras/sui_02_aicardo-rodriguez.png",
+    "SUI 4": "img/figuras/sui_03_manuel-akanji.png",
+    "SUI 5": "img/figuras/sui_04_ruben-vargas.png",
+    "SUI 6": "img/figuras/sui_05_nico-elvedi.png",
+    "SUI 7": "img/figuras/sui_06_aurele-amenda.png",
+    "SUI 8": "img/figuras/sui_07_aurele-ame-nde.png",
+    "SUI 9": "img/figuras/sui_08_denis-zakaria.png",
+    "SUI 10": "img/figuras/sui_09_denis-zakaria.png",
+    "SUI 11": "img/figuras/sui_10_remo-freuler.png",
+    "SUI 12": "img/figuras/sui_11_johan-manzambi.png",
+    "SUI 13": "img/figuras/sui_12_ardon-jashari.png",
+    "SUI 14": "img/figuras/sui_13_johan-manzambi.png",
+    "SUI 15": "img/figuras/sui_14_zek-amdouni.png",
+    "SUI 16": "img/figuras/sui_15_breel-embolo.png",
+    "SUI 17": "img/figuras/sui_16_ruben-vargas.png",
+    "SUI 18": "img/figuras/sui_17_yvon-mvogo.png",
+    "SWE 1": "img/figuras/swe_01_lucas-bergvall.png",
+    "SWE 2": "img/figuras/swe_01_lucas-bergvall.png",
+    "SWE 3": "img/figuras/swe_02_gabriel-gudmundsson.png",
+    "SWE 4": "img/figuras/swe_03_gabriel-gudmundsson.png",
+    "SWE 5": "img/figuras/swe_04_anthony-elanga.png",
+    "SWE 6": "img/figuras/swe_05_hugo-larsson.png",
+    "SWE 7": "img/figuras/swe_06_jesper-karlstrom.png",
+    "SWE 8": "img/figuras/swe_07_00ny-b-gh.png",
+    "SWE 9": "img/figuras/swe_08_daniel-svensson.png",
+    "SWE 10": "img/figuras/swe_09_viktor-johansson.png",
+    "SWE 11": "img/figuras/swe_10_victor-nilsson-lindelof.png",
+    "SWE 12": "img/figuras/swe_11_yasin-avari.png",
+    "SWE 13": "img/figuras/swe_12_alexander-isak.png",
+    "SWE 14": "img/figuras/swe_13_cg-bl.png",
+    "SWE 15": "img/figuras/swe_14_emil-holm.png",
+    "SWE 16": "img/figuras/swe_15_dejan-kulusevski.png",
+    "SWE 17": "img/figuras/swe_16_mattias-svanberg.png",
+    "SWE 18": "img/figuras/swe_17_gustaf-lagerbielke.png",
+    "SWE 19": "img/figuras/swe_18_viktor-gyokeres.png",
+    "TUR 1": "img/figuras/tur_01_ugurcan-cakir.png",
+    "TUR 2": "img/figuras/tur_01_ugurcan-cakir.png",
+    "TUR 3": "img/figuras/tur_02_iafan-can-kahveci.png",
+    "TUR 4": "img/figuras/tur_03_zeki-celik.png",
+    "TUR 5": "img/figuras/tur_04_abdulkerim-bardakci.png",
+    "TUR 6": "img/figuras/tur_05_caglar-soyuncu.png",
+    "TUR 7": "img/figuras/tur_06_merih-demiral.png",
+    "TUR 8": "img/figuras/tur_07_ferdi-kadioglu.png",
+    "TUR 9": "img/figuras/tur_08_kaan-ayhan.png",
+    "TUR 10": "img/figuras/tur_09_ms-cc.png",
+    "TUR 11": "img/figuras/tur_10_hakan-calhanoglu.png",
+    "TUR 12": "img/figuras/tur_11_baris-alper-vilmaz.png",
+    "TUR 13": "img/figuras/tur_12_arda-guler.png",
+    "TUR 14": "img/figuras/tur_13_irfan-can-kahveci.png",
+    "TUR 15": "img/figuras/tur_14_yunus-akgun.png",
+    "TUR 16": "img/figuras/tur_15_can-uzun.png",
+    "TUR 17": "img/figuras/tur_16_baris-alper-yilmaz.png",
+    "TUR 18": "img/figuras/tur_17_kerem-akturkoglu.png",
+    "URU 1": "img/figuras/uru_01_sergio-rochet.png",
+    "URU 2": "img/figuras/uru_01_sergio-rochet.png",
+    "URU 3": "img/figuras/uru_02_darwin-nunez.png",
+    "URU 4": "img/figuras/uru_03_ronald-araujo.png",
+    "URU 5": "img/figuras/uru_04_facundo-pellistr.png",
+    "URU 6": "img/figuras/uru_05_federico-vinas.png",
+    "URU 7": "img/figuras/uru_06_giorgian-de-arrascaeta.png",
+    "URU 8": "img/figuras/uru_07_guillermo-varela.png",
+    "URU 9": "img/figuras/uru_08_nicolas-de-la-gruz.png",
+    "URU 10": "img/figuras/uru_09_rodrigo-bentancur.png",
+    "URU 11": "img/figuras/uru_10_manuel-ugarte.png",
+    "URU 12": "img/figuras/uru_11_federico-valverde.png",
+    "URU 13": "img/figuras/uru_12_sebastian-caceres.png",
+    "URU 14": "img/figuras/uru_13_ronald-araujo.png",
+    "URU 15": "img/figuras/uru_14_nahitan-nandez.png",
+    "URU 16": "img/figuras/uru_15_guillermo-varela.png",
+    "URU 17": "img/figuras/uru_16_federico-vinas.png",
+    "URU 18": "img/figuras/uru_17_jose-maria-gimenez.png",
+    "URU 19": "img/figuras/uru_18_santiago-mele.png",
+    "USA 1": "img/figuras/usa_01_weston-mckennie.png",
+    "USA 2": "img/figuras/usa_01_weston-mckennie.png",
+    "USA 3": "img/figuras/usa_02_folarin-balogun.png",
+    "USA 4": "img/figuras/usa_03_diego-luna.png",
+    "USA 5": "img/figuras/usa_04_mark-mckenzie.png",
+    "USA 6": "img/figuras/usa_05_christian-pulisic.png",
+    "USA 7": "img/figuras/usa_06_chris-richards.png",
+    "USA 8": "img/figuras/usa_07_brenden-a.png",
+    "USA 9": "img/figuras/usa_08_antonee-robinson.png",
+    "USA 10": "img/figuras/usa_09_alex-freeman.png",
+    "USA 11": "img/figuras/usa_10_timothy-weah.png",
+    "USA 12": "img/figuras/usa_11_tanner-tessmann.png",
+    "USA 13": "img/figuras/usa_12_antonee-robinson.png",
+    "USA 14": "img/figuras/usa_13_alex-freeman.png",
+    "USA 15": "img/figuras/usa_14_timothy-weah.png",
+    "USA 16": "img/figuras/usa_15_tanner-tessmann.png",
+    "USA 17": "img/figuras/usa_16_ricardo-pepi.png",
+    "USA 18": "img/figuras/usa_17_mark-mckenzie.png",
+    "USA 19": "img/figuras/usa_18_tyler-adams.png"
+  },
+  "byName": {
+    "ALG:riyad mahrez": "img/figuras/alg-01-riyad-mahrez.png",
+    "ALG:ismael bennacer": "img/figuras/alg-02-ismael-bennacer.png",
+    "ALG:ramy bensebaini": "img/figuras/alg-03-ramy-bensebaini.png",
+    "ALG:aymen mahious": "img/figuras/alg-04-aymen-mahious.png",
+    "ALG:mohamed amoura": "img/figuras/alg-05-mohamed-amoura.png",
+    "ALG:fares chaibi": "img/figuras/alg-06-fares-chaibi.png",
+    "ALG:anis hadj moussa": "img/figuras/alg-07-anis-hadj-moussa.png",
+    "ALG:yacine benzia": "img/figuras/alg-08-yacine-benzia.png",
+    "ALG:houssem aouar": "img/figuras/alg-09-houssem-aouar.png",
+    "ALG:adam zorgane": "img/figuras/alg-10-adam-zorgane.png",
+    "ALG:haris belkebla": "img/figuras/alg-11-haris-belkebla.png",
+    "ALG:nabil bentaleb": "img/figuras/alg-12-nabil-bentaleb.png",
+    "ALG:sofiane feghouli": "img/figuras/alg-13-sofiane-feghouli.png",
+    "ALG:said benrahma": "img/figuras/alg-14-said-benrahma.png",
+    "ALG:youcef atal": "img/figuras/alg-15-youcef-atal.png",
+    "ALG:mohamed fares": "img/figuras/alg-16-mohamed-fares.png",
+    "ALG:ahmed touba": "img/figuras/alg-17-ahmed-touba.png",
+    "ALG:zinedine belaid": "img/figuras/alg-18-zinedine-belaid.png",
+    "ALG:antar yahia": "img/figuras/alg-19-antar-yahia.png",
+    "ALG:aissa mandi": "img/figuras/alg-20-aissa-mandi.png",
+    "ALG:alexis guendouz": "img/figuras/alg-21-alexis-guendouz.png",
+    "ALG:kevin guitoun": "img/figuras/alg-22-kevin-guitoun.png",
+    "ALG:anthony mandrea": "img/figuras/alg-23-anthony-mandrea.png",
+    "ALG:alexandre oukidja": "img/figuras/alg-24-alexandre-oukidja.png",
+    "ALG:rais m bolhi": "img/figuras/alg-25-rais-m'bolhi.png",
+    "ARG:emiliano martinez": "img/figuras/arg_01_emiliano-martinez.png",
+    "ARG:lionel messi": "img/figuras/arg_02_lionel-messi.png",
+    "ARG:nico gonzalez": "img/figuras/arg_03_nico-gonzalez.png",
+    "ARG:giuliano simeone": "img/figuras/arg_04_giuliano-simeone.png",
+    "ARG:julian alvarez": "img/figuras/arg_05_julian-alvarez.png",
+    "ARG:lautaro martinez": "img/figuras/arg_06_lautaro-martinez.png",
+    "ARG:franco mastantuono": "img/figuras/arg_07_franco-mastantuono.png",
+    "ARG:enzo fernandez": "img/figuras/arg_08_enzo-fernandez.png",
+    "ARG:fal": "img/figuras/arg_09_fal.png",
+    "ARG:nico paz": "img/figuras/arg_10_nico-paz.png",
+    "ARG:leandro paredes": "img/figuras/arg_11_leandro-paredes.png",
+    "ARG:rodrigo de paul": "img/figuras/arg_12_rodrigo-de-paul.png",
+    "ARG:exequiel palacios": "img/figuras/arg_13_exequiel-palacios.png",
+    "ARG:cristian romero": "img/figuras/arg_14_cristian-romero.png",
+    "ARG:leonardo balerdi": "img/figuras/arg_15_leonardo-balerdi.png",
+    "ARG:nicolas otamendi": "img/figuras/arg_16_nicolas-otamendi.png",
+    "ARG:nahuel molina": "img/figuras/arg_17_nahuel-molina.png",
+    "ARG:nicolas tagliafico": "img/figuras/arg_18_nicolas-tagliafico.png",
+    "BIH:7 ma 4": "img/figuras/bih_02_7-ma-4.png",
+    "BIH:2 ee rd": "img/figuras/bih_03_2-ee-rd.png",
+    "BIH:ar viva mhoivils ite": "img/figuras/bih_05_ar-viva-mhoivils-ite.png",
+    "BIH:a a": "img/figuras/bih_06_a-a.png",
+    "BIH:pa h 7": "img/figuras/bih_07_pa-h-7.png",
+    "BIH:samed bazdar a": "img/figuras/bih_08_samed-bazdar-a.png",
+    "BIH:nikola vasilj": "img/figuras/bih_09_nikola-vasilj.png",
+    "BIH:o o o o es ee ee es on eee": "img/figuras/bih_10_o-o-o-o-es-ee-ee-es-on-eee.png",
+    "BIH:4 y": "img/figuras/bih_11_4-y.png",
+    "BIH:haris tabakovic 3": "img/figuras/bih_12_haris-tabakovic-3.png",
+    "BIH:ah a nn er y": "img/figuras/bih_13_ah-a-nn-er-y.png",
+    "BIH:dzenis burnic": "img/figuras/bih_14_dzenis-burnic.png",
+    "BIH:amar dedig": "img/figuras/bih_15_amar-dedig.png",
+    "BIH:esmir bajraktarevic": "img/figuras/bih_16_esmir-bajraktarevic.png",
+    "BIH:nikola katic": "img/figuras/bih_17_nikola-katic.png",
+    "BIH:armin gigovic": "img/figuras/bih_18_armin-gigovic.png",
+    "BRA:bento": "img/figuras/bra_02_bento.png",
+    "BRA:marquinhos": "img/figuras/bra_03_marquinhos.png",
+    "BRA:wesley": "img/figuras/bra_04_wesley.png",
+    "BRA:eder militao": "img/figuras/bra_05_eder-militao.png",
+    "BRA:gabriel magalhaes": "img/figuras/bra_06_gabriel-magalhaes.png",
+    "BRA:danilo": "img/figuras/bra_07_danilo.png",
+    "BRA:bruno guimaraes": "img/figuras/bra_08_bruno-guimaraes.png",
+    "BRA:casemiro": "img/figuras/bra_10_casemiro.png",
+    "BRA:uiz henriou": "img/figuras/bra_11_uiz-henriou.png",
+    "BRA:vinicius junior": "img/figuras/bra_12_vinicius-junior.png",
+    "BRA:gabriel martinelli": "img/figuras/bra_13_gabriel-martinelli.png",
+    "BRA:raphinha": "img/figuras/bra_14_raphinha.png",
+    "BRA:estevao": "img/figuras/bra_15_estevao.png",
+    "BRA:matheus cunha": "img/figuras/bra_16_matheus-cunha.png",
+    "BRA:rodrygo": "img/figuras/bra_17_rodrygo.png",
+    "BRA:joao pedro": "img/figuras/bra_18_joao-pedro.png",
+    "CAN:dayne st clair": "img/figuras/can_01_dayne-st-clair.png",
+    "CAN:if e y en": "img/figuras/can_02_if-e-y-en.png",
+    "CAN:pe ro": "img/figuras/can_03_pe-ro.png",
+    "CAN:io 4 el": "img/figuras/can_04_io-4-el.png",
+    "CAN:fy f e 7": "img/figuras/can_06_fy-f-e-7.png",
+    "CAN:ut aa o": "img/figuras/can_07_ut-aa-o.png",
+    "CAN:y y": "img/figuras/can_08_y-y.png",
+    "CAN:j oe 3 ad": "img/figuras/can_10_j-oe-3-ad.png",
+    "CAN:e pa": "img/figuras/can_11_e-pa.png",
+    "CAN:si nx ls": "img/figuras/can_12_si-nx-ls.png",
+    "CAN:tajon buchanan": "img/figuras/can_13_tajon-buchanan.png",
+    "CAN:jonathan david": "img/figuras/can_14_jonathan-david.png",
+    "CAN:cyle larin": "img/figuras/can_15_cyle-larin.png",
+    "CAN:pr a an": "img/figuras/can_17_pr-a-an.png",
+    "CAN:richie larvea": "img/figuras/can_18_richie-larvea.png",
+    "CIV:emmanuel agbadou": "img/figuras/civ_01_emmanuel-agbadou.png",
+    "CIV:amad diallo": "img/figuras/civ_02_amad-diallo.png",
+    "CIV:sebastien haller": "img/figuras/civ_05_sebastien-haller.png",
+    "CIV:simon adingra": "img/figuras/civ_06_simon-adingra.png",
+    "CIV:seko fofana": "img/figuras/civ_07_seko-fofana.png",
+    "CIV:oumar diakite ei": "img/figuras/civ_08_oumar-diakite-ei.png",
+    "CIV:van diomande q": "img/figuras/civ_09_van-diomande-q.png",
+    "CIV:wilfried singo": "img/figuras/civ_11_wilfried-singo.png",
+    "CIV:jean philippe gbamin": "img/figuras/civ_12_jean-philippe-gbamin.png",
+    "CIV:ousmane diomande": "img/figuras/civ_13_ousmane-diomande.png",
+    "CIV:e o": "img/figuras/civ_14_e-o.png",
+    "CIV:evann guessand": "img/figuras/civ_16_evann-guessand.png",
+    "CIV:ibrahim sangare": "img/figuras/civ_17_ibrahim-sangare.png",
+    "CIV:franck kessie": "img/figuras/civ_18_franck-kessie.png",
+    "COL:david ospina": "img/figuras/col_01_david-ospina.png",
+    "COL:camilo vargas": "img/figuras/col_02_camilo-vargas.png",
+    "COL:e o": "img/figuras/col_03_e-o.png",
+    "COL:jhon cordoba": "img/figuras/col_04_jhon-cordoba.png",
+    "COL:jhon arias": "img/figuras/col_05_jhon-arias.png",
+    "COL:luis suarez": "img/figuras/col_06_luis-suarez.png",
+    "COL:jorge carrascal": "img/figuras/col_07_jorge-carrascal.png",
+    "COL:richard rios": "img/figuras/col_08_richard-rios.png",
+    "COL:juan fernando quintero": "img/figuras/col_09_juan-fernando-quintero.png",
+    "COL:james rodriguez": "img/figuras/col_10_james-rodriguez.png",
+    "COL:kevin castano": "img/figuras/col_11_kevin-castano.png",
+    "COL:jefferson lerma": "img/figuras/col_12_jefferson-lerma.png",
+    "COL:santiago arias": "img/figuras/col_13_santiago-arias.png",
+    "COL:daniel munoz": "img/figuras/col_14_daniel-munoz.png",
+    "COL:verry mina": "img/figuras/col_15_verry-mina.png",
+    "COL:johan mojica": "img/figuras/col_16_johan-mojica.png",
+    "COL:davinson sanchez": "img/figuras/col_17_davinson-sanchez.png",
+    "COL:jhon lucumi": "img/figuras/col_18_jhon-lucumi.png",
+    "CRO:dominik livakovi": "img/figuras/cro_01_dominik-livakovi.png",
+    "CRO:duje caleta car": "img/figuras/cro_02_duje-caleta-car.png",
+    "CRO:marco pasalic": "img/figuras/cro_03_marco-pasalic.png",
+    "CRO:josip stanii": "img/figuras/cro_04_josip-stanii.png",
+    "CRO:luka vukovi": "img/figuras/cro_05_luka-vukovi.png",
+    "CRO:luka modricg": "img/figuras/cro_06_luka-modricg.png",
+    "CRO:vn ie": "img/figuras/cro_07_vn-ie.png",
+    "CRO:martin baturina": "img/figuras/cro_08_martin-baturina.png",
+    "CRO:mario pasalic": "img/figuras/cro_09_mario-pasalic.png",
+    "CRO:petar sugig": "img/figuras/cro_10_petar-sugig.png",
+    "CRO:ivan perisig": "img/figuras/cro_11_ivan-perisig.png",
+    "CRO:kristijan jakig": "img/figuras/cro_12_kristijan-jakig.png",
+    "CRO:duje galeta car": "img/figuras/cro_13_duje-galeta-car.png",
+    "CRO:josip stanisic": "img/figuras/cro_14_josip-stanisic.png",
+    "CRO:luka vuskovic": "img/figuras/cro_15_luka-vuskovic.png",
+    "CRO:josip sutalo": "img/figuras/cro_16_josip-sutalo.png",
+    "CRO:lovro majer": "img/figuras/cro_17_lovro-majer.png",
+    "CRO:josko gvardiol": "img/figuras/cro_18_josko-gvardiol.png",
+    "CZE:tomas soucek": "img/figuras/cze_01_tomas-soucek.png",
+    "CZE:pavel sulc": "img/figuras/cze_02_pavel-sulc.png",
+    "CZE:matej vydra": "img/figuras/cze_03_matej-vydra.png",
+    "CZE:vasil kusej": "img/figuras/cze_04_vasil-kusej.png",
+    "CZE:tomas chory": "img/figuras/cze_05_tomas-chory.png",
+    "CZE:vaclav gerny": "img/figuras/cze_06_vaclav-gerny.png",
+    "CZE:veneer": "img/figuras/cze_07_veneer.png",
+    "CZE:jaroslav zelenv": "img/figuras/cze_08_jaroslav-zelenv.png",
+    "CZE:matej kovar": "img/figuras/cze_09_matej-kovar.png",
+    "CZE:lukas cerv": "img/figuras/cze_10_lukas-cerv.png",
+    "CZE:vladimir coufal": "img/figuras/cze_11_vladimir-coufal.png",
+    "CZE:michal sadilek": "img/figuras/cze_12_michal-sadilek.png",
+    "CZE:lukas provod": "img/figuras/cze_13_lukas-provod.png",
+    "CZE:david zima": "img/figuras/cze_14_david-zima.png",
+    "CZE:jindrich stanek": "img/figuras/cze_15_jindrich-stanek.png",
+    "CZE:paihia quran": "img/figuras/cze_16_paihia-quran.png",
+    "CZE:lura ah": "img/figuras/cze_17_lura-ah.png",
+    "CZE:laviolav arevu": "img/figuras/cze_18_laviolav-arevu.png",
+    "ECU:miao foe": "img/figuras/ecu_01_miao-foe.png",
+    "ECU:gonzalo valle": "img/figuras/ecu_02_gonzalo-valle.png",
+    "ECU:enner valencia": "img/figuras/ecu_03_enner-valencia.png",
+    "ECU:kevin rodriguez": "img/figuras/ecu_04_kevin-rodriguez.png",
+    "ECU:alan minda": "img/figuras/ecu_05_alan-minda.png",
+    "ECU:nilson angulo": "img/figuras/ecu_06_nilson-angulo.png",
+    "ECU:gonzalo plata": "img/figuras/ecu_07_gonzalo-plata.png",
+    "ECU:leonardo campana": "img/figuras/ecu_08_leonardo-campana.png",
+    "ECU:wnarathon wh": "img/figuras/ecu_09_wnarathon-wh.png",
+    "ECU:kendry paez": "img/figuras/ecu_10_kendry-paez.png",
+    "ECU:alan franco": "img/figuras/ecu_11_alan-franco.png",
+    "ECU:moises caicedo": "img/figuras/ecu_13_moises-caicedo.png",
+    "ECU:joel ordonez": "img/figuras/ecu_14_joel-ordonez.png",
+    "ECU:john veboah": "img/figuras/ecu_15_john-veboah.png",
+    "ECU:pervis estupinan": "img/figuras/ecu_16_pervis-estupinan.png",
+    "ECU:willian pacho": "img/figuras/ecu_17_willian-pacho.png",
+    "ECU:piero hincapie": "img/figuras/ecu_18_piero-hincapie.png",
+    "ENG:jordan pickford": "img/figuras/eng_01_jordan-pickford.png",
+    "ENG:harry kane": "img/figuras/eng_02_harry-kane.png",
+    "ENG:marc guehi": "img/figuras/eng_03_marc-guehi.png",
+    "ENG:ezri konsa": "img/figuras/eng_04_ezri-konsa.png",
+    "ENG:ollie watkins": "img/figuras/eng_05_ollie-watkins.png",
+    "ENG:duratu vara": "img/figuras/eng_06_duratu-vara.png",
+    "ENG:anthony gordon": "img/figuras/eng_07_anthony-gordon.png",
+    "ENG:morgan rogers": "img/figuras/eng_08_morgan-rogers.png",
+    "ENG:jude bellingham": "img/figuras/eng_09_jude-bellingham.png",
+    "ENG:jordan henderson": "img/figuras/eng_10_jordan-henderson.png",
+    "ENG:cole palmer": "img/figuras/eng_11_cole-palmer.png",
+    "ENG:declan rice": "img/figuras/eng_12_declan-rice.png",
+    "ENG:dan burn": "img/figuras/eng_14_dan-burn.png",
+    "ENG:john stones": "img/figuras/eng_15_john-stones.png",
+    "ENG:reece james": "img/figuras/eng_16_reece-james.png",
+    "ENG:marcus rashford": "img/figuras/eng_17_marcus-rashford.png",
+    "ESP:unai simon": "img/figuras/esp_01_unai-simon.png",
+    "ESP:robin le normand": "img/figuras/esp_02_robin-le-normand.png",
+    "ESP:ferran torres": "img/figuras/esp_03_ferran-torres.png",
+    "ESP:nico williams": "img/figuras/esp_04_nico-williams.png",
+    "ESP:i dani olmo": "img/figuras/esp_05_i-dani-olmo.png",
+    "ESP:alvaro morata": "img/figuras/esp_06_alvaro-morata.png",
+    "ESP:mikel ovarzabal": "img/figuras/esp_07_mikel-ovarzabal.png",
+    "ESP:mikel merino": "img/figuras/esp_08_mikel-merino.png",
+    "ESP:fabian ruiz": "img/figuras/esp_09_fabian-ruiz.png",
+    "ESP:pedri": "img/figuras/esp_10_pedri.png",
+    "ESP:rodri": "img/figuras/esp_11_rodri.png",
+    "ESP:martin zubimendi": "img/figuras/esp_13_martin-zubimendi.png",
+    "ESP:dani olmo": "img/figuras/esp_14_dani-olmo.png",
+    "ESP:pedro porro": "img/figuras/esp_16_pedro-porro.png",
+    "ESP:dean huijsen": "img/figuras/esp_17_dean-huijsen.png",
+    "ESP:aymeric laporte": "img/figuras/esp_18_aymeric-laporte.png",
+    "FRA:mike maignan": "img/figuras/fra_01_mike-maignan.png",
+    "FRA:kylian mbappe": "img/figuras/fra_02_kylian-mbappe.png",
+    "FRA:hugo ekitike": "img/figuras/fra_03_hugo-ekitike.png",
+    "FRA:kingsley coman": "img/figuras/fra_04_kingsley-coman.png",
+    "FRA:desire doue is": "img/figuras/fra_05_desire-doue-is.png",
+    "FRA:bradley barcola": "img/figuras/fra_06_bradley-barcola.png",
+    "FRA:ousmane dembele r": "img/figuras/fra_07_ousmane-dembele-r.png",
+    "FRA:aurelien tchouameni": "img/figuras/fra_08_aurelien-tchouameni.png",
+    "FRA:eduardo camavinga": "img/figuras/fra_09_eduardo-camavinga.png",
+    "FRA:manu kone": "img/figuras/fra_10_manu-kone.png",
+    "FRA:adrien rabiot": "img/figuras/fra_11_adrien-rabiot.png",
+    "FRA:michael olise": "img/figuras/fra_12_michael-olise.png",
+    "FRA:ousmane dembele": "img/figuras/fra_13_ousmane-dembele.png",
+    "FRA:desire doue": "img/figuras/fra_15_desire-doue.png",
+    "GER:marc andre ter stegen": "img/figuras/ger_01_marc-andre-ter-stegen.png",
+    "GER:jonathan tah": "img/figuras/ger_02_jonathan-tah.png",
+    "GER:david raum": "img/figuras/ger_03_david-raum.png",
+    "GER:serge gnabry": "img/figuras/ger_04_serge-gnabry.png",
+    "GER:karim adeyemi": "img/figuras/ger_05_karim-adeyemi.png",
+    "GER:waldemar anton": "img/figuras/ger_06_waldemar-anton.png",
+    "GER:leon goretzka": "img/figuras/ger_07_leon-goretzka.png",
+    "GER:florian wirtz": "img/figuras/ger_08_florian-wirtz.png",
+    "GER:joshua kimmich": "img/figuras/ger_09_joshua-kimmich.png",
+    "GER:felix nmecha": "img/figuras/ger_11_felix-nmecha.png",
+    "GER:jamal musiala": "img/figuras/ger_14_jamal-musiala.png",
+    "GER:leroy sane": "img/figuras/ger_16_leroy-sane.png",
+    "GER:maximilian mittelstadt": "img/figuras/ger_18_maximilian-mittelstadt.png",
+    "HAI:johny placide": "img/figuras/hai_01_johny-placide.png",
+    "HAI:hannes delcroix": "img/figuras/hai_02_hannes-delcroix.png",
+    "HAI:ricardo ade": "img/figuras/hai_03_ricardo-ade.png",
+    "HAI:caeta wy": "img/figuras/hai_04_caeta-wy.png",
+    "HAI:derrick etienne jr": "img/figuras/hai_05_derrick-etienne-jr.png",
+    "HAI:duckens nazon": "img/figuras/hai_06_duckens-nazon.png",
+    "HAI:martin experience": "img/figuras/hai_07_martin-experience.png",
+    "HAI:louicius deedson": "img/figuras/hai_08_louicius-deedson.png",
+    "HAI:christopher attvs": "img/figuras/hai_09_christopher-attvs.png",
+    "HAI:leverton pierre": "img/figuras/hai_10_leverton-pierre.png",
+    "HAI:danley jean jacques": "img/figuras/hai_11_danley-jean-jacques.png",
+    "HAI:carlens arcus": "img/figuras/hai_12_carlens-arcus.png",
+    "HAI:duke lacroix": "img/figuras/hai_14_duke-lacroix.png",
+    "HAI:jean kevin duverne": "img/figuras/hai_15_jean-kevin-duverne.png",
+    "HAI:jean ricner bellegarde": "img/figuras/hai_16_jean-ricner-bellegarde.png",
+    "HAI:ruben providence": "img/figuras/hai_17_ruben-providence.png",
+    "HAI:frantzdy pierrot": "img/figuras/hai_18_frantzdy-pierrot.png",
+    "JPN:ritsu doan": "img/figuras/jpn_01_ritsu-doan.png",
+    "JPN:keito nakamura": "img/figuras/jpn_02_keito-nakamura.png",
+    "JPN:takefusa kubo": "img/figuras/jpn_03_takefusa-kubo.png",
+    "JPN:daich kamada": "img/figuras/jpn_04_daich-kamada.png",
+    "JPN:shogo taniguchi": "img/figuras/jpn_05_shogo-taniguchi.png",
+    "JPN:shuto machino": "img/figuras/jpn_06_shuto-machino.png",
+    "JPN:junya ito": "img/figuras/jpn_07_junya-ito.png",
+    "JPN:kok ogawa": "img/figuras/jpn_08_kok-ogawa.png",
+    "JPN:ayase ueda": "img/figuras/jpn_09_ayase-ueda.png",
+    "JPN:zion suzuki": "img/figuras/jpn_10_zion-suzuki.png",
+    "JPN:henry herok mochizuki": "img/figuras/jpn_11_henry-herok-mochizuki.png",
+    "JPN:ayumu seko": "img/figuras/jpn_12_ayumu-seko.png",
+    "JPN:kaishu sano": "img/figuras/jpn_14_kaishu-sano.png",
+    "JPN:yuk soma": "img/figuras/jpn_15_yuk-soma.png",
+    "JPN:tsuyosh watanabe": "img/figuras/jpn_18_tsuyosh-watanabe.png",
+    "KOR:hyeonwoo jo ie": "img/figuras/kor_01_hyeonwoo-jo-ie.png",
+    "KOR:seunggyu kim ee": "img/figuras/kor_02_seunggyu-kim-ee.png",
+    "KOR:heungmin son": "img/figuras/kor_03_heungmin-son.png",
+    "KOR:minjae kim": "img/figuras/kor_04_minjae-kim.png",
+    "KOR:hanbeom lee": "img/figuras/kor_05_hanbeom-lee.png",
+    "KOR:taeseok lee": "img/figuras/kor_06_taeseok-lee.png",
+    "KOR:tae seok lee": "img/figuras/kor_07_tae-seok-lee.png",
+    "KOR:jaesung lee": "img/figuras/kor_08_jaesung-lee.png",
+    "KOR:inbeom hwang": "img/figuras/kor_09_inbeom-hwang.png",
+    "KOR:kangin lee": "img/figuras/kor_10_kangin-lee.png",
+    "KOR:yumin gho": "img/figuras/kor_11_yumin-gho.png",
+    "KOR:donggyeong lee": "img/figuras/kor_12_donggyeong-lee.png",
+    "KOR:jens castrop": "img/figuras/kor_13_jens-castrop.png",
+    "KOR:youngwoo0 seol": "img/figuras/kor_14_youngwoo0-seol.png",
+    "KOR:seungho paik": "img/figuras/kor_16_seungho-paik.png",
+    "KOR:hyeongyu oh": "img/figuras/kor_17_hyeongyu-oh.png",
+    "KOR:heechan hwang": "img/figuras/kor_18_heechan-hwang.png",
+    "MAR:assine bounou": "img/figuras/mar_01_assine-bounou.png",
+    "MAR:youssef en nesvri": "img/figuras/mar_02_youssef-en-nesvri.png",
+    "MAR:abde ezzalzoul": "img/figuras/mar_03_abde-ezzalzoul.png",
+    "MAR:noussair mazraoui": "img/figuras/mar_04_noussair-mazraoui.png",
+    "MAR:brahim diaz": "img/figuras/mar_05_brahim-diaz.png",
+    "MAR:roman saiss": "img/figuras/mar_06_roman-saiss.png",
+    "MAR:ion i": "img/figuras/mar_07_ion-i.png",
+    "MAR:adam masina": "img/figuras/mar_08_adam-masina.png",
+    "MAR:sofyan amrabat": "img/figuras/mar_09_sofyan-amrabat.png",
+    "MAR:bilal el khannouss": "img/figuras/mar_10_bilal-el-khannouss.png",
+    "MAR:eliesse ben seghir": "img/figuras/mar_11_eliesse-ben-seghir.png",
+    "MAR:achraf hakimi": "img/figuras/mar_12_achraf-hakimi.png",
+    "MAR:ismael saibari": "img/figuras/mar_13_ismael-saibari.png",
+    "MAR:youssef en nesyri": "img/figuras/mar_14_youssef-en-nesyri.png",
+    "MAR:munir el kajou": "img/figuras/mar_15_munir-el-kajou.png",
+    "MAR:navef aguerd": "img/figuras/mar_16_navef-aguerd.png",
+    "MAR:ayoub el kaabi": "img/figuras/mar_18_ayoub-el-kaabi.png",
+    "MEX:ad bm ty": "img/figuras/mex_01_ad-bm-ty.png",
+    "MEX:johan vasquez": "img/figuras/mex_02_johan-vasquez.png",
+    "MEX:jorge sanchez": "img/figuras/mex_03_jorge-sanchez.png",
+    "MEX:cesar montes": "img/figuras/mex_04_cesar-montes.png",
+    "MEX:jesus gallardo": "img/figuras/mex_05_jesus-gallardo.png",
+    "MEX:israel reyes": "img/figuras/mex_06_israel-reyes.png",
+    "MEX:diego lainez": "img/figuras/mex_07_diego-lainez.png",
+    "MEX:carlos rodriguez": "img/figuras/mex_08_carlos-rodriguez.png",
+    "MEX:edson alvarez": "img/figuras/mex_09_edson-alvarez.png",
+    "MEX:orbelin pineda": "img/figuras/mex_10_orbelin-pineda.png",
+    "MEX:marcel ruiz": "img/figuras/mex_11_marcel-ruiz.png",
+    "MEX:erick sanchez": "img/figuras/mex_12_erick-sanchez.png",
+    "MEX:raul jimenez": "img/figuras/mex_13_raul-jimenez.png",
+    "MEX:santiago gimenez": "img/figuras/mex_14_santiago-gimenez.png",
+    "MEX:alexis vega": "img/figuras/mex_16_alexis-vega.png",
+    "MEX:le ee mexico": "img/figuras/mex_17_le-ee-mexico.png",
+    "MEX:y mexico": "img/figuras/mex_18_y-mexico.png",
+    "NED:bart verbruggen": "img/figuras/ned_01_bart-verbruggen.png",
+    "NED:virgil van dijk": "img/figuras/ned_02_virgil-van-dijk.png",
+    "NED:micky van de ven": "img/figuras/ned_03_micky-van-de-ven.png",
+    "NED:jurrien timber": "img/figuras/ned_04_jurrien-timber.png",
+    "NED:denzel dumfries": "img/figuras/ned_05_denzel-dumfries.png",
+    "NED:ay aseave": "img/figuras/ned_06_ay-aseave.png",
+    "NED:jeremie frimpong": "img/figuras/ned_07_jeremie-frimpong.png",
+    "NED:jan paul van hecke": "img/figuras/ned_08_jan-paul-van-hecke.png",
+    "NED:tijjani reijnders": "img/figuras/ned_09_tijjani-reijnders.png",
+    "NED:ryan gravenberch": "img/figuras/ned_11_ryan-gravenberch.png",
+    "NED:tiwjani reiunders": "img/figuras/ned_12_tiwjani-reiunders.png",
+    "NED:teun koopmeiners": "img/figuras/ned_13_teun-koopmeiners.png",
+    "NED:frenkie de jong": "img/figuras/ned_14_frenkie-de-jong.png",
+    "NOR:orjan nyland": "img/figuras/nor_01_orjan-nyland.png",
+    "NOR:julian ryerson": "img/figuras/nor_02_julian-ryerson.png",
+    "NOR:leo ostigrd": "img/figuras/nor_03_leo-ostigrd.png",
+    "NOR:kristoffer vassbakk ajer": "img/figuras/nor_04_kristoffer-vassbakk-ajer.png",
+    "NOR:marcus holmgren pedersen": "img/figuras/nor_05_marcus-holmgren-pedersen.png",
+    "NOR:oscar bobb": "img/figuras/nor_06_oscar-bobb.png",
+    "NOR:torbjrn heggem": "img/figuras/nor_07_torbjrn-heggem.png",
+    "NOR:morten thorsby": "img/figuras/nor_08_morten-thorsby.png",
+    "NOR:patrick berg": "img/figuras/nor_10_patrick-berg.png",
+    "NOR:sander berge": "img/figuras/nor_11_sander-berge.png",
+    "NOR:andreas sghjelderup": "img/figuras/nor_12_andreas-sghjelderup.png",
+    "NOR:torbuorn heggem": "img/figuras/nor_13_torbuorn-heggem.png",
+    "NOR:leo sstigard": "img/figuras/nor_15_leo-sstigard.png",
+    "NOR:david mooller wolfe": "img/figuras/nor_16_david-mooller-wolfe.png",
+    "PAR:omar alderete": "img/figuras/par_01_omar-alderete.png",
+    "PAR:andres cubas": "img/figuras/par_02_andres-cubas.png",
+    "PAR:junior alonso": "img/figuras/par_03_junior-alonso.png",
+    "PAR:angel romero": "img/figuras/par_04_angel-romero.png",
+    "PAR:juan jose caceres": "img/figuras/par_05_juan-jose-caceres.png",
+    "PAR:miguel almiron": "img/figuras/par_06_miguel-almiron.png",
+    "PAR:julio enciso": "img/figuras/par_07_julio-enciso.png",
+    "PAR:mathias villasanti": "img/figuras/par_08_mathias-villasanti.png",
+    "PAR:fabian balbuena": "img/figuras/par_10_fabian-balbuena.png",
+    "PAR:p foberto fernandez": "img/figuras/par_12_p-foberto-fernandez.png",
+    "PAR:diego gomez": "img/figuras/par_13_diego-gomez.png",
+    "PAR:gustavo gomez": "img/figuras/par_14_gustavo-gomez.png",
+    "PAR:damian bobadilla": "img/figuras/par_15_damian-bobadilla.png",
+    "PAR:ramon sosa": "img/figuras/par_16_ramon-sosa.png",
+    "PAR:antonio sanabria": "img/figuras/par_17_antonio-sanabria.png",
+    "PAR:matias galarza fonda": "img/figuras/par_18_matias-galarza-fonda.png",
+    "POR:diogo costa": "img/figuras/por_01_diogo-costa.png",
+    "POR:jose sa": "img/figuras/por_02_jose-sa.png",
+    "POR:joao felix": "img/figuras/por_03_joao-felix.png",
+    "POR:francisco trincao": "img/figuras/por_04_francisco-trincao.png",
+    "POR:joao neves": "img/figuras/por_05_joao-neves.png",
+    "POR:nuno mendes": "img/figuras/por_06_nuno-mendes.png",
+    "POR:gonalo inacio": "img/figuras/por_07_gonalo-inacio.png",
+    "POR:bernardo silva": "img/figuras/por_08_bernardo-silva.png",
+    "POR:bruno fernandes": "img/figuras/por_09_bruno-fernandes.png",
+    "POR:gongalo inacio": "img/figuras/por_10_gongalo-inacio.png",
+    "POR:vitinha": "img/figuras/por_11_vitinha.png",
+    "POR:joao cancelo": "img/figuras/por_13_joao-cancelo.png",
+    "POR:rafael leao": "img/figuras/por_16_rafael-leao.png",
+    "POR:pedro neto": "img/figuras/por_17_pedro-neto.png",
+    "POR:gongalo ramos": "img/figuras/por_18_gongalo-ramos.png",
+    "QAT:meshaal barsham": "img/figuras/qat_01_meshaal-barsham.png",
+    "QAT:almoez ali": "img/figuras/qat_02_almoez-ali.png",
+    "QAT:lucas mendes": "img/figuras/qat_03_lucas-mendes.png",
+    "QAT:homam ahmed": "img/figuras/qat_04_homam-ahmed.png",
+    "QAT:boualem khoukhi": "img/figuras/qat_05_boualem-khoukhi.png",
+    "QAT:pedro miguel": "img/figuras/qat_06_pedro-miguel.png",
+    "QAT:tarek salman": "img/figuras/qat_07_tarek-salman.png",
+    "QAT:f mohammed waad": "img/figuras/qat_08_f-mohammed-waad.png",
+    "QAT:karim boudiaf": "img/figuras/qat_09_karim-boudiaf.png",
+    "QAT:assim madibo": "img/figuras/qat_10_assim-madibo.png",
+    "QAT:ahmed fatehi": "img/figuras/qat_11_ahmed-fatehi.png",
+    "QAT:mohammed waad": "img/figuras/qat_12_mohammed-waad.png",
+    "QAT:edmilson junior": "img/figuras/qat_13_edmilson-junior.png",
+    "QAT:akram hassan afif": "img/figuras/qat_14_akram-hassan-afif.png",
+    "RSA:y sipho chaine y": "img/figuras/rsa_01_y-sipho-chaine-y.png",
+    "RSA:samukele kabini": "img/figuras/rsa_02_samukele-kabini.png",
+    "RSA:khuliso mudau": "img/figuras/rsa_03_khuliso-mudau.png",
+    "RSA:teboho mokoena": "img/figuras/rsa_04_teboho-mokoena.png",
+    "RSA:thalente mbatha": "img/figuras/rsa_05_thalente-mbatha.png",
+    "RSA:bathus aubaas": "img/figuras/rsa_06_bathus-aubaas.png",
+    "RSA:ioraam rayners": "img/figuras/rsa_07_ioraam-rayners.png",
+    "RSA:oswin appollis": "img/figuras/rsa_08_oswin-appollis.png",
+    "RSA:lyle foster": "img/figuras/rsa_09_lyle-foster.png",
+    "RSA:sipho mbule": "img/figuras/rsa_10_sipho-mbule.png",
+    "RSA:mohau nkota": "img/figuras/rsa_11_mohau-nkota.png",
+    "RSA:bathasi aubaas": "img/figuras/rsa_12_bathasi-aubaas.png",
+    "RSA:mbekezeli mbokazi": "img/figuras/rsa_13_mbekezeli-mbokazi.png",
+    "RSA:f ronwen williams a": "img/figuras/rsa_14_f-ronwen-williams-a.png",
+    "RSA:yaya sithole": "img/figuras/rsa_15_yaya-sithole.png",
+    "RSA:khulumani ndamane": "img/figuras/rsa_16_khulumani-ndamane.png",
+    "RSA:sipho sibisi": "img/figuras/rsa_17_sipho-sibisi.png",
+    "RSA:siyabonga ngezana": "img/figuras/rsa_18_siyabonga-ngezana.png",
+    "SCO:scott mckenna": "img/figuras/sco_01_scott-mckenna.png",
+    "SCO:angus gunn": "img/figuras/sco_02_angus-gunn.png",
+    "SCO:john mcginn": "img/figuras/sco_03_john-mcginn.png",
+    "SCO:john souttar": "img/figuras/sco_04_john-souttar.png",
+    "SCO:7 wy by a": "img/figuras/sco_05_7-wy-by-a.png",
+    "SCO:lewis ferguson": "img/figuras/sco_06_lewis-ferguson.png",
+    "SCO:anthony ralston": "img/figuras/sco_08_anthony-ralston.png",
+    "SCO:grant hanley": "img/figuras/sco_09_grant-hanley.png",
+    "SCO:scott mctominay": "img/figuras/sco_10_scott-mctominay.png",
+    "SCO:jack hendry": "img/figuras/sco_11_jack-hendry.png",
+    "SCO:che adams": "img/figuras/sco_13_che-adams.png",
+    "SCO:ben gannon doak": "img/figuras/sco_14_ben-gannon-doak.png",
+    "SCO:billy gilmour": "img/figuras/sco_15_billy-gilmour.png",
+    "SCO:kieran tierney": "img/figuras/sco_16_kieran-tierney.png",
+    "SCO:aaron higkey": "img/figuras/sco_17_aaron-higkey.png",
+    "SCO:andrew robertson": "img/figuras/sco_18_andrew-robertson.png",
+    "SEN:edouard mendy": "img/figuras/sen_01_edouard-mendy.png",
+    "SEN:yehvann diouf": "img/figuras/sen_02_yehvann-diouf.png",
+    "SEN:moussa niakhate": "img/figuras/sen_03_moussa-niakhate.png",
+    "SEN:abdoulaye seck": "img/figuras/sen_04_abdoulaye-seck.png",
+    "SEN:ismail jakobs": "img/figuras/sen_05_ismail-jakobs.png",
+    "SEN:el hadji malick diouf": "img/figuras/sen_06_el-hadji-malick-diouf.png",
+    "SEN:kalidou koulibaly": "img/figuras/sen_07_kalidou-koulibaly.png",
+    "SEN:idrissa gana gueye": "img/figuras/sen_08_idrissa-gana-gueye.png",
+    "SEN:pape matar sarr": "img/figuras/sen_09_pape-matar-sarr.png",
+    "SEN:pape gueye": "img/figuras/sen_10_pape-gueye.png",
+    "SEN:habib diarra": "img/figuras/sen_11_habib-diarra.png",
+    "SEN:lamine camara": "img/figuras/sen_12_lamine-camara.png",
+    "SEN:sadio mane se": "img/figuras/sen_13_sadio-mane-se.png",
+    "SEN:omala sarr": "img/figuras/sen_14_omala-sarr.png",
+    "SEN:boulaye dia": "img/figuras/sen_15_boulaye-dia.png",
+    "SEN:iliman ndiaye": "img/figuras/sen_16_iliman-ndiaye.png",
+    "SEN:w eliis jarrson": "img/figuras/sen_17_w-eliis-jarrson.png",
+    "SEN:krepin diatta": "img/figuras/sen_18_krepin-diatta.png",
+    "SUI:gregor kobel": "img/figuras/sui_01_gregor-kobel.png",
+    "SUI:aicardo rodriguez": "img/figuras/sui_02_aicardo-rodriguez.png",
+    "SUI:manuel akanji": "img/figuras/sui_03_manuel-akanji.png",
+    "SUI:ruben vargas": "img/figuras/sui_04_ruben-vargas.png",
+    "SUI:nico elvedi": "img/figuras/sui_05_nico-elvedi.png",
+    "SUI:aurele amenda": "img/figuras/sui_06_aurele-amenda.png",
+    "SUI:aurele ame nde": "img/figuras/sui_07_aurele-ame-nde.png",
+    "SUI:denis zakaria": "img/figuras/sui_08_denis-zakaria.png",
+    "SUI:remo freuler": "img/figuras/sui_10_remo-freuler.png",
+    "SUI:johan manzambi": "img/figuras/sui_11_johan-manzambi.png",
+    "SUI:ardon jashari": "img/figuras/sui_12_ardon-jashari.png",
+    "SUI:zek amdouni": "img/figuras/sui_14_zek-amdouni.png",
+    "SUI:breel embolo": "img/figuras/sui_15_breel-embolo.png",
+    "SUI:yvon mvogo": "img/figuras/sui_17_yvon-mvogo.png",
+    "SWE:lucas bergvall": "img/figuras/swe_01_lucas-bergvall.png",
+    "SWE:gabriel gudmundsson": "img/figuras/swe_02_gabriel-gudmundsson.png",
+    "SWE:anthony elanga": "img/figuras/swe_04_anthony-elanga.png",
+    "SWE:hugo larsson": "img/figuras/swe_05_hugo-larsson.png",
+    "SWE:jesper karlstrom": "img/figuras/swe_06_jesper-karlstrom.png",
+    "SWE:00ny b gh": "img/figuras/swe_07_00ny-b-gh.png",
+    "SWE:daniel svensson": "img/figuras/swe_08_daniel-svensson.png",
+    "SWE:viktor johansson": "img/figuras/swe_09_viktor-johansson.png",
+    "SWE:victor nilsson lindelof": "img/figuras/swe_10_victor-nilsson-lindelof.png",
+    "SWE:yasin avari": "img/figuras/swe_11_yasin-avari.png",
+    "SWE:alexander isak": "img/figuras/swe_12_alexander-isak.png",
+    "SWE:cg bl": "img/figuras/swe_13_cg-bl.png",
+    "SWE:emil holm": "img/figuras/swe_14_emil-holm.png",
+    "SWE:dejan kulusevski": "img/figuras/swe_15_dejan-kulusevski.png",
+    "SWE:mattias svanberg": "img/figuras/swe_16_mattias-svanberg.png",
+    "SWE:gustaf lagerbielke": "img/figuras/swe_17_gustaf-lagerbielke.png",
+    "SWE:viktor gyokeres": "img/figuras/swe_18_viktor-gyokeres.png",
+    "TUR:ugurcan cakir": "img/figuras/tur_01_ugurcan-cakir.png",
+    "TUR:iafan can kahveci": "img/figuras/tur_02_iafan-can-kahveci.png",
+    "TUR:zeki celik": "img/figuras/tur_03_zeki-celik.png",
+    "TUR:abdulkerim bardakci": "img/figuras/tur_04_abdulkerim-bardakci.png",
+    "TUR:caglar soyuncu": "img/figuras/tur_05_caglar-soyuncu.png",
+    "TUR:merih demiral": "img/figuras/tur_06_merih-demiral.png",
+    "TUR:ferdi kadioglu": "img/figuras/tur_07_ferdi-kadioglu.png",
+    "TUR:kaan ayhan": "img/figuras/tur_08_kaan-ayhan.png",
+    "TUR:ms cc": "img/figuras/tur_09_ms-cc.png",
+    "TUR:hakan calhanoglu": "img/figuras/tur_10_hakan-calhanoglu.png",
+    "TUR:baris alper vilmaz": "img/figuras/tur_11_baris-alper-vilmaz.png",
+    "TUR:arda guler": "img/figuras/tur_12_arda-guler.png",
+    "TUR:irfan can kahveci": "img/figuras/tur_13_irfan-can-kahveci.png",
+    "TUR:yunus akgun": "img/figuras/tur_14_yunus-akgun.png",
+    "TUR:can uzun": "img/figuras/tur_15_can-uzun.png",
+    "TUR:baris alper yilmaz": "img/figuras/tur_16_baris-alper-yilmaz.png",
+    "TUR:kerem akturkoglu": "img/figuras/tur_17_kerem-akturkoglu.png",
+    "URU:sergio rochet": "img/figuras/uru_01_sergio-rochet.png",
+    "URU:darwin nunez": "img/figuras/uru_02_darwin-nunez.png",
+    "URU:ronald araujo": "img/figuras/uru_03_ronald-araujo.png",
+    "URU:facundo pellistr": "img/figuras/uru_04_facundo-pellistr.png",
+    "URU:federico vinas": "img/figuras/uru_05_federico-vinas.png",
+    "URU:giorgian de arrascaeta": "img/figuras/uru_06_giorgian-de-arrascaeta.png",
+    "URU:guillermo varela": "img/figuras/uru_07_guillermo-varela.png",
+    "URU:nicolas de la gruz": "img/figuras/uru_08_nicolas-de-la-gruz.png",
+    "URU:rodrigo bentancur": "img/figuras/uru_09_rodrigo-bentancur.png",
+    "URU:manuel ugarte": "img/figuras/uru_10_manuel-ugarte.png",
+    "URU:federico valverde": "img/figuras/uru_11_federico-valverde.png",
+    "URU:sebastian caceres": "img/figuras/uru_12_sebastian-caceres.png",
+    "URU:nahitan nandez": "img/figuras/uru_14_nahitan-nandez.png",
+    "URU:jose maria gimenez": "img/figuras/uru_17_jose-maria-gimenez.png",
+    "URU:santiago mele": "img/figuras/uru_18_santiago-mele.png",
+    "USA:weston mckennie": "img/figuras/usa_01_weston-mckennie.png",
+    "USA:folarin balogun": "img/figuras/usa_02_folarin-balogun.png",
+    "USA:diego luna": "img/figuras/usa_03_diego-luna.png",
+    "USA:mark mckenzie": "img/figuras/usa_04_mark-mckenzie.png",
+    "USA:christian pulisic": "img/figuras/usa_05_christian-pulisic.png",
+    "USA:chris richards": "img/figuras/usa_06_chris-richards.png",
+    "USA:brenden a": "img/figuras/usa_07_brenden-a.png",
+    "USA:antonee robinson": "img/figuras/usa_08_antonee-robinson.png",
+    "USA:alex freeman": "img/figuras/usa_09_alex-freeman.png",
+    "USA:timothy weah": "img/figuras/usa_10_timothy-weah.png",
+    "USA:tanner tessmann": "img/figuras/usa_11_tanner-tessmann.png",
+    "USA:ricardo pepi": "img/figuras/usa_16_ricardo-pepi.png",
+    "USA:tyler adams": "img/figuras/usa_18_tyler-adams.png"
+  }
+};
 
 const paniniPlayerDetails = {
   "alexis guendouz": {
@@ -13345,8 +17306,9 @@ function getPaniniPlayerRecords() {
       displayBirthDate: completePlayerField(birthDate),
       age: calculateAge(birthDate),
       height: completePlayerField(getValidHeight(details?.height)),
-      club: completePlayerField(getValidClub(details?.club), "Selección de " + team.team),
-      position: normalizePlayerPosition(details?.position, player.code)
+      club: completePlayerField(getValidClub(details?.club), getValidClub(player.club) || "Selección de " + team.team),
+      position: normalizePlayerPosition(details?.position || player.position, player.code),
+      photo: normalizePlayerPhoto(details?.photo)
     };
   }));
 }
@@ -13386,20 +17348,70 @@ function renderPlayerFilters() {
   $("#playerPositionFilter").value = ["todos", "completos", "pendientes"].includes(selectedScope) ? selectedScope : "todos";
 }
 
+function normalizePlayerPhoto(photo) {
+  if (!photo) return "";
+  return String(photo).replace(/^http:\/\//, "https://");
+}
+
+function getPlayerInitials(player) {
+  return player.fullName
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() || "")
+    .join("");
+}
+
+function getLocalPlayerImage(player) {
+  const nameKeys = [player.fullName, player.commonName]
+    .map((name) => `${player.teamCode}:${normalizeText(name).replace(/[^a-z0-9]+/g, " ").trim()}`);
+  const byName = nameKeys.map((key) => localPlayerImages.byName[key]).find(Boolean);
+  return byName || localPlayerImages.byCode[player.code] || "";
+}
+
+function getPlayerImage(player) {
+  return getLocalPlayerImage(player) || player.photo || "";
+}
+
+function renderPlayerPhoto(player) {
+  const initials = getPlayerInitials(player) || player.teamCode;
+  const image = getPlayerImage(player);
+  if (!image) return `<div class="player-card-fallback" aria-hidden="true">${initials}</div>`;
+  return `
+    <img
+      class="player-card-photo"
+      src="${image}"
+      alt="${player.fullName}"
+      loading="lazy"
+      onerror="this.replaceWith(Object.assign(document.createElement('div'), { className: 'player-card-fallback', textContent: '${initials}' }))"
+    />
+  `;
+}
+
 function renderPlayers() {
-  if (!document.querySelector("#playerRows")) return;
+  const container = document.querySelector("#playerCards");
+  if (!container) return;
   const players = getFilteredPlayers();
 
-  document.querySelector("#playerRows").innerHTML = players.length ? players.map((player) => `
-    <tr>
-      <td data-label="Nombre"><strong>${player.fullName}</strong><br><small>${player.code} · ${player.commonName}</small></td>
-      <td data-label="Selección">${teamLabel(player.team)}</td>
-      <td data-label="Edad">${player.age}</td>
-      <td data-label="Estatura">${player.height}</td>
-      <td data-label="Club">${player.club}</td>
-      <td data-label="Posición">${player.position}</td>
-    </tr>
-  `).join("") : `<tr><td colspan="6" class="empty-table">No hay jugadores que coincidan con los filtros.</td></tr>`;
+  container.innerHTML = players.length ? players.map((player) => `
+    <article class="player-card">
+      <div class="player-card-media">
+        ${renderPlayerPhoto(player)}
+        <span class="player-card-code">${player.code}</span>
+      </div>
+      <div class="player-card-body">
+        <div class="player-card-team">${teamLabel(player.team)}</div>
+        <h3>${player.fullName}</h3>
+        <p>${player.commonName}</p>
+        <dl class="player-card-meta">
+          <div><dt>Edad</dt><dd>${player.age}</dd></div>
+          <div><dt>Estatura</dt><dd>${player.height}</dd></div>
+          <div><dt>Club</dt><dd>${player.club}</dd></div>
+          <div><dt>Posición</dt><dd>${player.position}</dd></div>
+        </dl>
+      </div>
+    </article>
+  `).join("") : `<p class="empty-card-grid">No hay jugadores que coincidan con los filtros.</p>`;
 }
 
 

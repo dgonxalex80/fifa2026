@@ -145,11 +145,116 @@ const flags = {
   Uruguay: "uy"
 };
 
-let users = JSON.parse(localStorage.getItem("fifa2026-users") || "[]");
 
 const scorers = [
   ["Sin registros", "-", "-", "-", "-"]
 ];
+
+const birthRepresentationStats = [
+  { team: "Alemania", foreignBorn: 1 },
+  { team: "Arabia Saudita", foreignBorn: 0 },
+  { team: "Argelia", foreignBorn: 16 },
+  { team: "Argentina", foreignBorn: 2 },
+  { team: "Australia", foreignBorn: 8 },
+  { team: "Austria", foreignBorn: 0 },
+  { team: "Belgica", foreignBorn: 1 },
+  { team: "Bosnia y Herzegovina", foreignBorn: 17 },
+  { team: "Brasil", foreignBorn: 0 },
+  { team: "Cabo Verde", foreignBorn: 14 },
+  { team: "Canada", foreignBorn: 7 },
+  { team: "Catar", foreignBorn: 14 },
+  { team: "Colombia", foreignBorn: 0 },
+  { team: "Corea del Sur", foreignBorn: 1 },
+  { team: "Costa de Marfil", foreignBorn: 9 },
+  { team: "Croacia", foreignBorn: 8 },
+  { team: "Curazao", foreignBorn: 25 },
+  { team: "Ecuador", foreignBorn: 3 },
+  { team: "Egipto", foreignBorn: 1 },
+  { team: "Escocia", foreignBorn: 7 },
+  { team: "Espana", foreignBorn: 1 },
+  { team: "Estados Unidos", foreignBorn: 6 },
+  { team: "Francia", foreignBorn: 3 },
+  { team: "Ghana", foreignBorn: 8 },
+  { team: "Haiti", foreignBorn: 16 },
+  { team: "Inglaterra", foreignBorn: 1 },
+  { team: "Irak", foreignBorn: 9 },
+  { team: "Iran", foreignBorn: 2 },
+  { team: "Japon", foreignBorn: 1 },
+  { team: "Jordania", foreignBorn: 3 },
+  { team: "Marruecos", foreignBorn: 19 },
+  { team: "Mexico", foreignBorn: 5 },
+  { team: "Noruega", foreignBorn: 2 },
+  { team: "Nueva Zelanda", foreignBorn: 8 },
+  { team: "Paises Bajos", foreignBorn: 1 },
+  { team: "Panama", foreignBorn: 0 },
+  { team: "Paraguay", foreignBorn: 5 },
+  { team: "Portugal", foreignBorn: 2 },
+  { team: "Republica Checa", foreignBorn: 0 },
+  { team: "Republica Democratica del Congo", foreignBorn: 20 },
+  { team: "Senegal", foreignBorn: 12 },
+  { team: "Sudafrica", foreignBorn: 0 },
+  { team: "Suecia", foreignBorn: 0 },
+  { team: "Suiza", foreignBorn: 3 },
+  { team: "Tunez", foreignBorn: 15 },
+  { team: "Turquia", foreignBorn: 10 },
+  { team: "Uruguay", foreignBorn: 2 },
+  { team: "Uzbekistan", foreignBorn: 1 }
+].map((item) => ({
+  ...item,
+  rosterSize: 26,
+  bornInRepresentedCountry: 26 - item.foreignBorn
+}));
+
+const domesticClubTerms = {
+  Alemania: ["bayern", "dortmund", "leverkusen", "leipzig", "stuttgart", "frankfurt", "wolfsburg", "mainz", "hoffenheim", "werder", "freiburg", "koln", "hamburg", "union berlin", "gladbach"],
+  "Arabia Saudita": ["al-hilal", "al hilal", "al-nassr", "al nassr", "al-ittihad", "al ittihad", "al-ahli", "al ahli", "al-shabab", "al shabab", "al-qadsiah", "al qadsiah", "al-fateh", "al fateh", "al-taawoun", "al taawoun"],
+  Argelia: ["mc alger", "cr belouizdad", "usm alger", "js kabylie", "paradou", "es setif", "mouloudia", "belouizdad"],
+  Argentina: ["boca", "river", "racing", "independiente", "estudiantes", "velez", "talleres", "rosario", "lanus", "huracan", "argentinos", "san lorenzo", "newell"],
+  Australia: ["sydney", "melbourne", "brisbane", "adelaide", "perth", "central coast", "western sydney", "newcastle jets", "macarthur"],
+  Austria: ["salzburg", "rapid wien", "austria wien", "sturm graz", "lask", "wac", "hartberg"],
+  Belgica: ["anderlecht", "club brugge", "brugge", "genk", "gent", "standard", "antwerp", "union saint-gilloise", "charleroi", "mechelen"],
+  "Bosnia y Herzegovina": ["sarajevo", "zeljeznicar", "zrinjski", "borac banja", "siroki", "velez mostar"],
+  Brasil: ["flamengo", "palmeiras", "fluminense", "sao paulo", "são paulo", "corinthians", "santos", "gremio", "grêmio", "internacional", "botafogo", "vasco", "cruzeiro", "atletico mineiro", "atlético mineiro", "bahia", "fortaleza"],
+  "Cabo Verde": ["mindelense", "travadores", "sporting praia", "boavista praia", "santiago", "sal rei"],
+  Canada: ["toronto fc", "cf montreal", "montréal", "vancouver whitecaps", "forge fc", "cavalry", "pacific fc", "atletico ottawa"],
+  Catar: ["al-sadd", "al sadd", "al-duhail", "al duhail", "al-rayyan", "al rayyan", "al-arabi", "al arabi", "al-gharafa", "al gharafa", "umm salal", "qatar sc"],
+  Colombia: ["atletico nacional", "atlético nacional", "millonarios", "america de cali", "américa de cali", "deportivo cali", "junior", "independiente medellin", "independiente medellín", "santa fe", "tolima", "once caldas", "envigado", "aguilas doradas", "boyaca chico"],
+  "Corea del Sur": ["ulsan", "jeonbuk", "seoul", "pohang", "suwon", "daegu", "gwangju", "incheon", "gangwon", "gimcheon"],
+  "Costa de Marfil": ["asec", "africa sports", "stade d'abidjan", "san pedro", "societe omnisports", "so armée"],
+  Croacia: ["dinamo zagreb", "hajduk", "rijeka", "osijek", "lokomotiva", "varazdin", "istra"],
+  Curazao: ["jong holland", "centro domingosavio", "scherpenheuvel", "vesta", "un-de-ba", "curacao", "curaçao"],
+  Ecuador: ["barcelona sc", "emelec", "liga de quito", "ldu", "independiente del valle", "aucas", "el nacional", "delfin", "orense"],
+  Egipto: ["al ahly", "al-ahly", "zamalek", "pyramids", "al masry", "ceramica cleopatra", "ismaily", "enppi"],
+  Escocia: ["celtic", "rangers", "hearts", "hibernian", "aberdeen", "dundee", "motherwell", "st mirren", "kilmarnock"],
+  Espana: ["real madrid", "barcelona", "atletico madrid", "atlético madrid", "athletic", "real sociedad", "villarreal", "valencia", "sevilla", "betis", "celta", "osasuna", "getafe", "girona"],
+  "Estados Unidos": ["inter miami", "la galaxy", "lafc", "los angeles fc", "seattle sounders", "atlanta united", "columbus crew", "new york", "philadelphia union", "fc dallas", "sporting kansas", "orlando city", "real salt lake", "nashville", "austin fc", "houston dynamo"],
+  Francia: ["psg", "paris saint", "marseille", "lyon", "monaco", "lille", "rennes", "lens", "nice", "nantes", "toulouse", "strasbourg", "montpellier"],
+  Ghana: ["asante kotoko", "hearts of oak", "dreams fc", "medeama", "aduana", "bechem", "legon cities"],
+  Haiti: ["violette", "arcahaie", "tempete", "don bosco", "cavaly", "racing club haitien"],
+  Inglaterra: ["arsenal", "chelsea", "liverpool", "manchester", "tottenham", "newcastle", "aston villa", "west ham", "everton", "crystal palace", "brighton", "fulham", "brentford", "nottingham", "wolves", "leeds", "burnley", "sunderland"],
+  Irak: ["al quwa", "al-quwa", "al shorta", "al-shorta", "al zawraa", "al-zawraa", "al talaba", "al-talaba", "al naft", "al-naft", "erbil"],
+  Iran: ["persepolis", "esteghlal", "sepahan", "tractor", "foolad", "gol gohar", "zob ahan", "malavan"],
+  Japon: ["kawasaki", "yokohama", "urawa", "kashima", "gamba", "vissel", "cerezo", "sanfrecce", "nagoya", "fc tokyo", "avispa", "machida"],
+  Jordania: ["al faisaly", "al-faisaly", "al wehdat", "al-wehdat", "shabab al ordon", "ramtha", "hussein irbid"],
+  Marruecos: ["wydad", "raja", "far rabat", "fus rabat", "rs berkane", "moghreb tetouan", "hassania agadir"],
+  Mexico: ["america", "américa", "chivas", "guadalajara", "tigres", "monterrey", "cruz azul", "pumas", "toluca", "pachuca", "leon", "león", "santos laguna", "atlas", "necaxa"],
+  Noruega: ["bodo/glimt", "bodø/glimt", "molde", "rosenborg", "viking", "brann", "valerenga", "vålerenga", "lillestrom", "lillestrøm"],
+  "Nueva Zelanda": ["auckland", "wellington phoenix", "christchurch", "waitakere", "team wellington"],
+  "Paises Bajos": ["ajax", "psv", "feyenoord", "az alkmaar", "twente", "utrecht", "heerenveen", "groningen", "vitesse", "sparta rotterdam"],
+  Panama: ["tauro", "plaza amador", "arabe unido", "árabe unido", "san francisco", "independiente de la chorrera", "costa del este"],
+  Paraguay: ["olimpia", "cerro porteño", "cerro porteno", "libertad", "guarani", "guaraní", "nacional", "sol de america", "tacuary", "general caballero"],
+  Portugal: ["benfica", "porto", "sporting cp", "braga", "vitoria guimaraes", "vitória guimarães", "boavista", "famalicao", "famalicão", "estoril", "casa pia"],
+  "Republica Checa": ["slavia prague", "sparta prague", "slavia praha", "sparta praha", "plzen", "plzeň", "banik", "baník", "jablonec", "slovacko", "slovácko"],
+  "Republica Democratica del Congo": ["tp mazembe", "vita club", "as vita", "maniema", "motema pembe", "lupopo"],
+  Senegal: ["generation foot", "génération foot", "diambars", "jaraaf", "casa sports", "teungueth", "pikine"],
+  Sudafrica: ["mamelodi", "kaizer chiefs", "orlando pirates", "supersport", "cape town city", "stellenbosch", "amazulu", "sekukhune"],
+  Suecia: ["malmo", "malmö", "aik", "djurgarden", "djurgården", "hammarby", "ifk goteborg", "ifk göteborg", "elfsborg", "hacken", "häcken"],
+  Suiza: ["young boys", "basel", "zurich", "zürich", "servette", "lugano", "st. gallen", "grasshopper", "lausanne", "luzern"],
+  Tunez: ["esperance", "espérance", "club africain", "etoile du sahel", "étoile du sahel", "cs sfaxien", "monastir", "stad tunisien"],
+  Turquia: ["galatasaray", "fenerbahce", "fenerbahçe", "besiktas", "beşiktaş", "trabzonspor", "basaksehir", "başakşehir", "konyaspor", "sivasspor", "antalyaspor"],
+  Uruguay: ["peñarol", "penarol", "nacional", "defensor", "danubio", "liverpool montevideo", "wanderers", "river plate montevideo"],
+  Uzbekistan: ["pakhtakor", "bunyodkor", "nasaf", "navbahor", "neftchi", "lokomotiv tashkent", "agmk", "sogdiana"]
+};
 
 
 const worldCupHistory = [
@@ -662,160 +767,166 @@ const paniniAlbumTeams = [
     "sourceTeam": "Algeria",
     "players": [
       {
+        "code": "ALG 1",
+        "name": "Luca Zidane",
+        "position": "Portero",
+        "club": "Granada CF"
+      },
+      {
         "code": "ALG 2",
-        "name": "Alexis Guendouz",
-        "club": "MC Alger",
-        "position": "Portero"
+        "name": "Oussama Benbot",
+        "position": "Portero",
+        "club": "USM Alger"
       },
       {
         "code": "ALG 3",
-        "name": "Anthony Mandréa",
-        "club": "Caen",
-        "position": "Portero"
+        "name": "Melvin Mastil",
+        "position": "Portero",
+        "club": "KVC Westerlo"
       },
       {
         "code": "ALG 4",
-        "name": "Luca Zidane",
-        "club": "Granada",
-        "position": "Portero"
+        "name": "Abdelatif Ramdane",
+        "position": "Portero",
+        "club": "MC Alger"
       },
       {
         "code": "ALG 5",
-        "name": "Kilian Belazzoug",
-        "club": "Selección de Argelia",
-        "position": "Portero"
+        "name": "Rafik Belghali",
+        "position": "Defensa",
+        "club": "KV Mechelen"
       },
       {
         "code": "ALG 6",
-        "name": "Ramy Bensebaini",
-        "club": "Borussia Dortmund",
-        "position": "Defensa"
+        "name": "Samir Chergui",
+        "position": "Defensa",
+        "club": "USM Alger"
       },
       {
         "code": "ALG 7",
-        "name": "Youcef Atal",
-        "club": "Al-Sadd",
-        "position": "Defensa"
+        "name": "Rayan Aït-Nouri",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "ALG 8",
-        "name": "Rayan Aït-Nouri",
-        "club": "Manchester City",
-        "position": "Defensa"
+        "name": "Jaouen Hadjam",
+        "position": "Defensa",
+        "club": "BSC Young Boys"
       },
       {
         "code": "ALG 9",
-        "name": "Mohamed Amine Tougai",
-        "club": "Espérance de Tunis",
-        "position": "Defensa"
+        "name": "Aïssa Mandi",
+        "position": "Defensa",
+        "club": "LOSC Lille"
       },
       {
         "code": "ALG 10",
-        "name": "Aïssa Mandi",
-        "club": "Lille",
-        "position": "Defensa"
+        "name": "Ramy Bensebaïni",
+        "position": "Defensa",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "ALG 11",
-        "name": "Jaouen Hadjam",
-        "club": "Young Boys",
-        "position": "Defensa"
+        "name": "Zineddine Belaïd",
+        "position": "Defensa",
+        "club": "Saint-Trond VV"
       },
       {
         "code": "ALG 12",
-        "name": "Zinedine Belaïd",
-        "club": "Sint-Truiden",
-        "position": "Defensa"
+        "name": "Achref Abada",
+        "position": "Defensa",
+        "club": "MC Alger"
       },
       {
         "code": "ALG 13",
-        "name": "Mohamed Farsi",
-        "club": "Columbus Crew",
-        "position": "Defensa"
+        "name": "Mohamed Amine Tougaï",
+        "position": "Defensa",
+        "club": "Espérance de Tunis"
       },
       {
         "code": "ALG 14",
-        "name": "Ismaël Bennacer",
-        "club": "Dinamo Zagreb",
-        "position": "Mediocampista"
+        "name": "Nabil Bentaleb",
+        "position": "Mediocampista",
+        "club": "LOSC Lille"
       },
       {
         "code": "ALG 15",
-        "name": "Houssem Aouar",
-        "club": "Al-Ittihad",
-        "position": "Mediocampista"
+        "name": "Hicham Boudaoui",
+        "position": "Mediocampista",
+        "club": "OGC Nice"
       },
       {
         "code": "ALG 16",
-        "name": "Hicham Boudaoui",
-        "club": "Nice",
-        "position": "Mediocampista"
+        "name": "Houssem Aouar",
+        "position": "Mediocampista",
+        "club": "Al-Ittihad"
       },
       {
         "code": "ALG 17",
-        "name": "Ramiz Zerrouki",
-        "club": "Twente",
-        "position": "Mediocampista"
+        "name": "Farès Chaïbi",
+        "position": "Mediocampista",
+        "club": "Eintracht Frankfurt"
       },
       {
         "code": "ALG 18",
-        "name": "Nabil Bentaleb",
-        "club": "Lille",
-        "position": "Mediocampista"
+        "name": "Ibrahim Maza",
+        "position": "Mediocampista",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "ALG 19",
-        "name": "Ibrahim Maza",
-        "club": "Hertha Berlin",
-        "position": "Mediocampista"
+        "name": "Yacine Titraoui",
+        "position": "Mediocampista",
+        "club": "Charleroi SC"
       },
       {
         "code": "ALG 20",
-        "name": "Fares Chaibi",
-        "club": "Eintracht Frankfurt",
-        "position": "Delantero"
+        "name": "Ramiz Zerrouki",
+        "position": "Mediocampista",
+        "club": "Feyenoord"
       },
       {
         "code": "ALG 21",
-        "name": "Riyad Mahrez",
-        "club": "Al-Ahli",
-        "position": "Delantero"
+        "name": "Mohamed Amine Amoura",
+        "position": "Delantero",
+        "club": "VfL Wolfsburg"
       },
       {
         "code": "ALG 22",
-        "name": "Said Benrahma",
-        "club": "Neom SC",
-        "position": "Delantero"
+        "name": "Nadhir Benbouali",
+        "position": "Delantero",
+        "club": "Charleroi SC"
       },
       {
         "code": "ALG 23",
-        "name": "Anis Hadj Moussa",
-        "club": "Feyenoord",
-        "position": "Delantero"
+        "name": "Adil Boulbina",
+        "position": "Delantero",
+        "club": "Paradou AC"
       },
       {
         "code": "ALG 24",
-        "name": "Amine Gouiri",
-        "club": "Olympique de Marsella",
-        "position": "Delantero"
+        "name": "Farès Ghedjemis",
+        "position": "Delantero",
+        "club": "FC Vizela"
       },
       {
         "code": "ALG 25",
-        "name": "Baghdad Bounedjah",
-        "club": "Al-Shamal",
-        "position": "Delantero"
+        "name": "Amine Gouiri",
+        "position": "Delantero",
+        "club": "Olympique de Marseille"
       },
       {
         "code": "ALG 26",
-        "name": "Mohamed Amoura",
-        "club": "Wolfsburg",
-        "position": "Delantero"
+        "name": "Anis Hadj Moussa",
+        "position": "Delantero",
+        "club": "Feyenoord"
       },
       {
         "code": "ALG 27",
-        "name": "Amin Chiakha",
-        "club": "Copenhague",
-        "position": "Delantero"
+        "name": "Riyad Mahrez",
+        "position": "Delantero",
+        "club": "Al-Ahli"
       }
     ]
   },
@@ -825,134 +936,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Argentina",
     "players": [
       {
+        "code": "ARG 1",
+        "name": "Dibu Martínez",
+        "position": "Portero",
+        "club": "Aston Villa"
+      },
+      {
         "code": "ARG 2",
-        "name": "Emiliano Martínez",
-        "position": "Portero"
+        "name": "Gerónimo Rulli",
+        "position": "Portero",
+        "club": "Olympique Marsella"
       },
       {
         "code": "ARG 3",
-        "name": "Gerónimo Rulli",
-        "position": "Portero"
+        "name": "Juan Musso",
+        "position": "Portero",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 4",
-        "name": "Juan Musso",
-        "position": "Portero"
+        "name": "Cristian Romero",
+        "position": "Defensa",
+        "club": "Tottenham"
       },
       {
         "code": "ARG 5",
-        "name": "Walter Benítez",
-        "position": "Portero"
+        "name": "Otamendi",
+        "position": "Defensa",
+        "club": "Benfica"
       },
       {
         "code": "ARG 6",
-        "name": "Facundo Cambeses",
-        "position": "Portero"
+        "name": "Nahuel Molina",
+        "position": "Defensa",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 7",
-        "name": "Santiago Beltrán",
-        "position": "Portero"
+        "name": "Nicolás Tagliafico",
+        "position": "Defensa",
+        "club": "Ajax"
       },
       {
         "code": "ARG 8",
-        "name": "Agustín Giay",
-        "position": "Defensa"
+        "name": "Gonzalo Montiel",
+        "position": "Defensa",
+        "club": "River"
       },
       {
         "code": "ARG 9",
-        "name": "Gonzalo Montiel",
-        "position": "Defensa"
+        "name": "Leonardo Balerdi",
+        "position": "Defensa",
+        "club": "Olympique Marsella"
       },
       {
         "code": "ARG 10",
-        "name": "Nahuel Molina",
-        "position": "Defensa"
+        "name": "Lisandro Martínez",
+        "position": "Defensa",
+        "club": "Manchester United"
       },
       {
         "code": "ARG 11",
-        "name": "Nicolás Capaldo",
-        "position": "Defensa"
+        "name": "Facundo Medina",
+        "position": "Defensa",
+        "club": "Olympique Marsella"
       },
       {
         "code": "ARG 12",
-        "name": "Kevin Mac Allister",
-        "position": "Defensa"
+        "name": "Enzo Fernández",
+        "position": "Mediocampista",
+        "club": "Chelsea"
       },
       {
         "code": "ARG 13",
-        "name": "Lucas Martínez Quarta",
-        "position": "Defensa"
+        "name": "Rodrigo de Paul",
+        "position": "Mediocampista",
+        "club": "Inter Miami"
       },
       {
         "code": "ARG 14",
-        "name": "Marcos Senesi",
-        "position": "Defensa"
+        "name": "Alexis Mac Allister",
+        "position": "Mediocampista",
+        "club": "Liverpool"
       },
       {
         "code": "ARG 15",
-        "name": "Lisandro Martínez",
-        "position": "Defensa"
+        "name": "Leandro Paredes",
+        "position": "Mediocampista",
+        "club": "Boca"
       },
       {
         "code": "ARG 16",
-        "name": "Nicolás Otamendi",
-        "position": "Defensa"
+        "name": "Exequiel Palacios",
+        "position": "Mediocampista",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "ARG 17",
-        "name": "Germán Pezzella",
-        "position": "Defensa"
+        "name": "Valentín Barco",
+        "position": "Mediocampista",
+        "club": "Estrasburgo"
       },
       {
         "code": "ARG 18",
-        "name": "Leonardo Balerdi",
-        "position": "Defensa"
+        "name": "Giovani Lo Celso",
+        "position": "Mediocampista",
+        "club": "Real Betis"
       },
       {
         "code": "ARG 19",
-        "name": "Cristian Romero",
-        "position": "Defensa"
+        "name": "Lionel Messi",
+        "position": "Delantero",
+        "club": "Inter Miami"
       },
       {
         "code": "ARG 20",
-        "name": "Lautaro Di Lollo",
-        "position": "Defensa"
+        "name": "Julián Álvarez",
+        "position": "Delantero",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 21",
-        "name": "Zaid Romero",
-        "position": "Defensa"
+        "name": "Lautaro Martínez",
+        "position": "Delantero",
+        "club": "Inter"
       },
       {
         "code": "ARG 22",
-        "name": "Facundo Medina",
-        "position": "Defensa"
+        "name": "José Manuel López",
+        "position": "Delantero",
+        "club": "Palmeiras"
       },
       {
         "code": "ARG 23",
-        "name": "Marcos Acuña",
-        "position": "Defensa"
+        "name": "Nico González",
+        "position": "Delantero",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 24",
-        "name": "Nicolás Tagliafico",
-        "position": "Defensa"
+        "name": "Thiago Almada",
+        "position": "Delantero",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 25",
-        "name": "Gabriel Rojas",
-        "position": "Defensa"
+        "name": "Giuliano Simeone",
+        "position": "Delantero",
+        "club": "Atlético Madrid"
       },
       {
         "code": "ARG 26",
-        "name": "Máximo Perrone",
-        "position": "Mediocampista"
-      },
-      {
-        "code": "ARG 27",
-        "name": "Leandro Paredes",
-        "position": "Mediocampista"
+        "name": "Nico Paz",
+        "position": "Delantero",
+        "club": "Como"
       }
     ]
   },
@@ -962,124 +1099,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Australia",
     "players": [
       {
+        "code": "AUS 1",
+        "name": "Matthew Ryan",
+        "position": "Portero",
+        "club": "Levante"
+      },
+      {
         "code": "AUS 2",
-        "name": "Mathew Ryan"
+        "name": "Patrick Beach",
+        "position": "Portero",
+        "club": "Melbourne City"
       },
       {
         "code": "AUS 3",
-        "name": "Joe Gauci"
+        "name": "Paul Izzo",
+        "position": "Portero",
+        "club": "Randers"
       },
       {
         "code": "AUS 4",
-        "name": "Harry Souttar"
+        "name": "Harry Souttar",
+        "position": "Defensa",
+        "club": "Leicester"
       },
       {
         "code": "AUS 5",
-        "name": "Alessandro Circati"
+        "name": "Alessandro Circati",
+        "position": "Defensa",
+        "club": "Parma"
       },
       {
         "code": "AUS 6",
-        "name": "Jordan Bos"
+        "name": "Jordan Bos",
+        "position": "Defensa",
+        "club": "Feyenoord"
       },
       {
         "code": "AUS 7",
-        "name": "Aziz Behich"
+        "name": "Cameron Burgess",
+        "position": "Defensa",
+        "club": "Swansea"
       },
       {
         "code": "AUS 8",
-        "name": "Cameron Burgess"
+        "name": "Milos Degenek",
+        "position": "Defensa",
+        "club": "APOEL"
       },
       {
         "code": "AUS 9",
-        "name": "Lewis Miller"
+        "name": "Aziz Behich",
+        "position": "Defensa",
+        "club": "Melbourne City"
       },
       {
         "code": "AUS 10",
-        "name": "Milos Degenek"
+        "name": "Jason Geria",
+        "position": "Defensa",
+        "club": "Albirex Niigata"
       },
       {
         "code": "AUS 11",
-        "name": "Jackson Irvine"
+        "name": "Lucas Herrington",
+        "position": "Defensa",
+        "club": "Colorado Rapids"
       },
       {
         "code": "AUS 12",
-        "name": "Riley McGree"
+        "name": "Kai Trewin",
+        "position": "Defensa",
+        "club": "New York City"
       },
       {
         "code": "AUS 13",
-        "name": "Aiden O'Neill"
+        "name": "Jacob Italiano",
+        "position": "Defensa",
+        "club": "Grazer AK 1902"
       },
       {
         "code": "AUS 14",
-        "name": "Connor Metcalfe"
+        "name": "Jackson Irvine",
+        "position": "Mediocampista",
+        "club": "St. Pauli"
       },
       {
         "code": "AUS 15",
-        "name": "Patrick Yazbek"
+        "name": "Paul Okon-Engstler",
+        "position": "Mediocampista",
+        "club": "Sydney FC"
       },
       {
         "code": "AUS 16",
-        "name": "Craig Goodwin"
+        "name": "Cameron Devlin",
+        "position": "Mediocampista",
+        "club": "Hearts"
       },
       {
         "code": "AUS 17",
-        "name": "Kusini Vengi"
+        "name": "Ajdin Hrustic",
+        "position": "Mediocampista",
+        "club": "Heracles"
       },
       {
         "code": "AUS 18",
-        "name": "Nestory Irankunda"
+        "name": "Connor Metcalfe",
+        "position": "Mediocampista",
+        "club": "St. Pauli"
       },
       {
         "code": "AUS 19",
-        "name": "Mohamed Touré"
+        "name": "Aiden O’Neill",
+        "position": "Mediocampista",
+        "club": "New York City"
       },
       {
         "code": "AUS 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Mathew Leckie",
+        "position": "Delantero",
+        "club": "Melbourne City"
       },
       {
         "code": "AUS 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Nishan Velupillay",
+        "position": "Delantero",
+        "club": "Melbourne City"
       },
       {
         "code": "AUS 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Nestoy Irakunda",
+        "position": "Delantero",
+        "club": "Watford"
       },
       {
         "code": "AUS 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Awer Mabil",
+        "position": "Delantero",
+        "club": "Castellón"
       },
       {
         "code": "AUS 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Mohamed Touré",
+        "position": "Delantero",
+        "club": "Norwich"
       },
       {
         "code": "AUS 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Cristian Volpato",
+        "position": "Delantero",
+        "club": "Sassuolo"
       },
       {
         "code": "AUS 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "AUS 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Australia",
-        "position": "Por confirmar"
+        "name": "Tete Yengi",
+        "position": "Delantero",
+        "club": "Machida Zelvia"
       }
     ]
   },
@@ -1089,134 +1262,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Austria",
     "players": [
       {
-        "code": "AUT 2",
+        "code": "AUT 1",
         "name": "Patrick Pentz",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Brondy IF"
+      },
+      {
+        "code": "AUT 2",
+        "name": "Alexander Schlager",
+        "position": "Portero",
+        "club": "Red Bull Salzburgo"
       },
       {
         "code": "AUT 3",
-        "name": "Alexander Schlage",
-        "position": "Portero"
+        "name": "Florian Wiegele",
+        "position": "Portero",
+        "club": "Viktoria Pilsen"
       },
       {
         "code": "AUT 4",
-        "name": "Florian Wiegele",
-        "position": "Portero"
+        "name": "David Affengruber",
+        "position": "Defensa",
+        "club": "Elche"
       },
       {
         "code": "AUT 5",
-        "name": "David Affengruber",
-        "position": "Defensa"
+        "name": "David Alaba",
+        "position": "Defensa",
+        "club": "Real Madrid"
       },
       {
         "code": "AUT 6",
-        "name": "David Alaba",
-        "position": "Defensa"
+        "name": "Kevin Danso",
+        "position": "Defensa",
+        "club": "Tottenham"
       },
       {
         "code": "AUT 7",
-        "name": "Kevin Danso",
-        "position": "Defensa"
+        "name": "Marco Friedl",
+        "position": "Defensa",
+        "club": "Werder Bremen"
       },
       {
         "code": "AUT 8",
-        "name": "Marco Friedl",
-        "position": "Defensa"
+        "name": "Philipp Lienhart",
+        "position": "Defensa",
+        "club": "Friburgo"
       },
       {
         "code": "AUT 9",
-        "name": "Philipp Lienhart",
-        "position": "Defensa"
+        "name": "Phillipp Mwene",
+        "position": "Defensa",
+        "club": "Mainz 05"
       },
       {
         "code": "AUT 10",
-        "name": "Phillipp Mwene",
-        "position": "Defensa"
+        "name": "Stefan Posch",
+        "position": "Defensa",
+        "club": "Mainz 05"
       },
       {
         "code": "AUT 11",
-        "name": "Stefan Posch",
-        "position": "Defensa"
+        "name": "Alexander Prass",
+        "position": "Defensa",
+        "club": "Hoffenheim"
       },
       {
         "code": "AUT 12",
-        "name": "Alexander Prass",
-        "position": "Defensa"
+        "name": "Michael Svoboda",
+        "position": "Defensa",
+        "club": "Venezia"
       },
       {
         "code": "AUT 13",
-        "name": "Michael Svoboda",
-        "position": "Defensa"
+        "name": "Christoph Baumgartner",
+        "position": "Mediocampista",
+        "club": "Red Bull Leipzig"
       },
       {
         "code": "AUT 14",
-        "name": "Christoph Baumgartner",
-        "position": "Mediocampista"
+        "name": "Carney Chukwuemeka",
+        "position": "Mediocampista",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "AUT 15",
-        "name": "Carney Chukwuemeka",
-        "position": "Mediocampista"
+        "name": "Florian Grillitsch",
+        "position": "Mediocampista",
+        "club": "Sporting Braga"
       },
       {
         "code": "AUT 16",
-        "name": "Florian Grillitsh",
-        "position": "Mediocampista"
+        "name": "Konrad Laimer",
+        "position": "Mediocampista",
+        "club": "Bayern de Múnich"
       },
       {
         "code": "AUT 17",
-        "name": "Konrad Laimer",
-        "position": "Mediocampista"
+        "name": "Marcel Sabitzer",
+        "position": "Mediocampista",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "AUT 18",
-        "name": "Marcel Sabitzer",
-        "position": "Mediocampista"
+        "name": "Xavier Schlager",
+        "position": "Mediocampista",
+        "club": "Red Bull Leipzig"
       },
       {
         "code": "AUT 19",
-        "name": "Xaver Schlager",
-        "position": "Mediocampista"
+        "name": "Romano Schimid",
+        "position": "Mediocampista",
+        "club": "Werder Bremen"
       },
       {
         "code": "AUT 20",
-        "name": "Romano Schmid",
-        "position": "Mediocampista"
+        "name": "Alessandro Schöph",
+        "position": "Mediocampista",
+        "club": "RZ Pellets"
       },
       {
         "code": "AUT 21",
-        "name": "Alessandro Schöpf",
-        "position": "Mediocampista"
+        "name": "Nicolas Seiwald",
+        "position": "Mediocampista",
+        "club": "Red Bull Leipzig"
       },
       {
         "code": "AUT 22",
-        "name": "Nicolas Seiwald",
-        "position": "Mediocampista"
+        "name": "Paul Wanner",
+        "position": "Mediocampista",
+        "club": "PSV"
       },
       {
         "code": "AUT 23",
-        "name": "Paul Wanner",
-        "position": "Mediocampista"
+        "name": "Patrick Wimmer",
+        "position": "Mediocampista",
+        "club": "Wolfsburgo"
       },
       {
         "code": "AUT 24",
-        "name": "Patrick Wimmer",
-        "position": "Mediocampista"
+        "name": "Marko Arnautovic",
+        "position": "Delantero",
+        "club": "Estrella Roja"
       },
       {
         "code": "AUT 25",
-        "name": "Marko Arnautovic",
-        "position": "Delantero"
+        "name": "Michael Gregoritsch",
+        "position": "Delantero",
+        "club": "Augsburgo"
       },
       {
         "code": "AUT 26",
-        "name": "Michael Gregoritsh",
-        "position": "Delantero"
-      },
-      {
-        "code": "AUT 27",
         "name": "Sasa Kalajdzic",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "LASK Linz"
       }
     ]
   },
@@ -1226,135 +1425,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Belgium",
     "players": [
       {
-        "code": "BEL 2",
+        "code": "BEL 1",
         "name": "Thibaut Courtois",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Real Madrid"
+      },
+      {
+        "code": "BEL 2",
+        "name": "Senne Lammens",
+        "position": "Portero",
+        "club": "Manchester United"
       },
       {
         "code": "BEL 3",
-        "name": "Senne Lammens yMike Penders",
-        "position": "Portero"
+        "name": "Mike Penders",
+        "position": "Portero",
+        "club": "Estrasburgo"
       },
       {
         "code": "BEL 4",
-        "name": "Timothy Castagne",
-        "position": "Defensa"
+        "name": "Zeno Debast",
+        "position": "Defensa",
+        "club": "Sporting"
       },
       {
         "code": "BEL 5",
-        "name": "Zenón Debast",
-        "position": "Defensa"
+        "name": "Arthur Theate",
+        "position": "Defensa",
+        "club": "Eintracht"
       },
       {
         "code": "BEL 6",
-        "name": "Maxim De Cuyper",
-        "position": "Defensa"
+        "name": "Koni de Winter",
+        "position": "Defensa",
+        "club": "Milan"
       },
       {
         "code": "BEL 7",
-        "name": "Koni De Winter",
-        "position": "Defensa"
+        "name": "Brandon Mechele",
+        "position": "Defensa",
+        "club": "Brujas"
       },
       {
         "code": "BEL 8",
-        "name": "Brandon Mechele",
-        "position": "Defensa"
+        "name": "Nathan Ngoy",
+        "position": "Defensa",
+        "club": "Lille"
       },
       {
         "code": "BEL 9",
-        "name": "Thomas Meunier",
-        "position": "Defensa"
+        "name": "Thomas Meunir",
+        "position": "Defensa",
+        "club": "Lille"
       },
       {
         "code": "BEL 10",
-        "name": "Nathan Ngoy",
-        "position": "Defensa"
+        "name": "Timothy Castagne",
+        "position": "Defensa",
+        "club": "Fulham"
       },
       {
         "code": "BEL 11",
-        "name": "Joaquín Seys",
-        "position": "Defensa"
+        "name": "Maxim de Cuyper",
+        "position": "Defensa",
+        "club": "Brighton"
       },
       {
         "code": "BEL 12",
-        "name": "Teatro Arthur",
-        "position": "Defensa"
+        "name": "Joaquin Seys",
+        "position": "Defensa",
+        "club": "Brujas"
       },
       {
         "code": "BEL 13",
-        "name": "Kevin De Bruyne",
-        "position": "Mediocampista"
+        "name": "Kevin de Bruyne",
+        "position": "Mediocampista",
+        "club": "Nápoles"
       },
       {
         "code": "BEL 14",
         "name": "Amadou Onana",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Aston Villa"
       },
       {
         "code": "BEL 15",
-        "name": "Nicolás Raskin",
-        "position": "Mediocampista"
+        "name": "Youri Tielemans",
+        "position": "Mediocampista",
+        "club": "Aston Villa"
       },
       {
         "code": "BEL 16",
-        "name": "Youri Tielemans",
-        "position": "Mediocampista"
+        "name": "Hans Vanaken",
+        "position": "Mediocampista",
+        "club": "Brujas"
       },
       {
         "code": "BEL 17",
-        "name": "Hans Vanaken",
-        "position": "Mediocampista"
+        "name": "Nicolas Raskin",
+        "position": "Mediocampista",
+        "club": "Rangers"
       },
       {
         "code": "BEL 18",
         "name": "Axel Witsel",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Girona"
       },
       {
         "code": "BEL 19",
-        "name": "Charles De Ketelaere",
-        "position": "Delantero"
+        "name": "Jérémy Doku",
+        "position": "Delantero",
+        "club": "Manchester City"
       },
       {
         "code": "BEL 20",
-        "name": "Jeremy Doku",
-        "position": "Delantero"
+        "name": "Leandro Trossard",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "BEL 21",
-        "name": "Matías Fernández Pardo",
-        "position": "Delantero"
+        "name": "Alexis Saelemaekers",
+        "position": "Delantero",
+        "club": "Milan"
       },
       {
         "code": "BEL 22",
-        "name": "Romelu Lukaku",
-        "position": "Delantero"
+        "name": "Dodi Lukebakio",
+        "position": "Delantero",
+        "club": "Benfica"
       },
       {
         "code": "BEL 23",
-        "name": "Dodi Lukebakio",
-        "position": "Delantero"
+        "name": "Romelu Lukaku",
+        "position": "Delantero",
+        "club": "Nápoles"
       },
       {
         "code": "BEL 24",
-        "name": "Diego Moreira",
-        "position": "Delantero"
+        "name": "Charles de Ketelaere",
+        "position": "Delantero",
+        "club": "Atalanta"
       },
       {
         "code": "BEL 25",
-        "name": "Alexis Saelemaekers",
-        "position": "Delantero"
+        "name": "Matias Fernández-Pardo",
+        "position": "Delantero",
+        "club": "Lille"
       },
       {
         "code": "BEL 26",
-        "name": "Leandro Trossard",
-        "position": "Delantero"
-      },
-      {
-        "code": "BEL 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Belgica",
-        "position": "Por confirmar"
+        "name": "Diego Moreira",
+        "position": "Delantero",
+        "club": "Estrasburgo"
       }
     ]
   },
@@ -1364,160 +1588,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Bosnia and Herzegovina",
     "players": [
       {
-        "code": "BIH 2",
+        "code": "BIH 1",
         "name": "Nikola Vasilj",
-        "club": "FC St. Pauli, ALE",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "St Pauli"
+      },
+      {
+        "code": "BIH 2",
+        "name": "Martin Zlomislic",
+        "position": "Portero",
+        "club": "Rijeka"
       },
       {
         "code": "BIH 3",
-        "name": "Martin Zlomislić",
-        "club": "HNK Rijeka, CRO",
-        "position": "Portero"
+        "name": "Osman Hadzikic",
+        "position": "Portero",
+        "club": "Slaven Belupo"
       },
       {
         "code": "BIH 4",
-        "name": "Osman Hadžikić",
-        "club": "NK Slaven Belupo, CRO",
-        "position": "Portero"
+        "name": "Sead Kolasinac",
+        "position": "Defensa",
+        "club": "Atalanta"
       },
       {
         "code": "BIH 5",
-        "name": "Sead Kolašinac",
-        "club": "Atalanta, ITA",
-        "position": "Defensa"
+        "name": "Amar Dedic",
+        "position": "Defensa",
+        "club": "Benfica"
       },
       {
         "code": "BIH 6",
-        "name": "Amar Dedić",
-        "club": "Benfica, POR",
-        "position": "Defensa"
+        "name": "Nihad Mujakic",
+        "position": "Defensa",
+        "club": "Gaziantep"
       },
       {
         "code": "BIH 7",
-        "name": "Nihad Mujakić",
-        "club": "Gaziantep, TUR",
-        "position": "Defensa"
+        "name": "Nikola Katic",
+        "position": "Defensa",
+        "club": "Schalke 04"
       },
       {
         "code": "BIH 8",
-        "name": "Nikola Katić",
-        "club": "Schalke 04, ALE",
-        "position": "Defensa"
+        "name": "Tarik Muharemovic",
+        "position": "Defensa",
+        "club": "Sassuolo"
       },
       {
         "code": "BIH 9",
-        "name": "Tarik Muharemović",
-        "club": "Sassuolo, ITA",
-        "position": "Defensa"
+        "name": "Stjepan Radeljic",
+        "position": "Defensa",
+        "club": "Rijeka"
       },
       {
         "code": "BIH 10",
-        "name": "Stjepan Radeljić",
-        "club": "HNK Rijeka, CRO",
-        "position": "Defensa"
+        "name": "Dennis Hadzikadunic",
+        "position": "Defensa",
+        "club": "Sampdoria"
       },
       {
         "code": "BIH 11",
-        "name": "Dennis Hadžikadunić",
-        "club": "Sampdoria, ITA",
-        "position": "Defensa"
+        "name": "Nidal Celik",
+        "position": "Defensa",
+        "club": "Lens"
       },
       {
         "code": "BIH 12",
-        "name": "Nidal Čelik",
-        "club": "Lens, FRA",
-        "position": "Defensa"
+        "name": "Amir Hadziahmetovic",
+        "position": "Mediocampista",
+        "club": "Hull City"
       },
       {
         "code": "BIH 13",
-        "name": "Amir Hadžiahmetović",
-        "club": "Hull City, ING",
-        "position": "Defensa"
+        "name": "Ivan Sunjic",
+        "position": "Mediocampista",
+        "club": "Pafos"
       },
       {
         "code": "BIH 14",
-        "name": "Ivan Šunjić",
-        "club": "Pafos, CHI",
-        "position": "Mediocampista"
+        "name": "Ivan Basic",
+        "position": "Mediocampista",
+        "club": "Astana"
       },
       {
         "code": "BIH 15",
-        "name": "Ivan Bašić",
-        "club": "Astana, KZJ",
-        "position": "Mediocampista"
+        "name": "Dzenis Burnic",
+        "position": "Mediocampista",
+        "club": "Karlsruher SC"
       },
       {
         "code": "BIH 16",
-        "name": "Dženis Burnić",
-        "club": "Karlsruher, ALE",
-        "position": "Mediocampista"
+        "name": "Ermin Mahmic",
+        "position": "Mediocampista",
+        "club": "Slovan Liberec"
       },
       {
         "code": "BIH 17",
-        "name": "Ermin Mahmić",
-        "club": "Slovan Liberec, RPC",
-        "position": "Mediocampista"
+        "name": "Benjamin Tahirovic",
+        "position": "Mediocampista",
+        "club": "Brondby"
       },
       {
         "code": "BIH 18",
-        "name": "Benjamin Tahirović",
-        "club": "Brøndby IF, DIN",
-        "position": "Mediocampista"
+        "name": "Amar Memic",
+        "position": "Mediocampista",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "BIH 19",
-        "name": "Amar Memić",
-        "club": "Viktoria Plzeň, RPC",
-        "position": "Mediocampista"
+        "name": "Armin Gigovic",
+        "position": "Mediocampista",
+        "club": "Young Boys"
       },
       {
         "code": "BIH 20",
-        "name": "Armin Gigović",
-        "club": "Young Boys, SUI",
-        "position": "Mediocampista"
+        "name": "Kerim Alajbegovic",
+        "position": "Mediocampista",
+        "club": "RB Salzburg"
       },
       {
         "code": "BIH 21",
-        "name": "Kerim Alajbegović",
-        "club": "Salzburgo, AUS",
-        "position": "Mediocampista"
+        "name": "Esmir Bajraktarevic",
+        "position": "Mediocampista",
+        "club": "PSV Eindhoven"
       },
       {
         "code": "BIH 22",
-        "name": "Esmir Bajraktarević",
-        "club": "PSV, PBJ",
-        "position": "Mediocampista"
+        "name": "Ermedin Demirovic",
+        "position": "Delantero",
+        "club": "VfB Stuttgart"
       },
       {
         "code": "BIH 23",
-        "name": "Ermedin Demirović",
-        "club": "Stuttgart, ALE",
-        "position": "Delantero"
+        "name": "Jovo Lukic",
+        "position": "Delantero",
+        "club": "Universitatea Cluj"
       },
       {
         "code": "BIH 24",
-        "name": "Jovo Lukić",
-        "club": "Universitatea Cluj, RUM",
-        "position": "Delantero"
+        "name": "Samed Bazdar",
+        "position": "Delantero",
+        "club": "Jagiellonia Bialystok"
       },
       {
         "code": "BIH 25",
-        "name": "Samed Baždar",
-        "club": "Jagiellonia Bialystok, POL",
-        "position": "Delantero"
+        "name": "Haris Tabakovic",
+        "position": "Delantero",
+        "club": "Borussia Moenchengladbach"
       },
       {
         "code": "BIH 26",
-        "name": "Haris Tabaković",
-        "club": "Borussia Mönchengladbach, ALE",
-        "position": "Delantero"
-      },
-      {
-        "code": "BIH 27",
-        "name": "Edin Džeko",
-        "club": "Schalke 04",
-        "position": "Delantero"
+        "name": "Edin Dzeko",
+        "position": "Delantero",
+        "club": "Schalke 04"
       }
     ]
   },
@@ -1527,134 +1751,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Brazil",
     "players": [
       {
-        "code": "BRA 2",
+        "code": "BRA 1",
         "name": "Alisson",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Liverpool"
+      },
+      {
+        "code": "BRA 2",
+        "name": "Ederson",
+        "position": "Portero",
+        "club": "Fenerbahce"
       },
       {
         "code": "BRA 3",
-        "name": "Ederson",
-        "position": "Portero"
+        "name": "Weverton",
+        "position": "Portero",
+        "club": "Grêmio"
       },
       {
         "code": "BRA 4",
-        "name": "Weverton",
-        "position": "Portero"
+        "name": "Marquinhos",
+        "position": "Defensa",
+        "club": "PSG"
       },
       {
         "code": "BRA 5",
-        "name": "Danilo",
-        "position": "Defensa"
+        "name": "Gabriel Magalhães",
+        "position": "Defensa",
+        "club": "Arsenal"
       },
       {
         "code": "BRA 6",
-        "name": "Wesley",
-        "position": "Defensa"
+        "name": "Bremer",
+        "position": "Defensa",
+        "club": "Juventus"
       },
       {
         "code": "BRA 7",
-        "name": "Marquinhos",
-        "position": "Defensa"
+        "name": "Ibáñez",
+        "position": "Defensa",
+        "club": "Al Ahli"
       },
       {
         "code": "BRA 8",
-        "name": "Gabriel Magalhaes",
-        "position": "Defensa"
+        "name": "Léo Pereira",
+        "position": "Defensa",
+        "club": "Flamengo"
       },
       {
         "code": "BRA 9",
-        "name": "Léo Pereira",
-        "position": "Defensa"
+        "name": "Wesley",
+        "position": "Defensa",
+        "club": "Roma"
       },
       {
         "code": "BRA 10",
-        "name": "Bremer",
-        "position": "Defensa"
+        "name": "Danilo",
+        "position": "Defensa",
+        "club": "Flamengo"
       },
       {
         "code": "BRA 11",
-        "name": "Ibáñez",
-        "position": "Defensa"
+        "name": "Alex Sandro",
+        "position": "Defensa",
+        "club": "Flamengo"
       },
       {
         "code": "BRA 12",
-        "name": "Alex Sandro",
-        "position": "Defensa"
+        "name": "Douglas Santos",
+        "position": "Defensa",
+        "club": "Zenit"
       },
       {
         "code": "BRA 13",
-        "name": "Douglas Santos",
-        "position": "Defensa"
+        "name": "Casemiro",
+        "position": "Mediocampista",
+        "club": "Manchester United"
       },
       {
         "code": "BRA 14",
-        "name": "Casemiro",
-        "position": "Mediocampista"
+        "name": "Bruno Guimarães",
+        "position": "Mediocampista",
+        "club": "Newcastle"
       },
       {
         "code": "BRA 15",
-        "name": "Bruno Guimaraes",
-        "position": "Mediocampista"
+        "name": "Fabinho",
+        "position": "Mediocampista",
+        "club": "Al Ittihad"
       },
       {
         "code": "BRA 16",
         "name": "Danilo",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Botafogo"
       },
       {
         "code": "BRA 17",
-        "name": "Fabinho",
-        "position": "Mediocampista"
+        "name": "Lucas Paquetá",
+        "position": "Mediocampista",
+        "club": "Flamengo"
       },
       {
         "code": "BRA 18",
-        "name": "Paquetá",
-        "position": "Mediocampista"
+        "name": "Vinicius Jr.",
+        "position": "Delantero",
+        "club": "Real Madrid"
       },
       {
         "code": "BRA 19",
-        "name": "Vinicius Jr",
-        "position": "Delantero"
+        "name": "Raphinha",
+        "position": "Delantero",
+        "club": "Barcelona"
       },
       {
         "code": "BRA 20",
         "name": "Matheus Cunha",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Manchester United"
       },
       {
         "code": "BRA 21",
-        "name": "Neymar Jr",
-        "position": "Delantero"
+        "name": "Luiz Henrique",
+        "position": "Delantero",
+        "club": "Zenit"
       },
       {
         "code": "BRA 22",
-        "name": "Raphinha",
-        "position": "Delantero"
+        "name": "Igor Thiago",
+        "position": "Delantero",
+        "club": "Brentford"
       },
       {
         "code": "BRA 23",
-        "name": "Rayan",
-        "position": "Delantero"
+        "name": "Endrick",
+        "position": "Delantero",
+        "club": "Lyon/Real Madrid"
       },
       {
         "code": "BRA 24",
-        "name": "Igor Thiago",
-        "position": "Delantero"
+        "name": "Martinelli",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "BRA 25",
-        "name": "Luiz Henrique",
-        "position": "Delantero"
+        "name": "Rayan",
+        "position": "Delantero",
+        "club": "Bournemouth"
       },
       {
         "code": "BRA 26",
-        "name": "Gabriel Martinelli",
-        "position": "Delantero"
-      },
-      {
-        "code": "BRA 27",
-        "name": "Endrick",
-        "position": "Delantero"
+        "name": "Neymar",
+        "position": "Delantero",
+        "club": "Santos"
       }
     ]
   },
@@ -1664,124 +1914,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Canada",
     "players": [
       {
+        "code": "CAN 1",
+        "name": "Maxime Crépau",
+        "position": "Portero",
+        "club": "Orlando City"
+      },
+      {
         "code": "CAN 2",
-        "name": "Dayne St.Clair"
+        "name": "Owen Goodman",
+        "position": "Portero",
+        "club": "Barnsley"
       },
       {
         "code": "CAN 3",
-        "name": "Alphonso Davies"
+        "name": "Dayne St. Clair",
+        "position": "Portero",
+        "club": "Inter Miami"
       },
       {
         "code": "CAN 4",
-        "name": "Alistair Johnston"
+        "name": "Moïse Bombito",
+        "position": "Defensa",
+        "club": "Nice"
       },
       {
         "code": "CAN 5",
-        "name": "Samuel Adekugbe"
+        "name": "Derek Cornelius",
+        "position": "Defensa",
+        "club": "Olympique Marsella"
       },
       {
         "code": "CAN 6",
-        "name": "Riche Larvea"
+        "name": "Alphonso Davies",
+        "position": "Defensa",
+        "club": "Bayern de Múnich"
       },
       {
         "code": "CAN 7",
-        "name": "Derek Cornelius"
+        "name": "Luc de Fougerolles",
+        "position": "Defensa",
+        "club": "Fulham"
       },
       {
         "code": "CAN 8",
-        "name": "Moïse Bombito"
+        "name": "Alistair Johnston",
+        "position": "Defensa",
+        "club": "Celtic"
       },
       {
         "code": "CAN 9",
-        "name": "Kamal Miller"
+        "name": "Alfie Jones",
+        "position": "Defensa",
+        "club": "Middlesbrough"
       },
       {
         "code": "CAN 10",
-        "name": "Stephen Eustáquio"
+        "name": "Richie Laryea",
+        "position": "Defensa",
+        "club": "Toronto"
       },
       {
         "code": "CAN 11",
-        "name": "Ismaël Koné"
+        "name": "Niko Sigur",
+        "position": "Defensa",
+        "club": "Hajduk Split"
       },
       {
         "code": "CAN 12",
-        "name": "Jonathan Osorio"
+        "name": "Joel Waterman",
+        "position": "Defensa",
+        "club": "Chicago Fire"
       },
       {
         "code": "CAN 13",
-        "name": "Jacob Shaffelburg"
+        "name": "Ali Ahmed",
+        "position": "Mediocampista",
+        "club": "Norwich"
       },
       {
         "code": "CAN 14",
-        "name": "Mathieu Choinière"
+        "name": "Tajon Buchanan",
+        "position": "Mediocampista",
+        "club": "Villarreal"
       },
       {
         "code": "CAN 15",
-        "name": "Niko Sigur"
+        "name": "Mathieu Chounière",
+        "position": "Mediocampista",
+        "club": "LAFC"
       },
       {
         "code": "CAN 16",
-        "name": "Tajon Buchanan"
+        "name": "Stephen Eustáquio",
+        "position": "Mediocampista",
+        "club": "Oporto"
       },
       {
         "code": "CAN 17",
-        "name": "Liam Millar"
+        "name": "Marcelo Flores",
+        "position": "Mediocampista",
+        "club": "lesionado/Tigres"
       },
       {
         "code": "CAN 18",
-        "name": "Cyle Larin"
+        "name": "Ismäel Koné",
+        "position": "Mediocampista",
+        "club": "Sassuolo"
       },
       {
         "code": "CAN 19",
-        "name": "Jonathan David"
+        "name": "Liam Millar",
+        "position": "Mediocampista",
+        "club": "Hull City"
       },
       {
         "code": "CAN 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Jonathan Osorio",
+        "position": "Mediocampista",
+        "club": "Toronto"
       },
       {
         "code": "CAN 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Nathan Saliba",
+        "position": "Mediocampista",
+        "club": "Anderlecht"
       },
       {
         "code": "CAN 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Jacob Shaffelburg",
+        "position": "Mediocampista",
+        "club": "LAFC"
       },
       {
         "code": "CAN 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Jonathan David",
+        "position": "Delantero",
+        "club": "Juventus"
       },
       {
         "code": "CAN 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Promise David",
+        "position": "Delantero",
+        "club": "Unión Saint-Gilloise"
       },
       {
         "code": "CAN 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Cyle Larin",
+        "position": "Delantero",
+        "club": "Southampton"
       },
       {
         "code": "CAN 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "CAN 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Canada",
-        "position": "Por confirmar"
+        "name": "Tani Oluwaseyi",
+        "position": "Delantero",
+        "club": "Villarreal"
       }
     ]
   },
@@ -1791,160 +2077,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Côte d'Ivoire",
     "players": [
       {
-        "code": "CIV 2",
+        "code": "CIV 1",
         "name": "Yahia Fofana",
-        "club": "Çaykur Rizespor",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Çaykur Rizespor"
+      },
+      {
+        "code": "CIV 2",
+        "name": "Mohamed Kone",
+        "position": "Portero",
+        "club": "Charleroi"
       },
       {
         "code": "CIV 3",
-        "name": "Mohamed Kone",
-        "club": "Charleroi",
-        "position": "Portero"
+        "name": "Alban Lafont",
+        "position": "Portero",
+        "club": "Panathinaikos"
       },
       {
         "code": "CIV 4",
-        "name": "Alban Lafont",
-        "club": "Panathinaikos",
-        "position": "Portero"
+        "name": "Emmanuel Agbadou",
+        "position": "Defensa",
+        "club": "Besiktas"
       },
       {
         "code": "CIV 5",
-        "name": "Emmanuel Agbadou",
-        "club": "Besiktas",
-        "position": "Defensa"
+        "name": "Clément Akpa",
+        "position": "Defensa",
+        "club": "Auxerre"
       },
       {
         "code": "CIV 6",
-        "name": "Clement Akpa",
-        "club": "Auxerre",
-        "position": "Defensa"
+        "name": "Ousmane Diomande",
+        "position": "Defensa",
+        "club": "Sporting"
       },
       {
         "code": "CIV 7",
-        "name": "Ousmane Diomande",
-        "club": "Sporting CP",
-        "position": "Defensa"
+        "name": "Guéla Doué",
+        "position": "Defensa",
+        "club": "Estrasburgo"
       },
       {
         "code": "CIV 8",
-        "name": "Guela Doue",
-        "club": "Strasbourg",
-        "position": "Defensa"
+        "name": "Ghislain Konan",
+        "position": "Defensa",
+        "club": "Gil Vicente"
       },
       {
         "code": "CIV 9",
-        "name": "Ghislain Konan",
-        "club": "Gil Vicente",
-        "position": "Defensa"
+        "name": "Odilon Kossounou",
+        "position": "Defensa",
+        "club": "Atalanta"
       },
       {
         "code": "CIV 10",
-        "name": "Odilon Kossounou",
-        "club": "Atalanta",
-        "position": "Defensa"
+        "name": "Evan N’Dicka",
+        "position": "Defensa",
+        "club": "Roma"
       },
       {
         "code": "CIV 11",
         "name": "Wilfried Singo",
-        "club": "Galatasaray",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Mónaco"
       },
       {
         "code": "CIV 12",
-        "name": "Evan Ndicka",
-        "club": "Roma",
-        "position": "Defensa"
+        "name": "Seko Fofana",
+        "position": "Mediocampista",
+        "club": "Oporto"
       },
       {
         "code": "CIV 13",
-        "name": "Seko Fofana",
-        "club": "Porto",
-        "position": "Mediocampista"
+        "name": "Parfait Guiagon",
+        "position": "Mediocampista",
+        "club": "Charleroi"
       },
       {
         "code": "CIV 14",
-        "name": "Parfait Guiagon",
-        "club": "Charleroi",
-        "position": "Mediocampista"
+        "name": "Christ Inao Oulai",
+        "position": "Mediocampista",
+        "club": "Trabzonspor"
       },
       {
         "code": "CIV 15",
-        "name": "Christ Inao Oulai",
-        "club": "Trabzonspor",
-        "position": "Mediocampista"
+        "name": "Franck Kessié",
+        "position": "Mediocampista",
+        "club": "Al Ahli"
       },
       {
         "code": "CIV 16",
-        "name": "Franck Kessie",
-        "club": "Al-Ahli",
-        "position": "Mediocampista"
+        "name": "Ibrahim Sangaré",
+        "position": "Mediocampista",
+        "club": "Notts. Forest"
       },
       {
         "code": "CIV 17",
-        "name": "Ibrahim Sangare",
-        "club": "Nottingham Forest",
-        "position": "Mediocampista"
+        "name": "Jean Michaël Seri",
+        "position": "Mediocampista",
+        "club": "Maribor"
       },
       {
         "code": "CIV 18",
-        "name": "Jean Michael Seri",
-        "club": "Maribor",
-        "position": "Mediocampista"
+        "name": "Simón Adingra",
+        "position": "Delantero",
+        "club": "Mónaco"
       },
       {
         "code": "CIV 19",
-        "name": "Simon Adingra",
-        "club": "Monaco",
-        "position": "Delantero"
+        "name": "Ange-Yoan Bonny",
+        "position": "Delantero",
+        "club": "Inter"
       },
       {
         "code": "CIV 20",
-        "name": "Ange-Yoan Bonny",
-        "club": "Inter",
-        "position": "Delantero"
+        "name": "Amad Diallo",
+        "position": "Delantero",
+        "club": "Manchester United"
       },
       {
         "code": "CIV 21",
-        "name": "Amad Diallo",
-        "club": "Manchester United",
-        "position": "Delantero"
+        "name": "Oumar Diakite",
+        "position": "Delantero",
+        "club": "Círculo Brujas"
       },
       {
         "code": "CIV 22",
-        "name": "Oumar Diakité",
-        "club": "Cercle Brugge",
-        "position": "Delantero"
+        "name": "Yan Diomande",
+        "position": "Delantero",
+        "club": "Leipzig"
       },
       {
         "code": "CIV 23",
-        "name": "Yan Diomande",
-        "club": "RB Leipzig",
-        "position": "Delantero"
+        "name": "Evann Guessand",
+        "position": "Delantero",
+        "club": "Crystal Palace"
       },
       {
         "code": "CIV 24",
-        "name": "Evann Guessand",
-        "club": "Crystal Palace",
-        "position": "Delantero"
+        "name": "Nicolas Pepe",
+        "position": "Delantero",
+        "club": "Villarreal"
       },
       {
         "code": "CIV 25",
-        "name": "Nicolas Pepe",
-        "club": "Villarreal",
-        "position": "Delantero"
+        "name": "Bazoumana Toure",
+        "position": "Delantero",
+        "club": "Hoffenheim"
       },
       {
         "code": "CIV 26",
-        "name": "Bazoumana Toure",
-        "club": "TSG Hoffenheim",
-        "position": "Delantero"
-      },
-      {
-        "code": "CIV 27",
         "name": "Elye Wahi",
-        "club": "Nice",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Niza"
       }
     ]
   },
@@ -1954,134 +2240,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "DR Congo",
     "players": [
       {
+        "code": "COD 1",
+        "name": "Timothy Fayulu",
+        "position": "Portero",
+        "club": "FC Noah"
+      },
+      {
         "code": "COD 2",
-        "name": "Matthieu Epolo",
-        "position": "Portero"
+        "name": "Lionel Mpasi",
+        "position": "Portero",
+        "club": "Le Havre"
       },
       {
         "code": "COD 3",
-        "name": "Timothy Fayulu",
-        "position": "Portero"
+        "name": "Mattieu Epolo",
+        "position": "Portero",
+        "club": "Standard Lieja"
       },
       {
         "code": "COD 4",
-        "name": "Lionel Mpasi",
-        "position": "Portero"
+        "name": "Aaron Wan-Bissaka",
+        "position": "Defensa",
+        "club": "West Ham"
       },
       {
         "code": "COD 5",
-        "name": "Dylan Batubinsika",
-        "position": "Defensa"
+        "name": "Gedeon Kalulu",
+        "position": "Defensa",
+        "club": "Aris"
       },
       {
         "code": "COD 6",
-        "name": "Rocky Bushiri",
-        "position": "Defensa"
+        "name": "Chancel Mbemba",
+        "position": "Defensa",
+        "club": "LOSC Lille"
       },
       {
         "code": "COD 7",
-        "name": "Gedoon Kalulu",
-        "position": "Defensa"
+        "name": "Steve Kapuadi",
+        "position": "Defensa",
+        "club": "Widzeu Lodz"
       },
       {
         "code": "COD 8",
-        "name": "Steve Kapuadi",
-        "position": "Defensa"
+        "name": "Axel Tuanzebe",
+        "position": "Defensa",
+        "club": "Burnley"
       },
       {
         "code": "COD 9",
-        "name": "Joris Kayeme",
-        "position": "Defensa"
+        "name": "Dylan Batubinsika",
+        "position": "Defensa",
+        "club": "Larissa"
       },
       {
         "code": "COD 10",
-        "name": "Arthur Masuaku",
-        "position": "Defensa"
+        "name": "Rocky Bushiri",
+        "position": "Defensa",
+        "club": "Hibernian"
       },
       {
         "code": "COD 11",
-        "name": "Chancel Mbemba",
-        "position": "Defensa"
+        "name": "Arthur Masuku",
+        "position": "Defensa",
+        "club": "Lens"
       },
       {
         "code": "COD 12",
-        "name": "Axel Tuanzebe",
-        "position": "Defensa"
+        "name": "Joris Kayembe",
+        "position": "Defensa",
+        "club": "KRC Genk"
       },
       {
         "code": "COD 13",
-        "name": "Aaron Wan-Bissaka",
-        "position": "Defensa"
+        "name": "Samuel Moutoussamy",
+        "position": "Mediocampista",
+        "club": "Atromitos"
       },
       {
         "code": "COD 14",
-        "name": "Theo Bongonda",
-        "position": "Mediocampista"
+        "name": "Ngal’Ayel Mukau",
+        "position": "Mediocampista",
+        "club": "LOSC Lille"
       },
       {
         "code": "COD 15",
-        "name": "Brian Cipenga",
-        "position": "Mediocampista"
+        "name": "Gael Kakuta",
+        "position": "Mediocampista",
+        "club": "Larissa"
       },
       {
         "code": "COD 16",
-        "name": "Meshack Elia",
-        "position": "Mediocampista"
+        "name": "Charles Pickel",
+        "position": "Mediocampista",
+        "club": "Espanyol"
       },
       {
         "code": "COD 17",
-        "name": "Gael Kakuta",
-        "position": "Mediocampista"
+        "name": "Noah Sadiki",
+        "position": "Mediocampista",
+        "club": "Sunderland"
       },
       {
         "code": "COD 18",
         "name": "Edo Kayembe",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Watford"
       },
       {
         "code": "COD 19",
-        "name": "Nathanael Mbuku",
-        "position": "Mediocampista"
+        "name": "Théo Bongonda",
+        "position": "Delantero",
+        "club": "Spartak Moscú"
       },
       {
         "code": "COD 20",
-        "name": "Samuel Moutoussamy",
-        "position": "Mediocampista"
+        "name": "Nathanael Mbuku",
+        "position": "Delantero",
+        "club": "Montpellier"
       },
       {
         "code": "COD 21",
-        "name": "Ngal'ayel Mukau",
-        "position": "Mediocampista"
+        "name": "Cédric Bakambu",
+        "position": "Delantero",
+        "club": "Betis"
       },
       {
         "code": "COD 22",
-        "name": "Charles Pickel",
-        "position": "Mediocampista"
+        "name": "Simon Banza",
+        "position": "Delantero",
+        "club": "Al-Jazira"
       },
       {
         "code": "COD 23",
-        "name": "Noah Sadiki",
-        "position": "Mediocampista"
+        "name": "Fiston Mayele",
+        "position": "Delantero",
+        "club": "Pyramids"
       },
       {
         "code": "COD 24",
-        "name": "Cédric Bakambu",
-        "position": "Delantero"
+        "name": "Brian Cipenga",
+        "position": "Delantero",
+        "club": "Castellón"
       },
       {
         "code": "COD 25",
-        "name": "Simon Banza",
-        "position": "Delantero"
+        "name": "Yoane Wissa",
+        "position": "Delantero",
+        "club": "Newcastle"
       },
       {
         "code": "COD 26",
-        "name": "Fiston Mayele",
-        "position": "Delantero"
-      },
-      {
-        "code": "COD 27",
-        "name": "Yoane Wissa",
-        "position": "Delantero"
+        "name": "Meschack Elia",
+        "position": "Delantero",
+        "club": "Alanyaspor"
       }
     ]
   },
@@ -2091,134 +2403,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Colombia",
     "players": [
       {
+        "code": "COL 1",
+        "name": "Álvaro Montero",
+        "position": "Portero",
+        "club": "Vélez Sarsfield"
+      },
+      {
         "code": "COL 2",
-        "name": "David Ospina",
-        "position": "Portero"
+        "name": "Camilo Vargas",
+        "position": "Portero",
+        "club": "Atlas"
       },
       {
         "code": "COL 3",
-        "name": "Álvaro Montero",
-        "position": "Portero"
+        "name": "David Ospina",
+        "position": "Portero",
+        "club": "Atlético Nacional"
       },
       {
         "code": "COL 4",
-        "name": "Camilo Vargas",
-        "position": "Portero"
+        "name": "Daniel Muñoz",
+        "position": "Defensa",
+        "club": "Crystal Palace"
       },
       {
         "code": "COL 5",
-        "name": "Daniel Muñoz",
-        "position": "Defensa"
+        "name": "Santiago Arias",
+        "position": "Defensa",
+        "club": "Independiente"
       },
       {
         "code": "COL 6",
-        "name": "Jhon Lucumí",
-        "position": "Defensa"
+        "name": "Dávinson Sánchez",
+        "position": "Defensa",
+        "club": "Galatasaray"
       },
       {
         "code": "COL 7",
-        "name": "Álvaro Angulo",
-        "position": "Defensa"
+        "name": "Jhon Lucumí",
+        "position": "Defensa",
+        "club": "Bologna"
       },
       {
         "code": "COL 8",
-        "name": "Santiago Arias",
-        "position": "Defensa"
+        "name": "Yerry Mina",
+        "position": "Defensa",
+        "club": "Cagliari"
       },
       {
         "code": "COL 9",
-        "name": "Davinson Sánchez",
-        "position": "Defensa"
+        "name": "Willer Ditta",
+        "position": "Defensa",
+        "club": "Cruz Azul"
       },
       {
         "code": "COL 10",
-        "name": "Johan Mojica",
-        "position": "Defensa"
+        "name": "Déiver Machado",
+        "position": "Defensa",
+        "club": "FC Nantes"
       },
       {
         "code": "COL 11",
-        "name": "Willer Ditta",
-        "position": "Defensa"
+        "name": "Johan Mojica",
+        "position": "Defensa",
+        "club": "Mallorca"
       },
       {
         "code": "COL 12",
-        "name": "Deiver Machado",
-        "position": "Defensa"
+        "name": "Gustavo Puerta",
+        "position": "Mediocampista",
+        "club": "Racing de Santander"
       },
       {
         "code": "COL 13",
         "name": "James Rodríguez",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Minnesota United"
       },
       {
         "code": "COL 14",
-        "name": "Jorge Carrascal",
-        "position": "Mediocampista"
+        "name": "Jefferson Lerma",
+        "position": "Mediocampista",
+        "club": "Crystal Palace"
       },
       {
         "code": "COL 15",
-        "name": "Kevin Castaño",
-        "position": "Mediocampista"
+        "name": "Jhon Arias",
+        "position": "Mediocampista",
+        "club": "Palmeiras"
       },
       {
         "code": "COL 16",
-        "name": "Juan Fernando Quintero",
-        "position": "Mediocampista"
+        "name": "Jorge Carrascal",
+        "position": "Mediocampista",
+        "club": "Flamengo"
       },
       {
         "code": "COL 17",
-        "name": "Juan Camilo Portilla",
-        "position": "Mediocampista"
+        "name": "Juan Fernando Quintero",
+        "position": "Mediocampista",
+        "club": "River Plate"
       },
       {
         "code": "COL 18",
-        "name": "Jefferson Lerma",
-        "position": "Mediocampista"
+        "name": "Richard Ríos",
+        "position": "Mediocampista",
+        "club": "Benfica"
       },
       {
         "code": "COL 19",
-        "name": "Richard Ríos",
-        "position": "Mediocampista"
+        "name": "Kevin Castaño",
+        "position": "Mediocampista",
+        "club": "River Plate"
       },
       {
         "code": "COL 20",
-        "name": "Jhon Arias",
-        "position": "Mediocampista"
+        "name": "Jaminton Campaz",
+        "position": "Mediocampista",
+        "club": "Rosario Central"
       },
       {
         "code": "COL 21",
-        "name": "Luis Díaz",
-        "position": "Delantero"
+        "name": "Juan Portilla",
+        "position": "Mediocampista",
+        "club": "Paranaense"
       },
       {
         "code": "COL 22",
-        "name": "Jhon Córdoba",
-        "position": "Delantero"
+        "name": "Luis Diaz",
+        "position": "Delantero",
+        "club": "Bayern Múnich"
       },
       {
         "code": "COL 23",
         "name": "Luis Suárez",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Sporting"
       },
       {
         "code": "COL 24",
-        "name": "Jhon Durán",
-        "position": "Delantero"
+        "name": "Jhon Córdoba",
+        "position": "Delantero",
+        "club": "Krasnodar"
       },
       {
         "code": "COL 25",
-        "name": "Andrés Gómez",
-        "position": "Delantero"
+        "name": "Carlos Gómez",
+        "position": "Delantero",
+        "club": "Vasco da Gama"
       },
       {
         "code": "COL 26",
-        "name": "Jaminton Campaz",
-        "position": "Delantero"
-      },
-      {
-        "code": "COL 27",
-        "name": "Cucho Hernández",
-        "position": "Delantero"
+        "name": "Juan Camilo Hernández",
+        "position": "Delantero",
+        "club": "Real Betis"
       }
     ]
   },
@@ -2228,134 +2566,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Cape Verde",
     "players": [
       {
-        "code": "CPV 2",
+        "code": "CPV 1",
         "name": "Josimar Dias",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Chaves"
+      },
+      {
+        "code": "CPV 2",
+        "name": "Márcio da Rosa",
+        "position": "Portero",
+        "club": "Montana"
       },
       {
         "code": "CPV 3",
-        "name": "Márcio da Rosa",
-        "position": "Portero"
+        "name": "Carlos Santos",
+        "position": "Portero",
+        "club": "San Diego"
       },
       {
         "code": "CPV 4",
-        "name": "Carlos Santos",
-        "position": "Portero"
+        "name": "Steven Moreira",
+        "position": "Defensa",
+        "club": "Columbus Crew"
       },
       {
         "code": "CPV 5",
-        "name": "Steven Moreira",
-        "position": "Defensa"
+        "name": "Wagner Pina",
+        "position": "Defensa",
+        "club": "Trabzonspor"
       },
       {
         "code": "CPV 6",
-        "name": "Wagner Pina",
-        "position": "Defensa"
+        "name": "João Paulo Fernandes",
+        "position": "Defensa",
+        "club": "FCSB"
       },
       {
         "code": "CPV 7",
-        "name": "Joao Fernandes",
-        "position": "Defensa"
+        "name": "Sidny Lopes Cabral",
+        "position": "Defensa",
+        "club": "Benfica"
       },
       {
         "code": "CPV 8",
-        "name": "Sidny Lopes",
-        "position": "Defensa"
+        "name": "Logan Costa",
+        "position": "Defensa",
+        "club": "Villarreal"
       },
       {
         "code": "CPV 9",
-        "name": "Logan Costa",
-        "position": "Defensa"
+        "name": "Roberto Lopes",
+        "position": "Defensa",
+        "club": "Shamrock Rovers"
       },
       {
         "code": "CPV 10",
-        "name": "Roberto Lopes",
-        "position": "Defensa"
+        "name": "Kelvin Pires",
+        "position": "Defensa",
+        "club": "SJK Seinäjoki"
       },
       {
         "code": "CPV 11",
-        "name": "Kelvin Pires",
-        "position": "Defensa"
+        "name": "Ianique Tavares",
+        "position": "Defensa",
+        "club": "Torreense"
       },
       {
         "code": "CPV 12",
-        "name": "Ianique Tavares",
-        "position": "Defensa"
+        "name": "Edilson Borges",
+        "position": "Defensa",
+        "club": "Al-Bataeh CSC"
       },
       {
         "code": "CPV 13",
-        "name": "Edilson Borges",
-        "position": "Defensa"
+        "name": "Jamiro Monteiro",
+        "position": "Mediocampista",
+        "club": "Zwolle"
       },
       {
         "code": "CPV 14",
-        "name": "Jamiro Monteiro",
-        "position": "Mediocampista"
+        "name": "Telmo Arcanjo",
+        "position": "Mediocampista",
+        "club": "Vitoria Guimarães"
       },
       {
         "code": "CPV 15",
-        "name": "Telmo Arcanjo",
-        "position": "Mediocampista"
+        "name": "Yannick Semedo",
+        "position": "Mediocampista",
+        "club": "Farense"
       },
       {
         "code": "CPV 16",
-        "name": "Yannick Semedo",
-        "position": "Mediocampista"
+        "name": "Laros Duarte",
+        "position": "Mediocampista",
+        "club": "Puskas AFC"
       },
       {
         "code": "CPV 17",
-        "name": "Laros Duarte",
-        "position": "Mediocampista"
+        "name": "Deroy Duarte",
+        "position": "Mediocampista",
+        "club": "Ludogorets"
       },
       {
         "code": "CPV 18",
-        "name": "Deroy Duarte",
-        "position": "Mediocampista"
+        "name": "Kevin Pina",
+        "position": "Mediocampista",
+        "club": "Krasnodar"
       },
       {
         "code": "CPV 19",
-        "name": "Kevin Pina",
-        "position": "Mediocampista"
+        "name": "Ryan Mendes",
+        "position": "Delantero",
+        "club": "Igdir FK"
       },
       {
         "code": "CPV 20",
-        "name": "Ryan Mendes",
-        "position": "Delantero"
+        "name": "Willy Semedo",
+        "position": "Delantero",
+        "club": "Omonia Nicosia"
       },
       {
         "code": "CPV 21",
-        "name": "Willy Semedo",
-        "position": "Delantero"
+        "name": "Garry Rodrigues",
+        "position": "Delantero",
+        "club": "Apollon Limassol"
       },
       {
         "code": "CPV 22",
-        "name": "Garry Rodrigues",
-        "position": "Delantero"
+        "name": "Jovane Cabral",
+        "position": "Delantero",
+        "club": "Estrela Amadora"
       },
       {
         "code": "CPV 23",
-        "name": "Jovane Cabral",
-        "position": "Delantero"
+        "name": "Nuno da Costa",
+        "position": "Delantero",
+        "club": "Basaksehir FK"
       },
       {
         "code": "CPV 24",
-        "name": "Nuno da Costa",
-        "position": "Delantero"
+        "name": "Dailon Livramento",
+        "position": "Delantero",
+        "club": "Casa Pia"
       },
       {
         "code": "CPV 25",
-        "name": "Dailon Livramento",
-        "position": "Delantero"
+        "name": "Gilson Benchimol",
+        "position": "Delantero",
+        "club": "Akron Togliatti"
       },
       {
         "code": "CPV 26",
-        "name": "Gilson Benchimol",
-        "position": "Delantero"
-      },
-      {
-        "code": "CPV 27",
         "name": "Hélio Varela",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Maccabi Tel Aviv"
       }
     ]
   },
@@ -2365,136 +2729,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Croatia",
     "players": [
       {
+        "code": "CRO 1",
+        "name": "Dominic Livakovic",
+        "position": "Portero",
+        "club": "Dinamo"
+      },
+      {
         "code": "CRO 2",
-        "name": "Dominik Livakovic",
-        "position": "Portero"
+        "name": "Dominik Kotarski",
+        "position": "Portero",
+        "club": "Kabenhavn"
       },
       {
         "code": "CRO 3",
-        "name": "Dominik Kotarski e Ivor Pandur",
-        "position": "Portero"
+        "name": "Ivor Pandur",
+        "position": "Portero",
+        "club": "Hull City"
       },
       {
         "code": "CRO 4",
         "name": "Josko Gvardiol",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Man. City"
       },
       {
         "code": "CRO 5",
         "name": "Duje Caleta-Car",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Real Sociedad"
       },
       {
         "code": "CRO 6",
-        "name": "Josip Satula",
-        "position": "Defensa"
+        "name": "Josip Sutalo",
+        "position": "Defensa",
+        "club": "Ajax"
       },
       {
         "code": "CRO 7",
         "name": "Josip Stanisic",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Bayern de Múnich"
       },
       {
         "code": "CRO 8",
         "name": "Marin Pongracic",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Fiorentina"
       },
       {
         "code": "CRO 9",
         "name": "Martin Erlic",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Midtjylland"
       },
       {
         "code": "CRO 10",
-        "name": "Lukas Vuskovic",
-        "position": "Defensa"
+        "name": "Luka Vuskovic",
+        "position": "Defensa",
+        "club": "HSV"
       },
       {
         "code": "CRO 11",
         "name": "Luka Modric",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Milan"
       },
       {
         "code": "CRO 12",
         "name": "Mateo Kovacic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Man. City"
       },
       {
         "code": "CRO 13",
         "name": "Mario Pasalic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Atalanta"
       },
       {
         "code": "CRO 14",
         "name": "Nikola Vlasic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Torino"
       },
       {
         "code": "CRO 15",
         "name": "Luka Sucic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Real Sociedad"
       },
       {
         "code": "CRO 16",
         "name": "Martin Baturina",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Como"
       },
       {
         "code": "CRO 17",
         "name": "Kristijan Jakic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Augsburg"
       },
       {
         "code": "CRO 18",
         "name": "Petar Sucic",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Inter"
       },
       {
         "code": "CRO 19",
         "name": "Nikola Moro",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Bologna"
       },
       {
         "code": "CRO 20",
         "name": "Toni Fruk",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Rijeka"
       },
       {
         "code": "CRO 21",
         "name": "Ivan Perisic",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "PSV"
       },
       {
         "code": "CRO 22",
         "name": "Andrej Kramaric",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Hoffenheim"
       },
       {
         "code": "CRO 23",
         "name": "Ante Budimir",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Osasuna"
       },
       {
         "code": "CRO 24",
         "name": "Marco Pasalic",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Orlando City"
       },
       {
         "code": "CRO 25",
-        "name": "Petar Musa e Igor Matanovic",
-        "position": "Delantero"
+        "name": "Petar Musa",
+        "position": "Delantero",
+        "club": "Dallas"
       },
       {
         "code": "CRO 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Croacia",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "CRO 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Croacia",
-        "position": "Por confirmar"
+        "name": "Igor Matanovic",
+        "position": "Delantero",
+        "club": "Friburgo"
       }
     ]
   },
@@ -2504,134 +2892,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Curaçao",
     "players": [
       {
+        "code": "CUW 1",
+        "name": "Tyrick Bodak",
+        "position": "Portero",
+        "club": "Telsar"
+      },
+      {
         "code": "CUW 2",
-        "name": "Eloy Room",
-        "position": "Portero"
+        "name": "Trevor Doornbusch",
+        "position": "Portero",
+        "club": "VVV Venlo"
       },
       {
         "code": "CUW 3",
-        "name": "Tyrick Bodak",
-        "position": "Portero"
+        "name": "Eloy Room",
+        "position": "Portero",
+        "club": "Miami FC"
       },
       {
         "code": "CUW 4",
-        "name": "Trevor Doornbusch",
-        "position": "Portero"
+        "name": "Riechedly Bazoer",
+        "position": "Defensa",
+        "club": "Konyaspor"
       },
       {
         "code": "CUW 5",
-        "name": "Riechedly Bazder",
-        "position": "Defensa"
+        "name": "Joshua Brenet",
+        "position": "Defensa",
+        "club": "Kayserispor"
       },
       {
         "code": "CUW 6",
-        "name": "Joshua Brenet",
-        "position": "Defensa"
+        "name": "Roshon Van Eijma",
+        "position": "Defensa",
+        "club": "Waalwijk"
       },
       {
         "code": "CUW 7",
-        "name": "Roshon Van Eijma",
-        "position": "Defensa"
+        "name": "Sherel Floranus",
+        "position": "Defensa",
+        "club": "PEC Zwolle"
       },
       {
         "code": "CUW 8",
-        "name": "Sherel Floranus",
-        "position": "Defensa"
+        "name": "Deveron Fonville",
+        "position": "Defensa",
+        "club": "Nijmegen"
       },
       {
         "code": "CUW 9",
-        "name": "Deveron Fonville",
-        "position": "Defensa"
+        "name": "Jurïen Gaari",
+        "position": "Defensa",
+        "club": "Abha"
       },
       {
         "code": "CUW 10",
-        "name": "Jurien Gaari",
-        "position": "Defensa"
+        "name": "Armando Obispo",
+        "position": "Defensa",
+        "club": "PSV"
       },
       {
         "code": "CUW 11",
-        "name": "Armando Obispo",
-        "position": "Defensa"
+        "name": "Shurandy Sambo",
+        "position": "Defensa",
+        "club": "Sparta Rotterdam"
       },
       {
         "code": "CUW 12",
-        "name": "Shurandy Sambo",
-        "position": "Defensa"
+        "name": "Juninho Bacuna",
+        "position": "Mediocampista",
+        "club": "FC Volendam"
       },
       {
         "code": "CUW 13",
         "name": "Leandro Bacuna",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Igdir FK"
       },
       {
         "code": "CUW 14",
-        "name": "Juninho Bacuna",
-        "position": "Mediocampista"
+        "name": "Livano Comenencia",
+        "position": "Mediocampista",
+        "club": "Zurich"
       },
       {
         "code": "CUW 15",
-        "name": "Livano Comenencia",
-        "position": "Mediocampista"
+        "name": "Kevin Felida",
+        "position": "Mediocampista",
+        "club": "Den Bosch"
       },
       {
         "code": "CUW 16",
-        "name": "Kevin Felida",
-        "position": "Mediocampista"
+        "name": "Arjany Martha",
+        "position": "Mediocampista",
+        "club": "Rotherham"
       },
       {
         "code": "CUW 17",
-        "name": "Ar'jany Martha",
-        "position": "Mediocampista"
+        "name": "Tyrese Noslin",
+        "position": "Mediocampista",
+        "club": "Telsar"
       },
       {
         "code": "CUW 18",
-        "name": "Tyrese Noslin",
-        "position": "Mediocampista"
+        "name": "Godfried Roemeratoe",
+        "position": "Mediocampista",
+        "club": "Waalwijk"
       },
       {
         "code": "CUW 19",
-        "name": "Godfried Roemeratoe",
-        "position": "Mediocampista"
+        "name": "Jeremy Antonisse",
+        "position": "Delantero",
+        "club": "Kifisia"
       },
       {
         "code": "CUW 20",
-        "name": "Jerey Antonisse",
-        "position": "Delantero"
+        "name": "Tahith Chong",
+        "position": "Delantero",
+        "club": "Sheffield United"
       },
       {
         "code": "CUW 21",
-        "name": "Tahith Chong",
-        "position": "Delantero"
+        "name": "Kenji Gorré",
+        "position": "Delantero",
+        "club": "Maccabi Haifa"
       },
       {
         "code": "CUW 22",
-        "name": "Kenji Gorré",
-        "position": "Delantero"
+        "name": "Sontje Hansen",
+        "position": "Delantero",
+        "club": "Middlesbrough"
       },
       {
         "code": "CUW 23",
-        "name": "Sontje Hansen",
-        "position": "Delantero"
+        "name": "Gervane Kastaneer",
+        "position": "Delantero",
+        "club": "Terengganu"
       },
       {
         "code": "CUW 24",
-        "name": "Gervane Kastaneer",
-        "position": "Delantero"
+        "name": "Brandley Kuwas",
+        "position": "Delantero",
+        "club": "FC Volendam"
       },
       {
         "code": "CUW 25",
-        "name": "Brandley Kuwas",
-        "position": "Delantero"
+        "name": "Jürgen Locadia",
+        "position": "Delantero",
+        "club": "Miami FC"
       },
       {
         "code": "CUW 26",
-        "name": "Jürgen Locadia",
-        "position": "Delantero"
-      },
-      {
-        "code": "CUW 27",
         "name": "Jearl Margaritha",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "SK Beveren"
       }
     ]
   },
@@ -2641,134 +3055,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Czechia",
     "players": [
       {
-        "code": "CZE 2",
+        "code": "CZE 1",
         "name": "Lukas Hornicek",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "SC Braga"
+      },
+      {
+        "code": "CZE 2",
+        "name": "Matej Kovar",
+        "position": "Portero",
+        "club": "PSV"
       },
       {
         "code": "CZE 3",
-        "name": "Matej Kovar",
-        "position": "Portero"
+        "name": "Jindrich Stanek",
+        "position": "Portero",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 4",
-        "name": "Jindrich Stanek",
-        "position": "Portero"
+        "name": "Ladislav Krejci",
+        "position": "Defensa",
+        "club": "Wolverhampton"
       },
       {
         "code": "CZE 5",
-        "name": "Vladimir Coufal",
-        "position": "Defensa"
+        "name": "Robin Hranac",
+        "position": "Defensa",
+        "club": "Hoffenheim"
       },
       {
         "code": "CZE 6",
-        "name": "David Doudera",
-        "position": "Defensa"
+        "name": "Stepan Chaloupek",
+        "position": "Defensa",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 7",
-        "name": "Tomás Holes",
-        "position": "Defensa"
+        "name": "David Zima 8Slavia Praga)",
+        "position": "Defensa",
+        "club": ""
       },
       {
         "code": "CZE 8",
-        "name": "Robin Hranác",
-        "position": "Defensa"
+        "name": "Tomas Holes",
+        "position": "Defensa",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 9",
-        "name": "Tepán Chaloupek",
-        "position": "Defensa"
+        "name": "Jaroslav Zeleny",
+        "position": "Defensa",
+        "club": "Sparta Praga"
       },
       {
         "code": "CZE 10",
-        "name": "David Jurásek",
-        "position": "Defensa"
+        "name": "David Jurasek",
+        "position": "Defensa",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 11",
-        "name": "Ladislav Krejcí",
-        "position": "Defensa"
+        "name": "Vladimir Coufal",
+        "position": "Defensa",
+        "club": "Hoffenheim"
       },
       {
         "code": "CZE 12",
-        "name": "Jaroslav Zelený",
-        "position": "Defensa"
+        "name": "Tomas Soucek",
+        "position": "Mediocampista",
+        "club": "West Ham"
       },
       {
         "code": "CZE 13",
-        "name": "David Zima",
-        "position": "Defensa"
+        "name": "Michal Sadilek",
+        "position": "Mediocampista",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 14",
-        "name": "Pavel Bucha",
-        "position": "Mediocampista"
+        "name": "Lukas Cerv",
+        "position": "Mediocampista",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "CZE 15",
-        "name": "Lukas Cerv",
-        "position": "Mediocampista"
+        "name": "Hugo Sochurek",
+        "position": "Mediocampista",
+        "club": "Sparta Praga"
       },
       {
         "code": "CZE 16",
-        "name": "Vladimír Darida",
-        "position": "Mediocampista"
+        "name": "Alexander Sojka",
+        "position": "Mediocampista",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "CZE 17",
-        "name": "Tomás Ladra",
-        "position": "Mediocampista"
+        "name": "Vladimir Darida",
+        "position": "Mediocampista",
+        "club": "Hraed Kralove"
       },
       {
         "code": "CZE 18",
-        "name": "Lukas Provod",
-        "position": "Mediocampista"
+        "name": "David Doudera",
+        "position": "Mediocampista",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 19",
-        "name": "Michal Sadílek",
-        "position": "Mediocampista"
+        "name": "Pavel Sulc",
+        "position": "Mediocampista",
+        "club": "Olympique Lyon"
       },
       {
         "code": "CZE 20",
-        "name": "Hugo Sochurek",
-        "position": "Mediocampista"
+        "name": "Denis Visinsky",
+        "position": "Mediocampista",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "CZE 21",
-        "name": "Alexandr Sojka",
-        "position": "Mediocampista"
+        "name": "Patrick Schick",
+        "position": "Delantero",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "CZE 22",
-        "name": "Tomá Soucek",
-        "position": "Mediocampista"
+        "name": "Lukas Provod",
+        "position": "Delantero",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 23",
-        "name": "Pavel Ulc",
-        "position": "Mediocampista"
+        "name": "Adam Hlozek",
+        "position": "Delantero",
+        "club": "Hoffenheim"
       },
       {
         "code": "CZE 24",
-        "name": "Denis Viinský",
-        "position": "Mediocampista"
+        "name": "Mojmir Chytil",
+        "position": "Delantero",
+        "club": "Slavia Praga"
       },
       {
         "code": "CZE 25",
-        "name": "Adam Hloek",
-        "position": "Delantero"
+        "name": "Jan Kuchta",
+        "position": "Delantero",
+        "club": "Sparta Praga"
       },
       {
         "code": "CZE 26",
-        "name": "Tomá Chorý",
-        "position": "Delantero"
-      },
-      {
-        "code": "CZE 27",
-        "name": "Mojmír Chytil",
-        "position": "Delantero"
+        "name": "Tomas Chory",
+        "position": "Delantero",
+        "club": "Slavia Praga"
       }
     ]
   },
@@ -2778,124 +3218,148 @@ const paniniAlbumTeams = [
     "sourceTeam": "Ecuador",
     "players": [
       {
+        "code": "ECU 1",
+        "name": "Hernán Galíndez",
+        "position": "Portero",
+        "club": "Huracán"
+      },
+      {
         "code": "ECU 2",
-        "name": "Hernán Galíndez"
+        "name": "Moisés Ramírez",
+        "position": "Portero",
+        "club": "AE Kifisias"
       },
       {
         "code": "ECU 3",
-        "name": "Gonzalo Valle"
+        "name": "Gonzalo Valle",
+        "position": "Portero",
+        "club": "Liga de Quito"
       },
       {
         "code": "ECU 4",
-        "name": "Piero Hincapié"
+        "name": "Willian Pacho",
+        "position": "Defensa",
+        "club": "PSG"
       },
       {
         "code": "ECU 5",
-        "name": "Pervis Estupiñán"
+        "name": "Piero Hincapié",
+        "position": "Defensa",
+        "club": "Arsenal"
       },
       {
         "code": "ECU 6",
-        "name": "Willian Pacho"
+        "name": "Joel Ordóñez",
+        "position": "Defensa",
+        "club": "Brujas"
       },
       {
         "code": "ECU 7",
-        "name": "Ángelo Preciado"
+        "name": "Jackson Porozo",
+        "position": "Defensa",
+        "club": "Club Tijuana"
       },
       {
         "code": "ECU 8",
-        "name": "Joel Ordóñez"
+        "name": "Félix Torres",
+        "position": "Defensa",
+        "club": "Internacional"
       },
       {
         "code": "ECU 9",
-        "name": "Moises Caicedo"
+        "name": "Pervis Estupiñán",
+        "position": "Defensa",
+        "club": "Milan"
       },
       {
         "code": "ECU 10",
-        "name": "Alan Franco"
+        "name": "Yaimar Medina",
+        "position": "Defensa",
+        "club": "KRC Genk"
       },
       {
         "code": "ECU 11",
-        "name": "Kendry Paez"
+        "name": "Ángelo Preciado",
+        "position": "Defensa",
+        "club": "Atlético Mineiro"
       },
       {
         "code": "ECU 12",
-        "name": "Pedro Vite"
+        "name": "Moisés Caicedo",
+        "position": "Mediocampista",
+        "club": "Chelsea"
       },
       {
         "code": "ECU 13",
-        "name": "John Veboah"
+        "name": "Jordi Alcívar",
+        "position": "Mediocampista",
+        "club": "Independiente del Valle"
       },
       {
         "code": "ECU 14",
-        "name": "Leonardo Campana"
+        "name": "Denil Castillo",
+        "position": "Mediocampista",
+        "club": "Midtjylland"
       },
       {
         "code": "ECU 15",
-        "name": "Gonzalo Plata"
+        "name": "Alan Franco",
+        "position": "Mediocampista",
+        "club": "Atlético Mineiro"
       },
       {
         "code": "ECU 16",
-        "name": "Nilson Angulo"
+        "name": "Kendry Páez",
+        "position": "Mediocampista",
+        "club": "River Plate"
       },
       {
         "code": "ECU 17",
-        "name": "Alan Minda"
+        "name": "Nilson Angulo",
+        "position": "Mediocampista",
+        "club": "Sunderland"
       },
       {
         "code": "ECU 18",
-        "name": "Kevin Rodriguez"
+        "name": "Gonzalo Plata",
+        "position": "Delantero",
+        "club": "Flamengo"
       },
       {
         "code": "ECU 19",
-        "name": "Enner Valencia"
+        "name": "John Yeboah",
+        "position": "Delantero",
+        "club": "Venezia"
       },
       {
         "code": "ECU 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
+        "name": "Enner Valencia",
+        "position": "Delantero",
+        "club": "Pachuca"
       },
       {
         "code": "ECU 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
+        "name": "Jordy Caicedo",
+        "position": "Delantero",
+        "club": "Huracán"
       },
       {
         "code": "ECU 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
+        "name": "Jeremy Arévalo",
+        "position": "Delantero",
+        "club": "Stuttgart"
       },
       {
         "code": "ECU 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
+        "name": "Anthony Valencia",
+        "position": "Delantero",
+        "club": "Royal Antwerp"
       },
       {
         "code": "ECU 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "ECU 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "ECU 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "ECU 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Ecuador",
-        "position": "Por confirmar"
+        "name": "Kevin Rodríguez",
+        "position": "Delantero",
+        "club": "Unión Saint-Gilloise"
       }
     ]
   },
@@ -2905,135 +3369,166 @@ const paniniAlbumTeams = [
     "sourceTeam": "Egypt",
     "players": [
       {
+        "code": "EGY 1",
+        "name": "Mohamed El Shenawy",
+        "position": "Portero",
+        "club": "Al-Ahly SC"
+      },
+      {
         "code": "EGY 2",
-        "name": "Mohamed El Shennawy",
-        "position": "Portero"
+        "name": "Mostafa Shobeir",
+        "position": "Portero",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 3",
-        "name": "Mostafa Shobeir",
-        "position": "Portero"
+        "name": "Al-Mahdy Soliman",
+        "position": "Portero",
+        "club": "Al-Ittihad Alexandria"
       },
       {
         "code": "EGY 4",
-        "name": "El Mahdy Soliman",
-        "position": "Portero"
+        "name": "Mohamed Alaa",
+        "position": "Portero",
+        "club": "ZED FC"
       },
       {
         "code": "EGY 5",
-        "name": "Mohamed Alla",
-        "position": "Portero"
+        "name": "Mohamed Hany",
+        "position": "Defensa",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 6",
-        "name": "Mohamed Hany",
-        "position": "Defensa"
+        "name": "Tarek El Ala",
+        "position": "Defensa",
+        "club": "Al-Nasr"
       },
       {
         "code": "EGY 7",
-        "name": "Tarek Alaa",
-        "position": "Defensa"
+        "name": "Hamdi Fathy",
+        "position": "Defensa",
+        "club": "Al-Wakrah SC"
       },
       {
         "code": "EGY 8",
-        "name": "Hamdi Fathi",
-        "position": "Defensa"
+        "name": "Ramy Rabia",
+        "position": "Defensa",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 9",
-        "name": "Ramy Rabia",
-        "position": "Defensa"
+        "name": "Yasser Ibrahim",
+        "position": "Defensa",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 10",
-        "name": "Yasser Ibrahim",
-        "position": "Defensa"
+        "name": "Hossam Abdel-Maguid",
+        "position": "Defensa",
+        "club": "Zamalek SC"
       },
       {
         "code": "EGY 11",
-        "name": "Hossam Abdelmaguid",
-        "position": "Defensa"
+        "name": "Mohamed Abdelmonem",
+        "position": "Defensa",
+        "club": "OGC Niza"
       },
       {
         "code": "EGY 12",
-        "name": "Mohamed Abeldmonem",
-        "position": "Defensa"
+        "name": "Ahmed Fotouh",
+        "position": "Defensa",
+        "club": "Zamalek SC"
       },
       {
         "code": "EGY 13",
-        "name": "Ahmed Fattouh",
-        "position": "Defensa"
+        "name": "Karim Hafez",
+        "position": "Defensa",
+        "club": "Pyramids FC"
       },
       {
         "code": "EGY 14",
-        "name": "Karim Hafez",
-        "position": "Defensa"
+        "name": "Marwan Attia",
+        "position": "Mediocampista",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 15",
-        "name": "Marwan Attia",
-        "position": "Mediocampista"
+        "name": "Mohand Lashin",
+        "position": "Mediocampista",
+        "club": "Pyramids FC"
       },
       {
         "code": "EGY 16",
-        "name": "Mohannad Lasheen",
-        "position": "Mediocampista"
+        "name": "Nabil Emad Dunga",
+        "position": "Mediocampista",
+        "club": "Zamalek SC"
       },
       {
         "code": "EGY 17",
-        "name": "Nabil Amad Dunga",
-        "position": "Mediocampista"
+        "name": "Mahmoud Saber",
+        "position": "Mediocampista",
+        "club": "Pyramids FC / Smouha SC"
       },
       {
         "code": "EGY 18",
-        "name": "Mahmoud Saber",
-        "position": "Mediocampista"
+        "name": "Ahmed Sayed Zizo",
+        "position": "Mediocampista",
+        "club": "Zamalek SC"
       },
       {
         "code": "EGY 19",
-        "name": "Ahmed Sayed Zizo",
-        "position": "Mediocampista"
+        "name": "Imam Ashour",
+        "position": "Mediocampista",
+        "club": "Al-Ahly SC"
       },
       {
         "code": "EGY 20",
-        "name": "Mahmoud Trezeguet",
-        "position": "Mediocampista"
+        "name": "Mostafa Abdel-Raouf Ziko",
+        "position": "Mediocampista",
+        "club": "ZED FC"
       },
       {
         "code": "EGY 21",
-        "name": "Ibrahim Adel",
-        "position": "Mediocampista"
+        "name": "Mahmoud Trezeguet",
+        "position": "Mediocampista",
+        "club": "Al-Rayyan SC"
       },
       {
         "code": "EGY 22",
-        "name": "Haitham Hassan",
-        "position": "Mediocampista"
+        "name": "Ibrahim Ade (Pyramids FC)l",
+        "position": "Mediocampista",
+        "club": ""
       },
       {
         "code": "EGY 23",
-        "name": "Mohamed Salah",
-        "position": "Mediocampista"
+        "name": "Haithem Hassan",
+        "position": "Mediocampista",
+        "club": "Real Oviedo"
       },
       {
         "code": "EGY 24",
-        "name": "Omar Marmoush",
-        "position": "Delantero"
+        "name": "Mohamed Salah",
+        "position": "Delantero",
+        "club": "Liverpool FC"
       },
       {
         "code": "EGY 25",
-        "name": "Aktay Abdullah",
-        "position": "Delantero"
+        "name": "Omar Marmoush",
+        "position": "Delantero",
+        "club": "Manchester City"
       },
       {
         "code": "EGY 26",
-        "name": "Hazam Abdel Klarim",
-        "position": "Delantero"
+        "name": "Aktai Abdullah",
+        "position": "Delantero",
+        "club": "ZED FC"
       },
       {
         "code": "EGY 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Egipto",
-        "position": "Por confirmar"
+        "name": "Hamza Abdelkarim",
+        "position": "Delantero",
+        "club": "FC Barcelona Atlètic/Al Ahly"
       }
     ]
   },
@@ -3043,134 +3538,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "England",
     "players": [
       {
+        "code": "ENG 1",
+        "name": "Jordan Pickford",
+        "position": "Portero",
+        "club": "Everton"
+      },
+      {
         "code": "ENG 2",
         "name": "Dean Henderson",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Crystal Palace"
       },
       {
         "code": "ENG 3",
-        "name": "Jordan Pickford",
-        "position": "Portero"
+        "name": "James Trafford",
+        "position": "Portero",
+        "club": "Manchester City"
       },
       {
         "code": "ENG 4",
-        "name": "James Trafford",
-        "position": "Portero"
+        "name": "Reece James",
+        "position": "Defensa",
+        "club": "Chelsea"
       },
       {
         "code": "ENG 5",
-        "name": "Dan Burn",
-        "position": "Defensa"
+        "name": "Tino Livramento",
+        "position": "Defensa",
+        "club": "Newcastle"
       },
       {
         "code": "ENG 6",
-        "name": "Marc Guéhi",
-        "position": "Defensa"
+        "name": "John Stones",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "ENG 7",
-        "name": "Reece James",
-        "position": "Defensa"
+        "name": "Marc Guéhi",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "ENG 8",
         "name": "Ezri Konsa",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Aston Villa"
       },
       {
         "code": "ENG 9",
-        "name": "Tino Livramento",
-        "position": "Defensa"
+        "name": "Dan Burn",
+        "position": "Defensa",
+        "club": "Newcastle"
       },
       {
         "code": "ENG 10",
-        "name": "Nico O'Reilly",
-        "position": "Defensa"
+        "name": "Jarell Quansah",
+        "position": "Defensa",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "ENG 11",
-        "name": "Jarell Quansah",
-        "position": "Defensa"
+        "name": "Nico O’Reilly",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "ENG 12",
         "name": "Djed Spence",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Tottenham"
       },
       {
         "code": "ENG 13",
-        "name": "John Stones",
-        "position": "Defensa"
+        "name": "Jordan Henderson",
+        "position": "Mediocampista",
+        "club": "Brentford"
       },
       {
         "code": "ENG 14",
         "name": "Elliot Anderson",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Nottingham Forest"
       },
       {
         "code": "ENG 15",
-        "name": "Jude Bellingham",
-        "position": "Mediocampista"
+        "name": "Declan Rice",
+        "position": "Mediocampista",
+        "club": "Arsenal"
       },
       {
         "code": "ENG 16",
-        "name": "Eberechi Eze",
-        "position": "Mediocampista"
+        "name": "Kobbie Mainoo",
+        "position": "Mediocampista",
+        "club": "Manchester United"
       },
       {
         "code": "ENG 17",
-        "name": "Jordan Henderson",
-        "position": "Mediocampista"
+        "name": "Eberechi Eze",
+        "position": "Mediocampista",
+        "club": "Arsenal"
       },
       {
         "code": "ENG 18",
-        "name": "Kobbie Mainoo",
-        "position": "Mediocampista"
+        "name": "Jude Bellingham",
+        "position": "Mediocampista",
+        "club": "Real Madrid"
       },
       {
         "code": "ENG 19",
-        "name": "Declan Rice",
-        "position": "Mediocampista"
+        "name": "Morgan Rogers",
+        "position": "Mediocampista",
+        "club": "Aston Villa"
       },
       {
         "code": "ENG 20",
-        "name": "Morgan Rogers",
-        "position": "Mediocampista"
+        "name": "Bukayo Saka",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "ENG 21",
-        "name": "Anthony Gordon",
-        "position": "Delantero"
+        "name": "Noni Madueke",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "ENG 22",
-        "name": "Harry Kane",
-        "position": "Delantero"
+        "name": "Marcus Rashford",
+        "position": "Delantero",
+        "club": "Barcelona"
       },
       {
         "code": "ENG 23",
-        "name": "Noni Madueke",
-        "position": "Delantero"
+        "name": "Anthony Gordon",
+        "position": "Delantero",
+        "club": "Newcastle"
       },
       {
         "code": "ENG 24",
-        "name": "Marcus Rashford",
-        "position": "Delantero"
+        "name": "Harry Kane",
+        "position": "Delantero",
+        "club": "Bayern Múnich"
       },
       {
         "code": "ENG 25",
-        "name": "Bukayo Saka",
-        "position": "Delantero"
+        "name": "Ollie Watkins",
+        "position": "Delantero",
+        "club": "Aston Villa"
       },
       {
         "code": "ENG 26",
         "name": "Ivan Toney",
-        "position": "Delantero"
-      },
-      {
-        "code": "ENG 27",
-        "name": "Ollie Watkins",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Al-Ahli"
       }
     ]
   },
@@ -3180,134 +3701,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Spain",
     "players": [
       {
-        "code": "ESP 2",
+        "code": "ESP 1",
         "name": "Unai Simón",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Athletic Club"
+      },
+      {
+        "code": "ESP 2",
+        "name": "David Raya",
+        "position": "Portero",
+        "club": "Arsenal"
       },
       {
         "code": "ESP 3",
-        "name": "David Raya",
-        "position": "Portero"
+        "name": "Joan García",
+        "position": "Portero",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 4",
-        "name": "Joan García",
-        "position": "Portero"
+        "name": "Pedro Porro",
+        "position": "Defensa",
+        "club": "Tottenham"
       },
       {
         "code": "ESP 5",
-        "name": "Marc Cucurella",
-        "position": "Defensa"
+        "name": "Marcos Llorente",
+        "position": "Defensa",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "ESP 6",
-        "name": "Alejandro Grimaldo",
-        "position": "Defensa"
+        "name": "Marc Cucurella",
+        "position": "Defensa",
+        "club": "Chelsea"
       },
       {
         "code": "ESP 7",
-        "name": "Pau Cubarsi",
-        "position": "Defensa"
+        "name": "Alex Grimaldo",
+        "position": "Defensa",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "ESP 8",
         "name": "Aymeric Laporte",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Athletic Club"
       },
       {
         "code": "ESP 9",
-        "name": "Marc Pubill",
-        "position": "Defensa"
+        "name": "Pau Cubarsí",
+        "position": "Defensa",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 10",
-        "name": "Eric García",
-        "position": "Defensa"
+        "name": "Marc Pubill",
+        "position": "Defensa",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "ESP 11",
-        "name": "Marcos Llorente",
-        "position": "Defensa"
+        "name": "Eric García",
+        "position": "Defensa",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 12",
-        "name": "Pedro Porro",
-        "position": "Defensa"
+        "name": "Rodri",
+        "position": "Mediocampista",
+        "club": "Manchester City"
       },
       {
         "code": "ESP 13",
-        "name": "Pedri",
-        "position": "Mediocampista"
+        "name": "Martín Zubimendi",
+        "position": "Mediocampista",
+        "club": "Arsenal"
       },
       {
         "code": "ESP 14",
         "name": "Fabián Ruiz",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "PSG"
       },
       {
         "code": "ESP 15",
-        "name": "Martín Zubimendi",
-        "position": "Mediocampista"
+        "name": "Pedri",
+        "position": "Mediocampista",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 16",
-        "name": "Gavi",
-        "position": "Mediocampista"
+        "name": "Dani Olmo",
+        "position": "Mediocampista",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 17",
-        "name": "Rodrigo Hernández",
-        "position": "Mediocampista"
+        "name": "Gavi",
+        "position": "Mediocampista",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 18",
-        "name": "Álex Baena",
-        "position": "Mediocampista"
+        "name": "Alex Baena",
+        "position": "Mediocampista",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "ESP 19",
         "name": "Mikel Merino",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Arsenal"
       },
       {
         "code": "ESP 20",
-        "name": "Mikel Oyarzabal",
-        "position": "Mediocampista"
+        "name": "Lamine Yamal",
+        "position": "Delantero",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 21",
-        "name": "Dani Olmo",
-        "position": "Delantero"
+        "name": "Nico Williams",
+        "position": "Delantero",
+        "club": "Athletic Club"
       },
       {
         "code": "ESP 22",
-        "name": "Nico Williams",
-        "position": "Delantero"
+        "name": "Mikel Oyarzabal",
+        "position": "Delantero",
+        "club": "Real Sociedad"
       },
       {
         "code": "ESP 23",
-        "name": "Yeremy Pino",
-        "position": "Delantero"
+        "name": "Ferran Torres",
+        "position": "Delantero",
+        "club": "FC Barcelona"
       },
       {
         "code": "ESP 24",
-        "name": "Ferran Torres",
-        "position": "Delantero"
+        "name": "Yeremi Pino",
+        "position": "Delantero",
+        "club": "Crystal Palace"
       },
       {
         "code": "ESP 25",
-        "name": "Borja Iglesias",
-        "position": "Delantero"
+        "name": "Victor Muñoz",
+        "position": "Delantero",
+        "club": "Osasuna"
       },
       {
         "code": "ESP 26",
-        "name": "Víctor Muñoz",
-        "position": "Delantero"
-      },
-      {
-        "code": "ESP 27",
-        "name": "Lamine Yamal",
-        "position": "Delantero"
+        "name": "Borja Iglesias",
+        "position": "Delantero",
+        "club": "Celta"
       }
     ]
   },
@@ -3317,134 +3864,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "France",
     "players": [
       {
-        "code": "FRA 2",
+        "code": "FRA 1",
         "name": "Mike Maignan",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "AC Milan"
+      },
+      {
+        "code": "FRA 2",
+        "name": "Brice Samba",
+        "position": "Portero",
+        "club": "Rennes"
       },
       {
         "code": "FRA 3",
         "name": "Robin Risser",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Lens"
       },
       {
         "code": "FRA 4",
-        "name": "Brice Samba",
-        "position": "Portero"
+        "name": "Jules Kounde",
+        "position": "Defensa",
+        "club": "FC Barcelona"
       },
       {
         "code": "FRA 5",
-        "name": "Lucas Digne",
-        "position": "Defensa"
+        "name": "Malo Gusto",
+        "position": "Defensa",
+        "club": "Chelsea"
       },
       {
         "code": "FRA 6",
-        "name": "Malo Gusto",
-        "position": "Defensa"
+        "name": "William Saliba",
+        "position": "Defensa",
+        "club": "Arsenal"
       },
       {
         "code": "FRA 7",
-        "name": "Lucas Hernandez",
-        "position": "Defensa"
+        "name": "Dayot Upamecano",
+        "position": "Defensa",
+        "club": "FC Bayern"
       },
       {
         "code": "FRA 8",
-        "name": "Theo Hernandez",
-        "position": "Defensa"
+        "name": "Ibrahima Konaté",
+        "position": "Defensa",
+        "club": "Liverpool"
       },
       {
         "code": "FRA 9",
-        "name": "Ibrahima Konate",
-        "position": "Defensa"
+        "name": "Lucas Hernández",
+        "position": "Defensa",
+        "club": "PSG"
       },
       {
         "code": "FRA 10",
-        "name": "Jules Kounde",
-        "position": "Defensa"
+        "name": "Theo Hernández",
+        "position": "Defensa",
+        "club": "Al Hilal"
       },
       {
         "code": "FRA 11",
-        "name": "Maxence Lacroix",
-        "position": "Defensa"
+        "name": "Lucas Digne",
+        "position": "Defensa",
+        "club": "Aston Villa"
       },
       {
         "code": "FRA 12",
-        "name": "William Saliba",
-        "position": "Defensa"
+        "name": "Maxence Lacroix",
+        "position": "Defensa",
+        "club": "Crystal Palace"
       },
       {
         "code": "FRA 13",
-        "name": "Dayot Upamecano",
-        "position": "Defensa"
+        "name": "Aurélien Tchouaméni",
+        "position": "Mediocampista",
+        "club": "Real Madrid"
       },
       {
         "code": "FRA 14",
-        "name": "N'Golo Kante",
-        "position": "Mediocampista"
+        "name": "Adrien Rabiot",
+        "position": "Mediocampista",
+        "club": "AC Milan"
       },
       {
         "code": "FRA 15",
-        "name": "Manu Kone",
-        "position": "Mediocampista"
+        "name": "N’Golo Kanté",
+        "position": "Mediocampista",
+        "club": "Fenerbache"
       },
       {
         "code": "FRA 16",
-        "name": "Adrien Rabiot",
-        "position": "Mediocampista"
+        "name": "Warren Zaïre-Emery",
+        "position": "Mediocampista",
+        "club": "PSG"
       },
       {
         "code": "FRA 17",
-        "name": "Aurelien Tchouameni",
-        "position": "Mediocampista"
+        "name": "Manu Koné",
+        "position": "Mediocampista",
+        "club": "AS Roma"
       },
       {
         "code": "FRA 18",
-        "name": "Warren Zaire-Emery",
-        "position": "Mediocampista"
+        "name": "Kylian Mbappé",
+        "position": "Delantero",
+        "club": "Real Madrid"
       },
       {
         "code": "FRA 19",
-        "name": "Maghnes Akliouche",
-        "position": "Delantero"
+        "name": "Michael Olise",
+        "position": "Delantero",
+        "club": "FC Bayern"
       },
       {
         "code": "FRA 20",
-        "name": "Bradley Barcola",
-        "position": "Delantero"
+        "name": "Ousmane Dembélé",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "FRA 21",
-        "name": "Rayan Cherki",
-        "position": "Delantero"
+        "name": "Désiré Doué",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "FRA 22",
-        "name": "Ousmane Dembele",
-        "position": "Delantero"
+        "name": "Bradley Barcola",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "FRA 23",
-        "name": "Desire Doue",
-        "position": "Delantero"
+        "name": "Marcus Thuram",
+        "position": "Delantero",
+        "club": "Inter"
       },
       {
         "code": "FRA 24",
-        "name": "Jean-Philippe Mateta",
-        "position": "Delantero"
+        "name": "Maghnes Akliouche",
+        "position": "Delantero",
+        "club": "Mónaco"
       },
       {
         "code": "FRA 25",
-        "name": "Kylian Mbappe",
-        "position": "Delantero"
+        "name": "Jean-Philippe Mateta",
+        "position": "Delantero",
+        "club": "Crystal Palace"
       },
       {
         "code": "FRA 26",
-        "name": "Michael Olise",
-        "position": "Delantero"
-      },
-      {
-        "code": "FRA 27",
-        "name": "Marcus Thuram",
-        "position": "Delantero"
+        "name": "Rayan Cherki",
+        "position": "Delantero",
+        "club": "Manchester City"
       }
     ]
   },
@@ -3454,134 +4027,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Germany",
     "players": [
       {
+        "code": "GER 1",
+        "name": "Manuel Neuer",
+        "position": "Portero",
+        "club": "Bayern"
+      },
+      {
         "code": "GER 2",
         "name": "Oliver Baumann",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Hoffenheim"
       },
       {
         "code": "GER 3",
-        "name": "Manuel Neuer",
-        "position": "Portero"
+        "name": "Alexander Nübel",
+        "position": "Portero",
+        "club": "Stuttgart"
       },
       {
         "code": "GER 4",
-        "name": "Alexander Nübel",
-        "position": "Portero"
+        "name": "Waldemar Anton",
+        "position": "Defensa",
+        "club": "Dortmund"
       },
       {
         "code": "GER 5",
-        "name": "Waldemar Anton",
-        "position": "Defensa"
+        "name": "Nathaniel Brown",
+        "position": "Defensa",
+        "club": "Frankfurt"
       },
       {
         "code": "GER 6",
-        "name": "Nathanael Brown",
-        "position": "Defensa"
+        "name": "Pascal Groß",
+        "position": "Defensa",
+        "club": "Brighton & Hove Albion"
       },
       {
         "code": "GER 7",
-        "name": "David Raum",
-        "position": "Defensa"
+        "name": "Joshua Kimmich",
+        "position": "Defensa",
+        "club": "Bayern"
       },
       {
         "code": "GER 8",
-        "name": "Antonio Rüdiger",
-        "position": "Defensa"
+        "name": "David Raum",
+        "position": "Defensa",
+        "club": "Leipzig"
       },
       {
         "code": "GER 9",
-        "name": "Nico Schlotterbeck",
-        "position": "Defensa"
+        "name": "Antonio Rüdiger",
+        "position": "Defensa",
+        "club": "Real Madrid"
       },
       {
         "code": "GER 10",
-        "name": "Jonathan Tah",
-        "position": "Defensa"
+        "name": "Nico Schlotterbeck",
+        "position": "Defensa",
+        "club": "Dortmund"
       },
       {
         "code": "GER 11",
-        "name": "Malick Thiaw",
-        "position": "Defensa"
+        "name": "Jonathan Tah",
+        "position": "Defensa",
+        "club": "Bayern"
       },
       {
         "code": "GER 12",
-        "name": "Pascal Gross",
-        "position": "Mediocampista"
+        "name": "Malick Thiaw",
+        "position": "Defensa",
+        "club": "Newcastle"
       },
       {
         "code": "GER 13",
-        "name": "Joshua Kimmich",
-        "position": "Mediocampista"
+        "name": "Aleksandar Pavlovic",
+        "position": "Mediocampista",
+        "club": "Bayern"
       },
       {
         "code": "GER 14",
-        "name": "Felix Nmecha",
-        "position": "Mediocampista"
+        "name": "Jamal Musiala",
+        "position": "Mediocampista",
+        "club": "Bayern"
       },
       {
         "code": "GER 15",
-        "name": "Aleksandar Pavlovic",
-        "position": "Mediocampista"
+        "name": "Nadiem Amiri",
+        "position": "Mediocampista",
+        "club": "Mainz"
       },
       {
         "code": "GER 16",
-        "name": "Angelo Stiller",
-        "position": "Mediocampista"
+        "name": "Jamie Leweling",
+        "position": "Mediocampista",
+        "club": "Stuttgart"
       },
       {
         "code": "GER 17",
-        "name": "Ndiem Amiri",
-        "position": "Mediocampista"
+        "name": "Felix Nmecha",
+        "position": "Mediocampista",
+        "club": "Dortmund"
       },
       {
         "code": "GER 18",
-        "name": "Leon Goretzka",
-        "position": "Mediocampista"
+        "name": "Angelo Stiller",
+        "position": "Mediocampista",
+        "club": "Stuttgart"
       },
       {
         "code": "GER 19",
-        "name": "Kai Habertz",
-        "position": "Delantero"
+        "name": "Leon Goretzka",
+        "position": "Mediocampista",
+        "club": "Bayern"
       },
       {
         "code": "GER 20",
         "name": "Lennart Karl",
-        "position": "Delantero"
+        "position": "Mediocampista",
+        "club": "Bayern"
       },
       {
         "code": "GER 21",
-        "name": "Jamal Musiala",
-        "position": "Delantero"
+        "name": "Florian Wirtz",
+        "position": "Mediocampista",
+        "club": "Liverpool"
       },
       {
         "code": "GER 22",
-        "name": "Florian Wirtz",
-        "position": "Delantero"
+        "name": "Deniz Undav",
+        "position": "Delantero",
+        "club": "Stuttgart"
       },
       {
         "code": "GER 23",
-        "name": "Maximilian Beier",
-        "position": "Delantero"
+        "name": "Kai Havertz",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "GER 24",
-        "name": "Jamie Leweling",
-        "position": "Delantero"
+        "name": "Maximilian Beier",
+        "position": "Delantero",
+        "club": "Dortmund"
       },
       {
         "code": "GER 25",
         "name": "Leroy Sané",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Istanbul"
       },
       {
         "code": "GER 26",
-        "name": "Deniz Undav",
-        "position": "Delantero"
-      },
-      {
-        "code": "GER 27",
         "name": "Nick Woltemade",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Newcastle"
       }
     ]
   },
@@ -3591,124 +4190,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Ghana",
     "players": [
       {
+        "code": "GHA 1",
+        "name": "Benjamin Asare",
+        "position": "Portero",
+        "club": "Hearts of Oak"
+      },
+      {
         "code": "GHA 2",
-        "name": "Lawrence Ati Zigi"
+        "name": "Lawrence Ati-Zigi",
+        "position": "Portero",
+        "club": "St. Gallen"
       },
       {
         "code": "GHA 3",
-        "name": "Tariq Lamptey"
+        "name": "Joseph Anang",
+        "position": "Portero",
+        "club": "St. Patrick Athletic"
       },
       {
         "code": "GHA 4",
-        "name": "Mohammed Salisu"
+        "name": "Baba Abdul Rahman",
+        "position": "Defensa",
+        "club": "PAOK"
       },
       {
         "code": "GHA 5",
-        "name": "Alidu Seidu"
+        "name": "Gideon Mensah",
+        "position": "Defensa",
+        "club": "Auxerre"
       },
       {
         "code": "GHA 6",
-        "name": "Alexander Djiku"
+        "name": "Marvin Senaya",
+        "position": "Defensa",
+        "club": "Auxerre"
       },
       {
         "code": "GHA 7",
-        "name": "Gideon Mensah"
+        "name": "Alidu Seidu",
+        "position": "Defensa",
+        "club": "Stade Rennais"
       },
       {
         "code": "GHA 8",
-        "name": "Caleb Yirenkyi"
+        "name": "Abdul Mumin",
+        "position": "Defensa",
+        "club": "Rayo Vallecano"
       },
       {
         "code": "GHA 9",
-        "name": "Abdul Issahaku Fatawu"
+        "name": "Jerome Opoku",
+        "position": "Defensa",
+        "club": "Estambul Basaksehir"
       },
       {
         "code": "GHA 10",
-        "name": "Thomas Partey"
+        "name": "Jonas Adjetey",
+        "position": "Defensa",
+        "club": "Wolsfburgo"
       },
       {
         "code": "GHA 11",
-        "name": "Salis Abdul Samed"
+        "name": "Kojo Oppong Peprah",
+        "position": "Defensa",
+        "club": "Niza"
       },
       {
         "code": "GHA 12",
-        "name": "Kamaldeen Sulemana"
+        "name": "Derrick Luckassen",
+        "position": "Defensa",
+        "club": "Pafos"
       },
       {
         "code": "GHA 13",
-        "name": "Mohammed Kudus"
+        "name": "Elisha Owusu",
+        "position": "Mediocampista",
+        "club": "Auxerre"
       },
       {
         "code": "GHA 14",
-        "name": "Inaki Williams"
+        "name": "Thomas Partey",
+        "position": "Mediocampista",
+        "club": "Villarreal"
       },
       {
         "code": "GHA 15",
-        "name": "Jordan Ayew"
+        "name": "Kwasi Sibo",
+        "position": "Mediocampista",
+        "club": "Oviedo"
       },
       {
         "code": "GHA 16",
-        "name": "Andrew Ayew"
+        "name": "Augustine Boakye",
+        "position": "Mediocampista",
+        "club": "Saint-Ettiene"
       },
       {
         "code": "GHA 17",
-        "name": "Joseph Paintsil"
+        "name": "Caleb Yirenky",
+        "position": "Mediocampista",
+        "club": "Nordsjaelland"
       },
       {
         "code": "GHA 18",
-        "name": "Osman Bukari"
+        "name": "Abdul Fatawu Issahaku",
+        "position": "Mediocampista",
+        "club": "Leicester City"
       },
       {
         "code": "GHA 19",
-        "name": "Antoine Semenyo"
+        "name": "Kamal Deen Sulemana",
+        "position": "Mediocampista",
+        "club": "Atalanta"
       },
       {
         "code": "GHA 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Cristopher Bonsu Baah",
+        "position": "Delantero",
+        "club": "Al-Qadisiyah"
       },
       {
         "code": "GHA 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Ernest Nuamah",
+        "position": "Delantero",
+        "club": "Lyon"
       },
       {
         "code": "GHA 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Antoine Semenyo",
+        "position": "Delantero",
+        "club": "Manchester City"
       },
       {
         "code": "GHA 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Brandon Thomas-Asante",
+        "position": "Delantero",
+        "club": "Coventry City"
       },
       {
         "code": "GHA 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Prince Kwabena Adu",
+        "position": "Delantero",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "GHA 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Iñaki Williams",
+        "position": "Delantero",
+        "club": "Athletic Club"
       },
       {
         "code": "GHA 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "GHA 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Ghana",
-        "position": "Por confirmar"
+        "name": "Jordan Ayew",
+        "position": "Delantero",
+        "club": "Leicester City"
       }
     ]
   },
@@ -3718,134 +4353,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Haiti",
     "players": [
       {
+        "code": "HAI 1",
+        "name": "Johnny Placide",
+        "position": "Portero",
+        "club": "SC Bastia"
+      },
+      {
         "code": "HAI 2",
-        "name": "Jhony Placide",
-        "position": "Portero"
+        "name": "Alexandre Pierre",
+        "position": "Portero",
+        "club": "FC Sochaux"
       },
       {
         "code": "HAI 3",
-        "name": "Alexandre Pierre",
-        "position": "Portero"
+        "name": "Josué Duverger",
+        "position": "Portero",
+        "club": "FC Cosmos Koblenz"
       },
       {
         "code": "HAI 4",
-        "name": "Josue Duverger",
-        "position": "Portero"
+        "name": "Carlens Arcus",
+        "position": "Defensa",
+        "club": "Angers SCO"
       },
       {
         "code": "HAI 5",
-        "name": "Carlens Arcus",
-        "position": "Defensa"
+        "name": "Wilguens Paugain",
+        "position": "Defensa",
+        "club": "SV Zulte Waregem"
       },
       {
         "code": "HAI 6",
-        "name": "Wilguens Paugain",
-        "position": "Defensa"
+        "name": "Duke Lacroix",
+        "position": "Defensa",
+        "club": "Colorado Springs"
       },
       {
         "code": "HAI 7",
-        "name": "Duke Lacroix",
-        "position": "Defensa"
+        "name": "Martin Experience",
+        "position": "Defensa",
+        "club": "AS Nancy-Lorraine"
       },
       {
         "code": "HAI 8",
-        "name": "Martin Experience",
-        "position": "Defensa"
+        "name": "JK Duverne",
+        "position": "Defensa",
+        "club": "KAA Gent"
       },
       {
         "code": "HAI 9",
-        "name": "Jean-Kévin Duverne",
-        "position": "Defensa"
+        "name": "Ricardo Adé",
+        "position": "Defensa",
+        "club": "LDU Quito"
       },
       {
         "code": "HAI 10",
-        "name": "Ricardo Ade",
-        "position": "Defensa"
+        "name": "Hannes Delcroix",
+        "position": "Defensa",
+        "club": "FC Lugano"
       },
       {
         "code": "HAI 11",
-        "name": "Hannes Delcroix",
-        "position": "Defensa"
+        "name": "Keeto Thermoncy",
+        "position": "Defensa",
+        "club": "BSC Young Boys II"
       },
       {
         "code": "HAI 12",
-        "name": "Keeto Thermoncy",
-        "position": "Defensa"
+        "name": "Leverton Pierre",
+        "position": "Mediocampista",
+        "club": "FC Vizela"
       },
       {
         "code": "HAI 13",
-        "name": "Carl Fred Sainté",
-        "position": "Mediocampista"
+        "name": "Carl-Fred Sainthe",
+        "position": "Mediocampista",
+        "club": "El Paso Locomotive FC"
       },
       {
         "code": "HAI 14",
-        "name": "Leverton Pierre",
-        "position": "Mediocampista"
+        "name": "Jean-Jacques Danley",
+        "position": "Mediocampista",
+        "club": "Philadelphia Union"
       },
       {
         "code": "HAI 15",
-        "name": "Danley Jean Jacques",
-        "position": "Mediocampista"
+        "name": "Jeanricner Bellegarde",
+        "position": "Mediocampista",
+        "club": "Wolverhampton"
       },
       {
         "code": "HAI 16",
-        "name": "Jean-Ricner Bellegarde",
-        "position": "Mediocampista"
+        "name": "Pierre Woodenski",
+        "position": "Mediocampista",
+        "club": "Violette AC"
       },
       {
         "code": "HAI 17",
-        "name": "Woodensky Pierre",
-        "position": "Mediocampista"
+        "name": "Dominique Simon",
+        "position": "Mediocampista",
+        "club": "FC Tatran Prešov"
       },
       {
         "code": "HAI 18",
-        "name": "Dominique Simon",
-        "position": "Mediocampista"
+        "name": "Louicius Deedson",
+        "position": "Delantero",
+        "club": "FC Dallas"
       },
       {
         "code": "HAI 19",
-        "name": "Don Deedson Louicius",
-        "position": "Delantero"
+        "name": "Ruben Providence",
+        "position": "Delantero",
+        "club": "Almere City FC"
       },
       {
         "code": "HAI 20",
-        "name": "Josue Casimir",
-        "position": "Delantero"
+        "name": "Josué Casimir",
+        "position": "Delantero",
+        "club": "AJ Auxerre"
       },
       {
         "code": "HAI 21",
         "name": "Derrick Etienne",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Toronto FC"
       },
       {
         "code": "HAI 22",
-        "name": "Ruben Providence",
-        "position": "Delantero"
+        "name": "Wilson Isidor",
+        "position": "Delantero",
+        "club": "Sunderland AFC"
       },
       {
         "code": "HAI 23",
         "name": "Duckens Nazon",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Esteghlal FC"
       },
       {
         "code": "HAI 24",
         "name": "Frantzdy Pierrot",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Çaykur Rizespor"
       },
       {
         "code": "HAI 25",
-        "name": "Wilson Isidor",
-        "position": "Delantero"
+        "name": "Yassin Fortune",
+        "position": "Delantero",
+        "club": "FC Vizela"
       },
       {
         "code": "HAI 26",
-        "name": "Yassin Fortuné",
-        "position": "Delantero"
-      },
-      {
-        "code": "HAI 27",
         "name": "Lenny Joseph",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Ferencváros TC"
       }
     ]
   },
@@ -3855,124 +4516,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Iran",
     "players": [
       {
+        "code": "IRN 1",
+        "name": "Alireza Beyranvand",
+        "position": "Portero",
+        "club": "Tractor FC"
+      },
+      {
         "code": "IRN 2",
-        "name": "Alireza Beiranvand"
+        "name": "Hosein Hoseini",
+        "position": "Portero",
+        "club": "Sepahan"
       },
       {
         "code": "IRN 3",
-        "name": "Morteza Pouraliganji"
+        "name": "Payam Niazmand",
+        "position": "Portero",
+        "club": "Persepolis"
       },
       {
         "code": "IRN 4",
-        "name": "Ehsan Hajsafi"
+        "name": "Shoja Khalilzadeh",
+        "position": "Defensa",
+        "club": "Tractor FC"
       },
       {
         "code": "IRN 5",
-        "name": "Milad Mohammadi"
+        "name": "Hosein Kanaani",
+        "position": "Defensa",
+        "club": "Persepolis"
       },
       {
         "code": "IRN 6",
-        "name": "Shojae Khalilzadeh"
+        "name": "Ali Nemati",
+        "position": "Defensa",
+        "club": "Foolad FC"
       },
       {
         "code": "IRN 7",
-        "name": "Ramin Rezaeian"
+        "name": "Danial Eiri",
+        "position": "Defensa",
+        "club": "Malavan Bandar Anzali"
       },
       {
         "code": "IRN 8",
-        "name": "Hossein Kanaani"
+        "name": "Ehsan Hajisafi",
+        "position": "Defensa",
+        "club": "Sepahan"
       },
       {
         "code": "IRN 9",
-        "name": "Sadegh Moharrami"
+        "name": "Milad Mohammadi",
+        "position": "Defensa",
+        "club": "Persepolis"
       },
       {
         "code": "IRN 10",
-        "name": "Saleh Hardani"
+        "name": "Saleh Hardani",
+        "position": "Defensa",
+        "club": "Esteghlal"
       },
       {
         "code": "IRN 11",
-        "name": "Saeed Ezatolahi"
+        "name": "Ramin Rezaeiyan",
+        "position": "Defensa",
+        "club": "Foolad"
       },
       {
         "code": "IRN 12",
-        "name": "Saman Ghoddos"
+        "name": "Saman Ghodoos",
+        "position": "Mediocampista",
+        "club": "Kalba"
       },
       {
         "code": "IRN 13",
-        "name": "Omid Noorafkan"
+        "name": "Saeid Ezatollahi",
+        "position": "Mediocampista",
+        "club": "Shabab Al-Ahli Club"
       },
       {
         "code": "IRN 14",
-        "name": "Roozbeh Cheshmi"
+        "name": "Rouzbeh Cheshmi",
+        "position": "Mediocampista",
+        "club": "Esteghlal"
       },
       {
         "code": "IRN 15",
-        "name": "Mohammad Mohebi"
+        "name": "Amir Mohammad Razagh Niya",
+        "position": "Mediocampista",
+        "club": "Esteghlal"
       },
       {
         "code": "IRN 16",
-        "name": "Sardar Azmoun"
+        "name": "Mohammad Ghorbani",
+        "position": "Mediocampista",
+        "club": "Al-Wahda"
       },
       {
         "code": "IRN 17",
-        "name": "Mehdi Taremi"
+        "name": "Mehdi Ghayedi",
+        "position": "Mediocampista",
+        "club": "Al-Nasr"
       },
       {
         "code": "IRN 18",
-        "name": "Alireza Jahanbakhsh"
+        "name": "Ariya Yousefi",
+        "position": "Mediocampista",
+        "club": "Sepahan"
       },
       {
         "code": "IRN 19",
-        "name": "Ali Gholizadeh"
+        "name": "Alireza Jahanbakhsh",
+        "position": "Mediocampista",
+        "club": "FCV Dender EH"
       },
       {
         "code": "IRN 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Mehdi Torabi",
+        "position": "Mediocampista",
+        "club": "Tractor FC"
       },
       {
         "code": "IRN 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Mohammad Mohebbi",
+        "position": "Mediocampista",
+        "club": "FK Rostov"
       },
       {
         "code": "IRN 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Mehdi Taremi",
+        "position": "Delantero",
+        "club": "Olympiacos"
       },
       {
         "code": "IRN 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Amirhossein Hosseinzadeh",
+        "position": "Delantero",
+        "club": "Tractor FC"
       },
       {
         "code": "IRN 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Denis Dargahi",
+        "position": "Delantero",
+        "club": "Standard de Lieja"
       },
       {
         "code": "IRN 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Ali Alipour",
+        "position": "Delantero",
+        "club": "Persepolis"
       },
       {
         "code": "IRN 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "IRN 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Iran",
-        "position": "Por confirmar"
+        "name": "Shahriyar Moghanloo",
+        "position": "Delantero",
+        "club": "Kalba"
       }
     ]
   },
@@ -3982,124 +4679,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Iraq",
     "players": [
       {
+        "code": "IRQ 1",
+        "name": "Jalal Hassan",
+        "position": "Portero",
+        "club": "Al-Zawraa"
+      },
+      {
         "code": "IRQ 2",
-        "name": "Jalal Hassan"
+        "name": "Ahmed Basil",
+        "position": "Portero",
+        "club": "Al-Shorta"
       },
       {
         "code": "IRQ 3",
-        "name": "Rebin Sulaka"
+        "name": "Fahad Talib",
+        "position": "Portero",
+        "club": "Al-Talaba"
       },
       {
         "code": "IRQ 4",
-        "name": "Hussein Ali"
+        "name": "Hussein Ali",
+        "position": "Defensa",
+        "club": "Pogon Szczecin"
       },
       {
         "code": "IRQ 5",
-        "name": "Akam Hashem"
+        "name": "Manaf Younis",
+        "position": "Defensa",
+        "club": "Al-Shorta"
       },
       {
         "code": "IRQ 6",
-        "name": "Merchas Doski"
+        "name": "Zaid Tahseen",
+        "position": "Defensa",
+        "club": "Pakhtakor Tashkent"
       },
       {
         "code": "IRQ 7",
-        "name": "Zaid Tahseen"
+        "name": "Rebin Sulaka",
+        "position": "Defensa",
+        "club": "Port FC"
       },
       {
         "code": "IRQ 8",
-        "name": "Manaf Younis"
+        "name": "Akam Hashem",
+        "position": "Defensa",
+        "club": "Al-Zawraa"
       },
       {
         "code": "IRQ 9",
-        "name": "Zidane Iqbal"
+        "name": "Merchas Doski",
+        "position": "Defensa",
+        "club": "Viktoria Plzen"
       },
       {
         "code": "IRQ 10",
-        "name": "Amir Al-Ammari"
+        "name": "Ahmed Yahya",
+        "position": "Defensa",
+        "club": "Al-Shorta"
       },
       {
         "code": "IRQ 11",
-        "name": "Ibrahim Bavesh"
+        "name": "Frans Putros",
+        "position": "Defensa",
+        "club": "PERSIB Bandung"
       },
       {
         "code": "IRQ 12",
-        "name": "Ali Jasim"
+        "name": "Mustafa Saadoon",
+        "position": "Defensa",
+        "club": "Al-Shorta"
       },
       {
         "code": "IRQ 13",
-        "name": "Youssef Amyn"
+        "name": "Zaid Ismail",
+        "position": "Mediocampista",
+        "club": "Al-Talaba"
       },
       {
         "code": "IRQ 14",
-        "name": "Aimar Sher"
+        "name": "Amir Al Ammari",
+        "position": "Mediocampista",
+        "club": "Cracovia"
       },
       {
         "code": "IRQ 15",
-        "name": "Marko Farji"
+        "name": "Kevin Yakob",
+        "position": "Mediocampista",
+        "club": "Aarhus GF"
       },
       {
         "code": "IRQ 16",
-        "name": "Osama Rashid"
+        "name": "Zidane Iqbal",
+        "position": "Mediocampista",
+        "club": "Utrecht"
       },
       {
         "code": "IRQ 17",
-        "name": "Ali Al-Hamadi"
+        "name": "Aimar Sher",
+        "position": "Mediocampista",
+        "club": "Sarpsborg 08 FF"
       },
       {
         "code": "IRQ 18",
-        "name": "Aymen Hussein"
+        "name": "Youssef Amyn",
+        "position": "Mediocampista",
+        "club": "AEK Larnaca"
       },
       {
         "code": "IRQ 19",
-        "name": "Mohanad Ali"
+        "name": "Ibrahim Bayesh",
+        "position": "Mediocampista",
+        "club": "Al-Dhafra"
       },
       {
         "code": "IRQ 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Ahmed Qasem",
+        "position": "Delantero",
+        "club": "Nashville SC"
       },
       {
         "code": "IRQ 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Marko Farji",
+        "position": "Delantero",
+        "club": "Venezia"
       },
       {
         "code": "IRQ 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Ali Jasim",
+        "position": "Delantero",
+        "club": "Al-Najma"
       },
       {
         "code": "IRQ 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Ali Al Hamadi",
+        "position": "Delantero",
+        "club": "Luton Town"
       },
       {
         "code": "IRQ 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Ali Yousif",
+        "position": "Delantero",
+        "club": "Al-Talaba"
       },
       {
         "code": "IRQ 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Aymen Hussein",
+        "position": "Delantero",
+        "club": "Al-Karma"
       },
       {
         "code": "IRQ 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "IRQ 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Irak",
-        "position": "Por confirmar"
+        "name": "Mohanad Ali",
+        "position": "Delantero",
+        "club": "Dibba SCC"
       }
     ]
   },
@@ -4109,124 +4842,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Jordan",
     "players": [
       {
+        "code": "JOR 1",
+        "name": "Nour Bani Attia",
+        "position": "Portero",
+        "club": "Al-Faisaly"
+      },
+      {
         "code": "JOR 2",
-        "name": "Yazeed Abulaila"
+        "name": "Yazeed Abu Laila",
+        "position": "Portero",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 3",
-        "name": "Ihsan Haddad"
+        "name": "Abdullah Al-Fakhoury",
+        "position": "Portero",
+        "club": "Al-Wehdat"
       },
       {
         "code": "JOR 4",
-        "name": "Mohammad Abu Hashish"
+        "name": "Abdullah Naseeb",
+        "position": "Defensa",
+        "club": "Al-Zawraa"
       },
       {
         "code": "JOR 5",
-        "name": "Yazan Al-Arab"
+        "name": "Saad Al-Rousan",
+        "position": "Defensa",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 6",
-        "name": "Abdallah Nasib"
+        "name": "Yazan Al-Arab",
+        "position": "Defensa",
+        "club": "FC Seúl"
       },
       {
         "code": "JOR 7",
-        "name": "Saleem Obaid"
+        "name": "Saleem Obeid",
+        "position": "Defensa",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 8",
-        "name": "Mohammad Abualnadi"
+        "name": "Mohammad Abu Al-Nadi",
+        "position": "Defensa",
+        "club": "Selangor"
       },
       {
         "code": "JOR 9",
-        "name": "Ibrahim Saadeh"
+        "name": "Hussam Abu Dahab",
+        "position": "Defensa",
+        "club": "Al-Faisaly"
       },
       {
         "code": "JOR 10",
-        "name": "Nizar Al-Rashdan"
+        "name": "Ihsan Haddad",
+        "position": "Defensa",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 11",
-        "name": "Noor Al-Rawabdeh"
+        "name": "Anas Badawi",
+        "position": "Defensa",
+        "club": "Al-Faisaly"
       },
       {
         "code": "JOR 12",
-        "name": "Mohannad Abu Taha"
+        "name": "Mohammad Abu Hashish",
+        "position": "Defensa",
+        "club": "Al-Karma"
       },
       {
         "code": "JOR 13",
-        "name": "Amer Jamous"
+        "name": "Nour Al-Rawabdeh",
+        "position": "Mediocampista",
+        "club": "Selangor"
       },
       {
         "code": "JOR 14",
-        "name": "Musa Al-Taamari"
+        "name": "Nizar Al-Rashdan",
+        "position": "Mediocampista",
+        "club": "Qatar SC"
       },
       {
         "code": "JOR 15",
-        "name": "Yazan Al-Naimat"
+        "name": "Ibrahim Saadeh",
+        "position": "Mediocampista",
+        "club": "Al-Karma"
       },
       {
         "code": "JOR 16",
-        "name": "Mahmoud Al-Mardi"
+        "name": "Rajai Ayed",
+        "position": "Mediocampista",
+        "club": "Al-hussein"
       },
       {
         "code": "JOR 17",
-        "name": "Ali Olwan"
+        "name": "Amer Jamous",
+        "position": "Mediocampista",
+        "club": "Al-Zawraa"
       },
       {
         "code": "JOR 18",
-        "name": "Mohammad Abu Zrayq"
+        "name": "Muhannad Abu Taha",
+        "position": "Mediocampista",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 19",
-        "name": "Ibrahim Sabra"
+        "name": "Mohammad Al-Dawood",
+        "position": "Delantero",
+        "club": "Al-Wehdat"
       },
       {
         "code": "JOR 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Mahmoud Mardi",
+        "position": "Delantero",
+        "club": "Al-Hussein"
       },
       {
         "code": "JOR 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Awda Al-Fakhoury",
+        "position": "Delantero",
+        "club": "Pyramids"
       },
       {
         "code": "JOR 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Mousa Al-Taamari",
+        "position": "Delantero",
+        "club": "Stade Rennais"
       },
       {
         "code": "JOR 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Mohammad Abu Zureiq",
+        "position": "Delantero",
+        "club": "Raja CA"
       },
       {
         "code": "JOR 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Ali Azayza",
+        "position": "Delantero",
+        "club": "Al-Shabab"
       },
       {
         "code": "JOR 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Ibrahim Sabra",
+        "position": "Delantero",
+        "club": "Lokomotiv Zagreb"
       },
       {
         "code": "JOR 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "JOR 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Jordania",
-        "position": "Por confirmar"
+        "name": "Ali Alwan",
+        "position": "Delantero",
+        "club": "Al-Sailiya"
       }
     ]
   },
@@ -4236,134 +5005,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Japan",
     "players": [
       {
+        "code": "JPN 1",
+        "name": "Zion Suzuki",
+        "position": "Portero",
+        "club": "Parma"
+      },
+      {
         "code": "JPN 2",
-        "name": "Tomoki Hayakawa",
-        "position": "Portero"
+        "name": "Keisuke Osako",
+        "position": "Portero",
+        "club": "Sanfrecce Hiroshima"
       },
       {
         "code": "JPN 3",
-        "name": "Keisuke Osako",
-        "position": "Portero"
+        "name": "Tomoki Hayakawa",
+        "position": "Portero",
+        "club": "Kashima"
       },
       {
         "code": "JPN 4",
-        "name": "Zion Suzuki",
-        "position": "Portero"
+        "name": "Yuto Nagamoto",
+        "position": "Defensa",
+        "club": "FC Tokyo"
       },
       {
         "code": "JPN 5",
-        "name": "Ko Itakura",
-        "position": "Defensa"
+        "name": "Shogo Taniguchi",
+        "position": "Defensa",
+        "club": "Sint-Truiden"
       },
       {
         "code": "JPN 6",
-        "name": "Hiroki Ito",
-        "position": "Defensa"
+        "name": "Ko Itakura",
+        "position": "Defensa",
+        "club": "Ajax"
       },
       {
         "code": "JPN 7",
-        "name": "Yuto Nagatomo",
-        "position": "Defensa"
+        "name": "Takehiro Tomisayu",
+        "position": "Defensa",
+        "club": "Ajax"
       },
       {
         "code": "JPN 8",
         "name": "Ayumu Seko",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Le Havre"
       },
       {
         "code": "JPN 9",
         "name": "Yukinari Sugawara",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Werder Bremen"
       },
       {
         "code": "JPN 10",
-        "name": "Junnosuke Suzuki",
-        "position": "Defensa"
+        "name": "Hiroki Ito",
+        "position": "Defensa",
+        "club": "Bayern de Múnich"
       },
       {
         "code": "JPN 11",
-        "name": "Shogo Taniguchi",
-        "position": "Defensa"
+        "name": "Junnosuke Suzuki",
+        "position": "Defensa",
+        "club": "Copenhague"
       },
       {
         "code": "JPN 12",
-        "name": "Takehiro Tomiyasu",
-        "position": "Defensa"
+        "name": "Tsuyoshi Watanabe",
+        "position": "Defensa",
+        "club": "Feyenoord"
       },
       {
         "code": "JPN 13",
-        "name": "Tsuyoshi Watanabe",
-        "position": "Defensa"
+        "name": "Kaishu Sano",
+        "position": "Mediocampista",
+        "club": "Mainz"
       },
       {
         "code": "JPN 14",
-        "name": "Ritsu Doan",
-        "position": "Mediocampista"
+        "name": "Wataru Endo",
+        "position": "Mediocampista",
+        "club": "Liverpool"
       },
       {
         "code": "JPN 15",
-        "name": "Wataru Endo",
-        "position": "Mediocampista"
+        "name": "Ao Tanaka",
+        "position": "Mediocampista",
+        "club": "Leeds"
       },
       {
         "code": "JPN 16",
-        "name": "Junya Ito",
-        "position": "Mediocampista"
+        "name": "Daichi Kamada",
+        "position": "Mediocampista",
+        "club": "Crystal Palace"
       },
       {
         "code": "JPN 17",
-        "name": "Daichi Kamada",
-        "position": "Mediocampista"
+        "name": "Junya Ito",
+        "position": "Mediocampista",
+        "club": "Genk"
       },
       {
         "code": "JPN 18",
-        "name": "Takefusa Kubo",
-        "position": "Mediocampista"
+        "name": "Kaito Nakamura",
+        "position": "Delantero",
+        "club": "Stade Reims"
       },
       {
         "code": "JPN 19",
-        "name": "Keito Nakamura",
-        "position": "Mediocampista"
+        "name": "Daizen Maeda",
+        "position": "Delantero",
+        "club": "Celtic"
       },
       {
         "code": "JPN 20",
-        "name": "Kaishu Sano",
-        "position": "Mediocampista"
+        "name": "Koki Ogawa",
+        "position": "Delantero",
+        "club": "NEC"
       },
       {
         "code": "JPN 21",
-        "name": "Ao Tanaka",
-        "position": "Mediocampista"
+        "name": "Takefusa Kubo",
+        "position": "Delantero",
+        "club": "Real Sociedad"
       },
       {
         "code": "JPN 22",
-        "name": "Keisuke Goto",
-        "position": "Delantero"
+        "name": "Yuito Suzuki",
+        "position": "Delantero",
+        "club": "Friburgo"
       },
       {
         "code": "JPN 23",
-        "name": "Daizen Maeda",
-        "position": "Delantero"
+        "name": "Kento Shiogai",
+        "position": "Delantero",
+        "club": "Wolfsburgo"
       },
       {
         "code": "JPN 24",
-        "name": "Koki Ogawa",
-        "position": "Delantero"
+        "name": "Keisuke Goto",
+        "position": "Delantero",
+        "club": "Sint-Truiden"
       },
       {
         "code": "JPN 25",
-        "name": "Kento Shiogai",
-        "position": "Delantero"
+        "name": "Ritsu Doan",
+        "position": "Delantero",
+        "club": "Eintracht"
       },
       {
         "code": "JPN 26",
-        "name": "Yuito Suzuki",
-        "position": "Delantero"
-      },
-      {
-        "code": "JPN 27",
         "name": "Ayase Ueda",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Feyenoord"
       }
     ]
   },
@@ -4373,160 +5168,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "South Korea",
     "players": [
       {
+        "code": "KOR 1",
+        "name": "Kim Seung-Gyu",
+        "position": "Portero",
+        "club": "FC Tokyo"
+      },
+      {
         "code": "KOR 2",
-        "name": "Kim Seung-gyu",
-        "club": "FC Tokio/JPN",
-        "position": "Portero"
+        "name": "Song Bum Keun",
+        "position": "Portero",
+        "club": "Jeonbuk Hyundai"
       },
       {
         "code": "KOR 3",
-        "name": "Bum-keun Song",
-        "club": "Jeonbuk",
-        "position": "Portero"
+        "name": "Jo Hyeon-Woo",
+        "position": "Portero",
+        "club": "Ulsan HD"
       },
       {
         "code": "KOR 4",
-        "name": "Hyeon-woo Jo",
-        "club": "Ulsan",
-        "position": "Portero"
+        "name": "Kim Moon-Hwan",
+        "position": "Defensa",
+        "club": "Daejon Hana"
       },
       {
         "code": "KOR 5",
-        "name": "Kim Moon-hwan",
-        "club": "Daejeon",
-        "position": "Defensa"
+        "name": "Kim Min-Jae",
+        "position": "Defensa",
+        "club": "Bayern de Múnich"
       },
       {
         "code": "KOR 6",
-        "name": "Kim Min-jae",
-        "club": "Bayern Múnich/GER",
-        "position": "Defensa"
+        "name": "Kim Tae-Hwan",
+        "position": "Defensa",
+        "club": "Kashima Antlers"
       },
       {
         "code": "KOR 7",
-        "name": "Kim Tae-hyeon",
-        "club": "Kashima Antlers/JPN",
-        "position": "Defensa"
+        "name": "Park Jin-Seob",
+        "position": "Defensa",
+        "club": "Jeonbuk Hyundai"
       },
       {
         "code": "KOR 8",
-        "name": "Jin-seop Park",
-        "club": "Zhejiang/CHN",
-        "position": "Defensa"
+        "name": "Seol Young-Woo",
+        "position": "Defensa",
+        "club": "Estrella Roja"
       },
       {
         "code": "KOR 9",
-        "name": "Young-woo Seol",
-        "club": "Estrella Roja/SRB",
-        "position": "Defensa"
+        "name": "Jens Castrop",
+        "position": "Defensa",
+        "club": "Borussia Mönchengladbach"
       },
       {
         "code": "KOR 10",
-        "name": "Jens Castrop",
-        "club": "Borussia Mönchengladbach/GER",
-        "position": "Defensa"
+        "name": "Lee Ki-Hyuk",
+        "position": "Defensa",
+        "club": "Gangwon FC"
       },
       {
         "code": "KOR 11",
-        "name": "Ki-hyuk Lee",
-        "club": "Gangwon",
-        "position": "Defensa"
+        "name": "Lee Tae-Seok",
+        "position": "Defensa",
+        "club": "Austria de Viena"
       },
       {
         "code": "KOR 12",
-        "name": "Tae-seok Lee",
-        "club": "Austria Viena/AUT",
-        "position": "Defensa"
+        "name": "Lee Han-Beom",
+        "position": "Defensa",
+        "club": "Midtjylland"
       },
       {
         "code": "KOR 13",
-        "name": "Han-beom Lee",
-        "club": "Midtjylland/DIN",
-        "position": "Defensa"
+        "name": "Cho Yumin",
+        "position": "Defensa",
+        "club": "Sharjah FC"
       },
       {
         "code": "KOR 14",
-        "name": "Yu-min Cho",
-        "club": "Al Sharjah/EAU",
-        "position": "Defensa"
+        "name": "Kim Jin-Gyu",
+        "position": "Mediocampista",
+        "club": "Jeonbuk Hyundai"
       },
       {
         "code": "KOR 15",
-        "name": "Kim Jin-gyu",
-        "club": "Jeonbuk",
-        "position": "Mediocampista"
+        "name": "Bae Jun-Ho",
+        "position": "Mediocampista",
+        "club": "Stoke City"
       },
       {
         "code": "KOR 16",
-        "name": "Jun-ho Bae",
-        "club": "Stoke City/ING",
-        "position": "Mediocampista"
+        "name": "Paik Seung-Ho",
+        "position": "Mediocampista",
+        "club": "Brimingham City"
       },
       {
         "code": "KOR 17",
-        "name": "Seung-ho Paik",
-        "club": "Birmingham/ING",
-        "position": "Mediocampista"
+        "name": "Yang Hyun-Jun",
+        "position": "Mediocampista",
+        "club": "Celtic"
       },
       {
         "code": "KOR 18",
-        "name": "Hyun-jun Yang",
-        "club": "Celtic Glasgow/ESC",
-        "position": "Mediocampista"
+        "name": "Eom Ji-Sung",
+        "position": "Mediocampista",
+        "club": "Swansea City"
       },
       {
         "code": "KOR 19",
-        "name": "Ji-sung Eom",
-        "club": "Swansea/ING",
-        "position": "Mediocampista"
+        "name": "Lee Kang-In",
+        "position": "Mediocampista",
+        "club": "PSG"
       },
       {
         "code": "KOR 20",
-        "name": "Kang-in Lee",
-        "club": "PSG/FRA",
-        "position": "Mediocampista"
+        "name": "Lee Dong-Gyeong",
+        "position": "Mediocampista",
+        "club": "Ulsan HD"
       },
       {
         "code": "KOR 21",
-        "name": "Dong-gyeong Lee",
-        "club": "Ulsan",
-        "position": "Mediocampista"
+        "name": "Lee Jjae-Sung )Mainz 05)",
+        "position": "Mediocampista",
+        "club": ""
       },
       {
         "code": "KOR 22",
-        "name": "Jae-sung Lee",
-        "club": "Mainz/GER",
-        "position": "Mediocampista"
+        "name": "Hwang In-Beom",
+        "position": "Mediocampista",
+        "club": "Feyenoord"
       },
       {
         "code": "KOR 23",
-        "name": "In-beom Hwang",
-        "club": "Feyenoord/NED",
-        "position": "Mediocampista"
+        "name": "Hwang Hee-Chan",
+        "position": "Mediocampista",
+        "club": "Wolverhampton"
       },
       {
         "code": "KOR 24",
-        "name": "Hee-chan Hwang",
-        "club": "Wolverhampton/ING",
-        "position": "Mediocampista"
+        "name": "Song Heung-Min",
+        "position": "Delantero",
+        "club": "LA FC"
       },
       {
         "code": "KOR 25",
-        "name": "Heung-min Son",
-        "club": "LAFC/USA",
-        "position": "Delantero"
+        "name": "Oh Hyeon-Gyu",
+        "position": "Delantero",
+        "club": "Besiktas"
       },
       {
         "code": "KOR 26",
-        "name": "Hyeon-gyu Oh",
-        "club": "Besiktas/TUR",
-        "position": "Delantero"
-      },
-      {
-        "code": "KOR 27",
-        "name": "Gue-sung Cho",
-        "club": "Midtjylland/DIN",
-        "position": "Delantero"
+        "name": "Cho Gue-Sung",
+        "position": "Delantero",
+        "club": "Midtjylland"
       }
     ]
   },
@@ -4536,134 +5331,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Saudi Arabia",
     "players": [
       {
+        "code": "KSA 1",
+        "name": "Ahmed Alkassar",
+        "position": "Portero",
+        "club": "Al Qadsiah"
+      },
+      {
         "code": "KSA 2",
-        "name": "Ahmed Al Kassar",
-        "position": "Portero"
+        "name": "Mohammed Alowais",
+        "position": "Portero",
+        "club": "Al Ula"
       },
       {
         "code": "KSA 3",
-        "name": "Mohammed Al Owais",
-        "position": "Portero"
+        "name": "Nawaf Alaqidi",
+        "position": "Portero",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 4",
-        "name": "Nawaf Al Aqidi",
-        "position": "Portero"
+        "name": "Abdulelah Alamri",
+        "position": "Defensa",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 5",
-        "name": "Abdulqudus Attia",
-        "position": "Portero"
+        "name": "Ali Lajami",
+        "position": "Defensa",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 6",
-        "name": "Saud Abdulhamid",
-        "position": "Defensa"
+        "name": "Ali Majrashi",
+        "position": "Defensa",
+        "club": "Al Ahli"
       },
       {
         "code": "KSA 7",
-        "name": "Mohammed Abu Al Shamat",
-        "position": "Defensa"
+        "name": "Hassan Kadish",
+        "position": "Defensa",
+        "club": "Al Ittihad"
       },
       {
         "code": "KSA 8",
-        "name": "Khalid Al Ghannam",
-        "position": "Defensa"
+        "name": "Hassan Altambakti",
+        "position": "Defensa",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 9",
-        "name": "Moteb Al Harbi",
-        "position": "Defensa"
+        "name": "Jehad Thikri",
+        "position": "Defensa",
+        "club": "Al Qadsiah"
       },
       {
         "code": "KSA 10",
-        "name": "Abdulelah Al Amri",
-        "position": "Defensa"
+        "name": "Mohammed Abualshamat",
+        "position": "Defensa",
+        "club": "Al Qadsiah"
       },
       {
         "code": "KSA 11",
-        "name": "Nawaf Boushal",
-        "position": "Defensa"
+        "name": "Moteb Alharbi",
+        "position": "Defensa",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 12",
-        "name": "Zakaria Hawsawi",
-        "position": "Defensa"
+        "name": "Nawaf Buwashl",
+        "position": "Defensa",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 13",
-        "name": "Hassan Kadesh",
-        "position": "Defensa"
+        "name": "Saud Abdulhamid",
+        "position": "Defensa",
+        "club": "Lens"
       },
       {
         "code": "KSA 14",
-        "name": "Ali Lajami",
-        "position": "Defensa"
+        "name": "Abdullah Alkhaibari",
+        "position": "Mediocampista",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 15",
-        "name": "Ali Majrashi",
-        "position": "Defensa"
+        "name": "Aiman Yahya",
+        "position": "Mediocampista",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 16",
-        "name": "Hassan Tambakti",
-        "position": "Defensa"
+        "name": "Khalid Alghannam",
+        "position": "Mediocampista",
+        "club": "Al Ettifaq"
       },
       {
         "code": "KSA 17",
-        "name": "Jehad Thikri",
-        "position": "Defensa"
+        "name": "Mohamed Kanno",
+        "position": "Mediocampista",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 18",
-        "name": "Nasser Al Dawsari",
-        "position": "Mediocampista"
+        "name": "Musab Aljuwayr",
+        "position": "Mediocampista",
+        "club": "Al Qadsiah"
       },
       {
         "code": "KSA 19",
-        "name": "Alaa Al Hajji",
-        "position": "Mediocampista"
+        "name": "Nasser Aldawsari",
+        "position": "Mediocampista",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 20",
-        "name": "Ziyad Al Johani",
-        "position": "Mediocampista"
+        "name": "Salem Aldawsari",
+        "position": "Mediocampista",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 21",
-        "name": "Musab Al Juwayr",
-        "position": "Mediocampista"
+        "name": "Sultan Mandash",
+        "position": "Mediocampista",
+        "club": "Al Hilal"
       },
       {
         "code": "KSA 22",
-        "name": "Abdullah Al Khaibari",
-        "position": "Mediocampista"
+        "name": "Ziyad Aljohani",
+        "position": "Mediocampista",
+        "club": "Al Ahli"
       },
       {
         "code": "KSA 23",
-        "name": "Saleh Abu Al Shamat",
-        "position": "Mediocampista"
+        "name": "Alaa Al-Hejji",
+        "position": "Mediocampista",
+        "club": "Neom"
       },
       {
         "code": "KSA 24",
-        "name": "Mohammed Kanno",
-        "position": "Mediocampista"
+        "name": "Abdullah Alhamddan",
+        "position": "Delantero",
+        "club": "Al Nassr"
       },
       {
         "code": "KSA 25",
-        "name": "Sultan Mandash",
-        "position": "Mediocampista"
+        "name": "Feras Albrikan",
+        "position": "Delantero",
+        "club": "Al Ahli"
       },
       {
         "code": "KSA 26",
-        "name": "Ayman Yahya",
-        "position": "Mediocampista"
-      },
-      {
-        "code": "KSA 27",
-        "name": "Feras Al Brikan",
-        "position": "Delantero"
+        "name": "Saleh Alshehri",
+        "position": "Delantero",
+        "club": "Al Ittihad"
       }
     ]
   },
@@ -4673,134 +5494,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Morocco",
     "players": [
       {
-        "code": "MAR 2",
+        "code": "MAR 1",
         "name": "Yassine Bounou",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Al Hilal SFC"
+      },
+      {
+        "code": "MAR 2",
+        "name": "Munir El Kajoui",
+        "position": "Portero",
+        "club": "RS Berkane"
       },
       {
         "code": "MAR 3",
-        "name": "Munir El Kajoui",
-        "position": "Portero"
+        "name": "Ajmed Reda Tagnaouti",
+        "position": "Portero",
+        "club": "Raja Casablanca"
       },
       {
         "code": "MAR 4",
-        "name": "Ajmed Reda Tagnaouti",
-        "position": "Portero"
+        "name": "Achraf Hakimi",
+        "position": "Defensa",
+        "club": "Paris Saint-Germain"
       },
       {
         "code": "MAR 5",
-        "name": "Achraf Hakimi",
-        "position": "Defensa"
+        "name": "Nayef Aguerd",
+        "position": "Defensa",
+        "club": "West Ham United/Marsella"
       },
       {
         "code": "MAR 6",
-        "name": "Nayef Aguerd",
-        "position": "Defensa"
+        "name": "Noussair Mazraoui",
+        "position": "Defensa",
+        "club": "Manchester United"
       },
       {
         "code": "MAR 7",
-        "name": "Noussair Mazraoui",
-        "position": "Defensa"
+        "name": "Anass Salah-Eddine",
+        "position": "Defensa",
+        "club": "FC Twente"
       },
       {
         "code": "MAR 8",
-        "name": "Anass Salah-Eddine",
-        "position": "Defensa"
+        "name": "Chadi Riad",
+        "position": "Defensa",
+        "club": "Crystal Palace"
       },
       {
         "code": "MAR 9",
-        "name": "Chadi Riad",
-        "position": "Defensa"
+        "name": "Youssef Belammari",
+        "position": "Defensa",
+        "club": "Al Ahly"
       },
       {
         "code": "MAR 10",
-        "name": "Youssef Belammari",
-        "position": "Defensa"
+        "name": "Issa Diop",
+        "position": "Defensa",
+        "club": "Fulham"
       },
       {
         "code": "MAR 11",
-        "name": "Issa Diop",
-        "position": "Defensa"
+        "name": "Redouane Hahlal",
+        "position": "Defensa",
+        "club": "Mechelen"
       },
       {
         "code": "MAR 12",
-        "name": "Redouane Hahlal",
-        "position": "Defensa"
+        "name": "Zakaria El Ouahdi",
+        "position": "Defensa",
+        "club": "Genk"
       },
       {
         "code": "MAR 13",
-        "name": "Zakaria El Ouahdi",
-        "position": "Defensa"
+        "name": "Sofyan Amrabat",
+        "position": "Mediocampista",
+        "club": "Fenerbahçe SK/Betis"
       },
       {
         "code": "MAR 14",
-        "name": "Sofyan Amrabat",
-        "position": "Mediocampista"
+        "name": "Ismael Saibari",
+        "position": "Mediocampista",
+        "club": "PSV Eindhoven"
       },
       {
         "code": "MAR 15",
-        "name": "Ismael Saibari",
-        "position": "Mediocampista"
+        "name": "Neil El Aynaoui",
+        "position": "Mediocampista",
+        "club": "Roma"
       },
       {
         "code": "MAR 16",
-        "name": "Neil El Aynaoui",
-        "position": "Mediocampista"
+        "name": "Bilal El Khannouss",
+        "position": "Mediocampista",
+        "club": "Stuttgart"
       },
       {
         "code": "MAR 17",
-        "name": "Bilal El Khannouss",
-        "position": "Mediocampista"
+        "name": "Azzedine Ounahi",
+        "position": "Mediocampista",
+        "club": "Girona"
       },
       {
         "code": "MAR 18",
-        "name": "Azzedine Ounahi",
-        "position": "Mediocampista"
+        "name": "Bouaddi",
+        "position": "Mediocampista",
+        "club": "Lille"
       },
       {
         "code": "MAR 19",
-        "name": "Bouaddi",
-        "position": "Mediocampista"
+        "name": "Samir El Mourabet",
+        "position": "Mediocampista",
+        "club": "Estrasburgo"
       },
       {
         "code": "MAR 20",
-        "name": "Samir El Mourabet",
-        "position": "Mediocampista"
+        "name": "Brahim Díaz",
+        "position": "Delantero",
+        "club": "Real Madrid"
       },
       {
         "code": "MAR 21",
-        "name": "Brahim Díaz",
-        "position": "Delantero"
+        "name": "Chemsdine Talbi",
+        "position": "Delantero",
+        "club": "Sunderland"
       },
       {
         "code": "MAR 22",
-        "name": "Chemsdine Talbi",
-        "position": "Delantero"
+        "name": "Ayoub El Kaabi",
+        "position": "Delantero",
+        "club": "Olympiacos FC"
       },
       {
         "code": "MAR 23",
-        "name": "Ayoub El Kaabi",
-        "position": "Delantero"
+        "name": "Soufiane Rahimi",
+        "position": "Delantero",
+        "club": "Al-Ain FC"
       },
       {
         "code": "MAR 24",
-        "name": "Soufiane Rahimi",
-        "position": "Delantero"
+        "name": "Abde Ezzalzouli",
+        "position": "Delantero",
+        "club": "Real Betis"
       },
       {
         "code": "MAR 25",
-        "name": "Abde Ezzalzouli",
-        "position": "Delantero"
+        "name": "Ayoube Amaimouni",
+        "position": "Delantero",
+        "club": "Eintracht Frankfurt"
       },
       {
         "code": "MAR 26",
-        "name": "Ayoube Amaimouni",
-        "position": "Delantero"
-      },
-      {
-        "code": "MAR 27",
         "name": "Yassine Gessime",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Estrasburgo"
       }
     ]
   },
@@ -4810,160 +5657,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Mexico",
     "players": [
       {
-        "code": "MEX 2",
+        "code": "MEX 1",
         "name": "Raúl Rangel",
-        "club": "Chivas, MEX",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Chivas"
+      },
+      {
+        "code": "MEX 2",
+        "name": "Carlos Acevedo",
+        "position": "Portero",
+        "club": "Santos Laguna"
       },
       {
         "code": "MEX 3",
-        "name": "Carlos Acevedo",
-        "club": "Santos, MEX",
-        "position": "Portero"
+        "name": "Guillermo Ochoa",
+        "position": "Portero",
+        "club": "AEL Limassol"
       },
       {
         "code": "MEX 4",
-        "name": "Antonio Rodríguez",
-        "club": "Tijuana, MEX",
-        "position": "Portero"
+        "name": "Israel Reyes",
+        "position": "Defensa",
+        "club": "América"
       },
       {
         "code": "MEX 5",
-        "name": "Carlos Moreno",
-        "club": "Pachuca, MEX",
-        "position": "Portero"
+        "name": "Jorge Sánchez",
+        "position": "Defensa",
+        "club": "Cruz Azul"
       },
       {
         "code": "MEX 6",
-        "name": "Guillermo Ochoa",
-        "club": "Ael Limassol, CYP",
-        "position": "Portero"
+        "name": "César Montes",
+        "position": "Defensa",
+        "club": "Lokomotiv Moscú"
       },
       {
         "code": "MEX 7",
-        "name": "Alex Padilla",
-        "club": "Bilbao, ESP",
-        "position": "Portero"
+        "name": "Edsol Álvarez",
+        "position": "Defensa",
+        "club": "West Ham"
       },
       {
         "code": "MEX 8",
-        "name": "Bryan González",
-        "club": "Pachuca, MEX",
-        "position": "Defensa"
+        "name": "Johan Vásquez",
+        "position": "Defensa",
+        "club": "Genoa"
       },
       {
         "code": "MEX 9",
-        "name": "César Montes",
-        "club": "Lokomotiv, RUS",
-        "position": "Defensa"
+        "name": "Jesús Gallardo",
+        "position": "Defensa",
+        "club": "Toluca"
       },
       {
         "code": "MEX 10",
-        "name": "Edson Álvarez",
-        "club": "Fenerbahce, TUR",
-        "position": "Defensa"
+        "name": "Mateo Chávez",
+        "position": "Defensa",
+        "club": "AZ Alkmaar"
       },
       {
         "code": "MEX 11",
-        "name": "Everardo López",
-        "club": "Toluca, MEX",
-        "position": "Defensa"
+        "name": "Álvaro Fidalgo",
+        "position": "Mediocampista",
+        "club": "Betis"
       },
       {
         "code": "MEX 12",
-        "name": "Israel Reyes",
-        "club": "América, MEX",
-        "position": "Defensa"
+        "name": "Brian Gutiérrez",
+        "position": "Mediocampista",
+        "club": "Chivas"
       },
       {
         "code": "MEX 13",
-        "name": "Jesús Angulo",
-        "club": "Tigres, MEX",
-        "position": "Defensa"
+        "name": "Orbelín Pineda",
+        "position": "Mediocampista",
+        "club": "AEK Atenas"
       },
       {
         "code": "MEX 14",
-        "name": "Jesús Gallardo",
-        "club": "Toluca, MEX",
-        "position": "Defensa"
+        "name": "Erik Lira",
+        "position": "Mediocampista",
+        "club": "Cruz Azul"
       },
       {
         "code": "MEX 15",
-        "name": "Jesús Gómez",
-        "club": "Tijuana, MEX",
-        "position": "Defensa"
+        "name": "Luis Romo",
+        "position": "Mediocampista",
+        "club": "Chivas"
       },
       {
         "code": "MEX 16",
-        "name": "Johan Vásquez (Genoa, ITA) Jorge Sánchez",
-        "club": "PAOK, GRE",
-        "position": "Defensa"
+        "name": "Obed Vargas",
+        "position": "Mediocampista",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "MEX 17",
-        "name": "Julián Araujo",
-        "club": "Celtic, SCO",
-        "position": "Defensa"
+        "name": "Gilberto Mora",
+        "position": "Mediocampista",
+        "club": "Tijuana"
       },
       {
         "code": "MEX 18",
-        "name": "Mateo Chávez",
-        "club": "AZ Alkmaar, NED",
-        "position": "Defensa"
+        "name": "Luis Chávez",
+        "position": "Mediocampista",
+        "club": "Dinamo Moscú"
       },
       {
         "code": "MEX 19",
-        "name": "Ramón Juárez",
-        "club": "América, MEX",
-        "position": "Defensa"
+        "name": "Roberto Alvarado",
+        "position": "Delantero",
+        "club": "Chivas"
       },
       {
         "code": "MEX 20",
-        "name": "Richard Ledezma",
-        "club": "Chivas, MEX",
-        "position": "Defensa"
+        "name": "César Huerta",
+        "position": "Delantero",
+        "club": "Anderlecht"
       },
       {
         "code": "MEX 21",
-        "name": "Víctor Guzmán",
-        "club": "Monterrey, MEX",
-        "position": "Defensa"
+        "name": "Guillermo Martínez",
+        "position": "Delantero",
+        "club": "Pumas"
       },
       {
         "code": "MEX 22",
-        "name": "Alexei Domínguez",
-        "club": "Pachuca, MEX",
-        "position": "Mediocampista"
+        "name": "Armando González",
+        "position": "Delantero",
+        "club": "Chivas"
       },
       {
         "code": "MEX 23",
-        "name": "Alexis Gutiérrez",
-        "club": "América, MEX",
-        "position": "Mediocampista"
+        "name": "Santiago Giménez",
+        "position": "Delantero",
+        "club": "Milan"
       },
       {
         "code": "MEX 24",
-        "name": "Álvaro Fidalgo",
-        "club": "Real Betis, MEX",
-        "position": "Mediocampista"
+        "name": "Raúl Jiménez",
+        "position": "Delantero",
+        "club": "Fulham"
       },
       {
         "code": "MEX 25",
-        "name": "Brian Gutiérrez",
-        "club": "Chivas, MEX",
-        "position": "Mediocampista"
+        "name": "Julián Quiñones",
+        "position": "Delantero",
+        "club": "Al Qadsiah"
       },
       {
         "code": "MEX 26",
-        "name": "Carlos Rodríguez",
-        "club": "Cruz Azul, MEX",
-        "position": "Mediocampista"
-      },
-      {
-        "code": "MEX 27",
-        "name": "Denzell García",
-        "club": "FC Juárez, MEX",
-        "position": "Mediocampista"
+        "name": "Alexis Vega",
+        "position": "Delantero",
+        "club": "Toluca"
       }
     ]
   },
@@ -4973,134 +5820,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Netherlands",
     "players": [
       {
+        "code": "NED 1",
+        "name": "Bart Verbruggen",
+        "position": "Portero",
+        "club": "Brighton & Hove Albion"
+      },
+      {
         "code": "NED 2",
-        "name": "Mark Flekken",
-        "position": "Portero"
+        "name": "Robin Roefs",
+        "position": "Portero",
+        "club": "Sunderland"
       },
       {
         "code": "NED 3",
-        "name": "Robin Roefs",
-        "position": "Portero"
+        "name": "Mark Flekken",
+        "position": "Portero",
+        "club": "Bayer 04 Leverkusen"
       },
       {
         "code": "NED 4",
-        "name": "Bart Verbruggen",
-        "position": "Portero"
+        "name": "Nathan Aké",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "NED 5",
-        "name": "Nathan Ake",
-        "position": "Defensa"
+        "name": "Virgil van Dijk",
+        "position": "Defensa",
+        "club": "Liverpool"
       },
       {
         "code": "NED 6",
-        "name": "Denzel Dumfries",
-        "position": "Defensa"
+        "name": "Jorrel Hato",
+        "position": "Defensa",
+        "club": "Chelsea"
       },
       {
         "code": "NED 7",
-        "name": "Jorrel Hato",
-        "position": "Defensa"
+        "name": "Jan Paul van Hecke",
+        "position": "Defensa",
+        "club": "Brighton & Hove Albion"
       },
       {
         "code": "NED 8",
-        "name": "Jurrien Timber",
-        "position": "Defensa"
+        "name": "Denzel Dumfries",
+        "position": "Defensa",
+        "club": "Inter"
       },
       {
         "code": "NED 9",
-        "name": "Jan Paul van Hecke",
-        "position": "Defensa"
+        "name": "Jurriën Timber",
+        "position": "Defensa",
+        "club": "Arsenal"
       },
       {
         "code": "NED 10",
-        "name": "Virgil van Dijk",
-        "position": "Defensa"
+        "name": "Micky van de Ven",
+        "position": "Defensa",
+        "club": "Tottenham Hotspur"
       },
       {
         "code": "NED 11",
-        "name": "Micky van de Ven",
-        "position": "Defensa"
+        "name": "Ryan Gravenberch",
+        "position": "Mediocampista",
+        "club": "Liverpool"
       },
       {
         "code": "NED 12",
         "name": "Frenkie de Jong",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Barcelona"
       },
       {
         "code": "NED 13",
         "name": "Marten de Roon",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Atalanta"
       },
       {
         "code": "NED 14",
-        "name": "Ryan Gravenberch",
-        "position": "Mediocampista"
+        "name": "Tijjani Reijnders",
+        "position": "Mediocampista",
+        "club": "Manchester City"
       },
       {
         "code": "NED 15",
         "name": "Teun Koopmeiners",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Juventus"
       },
       {
         "code": "NED 16",
-        "name": "Tijjani Reijnders",
-        "position": "Mediocampista"
+        "name": "Noa Lang",
+        "position": "Mediocampista",
+        "club": "Galatasaray"
       },
       {
         "code": "NED 17",
-        "name": "Guus Til",
-        "position": "Mediocampista"
+        "name": "Mats Wieffer",
+        "position": "Mediocampista",
+        "club": "Brighton & Hove Albion"
       },
       {
         "code": "NED 18",
         "name": "Quinten Timber",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Olympique de Marseille"
       },
       {
         "code": "NED 19",
-        "name": "Mats Wieffer",
-        "position": "Mediocampista"
+        "name": "Crysencio Summerville",
+        "position": "Mediocampista",
+        "club": "West Ham United"
       },
       {
         "code": "NED 20",
-        "name": "Brian Brobbey",
-        "position": "Delantero"
+        "name": "Guus Til",
+        "position": "Mediocampista",
+        "club": "PSV"
       },
       {
         "code": "NED 21",
-        "name": "Memphis Depay",
-        "position": "Delantero"
+        "name": "Brian Brobbey",
+        "position": "Delantero",
+        "club": "Sunderland"
       },
       {
         "code": "NED 22",
-        "name": "Cody Gakpo",
-        "position": "Delantero"
+        "name": "Memphis Depay",
+        "position": "Delantero",
+        "club": "Corinthians"
       },
       {
         "code": "NED 23",
-        "name": "Justin Kluivert",
-        "position": "Delantero"
+        "name": "Cody Gakpo",
+        "position": "Delantero",
+        "club": "Liverpool"
       },
       {
         "code": "NED 24",
-        "name": "Noa Lang",
-        "position": "Delantero"
+        "name": "Justin Kluivert",
+        "position": "Delantero",
+        "club": "Bournemouth"
       },
       {
         "code": "NED 25",
         "name": "Donyell Malen",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "AS Roma"
       },
       {
         "code": "NED 26",
-        "name": "Crysencio Summerville",
-        "position": "Delantero"
-      },
-      {
-        "code": "NED 27",
         "name": "Wout Weghorst",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Ajax"
       }
     ]
   },
@@ -5110,134 +5983,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Norway",
     "players": [
       {
-        "code": "NOR 2",
+        "code": "NOR 1",
         "name": "Orjan Haskjold Nyland",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Sevilla"
+      },
+      {
+        "code": "NOR 2",
+        "name": "Sander Tangvik",
+        "position": "Portero",
+        "club": "Hamburgo"
       },
       {
         "code": "NOR 3",
         "name": "Egil Selvik",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Watford"
       },
       {
         "code": "NOR 4",
-        "name": "Sander Tangvik",
-        "position": "Portero"
+        "name": "Kristoffer Ajer",
+        "position": "Defensa",
+        "club": "Brentford"
       },
       {
         "code": "NOR 5",
-        "name": "Kristoffer Vassbakk Ajer",
-        "position": "Defensa"
+        "name": "David Moller Wolfe",
+        "position": "Defensa",
+        "club": "Wolverhampton"
       },
       {
         "code": "NOR 6",
-        "name": "Fredrik Bjorkan",
-        "position": "Defensa"
+        "name": "Leo Ostigard",
+        "position": "Defensa",
+        "club": "Génova"
       },
       {
         "code": "NOR 7",
-        "name": "Henrik Falchener",
-        "position": "Defensa"
+        "name": "Fredrik Bjorkan",
+        "position": "Defensa",
+        "club": "Bodo-Glimt"
       },
       {
         "code": "NOR 8",
-        "name": "Sondre Langas",
-        "position": "Defensa"
+        "name": "Marcus Pedersen",
+        "position": "Defensa",
+        "club": "Torino"
       },
       {
         "code": "NOR 9",
-        "name": "Torbjorn Heggen",
-        "position": "Defensa"
+        "name": "Torbjorn Heggem",
+        "position": "Defensa",
+        "club": "Bologna"
       },
       {
         "code": "NOR 10",
-        "name": "Marcus Holmgren",
-        "position": "Defensa"
+        "name": "Sondre Langas",
+        "position": "Defensa",
+        "club": "Derby County"
       },
       {
         "code": "NOR 11",
-        "name": "Julian Ryerson",
-        "position": "Defensa"
+        "name": "Henrik Falchener",
+        "position": "Defensa",
+        "club": "Viking FK"
       },
       {
         "code": "NOR 12",
-        "name": "David Moller",
-        "position": "Defensa"
+        "name": "Julian Ryerson",
+        "position": "Defensa",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "NOR 13",
-        "name": "Leo Ostigard",
-        "position": "Defensa"
+        "name": "Morter Thorsby",
+        "position": "Mediocampista",
+        "club": "Cremonese"
       },
       {
         "code": "NOR 14",
-        "name": "Thelonious Aasgaard",
-        "position": "Mediocampista"
+        "name": "Patrick Berg",
+        "position": "Mediocampista",
+        "club": "Bodo-Glimt"
       },
       {
         "code": "NOR 15",
-        "name": "Fredrik Aursens",
-        "position": "Mediocampista"
+        "name": "Sander Berge",
+        "position": "Mediocampista",
+        "club": "Fulham"
       },
       {
         "code": "NOR 16",
-        "name": "Patrick Berg",
-        "position": "Mediocampista"
+        "name": "Martin Odegaard",
+        "position": "Mediocampista",
+        "club": "Arsenal"
       },
       {
         "code": "NOR 17",
-        "name": "Sander Berge",
-        "position": "Mediocampista"
+        "name": "Fredrik Aursnes",
+        "position": "Mediocampista",
+        "club": "Benfica"
       },
       {
         "code": "NOR 18",
-        "name": "Oscar Bobb",
-        "position": "Mediocampista"
+        "name": "Kristian Thorstvedt",
+        "position": "Mediocampista",
+        "club": "Sassuolo"
       },
       {
         "code": "NOR 19",
-        "name": "Jens Petter Hauge",
-        "position": "Mediocampista"
+        "name": "Thelonious Aasgaard",
+        "position": "Mediocampista",
+        "club": "Rangers"
       },
       {
         "code": "NOR 20",
         "name": "Antonio Nusa",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "RB Leipzig"
       },
       {
         "code": "NOR 21",
         "name": "Andreas Schjelderup",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Benfica"
       },
       {
         "code": "NOR 22",
-        "name": "Morten Thorsby",
-        "position": "Mediocampista"
+        "name": "Oscar Bob",
+        "position": "Mediocampista",
+        "club": "Fulham"
       },
       {
         "code": "NOR 23",
-        "name": "Kristian Thorstvedt",
-        "position": "Mediocampista"
+        "name": "Jens Petter Hauge",
+        "position": "Mediocampista",
+        "club": "Bodo-Glimt"
       },
       {
         "code": "NOR 24",
-        "name": "Martin Odegaard",
-        "position": "Mediocampista"
+        "name": "Alexander Sorloth",
+        "position": "Delantero",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "NOR 25",
         "name": "Erling Haaland",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Manchester City"
       },
       {
         "code": "NOR 26",
-        "name": "Jorgen Larsen",
-        "position": "Delantero"
-      },
-      {
-        "code": "NOR 27",
-        "name": "Alexander Sorloth",
-        "position": "Delantero"
+        "name": "Jorgen Strand Larsen",
+        "position": "Delantero",
+        "club": "Crystal Palace"
       }
     ]
   },
@@ -5247,134 +6146,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "New Zealand",
     "players": [
       {
-        "code": "NZL 2",
+        "code": "NZL 1",
         "name": "Max Crocombe",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Millwall"
+      },
+      {
+        "code": "NZL 2",
+        "name": "Alex Paulsen",
+        "position": "Portero",
+        "club": "Lechia"
       },
       {
         "code": "NZL 3",
-        "name": "Alex Paulsen",
-        "position": "Portero"
+        "name": "Michael Woud",
+        "position": "Portero",
+        "club": "Auckland FC"
       },
       {
         "code": "NZL 4",
-        "name": "Michael Woud",
-        "position": "Portero"
+        "name": "Tyler Bindon",
+        "position": "Defensa",
+        "club": "Sheffield United"
       },
       {
         "code": "NZL 5",
-        "name": "Tyler Bindon",
-        "position": "Defensa"
+        "name": "Michael Boxall",
+        "position": "Defensa",
+        "club": "Minnesota United"
       },
       {
         "code": "NZL 6",
-        "name": "Michael Boxall",
-        "position": "Defensa"
+        "name": "Liberato Cacace",
+        "position": "Defensa",
+        "club": "Wrexham"
       },
       {
         "code": "NZL 7",
-        "name": "Liberato Cacace",
-        "position": "Defensa"
+        "name": "Francis De Vries",
+        "position": "Defensa",
+        "club": "Auckland FC"
       },
       {
         "code": "NZL 8",
-        "name": "Francis de Vries",
-        "position": "Defensa"
+        "name": "Callan Elliot",
+        "position": "Defensa",
+        "club": "Auckland FC"
       },
       {
         "code": "NZL 9",
-        "name": "Callan Elliot",
-        "position": "Defensa"
+        "name": "Tim Payne",
+        "position": "Defensa",
+        "club": "Wellington"
       },
       {
         "code": "NZL 10",
-        "name": "Tim Payne",
-        "position": "Defensa"
+        "name": "Nando Pijnaker",
+        "position": "Defensa",
+        "club": "Auckland FC"
       },
       {
         "code": "NZL 11",
-        "name": "Nando Pijnaker",
-        "position": "Defensa"
+        "name": "Tommy Smith",
+        "position": "Defensa",
+        "club": "Braintree"
       },
       {
         "code": "NZL 12",
-        "name": "Tommy Smith",
-        "position": "Defensa"
+        "name": "Finn Surman",
+        "position": "Defensa",
+        "club": "Portland Timbers"
       },
       {
         "code": "NZL 13",
-        "name": "Finn Surman",
-        "position": "Defensa"
+        "name": "Lachlan Bayliss",
+        "position": "Mediocampista",
+        "club": "Newcastle"
       },
       {
         "code": "NZL 14",
-        "name": "Lachlan Bayliss",
-        "position": "Mediocampista"
+        "name": "Joe Bell",
+        "position": "Mediocampista",
+        "club": "Viking"
       },
       {
         "code": "NZL 15",
-        "name": "Joe Bell",
-        "position": "Mediocampista"
+        "name": "Alex Rufer",
+        "position": "Mediocampista",
+        "club": "Wellington"
       },
       {
         "code": "NZL 16",
-        "name": "Matt Garbett",
-        "position": "Mediocampista"
+        "name": "Marko Stamenić",
+        "position": "Mediocampista",
+        "club": "Swansea"
       },
       {
         "code": "NZL 17",
-        "name": "Eli Just",
-        "position": "Mediocampista"
+        "name": "Ryan Thomas",
+        "position": "Mediocampista",
+        "club": "PEC Zwolle"
       },
       {
         "code": "NZL 18",
-        "name": "Callum McCowatt",
-        "position": "Mediocampista"
+        "name": "Kosta Barbarouses",
+        "position": "Delantero",
+        "club": "Western Sydney Wanderers"
       },
       {
         "code": "NZL 19",
-        "name": "Ben Old",
-        "position": "Mediocampista"
+        "name": "Matt Garbett",
+        "position": "Delantero",
+        "club": "Peterborough"
       },
       {
         "code": "NZL 20",
-        "name": "Alex Rufer",
-        "position": "Mediocampista"
+        "name": "Eli Just",
+        "position": "Delantero",
+        "club": "Motherwell"
       },
       {
         "code": "NZL 21",
-        "name": "Marko Stamenic",
-        "position": "Mediocampista"
+        "name": "Callum McCowatt",
+        "position": "Delantero",
+        "club": "Silkeborg"
       },
       {
         "code": "NZL 22",
-        "name": "Sarpreet Singh",
-        "position": "Mediocampista"
+        "name": "Ben Old",
+        "position": "Delantero",
+        "club": "Saint-Étienne"
       },
       {
         "code": "NZL 23",
-        "name": "Ryan Thomas",
-        "position": "Mediocampista"
+        "name": "Jesse Randall",
+        "position": "Delantero",
+        "club": "Auckland FC"
       },
       {
         "code": "NZL 24",
-        "name": "Kosta Barbarouses",
-        "position": "Delantero"
+        "name": "Sarpreet Singh",
+        "position": "Delantero",
+        "club": "Wellington"
       },
       {
         "code": "NZL 25",
-        "name": "Jesse Randall",
-        "position": "Delantero"
+        "name": "Ben Waine",
+        "position": "Delantero",
+        "club": "Port Vale"
       },
       {
         "code": "NZL 26",
-        "name": "Ben Waine",
-        "position": "Delantero"
-      },
-      {
-        "code": "NZL 27",
         "name": "Chris Wood",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Nottingham Forest"
       }
     ]
   },
@@ -5384,134 +6309,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Panama",
     "players": [
       {
-        "code": "PAN 2",
+        "code": "PAN 1",
         "name": "Orlando Mosquera",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Al Fayha FC"
+      },
+      {
+        "code": "PAN 2",
+        "name": "Luis Mejía",
+        "position": "Portero",
+        "club": "Club Nacional"
       },
       {
         "code": "PAN 3",
-        "name": "Luis Mejía",
-        "position": "Portero"
+        "name": "César Samudio",
+        "position": "Portero",
+        "club": "CD Marathón"
       },
       {
         "code": "PAN 4",
-        "name": "César Samudio",
-        "position": "Portero"
+        "name": "César Blackman",
+        "position": "Defensa",
+        "club": "Slovan Bratislava"
       },
       {
         "code": "PAN 5",
-        "name": "César Blackman",
-        "position": "Defensa"
+        "name": "Jorge Gutiérrez",
+        "position": "Defensa",
+        "club": "Deportivo La Guaira"
       },
       {
         "code": "PAN 6",
-        "name": "Jorge Gutiérrez",
-        "position": "Defensa"
+        "name": "Amir Murillo",
+        "position": "Defensa",
+        "club": "Beşiktaş"
       },
       {
         "code": "PAN 7",
-        "name": "Amir Murillo",
-        "position": "Defensa"
+        "name": "Fidel Escobar",
+        "position": "Defensa",
+        "club": "Deportivo Saprissa"
       },
       {
         "code": "PAN 8",
-        "name": "Fidel Escobar",
-        "position": "Defensa"
+        "name": "Andrés Andrade",
+        "position": "Defensa",
+        "club": "LASK"
       },
       {
         "code": "PAN 9",
-        "name": "Andrés Andrade",
-        "position": "Defensa"
+        "name": "Edgardo Fariña",
+        "position": "Defensa",
+        "club": "FC Pari Nizhniy Novgorod"
       },
       {
         "code": "PAN 10",
-        "name": "Edgardo Fariña",
-        "position": "Defensa"
+        "name": "José Córdoba",
+        "position": "Defensa",
+        "club": "Norwich City"
       },
       {
         "code": "PAN 11",
-        "name": "José Córdoba",
-        "position": "Defensa"
+        "name": "Eric Davis",
+        "position": "Defensa",
+        "club": "Plaza Amador"
       },
       {
         "code": "PAN 12",
-        "name": "Eric Davis",
-        "position": "Defensa"
+        "name": "Jiovany Ramos",
+        "position": "Defensa",
+        "club": "Puerto Cabello"
       },
       {
         "code": "PAN 13",
-        "name": "Jiovany Ramos",
-        "position": "Defensa"
+        "name": "Roderick Miller",
+        "position": "Defensa",
+        "club": "Turan Tovuz"
       },
       {
         "code": "PAN 14",
-        "name": "Roderick Miller",
-        "position": "Defensa"
+        "name": "Aníbal Godoy",
+        "position": "Mediocampista",
+        "club": "San Diego FC"
       },
       {
         "code": "PAN 15",
-        "name": "Aníbal Godoy",
-        "position": "Mediocampista"
+        "name": "Adalberto Carrasquilla",
+        "position": "Mediocampista",
+        "club": "UNAM"
       },
       {
         "code": "PAN 16",
         "name": "Carlos Harvey",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Minnesota United"
       },
       {
         "code": "PAN 17",
         "name": "Cristian Martínez",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Ironi Kiryat Shmona"
       },
       {
         "code": "PAN 18",
         "name": "José Luis Rodríguez",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Juárez"
       },
       {
         "code": "PAN 19",
         "name": "César Yanis",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Cobresal"
       },
       {
         "code": "PAN 20",
         "name": "Yoel Bárcenas",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Mazatlán FC"
       },
       {
         "code": "PAN 21",
-        "name": "Azarías Lodoño",
-        "position": "Mediocampista"
+        "name": "Alberto Quintero",
+        "position": "Mediocampista",
+        "club": "CD Plaza Amador"
       },
       {
         "code": "PAN 22",
-        "name": "Adalberto Carrasquilla",
-        "position": "Mediocampista"
+        "name": "Azarías Londoño",
+        "position": "Mediocampista",
+        "club": "CD Universidad Católica"
       },
       {
         "code": "PAN 23",
-        "name": "Alberto Quintero",
-        "position": "Mediocampista"
+        "name": "Ismael Díaz",
+        "position": "Delantero",
+        "club": "Club León FC"
       },
       {
         "code": "PAN 24",
-        "name": "Ismael Díaz",
-        "position": "Delantero"
+        "name": "Cecilio Waterman",
+        "position": "Delantero",
+        "club": "Universidad de Concepción"
       },
       {
         "code": "PAN 25",
-        "name": "Cecilio Waterman",
-        "position": "Delantero"
+        "name": "José Fajardo",
+        "position": "Delantero",
+        "club": "CD Universidad Católica"
       },
       {
         "code": "PAN 26",
-        "name": "José Fajardo",
-        "position": "Delantero"
-      },
-      {
-        "code": "PAN 27",
         "name": "Tomás Rodríguez",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Deportivo Saprissa"
       }
     ]
   },
@@ -5521,124 +6472,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Paraguay",
     "players": [
       {
+        "code": "PAR 1",
+        "name": "Orlando Gill",
+        "position": "Portero",
+        "club": "San Lorenzo"
+      },
+      {
         "code": "PAR 2",
-        "name": "Roberto Fernandez"
+        "name": "Roberto Fernández",
+        "position": "Portero",
+        "club": "Cerro Porteño"
       },
       {
         "code": "PAR 3",
-        "name": "Orlando Gill"
+        "name": "Gastón Olveira",
+        "position": "Portero",
+        "club": "Olimpia"
       },
       {
         "code": "PAR 4",
-        "name": "Gustavo Gomez"
+        "name": "Juan Cáceres",
+        "position": "Defensa",
+        "club": "Dynamo Moscú"
       },
       {
         "code": "PAR 5",
-        "name": "Fabián Balbuena"
+        "name": "Gustavo Velázquez",
+        "position": "Defensa",
+        "club": "Cerro Porteño"
       },
       {
         "code": "PAR 6",
-        "name": "Juan José Cáceres"
+        "name": "Gustavo Gómez",
+        "position": "Defensa",
+        "club": "Palmeiras"
       },
       {
         "code": "PAR 7",
-        "name": "Omar Alderete"
+        "name": "Junior Alonso",
+        "position": "Defensa",
+        "club": "Atlético Mineiro"
       },
       {
         "code": "PAR 8",
-        "name": "Junior Alonso"
+        "name": "José Canale",
+        "position": "Defensa",
+        "club": "Lanús"
       },
       {
         "code": "PAR 9",
-        "name": "Mathías Villasanti"
+        "name": "Omar Alderete",
+        "position": "Defensa",
+        "club": "Getafe"
       },
       {
         "code": "PAR 10",
-        "name": "Diego Gomez"
+        "name": "Alessandro Maidana",
+        "position": "Defensa",
+        "club": "Olimpia"
       },
       {
         "code": "PAR 11",
-        "name": "Damián Bobadilla"
+        "name": "Fabián Balbuena",
+        "position": "Defensa",
+        "club": "Dinamo Moscú"
       },
       {
         "code": "PAR 12",
-        "name": "Andres Cubas"
+        "name": "Mauricio Magalhães",
+        "position": "Defensa",
+        "club": "Libertad"
       },
       {
         "code": "PAR 13",
-        "name": "Matias Galarza Fonda"
+        "name": "Damián Bobadilla",
+        "position": "Mediocampista",
+        "club": "São Paulo"
       },
       {
         "code": "PAR 14",
-        "name": "Julio Enciso"
+        "name": "Braian Ojeda",
+        "position": "Mediocampista",
+        "club": "Real Salt Lake"
       },
       {
         "code": "PAR 15",
-        "name": "Alejandro Romero Gamarra"
+        "name": "Andrés Cubas",
+        "position": "Mediocampista",
+        "club": "Vancouver Whitecaps"
       },
       {
         "code": "PAR 16",
-        "name": "Miguel Almirón"
+        "name": "Matías Galarza",
+        "position": "Mediocampista",
+        "club": "Talleres de Córdoba"
       },
       {
         "code": "PAR 17",
-        "name": "Ramon Sosa"
+        "name": "Alejandro Romero Gamarra",
+        "position": "Mediocampista",
+        "club": "Al-Ain"
       },
       {
         "code": "PAR 18",
-        "name": "Angel Romero"
+        "name": "Gustavo Caballero",
+        "position": "Mediocampista",
+        "club": "Nacional"
       },
       {
         "code": "PAR 19",
-        "name": "Antonio Sanabria"
+        "name": "Ramón Sosa",
+        "position": "Mediocampista",
+        "club": "Palmeiras"
       },
       {
         "code": "PAR 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Diego Gómez",
+        "position": "Mediocampista",
+        "club": "Brighton"
       },
       {
         "code": "PAR 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Alex Arce",
+        "position": "Delantero",
+        "club": "Liga de Quito"
       },
       {
         "code": "PAR 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Gabriel Ávalos",
+        "position": "Delantero",
+        "club": "Independiente"
       },
       {
         "code": "PAR 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Isidro Pitta",
+        "position": "Delantero",
+        "club": "Red Bull Bragantino"
       },
       {
         "code": "PAR 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Miguel Almirón",
+        "position": "Delantero",
+        "club": "Atlanta United"
       },
       {
         "code": "PAR 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Julio Enciso",
+        "position": "Delantero",
+        "club": "Estrasburgo"
       },
       {
         "code": "PAR 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "PAR 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Paraguay",
-        "position": "Por confirmar"
+        "name": "Antonio Sanabria",
+        "position": "Delantero",
+        "club": "Torino"
       }
     ]
   },
@@ -5648,134 +6635,166 @@ const paniniAlbumTeams = [
     "sourceTeam": "Portugal",
     "players": [
       {
-        "code": "POR 2",
+        "code": "POR 1",
         "name": "Diogo Costa",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Oporto"
+      },
+      {
+        "code": "POR 2",
+        "name": "José Sá",
+        "position": "Portero",
+        "club": "Wolverhampton"
       },
       {
         "code": "POR 3",
-        "name": "José Sá",
-        "position": "Portero"
+        "name": "Rui Silva",
+        "position": "Portero",
+        "club": "Sporting CP"
       },
       {
         "code": "POR 4",
-        "name": "Rui Silva",
-        "position": "Portero"
+        "name": "Ricardo Velho",
+        "position": "Portero",
+        "club": "Farense"
       },
       {
         "code": "POR 5",
-        "name": "Ricardo Velho",
-        "position": "Portero"
+        "name": "Diogo Dalot",
+        "position": "Defensa",
+        "club": "Manchester United"
       },
       {
         "code": "POR 6",
-        "name": "Diogo Dalot",
-        "position": "Defensa"
+        "name": "Matheus Nunes",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "POR 7",
-        "name": "Matheus Nunes",
-        "position": "Defensa"
+        "name": "Nélson Semedo",
+        "position": "Defensa",
+        "club": "Fenerbahçe"
       },
       {
         "code": "POR 8",
-        "name": "Nélson Semedo",
-        "position": "Defensa"
+        "name": "João Cancelo",
+        "position": "Defensa",
+        "club": "Barcelona"
       },
       {
         "code": "POR 9",
-        "name": "Joao Cancelo",
-        "position": "Defensa"
+        "name": "Nuno Mendes",
+        "position": "Defensa",
+        "club": "PSG"
       },
       {
         "code": "POR 10",
-        "name": "Nuno Mendes",
-        "position": "Defensa"
+        "name": "Gonçalo Inácio",
+        "position": "Defensa",
+        "club": "Sporting CP"
       },
       {
         "code": "POR 11",
-        "name": "Goncalo Inácio",
-        "position": "Defensa"
+        "name": "Renato Veiga",
+        "position": "Defensa",
+        "club": "Villarreal"
       },
       {
         "code": "POR 12",
-        "name": "Renato Veiga",
-        "position": "Defensa"
+        "name": "Rúben Dias",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "POR 13",
-        "name": "Rubén Dias",
-        "position": "Defensa"
+        "name": "Tomás Araújo",
+        "position": "Defensa",
+        "club": "Benfica"
       },
       {
         "code": "POR 14",
-        "name": "Tomás Araújo",
-        "position": "Defensa"
+        "name": "Rúben Neves",
+        "position": "Mediocampista",
+        "club": "Al Hilal"
       },
       {
         "code": "POR 15",
-        "name": "Rubén Neves",
-        "position": "Mediocampista"
+        "name": "Samu Costa",
+        "position": "Mediocampista",
+        "club": "Mallorca"
       },
       {
         "code": "POR 16",
-        "name": "Samuel Costa",
-        "position": "Mediocampista"
+        "name": "João Neves",
+        "position": "Mediocampista",
+        "club": "PSG"
       },
       {
         "code": "POR 17",
-        "name": "Joao Neves",
-        "position": "Mediocampista"
+        "name": "Vitinha",
+        "position": "Mediocampista",
+        "club": "PSG"
       },
       {
         "code": "POR 18",
-        "name": "Vitinha",
-        "position": "Mediocampista"
+        "name": "Bruno Fernandes",
+        "position": "Mediocampista",
+        "club": "Manchester United"
       },
       {
         "code": "POR 19",
-        "name": "Bruno Fernandes",
-        "position": "Mediocampista"
+        "name": "Bernardo Silva",
+        "position": "Mediocampista",
+        "club": "Manchester City"
       },
       {
         "code": "POR 20",
-        "name": "Bernardo Silva",
-        "position": "Mediocampista"
+        "name": "João Félix",
+        "position": "Delantero",
+        "club": "Al Nassr"
       },
       {
         "code": "POR 21",
-        "name": "Joao Félix",
-        "position": "Delantero"
+        "name": "Francisco Trincão",
+        "position": "Delantero",
+        "club": "Sporting CP"
       },
       {
         "code": "POR 22",
-        "name": "Trincao",
-        "position": "Delantero"
+        "name": "Francisco Conceição",
+        "position": "Delantero",
+        "club": "Juventus"
       },
       {
         "code": "POR 23",
-        "name": "Francis Conceicao",
-        "position": "Delantero"
+        "name": "Pedro Neto",
+        "position": "Delantero",
+        "club": "Chelsea"
       },
       {
         "code": "POR 24",
-        "name": "Rafael Leao",
-        "position": "Delantero"
+        "name": "Rafael Leão",
+        "position": "Delantero",
+        "club": "Milan"
       },
       {
         "code": "POR 25",
-        "name": "Pedro Neto",
-        "position": "Delantero"
+        "name": "Gonçalo Guedes",
+        "position": "Delantero",
+        "club": "Real Sociedad"
       },
       {
         "code": "POR 26",
-        "name": "Gonzalo Guedes",
-        "position": "Delantero"
+        "name": "Gonçalo Ramos",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "POR 27",
-        "name": "Gonzalo Ramos",
-        "position": "Delantero"
+        "name": "Cristiano Ronaldo",
+        "position": "Delantero",
+        "club": "Al Nassr"
       }
     ]
   },
@@ -5785,134 +6804,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Qatar",
     "players": [
       {
+        "code": "QAT 1",
+        "name": "Mahmoud Abunada",
+        "position": "Portero",
+        "club": "Al-Rayyan"
+      },
+      {
         "code": "QAT 2",
-        "name": "Shehab Ellethy",
-        "position": "Portero"
+        "name": "Meshaal Barsham",
+        "position": "Portero",
+        "club": "Al-Sadd"
       },
       {
         "code": "QAT 3",
         "name": "Salah Zakaria",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 4",
-        "name": "Meshaal Barsham",
-        "position": "Portero"
+        "name": "Ayoub Al Alawi",
+        "position": "Defensa",
+        "club": "Al-Gharafa"
       },
       {
         "code": "QAT 5",
-        "name": "Mahmud Abunada",
-        "position": "Portero"
+        "name": "Boualem Khoukhi",
+        "position": "Defensa",
+        "club": "Al-Sadd"
       },
       {
         "code": "QAT 6",
-        "name": "Bassam Al Rawi",
-        "position": "Defensa"
+        "name": "Homam Al Amin",
+        "position": "Defensa",
+        "club": "Cultural Leonesa"
       },
       {
         "code": "QAT 7",
-        "name": "Boualem Khoukhi",
-        "position": "Defensa"
+        "name": "Lucas Mendes",
+        "position": "Defensa",
+        "club": "Al-Wakrah"
       },
       {
         "code": "QAT 8",
-        "name": "Hashmi Al Hussain",
-        "position": "Defensa"
+        "name": "Issa Laye",
+        "position": "Defensa",
+        "club": "Al-Arabi"
       },
       {
         "code": "QAT 9",
-        "name": "Homam El Amin",
-        "position": "Defensa"
+        "name": "Pedro Miguel",
+        "position": "Defensa",
+        "club": "Al-Sadd"
       },
       {
         "code": "QAT 10",
-        "name": "Issa Laye",
-        "position": "Defensa"
+        "name": "Alhashmi Alhussain",
+        "position": "Defensa",
+        "club": "Al-Arabi"
       },
       {
         "code": "QAT 11",
-        "name": "Jassem Gaber",
-        "position": "Defensa"
+        "name": "Sultan Al Brake",
+        "position": "Defensa",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 12",
-        "name": "Lucas Mendes",
-        "position": "Defensa"
+        "name": "Assim Madibo",
+        "position": "Mediocampista",
+        "club": "Al-Wakrah"
       },
       {
         "code": "QAT 13",
-        "name": "Niall Mason",
-        "position": "Defensa"
+        "name": "Abdulaziz Hatem",
+        "position": "Mediocampista",
+        "club": "Al-Rayyan"
       },
       {
         "code": "QAT 14",
-        "name": "Pedro Miguel",
-        "position": "Defensa"
+        "name": "Ahmed Fathy",
+        "position": "Mediocampista",
+        "club": "Al-Arabi"
       },
       {
         "code": "QAT 15",
-        "name": "Rayyan Ahmed Al Ali",
-        "position": "Defensa"
+        "name": "Karim Boudiaf",
+        "position": "Mediocampista",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 16",
-        "name": "Sultan Al Brake",
-        "position": "Defensa"
+        "name": "Jassim Gaber",
+        "position": "Mediocampista",
+        "club": "Al-Arabi"
       },
       {
         "code": "QAT 17",
-        "name": "Tarek Salman",
-        "position": "Defensa"
+        "name": "Mohamed Manai",
+        "position": "Mediocampista",
+        "club": "Al-Shamal"
       },
       {
         "code": "QAT 18",
-        "name": "Abdulaziz Hatem",
-        "position": "Mediocampista"
+        "name": "Ahmed Al Janhi",
+        "position": "Delantero",
+        "club": "Al-Gharafa"
       },
       {
         "code": "QAT 19",
-        "name": "Ahmed Fathy",
-        "position": "Mediocampista"
+        "name": "Ahmed Alaa",
+        "position": "Delantero",
+        "club": "Al-Rayyan"
       },
       {
         "code": "QAT 20",
-        "name": "Assim Madibo",
-        "position": "Mediocampista"
+        "name": "Akram Afif",
+        "position": "Delantero",
+        "club": "Al-Sadd"
       },
       {
         "code": "QAT 21",
-        "name": "Ayoub Al Ouwi",
-        "position": "Mediocampista"
+        "name": "Almoez Ali",
+        "position": "Delantero",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 22",
-        "name": "Karim Boudiaf",
-        "position": "Mediocampista"
+        "name": "Edmilson Junior",
+        "position": "Delantero",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 23",
-        "name": "Mohammad Al Mannai",
-        "position": "Mediocampista"
+        "name": "Hassan Al Haydos",
+        "position": "Delantero",
+        "club": "Al-Sadd"
       },
       {
         "code": "QAT 24",
-        "name": "Mohammed Waad",
-        "position": "Mediocampista"
+        "name": "Mohammed Muntari",
+        "position": "Delantero",
+        "club": "Al-Gharafa"
       },
       {
         "code": "QAT 25",
-        "name": "Ahmed Al Ganehi",
-        "position": "Delantero"
+        "name": "Tahsin Mohammed",
+        "position": "Delantero",
+        "club": "Al-Duhail"
       },
       {
         "code": "QAT 26",
-        "name": "Ahmed Alaa",
-        "position": "Delantero"
-      },
-      {
-        "code": "QAT 27",
-        "name": "Akram Afif",
-        "position": "Delantero"
+        "name": "Yusuf Abdurisag",
+        "position": "Delantero",
+        "club": "Al-Wakrah"
       }
     ]
   },
@@ -5922,136 +6967,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "South Africa",
     "players": [
       {
-        "code": "RSA 2",
+        "code": "RSA 1",
         "name": "Ronwen Williams",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Mamelodi Sundowns"
+      },
+      {
+        "code": "RSA 2",
+        "name": "Ricardo Goss",
+        "position": "Portero",
+        "club": "Siwelele FC"
       },
       {
         "code": "RSA 3",
-        "name": "Ricardo Goss",
-        "position": "Portero"
+        "name": "Sipho Chaine",
+        "position": "Portero",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 4",
-        "name": "Sipho Chaine",
-        "position": "Portero"
+        "name": "Khuliso Mudau",
+        "position": "Defensa",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 5",
-        "name": "Khuliso Mudau",
-        "position": "Defensa"
+        "name": "Nkosinathi Sibisi",
+        "position": "Defensa",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 6",
-        "name": "Olwethu Makhanya",
-        "position": "Defensa"
+        "name": "Ime Okon",
+        "position": "Defensa",
+        "club": "Hannover 96"
       },
       {
         "code": "RSA 7",
-        "name": "Bradley Cross",
-        "position": "Defensa"
+        "name": "Khulumani Ndamane",
+        "position": "Defensa",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 8",
-        "name": "Thabang Matuludi",
-        "position": "Defensa"
+        "name": "Aubrey Modiba",
+        "position": "Defensa",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 9",
-        "name": "Nkosinathi Sibisi",
-        "position": "Defensa"
+        "name": "Samukelo Kabini",
+        "position": "Defensa",
+        "club": "Molde FK"
       },
       {
         "code": "RSA 10",
-        "name": "Khulumani Ndamane",
-        "position": "Defensa"
+        "name": "Thabang Matuludi",
+        "position": "Defensa",
+        "club": "Polokwane City"
       },
       {
         "code": "RSA 11",
-        "name": "Ime Okon",
-        "position": "Defensa"
+        "name": "Olwethu Makhanya",
+        "position": "Defensa",
+        "club": "Philadelphia Union"
       },
       {
         "code": "RSA 12",
-        "name": "Samukele Kabini",
-        "position": "Defensa"
+        "name": "Kamogelo Sebelebele",
+        "position": "Defensa",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 13",
-        "name": "Mbekezeli Mbokazi",
-        "position": "Defensa"
+        "name": "Bradley Cross",
+        "position": "Defensa",
+        "club": "Kaizer Chiefs"
       },
       {
         "code": "RSA 14",
-        "name": "Teboho Mokoena",
-        "position": "Mediocampista"
+        "name": "Mbekezeli Mbokazi",
+        "position": "Defensa",
+        "club": "Chicago Fire"
       },
       {
         "code": "RSA 15",
-        "name": "Jayden Adams",
-        "position": "Mediocampista"
+        "name": "Teboho Mokoena",
+        "position": "Mediocampista",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 16",
         "name": "Thalente Mbatha",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 17",
         "name": "Sphephelo Sithole",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "CD Tondela"
       },
       {
         "code": "RSA 18",
-        "name": "Oswin Appollis",
-        "position": "Delantero"
+        "name": "Jayden Adams",
+        "position": "Mediocampista",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 19",
-        "name": "Tshepang Moremi",
-        "position": "Delantero"
+        "name": "Oswin Appollis",
+        "position": "Delantero",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 20",
-        "name": "Evidence Makgopa",
-        "position": "Delantero"
+        "name": "Iqraam Rayners",
+        "position": "Delantero",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 21",
-        "name": "Lyle Foster",
-        "position": "Delantero"
+        "name": "Tshepang Moremi",
+        "position": "Delantero",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 22",
-        "name": "Iqraam Rayners",
-        "position": "Delantero"
+        "name": "Relebohile Mofokeng",
+        "position": "Delantero",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 23",
-        "name": "Relebohile Mofokeng",
-        "position": "Delantero"
+        "name": "Evidence Makgopa",
+        "position": "Delantero",
+        "club": "Orlando Pirates"
       },
       {
         "code": "RSA 24",
         "name": "Themba Zwane",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Mamelodi Sundowns"
       },
       {
         "code": "RSA 25",
-        "name": "Thapelo Maseko",
-        "position": "Delantero"
+        "name": "Lyle Foster",
+        "position": "Delantero",
+        "club": "Burnley"
       },
       {
         "code": "RSA 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Sudafrica",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "RSA 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Sudafrica",
-        "position": "Por confirmar"
+        "name": "Thapelo Maseko",
+        "position": "Delantero",
+        "club": "AEL Limassol"
       }
     ]
   },
@@ -6061,134 +7130,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Scotland",
     "players": [
       {
-        "code": "SCO 2",
+        "code": "SCO 1",
         "name": "Craig Gordon",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Hearts"
+      },
+      {
+        "code": "SCO 2",
+        "name": "Angus Gunn",
+        "position": "Portero",
+        "club": "Nottingham Forest"
       },
       {
         "code": "SCO 3",
-        "name": "Angus Gunn",
-        "position": "Portero"
+        "name": "Liam Kelly",
+        "position": "Portero",
+        "club": "Rangers"
       },
       {
         "code": "SCO 4",
-        "name": "Liam Kelly",
-        "position": "Portero"
+        "name": "Grant Hanley",
+        "position": "Defensa",
+        "club": "Hibernian"
       },
       {
         "code": "SCO 5",
-        "name": "Grant Hanley",
-        "position": "Defensa"
+        "name": "Jack Hendry",
+        "position": "Defensa",
+        "club": "Al Ettifaq"
       },
       {
         "code": "SCO 6",
-        "name": "Jack Hendry",
-        "position": "Defensa"
+        "name": "Aaron Hickey",
+        "position": "Defensa",
+        "club": "Brentford"
       },
       {
         "code": "SCO 7",
-        "name": "Aaron Hickey",
-        "position": "Defensa"
+        "name": "Dom Hyam",
+        "position": "Defensa",
+        "club": "Wrexham"
       },
       {
         "code": "SCO 8",
-        "name": "Dominic Hyam",
-        "position": "Defensa"
+        "name": "Scott McKenna",
+        "position": "Defensa",
+        "club": "Dinamo Zagreb"
       },
       {
         "code": "SCO 9",
-        "name": "Scott McKenna",
-        "position": "Defensa"
+        "name": "Nathan Patterson",
+        "position": "Defensa",
+        "club": "Everton"
       },
       {
         "code": "SCO 10",
-        "name": "Nathan Patterson",
-        "position": "Defensa"
+        "name": "Anthony Ralston",
+        "position": "Defensa",
+        "club": "Celtic"
       },
       {
         "code": "SCO 11",
-        "name": "Anthony Ralston",
-        "position": "Defensa"
+        "name": "Andy Robertson",
+        "position": "Defensa",
+        "club": "Liverpool"
       },
       {
         "code": "SCO 12",
-        "name": "Andy Robertson",
-        "position": "Defensa"
+        "name": "John Souttar",
+        "position": "Defensa",
+        "club": "Hearts"
       },
       {
         "code": "SCO 13",
-        "name": "John Souttar",
-        "position": "Defensa"
+        "name": "Kieran Tierney",
+        "position": "Defensa",
+        "club": "Celtic"
       },
       {
         "code": "SCO 14",
-        "name": "Kieran Tierney",
-        "position": "Defensa"
+        "name": "Ryan Christie",
+        "position": "Mediocampista",
+        "club": "Bournemouth"
       },
       {
         "code": "SCO 15",
-        "name": "Ryan Christie",
-        "position": "Mediocampista"
+        "name": "Findlay Curtis",
+        "position": "Mediocampista",
+        "club": "Rangers"
       },
       {
         "code": "SCO 16",
-        "name": "Findlay Curtis",
-        "position": "Mediocampista"
+        "name": "Lewis Ferguson",
+        "position": "Mediocampista",
+        "club": "Bologna"
       },
       {
         "code": "SCO 17",
-        "name": "Lewis Ferguson",
-        "position": "Mediocampista"
+        "name": "Ben Gannon-Doak",
+        "position": "Mediocampista",
+        "club": "Bournemouth"
       },
       {
         "code": "SCO 18",
-        "name": "Ben Gannon-Doak",
-        "position": "Mediocampista"
+        "name": "Tyler Fletcher",
+        "position": "Mediocampista",
+        "club": "Manchester United"
       },
       {
         "code": "SCO 19",
-        "name": "Billy Gilmour",
-        "position": "Mediocampista"
+        "name": "John McGinn",
+        "position": "Mediocampista",
+        "club": "Aston Villa"
       },
       {
         "code": "SCO 20",
-        "name": "John McGinn",
-        "position": "Mediocampista"
+        "name": "Kenny McLean",
+        "position": "Mediocampista",
+        "club": "Norwich City"
       },
       {
         "code": "SCO 21",
-        "name": "Kenny McLean",
-        "position": "Mediocampista"
+        "name": "Scott McTominay",
+        "position": "Mediocampista",
+        "club": "Nápoles"
       },
       {
         "code": "SCO 22",
-        "name": "Scott McTominay",
-        "position": "Mediocampista"
+        "name": "Ché Adams",
+        "position": "Delantero",
+        "club": "Torino"
       },
       {
         "code": "SCO 23",
-        "name": "Che Adams",
-        "position": "Delantero"
+        "name": "Lyndon Dykes",
+        "position": "Delantero",
+        "club": "Charlton"
       },
       {
         "code": "SCO 24",
-        "name": "Lyndon Dykes",
-        "position": "Delantero"
+        "name": "George Hirst",
+        "position": "Delantero",
+        "club": "Ipswich Town"
       },
       {
         "code": "SCO 25",
-        "name": "George Hirst",
-        "position": "Delantero"
+        "name": "Lawrence Shankland",
+        "position": "Delantero",
+        "club": "Hearts"
       },
       {
         "code": "SCO 26",
-        "name": "Lawrence Shankland",
-        "position": "Delantero"
-      },
-      {
-        "code": "SCO 27",
         "name": "Ross Stewart",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Southampton"
       }
     ]
   },
@@ -6198,134 +7293,172 @@ const paniniAlbumTeams = [
     "sourceTeam": "Senegal",
     "players": [
       {
-        "code": "SEN 2",
+        "code": "SEN 1",
         "name": "Edouard Mendy",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Al Ahli"
+      },
+      {
+        "code": "SEN 2",
+        "name": "Mory Diaw",
+        "position": "Portero",
+        "club": "Le Havre"
       },
       {
         "code": "SEN 3",
-        "name": "Mory Diaw",
-        "position": "Portero"
+        "name": "Yehvann Diouf",
+        "position": "Portero",
+        "club": "Niza"
       },
       {
         "code": "SEN 4",
-        "name": "Yehvann Diouf",
-        "position": "Portero"
+        "name": "Krépin Diatta",
+        "position": "Defensa",
+        "club": "Mónaco"
       },
       {
         "code": "SEN 5",
-        "name": "Krépin Diatta",
-        "position": "Defensa"
+        "name": "Antoine Mendy",
+        "position": "Defensa",
+        "club": "Niza"
       },
       {
         "code": "SEN 6",
-        "name": "Antoine Mendy",
-        "position": "Defensa"
+        "name": "Kalidou Koulibaly",
+        "position": "Defensa",
+        "club": "Al Ahli"
       },
       {
         "code": "SEN 7",
-        "name": "Kalidou Koulibaly",
-        "position": "Defensa"
+        "name": "El Hadji Malick Diouf",
+        "position": "Defensa",
+        "club": "West Ham"
       },
       {
         "code": "SEN 8",
-        "name": "El Hadji Malick Diouf",
-        "position": "Defensa"
+        "name": "Mamadou Sarr",
+        "position": "Defensa",
+        "club": "Estrasburgo"
       },
       {
         "code": "SEN 9",
-        "name": "Mamadou Sarr",
-        "position": "Defensa"
+        "name": "Moussa Niakhaté",
+        "position": "Defensa",
+        "club": "O. Lyon"
       },
       {
         "code": "SEN 10",
-        "name": "Mousaa Niakhaté",
-        "position": "Defensa"
+        "name": "Moustapha Mbow",
+        "position": "Defensa",
+        "club": "Paris"
       },
       {
         "code": "SEN 11",
-        "name": "Moustapha Mbow",
-        "position": "Defensa"
+        "name": "Abdoulaye Seck",
+        "position": "Defensa",
+        "club": "Maccabi Haifa"
       },
       {
         "code": "SEN 12",
-        "name": "Abdoulaye Seck",
-        "position": "Defensa"
+        "name": "Ismaïl Jakobs",
+        "position": "Defensa",
+        "club": "Galatasaray"
       },
       {
         "code": "SEN 13",
-        "name": "Ismail Jakobs e Ilay Camara",
-        "position": "Defensa"
+        "name": "Ilay Camara",
+        "position": "Defensa",
+        "club": "Anderlecht"
       },
       {
         "code": "SEN 14",
         "name": "Idrissa Gana Gueye",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Everton"
       },
       {
         "code": "SEN 15",
         "name": "Pape Gueye",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Villarreal"
       },
       {
         "code": "SEN 16",
         "name": "Lamine Camara",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Mónaco"
       },
       {
         "code": "SEN 17",
         "name": "Habib Diarra",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Sunderland"
       },
       {
         "code": "SEN 18",
         "name": "Pathé Ciss",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Rayo Vallecano"
       },
       {
         "code": "SEN 19",
         "name": "Pape Matar Sarr",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Tottenham"
       },
       {
         "code": "SEN 20",
         "name": "Bara Sapoko Ndiaye",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Bayern"
       },
       {
         "code": "SEN 21",
         "name": "Sadio Mané",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Al Nassr"
       },
       {
         "code": "SEN 22",
         "name": "Ismaïla Sarr",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Crystal Palace"
       },
       {
         "code": "SEN 23",
-        "name": "Assane Diao",
-        "position": "Delantero"
+        "name": "Iliman Ndiaye",
+        "position": "Delantero",
+        "club": "Everton"
       },
       {
         "code": "SEN 24",
-        "name": "Ibrahim Mbaye",
-        "position": "Delantero"
+        "name": "Assane Diao",
+        "position": "Delantero",
+        "club": "Como"
       },
       {
         "code": "SEN 25",
-        "name": "Nicolas Jackson",
-        "position": "Delantero"
+        "name": "Ibrahim Mbaye",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "SEN 26",
-        "name": "Bamba Dieng",
-        "position": "Delantero"
+        "name": "Nicolas Jackson",
+        "position": "Delantero",
+        "club": "Bayern"
       },
       {
         "code": "SEN 27",
-        "name": "Chérif Ndiaye",
-        "position": "Delantero"
+        "name": "Bamba Dieng",
+        "position": "Delantero",
+        "club": "Lorient"
+      },
+      {
+        "code": "SEN 28",
+        "name": "Cherif Ndiaye",
+        "position": "Delantero",
+        "club": "Samsunspor"
       }
     ]
   },
@@ -6335,134 +7468,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Switzerland",
     "players": [
       {
+        "code": "SUI 1",
+        "name": "Marvin Keller",
+        "position": "Portero",
+        "club": "Young Boys"
+      },
+      {
         "code": "SUI 2",
         "name": "Gregor Kobel",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "SUI 3",
         "name": "Yvon Mvogo",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Lorient"
       },
       {
         "code": "SUI 4",
-        "name": "Marvin Keller",
-        "position": "Portero"
+        "name": "Manuel Akanji",
+        "position": "Defensa",
+        "club": "Inter"
       },
       {
         "code": "SUI 5",
-        "name": "Manuel Akanji",
-        "position": "Defensa"
+        "name": "Aurèle Amenda",
+        "position": "Defensa",
+        "club": "Eintracht"
       },
       {
         "code": "SUI 6",
-        "name": "Nico Elvedi",
-        "position": "Defensa"
+        "name": "Eray Cömert",
+        "position": "Defensa",
+        "club": "Valencia"
       },
       {
         "code": "SUI 7",
-        "name": "Ricardo Rodríguez",
-        "position": "Defensa"
+        "name": "Nico Elvedi",
+        "position": "Defensa",
+        "club": "Borussia Mönchengladbach"
       },
       {
         "code": "SUI 8",
-        "name": "Silvan Widmer",
-        "position": "Defensa"
+        "name": "Luca Jaquez",
+        "position": "Defensa",
+        "club": "Stuttgart"
       },
       {
         "code": "SUI 9",
         "name": "Miro Muheim",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Hamburgo"
       },
       {
         "code": "SUI 10",
-        "name": "Aurele Amenda",
-        "position": "Defensa"
+        "name": "Ricardo Rodriguez",
+        "position": "Defensa",
+        "club": "Betis"
       },
       {
         "code": "SUI 11",
-        "name": "Eray Cömert",
-        "position": "Defensa"
+        "name": "Silvan Widmer",
+        "position": "Defensa",
+        "club": "Mainz 05"
       },
       {
         "code": "SUI 12",
-        "name": "Lucas Jaquez",
-        "position": "Defensa"
+        "name": "Gran Xhaka",
+        "position": "Mediocampista",
+        "club": "Sunderland"
       },
       {
         "code": "SUI 13",
-        "name": "Granit Xhaka",
-        "position": "Mediocampista"
+        "name": "Denis Zakaria",
+        "position": "Mediocampista",
+        "club": "Mónaco"
       },
       {
         "code": "SUI 14",
-        "name": "Johan Manzambi",
-        "position": "Mediocampista"
+        "name": "Michel Aebischer",
+        "position": "Mediocampista",
+        "club": "Pisa"
       },
       {
         "code": "SUI 15",
-        "name": "Remo Freuler",
-        "position": "Mediocampista"
+        "name": "Christian Fassnacht",
+        "position": "Mediocampista",
+        "club": "Young Boys"
       },
       {
         "code": "SUI 16",
-        "name": "Denis Zakaria",
-        "position": "Mediocampista"
+        "name": "Remo Freuler",
+        "position": "Mediocampista",
+        "club": "Bologna"
       },
       {
         "code": "SUI 17",
         "name": "Ardon Jashari",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Milan"
       },
       {
         "code": "SUI 18",
-        "name": "Djibril Sow",
-        "position": "Mediocampista"
+        "name": "Johan Manzambi",
+        "position": "Mediocampista",
+        "club": "Friburgo"
       },
       {
         "code": "SUI 19",
-        "name": "Christian Fassnacht",
-        "position": "Mediocampista"
+        "name": "Fabian Rieder",
+        "position": "Mediocampista",
+        "club": "Augsburgo"
       },
       {
         "code": "SUI 20",
-        "name": "Michel Aebischer",
-        "position": "Mediocampista"
+        "name": "Djibril Sow",
+        "position": "Mediocampista",
+        "club": "Sevilla"
       },
       {
         "code": "SUI 21",
-        "name": "Fabian Rieder",
-        "position": "Mediocampista"
+        "name": "Zeki Amdouni",
+        "position": "Delantero",
+        "club": "Burnley"
       },
       {
         "code": "SUI 22",
-        "name": "Rubén Vargas",
-        "position": "Mediocampista"
+        "name": "Breel Embolo",
+        "position": "Delantero",
+        "club": "Stade Rennes"
       },
       {
         "code": "SUI 23",
-        "name": "Breel Embolo",
-        "position": "Delantero"
+        "name": "Cedric Itten",
+        "position": "Delantero",
+        "club": "Fortuna Düsseldorf"
       },
       {
         "code": "SUI 24",
-        "name": "Noah Okafor",
-        "position": "Delantero"
+        "name": "Dan Ndoye",
+        "position": "Delantero",
+        "club": "Nottingham Forest"
       },
       {
         "code": "SUI 25",
-        "name": "Dan Ndoye",
-        "position": "Delantero"
+        "name": "Noah Okafor",
+        "position": "Delantero",
+        "club": "Leeds"
       },
       {
         "code": "SUI 26",
-        "name": "Zeki Amdouni",
-        "position": "Delantero"
-      },
-      {
-        "code": "SUI 27",
-        "name": "Cedric Itten",
-        "position": "Delantero"
+        "name": "Ruben Vargas",
+        "position": "Delantero",
+        "club": "Sevilla"
       }
     ]
   },
@@ -6472,160 +7631,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Sweden",
     "players": [
       {
+        "code": "SWE 1",
+        "name": "Jacob Zetterström",
+        "position": "Portero",
+        "club": "Derby County"
+      },
+      {
         "code": "SWE 2",
         "name": "Viktor Johansson",
-        "club": "Stoke City, ING",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "Stoke City"
       },
       {
         "code": "SWE 3",
         "name": "Kristoffer Nordfeldt",
-        "club": "AIK, SUE",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "AIK"
       },
       {
         "code": "SWE 4",
-        "name": "Jacob Widell Zetterström",
-        "club": "Derby County, ING",
-        "position": "Portero"
+        "name": "Gustav Lagerbielke",
+        "position": "Defensa",
+        "club": "SC Braga"
       },
       {
         "code": "SWE 5",
-        "name": "Hjalmar Ekdal",
-        "club": "Burnley, ING",
-        "position": "Defensa"
+        "name": "Viktor Lindelöf",
+        "position": "Defensa",
+        "club": "Aston Villa"
       },
       {
         "code": "SWE 6",
-        "name": "Gabriel Gudmundsson",
-        "club": "Lille, FRA",
-        "position": "Defensa"
+        "name": "Isak Hien",
+        "position": "Defensa",
+        "club": "Atalanta"
       },
       {
         "code": "SWE 7",
-        "name": "Isak Hien",
-        "club": "Atalanta, ITA",
-        "position": "Defensa"
+        "name": "Gabriel Gudmundsson",
+        "position": "Defensa",
+        "club": "Leeds"
       },
       {
         "code": "SWE 8",
-        "name": "Emil Holm",
-        "club": "Juventus, ITA",
-        "position": "Defensa"
+        "name": "Herman Johansson",
+        "position": "Defensa",
+        "club": "FC Dallas"
       },
       {
         "code": "SWE 9",
-        "name": "Gustaf Lagerbielke",
-        "club": "Celtic, ESC",
-        "position": "Defensa"
+        "name": "Daniel Svensson",
+        "position": "Defensa",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "SWE 10",
-        "name": "Victor Lindelöf",
-        "club": "Manchester United, ING",
-        "position": "Defensa"
+        "name": "Hjalmar Ekdal",
+        "position": "Defensa",
+        "club": "Burnley"
       },
       {
         "code": "SWE 11",
-        "name": "Eric Smith",
-        "club": "FC St. Pauli, ALE",
-        "position": "Defensa"
+        "name": "Carl Starfelt",
+        "position": "Defensa",
+        "club": "Celta"
       },
       {
         "code": "SWE 12",
-        "name": "Carl Starfelt",
-        "club": "Celta de Vigo, ESP",
-        "position": "Defensa"
+        "name": "Eric Smith",
+        "position": "Defensa",
+        "club": "St. Pauli"
       },
       {
         "code": "SWE 13",
         "name": "Elliot Stroud",
-        "club": "Mjällby AIF, SUE",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Mjällby"
       },
       {
         "code": "SWE 14",
-        "name": "Daniel Svensson",
-        "club": "Borussia Dortmund, ALE",
-        "position": "Defensa"
+        "name": "Lucas Begvall",
+        "position": "Mediocampista",
+        "club": "Tottenham"
       },
       {
         "code": "SWE 15",
-        "name": "Yasin Ayari",
-        "club": "Brighton, ING",
-        "position": "Mediocampista"
+        "name": "Ken Sema",
+        "position": "Mediocampista",
+        "club": "Pafos"
       },
       {
         "code": "SWE 16",
-        "name": "Lucas Bergvall",
-        "club": "Tottenham, ING",
-        "position": "Mediocampista"
+        "name": "Jesper Kalström",
+        "position": "Mediocampista",
+        "club": "Udinese"
       },
       {
         "code": "SWE 17",
-        "name": "Jesper Karlström",
-        "club": "Udinese, ITA",
-        "position": "Mediocampista"
+        "name": "Yasin Ayari",
+        "position": "Mediocampista",
+        "club": "Brighton"
       },
       {
         "code": "SWE 18",
         "name": "Mattias Svanberg",
-        "club": "Wolfsburg, ALE",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Wolfsburgo"
       },
       {
         "code": "SWE 19",
         "name": "Besfort Zeneli",
-        "club": "Union Saint-Gilloise, SUE",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Unión Saint-Gilloise"
       },
       {
         "code": "SWE 20",
-        "name": "Ken Sema",
-        "club": "Pafos, CHI",
-        "position": "Mediocampista"
+        "name": "Alexander Isak",
+        "position": "Delantero",
+        "club": "Liverpool"
       },
       {
         "code": "SWE 21",
-        "name": "Taha Ali",
-        "club": "Malmo FF, SUE",
-        "position": "Delantero"
+        "name": "Viktor Gyökeres",
+        "position": "Delantero",
+        "club": "Arsenal"
       },
       {
         "code": "SWE 22",
-        "name": "Alexander Bernhardsson",
-        "club": "Holstein Kiel, ALE",
-        "position": "Delantero"
+        "name": "Benjamin Nygren",
+        "position": "Delantero",
+        "club": "Celtic"
       },
       {
         "code": "SWE 23",
         "name": "Anthony Elanga",
-        "club": "Newcastle United, ING",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Newcastle"
       },
       {
         "code": "SWE 24",
-        "name": "Viktor Gyökeres",
-        "club": "Arsenal, ING",
-        "position": "Delantero"
+        "name": "Alexander Bernhardsson",
+        "position": "Delantero",
+        "club": "Holstein Kiel"
       },
       {
         "code": "SWE 25",
-        "name": "Alexander Isak",
-        "club": "Liverpool, ING",
-        "position": "Delantero"
+        "name": "Gustaf Nilsson",
+        "position": "Delantero",
+        "club": "Brujas"
       },
       {
         "code": "SWE 26",
-        "name": "Gustaf Nilsson",
-        "club": "Brujas, BEL",
-        "position": "Delantero"
-      },
-      {
-        "code": "SWE 27",
-        "name": "Benjamin Nygren",
-        "club": "Celtic, ESC",
-        "position": "Delantero"
+        "name": "Taha Ali",
+        "position": "Delantero",
+        "club": "Malmö"
       }
     ]
   },
@@ -6635,160 +7794,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Tunisia",
     "players": [
       {
+        "code": "TUN 1",
+        "name": "Aymen Dahmen",
+        "position": "Portero",
+        "club": "CS Sfaxien"
+      },
+      {
         "code": "TUN 2",
-        "name": "Aymen Dahmene",
-        "club": "CS Sfaxien",
-        "position": "Portero"
+        "name": "A. Chamakh",
+        "position": "Portero",
+        "club": "Club Africain"
       },
       {
         "code": "TUN 3",
-        "name": "Sabri Ben Hassan",
-        "club": "Étoile du Sahel",
-        "position": "Portero"
+        "name": "Sabri Ben Hassen",
+        "position": "Portero",
+        "club": "Etoile du Sahel"
       },
       {
         "code": "TUN 4",
-        "name": "Abdelmouhib Chamakh",
-        "club": "Club Africain",
-        "position": "Portero"
+        "name": "Van Valery",
+        "position": "Defensa",
+        "club": "Young Boys"
       },
       {
         "code": "TUN 5",
-        "name": "Montassar Talbi",
-        "club": "Lorient",
-        "position": "Defensa"
+        "name": "Moutaz Neffati",
+        "position": "Defensa",
+        "club": "Norrköping"
       },
       {
         "code": "TUN 6",
         "name": "Dylan Bronn",
-        "club": "Servette FC",
-        "position": "Defensa"
+        "position": "Defensa",
+        "club": "Servette"
       },
       {
         "code": "TUN 7",
-        "name": "Omar Rekik",
-        "club": "NK Maribor",
-        "position": "Defensa"
+        "name": "Montassar Talbi",
+        "position": "Defensa",
+        "club": "Lorient"
       },
       {
         "code": "TUN 8",
-        "name": "Adem Arous",
-        "club": "Kasımpaşa",
-        "position": "Defensa"
+        "name": "Omar Rekik",
+        "position": "Defensa",
+        "club": "Maribor"
       },
       {
         "code": "TUN 9",
-        "name": "Raed Chikhaoui",
-        "club": "US Monastirienne",
-        "position": "Defensa"
+        "name": "Adem Arous",
+        "position": "Defensa",
+        "club": "Kasimpasa"
       },
       {
         "code": "TUN 10",
-        "name": "Yan Valery",
-        "club": "Young Boys",
-        "position": "Defensa"
+        "name": "Raed Chikhaoui",
+        "position": "Defensa",
+        "club": "Monastir"
       },
       {
         "code": "TUN 11",
-        "name": "Moutaz Neffati",
-        "club": "IFK Norrköping",
-        "position": "Defensa"
+        "name": "Ali Abdi",
+        "position": "Defensa",
+        "club": "Niza"
       },
       {
         "code": "TUN 12",
-        "name": "Mohamed Amine Ben Hamida",
-        "club": "Espérance de Tunis",
-        "position": "Defensa"
+        "name": "M.A Ben Hmida",
+        "position": "Defensa",
+        "club": "Espérance de Tunis"
       },
       {
         "code": "TUN 13",
-        "name": "Ali Abdi",
-        "club": "Nice",
-        "position": "Defensa"
+        "name": "Ellyes Skhiri",
+        "position": "Mediocampista",
+        "club": "Eintracht de Frankfurt"
       },
       {
         "code": "TUN 14",
-        "name": "Ellyes Skhiri",
-        "club": "Francfort",
-        "position": "Mediocampista"
+        "name": "M. Hadj Mahmoud",
+        "position": "Mediocampista",
+        "club": "Lugano"
       },
       {
         "code": "TUN 15",
         "name": "Rani Khedira",
-        "club": "Union Berlin",
-        "position": "Mediocampista"
+        "position": "Mediocampista",
+        "club": "Union Berlin"
       },
       {
         "code": "TUN 16",
-        "name": "Hadj Mahmoud",
-        "club": "Lugano",
-        "position": "Mediocampista"
+        "name": "Anis Ben Slimane",
+        "position": "Mediocampista",
+        "club": "Norwich"
       },
       {
         "code": "TUN 17",
-        "name": "Ismaël Gharbi",
-        "club": "Augsbourg",
-        "position": "Mediocampista"
+        "name": "Mortadha Ben Ouanes",
+        "position": "Mediocampista",
+        "club": "Kasimpasa"
       },
       {
         "code": "TUN 18",
-        "name": "Hannibal Mejbri",
-        "club": "Burnley",
-        "position": "Mediocampista"
+        "name": "Ismaël Gharbi",
+        "position": "Mediocampista",
+        "club": "Augsburgo"
       },
       {
         "code": "TUN 19",
-        "name": "Anis Ben Slimane",
-        "club": "Norwich",
-        "position": "Mediocampista"
+        "name": "Hannibal Mejbri",
+        "position": "Mediocampista",
+        "club": "Burnley"
       },
       {
         "code": "TUN 20",
-        "name": "Mortadha Ben Ouanes",
-        "club": "Kasımpaşa",
-        "position": "Mediocampista"
+        "name": "Khalil Ayari",
+        "position": "Delantero",
+        "club": "PSG"
       },
       {
         "code": "TUN 21",
-        "name": "Sebastian Tounekti",
-        "club": "Celtic",
-        "position": "Delantero"
+        "name": "Elias Achouri",
+        "position": "Delantero",
+        "club": "Copenhague"
       },
       {
         "code": "TUN 22",
         "name": "Elias Saad",
-        "club": "Hanovre 96",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Hannover 96"
       },
       {
         "code": "TUN 23",
-        "name": "Elias Achouri",
-        "club": "Copenhague",
-        "position": "Delantero"
+        "name": "Firas Chaouat",
+        "position": "Delantero",
+        "club": "Club Africain"
       },
       {
         "code": "TUN 24",
-        "name": "Khalil Ayari",
-        "club": "PSG",
-        "position": "Delantero"
+        "name": "Hazem Mastouri",
+        "position": "Delantero",
+        "club": "Dynamo Makhachkala"
       },
       {
         "code": "TUN 25",
         "name": "Rayan Elloumi",
-        "club": "Vancouver",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Vancouver Whitecaps"
       },
       {
         "code": "TUN 26",
-        "name": "Hazem Mastouri",
-        "club": "Dinamo Makhatchkala",
-        "position": "Delantero"
-      },
-      {
-        "code": "TUN 27",
-        "name": "Firas Chaouat",
-        "club": "Club Africain",
-        "position": "Delantero"
+        "name": "Sebastian Tounekti",
+        "position": "Delantero",
+        "club": "Celtic"
       }
     ]
   },
@@ -6798,124 +7957,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Turkey",
     "players": [
       {
+        "code": "TUR 1",
+        "name": "Bayindir",
+        "position": "Portero",
+        "club": "Manchester United"
+      },
+      {
         "code": "TUR 2",
-        "name": "Ugurcan Cakir"
+        "name": "Cakir",
+        "position": "Portero",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 3",
-        "name": "Mert Muldur"
+        "name": "Gunok",
+        "position": "Portero",
+        "club": "Besiktas"
       },
       {
         "code": "TUR 4",
-        "name": "Zeki Celik"
+        "name": "Kadioglu",
+        "position": "Defensa",
+        "club": "Brighton"
       },
       {
         "code": "TUR 5",
-        "name": "Abdulkerim Bardakci"
+        "name": "Demiral",
+        "position": "Defensa",
+        "club": "Al Ahli"
       },
       {
         "code": "TUR 6",
-        "name": "Caglar Soyuncu"
+        "name": "Celik",
+        "position": "Defensa",
+        "club": "Roma"
       },
       {
         "code": "TUR 7",
-        "name": "Merih Demiral"
+        "name": "Ozan Kabak",
+        "position": "Defensa",
+        "club": "Hoffenheim"
       },
       {
         "code": "TUR 8",
-        "name": "Ferdi Kadioglu"
+        "name": "Mert Muldur",
+        "position": "Defensa",
+        "club": "Fenerbahce"
       },
       {
         "code": "TUR 9",
-        "name": "Kaan Ayhan"
+        "name": "Abdulkerim Bardakci",
+        "position": "Defensa",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 10",
-        "name": "Ismail Yuksek"
+        "name": "Eren Elmali",
+        "position": "Defensa",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 11",
-        "name": "Hakan Calhanoglu"
+        "name": "Caglar Soyuncu",
+        "position": "Defensa",
+        "club": "Fenerbahce"
       },
       {
         "code": "TUR 12",
-        "name": "Orkun Kokcu"
+        "name": "Samet Akaydin",
+        "position": "Defensa",
+        "club": "Rizespor"
       },
       {
         "code": "TUR 13",
-        "name": "Arda Guler"
+        "name": "Arda Guler",
+        "position": "Mediocampista",
+        "club": "Real Madrid"
       },
       {
         "code": "TUR 14",
-        "name": "Irfan Can Kahveci"
+        "name": "Can Uzun",
+        "position": "Mediocampista",
+        "club": "Eintracht Frankfurt"
       },
       {
         "code": "TUR 15",
-        "name": "Yunus Akgun"
+        "name": "Orkun Kokcu",
+        "position": "Mediocampista",
+        "club": "Besiktas"
       },
       {
         "code": "TUR 16",
-        "name": "Can Uzun"
+        "name": "Hakan Calhanoglu",
+        "position": "Mediocampista",
+        "club": "Inter de Milán"
       },
       {
         "code": "TUR 17",
-        "name": "Baris Alper Yilmaz"
+        "name": "Ismail Yuksek",
+        "position": "Mediocampista",
+        "club": "Fenerbahce"
       },
       {
         "code": "TUR 18",
-        "name": "Kerem Akturkoglu"
+        "name": "Kaan Ayhan",
+        "position": "Mediocampista",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 19",
-        "name": "Kenan Yildiz"
+        "name": "Salih Ozcan",
+        "position": "Mediocampista",
+        "club": "Borussia Dortmund"
       },
       {
         "code": "TUR 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Kenan Yildiz",
+        "position": "Delantero",
+        "club": "Juventus"
       },
       {
         "code": "TUR 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Baris Yilmaz",
+        "position": "Delantero",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Kerem Akturkoglu",
+        "position": "Delantero",
+        "club": "Fenerbahce"
       },
       {
         "code": "TUR 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Yunus Akgun",
+        "position": "Delantero",
+        "club": "Galatasaray"
       },
       {
         "code": "TUR 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Oguz Aydin",
+        "position": "Delantero",
+        "club": "Fenerbahce"
       },
       {
         "code": "TUR 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Deniz Gul",
+        "position": "Delantero",
+        "club": "Porto"
       },
       {
         "code": "TUR 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "TUR 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Turquia",
-        "position": "Por confirmar"
+        "name": "Irfan Can Kahveci",
+        "position": "Delantero",
+        "club": "Fenerbahce"
       }
     ]
   },
@@ -6925,124 +8120,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Uruguay",
     "players": [
       {
+        "code": "URU 1",
+        "name": "Sergio Rochet",
+        "position": "Portero",
+        "club": "Internacional"
+      },
+      {
         "code": "URU 2",
-        "name": "Sergio Rochet"
+        "name": "Fernando Muslera",
+        "position": "Portero",
+        "club": "Estudiantes de La Plata"
       },
       {
         "code": "URU 3",
-        "name": "Santiago Mele"
+        "name": "Santiago Mele",
+        "position": "Portero",
+        "club": "Monterrey"
       },
       {
         "code": "URU 4",
-        "name": "Ronald Araujo"
+        "name": "Guillermo Varela",
+        "position": "Defensa",
+        "club": "Flamengo"
       },
       {
         "code": "URU 5",
-        "name": "José María Giménez"
+        "name": "Ronald Araújo",
+        "position": "Defensa",
+        "club": "FC Barcelona"
       },
       {
         "code": "URU 6",
-        "name": "Sebastian Caceres"
+        "name": "José María Giménez",
+        "position": "Defensa",
+        "club": "Atlético de Madrid"
       },
       {
         "code": "URU 7",
-        "name": "Mathias Olivera"
+        "name": "Santiago Bueno",
+        "position": "Defensa",
+        "club": "Wolverhampton Wanderers"
       },
       {
         "code": "URU 8",
-        "name": "Guillermo Varela"
+        "name": "Sebastián Cáceres",
+        "position": "Defensa",
+        "club": "Club América"
       },
       {
         "code": "URU 9",
-        "name": "Nahitan Nandez"
+        "name": "Mathías Olivera",
+        "position": "Defensa",
+        "club": "Napoli"
       },
       {
         "code": "URU 10",
-        "name": "Federico Valverde"
+        "name": "Joaquín Piquerez",
+        "position": "Defensa",
+        "club": "Palmeiras"
       },
       {
         "code": "URU 11",
-        "name": "Giorgian De Arrascaeta"
+        "name": "Matías Viña",
+        "position": "Defensa",
+        "club": "Flamengo"
       },
       {
         "code": "URU 12",
-        "name": "Rodrigo Bentancur"
+        "name": "Manuel Ugarte",
+        "position": "Mediocampista",
+        "club": "Manchester United"
       },
       {
         "code": "URU 13",
-        "name": "Manuel Ugarte"
+        "name": "Emiliano Martínez",
+        "position": "Mediocampista",
+        "club": "Palmeiras"
       },
       {
         "code": "URU 14",
-        "name": "Nicolás de la Cruz"
+        "name": "Rodrigo Bentancur",
+        "position": "Mediocampista",
+        "club": "Tottenham Hotspur"
       },
       {
         "code": "URU 15",
-        "name": "Maxi Araujo"
+        "name": "Federico Valverde",
+        "position": "Mediocampista",
+        "club": "Real Madrid"
       },
       {
         "code": "URU 16",
-        "name": "Darwin Núñez"
+        "name": "Agustín Canobbio",
+        "position": "Mediocampista",
+        "club": "Fluminense"
       },
       {
         "code": "URU 17",
-        "name": "Federico Viñas"
+        "name": "Juan Manuel Sanabria",
+        "position": "Mediocampista",
+        "club": "Atlético de San Luis"
       },
       {
         "code": "URU 18",
-        "name": "Rodrigo Aguirre"
+        "name": "Giorgian De Arrascaeta",
+        "position": "Mediocampista",
+        "club": "Flamengo"
       },
       {
         "code": "URU 19",
-        "name": "Facundo Pellistri"
+        "name": "Nicolás de la Cruz",
+        "position": "Mediocampista",
+        "club": "Flamengo"
       },
       {
         "code": "URU 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Rodrigo Zalazar",
+        "position": "Mediocampista",
+        "club": "SC Braga"
       },
       {
         "code": "URU 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Facundo Pellistri",
+        "position": "Mediocampista",
+        "club": "Panathinaikos"
       },
       {
         "code": "URU 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Maximiliano Araújo",
+        "position": "Mediocampista",
+        "club": "Sporting CP"
       },
       {
         "code": "URU 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Brian Rodríguez",
+        "position": "Mediocampista",
+        "club": "Club América"
       },
       {
         "code": "URU 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Rodrigo Aguirre",
+        "position": "Delantero",
+        "club": "Club América"
       },
       {
         "code": "URU 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Federico Viñas",
+        "position": "Delantero",
+        "club": "Real Oviedo"
       },
       {
         "code": "URU 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "URU 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Uruguay",
-        "position": "Por confirmar"
+        "name": "Darwin Núñez",
+        "position": "Delantero",
+        "club": "Al-Hilal"
       }
     ]
   },
@@ -7052,134 +8283,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "United States",
     "players": [
       {
-        "code": "USA 2",
+        "code": "USA 1",
         "name": "Matt Freese",
-        "position": "Portero"
+        "position": "Portero",
+        "club": "New York City"
+      },
+      {
+        "code": "USA 2",
+        "name": "Matt Turner",
+        "position": "Portero",
+        "club": "New England Revolution"
       },
       {
         "code": "USA 3",
-        "name": "Matt Turner",
-        "position": "Portero"
+        "name": "Chris Brady",
+        "position": "Portero",
+        "club": "Chicago Fire"
       },
       {
         "code": "USA 4",
-        "name": "Chris Brady",
-        "position": "Portero"
+        "name": "Max Arfsten",
+        "position": "Defensa",
+        "club": "Columbus Crew"
       },
       {
         "code": "USA 5",
-        "name": "Max Arfsten",
-        "position": "Defensa"
+        "name": "Sergiño Dest",
+        "position": "Defensa",
+        "club": "PSV"
       },
       {
         "code": "USA 6",
-        "name": "Sergiño Dest",
-        "position": "Defensa"
+        "name": "Alex Freeman",
+        "position": "Defensa",
+        "club": "Villarreal"
       },
       {
         "code": "USA 7",
-        "name": "Alex Freeman",
-        "position": "Defensa"
+        "name": "Mark McKenzie",
+        "position": "Defensa",
+        "club": "Toulouse"
       },
       {
         "code": "USA 8",
-        "name": "Mark McKenzie",
-        "position": "Defensa"
+        "name": "Tim Ream",
+        "position": "Defensa",
+        "club": "Charlotte FC"
       },
       {
         "code": "USA 9",
-        "name": "Tim Ream",
-        "position": "Defensa"
+        "name": "Chris Richards",
+        "position": "Defensa",
+        "club": "Crystal Palace"
       },
       {
         "code": "USA 10",
-        "name": "Chris Richards",
-        "position": "Defensa"
+        "name": "Antonee Robinson",
+        "position": "Defensa",
+        "club": "Fulham"
       },
       {
         "code": "USA 11",
-        "name": "Antonee Robinson",
-        "position": "Defensa"
+        "name": "Miles Robinson",
+        "position": "Defensa",
+        "club": "FC Cincinnati"
       },
       {
         "code": "USA 12",
-        "name": "Miles Robinson",
-        "position": "Defensa"
+        "name": "Joe Scally",
+        "position": "Defensa",
+        "club": "Borussia Mönchengladbach"
       },
       {
         "code": "USA 13",
-        "name": "Joe Scally",
-        "position": "Defensa"
+        "name": "Auston Trusty",
+        "position": "Defensa",
+        "club": "Celtic"
       },
       {
         "code": "USA 14",
-        "name": "Auston Trusty",
-        "position": "Defensa"
+        "name": "Tyler Adams",
+        "position": "Mediocampista",
+        "club": "AFC Bournemouth"
       },
       {
         "code": "USA 15",
-        "name": "Tyler Adams",
-        "position": "Mediocampista"
+        "name": "Sebastian Berhalter",
+        "position": "Mediocampista",
+        "club": "Vancouver Whitecaps"
       },
       {
         "code": "USA 16",
-        "name": "Sebastian Berhalter",
-        "position": "Mediocampista"
+        "name": "Weston McKennie",
+        "position": "Mediocampista",
+        "club": "Vancouver Whitecaps"
       },
       {
         "code": "USA 17",
-        "name": "Weston McKennie",
-        "position": "Mediocampista"
+        "name": "Cristian Roldán",
+        "position": "Mediocampista",
+        "club": "Seattle Sounders"
       },
       {
         "code": "USA 18",
-        "name": "Cristian Roldán",
-        "position": "Mediocampista"
+        "name": "Brenden Aaronson",
+        "position": "Mediocampista",
+        "club": "Leeds United"
       },
       {
         "code": "USA 19",
-        "name": "Brenden Aaronson",
-        "position": "Mediocampista"
+        "name": "Christian Pulisic",
+        "position": "Mediocampista",
+        "club": "Milan"
       },
       {
         "code": "USA 20",
-        "name": "Christian Pulisic",
-        "position": "Mediocampista"
+        "name": "Gio Reyna",
+        "position": "Mediocampista",
+        "club": "Borussia Mönchengladbach"
       },
       {
         "code": "USA 21",
-        "name": "Gio Reyna",
-        "position": "Mediocampista"
+        "name": "Malik Tillman",
+        "position": "Mediocampista",
+        "club": "Bayer Leverkusen"
       },
       {
         "code": "USA 22",
-        "name": "Malik Tillman",
-        "position": "Mediocampista"
+        "name": "Tim Weah",
+        "position": "Mediocampista",
+        "club": "Olympique Marseille"
       },
       {
         "code": "USA 23",
-        "name": "Tim Wean",
-        "position": "Mediocampista"
+        "name": "Alejandro Zendejas",
+        "position": "Mediocampista",
+        "club": "Club América"
       },
       {
         "code": "USA 24",
-        "name": "Alejandro Zendejas",
-        "position": "Mediocampista"
+        "name": "Folarin Balogun",
+        "position": "Delantero",
+        "club": "Monaco"
       },
       {
         "code": "USA 25",
-        "name": "Folarin Balogun",
-        "position": "Delantero"
+        "name": "Ricardo Pepi",
+        "position": "Delantero",
+        "club": "PSV"
       },
       {
         "code": "USA 26",
-        "name": "Ricardo Pepi",
-        "position": "Delantero"
-      },
-      {
-        "code": "USA 27",
         "name": "Haji Wright",
-        "position": "Delantero"
+        "position": "Delantero",
+        "club": "Coventry City"
       }
     ]
   },
@@ -7189,124 +8446,160 @@ const paniniAlbumTeams = [
     "sourceTeam": "Uzbekistan",
     "players": [
       {
+        "code": "UZB 1",
+        "name": "O’tkir Yusupov",
+        "position": "Portero",
+        "club": "Navbahor"
+      },
+      {
         "code": "UZB 2",
-        "name": "Utkir Yusupov"
+        "name": "Botirali Ergashev",
+        "position": "Portero",
+        "club": "Neftchi Fergana"
       },
       {
         "code": "UZB 3",
-        "name": "Farrukh Savfiev"
+        "name": "Abduvohid Ne’matov",
+        "position": "Portero",
+        "club": "Nasaf Qarshi"
       },
       {
         "code": "UZB 4",
-        "name": "Sherzod Nasrullaev"
+        "name": "Abdukodir Khusanov",
+        "position": "Defensa",
+        "club": "Manchester City"
       },
       {
         "code": "UZB 5",
-        "name": "Umar Eshmurodov"
+        "name": "Alijonov",
+        "position": "Defensa",
+        "club": ""
       },
       {
         "code": "UZB 6",
-        "name": "Husniddin Aliqulov"
+        "name": "Farrukh Sayfiev",
+        "position": "Defensa",
+        "club": "Neftchi Fergana"
       },
       {
         "code": "UZB 7",
-        "name": "Rustamjon Ashurmatov"
+        "name": "Rustam Ashurmatov",
+        "position": "Defensa",
+        "club": "Esteghlal"
       },
       {
         "code": "UZB 8",
-        "name": "Khojiakbar Alijonov"
+        "name": "Sherzod Nasrullaev",
+        "position": "Defensa",
+        "club": "Pakhtakor Tashkent"
       },
       {
         "code": "UZB 9",
-        "name": "Abdukodir Khusanov"
+        "name": "Umar Eshmurodov",
+        "position": "Defensa",
+        "club": "Nasaf Qarshi"
       },
       {
         "code": "UZB 10",
-        "name": "Odiljon Hamrobekov"
+        "name": "Avazbek O’Imasaliev",
+        "position": "Defensa",
+        "club": ""
       },
       {
         "code": "UZB 11",
-        "name": "Otabek Shukurov"
+        "name": "Jahongir Orozov",
+        "position": "Defensa",
+        "club": "Dinamo Samarqand"
       },
       {
         "code": "UZB 12",
-        "name": "Jamshid Iskanderov"
+        "name": "Behruzjon Karimoov",
+        "position": "Defensa",
+        "club": "Surkhon Termiz"
       },
       {
         "code": "UZB 13",
-        "name": "Azizbek Turgunboev"
+        "name": "Abdulla Abdullaev",
+        "position": "Defensa",
+        "club": "Dibba Al-Fujairah Club"
       },
       {
         "code": "UZB 14",
-        "name": "Khojimat Erkinov"
+        "name": "Akmal Mozgovoy",
+        "position": "Mediocampista",
+        "club": "Pajtakor Tashkent"
       },
       {
         "code": "UZB 15",
-        "name": "Eldor Shomurodov"
+        "name": "Otabek Shukurov",
+        "position": "Mediocampista",
+        "club": "Baniyas Club"
       },
       {
         "code": "UZB 16",
-        "name": "Oston Urunov"
+        "name": "Jamshid Iskanderov",
+        "position": "Mediocampista",
+        "club": "Neftchi Fergana"
       },
       {
         "code": "UZB 17",
-        "name": "Jaloliddin Masharipov"
+        "name": "Odil Hamrobekov",
+        "position": "Mediocampista",
+        "club": "Tractor S.C."
       },
       {
         "code": "UZB 18",
-        "name": "Igor Sergeev"
+        "name": "Jaloliddin Masharipov",
+        "position": "Mediocampista",
+        "club": "Esteghlal Tehran"
       },
       {
         "code": "UZB 19",
-        "name": "Abbosbek Fayzullaev"
+        "name": "Aziz Ganiev",
+        "position": "Mediocampista",
+        "club": "Nasaf Qarshi"
       },
       {
         "code": "UZB 20",
-        "name": "Jugador por confirmar 19",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Sherzod Esanov",
+        "position": "Mediocampista",
+        "club": "Bukhara"
       },
       {
         "code": "UZB 21",
-        "name": "Jugador por confirmar 20",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Abbosbek Fayzullaev",
+        "position": "Mediocampista",
+        "club": "Basaksehir"
       },
       {
         "code": "UZB 22",
-        "name": "Jugador por confirmar 21",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Eldor Shomurodov",
+        "position": "Delantero",
+        "club": "Basaksehir"
       },
       {
         "code": "UZB 23",
-        "name": "Jugador por confirmar 22",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Igor Sergeev",
+        "position": "Delantero",
+        "club": "Persépolis"
       },
       {
         "code": "UZB 24",
-        "name": "Jugador por confirmar 23",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Azizbek Amonov",
+        "position": "Delantero",
+        "club": "Dinamo Samarcanda"
       },
       {
         "code": "UZB 25",
-        "name": "Jugador por confirmar 24",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Oston Urunov",
+        "position": "Delantero",
+        "club": "Persépolis"
       },
       {
         "code": "UZB 26",
-        "name": "Jugador por confirmar 25",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
-      },
-      {
-        "code": "UZB 27",
-        "name": "Jugador por confirmar 26",
-        "club": "Selección de Uzbekistan",
-        "position": "Por confirmar"
+        "name": "Doston Khamdamov",
+        "position": "Delantero",
+        "club": "Pakhtakor Tashkent"
       }
     ]
   }
@@ -8042,6 +9335,7 @@ const localPlayerImages = {
     "COL:santiago arias": "img/figuras/col_13_santiago-arias.png",
     "COL:daniel munoz": "img/figuras/col_14_daniel-munoz.png",
     "COL:verry mina": "img/figuras/col_15_verry-mina.png",
+    "COL:yerry mina": "img/figuras/col_15_verry-mina.png",
     "COL:johan mojica": "img/figuras/col_16_johan-mojica.png",
     "COL:davinson sanchez": "img/figuras/col_17_davinson-sanchez.png",
     "COL:jhon lucumi": "img/figuras/col_18_jhon-lucumi.png",
@@ -8441,6 +9735,299 @@ const localPlayerImages = {
     "USA:ricardo pepi": "img/figuras/usa_16_ricardo-pepi.png",
     "USA:tyler adams": "img/figuras/usa_18_tyler-adams.png"
   }
+};
+
+const verifiedPlayerImagesByName = {
+  "ALG:aissa mandi": "img/figuras/alg-20-aissa-mandi.png",
+  "ALG:alexis guendouz": "img/figuras/alg-21-alexis-guendouz.png",
+  "ALG:anis hadj moussa": "img/figuras/alg-07-anis-hadj-moussa.png",
+  "ALG:anthony mandrea": "img/figuras/alg-23-anthony-mandrea.png",
+  "ALG:fares chaibi": "img/figuras/alg-06-fares-chaibi.png",
+  "ALG:nabil bentaleb": "img/figuras/alg-12-nabil-bentaleb.png",
+  "ALG:said benrahma": "img/figuras/alg-14-said-benrahma.png",
+  "ALG:youcef atal": "img/figuras/alg-15-youcef-atal.png",
+  "ALG:zinedine belaid": "img/figuras/alg-18-zinedine-belaid.png",
+  "ARG:cristian romero": "img/figuras/arg_14_cristian-romero.png",
+  "ARG:emiliano martinez": "img/figuras/arg_01_emiliano-martinez.png",
+  "ARG:leandro paredes": "img/figuras/arg_11_leandro-paredes.png",
+  "ARG:leonardo balerdi": "img/figuras/arg_15_leonardo-balerdi.png",
+  "ARG:nahuel molina": "img/figuras/arg_17_nahuel-molina.png",
+  "ARG:nicolas otamendi": "img/figuras/arg_16_nicolas-otamendi.png",
+  "ARG:nicolas tagliafico": "img/figuras/arg_18_nicolas-tagliafico.png",
+  "BIH:armin gigovic": "img/figuras/bih_18_armin-gigovic.png",
+  "BIH:benjamin tahirovic": "img/figuras/bih_02_7-ma-4.png",
+  "BIH:dzenis burnic": "img/figuras/bih_14_dzenis-burnic.png",
+  "BIH:edin dzeko": "img/figuras/bih_04_i.png",
+  "BIH:esmir bajraktarevic": "img/figuras/bih_16_esmir-bajraktarevic.png",
+  "BIH:haris tabakovic": "img/figuras/bih_12_haris-tabakovic-3.png",
+  "BIH:nikola katic": "img/figuras/bih_17_nikola-katic.png",
+  "BIH:nikola vasilj": "img/figuras/bih_09_nikola-vasilj.png",
+  "BIH:samed bazdar": "img/figuras/bih_08_samed-bazdar-a.png",
+  "BRA:alisson": "img/figuras/bra_01_.png",
+  "BRA:bruno guimaraes": "img/figuras/bra_08_bruno-guimaraes.png",
+  "BRA:casemiro": "img/figuras/bra_10_casemiro.png",
+  "BRA:danilo": "img/figuras/bra_07_danilo.png",
+  "BRA:gabriel magalhaes": "img/figuras/bra_06_gabriel-magalhaes.png",
+  "BRA:gabriel martinelli": "img/figuras/bra_13_gabriel-martinelli.png",
+  "BRA:marquinhos": "img/figuras/bra_03_marquinhos.png",
+  "BRA:matheus cunha": "img/figuras/bra_16_matheus-cunha.png",
+  "BRA:paqueta": "img/figuras/bra_09_.png",
+  "BRA:raphinha": "img/figuras/bra_14_raphinha.png",
+  "BRA:vinicius junior": "img/figuras/bra_12_vinicius-junior.png",
+  "BRA:wesley": "img/figuras/bra_04_wesley.png",
+  "CAN:cyle larin": "img/figuras/can_15_cyle-larin.png",
+  "CAN:dayne st clair": "img/figuras/can_01_dayne-st-clair.png",
+  "CAN:jonathan david": "img/figuras/can_14_jonathan-david.png",
+  "CAN:tajon buchanan": "img/figuras/can_13_tajon-buchanan.png",
+  "CIV:amad diallo": "img/figuras/civ_02_amad-diallo.png",
+  "CIV:emmanuel agbadou": "img/figuras/civ_01_emmanuel-agbadou.png",
+  "CIV:evann guessand": "img/figuras/civ_16_evann-guessand.png",
+  "CIV:franck kessie": "img/figuras/civ_18_franck-kessie.png",
+  "CIV:ibrahim sangare": "img/figuras/civ_17_ibrahim-sangare.png",
+  "CIV:oumar diakite": "img/figuras/civ_08_oumar-diakite-ei.png",
+  "CIV:ousmane diomande": "img/figuras/civ_13_ousmane-diomande.png",
+  "CIV:seko fofana": "img/figuras/civ_07_seko-fofana.png",
+  "CIV:simon adingra": "img/figuras/civ_06_simon-adingra.png",
+  "CIV:wilfried singo": "img/figuras/civ_11_wilfried-singo.png",
+  "COL:camilo vargas": "img/figuras/col_02_camilo-vargas.png",
+  "COL:daniel munoz": "img/figuras/col_14_daniel-munoz.png",
+  "COL:david ospina": "img/figuras/col_01_david-ospina.png",
+  "COL:davinson sanchez": "img/figuras/col_17_davinson-sanchez.png",
+  "COL:james rodriguez": "img/figuras/col_10_james-rodriguez.png",
+  "COL:jefferson lerma": "img/figuras/col_12_jefferson-lerma.png",
+  "COL:jhon arias": "img/figuras/col_05_jhon-arias.png",
+  "COL:jhon cordoba": "img/figuras/col_04_jhon-cordoba.png",
+  "COL:jhon lucumi": "img/figuras/col_18_jhon-lucumi.png",
+  "COL:johan mojica": "img/figuras/col_16_johan-mojica.png",
+  "COL:jorge carrascal": "img/figuras/col_07_jorge-carrascal.png",
+  "COL:juan fernando quintero": "img/figuras/col_09_juan-fernando-quintero.png",
+  "COL:kevin castano": "img/figuras/col_11_kevin-castano.png",
+  "COL:luis diaz": "img/figuras/col_03_e-o.png",
+  "COL:luis suarez": "img/figuras/col_06_luis-suarez.png",
+  "COL:richard rios": "img/figuras/col_08_richard-rios.png",
+  "COL:santiago arias": "img/figuras/col_13_santiago-arias.png",
+  "CRO:dominik livakovic": "img/figuras/cro_01_dominik-livakovi.png",
+  "CRO:josip stanisic": "img/figuras/cro_14_josip-stanisic.png",
+  "CRO:josko gvardiol": "img/figuras/cro_18_josko-gvardiol.png",
+  "CRO:luka modric": "img/figuras/cro_06_luka-modricg.png",
+  "CRO:marco pasalic": "img/figuras/cro_03_marco-pasalic.png",
+  "CRO:mario pasalic": "img/figuras/cro_09_mario-pasalic.png",
+  "CRO:martin baturina": "img/figuras/cro_08_martin-baturina.png",
+  "CZE:david zima": "img/figuras/cze_14_david-zima.png",
+  "CZE:jindrich stanek": "img/figuras/cze_15_jindrich-stanek.png",
+  "CZE:lukas provod": "img/figuras/cze_13_lukas-provod.png",
+  "CZE:matej kovar": "img/figuras/cze_09_matej-kovar.png",
+  "CZE:michal sadilek": "img/figuras/cze_12_michal-sadilek.png",
+  "CZE:pavel ulc": "img/figuras/cze_02_pavel-sulc.png",
+  "CZE:toma chory": "img/figuras/cze_05_tomas-chory.png",
+  "CZE:toma soucek": "img/figuras/cze_01_tomas-soucek.png",
+  "CZE:tomas holes": "img/figuras/cze_10_lukas-cerv.png",
+  "CZE:vladimir coufal": "img/figuras/cze_11_vladimir-coufal.png",
+  "ECU:alan franco": "img/figuras/ecu_11_alan-franco.png",
+  "ECU:alan minda": "img/figuras/ecu_05_alan-minda.png",
+  "ECU:angelo preciado": "img/figuras/ecu19.png",
+  "ECU:enner valencia": "img/figuras/ecu_03_enner-valencia.png",
+  "ECU:gonzalo plata": "img/figuras/ecu_07_gonzalo-plata.png",
+  "ECU:gonzalo valle": "img/figuras/ecu_02_gonzalo-valle.png",
+  "ECU:joel ordonez": "img/figuras/ecu_14_joel-ordonez.png",
+  "ECU:john veboah": "img/figuras/ecu_15_john-veboah.png",
+  "ECU:kendry paez": "img/figuras/ecu_10_kendry-paez.png",
+  "ECU:kevin rodriguez": "img/figuras/ecu_04_kevin-rodriguez.png",
+  "ECU:leonardo campana": "img/figuras/ecu_08_leonardo-campana.png",
+  "ECU:moises caicedo": "img/figuras/ecu_13_moises-caicedo.png",
+  "ECU:nilson angulo": "img/figuras/ecu_06_nilson-angulo.png",
+  "ECU:pervis estupinan": "img/figuras/ecu_16_pervis-estupinan.png",
+  "ECU:piero hincapie": "img/figuras/ecu_18_piero-hincapie.png",
+  "ECU:willian pacho": "img/figuras/ecu_17_willian-pacho.png",
+  "ENG:anthony gordon": "img/figuras/eng_07_anthony-gordon.png",
+  "ENG:bukayo saka": "img/figuras/eng_06_duratu-vara.png",
+  "ENG:dan burn": "img/figuras/eng_14_dan-burn.png",
+  "ENG:declan rice": "img/figuras/eng_12_declan-rice.png",
+  "ENG:ezri konsa": "img/figuras/eng_18_ollie-watkins.png",
+  "ENG:harry kane": "img/figuras/eng_02_harry-kane.png",
+  "ENG:john stones": "img/figuras/eng_15_john-stones.png",
+  "ENG:jordan henderson": "img/figuras/eng_10_jordan-henderson.png",
+  "ENG:jordan pickford": "img/figuras/eng_01_jordan-pickford.png",
+  "ENG:jude bellingham": "img/figuras/eng_09_jude-bellingham.png",
+  "ENG:marc guehi": "img/figuras/eng_17_marcus-rashford.png",
+  "ENG:marcus rashford": "img/figuras/eng_03_marc-guehi.png",
+  "ENG:morgan rogers": "img/figuras/eng_08_morgan-rogers.png",
+  "ENG:ollie watkins": "img/figuras/eng_05_ollie-watkins.png",
+  "ENG:reece james": "img/figuras/eng_16_reece-james.png",
+  "ESP:aymeric laporte": "img/figuras/esp_18_aymeric-laporte.png",
+  "ESP:dani olmo": "img/figuras/esp_05_i-dani-olmo.png",
+  "ESP:fabian ruiz": "img/figuras/esp_09_fabian-ruiz.png",
+  "ESP:ferran torres": "img/figuras/esp_03_ferran-torres.png",
+  "ESP:lamine yamal": "img/figuras/esp_02_robin-le-normand.png",
+  "ESP:marc cucurella": "img/figuras/esp_14_dani-olmo.png",
+  "ESP:martin zubimendi": "img/figuras/esp_13_martin-zubimendi.png",
+  "ESP:mikel merino": "img/figuras/esp_08_mikel-merino.png",
+  "ESP:nico williams": "img/figuras/esp_04_nico-williams.png",
+  "ESP:pedri": "img/figuras/esp_10_pedri.png",
+  "ESP:pedro porro": "img/figuras/esp_16_pedro-porro.png",
+  "FRA:bradley barcola": "img/figuras/fra_06_bradley-barcola.png",
+  "FRA:desire doue": "img/figuras/fra_05_desire-doue-is.png",
+  "FRA:kylian mbappe": "img/figuras/fra_02_kylian-mbappe.png",
+  "FRA:mike maignan": "img/figuras/fra_01_mike-maignan.png",
+  "FRA:ousmane dembele": "img/figuras/fra_07_ousmane-dembele-r.png",
+  "GER:david raum": "img/figuras/ger_13_david-raum.png",
+  "GER:florian wirtz": "img/figuras/ger_08_florian-wirtz.png",
+  "GER:jamal musiala": "img/figuras/ger_14_jamal-musiala.png",
+  "GER:jonathan tah": "img/figuras/ger_16_leroy-sane.png",
+  "GER:joshua kimmich": "img/figuras/ger_10_joshua-kimmich.png",
+  "GER:leon goretzka": "img/figuras/ger_07_leon-goretzka.png",
+  "GER:nico schlotterbeck": "img/figuras/ger_11_felix-nmecha.png",
+  "GER:waldemar anton": "img/figuras/ger_15_waldemar-anton.png",
+  "HAI:carlens arcus": "img/figuras/hai_12_carlens-arcus.png",
+  "HAI:danley jean jacques": "img/figuras/hai_11_danley-jean-jacques.png",
+  "HAI:derrick etienne": "img/figuras/hai_05_derrick-etienne-jr.png",
+  "HAI:duckens nazon": "img/figuras/hai_06_duckens-nazon.png",
+  "HAI:duke lacroix": "img/figuras/hai_14_duke-lacroix.png",
+  "HAI:frantzdy pierrot": "img/figuras/hai_18_frantzdy-pierrot.png",
+  "HAI:hannes delcroix": "img/figuras/hai_02_hannes-delcroix.png",
+  "HAI:jean kevin duverne": "img/figuras/hai_15_jean-kevin-duverne.png",
+  "HAI:jean ricner bellegarde": "img/figuras/hai_16_jean-ricner-bellegarde.png",
+  "HAI:leverton pierre": "img/figuras/hai_10_leverton-pierre.png",
+  "HAI:martin experience": "img/figuras/hai_07_martin-experience.png",
+  "HAI:ricardo ade": "img/figuras/hai_03_ricardo-ade.png",
+  "HAI:ruben providence": "img/figuras/hai_17_ruben-providence.png",
+  "JPN:ayase ueda": "img/figuras/jpn_09_ayase-ueda.png",
+  "JPN:ayumu seko": "img/figuras/jpn_12_ayumu-seko.png",
+  "JPN:junya ito": "img/figuras/jpn_07_junya-ito.png",
+  "JPN:kaishu sano": "img/figuras/jpn_14_kaishu-sano.png",
+  "JPN:keito nakamura": "img/figuras/jpn_02_keito-nakamura.png",
+  "JPN:ritsu doan": "img/figuras/jpn_01_ritsu-doan.png",
+  "JPN:shogo taniguchi": "img/figuras/jpn_17_shogo-taniguchi.png",
+  "JPN:takefusa kubo": "img/figuras/jpn_03_takefusa-kubo.png",
+  "JPN:zion suzuki": "img/figuras/jpn_10_zion-suzuki.png",
+  "KOR:dong gyeong lee": "img/figuras/kor_12_donggyeong-lee.png",
+  "KOR:han beom lee": "img/figuras/kor_05_hanbeom-lee.png",
+  "KOR:hee chan hwang": "img/figuras/kor_18_heechan-hwang.png",
+  "KOR:heung min son": "img/figuras/kor_03_heungmin-son.png",
+  "KOR:hyeon gyu oh": "img/figuras/kor_17_hyeongyu-oh.png",
+  "KOR:hyeon woo jo": "img/figuras/kor_01_hyeonwoo-jo-ie.png",
+  "KOR:in beom hwang": "img/figuras/kor_09_inbeom-hwang.png",
+  "KOR:jae sung lee": "img/figuras/kor_08_jaesung-lee.png",
+  "KOR:jens castrop": "img/figuras/kor_15_jens-castrop.png",
+  "KOR:kang in lee": "img/figuras/kor_10_kangin-lee.png",
+  "KOR:kim min jae": "img/figuras/kor_04_minjae-kim.png",
+  "KOR:kim seung gyu": "img/figuras/kor_02_seunggyu-kim-ee.png",
+  "KOR:seung ho paik": "img/figuras/kor_16_seungho-paik.png",
+  "KOR:tae seok lee": "img/figuras/kor_06_taeseok-lee.png",
+  "KOR:young woo seol": "img/figuras/kor_14_youngwoo0-seol.png",
+  "MAR:achraf hakimi": "img/figuras/mar_12_achraf-hakimi.png",
+  "MAR:ayoub el kaabi": "img/figuras/mar_06_roman-saiss.png",
+  "MAR:bilal el khannouss": "img/figuras/mar_10_bilal-el-khannouss.png",
+  "MAR:brahim diaz": "img/figuras/mar_05_brahim-diaz.png",
+  "NED:bart verbruggen": "img/figuras/ned_01_bart-verbruggen.png",
+  "NED:denzel dumfries": "img/figuras/ned_15_denzel-dumfries.png",
+  "NED:frenkie de jong": "img/figuras/ned_14_frenkie-de-jong.png",
+  "NED:jan paul van hecke": "img/figuras/ned_16_jan-paul-van-hecke.png",
+  "NED:jurrien timber": "img/figuras/ned20.png",
+  "NED:micky van de ven": "img/figuras/ned_18_micky-van-de-ven.png",
+  "NED:nathan ake": "img/figuras/ned21.png",
+  "NED:ryan gravenberch": "img/figuras/ned_11_ryan-gravenberch.png",
+  "NED:teun koopmeiners": "img/figuras/ned_13_teun-koopmeiners.png",
+  "NED:virgil van dijk": "img/figuras/ned_17_virgil-van-dijk.png",
+  "NOR:julian ryerson": "img/figuras/nor_18_julian-ryerson.png",
+  "NOR:kristoffer vassbakk ajer": "img/figuras/nor_14_kristoffer-vassbakk-ajer.png",
+  "NOR:marcus holmgren": "img/figuras/nor_17_marcus-holmgren-pedersen.png",
+  "NOR:morten thorsby": "img/figuras/nor_09_morten-thorsby.png",
+  "NOR:oscar bobb": "img/figuras/nor_06_oscar-bobb.png",
+  "NOR:patrick berg": "img/figuras/nor_10_patrick-berg.png",
+  "NOR:sander berge": "img/figuras/nor_11_sander-berge.png",
+  "PAR:andres cubas": "img/figuras/par_02_andres-cubas.png",
+  "PAR:angel romero": "img/figuras/par_04_angel-romero.png",
+  "PAR:antonio sanabria": "img/figuras/par_17_antonio-sanabria.png",
+  "PAR:damian bobadilla": "img/figuras/par_15_damian-bobadilla.png",
+  "PAR:diego gomez": "img/figuras/par_13_diego-gomez.png",
+  "PAR:fabian balbuena": "img/figuras/par_10_fabian-balbuena.png",
+  "PAR:gustavo gomez": "img/figuras/par_14_gustavo-gomez.png",
+  "PAR:jr alonso": "img/figuras/par_03_junior-alonso.png",
+  "PAR:juan jose caceres": "img/figuras/par_09_juan-jose-caceres.png",
+  "PAR:julio enciso": "img/figuras/par_07_julio-enciso.png",
+  "PAR:mathias villasanti": "img/figuras/par_08_mathias-villasanti.png",
+  "PAR:matias galarza fonda": "img/figuras/par_18_matias-galarza-fonda.png",
+  "PAR:miguel almiron": "img/figuras/par_06_miguel-almiron.png",
+  "PAR:omar alderete": "img/figuras/par_01_omar-alderete.png",
+  "POR:diogo costa": "img/figuras/por_01_diogo-costa.png",
+  "POR:joao cancelo": "img/figuras/por_13_joao-cancelo.png",
+  "POR:joao felix": "img/figuras/por_03_joao-felix.png",
+  "POR:joao neves": "img/figuras/por_05_joao-neves.png",
+  "POR:jose sa": "img/figuras/por_15_joao-felix.png",
+  "POR:pedro neto": "img/figuras/por_17_pedro-neto.png",
+  "POR:rafael leao": "img/figuras/por_16_rafael-leao.png",
+  "POR:trincao": "img/figuras/por_04_francisco-trincao.png",
+  "QAT:akram afif": "img/figuras/qat_14_akram-hassan-afif.png",
+  "QAT:boualem khoukhi": "img/figuras/qat_01_meshaal-barsham.png",
+  "QAT:meshaal barsham": "img/figuras/qat_10_assim-madibo.png",
+  "QAT:mohammed waad": "img/figuras/qat_08_f-mohammed-waad.png",
+  "RSA:khuliso mudau": "img/figuras/rsa_03_khuliso-mudau.png",
+  "RSA:khulumani ndamane": "img/figuras/rsa_16_khulumani-ndamane.png",
+  "RSA:lyle foster": "img/figuras/rsa_09_lyle-foster.png",
+  "RSA:mbekezeli mbokazi": "img/figuras/rsa_13_mbekezeli-mbokazi.png",
+  "RSA:oswin appollis": "img/figuras/rsa_08_oswin-appollis.png",
+  "RSA:ronwen williams": "img/figuras/rsa_14_f-ronwen-williams-a.png",
+  "RSA:samukele kabini": "img/figuras/rsa_02_samukele-kabini.png",
+  "RSA:sipho chaine": "img/figuras/rsa_01_y-sipho-chaine-y.png",
+  "RSA:teboho mokoena": "img/figuras/rsa_04_teboho-mokoena.png",
+  "RSA:thalente mbatha": "img/figuras/rsa_05_thalente-mbatha.png",
+  "SCO:angus gunn": "img/figuras/sco_02_angus-gunn.png",
+  "SCO:ben gannon doak": "img/figuras/sco_14_ben-gannon-doak.png",
+  "SCO:billy gilmour": "img/figuras/sco_15_billy-gilmour.png",
+  "SCO:che adams": "img/figuras/sco_13_che-adams.png",
+  "SCO:jack hendry": "img/figuras/sco_11_jack-hendry.png",
+  "SCO:john mcginn": "img/figuras/sco_03_john-mcginn.png",
+  "SCO:john souttar": "img/figuras/sco_04_john-souttar.png",
+  "SCO:kenny mclean": "img/figuras/sco_10_scott-mctominay.png",
+  "SCO:kieran tierney": "img/figuras/sco_16_kieran-tierney.png",
+  "SCO:lewis ferguson": "img/figuras/sco_06_lewis-ferguson.png",
+  "SCO:scott mckenna": "img/figuras/sco_01_scott-mckenna.png",
+  "SEN:sadio mane": "img/figuras/sen_13_sadio-mane-se.png",
+  "SUI:denis zakaria": "img/figuras/sui_08_denis-zakaria.png",
+  "SUI:gregor kobel": "img/figuras/sui_01_gregor-kobel.png",
+  "SUI:johan manzambi": "img/figuras/sui_11_johan-manzambi.png",
+  "SUI:ruben vargas": "img/figuras/sui_04_ruben-vargas.png",
+  "SUI:yvon mvogo": "img/figuras/sui_17_yvon-mvogo.png",
+  "SWE:alexander isak": "img/figuras/swe_12_alexander-isak.png",
+  "SWE:anthony elanga": "img/figuras/swe_04_anthony-elanga.png",
+  "SWE:daniel svensson": "img/figuras/swe_08_daniel-svensson.png",
+  "SWE:emil holm": "img/figuras/swe_14_emil-holm.png",
+  "SWE:gabriel gudmundsson": "img/figuras/swe_02_gabriel-gudmundsson.png",
+  "SWE:gustaf lagerbielke": "img/figuras/swe_17_gustaf-lagerbielke.png",
+  "SWE:jesper karlstrom": "img/figuras/swe_06_jesper-karlstrom.png",
+  "SWE:lucas bergvall": "img/figuras/swe_01_lucas-bergvall.png",
+  "SWE:mattias svanberg": "img/figuras/swe_16_mattias-svanberg.png",
+  "SWE:victor lindelof": "img/figuras/swe_10_victor-nilsson-lindelof.png",
+  "SWE:viktor johansson": "img/figuras/swe_09_viktor-johansson.png",
+  "TUR:yunus akgun": "img/figuras/tur_14_yunus-akgun.png",
+  "URU:darwin nunez": "img/figuras/uru_02_darwin-nunez.png",
+  "URU:federico valverde": "img/figuras/uru_11_federico-valverde.png",
+  "URU:federico vinas": "img/figuras/uru_05_federico-vinas.png",
+  "URU:giorgian de arrascaeta": "img/figuras/uru_06_giorgian-de-arrascaeta.png",
+  "URU:guillermo varela": "img/figuras/uru_15_guillermo-varela.png",
+  "URU:jose maria gimenez": "img/figuras/uru_17_jose-maria-gimenez.png",
+  "URU:manuel ugarte": "img/figuras/uru_10_manuel-ugarte.png",
+  "URU:mathias olivera": "img/figuras/uru_16_federico-vinas.png",
+  "URU:nahitan nandez": "img/figuras/uru_14_nahitan-nandez.png",
+  "URU:rodrigo aguirre": "img/figuras/uru_03_ronald-araujo.png",
+  "URU:rodrigo bentancur": "img/figuras/uru_09_rodrigo-bentancur.png",
+  "URU:ronald araujo": "img/figuras/uru_13_ronald-araujo.png",
+  "URU:santiago mele": "img/figuras/uru_18_santiago-mele.png",
+  "URU:sebastian caceres": "img/figuras/uru_12_sebastian-caceres.png",
+  "USA:alex freeman": "img/figuras/usa_09_alex-freeman.png",
+  "USA:antonee robinson": "img/figuras/usa_08_antonee-robinson.png",
+  "USA:chris richards": "img/figuras/usa_06_chris-richards.png",
+  "USA:christian pulisic": "img/figuras/usa_05_christian-pulisic.png",
+  "USA:folarin balogun": "img/figuras/usa_02_folarin-balogun.png",
+  "USA:haji wright": "img/figuras/usa21.png",
+  "USA:malik tillman": "img/figuras/usa20.png",
+  "USA:mark mckenzie": "img/figuras/usa_17_mark-mckenzie.png",
+  "USA:matt freese": "img/figuras/usa19.png",
+  "USA:ricardo pepi": "img/figuras/usa_16_ricardo-pepi.png",
+  "USA:tim ream": "img/figuras/usa22.png",
+  "USA:tyler adams": "img/figuras/usa_18_tyler-adams.png",
+  "USA:weston mckennie": "img/figuras/usa_01_weston-mckennie.png"
 };
 
 const paniniPlayerDetails = {
@@ -16222,6 +17809,3305 @@ const paniniPlayerDetails = {
   }
 };
 
+const livePlayerDetails = {
+  "anthony mandrea": {
+    "name": "Anthony Mandrea",
+    "birthDate": "1996-12-25",
+    "height": "1.86 m",
+    "club": "OGC Nice",
+    "position": "goalkeeper"
+  },
+  "luca zidane": {
+    "name": "Luca Zidane",
+    "birthDate": "1998-05-13",
+    "height": "1.83 m",
+    "club": "Granada CF",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018_(1)_(Luca).jpg"
+  },
+  "kilian belazzoug": {
+    "name": "Kilian Belazzoug",
+    "birthDate": "2006-07-18"
+  },
+  "ramy bensebaini": {
+    "name": "Ramy Bensebaini",
+    "birthDate": "1995-04-16",
+    "height": "1.88 m",
+    "club": "Borussia Mönchengladbach",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade_rennais_vs_USM_Alger,_July_16th_2016_-_25.jpg"
+  },
+  "rayan ait-nouri": {
+    "name": "Rayan Aït-Nouri",
+    "birthDate": "2001-06-06",
+    "height": "1.80 m",
+    "club": "France national under-21 association football team",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rayan_Aït-Nouri_playing_for_Algeria_in_2024_(cropped).jpg"
+  },
+  "mohamed amine tougai": {
+    "name": "Mohamed Amine Tougai",
+    "birthDate": "2000-01-22",
+    "club": "Espérance Sportive de Tunis",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Amine_Tougai.jpg"
+  },
+  "jaouen hadjam": {
+    "name": "Jaouen Hadjam",
+    "birthDate": "2003-03-26",
+    "height": "1.84 m",
+    "club": "BSC Young Boys",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_FC_Nantes_(28-10-2023)_10.jpg"
+  },
+  "mohamed farsi": {
+    "name": "Mohamed Farsi",
+    "birthDate": "1999-12-16",
+    "height": "1.78 m",
+    "club": "Columbus Crew",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Farsi_NYCFC_v_Columbus_10_May_2026-35_(cropped).jpg"
+  },
+  "ismael bennacer": {
+    "name": "Ismaël Bennacer",
+    "birthDate": "1997-12-01",
+    "height": "1.75 m",
+    "club": "Algeria men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BennacerLeB2022.jpg"
+  },
+  "houssem aouar": {
+    "name": "Houssem Aouar",
+    "birthDate": "1998-06-30",
+    "height": "1.75 m",
+    "club": "AS Roma",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Houssem_Aouar_2017.jpg"
+  },
+  "hicham boudaoui": {
+    "name": "Hicham Boudaoui",
+    "birthDate": "1999-09-23",
+    "height": "1.75 m",
+    "club": "Paradou AC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Boudaoui_asse_ogcn_2425.png"
+  },
+  "ramiz zerrouki": {
+    "name": "Ramiz Zerrouki",
+    "birthDate": "1998-05-26",
+    "height": "1.83 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ramiz_zerrouki-1672746224.jpg"
+  },
+  "nabil bentaleb": {
+    "name": "Nabil Bentaleb",
+    "birthDate": "1994-11-24",
+    "height": "1.87 m",
+    "club": "Algeria men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabil_Bentaleb.jpg"
+  },
+  "ibrahim maza": {
+    "name": "Ibrahim Maza",
+    "birthDate": "2005-11-24",
+    "height": "1.77 m",
+    "position": "forward"
+  },
+  "fares chaibi": {
+    "name": "Farès Chaïbi",
+    "birthDate": "2002-11-28",
+    "height": "1.83 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/World_Cup_Qualification_Africa_Guinea_v_Algeria_14_(Farès_Chaïbi).jpg"
+  },
+  "riyad mahrez": {
+    "name": "Riyad Mahrez",
+    "birthDate": "1991-02-21",
+    "height": "1.81 m",
+    "club": "Algeria men's national football team",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahrez_2021.jpg"
+  },
+  "said benrahma": {
+    "name": "Saïd Benrahma",
+    "birthDate": "1995-08-10",
+    "height": "1.72 m",
+    "club": "West Ham United F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saïd_Benrahma_-_20240326.jpg"
+  },
+  "amine gouiri": {
+    "name": "Amine Gouiri",
+    "birthDate": "2000-02-16",
+    "height": "1.80 m",
+    "club": "OGC Nice",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_OGC_Nice_(10-04-2022)_25_Amine_Gouiri.jpg"
+  },
+  "baghdad bounedjah": {
+    "name": "Baghdad Bounedjah",
+    "birthDate": "1991-11-24",
+    "height": "1.83 m",
+    "club": "Al Sadd Sports Club",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BaghdadBounedjah2018.jpg"
+  },
+  "mohamed amoura": {
+    "name": "Mohamed Amoura",
+    "birthDate": "2000-05-09",
+    "height": "1.68 m",
+    "club": "VfL Wolfsburg",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohammed_Amoura_training_against_Mozambique.png"
+  },
+  "amin chiakha": {
+    "name": "Amin Chiakha",
+    "birthDate": "2006-03-12",
+    "height": "1.91 m"
+  },
+  "emiliano martinez": {
+    "name": "Emiliano Martínez",
+    "birthDate": "1992-09-01",
+    "height": "1.95 m",
+    "club": "Aston Villa F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St._Louis_City_vs_Aston_Villa_(Jul_2025)_14_(Emiliano_Martínez).jpg"
+  },
+  "geronimo rulli": {
+    "name": "Gerónimo Rulli",
+    "birthDate": "1992-05-20",
+    "height": "1.89 m",
+    "club": "Olympique de Marseille",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rulli_asse_om_2425.png"
+  },
+  "juan musso": {
+    "name": "Juan Musso",
+    "birthDate": "1994-05-06",
+    "height": "1.91 m",
+    "club": "Atlético Madrid",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Musso_Udinese.png"
+  },
+  "walter benitez": {
+    "name": "Walter Benítez",
+    "birthDate": "1993-01-19",
+    "height": "1.91 m",
+    "club": "OGC Nice",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Walter_benitez_2016.jpg"
+  },
+  "facundo cambeses": {
+    "name": "Facundo Cambeses",
+    "birthDate": "1997-04-09",
+    "height": "1.85 m",
+    "club": "Club Atlético Banfield",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Facundo_Cambeses_(cropped).jpg"
+  },
+  "santiago beltran": {
+    "name": "Santiago Beltrán",
+    "birthDate": "2004-10-04"
+  },
+  "agustin giay": {
+    "name": "Agustín Giay",
+    "birthDate": "2004-01-16",
+    "height": "1.80 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrenamiento_Argentina_Sub20_previo_al_mundial_-_BugWarp_(36).jpg"
+  },
+  "gonzalo montiel": {
+    "name": "Gonzalo Montiel",
+    "birthDate": "1997-01-01",
+    "height": "1.75 m",
+    "club": "Club Atlético River Plate",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palestino_-_River_Plate_20190424_05.jpg"
+  },
+  "nicolas capaldo": {
+    "name": "Nicolás Capaldo",
+    "birthDate": "1997-09-14",
+    "height": "1.77 m",
+    "club": "Boca Juniors",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RB_Salzburg_gegen_DAC_Dunajská_Streda_(Testspiel_25._Juni_2021)_10.jpg"
+  },
+  "kevin mac allister": {
+    "name": "Kevin Mac Allister",
+    "birthDate": "1997-11-07",
+    "height": "1.75 m",
+    "club": "Royale Union Saint-Gilloise",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Go_Ahead_Eagles_-_Royale_Union_Saint-Gillloise_-_53852891619_(Kevin_Mac_Allister).jpg"
+  },
+  "lucas martinez quarta": {
+    "name": "Lucas Martínez Quarta",
+    "birthDate": "1996-05-10",
+    "height": "1.81 m",
+    "club": "Club Atlético River Plate",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_Martínez_Quarta_2022.jpg"
+  },
+  "marcos senesi": {
+    "name": "Marcos Senesi",
+    "birthDate": "1997-05-10",
+    "height": "1.84 m",
+    "club": "San Lorenzo de Almagro",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcos_Senesi_2022.jpg"
+  },
+  "lisandro martinez": {
+    "name": "Lisandro Martínez",
+    "birthDate": "1998-01-18",
+    "height": "1.75 m",
+    "club": "Manchester United F.C.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lisandro_Martinez_2022.jpg"
+  },
+  "nicolas otamendi": {
+    "name": "Nicolás Otamendi",
+    "birthDate": "1988-02-12",
+    "height": "1.83 m",
+    "club": "S.L. Benfica",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_team_in_St._Petersburg_(cropped)_Otamendi.jpg"
+  },
+  "german pezzella": {
+    "name": "Germán Pezzella",
+    "birthDate": "1991-06-27",
+    "height": "1.87 m",
+    "club": "Real Betis Balompié",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Germán_Pezella_en_los_premios_Jorge_Newbery_2024_(cropped).jpg"
+  },
+  "lautaro di lollo": {
+    "name": "Lautaro Di Lollo",
+    "birthDate": "2004-03-10",
+    "height": "1.87 m",
+    "club": "Boca Juniors",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lautaro_Di_Lollo_(cropped).jpg"
+  },
+  "zaid romero": {
+    "name": "Zaid Romero",
+    "birthDate": "1999-12-15",
+    "height": "1.95 m",
+    "club": "Godoy Cruz Antonio Tomba",
+    "position": "defender"
+  },
+  "facundo medina": {
+    "name": "Facundo Medina",
+    "birthDate": "1999-05-28",
+    "height": "1.84 m",
+    "club": "R.C. Lens",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entraînement_du_RC_Lens_-_15_juillet_2020_21.jpg"
+  },
+  "marcos acuna": {
+    "name": "Marcos Acuña",
+    "birthDate": "1991-10-28",
+    "height": "1.72 m",
+    "club": "Boca Juniors",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_-_Colombia_2022_(52)_(cropped).jpg"
+  },
+  "nicolas tagliafico": {
+    "name": "Nicolás Tagliafico",
+    "birthDate": "1992-08-31",
+    "height": "1.72 m",
+    "club": "Olympique Lyonnais",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_team_in_St._Petersburg_(cropped).jpg"
+  },
+  "gabriel rojas": {
+    "name": "Gabriel Rojas",
+    "birthDate": "1997-06-22",
+    "height": "1.78 m",
+    "club": "San Lorenzo de Almagro",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabriel_Rojas_2017.jpg"
+  },
+  "maximo perrone": {
+    "name": "Máximo Perrone",
+    "birthDate": "2003-01-07",
+    "height": "1.78 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrenamiento_Argentina_Sub20_previo_al_mundial_-_BugWarp_(14)_(cropped).jpg"
+  },
+  "mathew ryan": {
+    "name": "Mathew Ryan",
+    "birthDate": "1992-04-08",
+    "height": "1.84 m",
+    "club": "Levante UD",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180601_FIFA_Friendly_Match_Czech_Republic_vs._Australia_Matthew_Ryan_850_0230.jpg"
+  },
+  "joe gauci": {
+    "name": "Joe Gauci",
+    "birthDate": "2000-07-04",
+    "height": "1.94 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Joe_Gauci_October_2025.jpg"
+  },
+  "harry souttar": {
+    "name": "Harry Souttar",
+    "birthDate": "1998-10-22",
+    "height": "1.98 m",
+    "club": "Leicester City F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4822293_AE7I6590_(cropped).jpg"
+  },
+  "alessandro circati": {
+    "name": "Alessandro Circati",
+    "birthDate": "2003-10-10",
+    "height": "1.90 m"
+  },
+  "jordan bos": {
+    "name": "Jordan Bos",
+    "birthDate": "2002-10-29",
+    "height": "1.80 m",
+    "club": "Feyenoord Rotterdam",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4822286_AE7I6649_-_Jordan_Bos.jpg"
+  },
+  "aziz behich": {
+    "name": "Aziz Behich",
+    "birthDate": "1990-12-16",
+    "height": "1.72 m",
+    "club": "Australia men's national soccer team",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aziz_Behich.jpg"
+  },
+  "cameron burgess": {
+    "name": "Cameron Burgess",
+    "birthDate": "1995-10-21",
+    "height": "1.94 m",
+    "club": "Cheltenham Town F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cameron_Burgess_(cropped).jpg"
+  },
+  "lewis miller": {
+    "name": "Lewis Miller",
+    "birthDate": "2000-08-24",
+    "height": "1.87 m",
+    "club": "Central Coast Mariners FC",
+    "position": "defender"
+  },
+  "milos degenek": {
+    "name": "Miloš Degenek",
+    "birthDate": "1994-04-28",
+    "height": "1.87 m",
+    "club": "FK Crvena zvezda",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Milos_degenek.jpg"
+  },
+  "jackson irvine": {
+    "name": "Jackson Irvine",
+    "birthDate": "1993-03-07",
+    "height": "1.79 m",
+    "club": "Australia men's national soccer team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chile_VS._Australia_(3)_(cropped)_2.jpg"
+  },
+  "riley mcgree": {
+    "name": "Riley McGree",
+    "birthDate": "1998-11-02",
+    "club": "Adelaide United Football Club",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Riley_McGree.jpg"
+  },
+  "aiden o'neill": {
+    "name": "Aiden O'Neill",
+    "birthDate": "1998-07-04",
+    "height": "1.78 m",
+    "club": "Oldham Athletic A.F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aiden_O'Neill_CF_Montreal_NYCFC_6.28.25-034_(cropped).jpg"
+  },
+  "connor metcalfe": {
+    "name": "Connor Metcalfe",
+    "birthDate": "1999-11-05",
+    "height": "1.83 m",
+    "club": "FC St. Pauli",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4822293_AE7I6590_-_Connor_Metcalfe.jpg"
+  },
+  "patrick yazbek": {
+    "name": "Patrick Yazbek",
+    "birthDate": "2002-04-05",
+    "height": "1.83 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Patrick_Yazbek_Revolution_Nashville_6.25.25-035_(cropped).jpg"
+  },
+  "craig goodwin": {
+    "name": "Craig Goodwin",
+    "birthDate": "1991-12-16",
+    "height": "1.80 m",
+    "club": "Australia men's national soccer team",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Craig_Goodwin.jpg"
+  },
+  "nestory irankunda": {
+    "name": "Nestor Irankunda",
+    "birthDate": "2006-02-09",
+    "height": "1.75 m",
+    "club": "Grasshopper Club Zürich",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nestory_Irankunda_and_Kwadwo_Baah_09082025_(1)_(cropped).jpg"
+  },
+  "mohamed toure": {
+    "name": "Mohamed Touré",
+    "birthDate": "1997-03-30",
+    "height": "1.79 m",
+    "club": "Cultural y Deportiva Leonesa",
+    "position": "midfielder"
+  },
+  "patrick pentz": {
+    "name": "Patrick Pentz",
+    "birthDate": "1997-01-02",
+    "height": "1.86 m",
+    "club": "FK Austria Wien",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pentz_(2024).png"
+  },
+  "alexander schlage": {
+    "name": "Alexander Schlager",
+    "birthDate": "1996-02-01",
+    "height": "1.84 m",
+    "club": "SV Grödig",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Floridsdorfer_AC_2016–17_–_Alexander_Schlager_(01).jpg"
+  },
+  "florian wiegele": {
+    "name": "Florian Wiegele",
+    "birthDate": "2001-03-21"
+  },
+  "david affengruber": {
+    "name": "David Affengruber",
+    "birthDate": "2001-03-19",
+    "height": "1.85 m",
+    "club": "FC Liefering",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_versus_Young_Violets_Austria_Wien_(30._August_2019)_28.jpg"
+  },
+  "david alaba": {
+    "name": "David Alaba",
+    "birthDate": "1992-06-24",
+    "height": "1.80 m",
+    "club": "Austria men's national football team",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_David_Alaba_850_1632.jpg"
+  },
+  "kevin danso": {
+    "name": "Kevin Danso",
+    "birthDate": "1998-09-19",
+    "height": "1.90 m",
+    "club": "Reading F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_Lille_OSC_(17-09-2021)_46.jpg"
+  },
+  "marco friedl": {
+    "name": "Marco Friedl",
+    "birthDate": "1998-03-16",
+    "height": "1.87 m",
+    "club": "Austria men's national football team",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_national_under-21_football_team_-_Teamcamp_June_2017_(053).jpg"
+  },
+  "philipp lienhart": {
+    "name": "Philipp Lienhart",
+    "birthDate": "1996-07-11",
+    "height": "1.89 m",
+    "club": "SC Freiburg",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_national_under-21_football_team_-_Teamcamp_June_2017_(057).jpg"
+  },
+  "phillipp mwene": {
+    "name": "Philipp Mwene",
+    "birthDate": "1994-01-29",
+    "height": "1.70 m",
+    "club": "Austria national under-21 football team",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Phillipp-mwene.jpg"
+  },
+  "stefan posch": {
+    "name": "Stefan Posch",
+    "birthDate": "1997-05-14",
+    "height": "1.89 m",
+    "club": "TSG 1899 Hoffenheim",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_national_under-21_football_team_-_Teamcamp_June_2017_(110).jpg"
+  },
+  "alexander prass": {
+    "name": "Alexander Prass",
+    "birthDate": "2001-05-26",
+    "height": "1.80 m",
+    "club": "FC Liefering",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_gegen_FC_Juniors_OÖ._(19._April_2019)_34.jpg"
+  },
+  "michael svoboda": {
+    "name": "Michael Svoboda",
+    "birthDate": "1998-10-15",
+    "height": "1.95 m",
+    "club": "SV Schwechat",
+    "position": "defender"
+  },
+  "christoph baumgartner": {
+    "name": "Christoph Baumgartner",
+    "birthDate": "1999-08-01",
+    "height": "1.78 m",
+    "club": "RB Leipzig",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_national_under-21_football_team_-_Teamcamp_October_2019_(60).jpg"
+  },
+  "carney chukwuemeka": {
+    "name": "Carney Chukwuemeka",
+    "birthDate": "2003-10-20",
+    "height": "1.87 m",
+    "club": "Borussia Dortmund",
+    "position": "midfielder"
+  },
+  "konrad laimer": {
+    "name": "Konrad Laimer",
+    "birthDate": "1997-05-27",
+    "height": "1.79 m",
+    "club": "FC Bayern Munich",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2022-07-21_Fußball,_Männer,Freundschaftsspiel,_RB_Leipzig_-_FC_Liverpool_1DX_2137_by_Stepro_(cropped).jpg"
+  },
+  "marcel sabitzer": {
+    "name": "Marcel Sabitzer",
+    "birthDate": "1994-03-17",
+    "height": "1.76 m",
+    "club": "Borussia Dortmund",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcel_Sabitzer_2020_(cropped).jpg"
+  },
+  "xaver schlager": {
+    "name": "Xaver Schlager",
+    "birthDate": "1997-09-28",
+    "height": "1.74 m",
+    "club": "RB Leipzig",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_gegen_Austria_Lustenau_SKY_GO_Liga_15.JPG"
+  },
+  "romano schmid": {
+    "name": "Romano Schmid",
+    "birthDate": "2000-01-27",
+    "height": "1.68 m",
+    "club": "Austria men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_versus_Blau_Weiß_Linz_(22._September_2017)_41.jpg"
+  },
+  "alessandro schopf": {
+    "name": "Alessandro Schöpf",
+    "birthDate": "1994-02-07",
+    "height": "1.78 m",
+    "club": "Schalke 04",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20140905_U21_AUT_BIH_AT08_1103.jpg"
+  },
+  "nicolas seiwald": {
+    "name": "Nicolas Seiwald",
+    "birthDate": "2001-05-04",
+    "height": "1.79 m",
+    "club": "RB Leipzig",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_versus_WSG_Wattens_(24._Mai_2019)_04.jpg"
+  },
+  "paul wanner": {
+    "name": "Paul Wanner",
+    "birthDate": "2005-12-23",
+    "height": "1.85 m",
+    "club": "FC Bayern Munich",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_wanner-1772636856_(cropped).JPG"
+  },
+  "patrick wimmer": {
+    "name": "Patrick Wimmer",
+    "birthDate": "2001-05-30",
+    "height": "1.82 m",
+    "club": "VfL Wolfsburg",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Euro_2023_Qualifiers_Austria_vs._Finland_(2022-06-03)_29.jpg"
+  },
+  "marko arnautovic": {
+    "name": "Marko Arnautović",
+    "birthDate": "1989-04-19",
+    "height": "1.89 m",
+    "club": "FK Crvena zvezda",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Marko_Arnautović_850_1633.jpg"
+  },
+  "sasa kalajdzic": {
+    "name": "Sasa Kalajdzic",
+    "birthDate": "1997-07-07",
+    "height": "2.00 m",
+    "club": "First Vienna FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sasa_kalajdzic.jpg"
+  },
+  "thibaut courtois": {
+    "name": "Juan Pablo",
+    "birthDate": "1992-05-11",
+    "height": "2.00 m",
+    "club": "Belgium men's national football team",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Courtois_2018_(cropped).jpg"
+  },
+  "timothy castagne": {
+    "name": "Timothy Castagne",
+    "birthDate": "1995-12-05",
+    "height": "1.80 m",
+    "club": "Fulham F.C.",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Timothy_Castagne_01.jpg"
+  },
+  "maxim de cuyper": {
+    "name": "Maxim De Cuyper",
+    "birthDate": "2000-12-22",
+    "height": "1.82 m",
+    "club": "Brighton & Hove Albion F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maxim_De_Cuyper_USMNT_v_Belgium_Mar_28_2026-79_(cropped).jpg"
+  },
+  "koni de winter": {
+    "name": "Koni De Winter",
+    "birthDate": "2002-06-12",
+    "height": "1.91 m",
+    "club": "AC Milan",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Koni_De_Winter_USMNT_v_Belgium_Mar_28_2026-36_(cropped).jpg"
+  },
+  "brandon mechele": {
+    "name": "Brandon Mechele",
+    "birthDate": "1993-01-28",
+    "height": "1.90 m",
+    "club": "Club Brugge K.V.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandon_Mechele_Club_Brugge.jpg"
+  },
+  "thomas meunier": {
+    "name": "Thomas Meunier",
+    "birthDate": "1991-09-12",
+    "height": "1.90 m",
+    "club": "Lille OSC",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank–121.jpg"
+  },
+  "nathan ngoy": {
+    "name": "Nathan Ngoy",
+    "birthDate": "2003-06-10",
+    "height": "1.83 m"
+  },
+  "joaquin seys": {
+    "name": "Joaquin Seys",
+    "birthDate": "2005-03-28",
+    "height": "1.78 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Salzburg_gegen_Club_Brügge_(2025-08-06_Championsleague_Qualifikation_Dritte_Runde)_63_(Joaquin_Seys).jpg"
+  },
+  "teatro arthur": {
+    "name": "Teatro Arthur Azevedo",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro_Arthur_Azevedo.JPG"
+  },
+  "kevin de bruyne": {
+    "name": "Kevin De Bruyne",
+    "birthDate": "1991-06-28",
+    "height": "1.81 m",
+    "club": "SSC Napoli",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_(cropped).jpg"
+  },
+  "amadou onana": {
+    "name": "Amadou Onana",
+    "birthDate": "2001-08-16",
+    "height": "1.92 m",
+    "club": "Aston Villa F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_Lille_OSC_(17-09-2021)_9_(cropped).jpg"
+  },
+  "nicolas raskin": {
+    "name": "Nicolas Raskin",
+    "birthDate": "2001-02-23",
+    "height": "1.78 m",
+    "club": "Standard Liège",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas_Raskin_2023.jpg"
+  },
+  "youri tielemans": {
+    "name": "Youri Tielemans",
+    "birthDate": "1997-05-07",
+    "height": "1.76 m",
+    "club": "Aston Villa F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Youri_Tielemans_USMNT_v_Belgium_Mar_28_2026-20_(cropped).jpg"
+  },
+  "hans vanaken": {
+    "name": "Hans Vanaken",
+    "birthDate": "1992-08-24",
+    "height": "1.94 m",
+    "club": "Club Brugge K.V.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans_Vanaken_Lommel_United.jpg"
+  },
+  "axel witsel": {
+    "name": "Axel Witsel",
+    "birthDate": "1989-01-12",
+    "height": "1.86 m",
+    "club": "Girona FC",
+    "position": "defensive midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Witsel_celebrating_bronze_(cropped).jpg"
+  },
+  "charles de ketelaere": {
+    "name": "Charles De Ketelaere",
+    "birthDate": "2001-03-10",
+    "height": "1.92 m",
+    "club": "Atalanta BC",
+    "position": "second striker",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_De_Ketelaere_2022_Salzburg_vs_AC_Milan_2022-09-06.jpg"
+  },
+  "jeremy doku": {
+    "name": "Jérémy Doku",
+    "birthDate": "2002-05-27",
+    "height": "1.73 m",
+    "club": "Manchester City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jérémy_Doku_USMNT_v_Belgium_Mar_28_2026-27_(cropped).jpg"
+  },
+  "matias fernandez pardo": {
+    "name": "Matias Fernandez-Pardo",
+    "birthDate": "2005-02-03",
+    "height": "1.88 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pardo_asselosc_2425_(cropped).jpg"
+  },
+  "romelu lukaku": {
+    "name": "Romelu Lukaku",
+    "birthDate": "1993-05-13",
+    "height": "1.91 m",
+    "club": "SSC Napoli",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Romelu_Lukaku_2021.jpg"
+  },
+  "dodi lukebakio": {
+    "name": "Dodi Lukebakio",
+    "birthDate": "1997-09-24",
+    "height": "1.84 m",
+    "club": "Watford F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dodi_Lukebakio_2021.jpg"
+  },
+  "diego moreira": {
+    "name": "Diego Moreira",
+    "birthDate": "2004-08-06",
+    "height": "1.79 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego_Moreira.jpg"
+  },
+  "alexis saelemaekers": {
+    "name": "Alexis Saelemaekers",
+    "birthDate": "1999-06-27",
+    "height": "1.80 m",
+    "club": "AC Milan",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexis_Saelemaekers_USMNT_v_Belgium_Mar_28_2026-13_(cropped).jpg"
+  },
+  "leandro trossard": {
+    "name": "Leandro Trossard",
+    "birthDate": "1994-12-04",
+    "height": "1.72 m",
+    "club": "Arsenal F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Leandro_Trossard_2022.jpg"
+  },
+  "martin zlomislic": {
+    "name": "Martin Zlomislić",
+    "birthDate": "1998-08-16",
+    "height": "1.90 m",
+    "club": "Bosnia and Herzegovina men's national football team",
+    "position": "goalkeeper"
+  },
+  "osman hadzikic": {
+    "name": "Osman Hadzikic",
+    "birthDate": "1996-03-12",
+    "height": "1.83 m",
+    "club": "NK Slaven Belupo",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_national_under-21_football_team_-_Teamcamp_June_2017_(Osman).jpg"
+  },
+  "sead kolasinac": {
+    "name": "Sead Kolašinac",
+    "birthDate": "1993-06-20",
+    "height": "1.83 m",
+    "club": "Atalanta BC",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1_Sead_Kolašinac_2018_(cropped2).jpg"
+  },
+  "amar dedic": {
+    "name": "Amar Dedić",
+    "birthDate": "2002-08-18",
+    "height": "1.80 m",
+    "club": "S.L. Benfica",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/(2024-09-10_)_FC_RB_Salzburg_gegen_SCR_Altach_24.jpg"
+  },
+  "nihad mujakic": {
+    "name": "Nihad Mujakić",
+    "birthDate": "1998-04-15",
+    "height": "1.89 m",
+    "club": "Gaziantep F.K.",
+    "position": "centre-back"
+  },
+  "nikola katic": {
+    "name": "Nikola Katić",
+    "birthDate": "1996-10-10",
+    "height": "1.94 m",
+    "club": "Schalke 04",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/SM-Rangers18_(16).jpg"
+  },
+  "tarik muharemovic": {
+    "name": "Tarik Muharemović",
+    "birthDate": "2003-02-28",
+    "height": "1.87 m",
+    "club": "US Sassuolo Calcio"
+  },
+  "stjepan radeljic": {
+    "name": "Stjepan Radeljić",
+    "birthDate": "1997-09-05",
+    "height": "1.89 m",
+    "club": "Bosnia and Herzegovina men's national football team"
+  },
+  "dennis hadzikadunic": {
+    "name": "Dennis Hadžikadunić",
+    "birthDate": "1998-07-09",
+    "height": "1.90 m",
+    "club": "U.C. Sampdoria",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dennis_Hadžikadunić_2021.jpg"
+  },
+  "nidal celik": {
+    "name": "Nidal Čelik",
+    "birthDate": "2006-07-17",
+    "club": "R.C. Lens",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Čelik_rcl_asse_2425.png"
+  },
+  "amir hadziahmetovic": {
+    "name": "Amir Hadžiahmetović",
+    "birthDate": "1997-03-08",
+    "height": "1.79 m",
+    "club": "Hull City A.F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Amir_Hadžiahmetović_playing_for_Beşiktaş_(cropped).jpg"
+  },
+  "ivan sunjic": {
+    "name": "Ivan Šunjić",
+    "birthDate": "1996-10-09",
+    "height": "1.84 m",
+    "club": "Bosnia and Herzegovina men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Sunjic_Birmingham_2019.jpg"
+  },
+  "ivan basic": {
+    "name": "Ivan Bašić",
+    "birthDate": "2002-04-30",
+    "height": "1.78 m",
+    "club": "FC Astana",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Bašić_2022.jpg"
+  },
+  "dzenis burnic": {
+    "name": "Dženis Burnić",
+    "birthDate": "1998-05-22",
+    "height": "1.81 m",
+    "club": "Bosnia and Herzegovina men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dženis_Burnić.jpg"
+  },
+  "ermin mahmic": {
+    "name": "Ermin Mahmić",
+    "birthDate": "2005-03-14",
+    "height": "1.82 m",
+    "club": "Bosnia and Herzegovina men's national football team"
+  },
+  "benjamin tahirovic": {
+    "name": "Benjamin Tahirović",
+    "birthDate": "2003-03-03",
+    "height": "1.93 m",
+    "club": "Brøndby IF",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Benjamin_Tahirović_-_GAE_-_Ajax_(53465349575).jpg"
+  },
+  "amar memic": {
+    "name": "Amar Memić",
+    "birthDate": "2001-01-20",
+    "height": "1.76 m",
+    "club": "FC Viktoria Plzeň"
+  },
+  "armin gigovic": {
+    "name": "Armin Gigović",
+    "birthDate": "2002-04-06",
+    "height": "1.87 m",
+    "club": "BSC Young Boys",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Armin_Gigović_2021.jpg"
+  },
+  "kerim alajbegovic": {
+    "name": "Kerim Alajbegović",
+    "birthDate": "2007-09-21",
+    "height": "1.78 m",
+    "club": "FC Red Bull Salzburg",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jahresbeginnfeier_FC_RB_Salzburg_(2026-01-25_RB_Arena)_10.jpg"
+  },
+  "esmir bajraktarevic": {
+    "name": "Esmir Bajraktarević",
+    "birthDate": "2005-03-10",
+    "height": "1.75 m",
+    "club": "PSV Eindhoven",
+    "position": "midfielder"
+  },
+  "ermedin demirovic": {
+    "name": "Ermedin Demirović",
+    "birthDate": "1998-03-25",
+    "height": "1.85 m",
+    "club": "VfB Stuttgart",
+    "position": "forward"
+  },
+  "jovo lukic": {
+    "name": "Jovo Lukić",
+    "birthDate": "1998-11-28",
+    "height": "1.90 m",
+    "club": "FC Universitatea Cluj",
+    "position": "centre-forward"
+  },
+  "samed bazdar": {
+    "name": "Samed Baždar",
+    "birthDate": "2004-01-31",
+    "height": "1.86 m",
+    "club": "Jagiellonia Białystok"
+  },
+  "haris tabakovic": {
+    "name": "Haris Tabaković",
+    "birthDate": "1994-06-20",
+    "height": "1.94 m",
+    "club": "Borussia Mönchengladbach",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_vs._FK_Austria_Wien_(2023-04-09)_55.jpg"
+  },
+  "edin dzeko": {
+    "name": "Edin Džeko",
+    "birthDate": "1986-03-17",
+    "height": "1.93 m",
+    "club": "Schalke 04",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20150331_2026_AUT_BIH_2177_Edin_Džeko_(cropped).jpg"
+  },
+  "ederson": {
+    "name": "Éderson José dos Santos Lourenço da Silva",
+    "birthDate": "1999-07-07",
+    "height": "1.82 m",
+    "club": "Cruzeiro E.C.",
+    "position": "midfielder"
+  },
+  "weverton": {
+    "name": "Weverton",
+    "birthDate": "1993-08-25"
+  },
+  "leo pereira": {
+    "name": "Léo Pereira",
+    "birthDate": "1996-01-31",
+    "height": "1.86 m",
+    "club": "Brazil national under-20 football team",
+    "position": "defender"
+  },
+  "alex sandro": {
+    "name": "Alex Sandro",
+    "birthDate": "1991-01-26",
+    "height": "1.80 m",
+    "club": "Clube de Regatas do Flamengo",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Zenit_Saint_Petersburg_vs._Juventus,_20_October_2021_28_-_Alex_Sandro_(cropped2).jpg"
+  },
+  "douglas santos": {
+    "name": "Douglas Santos",
+    "birthDate": "1994-03-22",
+    "height": "1.73 m",
+    "club": "Brazil men's national football team",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasil_estreia_contra_a_África_do_Sul_no_Mané_Garrincha_—_копия_(7).jpg"
+  },
+  "fabinho": {
+    "name": "Fabinho",
+    "birthDate": "1993-10-23",
+    "height": "1.88 m",
+    "club": "Brazil men's national football team",
+    "position": "defensive midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fabinho_(43934382122)_(cropped).jpg"
+  },
+  "paqueta": {
+    "name": "Paquetá",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mário_Navarro_da_Costa_-_Paquetá,_1917.jpg"
+  },
+  "vinicius jr": {
+    "name": "Vinícius Júnior",
+    "birthDate": "2000-07-12",
+    "height": "1.76 m",
+    "club": "Brazil men's national football team",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vinicius_Jr_2021.jpg"
+  },
+  "neymar jr": {
+    "name": "Neymar",
+    "birthDate": "1992-02-05",
+    "height": "1.75 m",
+    "club": "Santos F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Neymar_850_1705.jpg"
+  },
+  "raphinha": {
+    "name": "Raphinha",
+    "birthDate": "1996-12-14",
+    "height": "1.77 m",
+    "club": "Futbol Club Barcelona",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael_Dias_Belloli_2023.jpg"
+  },
+  "igor thiago": {
+    "name": "Igor Thiago",
+    "birthDate": "2001-06-26",
+    "height": "1.93 m",
+    "club": "Brentford F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brentford_Players_27122025_(4)_(cropped).jpg"
+  },
+  "luiz henrique": {
+    "name": "Luiz Henrique",
+    "birthDate": "2001-01-02",
+    "height": "1.82 m",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Luiz_Henrique_in_Zenit_2025.jpg"
+  },
+  "endrick": {
+    "name": "Endrick",
+    "birthDate": "2006-07-21",
+    "height": "1.73 m",
+    "club": "Olympique Lyonnais",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Endrick_seleção_vs_inglaterra.jpg"
+  },
+  "alphonso davies": {
+    "name": "Alphonso Davies",
+    "birthDate": "2000-11-02",
+    "height": "1.83 m",
+    "club": "FC Bayern Munich",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2022-07-30_Fußball,_Männer,_DFL-Supercup,_RB_Leipzig_-_FC_Bayern_München_1DX_3286_by_Stepro.jpg"
+  },
+  "alistair johnston": {
+    "name": "Alistair Johnston",
+    "birthDate": "1998-10-08",
+    "height": "1.80 m",
+    "club": "Celtic F.C.",
+    "position": "right-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/A_Johnston_Canada_national_football_team_WC2022_(cropped).jpg"
+  },
+  "samuel adekugbe": {
+    "name": "Sam Adekugbe",
+    "birthDate": "1995-01-16",
+    "height": "1.75 m",
+    "club": "Hatayspor",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sam_Adekugbe_WC2022.jpg"
+  },
+  "derek cornelius": {
+    "name": "Derek Cornelius",
+    "birthDate": "1997-11-25",
+    "height": "1.87 m",
+    "club": "Rangers F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/08042023_BP-MFF_reportagefotografen_7309.jpg"
+  },
+  "moise bombito": {
+    "name": "Moïse Bombito",
+    "birthDate": "2000-03-30",
+    "height": "1.90 m",
+    "club": "OGC Nice",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bombito_asse_ogcn_2425.png"
+  },
+  "kamal miller": {
+    "name": "Kamal Miller",
+    "birthDate": "1997-05-16",
+    "height": "1.83 m",
+    "club": "Portland Timbers",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Inter_Miami_0-0_Nashville_SC_12_(cropped).jpg"
+  },
+  "stephen eustaquio": {
+    "name": "Stephen Eustáquio",
+    "birthDate": "1996-12-21",
+    "height": "1.78 m",
+    "club": "S.C.U. Torreense",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/S_Eustaqui_Canada_national_football_team_WC2022_(cropped).jpg"
+  },
+  "ismael kone": {
+    "name": "Ismaël Koné",
+    "birthDate": "2002-06-16",
+    "height": "1.88 m",
+    "club": "Olympique de Marseille",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ismaël_Koné_WC2022_(cropped_2).jpg"
+  },
+  "jonathan osorio": {
+    "name": "Jonathan Osorio",
+    "birthDate": "1992-06-12",
+    "height": "1.75 m",
+    "club": "Toronto FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jonathan_Osorio.jpg"
+  },
+  "jacob shaffelburg": {
+    "name": "Jacob Shaffelburg",
+    "birthDate": "1999-11-26",
+    "height": "1.78 m",
+    "club": "Toronto FC II",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacob_Shaffleburg_cropped.png"
+  },
+  "mathieu choiniere": {
+    "name": "Mathieu Choinière",
+    "birthDate": "1999-02-07",
+    "height": "1.75 m",
+    "club": "Los Angeles FC",
+    "position": "forward"
+  },
+  "niko sigur": {
+    "name": "Niko Sigur",
+    "birthDate": "2003-09-09",
+    "height": "1.80 m"
+  },
+  "liam millar": {
+    "name": "Liam Millar",
+    "birthDate": "1999-09-27",
+    "height": "1.81 m",
+    "club": "Canadian men's national soccer team",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Liam_Millar.jpeg"
+  },
+  "yahia fofana": {
+    "name": "Yahia Fofana",
+    "birthDate": "2000-08-21",
+    "height": "1.94 m",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fofana_asse_sco_2425.png"
+  },
+  "mohamed kone": {
+    "name": "Mohamed Koné",
+    "birthDate": "2003-08-21",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/KapfenbergJudenburg15.jpg"
+  },
+  "alban lafont": {
+    "name": "Alban Lafont",
+    "birthDate": "1999-01-23",
+    "height": "1.93 m",
+    "club": "FC Nantes",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alban_Lafont_-_entrainement_-_9_mai_2018_1.jpg"
+  },
+  "clement akpa": {
+    "name": "Clément Akpa",
+    "birthDate": "2001-11-24",
+    "height": "1.81 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Akpro_aja_asse_2425.png"
+  },
+  "guela doue": {
+    "name": "Guéla Doué",
+    "birthDate": "2002-10-17",
+    "height": "1.87 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lens_-_Stade_Rennais_(20-08-2023)_34.jpg"
+  },
+  "ghislain konan": {
+    "name": "Ghislain Konan",
+    "birthDate": "1995-12-27",
+    "height": "1.76 m",
+    "club": "ASEC Mimosas",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Salzburg_gegen_Vitória_Guimarães_(UEFA_Euroleague_23._November_2017)_42.jpg"
+  },
+  "odilon kossounou": {
+    "name": "Odilon Kossounou",
+    "birthDate": "2001-01-04",
+    "height": "1.91 m",
+    "club": "Atalanta BC",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Odilon_Kossounou,_2022-07-31,_Saisoneröffnung_Bayer_04,_Leverkusen_(1).jpg"
+  },
+  "evan ndicka": {
+    "name": "Evan Ndicka",
+    "birthDate": "1999-08-20",
+    "height": "1.92 m",
+    "club": "AJ Auxerre",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2022128151247_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_Mönchengladbach_-_Sven_-_1D_X_MK_II_-_0370_-_B70I6481_(Evan_N’Dicka_cropped).jpg"
+  },
+  "parfait guiagon": {
+    "name": "Parfait Guiagon",
+    "birthDate": "2001-02-22",
+    "height": "1.69 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/פארפה_גויאגון_-_Parfait_Guiagon.jpg"
+  },
+  "christ inao oulai": {
+    "name": "Christ Inao Oulaï",
+    "birthDate": "2006-04-06",
+    "height": "1.73 m"
+  },
+  "franck kessie": {
+    "name": "Franck Kessié",
+    "birthDate": "1996-12-19",
+    "height": "1.83 m",
+    "club": "Al Ahli FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Franck_Yannick_Kessié.jpg"
+  },
+  "ibrahim sangare": {
+    "name": "Ibrahim Sangaré",
+    "birthDate": "1997-12-02",
+    "height": "1.91 m",
+    "club": "Toulouse FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ibrahim_Sangaré_(2018-05-09).jpg"
+  },
+  "jean michael seri": {
+    "name": "Jean Seri",
+    "birthDate": "1991-07-19",
+    "height": "1.68 m",
+    "club": "OGC Nice",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_Seri.jpg"
+  },
+  "ange-yoan bonny": {
+    "name": "Ange-Yoan Bonny",
+    "birthDate": "2003-10-25",
+    "height": "1.89 m",
+    "position": "centre-forward"
+  },
+  "oumar diakite": {
+    "name": "Oumar Diakité",
+    "birthDate": "2003-12-20",
+    "height": "1.82 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_gegen_Grazer_AK_(2022-04-29)_43.jpg"
+  },
+  "yan diomande": {
+    "name": "Yan Diomande",
+    "birthDate": "2006-11-14",
+    "height": "1.80 m"
+  },
+  "nicolas pepe": {
+    "name": "Nicolas Pépé",
+    "birthDate": "1995-05-29",
+    "height": "1.83 m",
+    "club": "Ivory Coast men's national football team",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas_Pepe_LOSC_(cropped2).jpg"
+  },
+  "bazoumana toure": {
+    "name": "Bazoumana Touré",
+    "birthDate": "2006-03-02",
+    "height": "1.75 m",
+    "club": "Hammarby Fotboll"
+  },
+  "elye wahi": {
+    "name": "Elye Wahi",
+    "birthDate": "2003-01-02",
+    "height": "1.81 m",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Elye_Wahi_2022.jpg"
+  },
+  "matthieu epolo": {
+    "name": "Matthieu Epolo",
+    "birthDate": "2005-01-15",
+    "height": "1.85 m"
+  },
+  "timothy fayulu": {
+    "name": "Timothy Fayulu",
+    "birthDate": "1999-07-24",
+    "height": "1.92 m",
+    "club": "FC Sion",
+    "position": "goalkeeper"
+  },
+  "lionel mpasi": {
+    "name": "Lionnel Mpasi",
+    "birthDate": "1994-08-01",
+    "height": "1.82 m",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lionel_Mpasi).jpg"
+  },
+  "dylan batubinsika": {
+    "name": "Dylan Batubinsika",
+    "birthDate": "1996-02-15",
+    "height": "1.84 m",
+    "club": "Royal Antwerp F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Batubinsika_asse_fcn_2425.png"
+  },
+  "rocky bushiri": {
+    "name": "Rocky Bushiri",
+    "birthDate": "1999-11-30",
+    "height": "1.86 m",
+    "club": "KV Mechelen",
+    "position": "defender"
+  },
+  "steve kapuadi": {
+    "name": "Steve Kapuadi",
+    "birthDate": "1998-04-30",
+    "height": "1.93 m",
+    "club": "FK Inter Bratislava"
+  },
+  "arthur masuaku": {
+    "name": "Arthur Masuaku",
+    "birthDate": "1993-11-07",
+    "height": "1.79 m",
+    "club": "Olympiacos F.C.",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur_Masuaku,_2023_(cropped).jpg"
+  },
+  "chancel mbemba": {
+    "name": "Chancel Mbemba",
+    "birthDate": "1994-08-08",
+    "height": "1.82 m",
+    "club": "Newcastle United F.C.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chancel_Mbemba_Mangulu.JPG"
+  },
+  "axel tuanzebe": {
+    "name": "Axel Tuanzebe",
+    "birthDate": "1997-11-14",
+    "height": "1.85 m",
+    "club": "Manchester United F.C.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Manchester_United_v_Wigan_Athletic,_January_2017_(33).JPG"
+  },
+  "aaron wan-bissaka": {
+    "name": "Aaron Wan-Bissaka",
+    "birthDate": "1997-11-26",
+    "height": "1.83 m",
+    "club": "West Ham United F.C.",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aaron_Wan-Bissaka_of_West_Ham_United.jpeg"
+  },
+  "theo bongonda": {
+    "name": "Theo Bongonda",
+    "birthDate": "1995-11-20",
+    "height": "1.77 m",
+    "club": "Spartak Moscow",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Theo_Bongonda_in_2025.jpg"
+  },
+  "brian cipenga": {
+    "name": "Brian Cipenga",
+    "birthDate": "1998-01-01",
+    "height": "1.72 m"
+  },
+  "gael kakuta": {
+    "name": "Gaël Kakuta",
+    "birthDate": "1991-06-21",
+    "height": "1.73 m",
+    "club": "Hebei F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entraînement_du_RC_Lens_-_15_juillet_2020_24.jpg"
+  },
+  "edo kayembe": {
+    "name": "Edo Kayembe",
+    "birthDate": "1998-08-03",
+    "height": "1.83 m",
+    "club": "K.A.S. Eupen",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Edo_Kayembe_2025_(cropped).jpg"
+  },
+  "nathanael mbuku": {
+    "name": "Nathanaël Mbuku",
+    "birthDate": "2002-03-16",
+    "height": "1.70 m",
+    "club": "Stade de Reims",
+    "position": "forward"
+  },
+  "samuel moutoussamy": {
+    "name": "Samuel Moutoussamy",
+    "birthDate": "1996-08-12",
+    "height": "1.74 m",
+    "club": "FC Nantes",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Samuel_Moutoussamy_2018.jpg"
+  },
+  "ngal'ayel mukau": {
+    "name": "Ngal'ayel Mukau",
+    "birthDate": "2004-11-03",
+    "height": "1.86 m"
+  },
+  "charles pickel": {
+    "name": "Charles Pickel",
+    "birthDate": "1997-05-15",
+    "height": "1.80 m",
+    "club": "RCD Espanyol de Barcelona",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_Grenoble_Foot_38_(10-02-2020)_60.jpg"
+  },
+  "noah sadiki": {
+    "name": "Noah Sadiki",
+    "birthDate": "2004-12-17",
+    "height": "1.73 m",
+    "club": "Royale Union Saint-Gilloise",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Noah_Sadiki_USG_2024.jpg"
+  },
+  "cedric bakambu": {
+    "name": "Cédric Bakambu",
+    "birthDate": "1991-04-11",
+    "height": "1.83 m",
+    "club": "Olympique de Marseille",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cédric_Bakambu_2016_(cropped).jpg"
+  },
+  "simon banza": {
+    "name": "Simon Banza",
+    "birthDate": "1996-08-13",
+    "height": "1.89 m",
+    "club": "Trabzonspor",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entraînement_RC_Lens_-_2_juillet_2019_65.jpg"
+  },
+  "fiston mayele": {
+    "name": "Fiston Mayele",
+    "birthDate": "1994-06-24",
+    "height": "1.85 m"
+  },
+  "yoane wissa": {
+    "name": "Yoane Wissa",
+    "birthDate": "1996-09-03",
+    "height": "1.76 m",
+    "club": "Newcastle United F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/CAN_2023RD_Congo_2-1_Guinée_9939_(cropped).jpg"
+  },
+  "alvaro montero": {
+    "name": "Álvaro Montero",
+    "birthDate": "1989-11-05",
+    "club": "UD Almería B",
+    "position": "forward"
+  },
+  "alvaro angulo": {
+    "name": "Álvaro Angulo",
+    "birthDate": "1997-03-06",
+    "height": "1.73 m",
+    "club": "Gold Eagles",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Inter_Miami_CF_3-1_UNAM_(6_August_2025)_23_(cropped).jpg"
+  },
+  "willer ditta": {
+    "name": "Willer Ditta",
+    "birthDate": "1997-01-23",
+    "height": "1.80 m",
+    "club": "Junior de Barranquilla",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Willer_Ditta_en_Newell's_Old_Boys.jpg"
+  },
+  "deiver machado": {
+    "name": "Déiver Machado",
+    "birthDate": "1993-09-02",
+    "height": "1.72 m",
+    "club": "Millonarios",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lens_-_Reims_(12-05-2023)_33.jpg"
+  },
+  "jhon cordoba": {
+    "name": "Jhon Córdoba",
+    "birthDate": "1993-05-11",
+    "height": "1.88 m",
+    "club": "1. FSV Mainz 05",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jhon_Córdoba,_FC_Köln;_29_Jul_2018.jpg"
+  },
+  "jaminton campaz": {
+    "name": "Jaminton Campaz",
+    "birthDate": "2000-05-24",
+    "height": "1.65 m",
+    "club": "Grêmio FBPA",
+    "position": "midfielder"
+  },
+  "cucho hernandez": {
+    "name": "Cucho Hernández",
+    "birthDate": "1999-04-22",
+    "height": "1.75 m",
+    "club": "Watford F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hernandez_Cucho_Columbus_Crew_Meet_the_Team_2022.jpg"
+  },
+  "josimar dias": {
+    "name": "Vozinha",
+    "birthDate": "1986-06-03",
+    "height": "1.89 m",
+    "club": "FC Zimbru Chișinău",
+    "position": "goalkeeper"
+  },
+  "steven moreira": {
+    "name": "Steven Moreira",
+    "birthDate": "1994-08-13",
+    "height": "1.76 m",
+    "club": "Columbus Crew",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Steven_Moreira_NYCFC_v_Columbus_10_May_2026-67_(cropped).jpg"
+  },
+  "wagner pina": {
+    "name": "Wagner Pina",
+    "birthDate": "2002-11-03",
+    "height": "1.80 m"
+  },
+  "joao fernandes": {
+    "name": "João Fernandes",
+    "birthDate": "2000-11-14"
+  },
+  "sidny lopes": {
+    "name": "Sidny Lopes Cabral",
+    "birthDate": "2002-09-18",
+    "height": "1.76 m"
+  },
+  "logan costa": {
+    "name": "Logan Costa",
+    "birthDate": "2001-04-01",
+    "height": "1.90 m",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Logan_Costa.jpg"
+  },
+  "roberto lopes": {
+    "name": "Roberto Lopes",
+    "birthDate": "1992-06-17",
+    "height": "1.86 m",
+    "club": "Shamrock Rovers F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Phase_de_match_(cropped).jpg"
+  },
+  "kelvin pires": {
+    "name": "Kelvin Pires",
+    "birthDate": "2000-06-05",
+    "height": "1.93 m"
+  },
+  "edilson borges": {
+    "name": "Diney",
+    "birthDate": "1995-01-17",
+    "height": "1.85 m",
+    "club": "C.S. Marítimo",
+    "position": "defender"
+  },
+  "jamiro monteiro": {
+    "name": "Jamiro Monteiro",
+    "birthDate": "1993-11-23",
+    "height": "1.75 m",
+    "club": "Cape Verde men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jamiro_Monteiro_Philadelphia_Union_2019.jpg"
+  },
+  "telmo arcanjo": {
+    "name": "Telmo Arcanjo",
+    "birthDate": "2001-06-21",
+    "height": "1.80 m"
+  },
+  "yannick semedo": {
+    "name": "Yannick Semedo",
+    "birthDate": "1995-12-29",
+    "height": "1.71 m"
+  },
+  "laros duarte": {
+    "name": "Laros Duarte",
+    "birthDate": "1997-02-28",
+    "height": "1.80 m",
+    "club": "PSV Eindhoven",
+    "position": "midfielder"
+  },
+  "deroy duarte": {
+    "name": "Deroy Duarte",
+    "birthDate": "1999-07-04",
+    "height": "1.77 m",
+    "club": "Sparta Rotterdam",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Deroy_Duarte.jpg"
+  },
+  "kevin pina": {
+    "name": "Kevin Pina",
+    "birthDate": "1997-01-27",
+    "height": "1.81 m",
+    "club": "FC Krasnodar",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kevin_Pina_(footballer)_2022.jpg"
+  },
+  "ryan mendes": {
+    "name": "Ryan Mendes da Graça",
+    "birthDate": "1990-01-08",
+    "height": "1.78 m",
+    "club": "Nottingham Forest F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ryan_Mendes_(LOSC_Lille).JPG"
+  },
+  "willy semedo": {
+    "name": "Willy Semedo",
+    "birthDate": "1994-04-27",
+    "height": "1.85 m",
+    "club": "Grenoble Foot 38",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_Grenoble_Foot_38_(10-02-2020)_70.jpg"
+  },
+  "garry rodrigues": {
+    "name": "Garry Mendes Rodrigues",
+    "birthDate": "1990-11-27",
+    "height": "1.73 m",
+    "club": "PAOK FC",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Garry_Rodrigues_2013_Catalonia.jpg"
+  },
+  "jovane cabral": {
+    "name": "Jovane Cabral",
+    "birthDate": "1998-06-14",
+    "height": "1.76 m",
+    "club": "Sporting CP",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/JovaneCabral_2021.jpg"
+  },
+  "nuno da costa": {
+    "name": "Nuno da Costa",
+    "birthDate": "1991-02-10",
+    "height": "1.82 m",
+    "club": "Valenciennes F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Valenciennes_-_UNFP_FC_(02-07-2016)_40_(cropped).jpg"
+  },
+  "dailon livramento": {
+    "name": "Dailon Livramento",
+    "birthDate": "2001-05-04",
+    "height": "1.85 m",
+    "club": "Roda JC Kerkrade",
+    "position": "forward"
+  },
+  "gilson benchimol": {
+    "name": "Gilson Tavares",
+    "birthDate": "2001-12-29",
+    "height": "1.87 m",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Benchimol_2024.jpg"
+  },
+  "helio varela": {
+    "name": "Hélio Varela",
+    "birthDate": "2002-05-03",
+    "height": "1.76 m"
+  },
+  "josko gvardiol": {
+    "name": "Joško Gvardiol",
+    "birthDate": "2002-01-23",
+    "height": "1.85 m",
+    "club": "Manchester City F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2021_Joško_Gvardiol_2_(cropped2).jpg"
+  },
+  "duje caleta-car": {
+    "name": "Duje Ćaleta-Car",
+    "birthDate": "1996-09-17",
+    "height": "1.93 m",
+    "club": "Real Sociedad",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Duje_Ćaleta-Car.jpg"
+  },
+  "marin pongracic": {
+    "name": "Marin Pongračić",
+    "birthDate": "1997-09-11",
+    "height": "1.93 m",
+    "club": "FC Bayern Munich",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Admira_Wacker_Mödling_vs._FC_Red_Bull_Salzburg_2018-04-15_(071).jpg"
+  },
+  "martin erlic": {
+    "name": "Martin Erlić",
+    "birthDate": "1998-01-24",
+    "height": "1.93 m",
+    "club": "Parma Calcio 1913",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Martin-Erlic.png"
+  },
+  "mateo kovacic": {
+    "name": "Mateo Kovačić",
+    "birthDate": "1994-05-06",
+    "height": "1.77 m",
+    "club": "Manchester City F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chelsea_vs._Arsenal,_29_May_2019_18_Kovacic.jpg"
+  },
+  "mario pasalic": {
+    "name": "Mario Pašalić",
+    "birthDate": "1995-02-09",
+    "height": "1.88 m",
+    "club": "Atalanta BC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pasalic_6459_(cropped).jpg"
+  },
+  "nikola vlasic": {
+    "name": "Nikola Vlašić",
+    "birthDate": "1997-10-04",
+    "height": "1.78 m",
+    "club": "Torino FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nikola_Vlašić_(CSKA_Moscow,_19.08.2019).jpg"
+  },
+  "luka sucic": {
+    "name": "Luka Sučić",
+    "birthDate": "2002-09-08",
+    "height": "1.85 m",
+    "club": "FC Liefering",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Red_Bull_Salzburg_gegen_Wolfsberger_AC_(2022-02-20)_32.jpg"
+  },
+  "martin baturina": {
+    "name": "Martin Baturina",
+    "birthDate": "2003-02-16",
+    "height": "1.72 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Salzburg_gegen_GNK_Dinamo_Zagreb_(UEFA_Championsleague_2022-10-05)_52_(cropped).jpg"
+  },
+  "kristijan jakic": {
+    "name": "Kristijan Jakić",
+    "birthDate": "1997-05-14",
+    "height": "1.81 m",
+    "club": "NK Lokomotiva",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kristijan-Jakic.png"
+  },
+  "petar sucic": {
+    "name": "Petar Sučić",
+    "birthDate": "2003-10-25",
+    "height": "1.83 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Petar_Sučić.png"
+  },
+  "nikola moro": {
+    "name": "Nikola Moro",
+    "birthDate": "1998-03-12",
+    "height": "1.85 m",
+    "club": "GNK Dinamo Zagreb",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nikola_Moro_2020.jpg"
+  },
+  "toni fruk": {
+    "name": "Toni Fruk",
+    "birthDate": "2001-03-09",
+    "height": "1.74 m",
+    "position": "midfielder"
+  },
+  "ivan perisic": {
+    "name": "Ivan Perišić",
+    "birthDate": "1989-02-02",
+    "height": "1.86 m",
+    "club": "PSV Eindhoven",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Perišić_(cropped).jpg"
+  },
+  "andrej kramaric": {
+    "name": "Andrej Kramarić",
+    "birthDate": "1991-06-19",
+    "height": "1.80 m",
+    "club": "TSG 1899 Hoffenheim",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrej_Kramarić_2018.jpg"
+  },
+  "ante budimir": {
+    "name": "Ante Budimir",
+    "birthDate": "1991-07-22",
+    "height": "1.90 m",
+    "club": "Club Atlético Osasuna",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Budimir,_Ante_FCSP_15-16_WP_(cropped).jpg"
+  },
+  "marco pasalic": {
+    "name": "Marco Pašalić",
+    "birthDate": "2000-09-14",
+    "height": "1.77 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Inter_Miami_CF_0-3_Orlando_City_SC_(18_May_2025)_83_(cropped).jpg"
+  },
+  "eloy room": {
+    "name": "Eloy Room",
+    "birthDate": "1989-02-06",
+    "height": "1.88 m",
+    "club": "Columbus Crew",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Room_Eloy_Columbus_Crew_SC_Meet_the_Team_2019.jpg"
+  },
+  "tyrick bodak": {
+    "name": "Tyrick Bodak",
+    "birthDate": "2002-02-15",
+    "height": "1.90 m",
+    "club": "SC Telstar",
+    "position": "goalkeeper"
+  },
+  "trevor doornbusch": {
+    "name": "Trevor Doornbusch",
+    "birthDate": "1999-07-06",
+    "height": "1.88 m",
+    "club": "VVV-Venlo",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_U-18_vs._Netherlands_U-18_2017-03-23_(095)_(cropped).jpg"
+  },
+  "joshua brenet": {
+    "name": "Joshua Brenet",
+    "birthDate": "1994-03-20",
+    "height": "1.81 m",
+    "club": "Jong PSV",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PSV_Eindhoven,_Teamcamp_Bad_Erlach,_July_2014_(076).jpg"
+  },
+  "roshon van eijma": {
+    "name": "Roshon van Eijma",
+    "birthDate": "1998-06-09",
+    "height": "1.86 m",
+    "club": "Roda JC Kerkrade",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roshon_van_Eijma_2025_profile_photo_(cropped).png"
+  },
+  "sherel floranus": {
+    "name": "Sherel Floranus",
+    "birthDate": "1998-08-23",
+    "height": "1.81 m",
+    "club": "Sparta Rotterdam",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sherel_Floranus_at_Antalyaspor_vs_Fatih_Karagümrük_SK_20220213.jpg"
+  },
+  "deveron fonville": {
+    "name": "Deveron Fonville",
+    "birthDate": "2003-05-16",
+    "height": "1.88 m",
+    "club": "N.E.C.",
+    "position": "centre-back"
+  },
+  "jurien gaari": {
+    "name": "Juriën Gaari",
+    "birthDate": "1993-12-23",
+    "height": "1.81 m",
+    "club": "Kozakken Boys",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Go_Ahead_Eagles_-_RKC_Waalwijk_-_52830811567_(cropped).jpg"
+  },
+  "armando obispo": {
+    "name": "Armando Obispo",
+    "birthDate": "1999-03-05",
+    "height": "1.85 m",
+    "club": "SBV Vitesse",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria_U-18_vs._Netherlands_U-18_2017-03-23_(060).jpg"
+  },
+  "shurandy sambo": {
+    "name": "Shurandy Sambo",
+    "birthDate": "2001-08-19",
+    "height": "1.74 m",
+    "position": "defender"
+  },
+  "leandro bacuna": {
+    "name": "Leandro Bacuna",
+    "birthDate": "1991-08-21",
+    "height": "1.87 m",
+    "club": "Curaçao men's national football team",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Leandro_Bacuna_Back_to_your_roots_Groningen.jpg"
+  },
+  "juninho bacuna": {
+    "name": "Juninho Bacuna",
+    "birthDate": "1997-08-07",
+    "height": "1.85 m",
+    "club": "FC Groningen",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Juninho_bacuna-1531777726.jpeg"
+  },
+  "livano comenencia": {
+    "name": "Livano Comenencia",
+    "birthDate": "2004-02-03",
+    "height": "1.91 m",
+    "club": "Juventus F.C. Next Gen",
+    "position": "midfielder"
+  },
+  "kevin felida": {
+    "name": "Kevin Felida",
+    "birthDate": "1999-11-11",
+    "height": "1.72 m",
+    "club": "FC Den Bosch",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kevin_felida-1571753982.jpg"
+  },
+  "ar'jany martha": {
+    "name": "Ar'jany Martha",
+    "birthDate": "2003-09-04",
+    "height": "1.80 m"
+  },
+  "tyrese noslin": {
+    "name": "Nils Rossen",
+    "birthDate": "2002-09-11",
+    "height": "1.82 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tyrese_Noslin-1751620543.jpg"
+  },
+  "godfried roemeratoe": {
+    "name": "Godfried Roemeratoe",
+    "birthDate": "1999-08-19",
+    "height": "1.78 m",
+    "club": "FC Twente",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Godfried_Roemeratoe.JPG"
+  },
+  "tahith chong": {
+    "name": "Tahith Chong",
+    "birthDate": "1999-12-04",
+    "height": "1.85 m",
+    "club": "Manchester United F.C.",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tahith_Chong_(38487929362).jpg"
+  },
+  "kenji gorre": {
+    "name": "Kenji Gorré",
+    "birthDate": "1994-09-29",
+    "height": "1.78 m",
+    "club": "Swansea City A.F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kenji_Gorré_(2015).jpg"
+  },
+  "sontje hansen": {
+    "name": "Sontje Hansen",
+    "birthDate": "2002-05-18",
+    "height": "1.68 m",
+    "club": "AFC Ajax",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/GAE_-_NEC_-_53493469456_(Sontje_Hansen).jpg"
+  },
+  "gervane kastaneer": {
+    "name": "Gervane Kastaneer",
+    "birthDate": "1996-06-09",
+    "height": "1.76 m",
+    "club": "FC Eindhoven",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gervane-kastaneer.jpg"
+  },
+  "brandley kuwas": {
+    "name": "Brandley Kuwas",
+    "birthDate": "1992-09-19",
+    "height": "1.78 m",
+    "club": "Excelsior Rotterdam",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandley_Kuwas.png"
+  },
+  "jurgen locadia": {
+    "name": "Jürgen Locadia",
+    "birthDate": "1993-11-07",
+    "height": "1.91 m",
+    "club": "Brighton & Hove Albion F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PSV_Eindhoven,_Teamcamp_Bad_Erlach,_July_2014_(082).jpg"
+  },
+  "jearl margaritha": {
+    "name": "Jearl Margaritha",
+    "birthDate": "2000-04-10",
+    "height": "1.81 m"
+  },
+  "lukas hornicek": {
+    "name": "Lukáš Horníček",
+    "birthDate": "2002-07-13",
+    "height": "1.94 m"
+  },
+  "matej kovar": {
+    "name": "Matěj Kovář",
+    "birthDate": "2000-05-17",
+    "height": "1.83 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Matj_kova-1772635856.JPG"
+  },
+  "jindrich stanek": {
+    "name": "Jindřich Staněk",
+    "birthDate": "1996-04-27",
+    "height": "1.91 m",
+    "club": "SK Slavia Prague",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jindřich_Staněk_brankář_FK_Viktorie_Plzeň_(r._2023)_(cropped).jpg"
+  },
+  "vladimir coufal": {
+    "name": "Vladimír Coufal",
+    "birthDate": "1992-08-22",
+    "height": "1.74 m",
+    "club": "Czech Republic national under-21 football team",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vladimír_Coufal,_CZE-KUW_2021-11-11.jpg"
+  },
+  "david doudera": {
+    "name": "David Douděra",
+    "birthDate": "1998-05-31",
+    "height": "1.75 m",
+    "club": "Czechia men's national football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/David_Douděra,_U21_CZE-GRE_2019-10-10.jpg"
+  },
+  "tomas holes": {
+    "name": "Tomáš Holeš",
+    "birthDate": "1993-03-31",
+    "height": "1.80 m",
+    "club": "Czechia men's national football team",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tomáš_Holeš_Jablonec-Ostrava.jpg"
+  },
+  "robin hranac": {
+    "name": "Robin Hranáč",
+    "birthDate": "2000-01-29",
+    "height": "1.90 m",
+    "club": "Czechia men's national football team",
+    "position": "centre-back"
+  },
+  "david jurasek": {
+    "name": "David Jurásek",
+    "birthDate": "2000-08-07",
+    "height": "1.83 m",
+    "position": "midfielder"
+  },
+  "ladislav krejci": {
+    "name": "Ladislav Krejčí",
+    "birthDate": "1999-04-20",
+    "height": "1.91 m",
+    "club": "Wolverhampton Wanderers F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ladislav_Krejčí_01112025_(3).jpg"
+  },
+  "jaroslav zeleny": {
+    "name": "Jaroslav Zelený",
+    "birthDate": "1992-08-20",
+    "height": "1.90 m",
+    "club": "AC Sparta Prague",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Открытая_тренировка_«Славии»_перед_матчем_с_«Динамо»._13_августа_2018_года_—_895565.jpg"
+  },
+  "pavel bucha": {
+    "name": "Pavel Bucha",
+    "birthDate": "1998-03-11",
+    "height": "1.74 m",
+    "club": "SK Slavia Prague",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavel_Bucha_NYCFC_v_Cincinnati_22_Apr_26-167.jpg"
+  },
+  "lukas cerv": {
+    "name": "Lukas Cerv",
+    "birthDate": "2001-04-10",
+    "height": "1.82 m",
+    "club": "Czechia men's national football team",
+    "position": "midfielder"
+  },
+  "vladimir darida": {
+    "name": "Vladimír Darida",
+    "birthDate": "1990-08-08",
+    "height": "1.70 m",
+    "club": "FC Hradec Králové",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vladimír_Darida_02.jpg"
+  },
+  "tomas ladra": {
+    "name": "Tomáš Ladra",
+    "birthDate": "1997-04-24",
+    "height": "1.78 m",
+    "club": "FK Mladá Boleslav",
+    "position": "forward"
+  },
+  "lukas provod": {
+    "name": "Lukáš Provod",
+    "birthDate": "1996-10-23",
+    "height": "1.89 m",
+    "club": "SK Slavia Prague",
+    "position": "forward"
+  },
+  "michal sadilek": {
+    "name": "Michal Sadílek",
+    "birthDate": "1999-05-31",
+    "height": "1.69 m",
+    "club": "Jong PSV",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Michal_Sadílek,_U21_CZE-GRE_2019-10-10_(2).jpg"
+  },
+  "hugo sochurek": {
+    "name": "Hugo Sochůrek",
+    "birthDate": "2008-06-07"
+  },
+  "alexandr sojka": {
+    "name": "Alexandr Sojka",
+    "birthDate": "2003-00-00"
+  },
+  "mojmir chytil": {
+    "name": "Mojmír Chytil",
+    "birthDate": "1999-04-29",
+    "height": "1.87 m",
+    "club": "SK Sigma Olomouc",
+    "position": "forward"
+  },
+  "hernan galindez": {
+    "name": "Hernán Galíndez",
+    "birthDate": "1987-03-30",
+    "height": "1.88 m",
+    "club": "Club Atlético Huracán",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/HERNÁN_GALÍNDEZ.jpg"
+  },
+  "gonzalo valle": {
+    "name": "Gonzalo Valle",
+    "birthDate": "1996-02-28",
+    "height": "1.85 m"
+  },
+  "angelo preciado": {
+    "name": "Angelo Preciado",
+    "birthDate": "1998-02-18",
+    "height": "1.73 m",
+    "club": "AC Sparta Prague",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo_Preciado.jpg"
+  },
+  "joel ordonez": {
+    "name": "Joel Ordóñez",
+    "birthDate": "2004-04-21",
+    "height": "1.88 m"
+  },
+  "moises caicedo": {
+    "name": "Moisés Caicedo",
+    "birthDate": "2001-11-02",
+    "height": "1.78 m",
+    "club": "Chelsea F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Moisés_Caicedo_20042025_(1).jpg"
+  },
+  "kendry paez": {
+    "name": "Kendry Páez",
+    "birthDate": "2007-05-04",
+    "height": "1.77 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kendry_Paez_2023_Sudamericano_Sub_17_(cropped).jpg"
+  },
+  "pedro vite": {
+    "name": "Pedro Vite",
+    "birthDate": "2002-03-09",
+    "height": "1.70 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Inter_Miami_CF_3-1_UNAM_(6_August_2025)_04_(cropped).jpg"
+  },
+  "nilson angulo": {
+    "name": "Nilson Angulo",
+    "birthDate": "2003-06-19",
+    "height": "1.82 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nilson_Angulo_RSC_Anderlecht_2025.jpg"
+  },
+  "kevin rodriguez": {
+    "name": "Kevin Rodriguez",
+    "birthDate": "1996-09-25",
+    "club": "Rio Grande Valley FC Toros",
+    "position": "midfielder"
+  },
+  "mostafa shobeir": {
+    "name": "Mostafa Shobeir",
+    "birthDate": "2000-03-01",
+    "height": "1.85 m",
+    "position": "goalkeeper"
+  },
+  "el mahdy soliman": {
+    "name": "Al-Mahdy Soliman",
+    "birthDate": "1986-11-30",
+    "club": "Smouha SC",
+    "position": "goalkeeper"
+  },
+  "mohamed hany": {
+    "name": "Mohamed Hany",
+    "birthDate": "1996-01-25",
+    "height": "1.75 m",
+    "club": "Al Ahly SC",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Hany_in_2021_FIFA_Club_World_Cup.jpg"
+  },
+  "tarek alaa": {
+    "name": "Tarek Alaa",
+    "birthDate": "2002-01-05",
+    "position": "defender"
+  },
+  "hamdi fathi": {
+    "name": "Hamdi Fathi",
+    "birthDate": "1994-09-29",
+    "height": "1.80 m",
+    "club": "ENPPI SC",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamdy_Fathy.png"
+  },
+  "ramy rabia": {
+    "name": "Ramy Rabia",
+    "birthDate": "1993-05-20",
+    "height": "1.56 m",
+    "club": "Al Ahly SC",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RamiRabea2020.jpg"
+  },
+  "yasser ibrahim": {
+    "name": "Yasser Ibrahim",
+    "birthDate": "1989-05-08",
+    "height": "1.85 m",
+    "club": "Smouha SC",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yasser_Ibrahim_in_FIFA_Club_World_Cup.jpg"
+  },
+  "hossam abdelmaguid": {
+    "name": "Hossam Abdelmaguid",
+    "birthDate": "2001-04-30",
+    "height": "1.93 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hossam_Abdel_Maguid.jpg"
+  },
+  "karim hafez": {
+    "name": "Karim Hafez",
+    "birthDate": "1995-03-12",
+    "height": "1.75 m",
+    "club": "AC Omonia",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Karim_Hafez_(RC_Lens).jpg"
+  },
+  "marwan attia": {
+    "name": "Marwan Attia",
+    "birthDate": "1998-08-12",
+    "height": "1.76 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marwan_Attia.jpg"
+  },
+  "mahmoud saber": {
+    "name": "Mahmoud Saber",
+    "birthDate": "2001-07-30",
+    "height": "1.70 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Egypt_vs._Morocco_2024_Summer_Olympics_men's_association_football_02_(cropped4).jpg"
+  },
+  "ahmed sayed zizo": {
+    "name": "Ahmed Sayed",
+    "birthDate": "1996-01-10",
+    "height": "1.80 m",
+    "club": "Al Ahly SC",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Zizo_zsc.jpg"
+  },
+  "mahmoud trezeguet": {
+    "name": "Trézéguet",
+    "birthDate": "1994-10-01",
+    "height": "1.80 m",
+    "club": "İstanbul Başakşehir F.K.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahmoud_Trézéguet_in_world_cup_2018.jpg"
+  },
+  "ibrahim adel": {
+    "name": "Ibrahim Adel",
+    "birthDate": "2001-04-23",
+    "height": "1.78 m",
+    "club": "Egypt men's national football team",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ibrahim_Adel_2025.jpg"
+  },
+  "haitham hassan": {
+    "name": "Haitham Hassan",
+    "birthDate": "1986-01-01"
+  },
+  "mohamed salah": {
+    "name": "Mohamed Salah",
+    "birthDate": "1992-06-15",
+    "height": "1.75 m",
+    "club": "Liverpool F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Salah_2018.jpg"
+  },
+  "omar marmoush": {
+    "name": "Omar Marmoush",
+    "birthDate": "1999-02-07",
+    "height": "1.83 m",
+    "club": "Manchester City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/OmarMarmoush.png"
+  },
+  "dean henderson": {
+    "name": "Dean Henderson",
+    "birthDate": "1997-03-12",
+    "height": "1.88 m",
+    "club": "Crystal Palace F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fredrikstad_Fotballklubb_v_Crystal_Palace_FC,_28_August_2025_A11_(Dean_Henderson).jpg"
+  },
+  "james trafford": {
+    "name": "Steppe Trafford",
+    "birthDate": "2002-10-10",
+    "height": "1.97 m",
+    "club": "Manchester City F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Queen_Park_Rangers_v_Burnley_26042025_(25)_(James_Trafford).jpg"
+  },
+  "tino livramento": {
+    "name": "Tino Livramento",
+    "birthDate": "2002-11-12",
+    "height": "1.73 m",
+    "club": "Newcastle United F.C.",
+    "position": "defender"
+  },
+  "nico o'reilly": {
+    "name": "Nico O'Reilly",
+    "birthDate": "2005-03-21",
+    "height": "1.93 m",
+    "club": "England men's national association football team",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ManCity20240722-020.jpg"
+  },
+  "jarell quansah": {
+    "name": "Jarell Quansah",
+    "birthDate": "2003-01-29",
+    "height": "1.90 m",
+    "club": "Bayer 04 Leverkusen",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jarell_Quansah_06042025_(1).jpg"
+  },
+  "djed spence": {
+    "name": "Djed Spence",
+    "birthDate": "2000-08-09",
+    "height": "1.85 m",
+    "club": "Tottenham Hotspur F.C.",
+    "position": "full-back"
+  },
+  "elliot anderson": {
+    "name": "Elliot Anderson",
+    "birthDate": "2002-11-06",
+    "height": "1.79 m",
+    "club": "England men's national association football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Elliot_Anderson_Bristol_Rovers.jpg"
+  },
+  "eberechi eze": {
+    "name": "Eberechi Eze",
+    "birthDate": "1998-06-29",
+    "height": "1.78 m",
+    "club": "Arsenal F.C.",
+    "position": "attacking midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1_Eberechi_Eze_2026.jpg"
+  },
+  "kobbie mainoo": {
+    "name": "Kobbie Mainoo",
+    "birthDate": "2005-04-19",
+    "height": "1.75 m",
+    "club": "Manchester United F.C.",
+    "position": "midfielder"
+  },
+  "noni madueke": {
+    "name": "Noni Madueke",
+    "birthDate": "2002-03-10",
+    "height": "1.82 m",
+    "club": "Arsenal F.C.",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1_Noni_Madueke.jpg"
+  },
+  "ivan toney": {
+    "name": "Ivan Toney",
+    "birthDate": "1996-03-16",
+    "height": "1.79 m",
+    "club": "Al Ahli FC",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Toney_2021_(cropped).jpg"
+  },
+  "ollie watkins": {
+    "name": "Ollie Watkins",
+    "birthDate": "1995-12-30",
+    "height": "1.80 m",
+    "club": "England men's national association football team",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Manchester_United_v_Aston_Villa,_25_September_2021_(17)_(cropped).jpg"
+  },
+  "unai simon": {
+    "name": "Unai Simón",
+    "birthDate": "1997-06-11",
+    "height": "1.92 m",
+    "club": "Athletic Club",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Unai_Simón_Mendibil.jpg"
+  },
+  "david raya": {
+    "name": "David Raya",
+    "birthDate": "1995-09-15",
+    "height": "1.84 m",
+    "club": "Arsenal F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/David_Raya_in_2025_(cropped).jpg"
+  },
+  "joan garcia": {
+    "name": "Joan Garcia",
+    "birthDate": "2001-05-04",
+    "height": "1.94 m",
+    "club": "Futbol Club Barcelona",
+    "position": "goalkeeper"
+  },
+  "alejandro grimaldo": {
+    "name": "Álex Grimaldo",
+    "birthDate": "1995-09-20",
+    "height": "1.70 m",
+    "club": "Bayer 04 Leverkusen",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alex_Grimaldo_2020.png"
+  },
+  "pau cubarsi": {
+    "name": "Pau Cubarsí",
+    "birthDate": "2007-01-22",
+    "height": "1.84 m",
+    "club": "Futbol Club Barcelona",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pau_Cubarsí_(cropped).jpg"
+  },
+  "marc pubill": {
+    "name": "Marc Pubill",
+    "birthDate": "2003-06-30",
+    "height": "1.91 m",
+    "club": "Atlético Madrid",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Uzbekistan_vs._Spain,_2024_Summer_Olympic_men's_association_football,_2024-07-24_(250)_-_Marc_Pubill.jpg"
+  },
+  "eric garcia": {
+    "name": "Eric García",
+    "birthDate": "2001-01-09",
+    "height": "1.82 m",
+    "club": "Futbol Club Barcelona",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eric_Garcia_autographs_2022_(cropped).jpg"
+  },
+  "marcos llorente": {
+    "name": "Marcos Llorente",
+    "birthDate": "1995-01-30",
+    "height": "1.84 m",
+    "club": "Atlético Madrid",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcos_Llorente_2019.jpg"
+  },
+  "pedro porro": {
+    "name": "Pedro Porrero",
+    "birthDate": "1999-09-13",
+    "height": "1.76 m",
+    "club": "Tottenham Hotspur F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pedro_Porro_2021.png"
+  },
+  "fabian ruiz": {
+    "name": "Fabián Ruiz",
+    "birthDate": "1996-04-03",
+    "height": "1.89 m",
+    "club": "Paris Saint-Germain FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_EURO_qualifiers_Sweden_vs_Spain_20191015_Fabian_Ruiz_6_(cropped).jpg"
+  },
+  "gavi": {
+    "name": "Gavi",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gavi_panorama.jpg"
+  },
+  "rodrigo hernandez": {
+    "name": "Rodri",
+    "birthDate": "1996-06-22",
+    "height": "1.90 m",
+    "club": "Manchester City F.C.",
+    "position": "defensive midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RODRI_-_SWE_vs_ESP_-_UEFA_EURO_2020_QUALIFIERS_-_2019.10.15_(cropped).jpg"
+  },
+  "alex baena": {
+    "name": "Álex Baena",
+    "birthDate": "2001-07-20",
+    "height": "1.74 m",
+    "club": "Atlético Madrid",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Álex_Baena_2019.jpg"
+  },
+  "mikel oyarzabal": {
+    "name": "Mikel Oyarzabal",
+    "birthDate": "1997-04-21",
+    "height": "1.81 m",
+    "club": "Spain men's national football team",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Oyarzabal_Spain_football_team_in_2025_(cropped).jpg"
+  },
+  "yeremy pino": {
+    "name": "Yéremy Pino",
+    "birthDate": "2002-10-20",
+    "height": "1.72 m",
+    "club": "Crystal Palace F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Manchester_United_v_Villarreal_CF,_29_September_2021_(07)_(cropped).jpg"
+  },
+  "borja iglesias": {
+    "name": "Borja Iglesias",
+    "birthDate": "1993-01-17",
+    "height": "1.87 m",
+    "club": "RC Celta de Vigo",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Borja_iglesias_2019001_(cropped).jpg"
+  },
+  "victor munoz": {
+    "name": "Víctor Muñoz",
+    "height": "1.69 m",
+    "club": "St. Mirren F.C.",
+    "position": "midfielder"
+  },
+  "mike maignan": {
+    "name": "Mike Maignan",
+    "birthDate": "1995-07-03",
+    "height": "1.91 m",
+    "club": "AC Milan",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mike_Maignan_2022_Salzburg_vs_AC_Milan_2022-09-06.jpg"
+  },
+  "robin risser": {
+    "name": "Robin Risser",
+    "birthDate": "2004-12-02",
+    "height": "1.93 m",
+    "club": "RC Strasbourg Alsace",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier-Strasbourg_18-08-24,_Robin_Risser_(cropped).jpg"
+  },
+  "brice samba": {
+    "name": "Brice Samba",
+    "birthDate": "1994-04-25",
+    "height": "1.86 m",
+    "club": "Nottingham Forest F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brice_Samba_asse_rcl_23_24.jpg"
+  },
+  "lucas digne": {
+    "name": "Lucas Digne",
+    "birthDate": "1993-07-20",
+    "height": "1.78 m",
+    "club": "Aston Villa F.C.",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_Digne_Everton_(cropped).jpg"
+  },
+  "malo gusto": {
+    "name": "Malo Gusto",
+    "birthDate": "2003-05-19",
+    "height": "1.79 m",
+    "club": "Chelsea F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Olympique_lyonnais_-_ES_Troyes_AC_L1_19-08-2022_-_Malo_Gusto.jpg"
+  },
+  "lucas hernandez": {
+    "name": "Lucas Hernandez",
+    "birthDate": "1996-02-14",
+    "height": "1.84 m",
+    "club": "Paris Saint-Germain FC",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hernandez_asse_psg_2425.png"
+  },
+  "theo hernandez": {
+    "name": "Théo Hernandez",
+    "birthDate": "1997-10-06",
+    "height": "1.84 m",
+    "club": "Al Hilal SFC",
+    "position": "full-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Salzburg_vs._AC_Mailand_(UEFA_Championsleague_2022-09-06)_Théo_Hernandez.jpg"
+  },
+  "ibrahima konate": {
+    "name": "Ibrahima Konaté",
+    "birthDate": "1999-05-25",
+    "height": "1.94 m",
+    "club": "Liverpool F.C.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Liverpool_FC_gegen_1._FSV_Mainz_05_(Testspiel_23._Juli_2021)_15_(cropped).jpg"
+  },
+  "jules kounde": {
+    "name": "Jules Koundé",
+    "birthDate": "1998-11-12",
+    "height": "1.80 m",
+    "club": "Futbol Club Barcelona",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jules_Koundé_2020.jpg"
+  },
+  "maxence lacroix": {
+    "name": "Maxence Lacroix",
+    "birthDate": "2000-04-06",
+    "height": "1.90 m",
+    "club": "Crystal Palace F.C.",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fredrikstad_Fotballklubb_v_Crystal_Palace_FC,_28_August_2025_A34_(Maxence_Lacroix).jpg"
+  },
+  "william saliba": {
+    "name": "William Saliba",
+    "birthDate": "2001-03-24",
+    "height": "1.92 m",
+    "club": "Arsenal F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1_william_saliba_arsenal_2025_(cropped).jpg"
+  },
+  "dayot upamecano": {
+    "name": "Dayot Upamecano",
+    "birthDate": "1998-10-27",
+    "height": "1.86 m",
+    "club": "FC Bayern Munich",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2022-07-30_Fußball,_Männer,_DFL-Supercup,_RB_Leipzig_-_FC_Bayern_München_1DX_3244_by_Stepro_(cropped).jpg"
+  },
+  "n'golo kante": {
+    "name": "N'Golo Kanté",
+    "birthDate": "1991-03-29",
+    "height": "1.71 m",
+    "club": "Fenerbahçe Istanbul",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/N'Golo_Kanté_at_Baku_before_2019_UEFA_Europe_League_Final.jpg"
+  },
+  "manu kone": {
+    "name": "Manu Koné",
+    "birthDate": "2001-05-17",
+    "height": "1.85 m",
+    "club": "Toulouse FC",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kouadio_Manu_Koné_(2019-08-31)_(cropped).jpg"
+  },
+  "adrien rabiot": {
+    "name": "Adrien Rabiot",
+    "birthDate": "1995-04-03",
+    "height": "1.91 m",
+    "club": "AC Milan",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rabiot_asse_om_2425.png"
+  },
+  "aurelien tchouameni": {
+    "name": "Aurélien Tchouaméni",
+    "birthDate": "2000-01-27",
+    "height": "1.87 m",
+    "club": "Real Madrid Club de Fútbol",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aurélien_Tchouaméni.jpg"
+  },
+  "warren zaire-emery": {
+    "name": "Warren Zaïre-Emery",
+    "birthDate": "2006-03-08",
+    "height": "1.78 m",
+    "club": "Paris Saint-Germain FC",
+    "position": "defensive midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Zaire_asse_psg_2425.png"
+  },
+  "maghnes akliouche": {
+    "name": "Maghnes Akliouche",
+    "birthDate": "2002-02-25",
+    "height": "1.83 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Akliouche2_asse_asm_2425.png"
+  },
+  "rayan cherki": {
+    "name": "Rayan Cherki",
+    "birthDate": "2003-08-17",
+    "height": "1.76 m",
+    "club": "Manchester City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cherki_asse_ol_2425.png"
+  },
+  "ousmane dembele": {
+    "name": "Ousmane Dembélé",
+    "birthDate": "1997-05-15",
+    "height": "1.79 m",
+    "club": "Paris Saint-Germain FC",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ousmane_Dembélé_2018_(cropped).jpg"
+  },
+  "jean-philippe mateta": {
+    "name": "Jean-Philippe Mateta",
+    "birthDate": "1997-06-28",
+    "height": "1.92 m",
+    "club": "Crystal Palace F.C.",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fredrikstad_Fotballklubb_v_Crystal_Palace_FC,_28_August_2025_B11_(JP_Mateta).jpg"
+  },
+  "michael olise": {
+    "name": "Michael Olise",
+    "birthDate": "2001-12-12",
+    "height": "1.84 m",
+    "club": "FC Bayern Munich",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_gegen_FC_Bayern_München_(2026-01-06_Testspiel)_10.jpg"
+  },
+  "marcus thuram": {
+    "name": "Marcus Thuram",
+    "birthDate": "1997-08-06",
+    "height": "1.92 m",
+    "club": "Inter Milan",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/MARCUS_THURAM_-_INTER_MILAN_vs_SALZBURG.jpg"
+  },
+  "oliver baumann": {
+    "name": "Oliver Baumann",
+    "birthDate": "1990-06-02",
+    "height": "1.87 m",
+    "club": "TSG 1899 Hoffenheim",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/OliverBaumann_(cropped).jpg"
+  },
+  "manuel neuer": {
+    "name": "Manuel Neuer",
+    "birthDate": "1986-03-27",
+    "height": "1.93 m",
+    "club": "FC Bayern Munich",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180602_FIFA_Friendly_Match_Austria_vs._Germany_Team_Germany_850_0740.jpg"
+  },
+  "alexander nubel": {
+    "name": "Alexander Nübel",
+    "birthDate": "1996-09-30",
+    "height": "1.93 m",
+    "club": "Germany national under-21 football team",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexander_nuebel.jpg"
+  },
+  "antonio rudiger": {
+    "name": "Antonio Rüdiger",
+    "birthDate": "1993-03-03",
+    "height": "1.90 m",
+    "club": "Germany men's national association football team",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180602_FIFA_Friendly_Match_Austria_vs._Germany_Antonio_Rüdiger_850_0711.jpg"
+  },
+  "nico schlotterbeck": {
+    "name": "Nico Schlotterbeck",
+    "birthDate": "1999-12-01",
+    "height": "1.91 m",
+    "club": "Borussia Dortmund",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2023-08-12_TSV_Schott_Mainz_gegen_Borussia_Dortmund_(DFB-Pokal_2023-24)_by_Sandro_Halank–069.jpg"
+  },
+  "malick thiaw": {
+    "name": "Malick Thiaw",
+    "birthDate": "2001-08-08",
+    "height": "1.94 m",
+    "club": "Newcastle United F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Milan_Lecce_2023_Thiaw.jpg"
+  },
+  "pascal gross": {
+    "name": "Pascal Groß",
+    "birthDate": "1991-06-15",
+    "height": "1.81 m",
+    "club": "Brighton & Hove Albion F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PASCAL_GROSS.jpg"
+  },
+  "felix nmecha": {
+    "name": "Felix Nmecha",
+    "birthDate": "2000-10-10",
+    "height": "1.90 m",
+    "club": "Manchester City F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Felix_Nmecha_2021.jpg"
+  },
+  "angelo stiller": {
+    "name": "Angelo Stiller",
+    "birthDate": "2001-04-04",
+    "height": "1.83 m",
+    "club": "VfB Stuttgart",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo_Stiller_2023.jpg"
+  },
+  "lennart karl": {
+    "name": "Lennart Karl",
+    "birthDate": "2008-02-22",
+    "height": "1.68 m"
+  },
+  "maximilian beier": {
+    "name": "Maximilian Beier",
+    "birthDate": "2002-10-17",
+    "height": "1.82 m",
+    "club": "Borussia Dortmund",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maximilian_Beier_training_with_Borussia_Dortmund_(2026).jpg"
+  },
+  "jamie leweling": {
+    "name": "Jamie Leweling",
+    "birthDate": "2001-02-26",
+    "height": "1.84 m",
+    "club": "SpVgg Greuther Fürth",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jamie_leweling.jpg"
+  },
+  "leroy sane": {
+    "name": "Leroy Sané",
+    "birthDate": "1996-01-11",
+    "height": "1.83 m",
+    "club": "Galatasaray S.K.",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20180602_FIFA_Friendly_Match_Austria_vs._Germany_Leroy_Sané_850_0668.jpg"
+  },
+  "deniz undav": {
+    "name": "Deniz Undav",
+    "birthDate": "1996-07-19",
+    "height": "1.78 m",
+    "club": "VfB Stuttgart",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Deniz_undav.jpg"
+  },
+  "nick woltemade": {
+    "name": "Nick Woltemade",
+    "birthDate": "2002-02-14",
+    "height": "1.98 m",
+    "club": "Newcastle United F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nick_Woltemade_24052026_(5).jpg"
+  },
+  "lawrence ati zigi": {
+    "name": "Lawrence Ati-Zigi",
+    "birthDate": "1996-11-29",
+    "height": "1.88 m",
+    "club": "FC Liefering",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_gegen_Kapfenberger_SV_35.JPG"
+  },
+  "tariq lamptey": {
+    "name": "Tariq Lamptey",
+    "birthDate": "2000-09-30",
+    "height": "1.63 m",
+    "club": "Brighton & Hove Albion F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tariq_Lamptey_2022.jpg"
+  },
+  "mohammed salisu": {
+    "name": "Mohammed Salisu",
+    "birthDate": "1999-04-17",
+    "height": "1.91 m",
+    "club": "Real Valladolid",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Salisu_asse_asm_2425.png"
+  },
+  "alidu seidu": {
+    "name": "Alidu Seidu",
+    "birthDate": "2000-06-04",
+    "height": "1.73 m",
+    "position": "defender"
+  },
+  "alexander djiku": {
+    "name": "Alexander Djiku",
+    "birthDate": "1994-08-09",
+    "height": "1.82 m",
+    "club": "Spartak Moscow",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ghana_(1)_(cropped_Alexander_Djiku).jpg"
+  },
+  "gideon mensah": {
+    "name": "Gideon Mensah",
+    "birthDate": "1998-07-18",
+    "height": "1.78 m",
+    "club": "FC Red Bull Salzburg",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Liefering_gegen_SC_Wiener_Neustadt_(23._September_2016)_05.jpg"
+  },
+  "caleb yirenkyi": {
+    "name": "Caleb Yirenkyi",
+    "birthDate": "2006-01-15",
+    "height": "1.82 m"
+  },
+  "thomas partey": {
+    "name": "Thomas Partey",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ATL-Madrid-Lokomotiv001-Thomas_(cropped).jpg"
+  },
+  "salis abdul samed": {
+    "name": "Salis Abdul Samed",
+    "birthDate": "2000-03-26",
+    "height": "1.79 m",
+    "club": "R.C. Lens",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lens_-_Reims_(12-05-2023)_45.jpg"
+  },
+  "kamaldeen sulemana": {
+    "name": "Kamaldeen Sulemana",
+    "birthDate": "2002-02-15",
+    "height": "1.74 m",
+    "club": "FC Nordsjælland",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kamaldeen_Sulemana_(cropped).jpg"
+  },
+  "mohammed kudus": {
+    "name": "Mohammed Kudus",
+    "birthDate": "2000-08-02",
+    "height": "1.75 m",
+    "club": "Tottenham Hotspur F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/GAE_-_Ajax_-_52788309814_(Mohammed_Kudus).jpg"
+  },
+  "inaki williams": {
+    "name": "Iñaki Williams",
+    "birthDate": "1994-06-15",
+    "height": "1.86 m",
+    "club": "Ghana men's national football team",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Iñaki_Williams.png"
+  },
+  "jordan ayew": {
+    "name": "Jordan Ayew",
+    "birthDate": "1991-09-11",
+    "height": "1.82 m",
+    "club": "Leicester City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20150331_Mali_vs_Ghana_023.jpg"
+  },
+  "joseph paintsil": {
+    "name": "Joseph Paintsil",
+    "birthDate": "1998-02-01",
+    "height": "1.70 m",
+    "club": "K.R.C. Genk",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Paintsil.2020.jpg"
+  },
+  "osman bukari": {
+    "name": "Osman Bukari",
+    "birthDate": "1998-12-13",
+    "height": "1.70 m",
+    "club": "RTS Widzew Łódź",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Osman_Bukari.jpg"
+  },
+  "antoine semenyo": {
+    "name": "Antoine Semenyo",
+    "birthDate": "2000-01-07",
+    "height": "1.85 m",
+    "club": "Manchester City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoine_Semenyo_2026.png"
+  },
+  "alexandre pierre": {
+    "name": "Alexandre Pierre",
+    "birthDate": "2001-02-25",
+    "height": "1.90 m",
+    "club": "Stade Lavallois B",
+    "position": "goalkeeper"
+  },
+  "josue duverger": {
+    "name": "Josué Duverger",
+    "birthDate": "2000-04-27",
+    "club": "Vitória F.C.",
+    "position": "goalkeeper"
+  },
+  "wilguens paugain": {
+    "name": "Wilguens Paugain",
+    "birthDate": "2001-08-24",
+    "height": "1.80 m",
+    "position": "defender"
+  },
+  "duke lacroix": {
+    "name": "Duke Lacroix",
+    "birthDate": "1993-10-14",
+    "club": "Indy Eleven",
+    "position": "forward"
+  },
+  "martin experience": {
+    "name": "Martin Experiénce",
+    "birthDate": "1998-03-09",
+    "height": "1.78 m",
+    "position": "defender"
+  },
+  "jean-kevin duverne": {
+    "name": "Jean-Kévin Duverne",
+    "birthDate": "1997-07-12",
+    "height": "1.84 m",
+    "club": "R.C. Lens",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RC_Lens_-_FC_Nantes_(28-10-2023)_-_Duverne.jpg"
+  },
+  "keeto thermoncy": {
+    "name": "Keeto Thermoncy",
+    "birthDate": "2006-03-29"
+  },
+  "carl fred sainte": {
+    "name": "Carl Sainté",
+    "birthDate": "2002-08-09",
+    "height": "1.85 m",
+    "position": "midfielder"
+  },
+  "danley jean jacques": {
+    "name": "Danley Jean Jacques",
+    "birthDate": "2000-05-20",
+    "height": "1.80 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Danley_Jean_Jacques_Philadelphia_Union_New_York_City_FC_Nov_23_2025-062_(cropped).jpg"
+  },
+  "woodensky pierre": {
+    "name": "Woodensky Pierre",
+    "birthDate": "2004-12-30"
+  },
+  "dominique simon": {
+    "name": "Dominique Simon",
+    "birthDate": "2000-07-29"
+  },
+  "don deedson louicius": {
+    "name": "Louicius Don Deedson",
+    "birthDate": "2001-02-11",
+    "height": "1.78 m",
+    "club": "Hobro IK",
+    "position": "forward"
+  },
+  "josue casimir": {
+    "name": "Josué Casimir",
+    "birthDate": "2001-09-24",
+    "height": "1.78 m"
+  },
+  "derrick etienne": {
+    "name": "Derrick Etienne",
+    "club": "Long Island Rough Riders",
+    "position": "forward"
+  },
+  "ruben providence": {
+    "name": "Ruben Providence",
+    "birthDate": "2001-07-07",
+    "height": "1.78 m"
+  },
+  "wilson isidor": {
+    "name": "Wilson Isidor",
+    "birthDate": "2000-08-27",
+    "height": "1.86 m",
+    "club": "AS Monaco FC",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wilson_Isidor_in_2022.jpg"
+  },
+  "yassin fortune": {
+    "name": "Yassin Fortuné",
+    "birthDate": "1999-01-30",
+    "height": "1.84 m",
+    "club": "FC Sion",
+    "position": "wing half"
+  },
+  "lenny joseph": {
+    "name": "Lenny Joseph",
+    "birthDate": "2000-10-12",
+    "height": "1.83 m"
+  },
+  "alireza beiranvand": {
+    "name": "Alireza Beiranvand",
+    "birthDate": "1992-09-21",
+    "height": "1.96 m",
+    "club": "Persepolis F.C.",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alireza_Beiranvand_-_2018_FIFA_World_Cup.jpg"
+  },
+  "morteza pouraliganji": {
+    "name": "Morteza Pouraliganji",
+    "birthDate": "1992-04-19",
+    "height": "1.84 m",
+    "club": "Iran men's national football team",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Morteza_Pouraliganji_at_IK_Airport.jpg"
+  },
+  "ehsan hajsafi": {
+    "name": "Ehsan Hajsafi",
+    "birthDate": "1990-02-25",
+    "height": "1.76 m",
+    "club": "Sepahan F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ehsan_Hajsafi_2018.jpg"
+  },
+  "milad mohammadi": {
+    "name": "Milad Mohammadi",
+    "birthDate": "1993-09-29",
+    "height": "1.78 m",
+    "club": "FC Akhmat Grozny",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Milad_Mohammadi.jpg"
+  },
+  "shojae khalilzadeh": {
+    "name": "Shoja' Khalilzadeh",
+    "birthDate": "1989-05-14",
+    "height": "1.83 m",
+    "club": "Al Ahli SC",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Shoja_Khalilzadeh3.jpg"
+  },
+  "ramin rezaeian": {
+    "name": "Ramin Rezaian",
+    "birthDate": "1990-03-21",
+    "height": "1.85 m",
+    "club": "Persepolis F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ramin_Rezaeian_at_the_2018_FIFA_World_Cup.jpg"
+  },
+  "hossein kanaani": {
+    "name": "Mohammad Hossein Kanaanizadegan",
+    "birthDate": "1994-03-23",
+    "height": "1.88 m",
+    "club": "Al Ahli SC",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hossein_Kanaanizadegan_2018_1.jpg"
+  },
+  "sadegh moharrami": {
+    "name": "Sadegh Moharrami",
+    "birthDate": "1996-03-01",
+    "height": "1.74 m",
+    "club": "Iran national under-20 football team",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sadegh_Moharrami_ACL_2018.jpg"
+  },
+  "saleh hardani": {
+    "name": "Saleh Hardani",
+    "birthDate": "1996-09-14",
+    "height": "1.76 m",
+    "club": "Foolad F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Esteghlal_Celebrate_IPL_Title_Win_at_Azadi_Stadium_-_020.jpg"
+  },
+  "saeed ezatolahi": {
+    "name": "Saeid Ezzatollahi",
+    "birthDate": "1996-10-01",
+    "height": "1.90 m",
+    "club": "Shabab AlAhli Dubai Club",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saeid_Ezatolahi_at_Iran_training_2018.jpg"
+  },
+  "saman ghoddos": {
+    "name": "Saman Ghoddos",
+    "birthDate": "1993-09-06",
+    "height": "1.76 m",
+    "club": "Brentford F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saman_Ghoddos_-_2018_FIFA_World_Cup.jpg"
+  },
+  "omid noorafkan": {
+    "name": "Omid Noorafkan",
+    "birthDate": "1997-04-09",
+    "height": "1.82 m",
+    "club": "Esteghlal F.C.",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Omid_Norafkan.jpg"
+  },
+  "roozbeh cheshmi": {
+    "name": "Rouzbeh Cheshmi",
+    "birthDate": "1993-07-24",
+    "height": "1.95 m",
+    "club": "Esteghlal F.C.",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Esteghlal_FC_in_training,_24_July_2022_-_22.jpg"
+  },
+  "mohammad mohebi": {
+    "name": "Mohammad Mohebi",
+    "birthDate": "1998-12-20",
+    "height": "1.76 m",
+    "club": "Esteghlal F.C.",
+    "position": "winger",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohammad_Mohebi,_Esteghlal_FC_vs_Gol_Gohar_Sirjan_FC,_6_March_2023.jpg"
+  },
+  "sardar azmoun": {
+    "name": "Sardar Azmoun",
+    "birthDate": "1995-01-01",
+    "height": "1.86 m",
+    "club": "Shabab AlAhli Dubai Club",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2018_FIFA_World_Cup_Asian_Qualifiers_-_Sardar_Azmoun_and_Iman_Farzin.jpg"
+  },
+  "mehdi taremi": {
+    "name": "Mehdi Taremi",
+    "birthDate": "1992-07-18",
+    "height": "1.86 m",
+    "club": "Olympiacos F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Iran_-_Japan,_AFC_Asian_Cup_2019_42_(cropped).jpg"
+  },
+  "alireza jahanbakhsh": {
+    "name": "Alireza Jahanbakhsh",
+    "birthDate": "1993-08-11",
+    "height": "1.80 m",
+    "club": "F.C. Verbroedering Dender Eendracht Hekelgem",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alireza_Jahanbakhsh_at_IRNPOR_match_2018_FIFA_World_Cup_02.jpg"
+  },
+  "ali gholizadeh": {
+    "name": "Ali Gholizadeh",
+    "birthDate": "1996-03-10",
+    "height": "1.76 m",
+    "club": "Lech Poznań",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ali_Gholizadeh_Lech_Poznań_2023_prezentacja.jpg"
+  },
+  "jalal hassan": {
+    "name": "Jalal Hasan",
+    "birthDate": "1991-05-18",
+    "club": "Al-Zawra'a SC",
+    "position": "goalkeeper",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalal12.JPG"
+  },
+  "rebin sulaka": {
+    "name": "Rebin Sulaka",
+    "birthDate": "1992-04-12",
+    "height": "1.92 m",
+    "club": "Elverum Fotball",
+    "position": "centre-back",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/240519_FC_서울_포토타임_(Rebin_Sulaka).jpg"
+  },
+  "hussein ali": {
+    "name": "Hussein Ali",
+    "birthDate": "2002-03-01",
+    "height": "1.80 m",
+    "club": "Örebro SK",
+    "position": "defender",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/GAE_-_SC_Heerenveen_-Hussein_Ali.jpg"
+  },
+  "merchas doski": {
+    "name": "Merchas Doski",
+    "birthDate": "1999-12-07",
+    "height": "1.73 m",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Merchas_doski.jpg"
+  },
+  "zaid tahseen": {
+    "name": "Zaid Tahseen",
+    "birthDate": "2001-01-29",
+    "height": "1.93 m",
+    "club": "Iraq men's national football team",
+    "position": "defender"
+  },
+  "manaf younis": {
+    "name": "Manaf Younis",
+    "birthDate": "1996-12-29",
+    "position": "defender"
+  },
+  "zidane iqbal": {
+    "name": "Zidane Iqbal",
+    "birthDate": "2003-04-27",
+    "height": "1.81 m",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Zidane_Iqbal_debut.jpg"
+  },
+  "amir al-ammari": {
+    "name": "Amir Al-Ammari",
+    "birthDate": "1997-07-27",
+    "height": "1.80 m",
+    "club": "Husqvarna FF",
+    "position": "wing half",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Amir_Al-Ammari_(Halmstad_vs_Degerfors,_7_October_2023).jpg"
+  },
+  "ali jasim": {
+    "name": "Ali Jasim",
+    "birthDate": "1987-07-17",
+    "club": "Umeå FC"
+  },
+  "youssef amyn": {
+    "name": "Youssef Amyn",
+    "birthDate": "2003-08-21",
+    "height": "1.75 m",
+    "club": "Feyenoord Academy",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4822944_AE7I9304_(cropped).jpg"
+  },
+  "aimar sher": {
+    "name": "Aimar Sher",
+    "birthDate": "2002-12-20",
+    "height": "1.75 m",
+    "club": "Hammarby Fotboll",
+    "position": "midfielder",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/GAE_-_FC_Groningen_-_52878021366_(cropped).jpg"
+  },
+  "marko farji": {
+    "name": "Marko Farji",
+    "birthDate": "2004-03-16",
+    "height": "1.84 m"
+  },
+  "osama rashid": {
+    "name": "Osama Rashid",
+    "birthDate": "1992-01-13",
+    "height": "1.78 m",
+    "club": "S.C. Farense",
+    "position": "midfielder"
+  },
+  "ali al-hamadi": {
+    "name": "Ali Al-Hamadi",
+    "birthDate": "2002-03-01",
+    "height": "1.83 m",
+    "club": "Stoke City F.C.",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ali_Al-Hamadi.jpg"
+  },
+  "aymen hussein": {
+    "name": "Aymen Hussein",
+    "birthDate": "1996-03-22",
+    "height": "1.89 m",
+    "club": "Al-Quwa Al-Jawiya",
+    "position": "forward",
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/4822953_AE7I9053_(cropped2).jpg"
+  }
+};
+
 const groups = {
   A: [["Mexico", 0, 0], ["Sudafrica", 0, 0], ["Corea del Sur", 0, 0], ["Republica Checa", 0, 0]],
   B: [["Canada", 0, 0], ["Bosnia y Herzegovina", 0, 0], ["Catar", 0, 0], ["Suiza", 0, 0]],
@@ -16273,25 +21159,12 @@ const knockoutRounds = [
   }
 ];
 
-let predictions = JSON.parse(localStorage.getItem("fifa2026-predictions") || "[]");
-
-const rules = [
-  { name: "Marcador exacto", pts: 5 },
-  { name: "Ganador correcto", pts: 3 },
-  { name: "Diferencia de goles", pts: 2 },
-  { name: "Goleador bonus", pts: 2 },
-  { name: "Clasificado", pts: 4 },
-  { name: "Campeon acertado", pts: 12 }
-];
-
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
-// --- SERVICIOS DE LÓGICA DE NEGOCIO ---
 const TournamentService = {
   calculateStandings(groupMatches) {
     const standings = {};
-    // Inicializar tablas basadas en la configuración de grupos
     Object.entries(groups).forEach(([code, teams]) => {
       standings[code] = teams.map(([team]) => ({
         team, played: 0, won: 0, drawn: 0, lost: 0,
@@ -16299,237 +21172,26 @@ const TournamentService = {
       }));
     });
 
-    groupMatches.filter(getMatchResult).forEach(match => {
+    groupMatches.filter(getMatchResult).forEach((match) => {
       const table = standings[match.group];
       if (!table) return;
-      const home = table.find(r => r.team === match.home);
-      const away = table.find(r => r.team === match.away);
-      
+      const home = table.find((row) => row.team === match.home);
+      const away = table.find((row) => row.team === match.away);
       this._updateRow(home, match.homeScore, match.awayScore);
       this._updateRow(away, match.awayScore, match.homeScore);
     });
 
-    Object.values(standings).forEach(table => table.sort(compareStandingRows));
+    Object.values(standings).forEach((table) => table.sort(compareStandingRows));
     return standings;
   },
-
-  calculateUserPoints() {
-    users.forEach(user => {
-      let totalPoints = 0;
-      let hits = 0;
-      const userPreds = predictions.filter(p => p.userEmail === user.email);
-
-      userPreds.forEach(pred => {
-        const match = matches.find(m => m.id === pred.matchId);
-        if (!match || match.status !== "finalizado") return;
-
-        const actualH = match.homeScore;
-        const actualA = match.awayScore;
-        const predH = parseInt(pred.homeScore);
-        const predA = parseInt(pred.awayScore);
-
-        if (actualH === predH && actualA === predA) {
-          totalPoints += rules.find(r => r.name === "Marcador exacto").pts;
-          hits++;
-        } else {
-          const actualWin = actualH > actualA ? "H" : actualH < actualA ? "A" : "D";
-          const predWin = predH > predA ? "H" : predH < predA ? "A" : "D";
-
-          if (actualWin === predWin) {
-            totalPoints += rules.find(r => r.name === "Ganador correcto").pts;
-            hits++;
-            if ((actualH - actualA) === (predH - predA)) {
-              totalPoints += rules.find(r => r.name === "Diferencia de goles").pts;
-            }
-          }
-        }
-      });
-
-      // Lógica de Clasificado (para fases de eliminación directa)
-      userPreds.forEach(pred => {
-        const match = matches.find(m => m.id === pred.matchId);
-        if (!match || match.status !== "finalizado" || match.phase === "Grupos") return;
-        
-        const actualWinner = getWinner(match);
-        const userChoice = pred.qualifier === "Equipo local" ? match.home : (pred.qualifier === "Equipo visitante" ? match.away : null);
-        if (actualWinner && userChoice === actualWinner) {
-          totalPoints += rules.find(r => r.name === "Clasificado")?.pts || 0;
-        }
-      });
-
-      user.points = totalPoints;
-      user.hits = hits;
-      user.accuracy = userPreds.length > 0 ? Math.round((hits / userPreds.length) * 100) : 0;
-
-      // Initialize pointHistory if it doesn't exist
-      if (!user.pointHistory) {
-        user.pointHistory = [];
-      }
-      // Add current points to history if different from the last entry
-      const lastHistoryEntry = user.pointHistory[user.pointHistory.length - 1];
-      if (!lastHistoryEntry || lastHistoryEntry.points !== totalPoints) {
-        user.pointHistory.push({ timestamp: new Date().toISOString(), points: totalPoints });
-      }
-    });
-
-    users.sort((a, b) => b.points - a.points || b.hits - a.hits);
-    localStorage.setItem("fifa2026-users", JSON.stringify(users));
-    renderRanking();
-  },
-
-  simulateRandomResults() {
-    const statusDiv = $("#simulationStatus");
-    const message = $("#simulationMessage");
-    const progress = $("#simulationProgress");
-    const button = $("#simulateResults");
-
-    if (!statusDiv || !message || !progress || !button) return;
-
-    // Bloquear UI e iniciar
-    button.disabled = true;
-    statusDiv.style.display = "block";
-    progress.style.width = "0%";
-
-    const steps = [
-      {
-        msg: "Creando 20 usuarios competidores...",
-        fn: () => {
-          if (users.length < 10) {
-            for (let i = 1; i <= 20; i++) {
-              const email = `demo_user_${i}@fifa2026.test`;
-              if (!users.some(u => u.email === email)) {
-                users.push({
-                  name: `Competidor Demo ${i}`,
-                  email: email,
-                  points: 0, hits: 0, accuracy: 0, trend: "igual",
-                  pointHistory: []
-                });
-              }
-            }
-          }
-        }
-      },
-      {
-        msg: "Generando ~1,500 pronósticos aleatorios...",
-        fn: () => {
-          predictions.length = 0;
-          users.forEach(user => {
-            matches.forEach(match => {
-              if (Math.random() > 0.15) {
-                predictions.push({
-                  matchId: match.id,
-                  matchLabel: `${match.home} vs ${match.away}`,
-                  userEmail: user.email,
-                  userName: user.name,
-                  homeScore: Math.floor(Math.random() * 4).toString(),
-                  awayScore: Math.floor(Math.random() * 4).toString(),
-                  qualifier: Math.random() > 0.5 ? "Equipo local" : "Equipo visitante",
-                  scorer: "Jugador Random"
-                });
-              }
-            });
-          });
-          localStorage.setItem("fifa2026-predictions", JSON.stringify(predictions));
-        }
-      },
-      {
-        msg: "Simulando resultados oficiales del Mundial...",
-        fn: () => {
-          matches.forEach(match => {
-            const hs = Math.floor(Math.random() * 5);
-            const as = Math.floor(Math.random() * 5);
-            matchResults[match.id] = { homeScore: hs, awayScore: as };
-          });
-          localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
-        }
-      },
-      {
-        msg: "Procesando puntuaciones y llaves eliminatorias...",
-        fn: () => {
-          applyStoredMatchResults();
-          updateKnockoutCalendar();
-          this.calculateUserPoints();
-        }
-      },
-      {
-        msg: "Actualizando todos los tableros y analíticas...",
-        fn: () => {
-          memoizedSearchIndex = null;
-          renderMatches(); renderGroups(); renderBracket(); renderPredictions(); renderResultForm();
-          if ($(".page.active")?.id === "page-analitica") drawCharts();
-        }
-      }
-    ];
-
-    let currentStep = 0;
-
-    const runStep = () => {
-      if (currentStep < steps.length) {
-        const step = steps[currentStep];
-        message.textContent = step.msg;
-        progress.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
-        
-        // Usamos un pequeño delay para que el ojo humano perciba el cambio de mensaje
-        setTimeout(() => {
-          try {
-            step.fn();
-            currentStep++;
-            runStep();
-          } catch (error) {
-            console.error("Error en la simulacion:", error);
-            message.textContent = "La simulacion se detuvo: " + error.message;
-            button.disabled = false;
-          }
-        }, 600);
-      } else {
-        message.textContent = "¡Simulación completada con éxito!";
-        progress.style.width = "100%";
-        button.disabled = false;
-
-        // Disparar celebración de confeti con los colores del tema
-        if (typeof confetti === 'function') {
-          confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 },
-            colors: ['#F4B400', '#0057B8', '#2E7D32']
-          });
-        }
-
-        // Reproducir sonido de aplausos/estadio
-        const applauseSound = new Audio('assets/applause.mp3'); // Asegúrate de tener este archivo de sonido en tu proyecto
-        applauseSound.volume = Number($("#effectsVolume")?.value || 0.7);
-        applauseSound.play().catch(e => console.error("Error al reproducir el sonido:", e));
-
-
-        setTimeout(() => {
-          statusDiv.style.display = "none";
-          alert(`Simulación exitosa: 20 usuarios y ${predictions.length} pronósticos procesados.`);
-        }, 1000);
-      }
-    };
-
-    runStep();
-  },
-
-  resetApplication() {
-    if (confirm("¿Estás seguro de que quieres reiniciar la aplicación? Esto borrará todos los usuarios, pronósticos y resultados guardados.")) {
-      localStorage.removeItem("fifa2026-users");
-      localStorage.removeItem("fifa2026-predictions");
-      localStorage.removeItem("fifa2026-results");
-      // Recargar la página para reiniciar completamente la aplicación
-      window.location.reload();
-    }
-  },
-
 
   _updateRow(row, gf, ga) {
     row.played++;
     row.goalsFor += gf;
     row.goalsAgainst += ga;
     row.goalDifference = row.goalsFor - row.goalsAgainst;
-    if (gf > ga) row.points += 3;
-    else if (gf === ga) row.points += 1;
+    if (gf > ga) row.won++, row.points += 3;
+    else if (gf === ga) row.drawn++, row.points += 1;
     else row.lost++;
   }
 };
@@ -16783,7 +21445,6 @@ function setPage(page) {
   $$(".page").forEach((section) => section.classList.toggle("active", section.id === `page-${page}`));
   $("#pageTitle").textContent = page.charAt(0).toUpperCase() + page.slice(1);
   $("#sidebar").classList.remove("open");
-  if (page === "analitica") drawCharts();
 }
 
 function setTheme(theme) {
@@ -16797,15 +21458,13 @@ function getSearchIndex() {
   const pages = [
     ["Inicio", "Pagina", "inicio"],
     ["Calendario", "Pagina", "calendario"],
-    ["Pronosticos", "Pagina", "pronosticos"],
     ["Posiciones", "Pagina", "posiciones"],
     ["Goleadores", "Pagina", "goleadores"],
+    ["Selecciones", "Pagina", "selecciones"],
     ["Jugadores", "Pagina", "jugadores"],
-    ["Ranking", "Pagina", "ranking"],
-    ["Analitica", "Pagina", "analitica"],
+    ["Clubes", "Pagina", "clubes"],
     ["Historial", "Pagina", "historial"],
-    ["Llaves", "Pagina", "llaves"],
-    ["Admin", "Pagina", "admin"]
+    ["Llaves", "Pagina", "llaves"]
   ];
   const teams = [...new Set([
     ...Object.keys(flags),
@@ -16813,9 +21472,8 @@ function getSearchIndex() {
     ...Object.values(groups).flatMap((rows) => rows.map(([team]) => team))
   ])]
     .filter((team) => !team.startsWith("Ganador"))
-    .map((team) => [team, "Pais", "posiciones"]);
+    .map((team) => [team, "Seleccion", "selecciones"]);
   const fixtures = matches.map((match) => [`${match.home} vs ${match.away}`, `${match.phase} · ${formatDate(match.date)}`, "calendario"]);
-  const participants = users.map((user) => [user.name, "Usuario", "ranking"]);
   const playerItems = selectedPlayers.flatMap((player) => [
     [player.commonName, `${player.position} · ${player.team}`, "jugadores"],
     [player.name, `${player.club} · ${player.team}`, "jugadores"]
@@ -16825,7 +21483,7 @@ function getSearchIndex() {
     [item.champion, `Campeon ${item.year}`, "historial"]
   ]);
   
-  memoizedSearchIndex = [...teams, ...fixtures, ...participants, ...playerItems, ...historyItems, ...pages].map(([label, type, page]) => ({
+  memoizedSearchIndex = [...teams, ...fixtures, ...playerItems, ...historyItems, ...pages].map(([label, type, page]) => ({
     label,
     type,
     page,
@@ -16862,10 +21520,6 @@ function selectSearchResult(button) {
   $("#globalSearch").value = label;
   $("#searchResults").classList.remove("open");
   setPage(page);
-  if (page === "ranking") {
-    $("#rankingSearch").value = label;
-    renderRanking();
-  }
 }
 
 function renderCountdown() {
@@ -16971,110 +21625,33 @@ function renderCalendarMonth(year, month, monthMatches) {
   `;
 }
 
-function renderRanking() {
-  $("#registeredUsersCount").textContent = users.length;
-  $("#sidebarParticipants").textContent = users.length;
-  $("#quickRanking").innerHTML = users.length ? users.slice(0, 5).map((user, index) => `
-    <div class="rank-row"><strong>${index + 1}</strong><span>${user.name}</span><strong>${user.points}</strong></div>
-  `).join("") : `<p class="prediction-card">Aun no hay participantes inscritos.</p>`;
-
-  const term = normalizeText($("#rankingSearch")?.value || "");
-  const filteredUsers = users.filter((user) => normalizeText(user.name).includes(term) || normalizeText(user.email).includes(term));
-  $("#rankingRows").innerHTML = filteredUsers.length ? filteredUsers
-    .map((user, index) => `
-      <tr>
-        <td data-label="#">${index + 1}</td>
-        <td data-label="Usuario"><strong>${user.name}</strong></td>
-        <td data-label="Puntos">${user.points}</td>
-        <td data-label="Aciertos">${user.hits}</td>
-        <td data-label="Efectividad">${user.accuracy}%</td>
-        <td data-label="Tendencia" class="trend-neutral">Sin cambios</td>
-      </tr>
-    `).join("") : `
-      <tr>
-        <td colspan="6" class="empty-table">No hay usuarios inscritos. Usa el formulario de inscripcion para aparecer en el ranking.</td>
-      </tr>
-    `;
-}
-
-function registerUser(name, email) {
-  const normalizedEmail = normalizeText(email);
-  if (users.some((user) => normalizeText(user.email) === normalizedEmail)) {
-    alert("Este correo ya esta inscrito.");
-    return;
-  }
-  users.push({
-    name: name.trim(),
-    email: email.trim(),
-    points: 0,
-    hits: 0,
-    accuracy: 0,
-    trend: "igual"
-  });
-  localStorage.setItem("fifa2026-users", JSON.stringify(users));
-  renderRanking();
-}
-
-function renderPredictions() {
-  $("#predictionMatch").innerHTML = matches.map((match) => `<option value="${match.id}">${match.home} vs ${match.away} (${match.phase})</option>`).join("");
-  
-  // Actualizar la lista de participantes en el selector
-  const userSelect = $("#predictionUser");
-  if (userSelect) {
-    userSelect.innerHTML = users.length 
-      ? users.map(u => `<option value="${u.email}">${u.name}</option>`).join("")
-      : `<option value="">Registrate en Ranking primero</option>`;
-  }
-
-  $("#predictionList").innerHTML = predictions.length ? predictions.map((item) => `
-    <article class="prediction-card">
-      <strong>${item.userName}: ${item.matchLabel}</strong><br>
-      <small>Marcador: ${item.homeScore}-${item.awayScore} · Clasifica: ${item.qualifier || 'N/A'}</small>
-    </article>
-  `).join("") : `<p class="prediction-card">Todavía no hay pronósticos guardados.</p>`;
-  $("#rulesGrid").innerHTML = rules.map((r) => `<article class="rule-card"><strong>${r.pts} pts</strong><p>${r.name}</p></article>`).join("");
-  $("#adminRules").innerHTML = rules.map((r) => `
-    <label>${r.name}<input type="number" value="${r.pts}" min="0" max="30" /></label>
+function renderHomeBirthStats() {
+  const container = $("#homeBirthStats");
+  if (!container) return;
+  const leaders = [...birthRepresentationStats]
+    .sort((a, b) => b.bornInRepresentedCountry - a.bornInRepresentedCountry || a.team.localeCompare(b.team))
+    .slice(0, 5);
+  container.innerHTML = leaders.map((item, index) => `
+    <div class="rank-row"><strong>${index + 1}</strong><span>${teamLabel(item.team)}</span><strong>${item.bornInRepresentedCountry}</strong></div>
   `).join("");
 }
 
-function renderResultForm() {
-  const select = $("#resultMatch");
-  if (!select) return;
-  const selectedValue = select.value;
-  select.innerHTML = matches.map((match) => {
-    const result = getMatchResult(match);
-    const label = `${formatDate(match.date)} - ${match.home} vs ${match.away}${result ? ` (${result})` : ""}`;
-    return `<option value="${match.id}">${label}</option>`;
-  }).join("");
-  if (selectedValue && matches.some((match) => String(match.id) === selectedValue)) {
-    select.value = selectedValue;
-  }
-  fillResultInputs();
-}
-
-function fillResultInputs() {
-  const match = matches.find((item) => item.id === Number($("#resultMatch")?.value));
-  if (!match) return;
-  $("#resultHomeScore").value = Number.isInteger(match.homeScore) ? match.homeScore : "";
-  $("#resultAwayScore").value = Number.isInteger(match.awayScore) ? match.awayScore : "";
-}
-
-function saveMatchResult(matchId, homeScore, awayScore) {
-  const match = matches.find((item) => item.id === matchId);
-  if (!match) return;
-  match.homeScore = homeScore;
-  match.awayScore = awayScore;
-  match.status = "finalizado";
-  matchResults[match.id] = { homeScore, awayScore };
-  localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
-  TournamentService.calculateUserPoints(); // Recalcular puntos al guardar resultado
-  updateKnockoutCalendar();
-  renderMatches();
-  renderPredictions();
-  renderResultForm();
-  renderGroups();
-  renderBracket();
+function renderBirthRepresentationStats() {
+  const rows = $("#birthRepresentationRows");
+  if (!rows) return;
+  rows.innerHTML = [...birthRepresentationStats]
+    .sort((a, b) => b.bornInRepresentedCountry - a.bornInRepresentedCountry || a.team.localeCompare(b.team))
+    .map((item) => {
+      const localShare = Math.round((item.bornInRepresentedCountry / item.rosterSize) * 1000) / 10;
+      return `
+        <tr>
+          <td data-label="Seleccion"><strong>${teamLabel(item.team)}</strong></td>
+          <td data-label="Nacidos en el pais">${item.bornInRepresentedCountry}</td>
+          <td data-label="No nacidos alli">${item.foreignBorn}</td>
+          <td data-label="% local">${localShare.toLocaleString("es-CO")}%</td>
+        </tr>
+      `;
+    }).join("");
 }
 
 function renderGroups() {
@@ -17186,6 +21763,16 @@ const curatedPlayerOverrides = {
     "jhon córdoba": { name: "Jhon Córdoba", birthDate: "1993-05-11", height: "1.88 m", club: "Krasnodar", position: "Delantero" },
     "luis suarez": { name: "Luis Suárez", birthDate: "1997-12-02", height: "1.85 m", club: "Sporting CP", position: "Delantero" },
     "luis suárez": { name: "Luis Suárez", birthDate: "1997-12-02", height: "1.85 m", club: "Sporting CP", position: "Delantero" },
+    "gustavo puerta": { name: "Gustavo Puerta", club: "Racing de Santander", position: "Mediocampista" },
+    "jaminton campaz": { name: "Jaminton Campaz", club: "Rosario Central", position: "Mediocampista" },
+    "juan portilla": { name: "Juan Portilla", club: "Paranaense", position: "Mediocampista" },
+    "juan camilo portilla": { name: "Juan Portilla", club: "Paranaense", position: "Mediocampista" },
+    "carlos gomez": { name: "Carlos Gómez", club: "Vasco da Gama", position: "Delantero" },
+    "carlos gómez": { name: "Carlos Gómez", club: "Vasco da Gama", position: "Delantero" },
+    "juan camilo hernandez": { name: "Juan Camilo Hernández", birthDate: "1999-04-22", height: "1.75 m", club: "Real Betis", position: "Delantero" },
+    "juan camilo hernández": { name: "Juan Camilo Hernández", birthDate: "1999-04-22", height: "1.75 m", club: "Real Betis", position: "Delantero" },
+    "cucho hernandez": { name: "Juan Camilo Hernández", birthDate: "1999-04-22", height: "1.75 m", club: "Real Betis", position: "Delantero" },
+    "cucho hernández": { name: "Juan Camilo Hernández", birthDate: "1999-04-22", height: "1.75 m", club: "Real Betis", position: "Delantero" },
     "luis diaz": { name: "Luis Díaz", birthDate: "1997-01-13", height: "1.80 m", club: "Bayern Munich", position: "Extremo izquierdo" },
     "luis díaz": { name: "Luis Díaz", birthDate: "1997-01-13", height: "1.80 m", club: "Bayern Munich", position: "Extremo izquierdo" }
   }
@@ -17285,14 +21872,16 @@ function mergePlayerDetails(base = {}, curated = {}) {
 function getFeaturedPlayerDetails(name, teamName) {
   const key = normalizeText(name);
   const teamOverride = curatedPlayerOverrides[teamName]?.[key];
-  if (teamOverride) return mergePlayerDetails({}, teamOverride);
+  const wikidataDetails = paniniPlayerDetails[key] || {};
+  const liveDetails = livePlayerDetails[key] || {};
   const curated = getCuratedPlayerDetails(name, teamName) || {};
-  return mergePlayerDetails({}, curated);
+  return mergePlayerDetails(mergePlayerDetails(mergePlayerDetails({}, wikidataDetails), liveDetails), teamOverride || curated);
 }
 
 function getPaniniPlayerRecords() {
   return paniniAlbumTeams.flatMap((team) => team.players.map((player, index) => {
     const details = getFeaturedPlayerDetails(player.name, team.team);
+    const curated = getCuratedPlayerDetails(player.name, team.team) || {};
     const birthDate = getValidBirthDate(details?.birthDate);
     return {
       ...player,
@@ -17306,7 +21895,7 @@ function getPaniniPlayerRecords() {
       displayBirthDate: completePlayerField(birthDate),
       age: calculateAge(birthDate),
       height: completePlayerField(getValidHeight(details?.height)),
-      club: completePlayerField(getValidClub(details?.club), getValidClub(player.club) || "Selección de " + team.team),
+      club: completePlayerField(getValidClub(player.club) || getValidClub(curated?.club), "Selección de " + team.team),
       position: normalizePlayerPosition(details?.position || player.position, player.code),
       photo: normalizePlayerPhoto(details?.photo)
     };
@@ -17331,6 +21920,216 @@ function getFilteredPlayers() {
       (team === "todos" || player.team === team) &&
       (detailScope === "todos" || (detailScope === "completos" ? hasCompletePlayerData(player) : !hasCompletePlayerData(player)));
   });
+}
+function getBirthRepresentationStat(team) {
+  return birthRepresentationStats.find((item) => item.team === team) || {
+    team,
+    rosterSize: 26,
+    foreignBorn: 0,
+    bornInRepresentedCountry: 26
+  };
+}
+
+function getTeamGroup(team) {
+  return Object.entries(groups).find(([, rows]) => rows.some(([name]) => name === team))?.[0] || "-";
+}
+
+function isConfirmedClub(club) {
+  return Boolean(club) && !isMissingPlayerField(club) && !String(club).startsWith("Selección de ");
+}
+
+function isDomesticClub(player) {
+  if (!isConfirmedClub(player.club)) return false;
+  const terms = domesticClubTerms[player.team] || [];
+  const club = normalizeText(player.club);
+  return terms.some((term) => club.includes(normalizeText(term)));
+}
+
+function formatNumber(value, decimals = 1) {
+  return Number.isFinite(value) ? value.toLocaleString("es-CO", { maximumFractionDigits: decimals, minimumFractionDigits: decimals }) : "-";
+}
+
+function formatPercent(value) {
+  return Number.isFinite(value) ? `${formatNumber(value)}%` : "-";
+}
+
+function getMostFrequentValue(values) {
+  const counts = values.filter(Boolean).reduce((acc, value) => {
+    acc[value] = (acc[value] || 0) + 1;
+    return acc;
+  }, {});
+  const [label, count] = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0] || ["Por confirmar", 0];
+  return { label, count };
+}
+
+function getSelectionStats() {
+  const players = getPaniniPlayerRecords();
+  return paniniAlbumTeams.map((team) => {
+    const teamPlayers = players.filter((player) => player.team === team.team);
+    const birthStat = getBirthRepresentationStat(team.team);
+    const confirmedClubPlayers = teamPlayers.filter((player) => isConfirmedClub(player.club));
+    const domesticClubPlayers = confirmedClubPlayers.filter(isDomesticClub);
+    const abroadPlayers = confirmedClubPlayers.length - domesticClubPlayers.length;
+    const ages = teamPlayers.map((player) => Number(player.age)).filter(Number.isFinite);
+    const averageAge = ages.length ? ages.reduce((total, age) => total + age, 0) / ages.length : NaN;
+    const completePlayers = teamPlayers.filter(hasCompletePlayerData).length;
+    const positionLeader = getMostFrequentValue(teamPlayers.map((player) => player.position));
+    const topClub = getMostFrequentValue(confirmedClubPlayers.map((player) => player.club));
+    const localBirthShare = (birthStat.bornInRepresentedCountry / birthStat.rosterSize) * 100;
+    const abroadShare = confirmedClubPlayers.length ? (abroadPlayers / confirmedClubPlayers.length) * 100 : NaN;
+
+    return {
+      team: team.team,
+      group: getTeamGroup(team.team),
+      rosterSize: birthStat.rosterSize,
+      listedPlayers: teamPlayers.length,
+      bornInRepresentedCountry: birthStat.bornInRepresentedCountry,
+      foreignBorn: birthStat.foreignBorn,
+      localBirthShare,
+      confirmedClubPlayers: confirmedClubPlayers.length,
+      domesticClubPlayers: domesticClubPlayers.length,
+      abroadPlayers,
+      abroadShare,
+      averageAge,
+      ageSample: ages.length,
+      completePlayers,
+      positionLeader,
+      topClub
+    };
+  });
+}
+
+function renderSelectionStats() {
+  const container = $("#selectionCards");
+  const summary = $("#selectionSummaryCards");
+  if (!container || !summary) return;
+  const stats = getSelectionStats().sort((a, b) => a.group.localeCompare(b.group) || a.team.localeCompare(b.team));
+  const maxLocalBirthShare = Math.max(...stats.map((item) => item.localBirthShare));
+  const teamsWithMostLocalBirth = stats
+    .filter((item) => item.localBirthShare === maxLocalBirthShare)
+    .sort((a, b) => a.team.localeCompare(b.team));
+  const teamsWithMostAbroad = [...stats].filter((item) => Number.isFinite(item.abroadShare)).sort((a, b) => b.abroadShare - a.abroadShare || a.team.localeCompare(b.team)).slice(0, 3);
+  const ageValues = stats.map((item) => item.averageAge).filter(Number.isFinite);
+  const globalAverageAge = ageValues.reduce((total, age) => total + age, 0) / ageValues.length;
+
+  summary.innerHTML = `
+    <article class="selection-summary-card"><span>Proporción de nacidos en el país representado</span><strong>${teamsWithMostLocalBirth.map((item) => item.team).join(", ")}</strong><small>${teamsWithMostLocalBirth[0]?.bornInRepresentedCountry}/${teamsWithMostLocalBirth[0]?.rosterSize} jugadores · ${formatPercent(teamsWithMostLocalBirth[0]?.localBirthShare)}</small></article>
+    <article class="selection-summary-card"><span>Mas jugadores en el exterior</span><strong>${teamsWithMostAbroad.map((item) => item.team).join(", ")}</strong><small>${formatPercent(teamsWithMostAbroad[0]?.abroadShare)} con club confirmado fuera del pais</small></article>
+    <article class="selection-summary-card"><span>Edad promedio global</span><strong>${formatNumber(globalAverageAge)} años</strong><small>calculada con ${ageValues.length} selecciones con muestra disponible</small></article>
+  `;
+
+  container.innerHTML = stats.map((item) => `
+    <article class="selection-card">
+      <div class="selection-card-head">
+        <div>
+          <span class="selection-group">Grupo ${item.group}</span>
+          <h3>${teamLabel(item.team)}</h3>
+        </div>
+        <strong>${item.listedPlayers}</strong>
+      </div>
+      <div class="selection-metrics">
+        <div><span>Proporción de nacidos en el país representado</span><strong>${formatPercent(item.localBirthShare)}</strong><small>${item.bornInRepresentedCountry}/${item.rosterSize} jugadores</small></div>
+        <div><span>En exterior</span><strong>${formatPercent(item.abroadShare)}</strong><small>${item.abroadPlayers}/${item.confirmedClubPlayers} con club</small></div>
+        <div><span>Edad prom.</span><strong>${formatNumber(item.averageAge)}</strong><small>n=${item.ageSample}</small></div>
+        <div><span>Datos completos</span><strong>${item.completePlayers}</strong><small>fichas verificadas</small></div>
+      </div>
+      <div class="selection-bars">
+        <label><span>Proporción de nacidos en el país representado</span><i><b style="width: ${Math.min(item.localBirthShare, 100)}%"></b></i></label>
+        <label><span>Club exterior</span><i><b style="width: ${Number.isFinite(item.abroadShare) ? Math.min(item.abroadShare, 100) : 0}%"></b></i></label>
+      </div>
+      <div class="selection-notes">
+        <span>${item.positionLeader.label} dominante (${item.positionLeader.count})</span>
+        <span>Club mas repetido: ${item.topClub.label}</span>
+      </div>
+    </article>
+  `).join("");
+}
+
+
+function getClubCanonicalName(club) {
+  const normalized = normalizeText(club || "").replace(/\s+/g, " ").trim();
+  if (!normalized) return "";
+  const aliases = [
+    { name: "Manchester City", terms: ["man city", "manchester city", "manchester city fc"] },
+    { name: "Bayern Múnich", terms: ["bayern", "bayern munich", "bayern munchen", "bayern de munich", "fc bayern", "fc bayern munich"] },
+    { name: "Arsenal", terms: ["arsenal", "arsenal fc"] },
+    { name: "PSG", terms: ["psg", "paris saint germain", "paris saint germain fc"] },
+    { name: "Barcelona", terms: ["barcelona", "fc barcelona", "futbol club barcelona"] },
+    { name: "Al-Hilal", terms: ["al hilal", "al-hilal", "al hilal sfc", "al-hilal sfc"] },
+    { name: "Atlético Madrid", terms: ["atletico madrid", "atletico de madrid", "atl madrid"] },
+    { name: "Crystal Palace", terms: ["crystal palace", "crystal palace fc"] },
+    { name: "Manchester United", terms: ["man united", "manchester united", "manchester united fc"] },
+    { name: "Borussia Dortmund", terms: ["borussia dortmund", "dortmund"] },
+    { name: "Benfica", terms: ["benfica", "sl benfica"] },
+    { name: "Real Madrid", terms: ["real madrid", "real madrid club de futbol"] },
+    { name: "Inter", terms: ["inter", "inter milan"] },
+    { name: "Milan", terms: ["milan", "ac milan"] },
+    { name: "Liverpool", terms: ["liverpool", "liverpool fc"] }
+  ];
+  const alias = aliases.find((item) => item.terms.some((term) => normalized === term || normalized.includes(term)));
+  if (alias) return alias.name;
+  return String(club).trim();
+}
+
+function getClubContributionStats() {
+  const clubs = getPaniniPlayerRecords().reduce((acc, player) => {
+    if (!isConfirmedClub(player.club)) return acc;
+    const club = getClubCanonicalName(player.club);
+    if (!club) return acc;
+    if (!acc[club]) acc[club] = { club, players: [], teams: new Set(), positions: {} };
+    acc[club].players.push(player);
+    acc[club].teams.add(player.team);
+    acc[club].positions[player.position] = (acc[club].positions[player.position] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.values(clubs)
+    .map((item) => ({
+      ...item,
+      count: item.players.length,
+      teams: [...item.teams].sort((a, b) => a.localeCompare(b)),
+      topPosition: Object.entries(item.positions).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0]?.[0] || "Por confirmar"
+    }))
+    .sort((a, b) => b.count - a.count || a.club.localeCompare(b.club));
+}
+
+function renderClubStats() {
+  const summary = $("#clubSummaryCards");
+  const cards = $("#clubRankingCards");
+  const rows = $("#clubRows");
+  if (!summary || !cards || !rows) return;
+  const stats = getClubContributionStats();
+  const totalPlayers = stats.reduce((total, item) => total + item.count, 0);
+  const topClub = stats[0];
+  const multiSelectionClubs = stats.filter((item) => item.teams.length >= 3).length;
+
+  summary.innerHTML = `
+    <article class="kpi"><span>Club con mas convocados</span><strong>${topClub?.club || "-"}</strong><small>${topClub?.count || 0} jugadores</small></article>
+    <article class="kpi"><span>Clubes profesionales</span><strong>${stats.length}</strong><small>con jugadores registrados</small></article>
+    <article class="kpi"><span>Jugadores con club confirmado</span><strong>${totalPlayers}</strong><small>base del ranking</small></article>
+    <article class="kpi"><span>Clubes con 3 o mas selecciones</span><strong>${multiSelectionClubs}</strong><small>aporte multinacional</small></article>
+  `;
+
+  cards.innerHTML = stats.slice(0, 10).map((item, index) => `
+    <article class="club-card">
+      <span class="club-rank">${index + 1}</span>
+      <div>
+        <strong>${item.club}</strong>
+        <small>${item.teams.slice(0, 4).join(", ")}${item.teams.length > 4 ? ` +${item.teams.length - 4}` : ""}</small>
+      </div>
+      <b>${item.count}</b>
+    </article>
+  `).join("");
+
+  rows.innerHTML = stats.map((item, index) => `
+    <tr>
+      <td data-label="#">${index + 1}</td>
+      <td data-label="Club"><strong>${item.club}</strong><br><small>${item.topPosition} mas frecuente</small></td>
+      <td data-label="Jugadores">${item.count}</td>
+      <td data-label="Selecciones">${item.teams.join(", ")}</td>
+      <td data-label="Jugadores citados">${item.players.map((player) => `${player.fullName} (${player.team})`).join(", ")}</td>
+    </tr>
+  `).join("");
 }
 
 function renderPlayerFilters() {
@@ -17362,11 +22161,43 @@ function getPlayerInitials(player) {
     .join("");
 }
 
+function getPlayerImageNameKeys(player) {
+  const normalizedNames = [player.fullName, player.commonName]
+    .map((name) => normalizeText(name).replace(/[^a-z0-9]+/g, " ").trim())
+    .filter(Boolean);
+
+  return [...new Set(normalizedNames.flatMap((name) => [
+    name,
+    name.replace(/\bjr\b/g, "junior"),
+    name.replace(/\bjunior\b/g, "jr")
+  ]).filter(Boolean))];
+}
+
+function getImageComparableName(imagePath) {
+  return normalizeText(String(imagePath).split("/").pop() || "")
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/^[a-z]{3}[-_]\d+[-_]?/, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function imagePathMatchesPlayerName(imagePath, playerNameKeys) {
+  const imageName = getImageComparableName(imagePath);
+  if (imageName.length < 4) return false;
+  return playerNameKeys.some((key) =>
+    key.length >= 4 && (imageName.includes(key) || key.includes(imageName))
+  );
+}
+
 function getLocalPlayerImage(player) {
-  const nameKeys = [player.fullName, player.commonName]
-    .map((name) => `${player.teamCode}:${normalizeText(name).replace(/[^a-z0-9]+/g, " ").trim()}`);
-  const byName = nameKeys.map((key) => localPlayerImages.byName[key]).find(Boolean);
-  return byName || localPlayerImages.byCode[player.code] || "";
+  const playerNameKeys = getPlayerImageNameKeys(player);
+  const candidates = [
+    ...playerNameKeys.map((name) => localPlayerImages.byName?.[player.teamCode + ":" + name]),
+    ...playerNameKeys.map((name) => verifiedPlayerImagesByName[player.teamCode + ":" + name]),
+    localPlayerImages.byCode?.[player.code]
+  ].filter(Boolean);
+
+  return candidates.find((imagePath) => imagePathMatchesPlayerName(imagePath, playerNameKeys)) || "";
 }
 
 function getPlayerImage(player) {
@@ -17495,73 +22326,6 @@ function renderWorldCupHistory() {
   `;
 }
 
-function getPredictionOutcome(homeScore, awayScore) {
-  const home = Number(homeScore);
-  const away = Number(awayScore);
-  if (!Number.isFinite(home) || !Number.isFinite(away)) return "";
-  if (home > away) return "H";
-  if (home < away) return "A";
-  return "D";
-}
-
-function getMatchDifficulty(match) {
-  const matchPredictions = predictions.filter((prediction) => prediction.matchId === match.id);
-  if (matchPredictions.length < 3) return null;
-
-  const outcomeCounts = { H: 0, D: 0, A: 0 };
-  matchPredictions.forEach((prediction) => {
-    const outcome = getPredictionOutcome(prediction.homeScore, prediction.awayScore);
-    if (outcome) outcomeCounts[outcome] += 1;
-  });
-
-  const total = matchPredictions.length;
-  const maxShare = Math.max(...Object.values(outcomeCounts)) / total;
-  const scoreSpread = matchPredictions.reduce((sum, prediction) => {
-    return sum + Math.abs(Number(prediction.homeScore) - Number(prediction.awayScore));
-  }, 0) / total;
-  const disagreement = 1 - maxShare;
-  const difficulty = Math.min(100, Math.round((disagreement * 82) + Math.min(scoreSpread, 4) * 4.5));
-
-  const favorite = Object.entries(outcomeCounts).sort((a, b) => b[1] - a[1])[0];
-  const labelByOutcome = { H: "local", D: "empate", A: "visitante" };
-  return {
-    match,
-    total,
-    difficulty,
-    reason: Math.round(maxShare * 100) + "% eligió " + labelByOutcome[favorite[0]] + "; promedio de diferencia " + scoreSpread.toFixed(1) + " goles"
-  };
-}
-
-function renderDifficultyList() {
-  const container = $("#difficultyList");
-  if (!container) return;
-
-  const items = matches
-    .map(getMatchDifficulty)
-    .filter(Boolean)
-    .sort((a, b) => b.difficulty - a.difficulty || b.total - a.total)
-    .slice(0, 8);
-
-  if (!items.length) {
-    container.innerHTML = '<p class="prediction-card">No hay suficientes pronósticos para calcular dificultad. Se necesitan al menos 3 pronósticos por partido.</p>';
-    return;
-  }
-
-  container.innerHTML = items.map((item) => `
-    <article class="difficulty-row">
-      <div class="difficulty-match">
-        <strong>${item.match.home} vs ${item.match.away}</strong>
-        <small>${item.match.phase} · ${formatDate(item.match.date)}</small>
-      </div>
-      <div class="difficulty-meter">
-        <div class="difficulty-track"><div class="difficulty-fill" style="width: ${item.difficulty}%"></div></div>
-        <span class="difficulty-reason">${item.reason} · ${item.total} pronósticos</span>
-      </div>
-      <strong class="difficulty-score">${item.difficulty}%</strong>
-    </article>
-  `).join("");
-}
-
 function renderBracket() {
   $("#bracket").innerHTML = getDynamicKnockoutRounds().map((round) => `
     <section class="round">
@@ -17576,192 +22340,17 @@ function renderBracket() {
   `).join("");
 }
 
-function drawCharts() {
-  drawLineChart($("#lineChart"));
-  drawBarChart($("#barChart"));
-}
-
-function drawLineChart(canvas) {
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  const width = canvas.width = canvas.offsetWidth * devicePixelRatio;
-  const height = canvas.height = 220 * devicePixelRatio;
-  ctx.scale(devicePixelRatio, devicePixelRatio);
-  ctx.clearRect(0, 0, width, height);
-
-  const topUser = users.length > 0 ? users[0] : null; // Asumiendo que users ya está ordenado por puntos
-  if (!topUser || !topUser.pointHistory || topUser.pointHistory.length < 2) {
-    ctx.fillStyle = "rgba(255,255,255,0.65)";
-    ctx.font = "12px Inter";
-    ctx.fillText("No hay datos suficientes para la evolución del ranking", 24, 22);
-    return;
-  }
-
-  const historyPoints = topUser.pointHistory.map(entry => entry.points);
-  const maxPoints = Math.max(...historyPoints);
-  const minPoints = Math.min(...historyPoints);
-  const range = maxPoints - minPoints > 0 ? maxPoints - minPoints : 1; // Evitar división por cero
-
-  ctx.strokeStyle = "#d8b75f";
-  ctx.lineWidth = 3;
-  ctx.beginPath();
-
-  // Definir padding para el área del gráfico
-  const paddingX = 24;
-  const paddingY = 20;
-  const chartWidth = canvas.offsetWidth - 2 * paddingX;
-  const chartHeight = 170; // Altura máxima para la línea, dejando espacio para texto y padding
-
-  historyPoints.forEach((point, index) => {
-    const x = paddingX + index * (chartWidth / (historyPoints.length - 1));
-    // Invertir el eje Y para dibujar de abajo hacia arriba
-    const y = (canvas.offsetHeight - paddingY) - ((point - minPoints) / range) * chartHeight;
-    if (index === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-
-  // Dibujar puntos como círculos
-  ctx.fillStyle = "#d8b75f";
-  historyPoints.forEach((point, index) => {
-    const x = paddingX + index * (chartWidth / (historyPoints.length - 1));
-    const y = (canvas.offsetHeight - paddingY) - ((point - minPoints) / range) * chartHeight;
-    ctx.beginPath();
-    ctx.arc(x, y, 4, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  ctx.fillStyle = "rgba(255,255,255,0.65)";
-  ctx.font = "12px Inter";
-  ctx.fillText(`Evolución de puntos (${topUser.name})`, paddingX, paddingY);
-}
-
-function drawBarChart(canvas) {
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  const width = Math.max(canvas.offsetWidth, 320);
-  const height = 220;
-  canvas.width = width * devicePixelRatio;
-  canvas.height = height * devicePixelRatio;
-  ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-  ctx.clearRect(0, 0, width, height);
-
-  const phaseAccuracy = {};
-  const phaseOrder = ["Grupos", "Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final"];
-  phaseOrder.forEach((phase) => {
-    phaseAccuracy[phase] = { correct: 0, total: 0 };
-  });
-
-  predictions.forEach((pred) => {
-    const match = matches.find((m) => m.id === pred.matchId);
-    if (!match || match.status !== "finalizado") return;
-
-    const phase = match.phase;
-    if (!phaseAccuracy[phase]) phaseAccuracy[phase] = { correct: 0, total: 0 };
-    phaseAccuracy[phase].total++;
-
-    const actualH = match.homeScore;
-    const actualA = match.awayScore;
-    const predH = parseInt(pred.homeScore);
-    const predA = parseInt(pred.awayScore);
-
-    if (actualH === predH && actualA === predA) {
-      phaseAccuracy[phase].correct++;
-    } else {
-      const actualOutcome = actualH > actualA ? "home" : actualH < actualA ? "away" : "draw";
-      const predOutcome = predH > predA ? "home" : predH < predA ? "away" : "draw";
-      if (actualOutcome === predOutcome) phaseAccuracy[phase].correct++;
-    }
-  });
-
-  const labels = [];
-  const values = [];
-  phaseOrder.forEach((phase) => {
-    if (phaseAccuracy[phase]?.total > 0) {
-      labels.push(phase);
-      values.push(Math.round((phaseAccuracy[phase].correct / phaseAccuracy[phase].total) * 100));
-    }
-  });
-
-  if (values.length === 0) {
-    ctx.fillStyle = "rgba(255,255,255,0.65)";
-    ctx.font = "12px Inter";
-    ctx.fillText("No hay pronósticos finalizados para analizar", 24, 22);
-    return;
-  }
-
-  const chart = {
-    left: 28,
-    right: 18,
-    top: 38,
-    bottom: 52
-  };
-  const chartWidth = width - chart.left - chart.right;
-  const chartBottom = height - chart.bottom;
-  const maxBarHeight = chartBottom - chart.top;
-  const slotWidth = chartWidth / values.length;
-  const barWidth = Math.max(18, Math.min(42, slotWidth * 0.48));
-  const labelAliases = {
-    Dieciseisavos: "D16",
-    "Tercer puesto": "3er puesto"
-  };
-
-  ctx.fillStyle = "rgba(255,255,255,0.65)";
-  ctx.font = "12px Inter";
-  ctx.textAlign = "left";
-  ctx.textBaseline = "alphabetic";
-  ctx.fillText("% acierto", chart.left, 22);
-
-  values.forEach((value, index) => {
-    const barHeight = (value / 100) * maxBarHeight;
-    const slotX = chart.left + index * slotWidth;
-    const barX = slotX + (slotWidth - barWidth) / 2;
-    const centerX = slotX + slotWidth / 2;
-
-    ctx.fillStyle = index % 2 ? "#18a05e" : "#0e4d92";
-    ctx.fillRect(barX, chartBottom - barHeight, barWidth, barHeight);
-
-    ctx.fillStyle = "rgba(255,255,255,0.86)";
-    ctx.font = "10px Inter";
-    ctx.textAlign = "center";
-    ctx.fillText(`${value}%`, centerX, chartBottom - barHeight - 6);
-
-    drawChartLabel(ctx, labelAliases[labels[index]] || labels[index], centerX, chartBottom + 13, Math.max(34, slotWidth - 6));
-  });
-}
-
-function drawChartLabel(ctx, label, centerX, y, maxWidth) {
-  ctx.fillStyle = "rgba(255,255,255,0.64)";
-  ctx.font = "9px Inter";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "top";
-
-  const words = label.split(" ");
-  const lines = [];
-  words.forEach((word) => {
-    const current = lines[lines.length - 1];
-    const candidate = current ? `${current} ${word}` : word;
-    if (!current || ctx.measureText(candidate).width <= maxWidth) {
-      lines[lines.length - 1] = candidate;
-    } else {
-      lines.push(word);
-    }
-  });
-
-  lines.slice(0, 2).forEach((line, index) => {
-    ctx.fillText(line, centerX, y + index * 11);
-  });
-}
-
 function exportCurrentPage() {
   const active = $(".page.active").id.replace("page-", "");
-  const rows = active === "ranking"
-    ? [["posicion", "usuario", "puntos", "aciertos", "efectividad"], ...users.map((u, i) => [i + 1, u.name, u.points, u.hits, `${u.accuracy}%`])]
+  const rows = active === "selecciones"
+    ? [["seleccion", "grupo", "nacidos_en_pais_representado", "no_nacidos_alli", "proporcion_nacidos_pais_representado", "jugadores_con_club_confirmado", "jugadores_en_exterior", "porcentaje_exterior", "edad_promedio", "muestra_edad", "posicion_mas_frecuente", "club_mas_repetido"], ...getSelectionStats().map((item) => [item.team, item.group, item.bornInRepresentedCountry, item.foreignBorn, formatPercent(item.localBirthShare), item.confirmedClubPlayers, item.abroadPlayers, formatPercent(item.abroadShare), formatNumber(item.averageAge), item.ageSample, item.positionLeader.label, item.topClub.label])]
+    : active === "clubes"
+      ? [["posicion", "club", "jugadores", "selecciones", "jugadores_citados"], ...getClubContributionStats().map((item, index) => [index + 1, item.club, item.count, item.teams.join(" | "), item.players.map((player) => `${player.fullName} (${player.team})`).join(" | ")])]
     : active === "jugadores"
       ? [["codigo_panini", "nombre", "seleccion", "edad", "fecha_nacimiento", "estatura", "club", "posicion"], ...getFilteredPlayers().map((player) => [player.code, player.fullName, player.team, player.age, player.birthDate, player.height, player.club, player.position])]
       : active === "historial"
-        ? [["anio", "sede", "campeon", "finalista", "equipos", "partidos", "goles", "goleador", "goles_goleador"], ...worldCupHistory.map((item) => [item.year, item.host, item.champion, item.runnerUp, item.teams, item.matches, item.goals, item.topScorer, item.topScorerGoals])]
-        : [["fecha", "local", "goles_local", "goles_visitante", "visitante", "fase", "estado"], ...matches.map((m) => [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status])];
+      ? [["anio", "sede", "campeon", "finalista", "equipos", "partidos", "goles", "goleador", "goles_goleador"], ...worldCupHistory.map((item) => [item.year, item.host, item.champion, item.runnerUp, item.teams, item.matches, item.goals, item.topScorer, item.topScorerGoals])]
+      : [["fecha", "local", "goles_local", "goles_visitante", "visitante", "fase", "estado"], ...matches.map((m) => [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status])];
   const csv = rows.map((row) => row.join(",")).join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);
@@ -17785,8 +22374,6 @@ function bindEvents() {
   $("#menuToggle").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
   $("#matchStatusFilter").addEventListener("change", renderMatches);
   $("#phaseFilter").addEventListener("change", renderMatches);
-  $("#resultMatch").addEventListener("change", fillResultInputs);
-  $("#rankingSearch").addEventListener("input", renderRanking);
   $("#playerSearch").addEventListener("input", renderPlayers);
   $("#playerTeamFilter").addEventListener("change", renderPlayers);
   $("#playerPositionFilter").addEventListener("change", renderPlayers);
@@ -17806,71 +22393,25 @@ function bindEvents() {
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".search-box")) $("#searchResults").classList.remove("open");
   });
-  $("#signupForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    registerUser($("#signupName").value, $("#signupEmail").value);
-    TournamentService.calculateUserPoints(); // Recalcular puntos para el nuevo usuario
-    memoizedSearchIndex = null; // Invalidar caché al añadir usuario
-    event.target.reset();
-  });
   $("#themeSelect").addEventListener("change", (event) => setTheme(event.target.value));
-  $("#simulateResults")?.addEventListener("click", () => TournamentService.simulateRandomResults());
-  $("#effectsVolume")?.addEventListener("input", (event) => {
-    localStorage.setItem("fifa2026-volume", event.target.value);
-  });
-  $("#resetApp")?.addEventListener("click", () => TournamentService.resetApplication());
-  $("#predictionForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const matchId = Number($("#predictionMatch").value);
-    const match = matches.find((m) => m.id === matchId);
-    const userEmail = $("#predictionUser").value;
-    const user = users.find(u => u.email === userEmail);
-    
-    predictions.unshift({
-      matchId,
-      matchLabel: `${match.home} vs ${match.away}`,
-      userEmail,
-      userName: user.name,
-      homeScore: $("#homeScore").value,
-      awayScore: $("#awayScore").value,
-      qualifier: $("#qualifier").value,
-      scorer: $("#scorerBonus").value
-    });
-    localStorage.setItem("fifa2026-predictions", JSON.stringify(predictions));
-    TournamentService.calculateUserPoints();
-    renderPredictions();
-  });
-  $("#resultForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    saveMatchResult(
-      Number($("#resultMatch").value),
-      Number($("#resultHomeScore").value),
-      Number($("#resultAwayScore").value)
-    );
-  });
-  window.addEventListener("resize", () => $(".page.active").id === "page-analitica" && drawCharts());
 }
 
 function init() {
   setTheme(localStorage.getItem("fifa2026-theme") || "classic");
-  const savedVolume = localStorage.getItem("fifa2026-volume");
-  if (savedVolume !== null && $("#effectsVolume")) {
-    $("#effectsVolume").value = savedVolume;
-  }
   applyStoredMatchResults();
   updateKnockoutCalendar();
   bindEvents();
   renderCountdown();
   renderMatches();
-  renderRanking();
-  renderPredictions();
-  renderResultForm();
+  renderHomeBirthStats();
+  renderBirthRepresentationStats();
+  renderSelectionStats();
+  renderClubStats();
   renderGroups();
   renderScorers();
   renderPlayerFilters();
   renderPlayers();
   renderWorldCupHistory();
-  renderDifficultyList();
   renderBracket();
   setInterval(renderCountdown, 1000);
 }

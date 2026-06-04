@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FIFA 2026 Predictor Hub</title>
+    <title>FIFA 2026 Info Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -16,23 +16,20 @@
           <div class="brand-mark">26</div>
           <div>
             <strong>WorldCup Hub</strong>
-            <span>Pronósticos FIFA 2026</span>
+            <span>Informacion FIFA 2026</span>
           </div>
         </div>
         <nav class="nav-list" aria-label="Navegación principal">
           <button class="nav-item active" data-page="inicio">Inicio</button>
           <button class="nav-item" data-page="calendario">Calendario</button>
-          <button class="nav-item" data-page="pronosticos">Pronósticos</button>
           <button class="nav-item" data-page="posiciones">Posiciones</button>
           <button class="nav-item" data-page="goleadores">Goleadores</button>
+          <button class="nav-item" data-page="selecciones">Selecciones</button>
           <button class="nav-item" data-page="jugadores">Jugadores</button>
-          <button class="nav-item" data-page="ranking">Ranking</button>
-          <button class="nav-item" data-page="analitica">Analítica</button>
+          <button class="nav-item" data-page="clubes">Clubes</button>
           <button class="nav-item" data-page="historial">Historial</button>
           <button class="nav-item" data-page="llaves">Llaves</button>
-          <button class="nav-item" data-page="admin">Admin</button>
         </nav>
-        <div class="sidebar-counter"><span id="sidebarParticipants">0</span> participantes</div>
       </aside>
 
       <main class="main">
@@ -44,7 +41,7 @@
           </div>
           <div class="topbar-actions">
             <div class="search-box">
-              <input id="globalSearch" type="search" placeholder="Buscar equipo, usuario o partido" />
+              <input id="globalSearch" type="search" placeholder="Buscar seleccion, jugador o partido" />
               <div class="search-results" id="searchResults" aria-label="Resultados de busqueda"></div>
             </div>
             <select class="theme-select" id="themeSelect" aria-label="Seleccionar tema visual">
@@ -63,17 +60,17 @@
             <div>
               <p class="eyebrow">Cuenta regresiva</p>
               <h2>Rumbo al Mundial FIFA 2026</h2>
-              <p>Centro operativo previo al torneo para registrar pronosticos, consultar calendario y preparar competencias.</p>
+              <p>Centro informativo previo al torneo para consultar calendario, selecciones, planteles, posiciones e historia mundialista.</p>
             </div>
             <div class="countdown" id="countdown"></div>
           </div>
           <div class="kpi-grid">
-            <article class="kpi"><span>Usuarios</span><strong id="registeredUsersCount">0</strong><small>inscritos antes del inicio</small></article>
-            <article class="kpi"><span>Pronosticos</span><strong>Abiertos</strong><small>editables hasta el bloqueo</small></article>
-            <article class="kpi"><span>Resultados</span><strong>Sin iniciar</strong><small>no hay marcadores oficiales</small></article>
-            <article class="kpi"><span>Ranking</span><strong>0 pts</strong><small>todos empiezan empatados</small></article>
+            <article class="kpi"><span>Selecciones</span><strong>48</strong><small>clasificadas al torneo</small></article>
+            <article class="kpi"><span>Jugadores</span><strong>1.248</strong><small>26 por seleccion</small></article>
+            <article class="kpi"><span>Proporción de nacidos en el país representado</span><strong>76,85%</strong><small>959 de 1.248 jugadores</small></article>
+            <article class="kpi"><span>289 jugadores del Mundial 2026 no nacieron en el país de la selección que representan.</span><strong>23,15%</strong><small>del total</small></article>
           </div>
-          <div class="dashboard-grid">
+          <div class="dashboard-grid home-dashboard">
             <section class="panel span-2">
               <div class="panel-head">
                 <h3>Próximos partidos</h3>
@@ -82,15 +79,15 @@
               <div class="match-list" id="homeMatches"></div>
             </section>
             <section class="panel">
-              <div class="panel-head"><h3>Ranking rápido</h3></div>
-              <div class="mini-ranking" id="quickRanking"></div>
+              <div class="panel-head"><h3>Proporción de nacidos en el país representado</h3></div>
+              <div class="stat-list" id="homeBirthStats"></div>
             </section>
             <section class="panel span-3">
               <div class="panel-head"><h3>Noticias y alertas</h3></div>
               <div class="news-grid">
-                <article><strong>Reglas actualizadas</strong><p>El bonus por campeón se liquida al cierre de la final.</p></article>
-                <article><strong>Bloqueo automático</strong><p>Los pronósticos se cierran 5 minutos antes del inicio.</p></article>
-                <article><strong>Integración futura</strong><p>La capa de datos está preparada para APIs deportivas oficiales.</p></article>
+                <article><strong>Formato ampliado</strong><p>El torneo 2026 se juega con 48 selecciones y 104 partidos.</p></article>
+                <article><strong>Planteles de 26</strong><p>La lectura demografica usa 1.248 jugadores como base total.</p></article>
+                <article><strong>Datos actualizables</strong><p>La capa local queda preparada para conectar fuentes deportivas oficiales.</p></article>
               </div>
             </section>
           </div>
@@ -126,36 +123,6 @@
           </div>
         </section>
 
-        <section class="page" id="page-pronosticos">
-          <div class="dashboard-grid">
-            <section class="panel span-2">
-              <div class="panel-head">
-                <h3>Formulario de pronóstico</h3>
-                <span class="status-pill">Editable antes del inicio</span>
-              </div>
-              <form class="prediction-form" id="predictionForm">
-                <label>Participante<select id="predictionUser"></select></label>
-                <label>Partido<select id="predictionMatch"></select></label>
-                <div class="score-inputs">
-                  <label>Local<input type="number" min="0" max="15" value="1" id="homeScore" /></label>
-                  <label>Visitante<input type="number" min="0" max="15" value="0" id="awayScore" /></label>
-                </div>
-                <label>Clasifica<select id="qualifier"><option>Equipo local</option><option>Equipo visitante</option><option>No aplica</option></select></label>
-                <label>Goleador bonus<input type="text" placeholder="Nombre del jugador" id="scorerBonus" /></label>
-                <button class="primary-button" type="submit">Guardar pronóstico</button>
-              </form>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Mis predicciones</h3></div>
-              <div class="prediction-list" id="predictionList"></div>
-            </section>
-            <section class="panel span-3">
-              <div class="panel-head"><h3>Reglas de puntuación</h3></div>
-              <div class="rules-grid" id="rulesGrid"></div>
-            </section>
-          </div>
-        </section>
-
         <section class="page" id="page-posiciones">
           <div class="kpi-grid" id="groupResultsSummary"></div>
           <section class="panel summary-panel">
@@ -184,53 +151,57 @@
           </div>
         </section>
 
-        <section class="page" id="page-jugadores">
-          <div class="toolbar">
-            <input id="playerSearch" type="search" placeholder="Buscar jugador, seleccion o codigo Panini" />
-            <select id="playerTeamFilter" aria-label="Filtrar por seleccion"></select>
-            <select id="playerPositionFilter" aria-label="Filtrar por estado de datos"></select>
-          </div>
-          <div class="player-card-grid" id="playerCards"></div>
-        </section>
-
-        <section class="page" id="page-ranking">
-          <section class="panel signup-panel">
+        <section class="page" id="page-selecciones">
+          <section class="panel">
             <div class="panel-head">
-              <h3>Inscripcion de participante</h3>
-              <span class="status-pill">Requerida para aparecer en el ranking</span>
+              <h3>Selecciones</h3>
+              <span class="status-pill">Cajas compactas</span>
             </div>
-            <form class="signup-form" id="signupForm">
-              <label>Nombre<input id="signupName" type="text" placeholder="Nombre del participante" required /></label>
-              <label>Correo<input id="signupEmail" type="email" placeholder="correo@ejemplo.com" required /></label>
-              <button class="primary-button" type="submit">Inscribirme</button>
-            </form>
+            <p class="history-table-note">Resumen calculado con los datos locales de jugadores disponibles. El porcentaje de futbolistas en clubes del exterior usa clubes identificados como locales por seleccion; los registros sin club confirmado no se cuentan en ese porcentaje.</p>
+            <div class="selection-summary-grid" id="selectionSummaryCards"></div>
+            <div class="selection-card-grid" id="selectionCards"></div>
           </section>
-          <div class="toolbar">
-            <input id="rankingSearch" type="search" placeholder="Buscar participante" />
-            <select id="rankingScope"><option>Global</option><option>Diario</option><option>Fase de grupos</option><option>Mi liga</option></select>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>#</th><th>Usuario</th><th>Puntos</th><th>Aciertos</th><th>Efectividad</th><th>Tendencia</th></tr></thead>
-              <tbody id="rankingRows"></tbody>
-            </table>
-          </div>
         </section>
 
-        <section class="page" id="page-analitica">
-          <div class="kpi-grid">
-            <article class="kpi"><span>Prediccion colectiva</span><strong>0%</strong><small>sin pronosticos registrados</small></article>
-            <article class="kpi"><span>Partido dificil</span><strong>Pendiente</strong><small>sin dispersion calculada</small></article>
-            <article class="kpi"><span>Equipo confiable</span><strong>Pendiente</strong><small>sin resultados oficiales</small></article>
-            <article class="kpi"><span>Usuario estable</span><strong>Sin usuarios</strong><small>requiere inscripcion</small></article>
-          </div>
-          <div class="dashboard-grid">
-            <section class="panel span-2"><div class="panel-head"><h3>Evolución del ranking</h3></div><canvas id="lineChart" height="220"></canvas></section>
-            <section class="panel"><div class="panel-head"><h3>Aciertos por fase</h3></div><canvas id="barChart" height="220"></canvas></section>
-            <section class="panel span-3"><div class="panel-head"><h3>Partidos más difíciles de pronosticar</h3><span class="status-pill">Basado en pronósticos</span></div><div class="difficulty-list" id="difficultyList"></div></section>
-          </div>
+        <section class="page" id="page-jugadores">
+          <section class="panel player-album-panel">
+            <div class="panel-head">
+              <h3>Jugadores</h3>
+              <span class="status-pill">Estilo Panini</span>
+            </div>
+            <p class="history-table-note">Fichas enriquecidas con datos locales del album, Wikidata y Wikimedia Commons. Los registros sin identidad verificable se mantienen como por confirmar.</p>
+            <div class="toolbar">
+              <input id="playerSearch" type="search" placeholder="Buscar jugador, seleccion o codigo Panini" />
+              <select id="playerTeamFilter" aria-label="Filtrar por seleccion"></select>
+              <select id="playerPositionFilter" aria-label="Filtrar por estado de datos"></select>
+            </div>
+            <div class="player-card-grid" id="playerCards"></div>
+          </section>
         </section>
 
+        <section class="page" id="page-clubes">
+          <div class="kpi-grid" id="clubSummaryCards"></div>
+          <section class="panel club-ranking-panel">
+            <div class="panel-head">
+              <h3>Clubes profesionales</h3>
+              <span class="status-pill">Jugadores convocados</span>
+            </div>
+            <p class="history-table-note">Ranking calculado con los clubes registrados en las listas locales de convocados. Los nombres equivalentes se agrupan para evitar duplicados por abreviaturas o idiomas.</p>
+            <div class="club-ranking-grid" id="clubRankingCards"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Detalle por club</h3>
+              <span class="status-pill">Tabla completa</span>
+            </div>
+            <div class="table-wrap compact-table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>Club</th><th>Jugadores</th><th>Selecciones</th><th>Jugadores citados</th></tr></thead>
+                <tbody id="clubRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
 
         <section class="page" id="page-historial">
           <div class="kpi-grid" id="worldCupHistorySummary"></div>
@@ -270,55 +241,8 @@
           <div class="bracket" id="bracket"></div>
         </section>
 
-        <section class="page" id="page-admin">
-          <div class="dashboard-grid">
-            <section class="panel">
-              <div class="panel-head"><h3>Cargar resultado</h3></div>
-              <form class="prediction-form" id="resultForm">
-                <label>Partido<select id="resultMatch"></select></label>
-                <div class="score-inputs">
-                  <label>Local<input type="number" min="0" max="30" placeholder="-" id="resultHomeScore" required /></label>
-                  <label>Visitante<input type="number" min="0" max="30" placeholder="-" id="resultAwayScore" required /></label>
-                </div>
-                <button class="primary-button" type="submit">Publicar resultado</button>
-              </form>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Reglas editables</h3></div>
-              <div class="admin-rules" id="adminRules"></div>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Simulador de Datos</h3></div>
-              <p>Genera automáticamente 20 usuarios y pronósticos para todos los partidos para probar el ranking y las gráficas con datos masivos.</p>
-              <button class="primary-button" id="simulateResults">Simular Torneo Masivo</button>
-              <div style="margin-top: 16px;">
-                <label style="font-size: 0.86rem; color: var(--muted); display: block; margin-bottom: 4px;">Volumen de celebración</label>
-                <input type="range" id="effectsVolume" min="0" max="1" step="0.1" value="0.7" style="cursor: pointer; width: 100%;">
-              </div>
-              <div id="simulationStatus" style="display: none; margin-top: 16px;">
-                <p id="simulationMessage" style="font-size: 0.86rem; color: var(--muted); margin-bottom: 8px;">Iniciando simulación...</p>
-                <div style="height: 6px; background: var(--line); border-radius: 3px; overflow: hidden;">
-                  <div id="simulationProgress" style="width: 0%; height: 100%; background: var(--gold); transition: width 0.3s ease;"></div>
-                </div>
-              </div>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Reiniciar Aplicación</h3></div>
-              <button class="primary-button" id="resetApp">Reset Total</button>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Actividad</h3></div>
-              <div class="timeline">
-                <p><strong>12:42</strong> 34 pronósticos bloqueados.</p>
-                <p><strong>12:18</strong> Ranking recalculado.</p>
-                <p><strong>11:50</strong> Exportación PDF solicitada.</p>
-              </div>
-            </section>
-          </div>
-        </section>
       </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script src="./app.js"></script>
+    <script src="./app.js?v=info-hub-20260603"></script>
   </body>
 </html>

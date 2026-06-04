@@ -234,7 +234,9 @@ body[data-theme="light"] select {
 }
 
 .main {
+  width: min(100%, 1500px);
   min-width: 0;
+  margin: 0 auto;
   padding: 22px;
 }
 
@@ -469,12 +471,30 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.home-dashboard {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  align-items: start;
+}
+
 .span-2 {
   grid-column: span 2;
 }
 
-.span-3 {
-  grid-column: span 3;
+.home-dashboard .span-2 {
+  grid-column: span 1;
+}
+
+.home-dashboard .span-3 {
+  grid-column: 1 / -1;
+}
+
+.news-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
+}
+
+.news-grid article {
+  min-height: 116px;
 }
 
 .kpi,
@@ -498,7 +518,7 @@ select {
 }
 
 .match-list,
-.mini-ranking,
+.stat-list,
 .prediction-list,
 .admin-rules,
 .timeline {
@@ -713,8 +733,205 @@ body[data-theme="light"] .timeline p {
 }
 
 
+.club-ranking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.club-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 58px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 12px;
+}
+
+.club-card strong,
+.club-card small {
+  display: block;
+}
+
+.club-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.club-card b {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 8px;
+  background: rgba(244, 180, 0, 0.16);
+  color: var(--gold);
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.45rem;
+}
+
+.club-rank {
+  color: var(--muted);
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.club-ranking-panel {
+  margin-bottom: 14px;
+}
+
 .players-table-wrap {
   margin-top: 14px;
+}
+
+.selection-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0 14px;
+}
+
+.selection-summary-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 12px;
+}
+
+.selection-summary-card span,
+.selection-summary-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.selection-summary-card strong {
+  display: block;
+  margin: 6px 0;
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.selection-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.selection-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    var(--surface);
+  padding: 13px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+}
+
+.selection-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.selection-card-head h3 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  text-transform: none;
+}
+
+.selection-card-head > strong {
+  display: grid;
+  min-width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(244, 180, 0, 0.38);
+  border-radius: var(--radius);
+  color: var(--gold);
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.35rem;
+}
+
+.selection-group {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.selection-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.selection-metrics div {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.selection-metrics span,
+.selection-metrics small,
+.selection-notes span,
+.selection-bars span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.selection-metrics strong {
+  display: block;
+  margin: 3px 0;
+  font-size: 1rem;
+}
+
+.selection-bars {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.selection-bars label {
+  display: grid;
+  gap: 4px;
+}
+
+.selection-bars i {
+  display: block;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.selection-bars b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.selection-notes {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.player-album-panel {
+  background:
+    linear-gradient(180deg, rgba(244, 180, 0, 0.08), rgba(0, 87, 184, 0.04)),
+    var(--surface);
 }
 
 .player-card-grid {
@@ -725,11 +942,30 @@ body[data-theme="light"] .timeline p {
 }
 
 .player-card {
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(244, 180, 0, 0.28);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)), var(--surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)),
+    var(--surface);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+.player-card::before {
+  content: "FIFA 2026";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 4px 7px;
+  background: rgba(7, 17, 31, 0.74);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
 }
 
 body[data-theme="light"] .player-card {
@@ -739,6 +975,10 @@ body[data-theme="light"] .player-card {
 .player-card-media {
   position: relative;
   aspect-ratio: 3 / 4;
+  margin: 8px 8px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
   background:
     linear-gradient(145deg, rgba(0, 87, 184, 0.34), rgba(244, 180, 0, 0.16)),
     var(--surface-2);

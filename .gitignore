@@ -1,6 +1,6 @@
 # Assets pesados generados/locales
-img/
 pdf/
 scripts/
 official-squads.js
+img/figuras/*/
 *.pyc

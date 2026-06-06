@@ -22,6 +22,7 @@
         <nav class="nav-list" aria-label="Navegación principal">
           <button class="nav-item active" data-page="inicio">Inicio</button>
           <button class="nav-item" data-page="calendario">Calendario</button>
+          <button class="nav-item" data-page="descanso">Descanso</button>
           <button class="nav-item" data-page="posiciones">Posiciones</button>
           <button class="nav-item" data-page="goleadores">Goleadores</button>
           <button class="nav-item" data-page="selecciones">Selecciones</button>
@@ -121,6 +122,31 @@
           </section>
           <div class="calendar-list" id="calendarRows">
           </div>
+        </section>
+
+        <section class="page" id="page-descanso">
+          <div class="kpi-grid" id="restSummaryCards"></div>
+          <section class="panel rest-ranking-panel">
+            <div class="panel-head">
+              <h3>Ranking de descanso por seleccion</h3>
+              <span class="status-pill">Fase de grupos</span>
+            </div>
+            <p class="history-table-note">Ranking ordenado de mayor a menor tiempo total de descanso entre partidos. El calculo usa las fechas y horas locales registradas en el calendario de grupos.</p>
+            <div class="table-wrap rest-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Seleccion</th>
+                    <th>Horas 1-2</th>
+                    <th>Horas 2-3</th>
+                    <th>Total horas</th>
+                  </tr>
+                </thead>
+                <tbody id="restRankingRows"></tbody>
+              </table>
+            </div>
+          </section>
         </section>
 
         <section class="page" id="page-posiciones">
@@ -243,6 +269,6 @@
 
       </main>
     </div>
-    <script src="./app.js?v=info-hub-20260603"></script>
+    <script src="./app.js?v=info-hub-20260606-rest"></script>
   </body>
 </html>

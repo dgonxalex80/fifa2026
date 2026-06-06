@@ -18922,7 +18922,7 @@ const livePlayerDetails = {
     "name": "Álvaro Montero",
     "birthDate": "1989-11-05",
     "club": "UD Almería B",
-    "position": "forward"
+    "position": "Guardameta"
   },
   "alvaro angulo": {
     "name": "Álvaro Angulo",

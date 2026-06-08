@@ -1284,6 +1284,43 @@ tr:last-child td {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.venue-map-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1fr);
+  align-items: center;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.venue-map-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.venue-map-copy p {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.venue-map-figure {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.venue-map-figure img {
+  display: block;
+  width: min(100%, 760px);
+  max-height: 340px;
+  object-fit: contain;
+}
+
 .venue-card,
 .ranking-card,
 .glossary-card {
@@ -1844,6 +1881,10 @@ body[data-theme="light"] .standing-row {
   .venue-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .venue-map-panel {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1889,6 +1930,14 @@ body[data-theme="light"] .standing-row {
   .rules-basics-grid,
   .venue-meta {
     grid-template-columns: 1fr;
+  }
+
+  .venue-map-figure {
+    padding: 8px;
+  }
+
+  .venue-map-figure img {
+    max-height: 260px;
   }
 
   .span-2,

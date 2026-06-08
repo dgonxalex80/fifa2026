@@ -6,6 +6,14 @@ function exportCurrentPage() {
     ? [["seleccion", "grupo", "nacidos_en_pais_representado", "no_nacidos_alli", "proporcion_nacidos_pais_representado", "jugadores_con_club_confirmado", "jugadores_en_exterior", "porcentaje_exterior", "edad_promedio", "muestra_edad", "posicion_mas_frecuente", "club_mas_repetido"], ...getSelectionStats().map((item) => [item.team, item.group, item.bornInRepresentedCountry, item.foreignBorn, formatPercent(item.localBirthShare), item.confirmedClubPlayers, item.abroadPlayers, formatPercent(item.abroadShare), formatNumber(item.averageAge), item.ageSample, item.positionLeader.label, item.topClub.label])]
     : active === "clubes"
       ? [["posicion", "club", "jugadores", "selecciones", "jugadores_citados"], ...getClubContributionStats().map((item, index) => [index + 1, item.club, item.count, item.teams.join(" | "), item.players.map((player) => `${player.fullName} (${player.team})`).join(" | ")])]
+    : active === "reglas"
+      ? [["categoria", "regla", "detalle"], ...getRulesExportRows()]
+    : active === "sedes"
+      ? [["estadio", "ciudad", "pais", "capacidad", "partidos", "fases"], ...getVenueStats().map((venue) => [venue.stadium, venue.city, venue.country, venue.capacity, venue.matches.length, [...venue.phases].join(" | ")])]
+    : active === "ranking"
+      ? [["ranking_fifa", "seleccion", "confederacion", "grupo"], ...fifaRankingData.map((item) => [item.rank, item.team, item.confederation, getTeamGroup(item.team)])]
+    : active === "glosario"
+      ? [["termino", "definicion"], ...colombianGlossary.map((item) => [item.term, item.definition])]
     : active === "jugadores"
       ? [["codigo_panini", "nombre", "seleccion", "edad", "fecha_nacimiento", "estatura", "club", "posicion"], ...getFilteredPlayers().map((player) => [player.code, player.fullName, player.team, player.age, player.birthDate, player.height, player.club, player.position])]
       : active === "historial"
@@ -37,6 +45,7 @@ function bindEvents() {
   $("#playerSearch").addEventListener("input", renderPlayers);
   $("#playerTeamFilter").addEventListener("change", renderPlayers);
   $("#playerPositionFilter").addEventListener("change", renderPlayers);
+  if ($("#glossarySearch")) $("#glossarySearch").addEventListener("input", renderGlossary);
   $("#exportPage").addEventListener("click", exportCurrentPage);
   $("#globalSearch").addEventListener("input", (event) => {
     renderSearchResults(event.target.value);
@@ -65,6 +74,10 @@ function init() {
   renderHomeMatches();
   renderMatches();
   renderRestRanking();
+  renderRules();
+  renderVenues();
+  renderRanking();
+  renderGlossary();
   renderHomeBirthStats();
   renderBirthRepresentationStats();
   renderSelectionStats();

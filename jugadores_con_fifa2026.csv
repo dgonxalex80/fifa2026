@@ -1,0 +1,873 @@
+pais,numero_orden,nombre_jugador
+Argelia,ALG1,Luca Zidane
+Argelia,ALG2,Oussama Benbot
+Argelia,ALG3,Melvin Mastil
+Argelia,ALG4,Abdelatif Ramdane
+Argelia,ALG5,Rafik Belghali
+Argelia,ALG6,Samir Chergui
+Argelia,ALG7,Rayan Aït-Nouri
+Argelia,ALG8,Jaouen Hadjam
+Argelia,ALG11,Zineddine Belaïd
+Argelia,ALG12,Achref Abada
+Argelia,ALG13,Mohamed Amine Tougaï
+Argelia,ALG15,Hicham Boudaoui
+Argelia,ALG18,Ibrahim Maza
+Argelia,ALG19,Yacine Titraoui
+Argelia,ALG20,Ramiz Zerrouki
+Argelia,ALG21,Mohamed Amine Amoura
+Argelia,ALG22,Nadhir Benbouali
+Argelia,ALG23,Adil Boulbina
+Argelia,ALG24,Farès Ghedjemis
+Argelia,ALG25,Amine Gouiri
+Argentina,ARG2,Gerónimo Rulli
+Argentina,ARG3,Juan Musso
+Argentina,ARG8,Gonzalo Montiel
+Argentina,ARG10,Lisandro Martínez
+Argentina,ARG11,Facundo Medina
+Argentina,ARG17,Valentín Barco
+Argentina,ARG18,Giovani Lo Celso
+Argentina,ARG22,José Manuel López
+Argentina,ARG24,Thiago Almada
+Australia,AUS1,Matthew Ryan
+Australia,AUS2,Patrick Beach
+Australia,AUS3,Paul Izzo
+Australia,AUS4,Harry Souttar
+Australia,AUS5,Alessandro Circati
+Australia,AUS6,Jordan Bos
+Australia,AUS7,Cameron Burgess
+Australia,AUS8,Milos Degenek
+Australia,AUS9,Aziz Behich
+Australia,AUS10,Jason Geria
+Australia,AUS11,Lucas Herrington
+Australia,AUS12,Kai Trewin
+Australia,AUS13,Jacob Italiano
+Australia,AUS14,Jackson Irvine
+Australia,AUS15,Paul Okon-Engstler
+Australia,AUS16,Cameron Devlin
+Australia,AUS17,Ajdin Hrustic
+Australia,AUS18,Connor Metcalfe
+Australia,AUS19,Aiden O’Neill
+Australia,AUS20,Mathew Leckie
+Australia,AUS21,Nishan Velupillay
+Australia,AUS22,Nestoy Irakunda
+Australia,AUS23,Awer Mabil
+Australia,AUS24,Mohamed Touré
+Australia,AUS25,Cristian Volpato
+Australia,AUS26,Tete Yengi
+Austria,AUT1,Patrick Pentz
+Austria,AUT2,Alexander Schlager
+Austria,AUT3,Florian Wiegele
+Austria,AUT4,David Affengruber
+Austria,AUT5,David Alaba
+Austria,AUT6,Kevin Danso
+Austria,AUT7,Marco Friedl
+Austria,AUT8,Philipp Lienhart
+Austria,AUT9,Phillipp Mwene
+Austria,AUT10,Stefan Posch
+Austria,AUT11,Alexander Prass
+Austria,AUT12,Michael Svoboda
+Austria,AUT13,Christoph Baumgartner
+Austria,AUT14,Carney Chukwuemeka
+Austria,AUT15,Florian Grillitsch
+Austria,AUT16,Konrad Laimer
+Austria,AUT17,Marcel Sabitzer
+Austria,AUT18,Xavier Schlager
+Austria,AUT19,Romano Schimid
+Austria,AUT20,Alessandro Schöph
+Austria,AUT21,Nicolas Seiwald
+Austria,AUT22,Paul Wanner
+Austria,AUT23,Patrick Wimmer
+Austria,AUT24,Marko Arnautovic
+Austria,AUT25,Michael Gregoritsch
+Austria,AUT26,Sasa Kalajdzic
+Belgica,BEL1,Thibaut Courtois
+Belgica,BEL2,Senne Lammens
+Belgica,BEL3,Mike Penders
+Belgica,BEL4,Zeno Debast
+Belgica,BEL5,Arthur Theate
+Belgica,BEL6,Koni de Winter
+Belgica,BEL7,Brandon Mechele
+Belgica,BEL8,Nathan Ngoy
+Belgica,BEL9,Thomas Meunir
+Belgica,BEL10,Timothy Castagne
+Belgica,BEL11,Maxim de Cuyper
+Belgica,BEL12,Joaquin Seys
+Belgica,BEL13,Kevin de Bruyne
+Belgica,BEL14,Amadou Onana
+Belgica,BEL15,Youri Tielemans
+Belgica,BEL16,Hans Vanaken
+Belgica,BEL17,Nicolas Raskin
+Belgica,BEL18,Axel Witsel
+Belgica,BEL19,Jérémy Doku
+Belgica,BEL20,Leandro Trossard
+Belgica,BEL21,Alexis Saelemaekers
+Belgica,BEL22,Dodi Lukebakio
+Belgica,BEL23,Romelu Lukaku
+Belgica,BEL24,Charles de Ketelaere
+Belgica,BEL25,Matias Fernández-Pardo
+Belgica,BEL26,Diego Moreira
+Bosnia y Herzegovina,BIH2,Martin Zlomislic
+Bosnia y Herzegovina,BIH3,Osman Hadzikic
+Bosnia y Herzegovina,BIH5,Amar Dedic
+Bosnia y Herzegovina,BIH8,Tarik Muharemovic
+Bosnia y Herzegovina,BIH9,Stjepan Radeljic
+Bosnia y Herzegovina,BIH10,Dennis Hadzikadunic
+Bosnia y Herzegovina,BIH11,Nidal Celik
+Bosnia y Herzegovina,BIH16,Ermin Mahmic
+Bosnia y Herzegovina,BIH20,Kerim Alajbegovic
+Bosnia y Herzegovina,BIH22,Ermedin Demirovic
+Bosnia y Herzegovina,BIH23,Jovo Lukic
+Brasil,BRA2,Ederson
+Brasil,BRA3,Weverton
+Brasil,BRA6,Bremer
+Brasil,BRA7,Ibáñez
+Brasil,BRA8,Léo Pereira
+Brasil,BRA11,Alex Sandro
+Brasil,BRA12,Douglas Santos
+Brasil,BRA15,Fabinho
+Brasil,BRA21,Luiz Henrique
+Brasil,BRA22,Igor Thiago
+Brasil,BRA23,Endrick
+Brasil,BRA25,Rayan
+Brasil,BRA26,Neymar
+Canada,CAN1,Maxime Crépau
+Canada,CAN2,Owen Goodman
+Canada,CAN5,Derek Cornelius
+Canada,CAN6,Alphonso Davies
+Canada,CAN7,Luc de Fougerolles
+Canada,CAN9,Alfie Jones
+Canada,CAN10,Richie Laryea
+Canada,CAN12,Joel Waterman
+Canada,CAN13,Ali Ahmed
+Canada,CAN15,Mathieu Chounière
+Canada,CAN17,Marcelo Flores
+Canada,CAN21,Nathan Saliba
+Canada,CAN24,Promise David
+Canada,CAN26,Tani Oluwaseyi
+Costa de Marfil,CIV2,Mohamed Kone
+Costa de Marfil,CIV3,Alban Lafont
+Costa de Marfil,CIV5,Clément Akpa
+Costa de Marfil,CIV7,Guéla Doué
+Costa de Marfil,CIV8,Ghislain Konan
+Costa de Marfil,CIV10,Evan N’Dicka
+Costa de Marfil,CIV13,Parfait Guiagon
+Costa de Marfil,CIV14,Christ Inao Oulai
+Costa de Marfil,CIV17,Jean Michaël Seri
+Costa de Marfil,CIV19,Ange-Yoan Bonny
+Costa de Marfil,CIV22,Yan Diomande
+Costa de Marfil,CIV24,Nicolas Pepe
+Costa de Marfil,CIV25,Bazoumana Toure
+Costa de Marfil,CIV26,Elye Wahi
+Republica Democratica del Congo,COD1,Timothy Fayulu
+Republica Democratica del Congo,COD2,Lionel Mpasi
+Republica Democratica del Congo,COD3,Mattieu Epolo
+Republica Democratica del Congo,COD4,Aaron Wan-Bissaka
+Republica Democratica del Congo,COD5,Gedeon Kalulu
+Republica Democratica del Congo,COD6,Chancel Mbemba
+Republica Democratica del Congo,COD7,Steve Kapuadi
+Republica Democratica del Congo,COD8,Axel Tuanzebe
+Republica Democratica del Congo,COD9,Dylan Batubinsika
+Republica Democratica del Congo,COD10,Rocky Bushiri
+Republica Democratica del Congo,COD11,Arthur Masuku
+Republica Democratica del Congo,COD12,Joris Kayembe
+Republica Democratica del Congo,COD13,Samuel Moutoussamy
+Republica Democratica del Congo,COD14,Ngal’Ayel Mukau
+Republica Democratica del Congo,COD15,Gael Kakuta
+Republica Democratica del Congo,COD16,Charles Pickel
+Republica Democratica del Congo,COD17,Noah Sadiki
+Republica Democratica del Congo,COD18,Edo Kayembe
+Republica Democratica del Congo,COD19,Théo Bongonda
+Republica Democratica del Congo,COD20,Nathanael Mbuku
+Republica Democratica del Congo,COD21,Cédric Bakambu
+Republica Democratica del Congo,COD22,Simon Banza
+Republica Democratica del Congo,COD23,Fiston Mayele
+Republica Democratica del Congo,COD24,Brian Cipenga
+Republica Democratica del Congo,COD25,Yoane Wissa
+Republica Democratica del Congo,COD26,Meschack Elia
+Cabo Verde,CPV1,Josimar Dias
+Cabo Verde,CPV2,Márcio da Rosa
+Cabo Verde,CPV3,Carlos Santos
+Cabo Verde,CPV4,Steven Moreira
+Cabo Verde,CPV5,Wagner Pina
+Cabo Verde,CPV6,João Paulo Fernandes
+Cabo Verde,CPV7,Sidny Lopes Cabral
+Cabo Verde,CPV8,Logan Costa
+Cabo Verde,CPV9,Roberto Lopes
+Cabo Verde,CPV10,Kelvin Pires
+Cabo Verde,CPV11,Ianique Tavares
+Cabo Verde,CPV12,Edilson Borges
+Cabo Verde,CPV13,Jamiro Monteiro
+Cabo Verde,CPV14,Telmo Arcanjo
+Cabo Verde,CPV15,Yannick Semedo
+Cabo Verde,CPV16,Laros Duarte
+Cabo Verde,CPV17,Deroy Duarte
+Cabo Verde,CPV18,Kevin Pina
+Cabo Verde,CPV19,Ryan Mendes
+Cabo Verde,CPV20,Willy Semedo
+Cabo Verde,CPV21,Garry Rodrigues
+Cabo Verde,CPV22,Jovane Cabral
+Cabo Verde,CPV23,Nuno da Costa
+Cabo Verde,CPV24,Dailon Livramento
+Cabo Verde,CPV25,Gilson Benchimol
+Cabo Verde,CPV26,Hélio Varela
+Croacia,CRO1,Dominic Livakovic
+Croacia,CRO2,Dominik Kotarski
+Croacia,CRO3,Ivor Pandur
+Croacia,CRO5,Duje Caleta-Car
+Croacia,CRO8,Marin Pongracic
+Croacia,CRO9,Martin Erlic
+Croacia,CRO14,Nikola Vlasic
+Croacia,CRO15,Luka Sucic
+Croacia,CRO17,Kristijan Jakic
+Croacia,CRO18,Petar Sucic
+Croacia,CRO19,Nikola Moro
+Croacia,CRO20,Toni Fruk
+Croacia,CRO21,Ivan Perisic
+Croacia,CRO23,Ante Budimir
+Croacia,CRO25,Petar Musa
+Croacia,CRO26,Igor Matanovic
+Curazao,CUW1,Tyrick Bodak
+Curazao,CUW2,Trevor Doornbusch
+Curazao,CUW3,Eloy Room
+Curazao,CUW4,Riechedly Bazoer
+Curazao,CUW5,Joshua Brenet
+Curazao,CUW6,Roshon Van Eijma
+Curazao,CUW7,Sherel Floranus
+Curazao,CUW8,Deveron Fonville
+Curazao,CUW9,Jurïen Gaari
+Curazao,CUW10,Armando Obispo
+Curazao,CUW11,Shurandy Sambo
+Curazao,CUW12,Juninho Bacuna
+Curazao,CUW13,Leandro Bacuna
+Curazao,CUW14,Livano Comenencia
+Curazao,CUW15,Kevin Felida
+Curazao,CUW16,Arjany Martha
+Curazao,CUW17,Tyrese Noslin
+Curazao,CUW18,Godfried Roemeratoe
+Curazao,CUW19,Jeremy Antonisse
+Curazao,CUW20,Tahith Chong
+Curazao,CUW21,Kenji Gorré
+Curazao,CUW22,Sontje Hansen
+Curazao,CUW23,Gervane Kastaneer
+Curazao,CUW24,Brandley Kuwas
+Curazao,CUW25,Jürgen Locadia
+Curazao,CUW26,Jearl Margaritha
+Republica Checa,CZE1,Lukas Hornicek
+Republica Checa,CZE4,Ladislav Krejci
+Republica Checa,CZE5,Robin Hranac
+Republica Checa,CZE6,Stepan Chaloupek
+Republica Checa,CZE9,Jaroslav Zeleny
+Republica Checa,CZE10,David Jurasek
+Republica Checa,CZE15,Hugo Sochurek
+Republica Checa,CZE16,Alexander Sojka
+Republica Checa,CZE17,Vladimir Darida
+Republica Checa,CZE18,David Doudera
+Republica Checa,CZE20,Denis Visinsky
+Republica Checa,CZE21,Patrick Schick
+Republica Checa,CZE24,Mojmir Chytil
+Republica Checa,CZE25,Jan Kuchta
+Ecuador,ECU2,Moisés Ramírez
+Ecuador,ECU7,Jackson Porozo
+Ecuador,ECU8,Félix Torres
+Ecuador,ECU10,Yaimar Medina
+Ecuador,ECU13,Jordi Alcívar
+Ecuador,ECU14,Denil Castillo
+Ecuador,ECU19,John Yeboah
+Ecuador,ECU21,Jordy Caicedo
+Ecuador,ECU22,Jeremy Arévalo
+Ecuador,ECU23,Anthony Valencia
+Egipto,EGY1,Mohamed El Shenawy
+Egipto,EGY2,Mostafa Shobeir
+Egipto,EGY3,Al-Mahdy Soliman
+Egipto,EGY4,Mohamed Alaa
+Egipto,EGY5,Mohamed Hany
+Egipto,EGY6,Tarek El Ala
+Egipto,EGY7,Hamdi Fathy
+Egipto,EGY8,Ramy Rabia
+Egipto,EGY9,Yasser Ibrahim
+Egipto,EGY10,Hossam Abdel-Maguid
+Egipto,EGY11,Mohamed Abdelmonem
+Egipto,EGY12,Ahmed Fotouh
+Egipto,EGY13,Karim Hafez
+Egipto,EGY14,Marwan Attia
+Egipto,EGY15,Mohand Lashin
+Egipto,EGY16,Nabil Emad Dunga
+Egipto,EGY17,Mahmoud Saber
+Egipto,EGY18,Ahmed Sayed Zizo
+Egipto,EGY19,Imam Ashour
+Egipto,EGY20,Mostafa Abdel-Raouf Ziko
+Egipto,EGY21,Mahmoud Trezeguet
+Egipto,EGY22,Ibrahim Ade (Pyramids FC)l
+Egipto,EGY23,Haithem Hassan
+Egipto,EGY24,Mohamed Salah
+Egipto,EGY25,Omar Marmoush
+Egipto,EGY26,Aktai Abdullah
+Egipto,EGY27,Hamza Abdelkarim
+Inglaterra,ENG2,Dean Henderson
+Inglaterra,ENG3,James Trafford
+Inglaterra,ENG5,Tino Livramento
+Inglaterra,ENG10,Jarell Quansah
+Inglaterra,ENG11,Nico O’Reilly
+Inglaterra,ENG12,Djed Spence
+Inglaterra,ENG14,Elliot Anderson
+Inglaterra,ENG16,Kobbie Mainoo
+Inglaterra,ENG17,Eberechi Eze
+Inglaterra,ENG21,Noni Madueke
+Inglaterra,ENG26,Ivan Toney
+Espana,ESP2,David Raya
+Espana,ESP3,Joan García
+Espana,ESP5,Marcos Llorente
+Espana,ESP7,Alex Grimaldo
+Espana,ESP9,Pau Cubarsí
+Espana,ESP10,Marc Pubill
+Espana,ESP11,Eric García
+Espana,ESP17,Gavi
+Espana,ESP18,Alex Baena
+Espana,ESP22,Mikel Oyarzabal
+Espana,ESP24,Yeremi Pino
+Espana,ESP25,Victor Muñoz
+Espana,ESP26,Borja Iglesias
+Francia,FRA2,Brice Samba
+Francia,FRA3,Robin Risser
+Francia,FRA5,Malo Gusto
+Francia,FRA9,Lucas Hernández
+Francia,FRA12,Maxence Lacroix
+Francia,FRA15,N’Golo Kanté
+Francia,FRA16,Warren Zaïre-Emery
+Francia,FRA23,Marcus Thuram
+Francia,FRA24,Maghnes Akliouche
+Francia,FRA25,Jean-Philippe Mateta
+Francia,FRA26,Rayan Cherki
+Alemania,GER1,Manuel Neuer
+Alemania,GER2,Oliver Baumann
+Alemania,GER3,Alexander Nübel
+Alemania,GER5,Nathaniel Brown
+Alemania,GER6,Pascal Groß
+Alemania,GER10,Nico Schlotterbeck
+Alemania,GER12,Malick Thiaw
+Alemania,GER13,Aleksandar Pavlovic
+Alemania,GER15,Nadiem Amiri
+Alemania,GER16,Jamie Leweling
+Alemania,GER17,Felix Nmecha
+Alemania,GER18,Angelo Stiller
+Alemania,GER20,Lennart Karl
+Alemania,GER22,Deniz Undav
+Alemania,GER23,Kai Havertz
+Alemania,GER24,Maximilian Beier
+Ghana,GHA1,Benjamin Asare
+Ghana,GHA2,Lawrence Ati-Zigi
+Ghana,GHA3,Joseph Anang
+Ghana,GHA4,Baba Abdul Rahman
+Ghana,GHA5,Gideon Mensah
+Ghana,GHA6,Marvin Senaya
+Ghana,GHA7,Alidu Seidu
+Ghana,GHA8,Abdul Mumin
+Ghana,GHA9,Jerome Opoku
+Ghana,GHA10,Jonas Adjetey
+Ghana,GHA11,Kojo Oppong Peprah
+Ghana,GHA12,Derrick Luckassen
+Ghana,GHA13,Elisha Owusu
+Ghana,GHA14,Thomas Partey
+Ghana,GHA15,Kwasi Sibo
+Ghana,GHA16,Augustine Boakye
+Ghana,GHA17,Caleb Yirenky
+Ghana,GHA18,Abdul Fatawu Issahaku
+Ghana,GHA19,Kamal Deen Sulemana
+Ghana,GHA20,Cristopher Bonsu Baah
+Ghana,GHA21,Ernest Nuamah
+Ghana,GHA22,Antoine Semenyo
+Ghana,GHA23,Brandon Thomas-Asante
+Ghana,GHA24,Prince Kwabena Adu
+Ghana,GHA25,Iñaki Williams
+Ghana,GHA26,Jordan Ayew
+Haiti,HAI1,Johnny Placide
+Haiti,HAI2,Alexandre Pierre
+Haiti,HAI3,Josué Duverger
+Haiti,HAI5,Wilguens Paugain
+Haiti,HAI8,JK Duverne
+Haiti,HAI11,Keeto Thermoncy
+Haiti,HAI13,Carl-Fred Sainthe
+Haiti,HAI14,Jean-Jacques Danley
+Haiti,HAI15,Jeanricner Bellegarde
+Haiti,HAI16,Pierre Woodenski
+Haiti,HAI17,Dominique Simon
+Haiti,HAI22,Wilson Isidor
+Haiti,HAI25,Yassin Fortune
+Haiti,HAI26,Lenny Joseph
+Iran,IRN1,Alireza Beyranvand
+Iran,IRN2,Hosein Hoseini
+Iran,IRN3,Payam Niazmand
+Iran,IRN4,Shoja Khalilzadeh
+Iran,IRN5,Hosein Kanaani
+Iran,IRN6,Ali Nemati
+Iran,IRN7,Danial Eiri
+Iran,IRN8,Ehsan Hajisafi
+Iran,IRN9,Milad Mohammadi
+Iran,IRN10,Saleh Hardani
+Iran,IRN11,Ramin Rezaeiyan
+Iran,IRN12,Saman Ghodoos
+Iran,IRN13,Saeid Ezatollahi
+Iran,IRN14,Rouzbeh Cheshmi
+Iran,IRN15,Amir Mohammad Razagh Niya
+Iran,IRN16,Mohammad Ghorbani
+Iran,IRN17,Mehdi Ghayedi
+Iran,IRN18,Ariya Yousefi
+Iran,IRN19,Alireza Jahanbakhsh
+Iran,IRN20,Mehdi Torabi
+Iran,IRN21,Mohammad Mohebbi
+Iran,IRN22,Mehdi Taremi
+Iran,IRN23,Amirhossein Hosseinzadeh
+Iran,IRN24,Denis Dargahi
+Iran,IRN25,Ali Alipour
+Iran,IRN26,Shahriyar Moghanloo
+Irak,IRQ1,Jalal Hassan
+Irak,IRQ2,Ahmed Basil
+Irak,IRQ3,Fahad Talib
+Irak,IRQ4,Hussein Ali
+Irak,IRQ5,Manaf Younis
+Irak,IRQ6,Zaid Tahseen
+Irak,IRQ7,Rebin Sulaka
+Irak,IRQ8,Akam Hashem
+Irak,IRQ9,Merchas Doski
+Irak,IRQ10,Ahmed Yahya
+Irak,IRQ11,Frans Putros
+Irak,IRQ12,Mustafa Saadoon
+Irak,IRQ13,Zaid Ismail
+Irak,IRQ14,Amir Al Ammari
+Irak,IRQ15,Kevin Yakob
+Irak,IRQ16,Zidane Iqbal
+Irak,IRQ17,Aimar Sher
+Irak,IRQ18,Youssef Amyn
+Irak,IRQ19,Ibrahim Bayesh
+Irak,IRQ20,Ahmed Qasem
+Irak,IRQ21,Marko Farji
+Irak,IRQ22,Ali Jasim
+Irak,IRQ23,Ali Al Hamadi
+Irak,IRQ24,Ali Yousif
+Irak,IRQ25,Aymen Hussein
+Irak,IRQ26,Mohanad Ali
+Jordania,JOR1,Nour Bani Attia
+Jordania,JOR2,Yazeed Abu Laila
+Jordania,JOR3,Abdullah Al-Fakhoury
+Jordania,JOR4,Abdullah Naseeb
+Jordania,JOR5,Saad Al-Rousan
+Jordania,JOR6,Yazan Al-Arab
+Jordania,JOR7,Saleem Obeid
+Jordania,JOR8,Mohammad Abu Al-Nadi
+Jordania,JOR9,Hussam Abu Dahab
+Jordania,JOR10,Ihsan Haddad
+Jordania,JOR11,Anas Badawi
+Jordania,JOR12,Mohammad Abu Hashish
+Jordania,JOR13,Nour Al-Rawabdeh
+Jordania,JOR14,Nizar Al-Rashdan
+Jordania,JOR15,Ibrahim Saadeh
+Jordania,JOR16,Rajai Ayed
+Jordania,JOR17,Amer Jamous
+Jordania,JOR18,Muhannad Abu Taha
+Jordania,JOR19,Mohammad Al-Dawood
+Jordania,JOR20,Mahmoud Mardi
+Jordania,JOR21,Awda Al-Fakhoury
+Jordania,JOR22,Mousa Al-Taamari
+Jordania,JOR23,Mohammad Abu Zureiq
+Jordania,JOR24,Ali Azayza
+Jordania,JOR25,Ibrahim Sabra
+Jordania,JOR26,Ali Alwan
+Japon,JPN2,Keisuke Osako
+Japon,JPN3,Tomoki Hayakawa
+Japon,JPN4,Yuto Nagamoto
+Japon,JPN6,Ko Itakura
+Japon,JPN7,Takehiro Tomisayu
+Japon,JPN9,Yukinari Sugawara
+Japon,JPN10,Hiroki Ito
+Japon,JPN12,Tsuyoshi Watanabe
+Japon,JPN14,Wataru Endo
+Japon,JPN18,Kaito Nakamura
+Japon,JPN19,Daizen Maeda
+Japon,JPN22,Yuito Suzuki
+Japon,JPN23,Kento Shiogai
+Japon,JPN24,Keisuke Goto
+Corea del Sur,KOR1,Kim Seung-Gyu
+Corea del Sur,KOR2,Song Bum Keun
+Corea del Sur,KOR3,Jo Hyeon-Woo
+Corea del Sur,KOR4,Kim Moon-Hwan
+Corea del Sur,KOR5,Kim Min-Jae
+Corea del Sur,KOR6,Kim Tae-Hwan
+Corea del Sur,KOR7,Park Jin-Seob
+Corea del Sur,KOR8,Seol Young-Woo
+Corea del Sur,KOR10,Lee Ki-Hyuk
+Corea del Sur,KOR11,Lee Tae-Seok
+Corea del Sur,KOR12,Lee Han-Beom
+Corea del Sur,KOR13,Cho Yumin
+Corea del Sur,KOR14,Kim Jin-Gyu
+Corea del Sur,KOR15,Bae Jun-Ho
+Corea del Sur,KOR16,Paik Seung-Ho
+Corea del Sur,KOR17,Yang Hyun-Jun
+Corea del Sur,KOR18,Eom Ji-Sung
+Corea del Sur,KOR19,Lee Kang-In
+Corea del Sur,KOR20,Lee Dong-Gyeong
+Corea del Sur,KOR21,Lee Jjae-Sung )Mainz 05)
+Corea del Sur,KOR22,Hwang In-Beom
+Corea del Sur,KOR23,Hwang Hee-Chan
+Corea del Sur,KOR24,Song Heung-Min
+Corea del Sur,KOR25,Oh Hyeon-Gyu
+Corea del Sur,KOR26,Cho Gue-Sung
+Arabia Saudita,KSA1,Ahmed Alkassar
+Arabia Saudita,KSA2,Mohammed Alowais
+Arabia Saudita,KSA3,Nawaf Alaqidi
+Arabia Saudita,KSA4,Abdulelah Alamri
+Arabia Saudita,KSA5,Ali Lajami
+Arabia Saudita,KSA6,Ali Majrashi
+Arabia Saudita,KSA7,Hassan Kadish
+Arabia Saudita,KSA8,Hassan Altambakti
+Arabia Saudita,KSA9,Jehad Thikri
+Arabia Saudita,KSA10,Mohammed Abualshamat
+Arabia Saudita,KSA11,Moteb Alharbi
+Arabia Saudita,KSA12,Nawaf Buwashl
+Arabia Saudita,KSA13,Saud Abdulhamid
+Arabia Saudita,KSA14,Abdullah Alkhaibari
+Arabia Saudita,KSA15,Aiman Yahya
+Arabia Saudita,KSA16,Khalid Alghannam
+Arabia Saudita,KSA17,Mohamed Kanno
+Arabia Saudita,KSA18,Musab Aljuwayr
+Arabia Saudita,KSA19,Nasser Aldawsari
+Arabia Saudita,KSA20,Salem Aldawsari
+Arabia Saudita,KSA21,Sultan Mandash
+Arabia Saudita,KSA22,Ziyad Aljohani
+Arabia Saudita,KSA23,Alaa Al-Hejji
+Arabia Saudita,KSA24,Abdullah Alhamddan
+Arabia Saudita,KSA25,Feras Albrikan
+Arabia Saudita,KSA26,Saleh Alshehri
+Marruecos,MAR3,Ajmed Reda Tagnaouti
+Marruecos,MAR5,Nayef Aguerd
+Marruecos,MAR7,Anass Salah-Eddine
+Marruecos,MAR8,Chadi Riad
+Marruecos,MAR9,Youssef Belammari
+Marruecos,MAR10,Issa Diop
+Marruecos,MAR11,Redouane Hahlal
+Marruecos,MAR12,Zakaria El Ouahdi
+Marruecos,MAR14,Ismael Saibari
+Marruecos,MAR15,Neil El Aynaoui
+Marruecos,MAR17,Azzedine Ounahi
+Marruecos,MAR18,Bouaddi
+Marruecos,MAR19,Samir El Mourabet
+Marruecos,MAR21,Chemsdine Talbi
+Marruecos,MAR25,Ayoube Amaimouni
+Marruecos,MAR26,Yassine Gessime
+Mexico,MEX1,Raúl Rangel
+Mexico,MEX2,Carlos Acevedo
+Mexico,MEX3,Guillermo Ochoa
+Mexico,MEX5,Jorge Sánchez
+Mexico,MEX7,Edsol Álvarez
+Mexico,MEX10,Mateo Chávez
+Mexico,MEX11,Álvaro Fidalgo
+Mexico,MEX12,Brian Gutiérrez
+Mexico,MEX14,Erik Lira
+Mexico,MEX15,Luis Romo
+Mexico,MEX16,Obed Vargas
+Mexico,MEX17,Gilberto Mora
+Mexico,MEX18,Luis Chávez
+Mexico,MEX21,Guillermo Martínez
+Mexico,MEX22,Armando González
+Mexico,MEX25,Julián Quiñones
+Paises Bajos,NED2,Robin Roefs
+Paises Bajos,NED3,Mark Flekken
+Paises Bajos,NED6,Jorrel Hato
+Paises Bajos,NED9,Jurriën Timber
+Paises Bajos,NED13,Marten de Roon
+Paises Bajos,NED14,Tijjani Reijnders
+Paises Bajos,NED16,Noa Lang
+Paises Bajos,NED17,Mats Wieffer
+Paises Bajos,NED18,Quinten Timber
+Paises Bajos,NED19,Crysencio Summerville
+Paises Bajos,NED20,Guus Til
+Paises Bajos,NED21,Brian Brobbey
+Paises Bajos,NED25,Donyell Malen
+Noruega,NOR1,Orjan Haskjold Nyland
+Noruega,NOR2,Sander Tangvik
+Noruega,NOR3,Egil Selvik
+Noruega,NOR4,Kristoffer Ajer
+Noruega,NOR5,David Moller Wolfe
+Noruega,NOR6,Leo Ostigard
+Noruega,NOR7,Fredrik Bjorkan
+Noruega,NOR8,Marcus Pedersen
+Noruega,NOR10,Sondre Langas
+Noruega,NOR11,Henrik Falchener
+Noruega,NOR13,Morter Thorsby
+Noruega,NOR16,Martin Odegaard
+Noruega,NOR17,Fredrik Aursnes
+Noruega,NOR18,Kristian Thorstvedt
+Noruega,NOR19,Thelonious Aasgaard
+Noruega,NOR21,Andreas Schjelderup
+Noruega,NOR23,Jens Petter Hauge
+Noruega,NOR26,Jorgen Strand Larsen
+Nueva Zelanda,NZL1,Max Crocombe
+Nueva Zelanda,NZL2,Alex Paulsen
+Nueva Zelanda,NZL3,Michael Woud
+Nueva Zelanda,NZL4,Tyler Bindon
+Nueva Zelanda,NZL5,Michael Boxall
+Nueva Zelanda,NZL6,Liberato Cacace
+Nueva Zelanda,NZL7,Francis De Vries
+Nueva Zelanda,NZL8,Callan Elliot
+Nueva Zelanda,NZL9,Tim Payne
+Nueva Zelanda,NZL10,Nando Pijnaker
+Nueva Zelanda,NZL11,Tommy Smith
+Nueva Zelanda,NZL12,Finn Surman
+Nueva Zelanda,NZL13,Lachlan Bayliss
+Nueva Zelanda,NZL14,Joe Bell
+Nueva Zelanda,NZL15,Alex Rufer
+Nueva Zelanda,NZL16,Marko Stamenić
+Nueva Zelanda,NZL17,Ryan Thomas
+Nueva Zelanda,NZL18,Kosta Barbarouses
+Nueva Zelanda,NZL19,Matt Garbett
+Nueva Zelanda,NZL20,Eli Just
+Nueva Zelanda,NZL21,Callum McCowatt
+Nueva Zelanda,NZL22,Ben Old
+Nueva Zelanda,NZL23,Jesse Randall
+Nueva Zelanda,NZL24,Sarpreet Singh
+Nueva Zelanda,NZL25,Ben Waine
+Nueva Zelanda,NZL26,Chris Wood
+Panama,PAN1,Orlando Mosquera
+Panama,PAN2,Luis Mejía
+Panama,PAN3,César Samudio
+Panama,PAN4,César Blackman
+Panama,PAN5,Jorge Gutiérrez
+Panama,PAN6,Amir Murillo
+Panama,PAN7,Fidel Escobar
+Panama,PAN8,Andrés Andrade
+Panama,PAN9,Edgardo Fariña
+Panama,PAN10,José Córdoba
+Panama,PAN11,Eric Davis
+Panama,PAN12,Jiovany Ramos
+Panama,PAN13,Roderick Miller
+Panama,PAN14,Aníbal Godoy
+Panama,PAN15,Adalberto Carrasquilla
+Panama,PAN16,Carlos Harvey
+Panama,PAN17,Cristian Martínez
+Panama,PAN18,José Luis Rodríguez
+Panama,PAN19,César Yanis
+Panama,PAN20,Yoel Bárcenas
+Panama,PAN21,Alberto Quintero
+Panama,PAN22,Azarías Londoño
+Panama,PAN23,Ismael Díaz
+Panama,PAN24,Cecilio Waterman
+Panama,PAN25,José Fajardo
+Panama,PAN26,Tomás Rodríguez
+Paraguay,PAR2,Roberto Fernández
+Paraguay,PAR3,Gastón Olveira
+Paraguay,PAR4,Juan Cáceres
+Paraguay,PAR5,Gustavo Velázquez
+Paraguay,PAR8,José Canale
+Paraguay,PAR10,Alessandro Maidana
+Paraguay,PAR12,Mauricio Magalhães
+Paraguay,PAR14,Braian Ojeda
+Paraguay,PAR18,Gustavo Caballero
+Paraguay,PAR21,Alex Arce
+Paraguay,PAR22,Gabriel Ávalos
+Paraguay,PAR23,Isidro Pitta
+Portugal,POR3,Rui Silva
+Portugal,POR4,Ricardo Velho
+Portugal,POR6,Matheus Nunes
+Portugal,POR7,Nélson Semedo
+Portugal,POR10,Gonçalo Inácio
+Portugal,POR11,Renato Veiga
+Portugal,POR13,Tomás Araújo
+Portugal,POR15,Samu Costa
+Portugal,POR22,Francisco Conceição
+Portugal,POR25,Gonçalo Guedes
+Portugal,POR26,Gonçalo Ramos
+Catar,QAT1,Mahmoud Abunada
+Catar,QAT3,Salah Zakaria
+Catar,QAT4,Ayoub Al Alawi
+Catar,QAT6,Homam Al Amin
+Catar,QAT7,Lucas Mendes
+Catar,QAT8,Issa Laye
+Catar,QAT10,Alhashmi Alhussain
+Catar,QAT11,Sultan Al Brake
+Catar,QAT13,Abdulaziz Hatem
+Catar,QAT14,Ahmed Fathy
+Catar,QAT16,Jassim Gaber
+Catar,QAT17,Mohamed Manai
+Catar,QAT18,Ahmed Al Janhi
+Catar,QAT19,Ahmed Alaa
+Catar,QAT20,Akram Afif
+Catar,QAT23,Hassan Al Haydos
+Catar,QAT24,Mohammed Muntari
+Catar,QAT25,Tahsin Mohammed
+Catar,QAT26,Yusuf Abdurisag
+Sudafrica,RSA2,Ricardo Goss
+Sudafrica,RSA5,Nkosinathi Sibisi
+Sudafrica,RSA6,Ime Okon
+Sudafrica,RSA9,Samukelo Kabini
+Sudafrica,RSA10,Thabang Matuludi
+Sudafrica,RSA11,Olwethu Makhanya
+Sudafrica,RSA12,Kamogelo Sebelebele
+Sudafrica,RSA13,Bradley Cross
+Sudafrica,RSA17,Sphephelo Sithole
+Sudafrica,RSA18,Jayden Adams
+Sudafrica,RSA20,Iqraam Rayners
+Sudafrica,RSA21,Tshepang Moremi
+Sudafrica,RSA22,Relebohile Mofokeng
+Sudafrica,RSA23,Evidence Makgopa
+Sudafrica,RSA24,Themba Zwane
+Sudafrica,RSA26,Thapelo Maseko
+Escocia,SCO1,Craig Gordon
+Escocia,SCO3,Liam Kelly
+Escocia,SCO7,Dom Hyam
+Escocia,SCO9,Nathan Patterson
+Escocia,SCO11,Andy Robertson
+Escocia,SCO15,Findlay Curtis
+Escocia,SCO18,Tyler Fletcher
+Escocia,SCO24,George Hirst
+Escocia,SCO25,Lawrence Shankland
+Escocia,SCO26,Ross Stewart
+Senegal,SEN2,Mory Diaw
+Senegal,SEN5,Antoine Mendy
+Senegal,SEN6,Kalidou Koulibaly
+Senegal,SEN7,El Hadji Malick Diouf
+Senegal,SEN8,Mamadou Sarr
+Senegal,SEN9,Moussa Niakhaté
+Senegal,SEN10,Moustapha Mbow
+Senegal,SEN11,Abdoulaye Seck
+Senegal,SEN12,Ismaïl Jakobs
+Senegal,SEN13,Ilay Camara
+Senegal,SEN14,Idrissa Gana Gueye
+Senegal,SEN15,Pape Gueye
+Senegal,SEN17,Habib Diarra
+Senegal,SEN18,Pathé Ciss
+Senegal,SEN19,Pape Matar Sarr
+Senegal,SEN20,Bara Sapoko Ndiaye
+Senegal,SEN22,Ismaïla Sarr
+Senegal,SEN23,Iliman Ndiaye
+Senegal,SEN24,Assane Diao
+Senegal,SEN25,Ibrahim Mbaye
+Senegal,SEN26,Nicolas Jackson
+Senegal,SEN27,Bamba Dieng
+Senegal,SEN28,Cherif Ndiaye
+Suiza,SUI1,Marvin Keller
+Suiza,SUI6,Eray Cömert
+Suiza,SUI8,Luca Jaquez
+Suiza,SUI9,Miro Muheim
+Suiza,SUI10,Ricardo Rodriguez
+Suiza,SUI11,Silvan Widmer
+Suiza,SUI12,Gran Xhaka
+Suiza,SUI14,Michel Aebischer
+Suiza,SUI15,Christian Fassnacht
+Suiza,SUI19,Fabian Rieder
+Suiza,SUI20,Djibril Sow
+Suiza,SUI21,Zeki Amdouni
+Suiza,SUI23,Cedric Itten
+Suiza,SUI24,Dan Ndoye
+Suiza,SUI25,Noah Okafor
+Suecia,SWE1,Jacob Zetterström
+Suecia,SWE3,Kristoffer Nordfeldt
+Suecia,SWE4,Gustav Lagerbielke
+Suecia,SWE5,Viktor Lindelöf
+Suecia,SWE6,Isak Hien
+Suecia,SWE8,Herman Johansson
+Suecia,SWE10,Hjalmar Ekdal
+Suecia,SWE11,Carl Starfelt
+Suecia,SWE12,Eric Smith
+Suecia,SWE13,Elliot Stroud
+Suecia,SWE14,Lucas Begvall
+Suecia,SWE15,Ken Sema
+Suecia,SWE16,Jesper Kalström
+Suecia,SWE17,Yasin Ayari
+Suecia,SWE19,Besfort Zeneli
+Suecia,SWE22,Benjamin Nygren
+Suecia,SWE24,Alexander Bernhardsson
+Suecia,SWE25,Gustaf Nilsson
+Suecia,SWE26,Taha Ali
+Tunez,TUN1,Aymen Dahmen
+Tunez,TUN2,A. Chamakh
+Tunez,TUN3,Sabri Ben Hassen
+Tunez,TUN4,Van Valery
+Tunez,TUN5,Moutaz Neffati
+Tunez,TUN6,Dylan Bronn
+Tunez,TUN7,Montassar Talbi
+Tunez,TUN8,Omar Rekik
+Tunez,TUN9,Adem Arous
+Tunez,TUN10,Raed Chikhaoui
+Tunez,TUN11,Ali Abdi
+Tunez,TUN12,M.A Ben Hmida
+Tunez,TUN13,Ellyes Skhiri
+Tunez,TUN14,M. Hadj Mahmoud
+Tunez,TUN15,Rani Khedira
+Tunez,TUN16,Anis Ben Slimane
+Tunez,TUN17,Mortadha Ben Ouanes
+Tunez,TUN18,Ismaël Gharbi
+Tunez,TUN19,Hannibal Mejbri
+Tunez,TUN20,Khalil Ayari
+Tunez,TUN21,Elias Achouri
+Tunez,TUN22,Elias Saad
+Tunez,TUN23,Firas Chaouat
+Tunez,TUN24,Hazem Mastouri
+Tunez,TUN25,Rayan Elloumi
+Tunez,TUN26,Sebastian Tounekti
+Turquia,TUR1,Bayindir
+Turquia,TUR3,Gunok
+Turquia,TUR7,Ozan Kabak
+Turquia,TUR8,Mert Muldur
+Turquia,TUR10,Eren Elmali
+Turquia,TUR12,Samet Akaydin
+Turquia,TUR15,Orkun Kokcu
+Turquia,TUR17,Ismail Yuksek
+Turquia,TUR19,Salih Ozcan
+Turquia,TUR20,Kenan Yildiz
+Turquia,TUR21,Baris Yilmaz
+Turquia,TUR24,Oguz Aydin
+Turquia,TUR25,Deniz Gul
+Uruguay,URU2,Fernando Muslera
+Uruguay,URU7,Santiago Bueno
+Uruguay,URU9,Mathías Olivera
+Uruguay,URU10,Joaquín Piquerez
+Uruguay,URU11,Matías Viña
+Uruguay,URU13,Emiliano Martínez
+Uruguay,URU16,Agustín Canobbio
+Uruguay,URU17,Juan Manuel Sanabria
+Uruguay,URU19,Nicolás de la Cruz
+Uruguay,URU20,Rodrigo Zalazar
+Uruguay,URU22,Maximiliano Araújo
+Uruguay,URU23,Brian Rodríguez
+Uruguay,URU24,Rodrigo Aguirre
+Estados Unidos,USA1,Matt Freese
+Estados Unidos,USA2,Matt Turner
+Estados Unidos,USA3,Chris Brady
+Estados Unidos,USA4,Max Arfsten
+Estados Unidos,USA5,Sergiño Dest
+Estados Unidos,USA8,Tim Ream
+Estados Unidos,USA11,Miles Robinson
+Estados Unidos,USA12,Joe Scally
+Estados Unidos,USA13,Auston Trusty
+Estados Unidos,USA15,Sebastian Berhalter
+Estados Unidos,USA17,Cristian Roldán
+Estados Unidos,USA20,Gio Reyna
+Estados Unidos,USA21,Malik Tillman
+Estados Unidos,USA22,Tim Weah
+Estados Unidos,USA23,Alejandro Zendejas
+Estados Unidos,USA26,Haji Wright
+Uzbekistan,UZB1,O’tkir Yusupov
+Uzbekistan,UZB2,Botirali Ergashev
+Uzbekistan,UZB3,Abduvohid Ne’matov
+Uzbekistan,UZB4,Abdukodir Khusanov
+Uzbekistan,UZB5,Alijonov
+Uzbekistan,UZB6,Farrukh Sayfiev
+Uzbekistan,UZB7,Rustam Ashurmatov
+Uzbekistan,UZB8,Sherzod Nasrullaev
+Uzbekistan,UZB9,Umar Eshmurodov
+Uzbekistan,UZB10,Avazbek O’Imasaliev
+Uzbekistan,UZB11,Jahongir Orozov
+Uzbekistan,UZB12,Behruzjon Karimoov
+Uzbekistan,UZB13,Abdulla Abdullaev
+Uzbekistan,UZB14,Akmal Mozgovoy
+Uzbekistan,UZB15,Otabek Shukurov
+Uzbekistan,UZB16,Jamshid Iskanderov
+Uzbekistan,UZB17,Odil Hamrobekov
+Uzbekistan,UZB18,Jaloliddin Masharipov
+Uzbekistan,UZB19,Aziz Ganiev
+Uzbekistan,UZB20,Sherzod Esanov
+Uzbekistan,UZB21,Abbosbek Fayzullaev
+Uzbekistan,UZB22,Eldor Shomurodov
+Uzbekistan,UZB23,Igor Sergeev
+Uzbekistan,UZB24,Azizbek Amonov
+Uzbekistan,UZB25,Oston Urunov
+Uzbekistan,UZB26,Doston Khamdamov

@@ -22,14 +22,18 @@
         <nav class="nav-list" aria-label="Navegación principal">
           <button class="nav-item active" data-page="inicio">Inicio</button>
           <button class="nav-item" data-page="calendario">Calendario</button>
-          <button class="nav-item" data-page="descanso">Descanso</button>
-          <button class="nav-item" data-page="posiciones">Posiciones</button>
-          <button class="nav-item" data-page="goleadores">Goleadores</button>
+          <button class="nav-item" data-page="sedes">Sedes</button>
           <button class="nav-item" data-page="selecciones">Selecciones</button>
+          <button class="nav-item" data-page="ranking">Ranking FIFA</button>
+          <button class="nav-item" data-page="posiciones">Posiciones</button>
+          <button class="nav-item" data-page="llaves">Llaves</button>
+          <button class="nav-item" data-page="reglas">Reglas</button>
+          <button class="nav-item" data-page="descanso">Descanso</button>
+          <button class="nav-item" data-page="goleadores">Goleadores</button>
           <button class="nav-item" data-page="jugadores">Jugadores</button>
           <button class="nav-item" data-page="clubes">Clubes</button>
           <button class="nav-item" data-page="historial">Historial</button>
-          <button class="nav-item" data-page="llaves">Llaves</button>
+          <button class="nav-item" data-page="glosario">Glosario</button>
         </nav>
       </aside>
 
@@ -146,6 +150,78 @@
                 <tbody id="restRankingRows"></tbody>
               </table>
             </div>
+          </section>
+        </section>
+
+        <section class="page" id="page-reglas">
+          <div class="kpi-grid" id="rulesSummaryCards"></div>
+          <div class="dashboard-grid rules-dashboard">
+            <section class="panel span-2">
+              <div class="panel-head">
+                <h3>Reglas fundamentales del futbol</h3>
+                <span class="status-pill">Base universal</span>
+              </div>
+              <div class="rules-grid rules-basics-grid" id="footballRulesGrid"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h3>Nuevas reglas 2026</h3>
+                <span class="status-pill">Mundial 2026</span>
+              </div>
+              <div class="rule-highlight-list" id="worldCupRuleHighlights"></div>
+            </section>
+            <section class="panel span-3">
+              <div class="panel-head">
+                <h3>VAR y aplicacion en partido</h3>
+                <span class="status-pill">Revisiones y sanciones</span>
+              </div>
+              <div class="rules-grid tiebreak-grid" id="tiebreakRulesGrid"></div>
+            </section>
+            <section class="panel span-3">
+              <div class="panel-head">
+                <h3>Fuentes oficiales</h3>
+                <span class="status-pill">FIFA / IFAB</span>
+              </div>
+              <div class="sources-grid" id="rulesSourcesGrid"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-sedes">
+          <div class="kpi-grid" id="venuesSummaryCards"></div>
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Sedes y estadios</h3>
+              <span class="status-pill">Canada / Mexico / Estados Unidos</span>
+            </div>
+            <div class="venue-grid" id="venueCards"></div>
+          </section>
+        </section>
+
+        <section class="page" id="page-ranking">
+          <div class="kpi-grid" id="rankingSummaryCards"></div>
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Ranking FIFA</h3>
+              <span class="status-pill">FIFA/Coca-Cola</span>
+            </div>
+            <p class="history-table-note">Ranking local de referencia para las selecciones del hub. La fuente oficial se enlaza al final de la tabla para actualizar posiciones cuando FIFA publique un nuevo corte.</p>
+            <div class="ranking-grid" id="rankingCards"></div>
+          </section>
+        </section>
+
+
+        <section class="page" id="page-glosario">
+          <div class="kpi-grid" id="glossarySummaryCards"></div>
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Glosario futbolero</h3>
+              <span class="status-pill">Espanol Colombia</span>
+            </div>
+            <div class="toolbar glossary-toolbar">
+              <input id="glossarySearch" type="search" placeholder="Buscar termino, ejemplo: VAR, fuera de lugar, penal" />
+            </div>
+            <div class="glossary-grid" id="glossaryCards"></div>
           </section>
         </section>
 
@@ -276,6 +352,10 @@
     <script src="./js/pages/selecciones.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/jugadores.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/descanso.js?v=info-hub-pages-20260606"></script>
+    <script src="./js/pages/reglas.js?v=info-hub-pages-20260607"></script>
+    <script src="./js/pages/sedes.js?v=info-hub-pages-20260607"></script>
+    <script src="./js/pages/ranking.js?v=info-hub-pages-20260607"></script>
+    <script src="./js/pages/glosario.js?v=info-hub-pages-20260607"></script>
     <script src="./js/pages/posiciones.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/goleadores.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/historial.js?v=info-hub-pages-20260606"></script>

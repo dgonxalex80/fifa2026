@@ -198,13 +198,18 @@ function imagePathMatchesPlayerName(imagePath, playerNameKeys) {
 
 function getLocalPlayerImage(player) {
   const playerNameKeys = getPlayerImageNameKeys(player);
+  const codeImage = localPlayerImages.byCode?.[player.code] || "";
+  const expectedCodeFile = player.code.replace(/\s+/g, "").toLowerCase();
+  const codeImageFile = getImageComparableName(codeImage).replace(/\s+/g, "").toLowerCase();
+  if (codeImage && codeImageFile === expectedCodeFile) return codeImage;
+
   const candidates = [
     ...playerNameKeys.map((name) => localPlayerImages.byName?.[player.teamCode + ":" + name]),
-    ...playerNameKeys.map((name) => verifiedPlayerImagesByName[player.teamCode + ":" + name]),
-    localPlayerImages.byCode?.[player.code]
+    ...playerNameKeys.map((name) => verifiedPlayerImagesByName[player.teamCode + ":" + name])
   ].filter(Boolean);
 
-  return candidates.find((imagePath) => imagePathMatchesPlayerName(imagePath, playerNameKeys)) || "";
+  return candidates.find((imagePath) => imagePathMatchesPlayerName(imagePath, playerNameKeys)) ||
+    (codeImage.endsWith("/fifa2026.png") ? codeImage : "");
 }
 
 function getPlayerImage(player) {

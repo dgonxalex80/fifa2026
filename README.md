@@ -89,6 +89,7 @@ La app se opera desde la barra lateral:
 - `Inicio`: KPIs generales, cuenta regresiva, proximos partidos y selecciones con mayor proporción de nacidos en el país representado.
 - `Calendario`: lista partidos y permite filtrar por estado y fase.
 - `Posiciones`: muestra tablas por grupo y resumen de rondas eliminatorias.
+- `Pronostico`: permite registrar participante, elegir gana local/empate/gana visitante en grupos, calcular clasificados, avanzar por llaves y generar campeon.
 - `Goleadores`: presenta tabla de goleadores cuando haya datos disponibles.
 - `Selecciones`: muestra cajas compactas por seleccion con grupo, Proporción de nacidos en el país representado, porcentaje en clubes del exterior, edad promedio y datos destacados.
 - `Jugadores`: muestra fichas individuales estilo Panini con imagenes, codigo, seleccion, edad, estatura, club y posicion.
@@ -104,6 +105,7 @@ Funciones disponibles:
 - Resumen por seleccion con Proporción de nacidos en el país representado, porcentaje de jugadores en clubes del exterior, edad promedio, grupo y datos destacados.
 - Album de jugadores en tarjetas visuales con filtros por seleccion y completitud de datos.
 - Exportacion CSV desde el boton `Exportar CSV`.
+- Generacion de reporte PDF del pronostico desde el navegador usando `Generar PDF`.
 - Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
 ## Proporción de nacidos en el país representado
@@ -126,6 +128,20 @@ Fuentes usadas:
 - Wikidata API: https://www.wikidata.org/w/api.php
 - Wikimedia Commons `Special:FilePath`: https://commons.wikimedia.org/wiki/Special:FilePath
 
+## Pronostico y PDF
+
+La vista `Pronostico` esta pensada para funcionar en GitHub Pages sin backend:
+
+1. Abrir `Pronostico` desde la barra lateral.
+2. Escribir participante, correo o identificador y goleador.
+3. En cada partido de grupos marcar una sola opcion: gana local, empate o gana visitante. No se ingresan marcadores.
+4. Cuando todos los partidos de grupos tienen seleccion, la app calcula clasificados y muestra las llaves.
+5. En cada cruce eliminatorio marcar solo el ganador hasta llegar al campeon.
+6. Presionar `Guardar pronostico` para dejarlo almacenado en el navegador.
+7. Presionar `Generar PDF` para abrir el reporte imprimible. En el dialogo del navegador elegir `Guardar como PDF` o la impresora PDF equivalente.
+
+Importante para GitHub Pages: la app es estatica y no puede escribir archivos dentro del repositorio ni guardar PDFs en el servidor. El PDF se genera y se guarda desde el navegador del participante.
+
 ## Exportaciones
 
 El boton `Exportar CSV` descarga datos segun la pagina activa:
@@ -133,6 +149,7 @@ El boton `Exportar CSV` descarga datos segun la pagina activa:
 - En `Selecciones`, exporta el resumen por seleccion: grupo, conteo de nacidos en el pais representado, no nacidos alli, Proporción de nacidos en el país representado, porcentaje en clubes del exterior, edad promedio, posicion mas frecuente y club mas repetido.
 - En `Jugadores`, exporta las fichas filtradas de jugadores.
 - En `Historial`, exporta datos historicos de mundiales.
+- En `Pronostico`, exporta participante, identificador, campeon, goleador, selecciones de grupos, llaves y ganadores.
 - En las demas paginas, exporta informacion base del calendario.
 
 ## Datos y Persistencia
@@ -144,6 +161,7 @@ Actualmente:
 - No hay autenticacion.
 - No hay base de datos.
 - No hay API REST conectada.
+- Los pronosticos se guardan en `localStorage` del navegador. Si el participante cambia de equipo, navegador o borra datos del sitio, debe conservar el CSV o PDF generado.
 
 ## Desarrollo
 

@@ -21987,6 +21987,7 @@ function getSearchIndex() {
     ["Ranking FIFA", "Pagina", "ranking"],
     ["Glosario", "Pagina", "glosario"],
     ["Posiciones", "Pagina", "posiciones"],
+    ["Pronostico", "Pagina", "pronostico"],
     ["Goleadores", "Pagina", "goleadores"],
     ["Selecciones", "Pagina", "selecciones"],
     ["Jugadores", "Pagina", "jugadores"],

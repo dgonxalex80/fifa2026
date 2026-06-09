@@ -18,6 +18,8 @@ function exportCurrentPage() {
       ? [["codigo_panini", "nombre", "seleccion", "edad", "fecha_nacimiento", "estatura", "club", "posicion"], ...getFilteredPlayers().map((player) => [player.code, player.fullName, player.team, player.age, player.birthDate, player.height, player.club, player.position])]
       : active === "historial"
       ? [["anio", "sede", "campeon", "finalista", "equipos", "partidos", "goles", "goleador", "goles_goleador"], ...worldCupHistory.map((item) => [item.year, item.host, item.champion, item.runnerUp, item.teams, item.matches, item.goals, item.topScorer, item.topScorerGoals])]
+      : active === "pronostico"
+      ? getPredictionExportRows()
       : [["fecha", "local", "goles_local", "goles_visitante", "visitante", "fase", "estado"], ...matches.map((m) => [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status])];
   const csv = rows.map((row) => row.join(",")).join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
@@ -46,6 +48,7 @@ function bindEvents() {
   $("#playerTeamFilter").addEventListener("change", renderPlayers);
   $("#playerPositionFilter").addEventListener("change", renderPlayers);
   if ($("#glossarySearch")) $("#glossarySearch").addEventListener("input", renderGlossary);
+  if (typeof bindPredictionEvents === "function") bindPredictionEvents();
   $("#exportPage").addEventListener("click", exportCurrentPage);
   $("#globalSearch").addEventListener("input", (event) => {
     renderSearchResults(event.target.value);
@@ -83,6 +86,7 @@ function init() {
   renderSelectionStats();
   renderClubStats();
   renderGroups();
+  if (typeof renderPredictions === "function") renderPredictions();
   renderScorers();
   renderPlayerFilters();
   renderPlayers();

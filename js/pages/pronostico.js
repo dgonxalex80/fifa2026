@@ -461,17 +461,26 @@ function buildPredictionPdfHtml(prediction) {
     ? new Date(prediction.savedAt).toLocaleString("es-CO", { dateStyle: "medium", timeStyle: "short" })
     : "Pendiente de guardar";
   const champion = getPredictedChampion(prediction) || "Por definir";
+  const logoUrl = new URL("./img/figuras/fifa2026.png", window.location.href).href;
   const groupRows = getPredictionMatches().map((match) => {
     const outcome = prediction.matches[String(match.id)]?.outcome || "";
     return `
       <tr>
         <td>${escapePredictionPdfText(match.group)}</td>
-        <td>${escapePredictionPdfText(formatDate(match.date))}</td>
         <td>${escapePredictionPdfText(match.home)} vs ${escapePredictionPdfText(match.away)}</td>
         <td>${escapePredictionPdfText(getPredictionOutcomeLabel(match, outcome))}</td>
       </tr>
     `;
-  }).join("");
+  });
+  const rowsPerTable = 18;
+  const groupTableHtml = Array.from({ length: Math.ceil(groupRows.length / rowsPerTable) }, (_, index) => groupRows.slice(index * rowsPerTable, (index + 1) * rowsPerTable))
+    .map((rows, index) => `
+      <table>
+        <caption>Bloque ${index + 1}</caption>
+        <thead><tr><th>Grupo</th><th>Partido</th><th>Pronostico</th></tr></thead>
+        <tbody>${rows.join("")}</tbody>
+      </table>
+    `).join("");
   const standingsHtml = Object.entries(getPredictionStandings(prediction)).map(([group, rows]) => `
     <section class="card">
       <h3>Grupo ${escapePredictionPdfText(group)}</h3>
@@ -497,45 +506,54 @@ function buildPredictionPdfHtml(prediction) {
   <style>
     @page { size: A4; margin: 14mm; }
     * { box-sizing: border-box; }
-    body { margin: 0; color: #111827; font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
-    header { border-bottom: 3px solid #f4b400; margin-bottom: 16px; padding-bottom: 12px; }
+    body { margin: 0; color: #111827; font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; }
+    header { display: grid; grid-template-columns: 86px 1fr; gap: 16px; align-items: center; border-bottom: 5px solid #f4b400; margin-bottom: 14px; padding-bottom: 12px; background: linear-gradient(90deg, #0b1220 0 86px, #ffffff 86px); }
     h1, h2, h3 { margin: 0; text-transform: uppercase; }
-    h1 { font-size: 24px; }
-    h2 { margin: 18px 0 8px; font-size: 15px; }
+    h1 { font-size: 36px; line-height: 0.95; letter-spacing: 0.02em; border-bottom: 3px solid #173b72; padding-bottom: 6px; }
+    h2 { margin: 16px 0 8px; border-top: 2px solid #b8c7dc; border-left: 6px solid #f4b400; border-bottom: 2px solid #173b72; padding: 6px 0 5px 8px; color: #173b72; font-size: 14px; break-after: avoid; page-break-after: avoid; }
     h3 { margin-bottom: 8px; font-size: 12px; }
+    .logo { width: 78px; height: 78px; object-fit: contain; }
     .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
-    .meta div, .card { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px; }
+    .meta div, .card { border: 1px solid #b8c7dc; border-top: 2px solid #173b72; border-left: 4px solid #f4b400; border-radius: 6px; padding: 8px; background: #f8fafc; break-inside: avoid; page-break-inside: avoid; }
     .meta span { display: block; color: #6b7280; font-size: 9px; text-transform: uppercase; }
     .meta strong { display: block; margin-top: 3px; font-size: 12px; }
-    table { width: 100%; border-collapse: collapse; page-break-inside: auto; }
-    th, td { border: 1px solid #d1d5db; padding: 5px 6px; text-align: left; vertical-align: top; }
-    th { background: #111827; color: #ffffff; font-size: 9px; text-transform: uppercase; }
-    tr { page-break-inside: avoid; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    table { width: 100%; border-collapse: collapse; border-top: 3px solid #173b72; border-right: 2px solid #173b72; border-bottom: 2px solid #173b72; border-left: 2px solid #173b72; break-inside: avoid; page-break-inside: avoid; }
+    th, td { border: 1px solid #9fb2cb; border-bottom: 1.4px solid #8fa6c2; padding: 4px 5px; text-align: left; vertical-align: top; }
+    th { background: #173b72; color: #ffffff; font-size: 9px; text-transform: uppercase; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+    tbody tr:nth-child(even) { background: #f1f5f9; }
+    tbody tr:nth-child(odd) { background: #ffffff; }
+    caption { caption-side: top; padding: 4px 6px; background: #f4b400; color: #07111f; font-weight: 800; text-align: left; text-transform: uppercase; }
+    .match-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: start; }
     .rounds { grid-template-columns: repeat(2, 1fr); }
     ol { margin: 0; padding-left: 18px; }
-    li, .card p { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 5px; }
+    li, .card p { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 5px; border-bottom: 1px solid #dbe4f0; padding-bottom: 3px; break-inside: avoid; page-break-inside: avoid; }
     li:last-child, .card p:last-child { margin-bottom: 0; }
-    .footer { margin-top: 18px; color: #6b7280; font-size: 9px; }
-    @media print { button { display: none; } }
+    .footer { margin-top: 18px; border-top: 2px solid #b8c7dc; padding-top: 8px; color: #6b7280; font-size: 9px; }
+    @media print {
+      * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      button { display: none; }
+      table, .card, .prediction-page-block { break-inside: avoid; page-break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Pronostico FIFA 2026</h1>
-    <div class="meta">
-      <div><span>Participante</span><strong>${escapePredictionPdfText(prediction.participant || "Sin nombre")}</strong></div>
-      <div><span>Identificador</span><strong>${escapePredictionPdfText(prediction.contact || "Sin identificador")}</strong></div>
-      <div><span>Campeon</span><strong>${escapePredictionPdfText(champion)}</strong></div>
-      <div><span>Guardado</span><strong>${escapePredictionPdfText(savedAt)}</strong></div>
+    <img class="logo" src="${escapePredictionPdfText(logoUrl)}" alt="FIFA 2026" />
+    <div>
+      <h1>Pronostico FIFA 2026</h1>
+      <div class="meta">
+        <div><span>Participante</span><strong>${escapePredictionPdfText(prediction.participant || "Sin nombre")}</strong></div>
+        <div><span>Identificador</span><strong>${escapePredictionPdfText(prediction.contact || "Sin identificador")}</strong></div>
+        <div><span>Campeon</span><strong>${escapePredictionPdfText(champion)}</strong></div>
+        <div><span>Guardado</span><strong>${escapePredictionPdfText(savedAt)}</strong></div>
+      </div>
     </div>
   </header>
   <main>
     <h2>Fase de grupos</h2>
-    <table>
-      <thead><tr><th>Grupo</th><th>Fecha</th><th>Partido</th><th>Pronostico</th></tr></thead>
-      <tbody>${groupRows}</tbody>
-    </table>
+    <div class="match-columns">${groupTableHtml}</div>
     <h2>Clasificados</h2>
     <div class="grid">${standingsHtml}</div>
     <h2>Llaves</h2>

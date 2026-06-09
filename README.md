@@ -1,8 +1,8 @@
 # FIFA 2026 Info Hub
 
-Aplicacion web estatica, responsive e informativa para consultar datos del Mundial FIFA 2026: calendario, grupos, goleadores, jugadores, historial mundialista y llaves.
+Aplicacion web estatica, responsive e informativa para consultar datos del Mundial FIFA 2026: calendario, grupos, selecciones, jugadores, historial mundialista, llaves y pronosticos de participantes.
 
-El MVP actual esta orientado a consulta de informacion y se ejecuta en el navegador con datos locales.
+El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
 ## Contenido del Proyecto
 
@@ -11,6 +11,10 @@ El MVP actual esta orientado a consulta de informacion y se ejecuta en el navega
 ├── index.html
 ├── styles.css
 ├── app.js
+├── js/
+│   ├── main.js
+│   └── pages/
+│       └── pronostico.js
 ├── Dockerfile
 ├── docker-compose.yml
 └── docs/
@@ -21,7 +25,9 @@ Archivos principales:
 
 - `index.html`: estructura de la aplicacion y paginas informativas.
 - `styles.css`: estilos responsive tipo dashboard deportivo.
-- `app.js`: datos locales, navegacion, filtros, tablas, calendario, jugadores y exportacion CSV.
+- `app.js`: datos locales compartidos, calendario, grupos, equipos, jugadores, busqueda global y helpers de torneo.
+- `js/main.js`: inicializacion, eventos globales, temas y exportacion CSV por pagina.
+- `js/pages/pronostico.js`: flujo de pronostico, guardado local, calculo de clasificados, llaves, CSV y reporte PDF.
 - `docs/arquitectura.md`: documentacion tecnica historica del proyecto.
 
 ## Requisitos
@@ -61,6 +67,25 @@ O servir con Python:
 ```bash
 python3 -m http.server 8080
 ```
+
+## Publicacion en GitHub Pages
+
+La app puede publicarse como sitio estatico en GitHub Pages porque no requiere servidor ni proceso de build.
+
+Pasos sugeridos:
+
+1. Subir el repositorio a GitHub.
+2. En GitHub, abrir `Settings` > `Pages`.
+3. En `Build and deployment`, elegir `Deploy from a branch`.
+4. Seleccionar la rama principal y la carpeta raiz `/`.
+5. Guardar la configuracion y esperar a que GitHub publique la URL.
+
+Notas para GitHub Pages:
+
+- El sitio sirve archivos estaticos: `index.html`, `styles.css`, `app.js`, `js/` e `img/`.
+- El pronostico se guarda en `localStorage` del navegador del participante.
+- El boton `Generar PDF` abre un reporte imprimible; el participante debe elegir `Guardar como PDF` en el dialogo de impresion.
+- GitHub Pages no puede guardar automaticamente PDFs, CSV ni pronosticos dentro del repositorio. Para almacenamiento centralizado se requeriria un backend o servicio externo.
 
 ## Ejecucion con Docker
 
@@ -171,13 +196,19 @@ Editar los archivos principales:
 index.html
 styles.css
 app.js
+js/main.js
+js/pages/pronostico.js
 ```
 
 Verificar sintaxis JavaScript:
 
 ```bash
 node --check app.js
+node --check js/main.js
+node --check js/pages/pronostico.js
 ```
+
+Para probar el PDF localmente, servir la carpeta con HTTP, abrir `Pronostico`, completar datos de ejemplo y usar `Generar PDF`. Algunos navegadores bloquean ventanas emergentes; si ocurre, habilitarlas para el sitio local o para la URL de GitHub Pages.
 
 ## Docker en Produccion
 

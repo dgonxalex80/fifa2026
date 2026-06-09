@@ -2297,3 +2297,53 @@ body[data-theme="light"] .prediction-knockout-match {
     align-items: start;
   }
 }
+
+@media (max-width: 720px) {
+  .hero-panel {
+    gap: 16px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-width: 0;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .countdown div {
+    min-height: 72px;
+    padding: 10px 4px;
+  }
+
+  .countdown strong {
+    font-size: 1.35rem;
+  }
+
+  .countdown span,
+  .countdown small {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.prediction-help-text {
+  max-width: 980px;
+  margin: 12px 0 0;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  background: rgba(244, 180, 0, 0.1);
+  color: var(--muted);
+  padding: 10px 12px;
+  line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+  .prediction-help-text {
+    font-size: 0.9rem;
+  }
+}

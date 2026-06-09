@@ -531,6 +531,32 @@ function buildPredictionPdfHtml(prediction) {
     li, .card p { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 5px; border-bottom: 1px solid #dbe4f0; padding-bottom: 3px; break-inside: avoid; page-break-inside: avoid; }
     li:last-child, .card p:last-child { margin-bottom: 0; }
     .footer { margin-top: 18px; border-top: 2px solid #b8c7dc; padding-top: 8px; color: #6b7280; font-size: 9px; }
+    @media screen and (max-width: 760px) {
+      body { background: #eef2f7; padding: 12px; font-size: 13px; }
+      header { grid-template-columns: 64px 1fr; gap: 12px; border: 1px solid #b8c7dc; border-left: 6px solid #f4b400; border-bottom: 3px solid #173b72; border-radius: 10px; padding: 12px; background: #ffffff; }
+      h1 { font-size: 25px; line-height: 1; }
+      h2 { margin-top: 14px; border-top: 0; border-radius: 8px 8px 0 0; background: #ffffff; }
+      h3 { font-size: 13px; }
+      .logo { width: 58px; height: 58px; }
+      .meta { grid-template-columns: 1fr; gap: 8px; }
+      .meta div, .card { border-radius: 10px; background: #ffffff; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); }
+      .meta span { font-size: 10px; }
+      .meta strong { font-size: 14px; overflow-wrap: anywhere; }
+      .match-columns, .grid, .rounds { grid-template-columns: 1fr; gap: 10px; }
+      table { display: block; border: 0; background: transparent; }
+      caption { display: block; border-radius: 8px 8px 0 0; }
+      thead { display: none; }
+      tbody { display: grid; gap: 8px; }
+      tr { display: grid; gap: 0; border: 1px solid #b8c7dc; border-left: 5px solid #173b72; border-radius: 8px; overflow: hidden; background: #ffffff !important; }
+      td { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 8px; border: 0; border-bottom: 1px solid #dbe4f0; padding: 8px; overflow-wrap: anywhere; }
+      td:last-child { border-bottom: 0; }
+      td::before { color: #64748b; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+      td:nth-child(1)::before { content: "Grupo"; }
+      td:nth-child(2)::before { content: "Partido"; }
+      td:nth-child(3)::before { content: "Pronostico"; }
+      li, .card p { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; }
+      .footer { background: #ffffff; border-radius: 8px; padding: 10px; }
+    }
     @media print {
       * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       button { display: none; }

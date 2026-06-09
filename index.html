@@ -22,6 +22,7 @@
         <nav class="nav-list" aria-label="Navegación principal">
           <button class="nav-item active" data-page="inicio">Inicio</button>
           <button class="nav-item" data-page="calendario">Calendario</button>
+          <button class="nav-item" data-page="resultados">Resultados</button>
           <button class="nav-item" data-page="sedes">Sedes</button>
           <button class="nav-item" data-page="selecciones">Selecciones</button>
           <button class="nav-item" data-page="ranking">Ranking FIFA</button>
@@ -127,6 +128,34 @@
           </section>
           <div class="calendar-list" id="calendarRows">
           </div>
+        </section>
+
+        <section class="page" id="page-resultados">
+          <section class="panel results-admin-panel">
+            <div class="panel-head">
+              <h3>Actualizacion de resultados</h3>
+              <span class="status-pill" id="resultsAdminStatus">Guardado local</span>
+            </div>
+            <p class="prediction-help-text">Carga los marcadores finales a medida que se juegan los partidos. La app recalcula posiciones, clasificados y llaves con los datos guardados en este navegador.</p>
+            <div class="toolbar results-toolbar">
+              <input id="resultsSearch" type="search" placeholder="Buscar seleccion, ciudad o estadio" />
+              <select id="resultsPhaseFilter" aria-label="Filtrar fase de resultados"></select>
+              <select id="resultsGroupFilter" aria-label="Filtrar grupo de resultados"></select>
+              <select id="resultsStatusFilter" aria-label="Filtrar estado de resultados">
+                <option value="todos">Todos los estados</option>
+                <option value="pendiente">Pendientes</option>
+                <option value="finalizado">Finalizados</option>
+              </select>
+            </div>
+          </section>
+          <div class="kpi-grid" id="resultsSummaryCards"></div>
+          <section class="panel results-list-panel">
+            <div class="panel-head">
+              <h3>Partidos del torneo</h3>
+              <button class="ghost-button" id="clearAllResults" type="button">Borrar resultados</button>
+            </div>
+            <div class="results-admin-list" id="resultsAdminList"></div>
+          </section>
         </section>
 
         <section class="page" id="page-descanso">
@@ -405,6 +434,7 @@
     <script src="./js/pages/ranking.js?v=info-hub-pages-20260607"></script>
     <script src="./js/pages/glosario.js?v=info-hub-pages-20260607"></script>
     <script src="./js/pages/posiciones.js?v=info-hub-pages-20260606"></script>
+    <script src="./js/pages/resultados.js?v=info-hub-pages-20260609"></script>
     <script src="./js/pages/pronostico.js?v=info-hub-pages-20260609"></script>
     <script src="./js/pages/goleadores.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/historial.js?v=info-hub-pages-20260606"></script>

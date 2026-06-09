@@ -113,6 +113,7 @@ La app se opera desde la barra lateral:
 
 - `Inicio`: KPIs generales, cuenta regresiva, proximos partidos y selecciones con mayor proporción de nacidos en el país representado.
 - `Calendario`: lista partidos y permite filtrar por estado y fase.
+- `Resultados`: permite cargar, editar y borrar marcadores finales; recalcula posiciones, clasificados y llaves con guardado local.
 - `Posiciones`: muestra tablas por grupo y resumen de rondas eliminatorias.
 - `Pronostico`: permite registrar participante, elegir gana local/empate/gana visitante en grupos, calcular clasificados, avanzar por llaves y generar campeon.
 - `Goleadores`: presenta tabla de goleadores cuando haya datos disponibles.
@@ -130,6 +131,7 @@ Funciones disponibles:
 - Resumen por seleccion con Proporción de nacidos en el país representado, porcentaje de jugadores en clubes del exterior, edad promedio, grupo y datos destacados.
 - Album de jugadores en tarjetas visuales con filtros por seleccion y completitud de datos.
 - Exportacion CSV desde el boton `Exportar CSV`.
+- Actualizacion local de resultados reales durante el torneo desde la vista `Resultados`.
 - Generacion de reporte PDF del pronostico desde el navegador usando `Generar PDF`.
 - Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
@@ -177,6 +179,20 @@ El boton `Exportar CSV` descarga datos segun la pagina activa:
 - En `Pronostico`, exporta participante, identificador, campeon, goleador, selecciones de grupos, llaves y ganadores.
 - En las demas paginas, exporta informacion base del calendario.
 
+## Actualizacion de Resultados
+
+La vista `Resultados` permite actualizar el torneo a medida que se juegan los partidos:
+
+1. Abrir `Resultados` desde la barra lateral.
+2. Buscar o filtrar por fase, grupo o estado.
+3. Escribir goles de local y visitante.
+4. Presionar `Guardar` en el partido correspondiente.
+5. La app actualiza calendario, posiciones y llaves automaticamente.
+6. Para corregir un marcador, modificar los goles y volver a presionar `Guardar`.
+7. Para eliminar un resultado, usar `Limpiar`; para reiniciar todo, usar `Borrar resultados`.
+
+En eliminatorias no se aceptan empates porque la llave necesita un ganador para avanzar. En GitHub Pages estos resultados quedan guardados en `localStorage` del navegador; no se suben al repositorio ni se comparten entre dispositivos.
+
 ## Datos y Persistencia
 
 El MVP usa datos locales definidos en `app.js`.
@@ -187,6 +203,7 @@ Actualmente:
 - No hay base de datos.
 - No hay API REST conectada.
 - Los pronosticos se guardan en `localStorage` del navegador. Si el participante cambia de equipo, navegador o borra datos del sitio, debe conservar el CSV o PDF generado.
+- Los resultados reales cargados desde `Resultados` tambien se guardan en `localStorage` con la clave `fifa2026-results`.
 
 ## Desarrollo
 

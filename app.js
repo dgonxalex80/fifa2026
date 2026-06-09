@@ -21981,6 +21981,7 @@ function getSearchIndex() {
   const pages = [
     ["Inicio", "Pagina", "inicio"],
     ["Calendario", "Pagina", "calendario"],
+    ["Resultados", "Pagina", "resultados"],
     ["Descanso", "Pagina", "descanso"],
     ["Reglas", "Pagina", "reglas"],
     ["Sedes", "Pagina", "sedes"],

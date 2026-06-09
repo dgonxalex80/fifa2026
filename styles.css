@@ -2347,3 +2347,113 @@ body[data-theme="light"] .prediction-knockout-match {
     font-size: 0.9rem;
   }
 }
+
+.results-admin-panel,
+.results-list-panel {
+  margin-bottom: 14px;
+}
+
+.results-toolbar {
+  margin-top: 12px;
+}
+
+.results-admin-list {
+  display: grid;
+  gap: 10px;
+}
+
+.result-editor {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.85fr) minmax(360px, 1.35fr) minmax(250px, 0.9fr);
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 12px;
+}
+
+.result-editor.finished {
+  border-color: rgba(46, 125, 50, 0.38);
+  background: rgba(46, 125, 50, 0.1);
+}
+
+.result-editor.locked {
+  opacity: 0.72;
+}
+
+.result-editor-meta strong,
+.result-editor-meta small {
+  display: block;
+}
+
+.result-editor-meta small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.result-editor-fixture {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px auto 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.result-score-input {
+  min-width: 0;
+  text-align: center;
+  font-family: Oswald, Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.result-editor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.result-editor-actions .primary-button,
+.result-editor-actions .ghost-button {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+body[data-theme="light"] .result-editor {
+  background: rgba(9, 22, 19, 0.04);
+}
+
+@media (max-width: 1080px) {
+  .result-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .result-editor-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .result-editor-fixture {
+    grid-template-columns: 1fr 56px auto 56px 1fr;
+  }
+
+  .result-editor-fixture .team-label {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .result-editor-fixture {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .result-editor-fixture .prediction-versus {
+    text-align: center;
+  }
+}

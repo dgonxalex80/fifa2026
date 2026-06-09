@@ -20,6 +20,8 @@ function exportCurrentPage() {
       ? [["anio", "sede", "campeon", "finalista", "equipos", "partidos", "goles", "goleador", "goles_goleador"], ...worldCupHistory.map((item) => [item.year, item.host, item.champion, item.runnerUp, item.teams, item.matches, item.goals, item.topScorer, item.topScorerGoals])]
       : active === "pronostico"
       ? getPredictionExportRows()
+      : active === "resultados"
+      ? getResultsExportRows()
       : [["fecha", "local", "goles_local", "goles_visitante", "visitante", "fase", "estado"], ...matches.map((m) => [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status])];
   const csv = rows.map((row) => row.join(",")).join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
@@ -49,6 +51,7 @@ function bindEvents() {
   $("#playerPositionFilter").addEventListener("change", renderPlayers);
   if ($("#glossarySearch")) $("#glossarySearch").addEventListener("input", renderGlossary);
   if (typeof bindPredictionEvents === "function") bindPredictionEvents();
+  if (typeof bindResultsEvents === "function") bindResultsEvents();
   $("#exportPage").addEventListener("click", exportCurrentPage);
   $("#globalSearch").addEventListener("input", (event) => {
     renderSearchResults(event.target.value);
@@ -87,6 +90,7 @@ function init() {
   renderClubStats();
   renderGroups();
   if (typeof renderPredictions === "function") renderPredictions();
+  if (typeof renderResultsAdmin === "function") renderResultsAdmin();
   renderScorers();
   renderPlayerFilters();
   renderPlayers();

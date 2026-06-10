@@ -9,8 +9,9 @@ function renderMatches() {
   $("#calendarRows").innerHTML = filtered.map((match) => `
     <article class="calendar-list-item">
       <strong>${formatDate(match.date)}</strong>
-      <div class="fixture-label">${teamLabel(match.home)}<span>vs</span>${teamLabel(match.away)}${resultBadge(match)}</div>
+      <div class="fixture-label">${teamLabel(match.home)}<span>vs</span>${teamLabel(match.away)}${resultBadge(match)}${broadcastBadge(match)}</div>
       <small>${match.phase} · ${match.stadium} · ${match.city} · ${match.status}</small>
+      ${broadcastDetail(match)}
     </article>
   `).join("");
 }
@@ -58,7 +59,7 @@ function renderCalendarMonth(year, month, monthMatches) {
               <span>${teamLabel(match.home)}</span>
               ${resultBadge(match)}
               <span>${teamLabel(match.away)}</span>
-              <small>${getMatchResult(match) ? "Final" : new Date(match.date.replace(" ", "T")).toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" })}</small>
+              <small>${getMatchResult(match) ? "Final" : new Date(match.date.replace(" ", "T")).toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" })}${broadcastBadge(match, { compact: true })}</small>
             </button>
           `).join("")}
         </div>

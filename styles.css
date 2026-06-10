@@ -703,6 +703,10 @@ body[data-theme="light"] .timeline p {
 }
 
 .calendar-event small {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
   color: var(--muted);
 }
 
@@ -719,6 +723,100 @@ body[data-theme="light"] .timeline p {
   font-size: 0.86rem;
   font-variant-numeric: tabular-nums;
 }
+
+.broadcast-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.broadcast-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+  min-height: 24px;
+  border: 1px solid rgba(244, 180, 0, 0.38);
+  border-radius: 999px;
+  background: rgba(244, 180, 0, 0.12);
+  color: #ffe08a;
+  padding: 2px 7px 2px 5px;
+  vertical-align: middle;
+}
+
+.broadcast-badge.compact {
+  min-height: 22px;
+  padding: 2px 5px;
+}
+
+.broadcast-icon,
+.broadcast-icon svg {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.broadcast-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.broadcast-platforms {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.broadcast-platforms span {
+  line-height: 1;
+}
+
+.broadcast-detail {
+  display: block;
+  margin-top: 6px;
+  color: #ffe08a;
+}
+
+.match-broadcast-icons {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: middle;
+}
+
+.bc-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 18px;
+  font-size: 0.6rem;
+  font-weight: 900;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  line-height: 1;
+}
+
+.bc-pill.compact {
+  min-width: 22px;
+  height: 14px;
+  font-size: 0.5rem;
+}
+
+.bc-caracol { background: #FBBF24; color: #000; } /* Amarillo Caracol */
+.bc-rcn { background: #2563eb; color: #fff; }    /* Azul RCN */
+.bc-dsports { background: #1e293b; color: #fff; } /* Gris Oscuro DSports */
+.bc-winsports { background: #ef4444; color: #fff; } /* Rojo Win */
+.bc-disney { background: #4f46e5; color: #fff; }   /* Morado/Azul Disney+ */
 
 .calendar-list {
   display: none;
@@ -1954,13 +2052,93 @@ body[data-theme="light"] .standing-row {
   }
 
   .calendar-grid {
-    grid-template-columns: repeat(7, minmax(180px, 1fr));
+    display: block;
+    overflow: visible;
+  }
+
+  .calendar-month {
+    margin-bottom: 16px;
+  }
+
+  .calendar-month h4 {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .calendar-month-grid {
+    overflow-x: auto; /* Permite el desplazamiento horizontal para el contenedor del mes */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .calendar-head,
+  .calendar-cell.muted-cell,
+  .calendar-cell:not(:has(.calendar-event)) {
+    display: none;
+  }
+
+  .calendar-cell {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: start;
+    min-height: 0;
+    padding: 10px;
+    overflow-x: auto; /* Permite el desplazamiento horizontal dentro de cada celda del calendario */
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(19, 28, 46, 0.92);
+  }
+
+  .calendar-day {
+    margin: 0;
+    min-height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--line);
+    padding-right: 10px;
+  }
+
+  .calendar-events {
+    white-space: nowrap; /* Evita que el texto de los eventos se rompa, forzando el scroll horizontal si es necesario */
+    min-width: 0;
+    padding-left: 10px;
+  }
+
+  .calendar-event {
+    padding: 9px;
   }
 
   .calendar-list {
-    display: grid;
+    display: none;
+  }
+
+  .selection-summary-grid,
+  .selection-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selection-summary-card {
+    padding: 12px 14px;
+  }
+
+  .selection-summary-card strong {
+    font-size: 1.08rem;
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+  }
+
+  .selection-summary-card span,
+  .selection-summary-card small {
+    font-size: 0.76rem;
+    line-height: 1.35;
   }
 }
+
 
 .prediction-entry-panel,
 .prediction-board-panel {

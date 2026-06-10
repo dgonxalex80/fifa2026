@@ -21647,6 +21647,87 @@ const allGroupStageMatches = [...groupStageMatches, ...generatedGroupStageMatche
 const knockoutMatches = buildKnockoutMatches(allGroupStageMatches.length);
 const matches = [...allGroupStageMatches, ...knockoutMatches];
 const matchResults = JSON.parse(localStorage.getItem("fifa2026-results") || "{}");
+const colombiaBroadcastPlatforms = [
+  { id: "caracol", label: "Caracol", detail: "TV abierta", shortLabel: "CAR" },
+  { id: "rcn", label: "RCN", detail: "TV abierta", shortLabel: "RCN" },
+  { id: "winsports", label: "Win Sports", detail: "TV paga", shortLabel: "WIN" },
+  { id: "dsports", label: "DSports", detail: "DirecTV / DGO", shortLabel: "DSP" },
+  { id: "disney", label: "Disney+", detail: "streaming", shortLabel: "D+" }
+];
+const colombiaBroadcastByMatchId = {
+  1: ["dsports", "caracol", "rcn", "disney"],
+  2: ["dsports", "winsports"],
+  3: ["dsports", "winsports", "disney"],
+  4: ["dsports", "caracol", "rcn", "disney"],
+  5: ["dsports", "winsports"],
+  6: ["dsports", "caracol", "rcn", "disney"],
+  7: ["dsports"],
+  8: ["dsports"],
+  9: ["dsports"],
+  10: ["dsports", "caracol", "rcn", "disney"],
+  11: ["dsports", "winsports", "disney"],
+  12: ["dsports"],
+  13: ["dsports", "caracol", "rcn", "disney"],
+  14: ["dsports"],
+  15: ["dsports", "winsports", "disney"],
+  16: ["dsports"],
+  17: ["dsports"],
+  18: ["dsports", "winsports"],
+  19: ["dsports", "caracol", "rcn", "disney"],
+  20: ["dsports"],
+  21: ["dsports"],
+  22: ["dsports", "winsports"],
+  23: ["dsports"],
+  24: ["dsports", "caracol", "rcn", "disney"],
+  25: ["dsports"],
+  26: ["dsports", "caracol", "rcn", "disney"],
+  27: ["dsports"],
+  28: ["dsports", "winsports"],
+  29: ["dsports", "winsports"],
+  30: ["dsports"],
+  31: ["dsports", "caracol", "rcn"],
+  32: ["dsports"],
+  33: ["dsports"],
+  34: ["dsports", "winsports"],
+  35: ["dsports", "caracol", "rcn", "disney"],
+  36: ["dsports", "winsports", "disney"],
+  37: ["dsports", "winsports", "disney"],
+  38: ["dsports", "caracol", "rcn", "disney"],
+  39: ["dsports"],
+  40: ["dsports"],
+  41: ["dsports", "caracol", "rcn", "disney"],
+  42: ["dsports"],
+  43: ["dsports", "winsports"],
+  44: ["dsports"],
+  45: ["dsports", "winsports"],
+  46: ["dsports"],
+  47: ["dsports"],
+  48: ["dsports", "caracol", "rcn", "disney"],
+  49: ["dsports"],
+  50: ["dsports"],
+  51: ["dsports", "caracol", "rcn", "disney"],
+  52: ["dsports"],
+  53: ["dsports", "winsports"],
+  54: ["dsports"],
+  55: ["dsports", "caracol", "rcn", "disney"],
+  56: ["dsports"],
+  57: ["dsports", "winsports"],
+  58: ["dsports"],
+  59: ["dsports"],
+  60: ["dsports"],
+  61: ["dsports", "winsports"],
+  62: ["dsports"],
+  63: ["dsports", "caracol", "rcn", "disney"],
+  64: ["dsports"],
+  65: ["dsports"],
+  66: ["dsports"],
+  67: ["dsports"],
+  68: ["dsports"],
+  69: ["dsports", "caracol", "rcn", "disney"],
+  70: ["dsports"],
+  71: ["dsports", "winsports", "disney"],
+  72: ["dsports"],
+};
 
 const knockoutRounds = [
   {
@@ -21952,6 +22033,52 @@ function resultBadge(match) {
   return result ? `<strong class="final-result">${result}</strong>` : "";
 }
 
+function getColombiaBroadcastPlatforms(match) {
+  const ids = colombiaBroadcastByMatchId[match.id] || [];
+  return ids
+    .map((id) => colombiaBroadcastPlatforms.find((platform) => platform.id === id))
+    .filter(Boolean);
+}
+
+function getBroadcastSummary(match) {
+  return getColombiaBroadcastPlatforms(match)
+    .map((platform) => `${platform.label} (${platform.detail})`)
+    .join(" | ");
+}
+
+function broadcastDetail(match) {
+  const summary = getBroadcastSummary(match);
+  return summary ? `<small class="broadcast-detail">Transmision Colombia: ${summary}</small>` : "";
+}
+
+function broadcastBadge(match, options = {}) {
+  const platforms = getColombiaBroadcastPlatforms(match);
+  if (!platforms.length) return "";
+
+  return `<span class="match-broadcast-icons">` +
+    platforms.map(p => `
+      <span class="bc-pill bc-${p.id}${options.compact ? ' compact' : ''}" title="${p.label}: ${p.detail}">
+        ${p.shortLabel}
+      </span>
+    `).join("") +
+    `</span>`;
+}
+
+function renderBroadcastLegend() {
+  return `
+    <div class="broadcast-legend-container panel">
+      <h3>Canales de Transmisión en Colombia:</h3>
+      <div class="broadcast-legend-items">
+        ${colombiaBroadcastPlatforms.map(p => `
+          <span class="bc-pill bc-${p.id}" title="${p.label}: ${p.detail}">
+            ${p.shortLabel}
+          </span>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function teamLabel(team) {
   const code = flags[team];
   if (!code) return `<span class="team-label"><span>${team}</span></span>`;
@@ -22094,4 +22221,3 @@ const curatedPlayerOverrides = {
     "luis díaz": { name: "Luis Díaz", birthDate: "1997-01-13", height: "1.80 m", club: "Bayern Munich", position: "Extremo izquierdo" }
   }
 };
-

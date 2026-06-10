@@ -83,6 +83,13 @@ function getSelectionStats() {
   });
 }
 
+function formatCompactTeamList(items, limit = 3) {
+  const names = items.map((item) => item.team);
+  const visible = names.slice(0, limit).join(", ");
+  const hidden = names.length - limit;
+  return hidden > 0 ? `${visible} +${hidden}` : visible;
+}
+
 function renderSelectionStats() {
   const container = $("#selectionCards");
   const summary = $("#selectionSummaryCards");
@@ -97,9 +104,9 @@ function renderSelectionStats() {
   const globalAverageAge = ageValues.reduce((total, age) => total + age, 0) / ageValues.length;
 
   summary.innerHTML = `
-    <article class="selection-summary-card"><span>Proporción de nacidos en el país representado</span><strong>${teamsWithMostLocalBirth.map((item) => item.team).join(", ")}</strong><small>${teamsWithMostLocalBirth[0]?.bornInRepresentedCountry}/${teamsWithMostLocalBirth[0]?.rosterSize} jugadores · ${formatPercent(teamsWithMostLocalBirth[0]?.localBirthShare)}</small></article>
-    <article class="selection-summary-card"><span>Mas jugadores en el exterior</span><strong>${teamsWithMostAbroad.map((item) => item.team).join(", ")}</strong><small>${formatPercent(teamsWithMostAbroad[0]?.abroadShare)} con club confirmado fuera del pais</small></article>
-    <article class="selection-summary-card"><span>Edad promedio global</span><strong>${formatNumber(globalAverageAge)} años</strong><small>calculada con ${ageValues.length} selecciones con muestra disponible</small></article>
+    <article class="selection-summary-card"><span>Proporción de nacidos en el país representado</span><strong>${formatCompactTeamList(teamsWithMostLocalBirth)}</strong><small>${teamsWithMostLocalBirth.length} selecciones con ${teamsWithMostLocalBirth[0]?.bornInRepresentedCountry}/${teamsWithMostLocalBirth[0]?.rosterSize} jugadores · ${formatPercent(teamsWithMostLocalBirth[0]?.localBirthShare)}</small></article>
+    <article class="selection-summary-card"><span>Mas jugadores en el exterior</span><strong>${formatCompactTeamList(teamsWithMostAbroad, 2)}</strong><small>${formatPercent(teamsWithMostAbroad[0]?.abroadShare)} con club confirmado fuera del pais</small></article>
+    <article class="selection-summary-card"><span>Edad promedio global</span><strong>${formatNumber(globalAverageAge)} años</strong><small>${ageValues.length} selecciones con muestra disponible</small></article>
   `;
 
   container.innerHTML = stats.map((item) => `

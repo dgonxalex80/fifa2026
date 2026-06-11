@@ -472,6 +472,10 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.groups-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .home-dashboard {
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
   align-items: start;
@@ -1635,10 +1639,10 @@ body[data-theme="light"] .round-match {
 }
 
 .standing-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   min-height: 38px;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -1648,6 +1652,34 @@ body[data-theme="light"] .round-match {
 
 body[data-theme="light"] .standing-row {
   background: rgba(9, 22, 19, 0.04);
+}
+
+.standing-row .team-cell,
+.standing-row .team-label,
+.standing-row .team-label span {
+  min-width: 0;
+}
+
+.standing-row .team-label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.standing-row .team-label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.standing-row .stats-cell {
+  min-width: 88px;
+  text-align: right;
+}
+
+.standing-row .stats-cell small {
+  display: block;
+  font-size: 0.75rem;
+  white-space: nowrap;
 }
 
 .group-note {

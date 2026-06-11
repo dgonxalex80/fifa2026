@@ -9,7 +9,9 @@ function renderHomeMatches() {
 }
 
 function renderCountdown() {
-  const target = parseTournamentDate("2026-06-11 14:00");
+  const finalMatch = matches.find((match) => match.phase === "Final");
+  const target = finalMatch ? parseTournamentDate(finalMatch.date) : parseTournamentDate("2026-07-19 14:00");
+  target.setHours(target.getHours() + 2);
   const diff = Math.max(target - new Date(), 0);
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff / 3600000) % 24);

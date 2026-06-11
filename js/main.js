@@ -98,6 +98,7 @@ function init() {
   renderSelectionStats();
   renderClubStats();
   renderGroups();
+  if (typeof renderThirdsRanking === "function") renderThirdsRanking();
   if (typeof renderPredictions === "function") renderPredictions();
   if (typeof renderResultsAdmin === "function") renderResultsAdmin();
   renderScorers();

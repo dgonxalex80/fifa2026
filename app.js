@@ -1,5 +1,5 @@
 const groupStageMatches = [
-  { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
+  { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
   { id: 2, date: "2026-06-11 21:00", home: "Corea del Sur", away: "Republica Checa", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "pendiente" },
   { id: 3, date: "2026-06-12 14:00", home: "Canada", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Toronto Stadium", city: "Toronto", status: "pendiente" },
   { id: 4, date: "2026-06-12 20:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
@@ -147,7 +147,8 @@ const flags = {
 
 
 const scorers = [
-  ["Sin registros", "-", "-", "-", "-"]
+  ["Julian Quinones", "Mexico", 1, 0, "-"],
+  ["Raul Jimenez", "Mexico", 1, 0, "-"]
 ];
 
 const birthRepresentationStats = [
@@ -22002,30 +22003,52 @@ function getGroupCodeFromSeed(seed) {
 
 function getQualifiedTeams(standings = getGroupStandings()) {
   const qualifiers = {};
-  const thirdPlaced = [];
+  const allThirds = [];
 
   Object.entries(standings).forEach(([groupCode, table], groupIndex) => {
-    const groupComplete = table.every((row) => row.played === 3);
-    if (!groupComplete) return;
-    qualifiers[`1G${groupIndex + 1}`] = table[0]?.team || "";
-    qualifiers[`2G${groupIndex + 1}`] = table[1]?.team || "";
-    if (table[2]) thirdPlaced.push({ ...table[2], groupCode });
+    const groupNum = groupIndex + 1;
+    qualifiers[`1G${groupNum}`] = table[0]?.team || "";
+    qualifiers[`2G${groupNum}`] = table[1]?.team || "";
+    
+    if (table[2]) {
+      allThirds.push({ ...table[2], groupCode });
+    }
   });
 
-  if (thirdPlaced.length === Object.keys(groups).length) {
-    thirdPlaced
-      .sort(compareStandingRows)
-      .slice(0, 8)
-      .forEach((row, index) => {
-        qualifiers[`3G${index + 1}`] = row.team;
-      });
-  }
+  // Ordenamos todos los terceros para encontrar los 8 mejores
+  const sortedThirds = [...allThirds].sort(compareStandingRows);
+  sortedThirds.slice(0, 8).forEach((row, index) => {
+    qualifiers[`3G${index + 1}`] = row.team;
+  });
 
   return qualifiers;
 }
 
+function getThirdsRanking() {
+  const standings = getGroupStandings();
+  const allThirds = [];
+  Object.entries(standings).forEach(([groupCode, table]) => {
+    if (table[2]) {
+      allThirds.push({ ...table[2], groupCode });
+    }
+  });
+  return allThirds.sort(compareStandingRows);
+}
+
 function resolveKnockoutSeed(seed, qualifiers) {
   if (qualifiers[seed]) return qualifiers[seed];
+
+  // Mapeo de placeholders de mejores terceros (3G_ABC, etc) a la posicion en el ranking
+  const thirdPlaceMapping = {
+    "3G_ABC": "3G1",
+    "3G_DEF": "3G2",
+    "3G_GHI": "3G3",
+    "3G_JKL": "3G4",
+    "3G_MNO": "3G5" // Expandible segun necesites en data.js
+  };
+
+  const effectiveSeed = thirdPlaceMapping[seed] || seed;
+  if (qualifiers[effectiveSeed]) return qualifiers[effectiveSeed];
 
   const winnerMatch = seed.match(/^Ganador (D16|OF|CF|SF)-?(\d+)$/);
   if (winnerMatch) {

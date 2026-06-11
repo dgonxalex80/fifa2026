@@ -90,7 +90,7 @@ const knockoutSchedule = [
   { date: "2026-07-14 19:00", phase: "Semifinal", matches: [["Ganador CF1", "Ganador CF2"]] },
   { date: "2026-07-15 19:00", phase: "Semifinal", matches: [["Ganador CF3", "Ganador CF4"]] },
   { date: "2026-07-18 17:00", phase: "Tercer puesto", matches: [["Perdedor SF1", "Perdedor SF2"]] },
-  { date: "2026-07-19 18:00", phase: "Final", matches: [["Ganador SF1", "Ganador SF2"]] }
+  { date: "2026-07-19 14:00", phase: "Final", matches: [["Ganador SF1", "Ganador SF2"]] }
 ];
 
 const flags = {
@@ -21646,6 +21646,30 @@ const generatedGroupStageMatches = buildGeneratedGroupStageMatches();
 const allGroupStageMatches = [...groupStageMatches, ...generatedGroupStageMatches];
 const knockoutMatches = buildKnockoutMatches(allGroupStageMatches.length);
 const matches = [...allGroupStageMatches, ...knockoutMatches];
+const calendarEvents = [
+  {
+    id: "ceremonia-inaugural",
+    type: "event",
+    date: "2026-06-11 12:30",
+    title: "Ceremonia inaugural",
+    phase: "Ceremonias",
+    stadium: "Estadio Ciudad de Mexico",
+    city: "Ciudad de Mexico",
+    status: "pendiente",
+    description: "Antes de Mexico vs Sudafrica"
+  },
+  {
+    id: "ceremonia-clausura",
+    type: "event",
+    date: "2026-07-19 12:30",
+    title: "Ceremonia de clausura",
+    phase: "Ceremonias",
+    stadium: "New York New Jersey Stadium",
+    city: "New York/New Jersey",
+    status: "pendiente",
+    description: "Antes de la final"
+  }
+];
 const matchResults = JSON.parse(localStorage.getItem("fifa2026-results") || "{}");
 const colombiaBroadcastPlatforms = [
   { id: "caracol", label: "Caracol", detail: "TV abierta", shortLabel: "CAR" },
@@ -21864,6 +21888,29 @@ function buildKnockoutMatches(startId) {
       };
     })
   );
+}
+
+function parseTournamentDate(value) {
+  return new Date(value.replace(" ", "T") + "-05:00");
+}
+
+function getTournamentDateParts(value) {
+  const [datePart, timePart = "00:00"] = value.split(" ");
+  const [year, month, day] = datePart.split("-").map(Number);
+  const [hour, minute] = timePart.split(":").map(Number);
+  return { year, month: month - 1, day, hour, minute };
+}
+
+function getCalendarItems() {
+  return [...matches, ...calendarEvents].sort((a, b) => parseTournamentDate(a.date) - parseTournamentDate(b.date));
+}
+
+function isCalendarEvent(item) {
+  return item.type === "event";
+}
+
+function getCalendarItemLabel(item) {
+  return isCalendarEvent(item) ? item.title : item.home + " vs " + item.away;
 }
 
 function applyStoredMatchResults() {
@@ -22130,7 +22177,7 @@ function getSearchIndex() {
   ])]
     .filter((team) => !team.startsWith("Ganador"))
     .map((team) => [team, "Seleccion", "selecciones"]);
-  const fixtures = matches.map((match) => [`${match.home} vs ${match.away}`, `${match.phase} · ${formatDate(match.date)}`, "calendario"]);
+  const fixtures = getCalendarItems().map((item) => [getCalendarItemLabel(item), item.phase + " · " + formatDate(item.date), "calendario"]);
   const playerItems = selectedPlayers.flatMap((player) => [
     [player.commonName, `${player.position} · ${player.team}`, "jugadores"],
     [player.name, `${player.club} · ${player.team}`, "jugadores"]

@@ -4,12 +4,12 @@
  */
 
 const groupStageMatches = [
-  { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
+  { id: 1, date: "2026-06-11 15:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
   // ... (Aquí van todos los objetos de groupStageMatches que estaban en app.js)
 ];
 
 const knockoutSchedule = [
-  { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["1G1", "2G4"], ["1G2", "2G3"]] },
+  { date: "2026-06-28 13:00", phase: "Dieciseisavos", matches: [["1G1", "2G4"], ["1G2", "2G3"]] },
   // ... (Aquí van todos los objetos de knockoutSchedule)
 ];
 

@@ -22,7 +22,7 @@ function exportCurrentPage() {
       ? getPredictionExportRows()
       : active === "resultados"
       ? getResultsExportRows()
-      : [["fecha", "local", "goles_local", "goles_visitante", "visitante", "fase", "estado", "transmision_colombia"], ...matches.map((m) => [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status, getBroadcastSummary(m)])];
+      : [["fecha", "evento", "goles_local", "goles_visitante", "visitante", "fase", "estado", "transmision_colombia"], ...getCalendarItems().map((m) => isCalendarEvent(m) ? [m.date, m.title, "", "", "", m.phase, m.status, m.description] : [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status, getBroadcastSummary(m)])];
   const csv = rows.map((row) => row.join(",")).join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);
@@ -36,8 +36,17 @@ function exportCurrentPage() {
 function formatDate(value) {
   return new Intl.DateTimeFormat("es-CO", {
     dateStyle: "medium",
-    timeStyle: "short"
-  }).format(new Date(value.replace(" ", "T")));
+    timeStyle: "short",
+    timeZone: "America/Bogota"
+  }).format(parseTournamentDate(value));
+}
+
+function formatTime(value) {
+  return new Intl.DateTimeFormat("es-CO", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "America/Bogota"
+  }).format(parseTournamentDate(value));
 }
 
 function bindEvents() {

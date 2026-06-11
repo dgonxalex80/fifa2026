@@ -710,6 +710,16 @@ body[data-theme="light"] .timeline p {
   color: var(--muted);
 }
 
+.calendar-special-event {
+  background: linear-gradient(135deg, rgba(244, 180, 0, 0.2), rgba(24, 160, 94, 0.12));
+  border-color: rgba(244, 180, 0, 0.45);
+}
+
+.calendar-list-event .fixture-label {
+  color: var(--gold);
+  font-weight: 800;
+}
+
 .final-result {
   display: inline-flex;
   align-items: center;

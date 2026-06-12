@@ -1,6 +1,6 @@
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
-  { id: 2, date: "2026-06-11 21:00", home: "Corea del Sur", away: "Republica Checa", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "pendiente" },
+  { id: 2, date: "2026-06-11 21:00", home: "Corea del Sur", away: "Republica Checa", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "finalizado", homeScore: 2, awayScore: 1 },
   { id: 3, date: "2026-06-12 14:00", home: "Canada", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Toronto Stadium", city: "Toronto", status: "pendiente" },
   { id: 4, date: "2026-06-12 20:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
   { id: 5, date: "2026-06-13 14:00", home: "Catar", away: "Suiza", phase: "Grupos", group: "B", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "pendiente" },
@@ -147,8 +147,11 @@ const flags = {
 
 
 const scorers = [
-  ["Julian Quinones", "Mexico", 1, 0, "-"],
-  ["Raul Jimenez", "Mexico", 1, 0, "-"]
+  ["Julian Quinones", "Mexico", 1, 0, 79],
+  ["Raul Jimenez", "Mexico", 1, 0, 76],
+  ["Hwang In-beom", "Corea del Sur", 1, 1, 90],
+  ["Oh Hyeon-gyu", "Corea del Sur", 1, 0, 21],
+  ["Ladislav Krejci", "Republica Checa", 1, 0, 90]
 ];
 
 const birthRepresentationStats = [

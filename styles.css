@@ -430,6 +430,19 @@ select {
   color: #d6e0dd;
 }
 
+.hero-panel .last-updated {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(8, 17, 31, 0.52);
+  color: #f4d56c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, minmax(72px, 1fr));

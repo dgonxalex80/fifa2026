@@ -1,8 +1,8 @@
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
   { id: 2, date: "2026-06-11 21:00", home: "Corea del Sur", away: "Republica Checa", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "finalizado", homeScore: 2, awayScore: 1 },
-  { id: 3, date: "2026-06-12 14:00", home: "Canada", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Toronto Stadium", city: "Toronto", status: "pendiente" },
-  { id: 4, date: "2026-06-12 20:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
+  { id: 3, date: "2026-06-12 14:00", home: "Canada", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 1, awayScore: 1 },
+  { id: 4, date: "2026-06-12 20:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "finalizado", homeScore: 4, awayScore: 1 },
   { id: 5, date: "2026-06-13 14:00", home: "Catar", away: "Suiza", phase: "Grupos", group: "B", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "pendiente" },
   { id: 6, date: "2026-06-13 17:00", home: "Brasil", away: "Marruecos", phase: "Grupos", group: "C", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "pendiente" },
   { id: 7, date: "2026-06-13 20:00", home: "Haiti", away: "Escocia", phase: "Grupos", group: "C", stadium: "Boston Stadium", city: "Boston", status: "pendiente" },
@@ -147,11 +147,16 @@ const flags = {
 
 
 const scorers = [
+  ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
   ["Julian Quinones", "Mexico", 1, 0, 79],
   ["Raul Jimenez", "Mexico", 1, 0, 76],
   ["Hwang In-beom", "Corea del Sur", 1, 1, 90],
   ["Oh Hyeon-gyu", "Corea del Sur", 1, 0, 21],
-  ["Ladislav Krejci", "Republica Checa", 1, 0, 90]
+  ["Ladislav Krejci", "Republica Checa", 1, 0, 90],
+  ["Jovo Lukic", "Bosnia y Herzegovina", 1, 0, 90],
+  ["Cyle Larin", "Canada", 1, 0, 14],
+  ["Gio Reyna", "Estados Unidos", 1, 0, 16],
+  ["Mauricio Magalhães", "Paraguay", 1, 0, 45]
 ];
 
 const birthRepresentationStats = [
@@ -22004,9 +22009,15 @@ function getGroupCodeFromSeed(seed) {
   return Object.keys(groups)[groupNumber - 1] || "";
 }
 
+function isGroupComplete(table) {
+  return table.length > 0 && table.every((row) => row.played === 3);
+}
+
 function getQualifiedTeams(standings = getGroupStandings()) {
   const qualifiers = {};
   const allThirds = [];
+  const completeGroupCount = Object.values(standings).filter(isGroupComplete).length;
+  if (completeGroupCount !== Object.keys(groups).length) return qualifiers;
 
   Object.entries(standings).forEach(([groupCode, table], groupIndex) => {
     const groupNum = groupIndex + 1;
@@ -22038,6 +22049,22 @@ function getThirdsRanking() {
   return allThirds.sort(compareStandingRows);
 }
 
+function getSeedLabel(seed) {
+  const directSeed = seed.match(/^([123])G(\d+)$/);
+  if (directSeed) {
+    const ordinal = directSeed[1] === "1" ? "1o" : directSeed[1] === "2" ? "2o" : "3o";
+    return `${ordinal} Grupo ${getGroupCodeFromSeed(directSeed[2]) || directSeed[2]}`;
+  }
+
+  const thirdPlaceGroupSeed = seed.match(/^3G_([A-Z]+)$/);
+  if (thirdPlaceGroupSeed) return `Mejor 3o (${thirdPlaceGroupSeed[1].split("").join("/")})`;
+
+  const thirdRankSeed = seed.match(/^3G(\d+)$/);
+  if (thirdRankSeed) return `${thirdRankSeed[1]}o mejor tercero`;
+
+  return seed;
+}
+
 function resolveKnockoutSeed(seed, qualifiers) {
   if (qualifiers[seed]) return qualifiers[seed];
 
@@ -22052,6 +22079,7 @@ function resolveKnockoutSeed(seed, qualifiers) {
 
   const effectiveSeed = thirdPlaceMapping[seed] || seed;
   if (qualifiers[effectiveSeed]) return qualifiers[effectiveSeed];
+  if (/^[123]G\d+$/.test(seed) || /^3G_[A-Z]+$/.test(seed)) return getSeedLabel(seed);
 
   const winnerMatch = seed.match(/^Ganador (D16|OF|CF|SF)-?(\d+)$/);
   if (winnerMatch) {

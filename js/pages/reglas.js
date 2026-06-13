@@ -20,8 +20,8 @@ const footballRuleBasics = [
     detail: "Un jugador puede ser sancionado si participa activamente estando mas cerca de la linea de gol rival que el balon y el penultimo adversario."
   },
   {
-    title: "Faltas y tarjetas",
-    detail: "Las infracciones se castigan con tiro libre directo, tiro libre indirecto, penal, tarjeta amarilla o tarjeta roja segun la accion y su gravedad."
+    title: "Faltas",
+    detail: "Las infracciones se castigan con tiro libre directo, tiro libre indirecto o penal segun la accion y la zona del campo."
   },
   {
     title: "Reanudaciones",
@@ -58,23 +58,10 @@ const worldCup2026RuleChanges = [
     value: "1m",
     title: "Atencion medica fuera del campo",
     detail: "Si una lesion requiere evaluacion en campo o detiene el juego, el jugador atendido debe salir y permanecer fuera durante un minuto tras la reanudacion."
-  },
-  {
-    value: "DOGSO",
-    title: "Ventaja que termina en gol",
-    detail: "Si el arbitro aplica ventaja en una accion que negaba una ocasion manifiesta de gol y la jugada termina en gol, el infractor no recibe amarilla por esa accion."
   }
 ];
 
 const worldCupTiebreakRules = [
-  {
-    title: "VAR: segunda amarilla revisable",
-    detail: "El VAR puede intervenir si una tarjeta roja nace de una segunda amarilla claramente incorrecta."
-  },
-  {
-    title: "VAR: identidad equivocada",
-    detail: "El VAR puede corregir casos en los que el arbitro sanciona al equipo o jugador equivocado en una accion que termina con tarjeta amarilla o roja."
-  },
   {
     title: "VAR: corners mal concedidos",
     detail: "Las competiciones pueden permitir revision de tiros de esquina claramente mal otorgados, siempre que se corrijan de inmediato y sin retrasar la reanudacion."
@@ -85,7 +72,7 @@ const worldCupTiebreakRules = [
   },
   {
     title: "Saque de banda demorado",
-    detail: "Aplicacion: saque para el equipo contrario. Solo hay amonestacion si el jugador retrasa excesivamente despues de que el saque ya fue otorgado al rival."
+    detail: "Aplicacion: saque para el equipo contrario."
   },
   {
     title: "Saque de meta o arquero demorado",
@@ -137,7 +124,7 @@ function renderRules() {
     ["Jugadores", "11", "por equipo en cancha"],
     ["Tiempo", "90", "minutos mas adicion"],
     ["Saque banda/meta", "5s", "nueva cuenta si hay demora"],
-    ["VAR", "+3", "nuevos casos revisables"]
+    ["VAR", "+1", "caso revisable destacado"]
   ].map(([label, value, detail]) => `
     <article class="kpi"><span>${label}</span><strong>${value}</strong><small>${detail}</small></article>
   `).join("");

@@ -12,7 +12,7 @@ function renderGroups() {
     ["Partidos de grupos", groupMatches.length, `${pendingGroupMatches} pendientes`],
     ["Resultados oficiales", finishedGroupMatches, `${finishedGroupMatches} cargados`],
     ["Grupos configurados", totalGroups, `${totalTeams} equipos en seguimiento`],
-    ["Clasificados", qualifiedCount, qualifiedCount ? "llaves actualizadas automaticamente" : "se definiran al terminar la fase"]
+    ["Clasificados", qualifiedCount, qualifiedCount ? "solo grupos cerrados" : "se definiran al terminar la fase"]
   ].map(([label, value, detail]) => `
     <article class="kpi"><span>${label}</span><strong>${value}</strong><small>${detail}</small></article>
   `).join("");
@@ -44,9 +44,10 @@ function renderGroups() {
         ${rows.map((row, index) => `
           <article class="standing-row" data-label="Posición ${index + 1}">
             <span class="team-cell">${index + 1}. ${teamLabel(row.team)}</span>
-            <div class="stats-cell">
-              <strong>${row.points} pts</strong>
-              <small>PJ:${row.played} DG:${row.goalDifference} GF:${row.goalsFor}</small>
+            <div class="stats-cell standings-stat-grid">
+              <span><b>Pts</b><strong>${row.points}</strong></span>
+              <span><b>GF</b><strong>${row.goalsFor}</strong></span>
+              <span><b>GC</b><strong>${row.goalsAgainst}</strong></span>
             </div>
           </article>
         `).join("")}

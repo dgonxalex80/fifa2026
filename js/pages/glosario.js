@@ -1,5 +1,4 @@
 const colombianGlossary = [
-  ["Amonestacion", "Tarjeta amarilla. En Colombia tambien se dice que el jugador quedo condicionado."],
   ["Area", "Zona grande frente al arco. Si una falta defensiva sancionable ocurre ahi, normalmente es penal."],
   ["Balon dividido", "Pelota sin dueno claro; los dos equipos llegan a disputarla."],
   ["Cambio", "Sustitucion de un jugador por otro. Desde 2026 hay control estricto contra cambios demorados."],

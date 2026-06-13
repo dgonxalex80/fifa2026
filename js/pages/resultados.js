@@ -22,7 +22,6 @@ function getFilteredResultMatches() {
       (status === "todos" || match.status === status);
   });
 }
-
 function renderResultsFilters() {
   const phaseFilter = $("#resultsPhaseFilter");
   const groupFilter = $("#resultsGroupFilter");
@@ -53,13 +52,10 @@ function renderResultsSummary() {
   if (!container) return;
   const finished = matches.filter((match) => getMatchResult(match)).length;
   const groupFinished = matches.filter((match) => match.phase === "Grupos" && getMatchResult(match)).length;
-  const knockoutFinished = matches.filter((match) => match.phase !== "Grupos" && getMatchResult(match)).length;
   const pending = matches.length - finished;
-
   container.innerHTML = [
     ["Partidos cargados", finished, `${pending} pendientes`],
     ["Fase de grupos", `${groupFinished}/${matches.filter((match) => match.phase === "Grupos").length}`, "actualiza posiciones"],
-    ["Eliminatorias", knockoutFinished, "actualiza llaves"],
     ["Almacenamiento", "Local", "este navegador"]
   ].map(([label, value, detail]) => `
     <article class="kpi"><span>${label}</span><strong>${value}</strong><small>${detail}</small></article>

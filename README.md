@@ -1,6 +1,6 @@
 # FIFA 2026 Info Hub
 
-Aplicacion web estatica, responsive e informativa para consultar datos del Mundial FIFA 2026: calendario, grupos, selecciones, jugadores, historial mundialista, llaves y pronosticos de participantes.
+Aplicacion web estatica, responsive e informativa para consultar datos del Mundial FIFA 2026: calendario, resultados, posiciones, goleadores, grupos, selecciones, jugadores, historial mundialista, llaves y pronosticos de participantes.
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 

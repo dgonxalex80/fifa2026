@@ -1,5 +1,14 @@
 function renderHomeMatches() {
-  $("#homeMatches").innerHTML = matches.slice(0, 4).map((match) => `
+  const orderedMatches = [...matches].sort((a, b) => {
+    const aFinished = Boolean(getMatchResult(a));
+    const bFinished = Boolean(getMatchResult(b));
+    if (aFinished !== bFinished) return aFinished ? 1 : -1;
+
+    const dateDiff = parseTournamentDate(a.date) - parseTournamentDate(b.date);
+    return aFinished ? -dateDiff : dateDiff;
+  });
+
+  $("#homeMatches").innerHTML = orderedMatches.slice(0, 8).map((match) => `
     <article class="match-card">
       <div><strong>${teamLabel(match.home)}</strong><br><small>${match.city}</small></div>
       <span class="score-chip">${getMatchResult(match) || formatDate(match.date)}</span>

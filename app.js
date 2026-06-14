@@ -7,7 +7,7 @@ const groupStageMatches = [
   { id: 6, date: "2026-06-13 17:00", home: "Brasil", away: "Marruecos", phase: "Grupos", group: "C", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 1, awayScore: 1 },
   { id: 7, date: "2026-06-13 20:00", home: "Haiti", away: "Escocia", phase: "Grupos", group: "C", stadium: "Boston Stadium", city: "Boston", status: "finalizado", homeScore: 0, awayScore: 1 },
   { id: 8, date: "2026-06-13 23:00", home: "Australia", away: "Turquia", phase: "Grupos", group: "D", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 2, awayScore: 0 },
-  { id: 9, date: "2026-06-14 12:00", home: "Alemania", away: "Curazao", phase: "Grupos", group: "E", stadium: "Houston Stadium", city: "Houston", status: "pendiente" },
+  { id: 9, date: "2026-06-14 12:00", home: "Alemania", away: "Curazao", phase: "Grupos", group: "E", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 7, awayScore: 1 },
   { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
   { id: 11, date: "2026-06-14 18:00", home: "Costa de Marfil", away: "Ecuador", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "pendiente" },
   { id: 12, date: "2026-06-14 21:00", home: "Suecia", away: "Tunez", phase: "Grupos", group: "F", stadium: "Estadio Monterrey", city: "Monterrey", status: "pendiente" },
@@ -148,6 +148,13 @@ const flags = {
 
 const scorers = [
   ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
+  ["Felix Nmecha", "Alemania", 1, 0, 90],
+  ["Nico Schlotterbeck", "Alemania", 1, 0, 90],
+  ["Jamal Musiala", "Alemania", 1, 0, 90],
+  ["Kai Havertz", "Alemania", 2, 0, 90],
+  ["Nathaniel Brown", "Alemania", 1, 0, 90],
+  ["Deniz Undav", "Alemania", 1, 0, 90],
+  ["Jurien Gaari Comenencia", "Curazao", 1, 0, 90],
   ["John McGinn", "Escocia", 1, 0, 90],
   ["Nestory Irankunda", "Australia", 1, 0, 90],
   ["Connor Metcalfe", "Australia", 1, 0, 90],

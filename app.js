@@ -5,8 +5,8 @@ const groupStageMatches = [
   { id: 4, date: "2026-06-12 20:00", home: "Estados Unidos", away: "Paraguay", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "finalizado", homeScore: 4, awayScore: 1 },
   { id: 5, date: "2026-06-13 14:00", home: "Catar", away: "Suiza", phase: "Grupos", group: "B", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "finalizado", homeScore: 1, awayScore: 1 },
   { id: 6, date: "2026-06-13 17:00", home: "Brasil", away: "Marruecos", phase: "Grupos", group: "C", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 1, awayScore: 1 },
-  { id: 7, date: "2026-06-13 20:00", home: "Haiti", away: "Escocia", phase: "Grupos", group: "C", stadium: "Boston Stadium", city: "Boston", status: "pendiente" },
-  { id: 8, date: "2026-06-13 23:00", home: "Australia", away: "Turquia", phase: "Grupos", group: "D", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
+  { id: 7, date: "2026-06-13 20:00", home: "Haiti", away: "Escocia", phase: "Grupos", group: "C", stadium: "Boston Stadium", city: "Boston", status: "finalizado", homeScore: 0, awayScore: 1 },
+  { id: 8, date: "2026-06-13 23:00", home: "Australia", away: "Turquia", phase: "Grupos", group: "D", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 2, awayScore: 0 },
   { id: 9, date: "2026-06-14 12:00", home: "Alemania", away: "Curazao", phase: "Grupos", group: "E", stadium: "Houston Stadium", city: "Houston", status: "pendiente" },
   { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
   { id: 11, date: "2026-06-14 18:00", home: "Costa de Marfil", away: "Ecuador", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "pendiente" },
@@ -148,6 +148,9 @@ const flags = {
 
 const scorers = [
   ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
+  ["John McGinn", "Escocia", 1, 0, 90],
+  ["Nestory Irankunda", "Australia", 1, 0, 90],
+  ["Connor Metcalfe", "Australia", 1, 0, 90],
   ["Julian Quinones", "Mexico", 1, 0, 79],
   ["Boualem Khoukhi", "Catar", 1, 0, 95],
   ["Breel Embolo", "Suiza", 1, 0, 17],

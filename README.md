@@ -179,7 +179,13 @@ El boton `Exportar CSV` descarga datos segun la pagina activa:
 - En `Pronostico`, exporta participante, identificador, campeon, goleador, selecciones de grupos, llaves y ganadores.
 - En las demas paginas, exporta informacion base del calendario.
 
-## Actualizacion de Resultados
+## Actualizacion Continua del Torneo
+
+En este proyecto, cuando se solicite `actualizar`, significa dejar la web al dia hasta la fecha y hora del pedido. La actualizacion debe realizarse buscando en internet los resultados reales del Mundial FIFA 2026 y contrastando la informacion con fuentes actuales, preferiblemente FIFA.com u otras fuentes deportivas confiables. La actualizacion debe cubrir tres frentes:
+
+- Registrar los marcadores finales de todos los partidos ya disputados segun la programacion.
+- Actualizar la tabla de goleadores con los goles acumulados hasta ese momento.
+- Recalcular y actualizar la tabla de posiciones de los equipos por grupo y, cuando aplique, las llaves eliminatorias.
 
 La vista `Resultados` permite actualizar el torneo a medida que se juegan los partidos:
 

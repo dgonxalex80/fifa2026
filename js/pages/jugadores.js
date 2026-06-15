@@ -59,6 +59,89 @@ function completePlayerField(value, fallback = "Por confirmar") {
   return value && String(value).trim() ? value : fallback;
 }
 
+function getPlayerNameTokens(value) {
+  const stopWords = new Set(["al", "bin", "da", "de", "del", "do", "dos", "el", "jr", "junior", "la", "las", "los", "van"]);
+  const aliases = {
+    dibu: "emiliano",
+    lucho: "luis",
+    nico: "nicolas",
+    santi: "santiago",
+    vini: "vinicius"
+  };
+  return normalizeText(value || "")
+    .replace(/[’.-]/g, " ")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .map((token) => aliases[token] || token)
+    .filter((token) => token.length > 1 && !stopWords.has(token));
+}
+
+function getPlayerNameMatchScore(queryName, candidateName) {
+  const query = getPlayerNameTokens(queryName);
+  const candidate = getPlayerNameTokens(candidateName);
+  if (!query.length || !candidate.length) return 0;
+  const queryText = query.join(" ");
+  const candidateText = candidate.join(" ");
+  if (queryText === candidateText) return 100;
+  if (candidateText.includes(queryText) || queryText.includes(candidateText)) return 85;
+
+  const candidateSet = new Set(candidate);
+  const shared = query.filter((token) => candidateSet.has(token));
+  if (shared.length >= Math.min(query.length, candidate.length) && shared.length > 1) return 75 + shared.length;
+  if (shared.length === query.length && query.length > 1) return 70 + shared.length;
+  if (query.length === 1 && shared.length === 1 && query[0].length >= 5) return 55;
+  if (shared.length >= 2) return 50 + shared.length;
+  return 0;
+}
+
+function findBestPlayerByName(players, name, teamName = "") {
+  return players
+    .map((player) => ({
+      player,
+      score: Math.max(
+        getPlayerNameMatchScore(name, player.commonName || ""),
+        getPlayerNameMatchScore(name, player.name || "")
+      ) + (teamName && player.team === teamName ? 8 : 0)
+    }))
+    .filter((item) => item.score >= 55)
+    .sort((a, b) => b.score - a.score)[0]?.player;
+}
+
+const detailsNameIndexCache = new WeakMap();
+
+function getDetailsNameIndex(detailsMap) {
+  if (detailsNameIndexCache.has(detailsMap)) return detailsNameIndexCache.get(detailsMap);
+  const index = new Map();
+  Object.entries(detailsMap).forEach(([key, details]) => {
+    const entry = { key, details };
+    const tokens = new Set([...getPlayerNameTokens(key), ...getPlayerNameTokens(details?.name || "")]);
+    tokens.forEach((token) => {
+      if (!index.has(token)) index.set(token, []);
+      index.get(token).push(entry);
+    });
+  });
+  detailsNameIndexCache.set(detailsMap, index);
+  return index;
+}
+
+function findDetailsByName(detailsMap, name) {
+  const index = getDetailsNameIndex(detailsMap);
+  const candidates = new Set();
+  getPlayerNameTokens(name).forEach((token) => {
+    (index.get(token) || []).forEach((entry) => candidates.add(entry));
+  });
+  return [...candidates]
+    .map(({ key, details }) => ({
+      details,
+      score: Math.max(
+        getPlayerNameMatchScore(name, key),
+        getPlayerNameMatchScore(name, details?.name || "")
+      )
+    }))
+    .filter((item) => item.score >= 55)
+    .sort((a, b) => b.score - a.score)[0]?.details || {};
+}
+
 function getCuratedPlayerDetails(name, teamName) {
   const key = normalizeText(name);
   const teamOverride = curatedPlayerOverrides[teamName]?.[key];
@@ -68,7 +151,7 @@ function getCuratedPlayerDetails(name, teamName) {
     normalizeText(player.name) === key ||
     normalizeText(player.name).includes(key) ||
     key.includes(normalizeText(player.commonName))
-  );
+  ) || findBestPlayerByName(selectedPlayers, name, teamName);
 }
 
 function mergePlayerDetails(base = {}, curated = {}) {
@@ -85,8 +168,8 @@ function mergePlayerDetails(base = {}, curated = {}) {
 function getFeaturedPlayerDetails(name, teamName) {
   const key = normalizeText(name);
   const teamOverride = curatedPlayerOverrides[teamName]?.[key];
-  const wikidataDetails = paniniPlayerDetails[key] || {};
-  const liveDetails = livePlayerDetails[key] || {};
+  const wikidataDetails = paniniPlayerDetails[key] || findDetailsByName(paniniPlayerDetails, name);
+  const liveDetails = livePlayerDetails[key] || findDetailsByName(livePlayerDetails, name);
   const curated = getCuratedPlayerDetails(name, teamName) || {};
   return mergePlayerDetails(mergePlayerDetails(mergePlayerDetails({}, wikidataDetails), liveDetails), teamOverride || curated);
 }

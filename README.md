@@ -155,6 +155,12 @@ Fuentes usadas:
 - Wikidata API: https://www.wikidata.org/w/api.php
 - Wikimedia Commons `Special:FilePath`: https://commons.wikimedia.org/wiki/Special:FilePath
 
+Control de pendientes:
+
+- `jugadores_datos_pendientes.csv`: listado auditable de fichas que aun tienen campos incompletos.
+- La edad no se captura manualmente: se calcula desde `birthDate`; si falta fecha de nacimiento, tambien queda pendiente la edad.
+- Estado actual del control: 577 fichas incompletas; 551 sin fecha de nacimiento/edad, 562 sin estatura, 5 sin club confirmado y 0 sin posicion.
+
 ## Pronostico y PDF
 
 La vista `Pronostico` esta pensada para funcionar en GitHub Pages sin backend:

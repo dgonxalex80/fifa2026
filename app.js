@@ -11,7 +11,7 @@ const groupStageMatches = [
   { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 2, awayScore: 2 },
   { id: 11, date: "2026-06-14 18:00", home: "Costa de Marfil", away: "Ecuador", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 1, awayScore: 0 },
   { id: 12, date: "2026-06-14 21:00", home: "Suecia", away: "Tunez", phase: "Grupos", group: "F", stadium: "Estadio Monterrey", city: "Monterrey", status: "finalizado", homeScore: 5, awayScore: 1 },
-  { id: 13, date: "2026-06-15 11:00", home: "Espana", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
+  { id: 13, date: "2026-06-15 11:00", home: "Espana", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 0, awayScore: 0 },
   { id: 14, date: "2026-06-15 14:00", home: "Belgica", away: "Egipto", phase: "Grupos", group: "G", stadium: "Seattle Stadium", city: "Seattle", status: "pendiente" },
   { id: 15, date: "2026-06-15 17:00", home: "Arabia Saudita", away: "Uruguay", phase: "Grupos", group: "H", stadium: "Miami Stadium", city: "Miami", status: "pendiente" },
   { id: 16, date: "2026-06-15 20:00", home: "Iran", away: "Nueva Zelanda", phase: "Grupos", group: "G", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },

@@ -10,7 +10,7 @@ const groupStageMatches = [
   { id: 9, date: "2026-06-14 12:00", home: "Alemania", away: "Curazao", phase: "Grupos", group: "E", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 7, awayScore: 1 },
   { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 2, awayScore: 2 },
   { id: 11, date: "2026-06-14 18:00", home: "Costa de Marfil", away: "Ecuador", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 1, awayScore: 0 },
-  { id: 12, date: "2026-06-14 21:00", home: "Suecia", away: "Tunez", phase: "Grupos", group: "F", stadium: "Estadio Monterrey", city: "Monterrey", status: "pendiente" },
+  { id: 12, date: "2026-06-14 21:00", home: "Suecia", away: "Tunez", phase: "Grupos", group: "F", stadium: "Estadio Monterrey", city: "Monterrey", status: "finalizado", homeScore: 5, awayScore: 1 },
   { id: 13, date: "2026-06-15 11:00", home: "Espana", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
   { id: 14, date: "2026-06-15 14:00", home: "Belgica", away: "Egipto", phase: "Grupos", group: "G", stadium: "Seattle Stadium", city: "Seattle", status: "pendiente" },
   { id: 15, date: "2026-06-15 17:00", home: "Arabia Saudita", away: "Uruguay", phase: "Grupos", group: "H", stadium: "Miami Stadium", city: "Miami", status: "pendiente" },
@@ -149,6 +149,7 @@ const flags = {
 const scorers = [
   ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
   ["Kai Havertz", "Alemania", 2, 0, 90],
+  ["Yasin Ayari", "Suecia", 2, 0, 96],
   ["Felix Nmecha", "Alemania", 1, 0, 90],
   ["Nico Schlotterbeck", "Alemania", 1, 0, 90],
   ["Jamal Musiala", "Alemania", 1, 0, 90],
@@ -175,7 +176,11 @@ const scorers = [
   ["Jovo Lukic", "Bosnia y Herzegovina", 1, 0, 90],
   ["Cyle Larin", "Canada", 1, 0, 14],
   ["Gio Reyna", "Estados Unidos", 1, 0, 16],
-  ["Mauricio Magalhães", "Paraguay", 1, 0, 45]
+  ["Mauricio Magalhães", "Paraguay", 1, 0, 45],
+  ["Alexander Isak", "Suecia", 1, 1, 90],
+  ["Viktor Gyokeres", "Suecia", 1, 0, 90],
+  ["Mattias Svanberg", "Suecia", 1, 0, 7],
+  ["Omar Rekik", "Tunez", 1, 0, 90]
 ];
 
 const birthRepresentationStats = [

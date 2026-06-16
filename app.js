@@ -21720,7 +21720,7 @@ const colombiaBroadcastPlatforms = [
   { id: "disney", label: "Disney+", detail: "streaming", shortLabel: "D+" }
 ];
 const colombiaBroadcastByMatchId = {
-  1: ["dsports", "caracol", "rcn", "disney"],
+  1: ["dsports", "caracol", "rcn", "winsports", "disney"],
   2: ["dsports", "winsports"],
   3: ["dsports", "winsports", "disney"],
   4: ["dsports", "caracol", "rcn", "disney"],
@@ -21793,6 +21793,7 @@ const colombiaBroadcastByMatchId = {
   71: ["dsports", "winsports", "disney"],
   72: ["dsports"],
 };
+const defaultColombiaBroadcastIds = ["dsports"];
 
 const knockoutRounds = [
   {
@@ -22167,7 +22168,7 @@ function resultBadge(match) {
 }
 
 function getColombiaBroadcastPlatforms(match) {
-  const ids = colombiaBroadcastByMatchId[match.id] || [];
+  const ids = colombiaBroadcastByMatchId[match.id] || defaultColombiaBroadcastIds;
   return ids
     .map((id) => colombiaBroadcastPlatforms.find((platform) => platform.id === id))
     .filter(Boolean);

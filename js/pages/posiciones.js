@@ -12,7 +12,7 @@ function renderGroups() {
     ["Partidos de grupos", groupMatches.length, `${pendingGroupMatches} pendientes`],
     ["Resultados oficiales", finishedGroupMatches, `${finishedGroupMatches} cargados`],
     ["Grupos configurados", totalGroups, `${totalTeams} equipos en seguimiento`],
-    ["Clasificados", qualifiedCount, qualifiedCount ? "solo grupos cerrados" : "se definiran al terminar la fase"]
+    ["Clasificados proyectados", qualifiedCount, qualifiedCount ? "segun orden de tablas" : "sin tablas disponibles"]
   ].map(([label, value, detail]) => `
     <article class="kpi"><span>${label}</span><strong>${value}</strong><small>${detail}</small></article>
   `).join("");
@@ -27,7 +27,7 @@ function renderGroups() {
           <span>${index + 1}. ${teamLabel(row.team)}</span>
         `).join("")}
       </div>
-      <small>${groupComplete ? "clasificacion calculada" : "clasificacion pendiente"} · ${rows.reduce((total, row) => total + row.goalsFor, 0)} goles</small>
+      <small>${groupComplete ? "clasificacion definitiva" : "proyeccion en curso"} · ${rows.reduce((total, row) => total + row.goalsFor, 0)} goles</small>
     </article>
   `;
   }).join("");
@@ -52,7 +52,7 @@ function renderGroups() {
           </article>
         `).join("")}
       </div>
-      <small class="group-note">${groupComplete ? "primeros dos clasificados y tercero en evaluacion global" : "faltan resultados para cerrar el grupo"}</small>
+      <small class="group-note">${groupComplete ? "definitivo: primeros dos y tercero en ranking global" : "proyeccion segun orden actual de la tabla"}</small>
     </section>
   `;
   }).join("");

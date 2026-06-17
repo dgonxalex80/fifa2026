@@ -18,9 +18,9 @@ const groupStageMatches = [
   { id: 17, date: "2026-06-16 14:00", home: "Francia", away: "Senegal", phase: "Grupos", group: "I", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 3, awayScore: 1 },
   { id: 18, date: "2026-06-16 17:00", home: "Irak", away: "Noruega", phase: "Grupos", group: "I", stadium: "Boston Stadium", city: "Boston", status: "finalizado", homeScore: 1, awayScore: 4 },
   { id: 19, date: "2026-06-16 20:00", home: "Argentina", away: "Argelia", phase: "Grupos", group: "J", stadium: "Kansas City Stadium", city: "Kansas City", status: "finalizado", homeScore: 3, awayScore: 0 },
-  { id: 20, date: "2026-06-16 23:00", home: "Austria", away: "Jordania", phase: "Grupos", group: "J", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "pendiente" },
-  { id: 21, date: "2026-06-17 12:00", home: "Portugal", away: "Republica Democratica del Congo", phase: "Grupos", group: "K", stadium: "Houston Stadium", city: "Houston", status: "pendiente" },
-  { id: 22, date: "2026-06-17 15:00", home: "Inglaterra", away: "Croacia", phase: "Grupos", group: "L", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
+  { id: 20, date: "2026-06-16 23:00", home: "Austria", away: "Jordania", phase: "Grupos", group: "J", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "finalizado", homeScore: 3, awayScore: 1 },
+  { id: 21, date: "2026-06-17 12:00", home: "Portugal", away: "Republica Democratica del Congo", phase: "Grupos", group: "K", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 1, awayScore: 1 },
+  { id: 22, date: "2026-06-17 15:00", home: "Inglaterra", away: "Croacia", phase: "Grupos", group: "L", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 4, awayScore: 2 },
   { id: 23, date: "2026-06-17 18:00", home: "Ghana", away: "Panama", phase: "Grupos", group: "L", stadium: "Toronto Stadium", city: "Toronto", status: "pendiente" },
   { id: 24, date: "2026-06-17 21:00", home: "Uzbekistan", away: "Colombia", phase: "Grupos", group: "K", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
   { id: 25, date: "2026-06-18 11:00", home: "Republica Checa", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
@@ -198,7 +198,18 @@ const scorers = [
   ["Alexander Isak", "Suecia", 1, 1, 90],
   ["Viktor Gyokeres", "Suecia", 1, 0, 90],
   ["Mattias Svanberg", "Suecia", 1, 0, 7],
-  ["Omar Rekik", "Tunez", 1, 0, 90]
+  ["Omar Rekik", "Tunez", 1, 0, 90],
+  ["Romano Schmid", "Austria", 1, 0, 90],
+  ["Marko Arnautovic", "Austria", 1, 0, 90],
+  ["Ali Olwan", "Jordania", 1, 0, 90],
+  ["Joao Neves", "Portugal", 1, 0, 6],
+  ["Yoane Wissa", "Republica Democratica del Congo", 1, 0, 45],
+  ["Harry Kane", "Inglaterra", 2, 0, 90],
+  ["Jude Bellingham", "Inglaterra", 1, 0, 90],
+  ["Marcus Rashford", "Inglaterra", 1, 0, 90],
+  ["Martin Baturina", "Croacia", 1, 0, 90],
+  ["Petar Musa", "Croacia", 1, 0, 90],
+  ["Bukayo Saka", "Inglaterra", 0, 1, 90]
 ];
 
 const birthRepresentationStats = [
@@ -22059,8 +22070,6 @@ function isGroupComplete(table) {
 function getQualifiedTeams(standings = getGroupStandings()) {
   const qualifiers = {};
   const allThirds = [];
-  const completeGroupCount = Object.values(standings).filter(isGroupComplete).length;
-  if (completeGroupCount !== Object.keys(groups).length) return qualifiers;
 
   Object.entries(standings).forEach(([groupCode, table], groupIndex) => {
     const groupNum = groupIndex + 1;
@@ -22072,7 +22081,6 @@ function getQualifiedTeams(standings = getGroupStandings()) {
     }
   });
 
-  // Ordenamos todos los terceros para encontrar los 8 mejores
   const sortedThirds = [...allThirds].sort(compareStandingRows);
   sortedThirds.slice(0, 8).forEach((row, index) => {
     qualifiers[`3G${index + 1}`] = row.team;

@@ -22005,13 +22005,28 @@ function getCalendarItemLabel(item) {
 }
 
 function applyStoredMatchResults() {
+  let changedStoredResults = false;
   matches.forEach((match) => {
+    const hasOfficialResult = match.status === "finalizado" && Number.isInteger(match.homeScore) && Number.isInteger(match.awayScore);
+    if (hasOfficialResult) {
+      const stored = matchResults[match.id];
+      if (!stored || stored.homeScore !== match.homeScore || stored.awayScore !== match.awayScore) {
+        matchResults[match.id] = { homeScore: match.homeScore, awayScore: match.awayScore };
+        changedStoredResults = true;
+      }
+      return;
+    }
+
     const result = matchResults[match.id];
     if (!result) return;
     match.homeScore = result.homeScore;
     match.awayScore = result.awayScore;
     match.status = "finalizado";
   });
+
+  if (changedStoredResults) {
+    localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
+  }
 }
 
 function getWinner(match) {

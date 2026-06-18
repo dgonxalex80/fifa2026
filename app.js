@@ -117,6 +117,7 @@ const flags = {
   "Estados Unidos": "us",
   Francia: "fr",
   Ghana: "gh",
+  Hungria: "hu",
   Haiti: "ht",
   Inglaterra: "gb-eng",
   Iran: "ir",
@@ -128,6 +129,8 @@ const flags = {
   Noruega: "no",
   "Nueva Zelanda": "nz",
   Panama: "pa",
+  Peru: "pe",
+  Polonia: "pl",
   Paraguay: "py",
   "Paises Bajos": "nl",
   Portugal: "pt",
@@ -152,7 +155,7 @@ const scorers = [
   ["Yasin Ayari", "Suecia", 2, 0, 96],
   ["Eli Just", "Nueva Zelanda", 2, 0, 90],
   ["Lionel Messi", "Argentina", 3, 0, 78],
-  ["Kylian Mbappe", "Francia", 2, 0, 90],
+  ["Kylian Mbappé", "Francia", 2, 0, 90],
   ["Erling Haaland", "Noruega", 2, 0, 90],
   ["Leo Ostigård", "Noruega", 1, 0, 90],
   ["Aymen Hussein", "Irak", 1, 0, 90],
@@ -210,6 +213,24 @@ const scorers = [
   ["Martin Baturina", "Croacia", 1, 0, 90],
   ["Petar Musa", "Croacia", 1, 0, 90],
   ["Bukayo Saka", "Inglaterra", 0, 1, 90]
+];
+
+const allTimeWorldCupScorers = [
+  { rank: 1, player: "Miroslav Klose", team: "Alemania", matches: 24, goals: 16 },
+  { rank: 2, player: "Lionel Messi", team: "Argentina", matches: 27, goals: 16 },
+  { rank: 3, player: "Ronaldo", team: "Brasil", matches: 19, goals: 15 },
+  { rank: 4, player: "Gerd Muller", team: "Alemania", matches: 13, goals: 14 },
+  { rank: 5, player: "Kylian Mbappé", team: "Francia", matches: 15, goals: 14 },
+  { rank: 6, player: "Just Fontaine", team: "Francia", matches: 6, goals: 13 },
+  { rank: 7, player: "Pele", team: "Brasil", matches: 14, goals: 12 },
+  { rank: 8, player: "Sandor Kocsis", team: "Hungria", matches: 5, goals: 11 },
+  { rank: 9, player: "Jurgen Klinsmann", team: "Alemania", matches: 17, goals: 11 },
+  { rank: 10, player: "Helmut Rahn", team: "Alemania", matches: 10, goals: 10 },
+  { rank: 11, player: "Gabriel Batistuta", team: "Argentina", matches: 12, goals: 10 },
+  { rank: 12, player: "Gary Lineker", team: "Inglaterra", matches: 12, goals: 10 },
+  { rank: 13, player: "Teofilo Cubillas", team: "Peru", matches: 13, goals: 10 },
+  { rank: 14, player: "Thomas Muller", team: "Alemania", matches: 19, goals: 10 },
+  { rank: 15, player: "Grzegorz Lato", team: "Polonia", matches: 20, goals: 10 }
 ];
 
 const birthRepresentationStats = [
@@ -645,7 +666,7 @@ const worldCupHistory = [
     "teams": 32,
     "matches": 64,
     "goals": 172,
-    "topScorer": "Kylian Mbappe",
+    "topScorer": "Kylian Mbappé",
     "topScorerGoals": 8,
     "keeper": "Emiliano Martinez",
     "colombiaPosition": "No participó"
@@ -13845,7 +13866,7 @@ const paniniPlayerDetails = {
   },
   "kylian mbappe": {
     "qid": "",
-    "name": "Kylian Mbappe",
+    "name": "Kylian Mbappé",
     "birthDate": "",
     "height": "",
     "club": "",
@@ -22291,8 +22312,18 @@ function getSearchIndex() {
     [`Mundial ${item.year}`, `${item.host} · campeon ${item.champion}`, "historial"],
     [item.champion, `Campeon ${item.year}`, "historial"]
   ]);
+  const allTimeScorerItems = allTimeWorldCupScorers.flatMap((item) => {
+    const base = [[
+      item.player,
+      `${item.goals} goles historicos · ${item.matches} partidos · ${item.team}`,
+      "goleadores"
+    ]];
+    return normalizeText(item.player).includes("mbappe")
+      ? [...base, ["Embape", "alias de Kylian Mbappé", "goleadores"]]
+      : base;
+  });
   
-  memoizedSearchIndex = [...teams, ...fixtures, ...playerItems, ...historyItems, ...pages].map(([label, type, page]) => ({
+  memoizedSearchIndex = [...teams, ...fixtures, ...playerItems, ...historyItems, ...allTimeScorerItems, ...pages].map(([label, type, page]) => ({
     label,
     type,
     page,

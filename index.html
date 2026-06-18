@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=info-hub-styles-202606171930" />
   </head>
   <body>
     <div class="app-shell">
@@ -328,12 +328,31 @@
         </section>
 
         <section class="page" id="page-goleadores">
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Jugador</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>Minutos</th></tr></thead>
-              <tbody id="scorersRows"></tbody>
-            </table>
-          </div>
+          <section class="panel scorers-panel">
+            <div class="panel-head">
+              <h3>Goleadores del Mundial 2026</h3>
+              <span class="status-pill">Tabla actual</span>
+            </div>
+            <div class="table-wrap scorers-table-wrap">
+              <table>
+                <thead><tr><th>Jugador</th><th>Equipo</th><th>Goles</th><th>Asistencias</th><th>Minutos</th></tr></thead>
+                <tbody id="scorersRows"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="panel all-time-scorers-panel">
+            <div class="panel-head">
+              <h3>Máximos goleadores históricos</h3>
+              <span class="status-pill">Actualizado con 2026</span>
+            </div>
+            <p class="history-table-note">La columna 2026 se toma de los goleadores actuales del torneo. El total actualizado suma esos goles al registro histórico base cuando el jugador participa en el hub actual.</p>
+            <div class="table-wrap all-time-scorers-table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>Jugador</th><th>Seleccion</th><th>Partidos base</th><th>Goles base</th><th>2026</th><th>Total actualizado</th><th>Estado</th></tr></thead>
+                <tbody id="allTimeScorersRows"></tbody>
+              </table>
+            </div>
+          </section>
         </section>
 
         <section class="page" id="page-selecciones">
@@ -391,7 +410,7 @@
         <section class="page" id="page-historial">
           <div class="kpi-grid" id="worldCupHistorySummary"></div>
           <div class="dashboard-grid history-dashboard">
-            <section class="panel span-2">
+            <section class="panel span-3 history-editions-panel">
               <div class="panel-head">
                 <h3>Mundiales anteriores</h3>
                 <span class="status-pill">1930-2022</span>
@@ -404,7 +423,7 @@
                 </table>
               </div>
             </section>
-            <section class="panel">
+            <section class="panel history-champions-panel">
               <div class="panel-head"><h3>Campeones</h3></div>
               <div class="champions-list" id="worldCupChampionList"></div>
             </section>
@@ -415,7 +434,7 @@
               </div>
               <div class="colombia-history-note" id="colombiaWorldCupNote"></div>
             </section>
-            <section class="panel span-3">
+            <section class="panel span-3 history-records-panel">
               <div class="panel-head"><h3>Récords históricos</h3></div>
               <div class="history-record-grid" id="worldCupRecords"></div>
             </section>
@@ -428,7 +447,7 @@
 
       </main>
     </div>
-    <script src="./app.js?v=info-hub-core-202606171814"></script>
+    <script src="./app.js?v=info-hub-core-202606171945"></script>
     <script src="./js/pages/inicio.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/calendario.js?v=info-hub-pages-20260606"></script>
     <script src="./js/pages/clubes.js?v=info-hub-pages-20260606"></script>
@@ -442,8 +461,8 @@
     <script src="./js/pages/posiciones.js?v=info-hub-pages-202606171814"></script>
     <script src="./js/pages/resultados.js?v=info-hub-pages-20260609"></script>
     <script src="./js/pages/pronostico.js?v=info-hub-pages-20260609"></script>
-    <script src="./js/pages/goleadores.js?v=info-hub-pages-202606171814"></script>
-    <script src="./js/pages/historial.js?v=info-hub-pages-20260606"></script>
+    <script src="./js/pages/goleadores.js?v=info-hub-pages-202606171930"></script>
+    <script src="./js/pages/historial.js?v=info-hub-pages-202606171930"></script>
     <script src="./js/pages/llaves.js?v=info-hub-pages-20260606"></script>
     <script src="./js/main.js?v=info-hub-main-20260606"></script>
   </body>

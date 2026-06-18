@@ -1274,6 +1274,50 @@ tr:last-child td {
   border-bottom: 0;
 }
 
+.scorers-panel,
+.all-time-scorers-panel {
+  margin-bottom: 16px;
+}
+
+.scorers-table-wrap {
+  max-height: 430px;
+  overflow: auto;
+}
+
+.all-time-scorers-table-wrap {
+  max-height: 520px;
+  overflow: auto;
+}
+
+.scorers-table-wrap table {
+  min-width: 720px;
+}
+
+.all-time-scorers-table-wrap table {
+  min-width: 980px;
+}
+
+.scorers-table-wrap thead th,
+.all-time-scorers-table-wrap thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.current-participant-row {
+  background: rgba(244, 180, 0, 0.075);
+}
+
+.status-pill.active-status {
+  border-color: rgba(244, 180, 0, 0.42);
+  color: var(--gold);
+}
+
+.status-pill.muted-status {
+  color: var(--muted);
+}
+
+
 .empty-table {
   color: var(--muted);
   text-align: center;
@@ -1821,6 +1865,45 @@ body[data-theme="light"] .standing-row {
 
 .history-dashboard {
   align-items: start;
+}
+
+.history-dashboard .compact-table-wrap {
+  max-height: none;
+}
+
+.history-editions-panel {
+  order: 1;
+}
+
+.history-scorers-panel {
+  order: 2;
+}
+
+.history-champions-panel {
+  order: 3;
+}
+
+.history-records-panel {
+  order: 4;
+}
+
+.colombia-history-panel {
+  order: 5;
+}
+
+.history-scorers-panel table {
+  min-width: 620px;
+}
+
+@media (min-width: 721px) {
+  .history-dashboard .table-wrap {
+    overflow-x: auto;
+  }
+
+  .history-editions-panel table {
+    min-width: 980px;
+    font-size: 0.9rem;
+  }
 }
 
 .history-table-note {

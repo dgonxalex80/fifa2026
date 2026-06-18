@@ -23,9 +23,9 @@ const groupStageMatches = [
   { id: 22, date: "2026-06-17 15:00", home: "Inglaterra", away: "Croacia", phase: "Grupos", group: "L", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 4, awayScore: 2 },
   { id: 23, date: "2026-06-17 18:00", home: "Ghana", away: "Panama", phase: "Grupos", group: "L", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 1, awayScore: 0 },
   { id: 24, date: "2026-06-17 21:00", home: "Uzbekistan", away: "Colombia", phase: "Grupos", group: "K", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 1, awayScore: 3 },
-  { id: 25, date: "2026-06-18 11:00", home: "Republica Checa", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
-  { id: 26, date: "2026-06-18 14:00", home: "Suiza", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
-  { id: 27, date: "2026-06-18 17:00", home: "Canada", away: "Catar", phase: "Grupos", group: "B", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
+  { id: 25, date: "2026-06-18 11:00", home: "Republica Checa", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 1, awayScore: 1 },
+  { id: 26, date: "2026-06-18 14:00", home: "Suiza", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "finalizado", homeScore: 4, awayScore: 1 },
+  { id: 27, date: "2026-06-18 17:00", home: "Canada", away: "Catar", phase: "Grupos", group: "B", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 3, awayScore: 0 },
   { id: 28, date: "2026-06-18 20:00", home: "Mexico", away: "Corea del Sur", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "pendiente" },
   { id: 29, date: "2026-06-18 23:00", home: "Turquia", away: "Paraguay", phase: "Grupos", group: "D", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "pendiente" },
   { id: 30, date: "2026-06-19 14:00", home: "Estados Unidos", away: "Australia", phase: "Grupos", group: "D", stadium: "Seattle Stadium", city: "Seattle", status: "pendiente" },
@@ -195,7 +195,8 @@ const scorers = [
   ["Oh Hyeon-gyu", "Corea del Sur", 1, 0, 21],
   ["Ladislav Krejci", "Republica Checa", 1, 0, 90],
   ["Jovo Lukic", "Bosnia y Herzegovina", 1, 0, 90],
-  ["Cyle Larin", "Canada", 1, 0, 14],
+  ["Cyle Larin", "Canada", 2, 0, 30],
+  ["Jonathan David", "Canada", 2, 0, 90],
   ["Gio Reyna", "Estados Unidos", 1, 0, 16],
   ["Mauricio Magalhães", "Paraguay", 1, 0, 45],
   ["Alexander Isak", "Suecia", 1, 1, 90],
@@ -219,7 +220,13 @@ const scorers = [
   ["Jefferson Lerma", "Colombia", 0, 1, 90],
   ["Abbosbek Fayzullaev", "Uzbekistan", 1, 0, 90],
   ["Luis Díaz", "Colombia", 1, 0, 90],
-  ["Goleador Colombia por confirmar", "Colombia", 1, 0, 90]
+  ["Goleador Colombia por confirmar", "Colombia", 1, 0, 90],
+  ["Lukas Sadilek", "Republica Checa", 1, 0, 90],
+  ["Teboho Mokoena", "Sudafrica", 1, 0, 90],
+  ["Johan Manzambi", "Suiza", 2, 0, 90],
+  ["Ruben Vargas", "Suiza", 1, 0, 90],
+  ["Granit Xhaka", "Suiza", 1, 0, 90],
+  ["Mahmic", "Bosnia y Herzegovina", 1, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

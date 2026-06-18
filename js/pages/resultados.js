@@ -36,6 +36,7 @@ function renderResultsFilters() {
 }
 
 function renderResultsAdmin() {
+  updateKnockoutCalendar();
   const container = $("#resultsAdminList");
   if (!container) return;
   renderResultsFilters();

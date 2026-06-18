@@ -74,12 +74,12 @@ const groupStageMatches = [
 ];
 
 const knockoutSchedule = [
-  { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["1G1", "2G4"], ["1G2", "2G3"]] },
-  { date: "2026-06-29 12:00", phase: "Dieciseisavos", matches: [["1G5", "2G8"], ["1G6", "2G7"], ["1G9", "2G12"]] },
-  { date: "2026-06-30 12:00", phase: "Dieciseisavos", matches: [["1G10", "2G11"], ["1G3", "3G1"], ["1G4", "3G2"]] },
-  { date: "2026-07-01 12:00", phase: "Dieciseisavos", matches: [["1G7", "3G3"], ["1G8", "3G4"], ["1G11", "3G5"]] },
-  { date: "2026-07-02 12:00", phase: "Dieciseisavos", matches: [["1G12", "3G6"], ["2G1", "2G2"], ["2G5", "2G6"]] },
-  { date: "2026-07-03 12:00", phase: "Dieciseisavos", matches: [["2G9", "2G10"], ["3G7", "3G8"]] },
+  { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["1G1", "3G1"], ["2G1", "2G3"], ["1G2", "3G2"]] },
+  { date: "2026-06-29 12:00", phase: "Dieciseisavos", matches: [["1G3", "3G3"], ["1G4", "3G4"], ["2G2", "2G6"]] },
+  { date: "2026-06-30 12:00", phase: "Dieciseisavos", matches: [["1G5", "3G5"], ["1G6", "2G5"], ["1G7", "3G6"]] },
+  { date: "2026-07-01 12:00", phase: "Dieciseisavos", matches: [["2G4", "2G8"], ["1G8", "3G7"], ["1G9", "2G10"]] },
+  { date: "2026-07-02 12:00", phase: "Dieciseisavos", matches: [["1G10", "2G9"], ["1G11", "2G12"], ["1G12", "2G11"]] },
+  { date: "2026-07-03 12:00", phase: "Dieciseisavos", matches: [["2G7", "3G8"]] },
   { date: "2026-07-04 15:00", phase: "Octavos", matches: [["Ganador D16-1", "Ganador D16-2"], ["Ganador D16-3", "Ganador D16-4"]] },
   { date: "2026-07-05 15:00", phase: "Octavos", matches: [["Ganador D16-5", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"]] },
   { date: "2026-07-06 15:00", phase: "Octavos", matches: [["Ganador D16-9", "Ganador D16-10"], ["Ganador D16-11", "Ganador D16-12"]] },
@@ -22202,8 +22202,20 @@ function findKnockoutMatch(roundCode, roundMatchNumber) {
 function updateKnockoutCalendar() {
   const qualifiers = getQualifiedTeams();
   knockoutMatches.forEach((match) => {
-    match.home = resolveKnockoutSeed(match.seedHome, qualifiers);
-    match.away = resolveKnockoutSeed(match.seedAway, qualifiers);
+    const nextHome = resolveKnockoutSeed(match.seedHome, qualifiers);
+    const nextAway = resolveKnockoutSeed(match.seedAway, qualifiers);
+    const participantsChanged = match.home !== nextHome || match.away !== nextAway;
+
+    match.home = nextHome;
+    match.away = nextAway;
+
+    if (participantsChanged && getMatchResult(match)) {
+      delete match.homeScore;
+      delete match.awayScore;
+      match.status = "pendiente";
+      delete matchResults[match.id];
+      localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
+    }
   });
 }
 

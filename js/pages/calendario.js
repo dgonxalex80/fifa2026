@@ -1,4 +1,5 @@
 function renderMatches() {
+  updateKnockoutCalendar();
   const status = $("#matchStatusFilter")?.value || "todos";
   const phase = $("#phaseFilter")?.value || "todas";
   const filtered = getCalendarItems().filter((item) =>

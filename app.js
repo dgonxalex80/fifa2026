@@ -22,7 +22,7 @@ const groupStageMatches = [
   { id: 21, date: "2026-06-17 12:00", home: "Portugal", away: "Republica Democratica del Congo", phase: "Grupos", group: "K", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 1, awayScore: 1 },
   { id: 22, date: "2026-06-17 15:00", home: "Inglaterra", away: "Croacia", phase: "Grupos", group: "L", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 4, awayScore: 2 },
   { id: 23, date: "2026-06-17 18:00", home: "Ghana", away: "Panama", phase: "Grupos", group: "L", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 1, awayScore: 0 },
-  { id: 24, date: "2026-06-17 21:00", home: "Uzbekistan", away: "Colombia", phase: "Grupos", group: "K", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
+  { id: 24, date: "2026-06-17 21:00", home: "Uzbekistan", away: "Colombia", phase: "Grupos", group: "K", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 1, awayScore: 3 },
   { id: 25, date: "2026-06-18 11:00", home: "Republica Checa", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
   { id: 26, date: "2026-06-18 14:00", home: "Suiza", away: "Bosnia y Herzegovina", phase: "Grupos", group: "B", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
   { id: 27, date: "2026-06-18 17:00", home: "Canada", away: "Catar", phase: "Grupos", group: "B", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
@@ -214,7 +214,12 @@ const scorers = [
   ["Petar Musa", "Croacia", 1, 0, 90],
   ["Bukayo Saka", "Inglaterra", 0, 1, 90],
   ["Caleb Yirenkyi", "Ghana", 1, 0, 95],
-  ["Brandon Thomas-Asante", "Ghana", 0, 1, 95]
+  ["Brandon Thomas-Asante", "Ghana", 0, 1, 95],
+  ["Daniel Muñoz", "Colombia", 1, 0, 90],
+  ["Jefferson Lerma", "Colombia", 0, 1, 90],
+  ["Abbosbek Fayzullaev", "Uzbekistan", 1, 0, 90],
+  ["Luis Díaz", "Colombia", 1, 0, 90],
+  ["Goleador Colombia por confirmar", "Colombia", 1, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

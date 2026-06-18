@@ -1,4 +1,5 @@
 function renderGroups() {
+  updateKnockoutCalendar();
   const standings = getGroupStandings();
   const qualifiers = getQualifiedTeams(standings);
   const groupMatches = matches.filter((match) => match.phase === "Grupos");

@@ -22101,17 +22101,17 @@ function getQualifiedTeams(standings = getGroupStandings()) {
 
   Object.entries(standings).forEach(([groupCode, table], groupIndex) => {
     const groupNum = groupIndex + 1;
-    qualifiers[`1G${groupNum}`] = table[0]?.team || "";
-    qualifiers[`2G${groupNum}`] = table[1]?.team || "";
-    
-    if (table[2]) {
-      allThirds.push({ ...table[2], groupCode });
-    }
+    const hasResults = table.some((row) => row.played > 0);
+    if (!hasResults) return;
+
+    if (table[0]?.played > 0) qualifiers["1G" + groupNum] = table[0].team;
+    if (table[1]?.played > 0) qualifiers["2G" + groupNum] = table[1].team;
+    if (table[2]?.played > 0) allThirds.push({ ...table[2], groupCode });
   });
 
   const sortedThirds = [...allThirds].sort(compareStandingRows);
   sortedThirds.slice(0, 8).forEach((row, index) => {
-    qualifiers[`3G${index + 1}`] = row.team;
+    qualifiers["3G" + (index + 1)] = row.team;
   });
 
   return qualifiers;
@@ -22121,7 +22121,7 @@ function getThirdsRanking() {
   const standings = getGroupStandings();
   const allThirds = [];
   Object.entries(standings).forEach(([groupCode, table]) => {
-    if (table[2]) {
+    if (table[2]?.played > 0) {
       allThirds.push({ ...table[2], groupCode });
     }
   });

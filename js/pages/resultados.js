@@ -157,6 +157,7 @@ function refreshAfterResultChange(message) {
   if (typeof renderMatches === "function") renderMatches();
   if (typeof renderGroups === "function") renderGroups();
   if (typeof renderBracket === "function") renderBracket();
+  if (typeof renderThirdsRanking === "function") renderThirdsRanking();
   if (typeof renderResultsAdmin === "function") renderResultsAdmin();
 }
 

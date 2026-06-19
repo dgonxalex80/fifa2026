@@ -282,8 +282,8 @@ function imagePathMatchesPlayerName(imagePath, playerNameKeys) {
 function getLocalPlayerImage(player) {
   const playerNameKeys = getPlayerImageNameKeys(player);
   const codeImage = localPlayerImages.byCode?.[player.code] || "";
-  const expectedCodeFile = player.code.replace(/\s+/g, "").toLowerCase();
-  const codeImageFile = getImageComparableName(codeImage).replace(/\s+/g, "").toLowerCase();
+  const expectedCodeFile = player.code.replace(/\s+/g, "").replace(/(\D)0+(\d)/g, "$1$2").toLowerCase();
+  const codeImageFile = getImageComparableName(codeImage).replace(/\s+/g, "").replace(/(\D)0+(\d)/g, "$1$2").toLowerCase();
   if (codeImage && codeImageFile === expectedCodeFile) return codeImage;
 
   const candidates = [

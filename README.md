@@ -120,7 +120,7 @@ La app se opera desde la barra lateral:
 - `Selecciones`: muestra cajas compactas por seleccion con grupo, Proporción de nacidos en el país representado, porcentaje en clubes del exterior, edad promedio y datos destacados.
 - `Jugadores`: muestra fichas individuales estilo Panini con imagenes, codigo, seleccion, edad, estatura, club y posicion.
 - `Historial`: resume mundiales anteriores, campeones, Colombia y marcas historicas.
-- `Llaves`: visualiza el arbol eliminatorio previsto.
+- `Llaves`: muestra un esquema visual dinámico con los 12 grupos, clasificados proyectados, rondas eliminatorias y campeón.
 
 Funciones disponibles:
 
@@ -133,6 +133,7 @@ Funciones disponibles:
 - Exportacion CSV desde el boton `Exportar CSV`.
 - Actualizacion local de resultados reales durante el torneo desde la vista `Resultados`.
 - Generacion de reporte PDF del pronostico desde el navegador usando `Generar PDF`.
+- Esquema dinámico del torneo: se recalcula al cargar, corregir o eliminar resultados.
 - Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
 ## Proporción de nacidos en el país representado

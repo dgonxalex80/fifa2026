@@ -4,6 +4,8 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
+Estado de los datos deportivos: actualizado el 21 de junio de 2026 a las 09:10 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Tunez 0-4 Japon. Los partidos del 21 de junio aun no iniciados permanecen pendientes.
+
 ## Contenido del Proyecto
 
 ```text

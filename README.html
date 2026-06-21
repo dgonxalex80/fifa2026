@@ -83,27 +83,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="fifa-2026-predictor-hub" class="level1">
-<h1>FIFA 2026 Predictor Hub</h1>
-<p>Aplicacion web moderna, responsive e interactiva para seguimiento del Mundial FIFA 2026 y competencias de pronosticos entre usuarios.</p>
-<p>El MVP actual es una app frontend estatica, sin backend ni base de datos real. Incluye datos demo en memoria para mostrar el flujo completo de dashboard, calendario, pronosticos, ranking, analitica, llaves y administracion.</p>
+<section id="fifa-2026-info-hub" class="level1">
+<h1>FIFA 2026 Info Hub</h1>
+<p>Aplicacion web estatica, responsive e informativa para consultar datos del Mundial FIFA 2026: calendario, resultados, posiciones, goleadores, grupos, selecciones, jugadores, historial mundialista, llaves y pronosticos de participantes.</p>
+<p>El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.</p>
+<p>Estado de los datos deportivos: actualizado el 21 de junio de 2026 a las 09:10 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Tunez 0-4 Japon. Los partidos del 21 de junio aun no iniciados permanecen pendientes.</p>
 <section id="contenido-del-proyecto" class="level2">
 <h2 class="anchored" data-anchor-id="contenido-del-proyecto">Contenido del Proyecto</h2>
 <pre class="text"><code>.
 ├── index.html
 ├── styles.css
 ├── app.js
+├── js/
+│   ├── main.js
+│   └── pages/
+│       └── pronostico.js
 ├── Dockerfile
 ├── docker-compose.yml
-├── .dockerignore
 └── docs/
     └── arquitectura.md</code></pre>
 <p>Archivos principales:</p>
 <ul>
-<li><code>index.html</code>: estructura de la aplicacion y las nueve paginas.</li>
+<li><code>index.html</code>: estructura de la aplicacion y paginas informativas.</li>
 <li><code>styles.css</code>: estilos responsive tipo dashboard deportivo.</li>
-<li><code>app.js</code>: datos demo, navegacion, filtros, pronosticos, graficos y exportacion CSV.</li>
-<li><code>docs/arquitectura.md</code>: arquitectura propuesta, base de datos, APIs, wireframes, flujos, MVP, roadmap y modelo de puntuacion.</li>
+<li><code>app.js</code>: datos locales compartidos, calendario, grupos, equipos, jugadores, busqueda global y helpers de torneo.</li>
+<li><code>js/main.js</code>: inicializacion, eventos globales, temas y exportacion CSV por pagina.</li>
+<li><code>js/pages/pronostico.js</code>: flujo de pronostico, guardado local, calculo de clasificados, llaves, CSV y reporte PDF.</li>
+<li><code>docs/arquitectura.md</code>: documentacion tecnica historica del proyecto.</li>
 </ul>
 </section>
 <section id="requisitos" class="level2">
@@ -111,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para ejecutar localmente sin Docker:</p>
 <ul>
 <li>Navegador moderno: Chrome, Edge, Firefox o Safari.</li>
-<li>Opcional: Node.js si quieres levantar un servidor local simple.</li>
+<li>Opcional: Node.js o Python si quieres levantar un servidor local simple.</li>
 </ul>
 <p>Para ejecutar con Docker:</p>
 <ul>
@@ -119,112 +125,167 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Docker Compose v2.</li>
 </ul>
 </section>
-<section id="instalacion" class="level2">
-<h2 class="anchored" data-anchor-id="instalacion">Instalacion</h2>
-<p>Clonar o abrir el repositorio:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/deg/Documentos/PERSONALES/ESCUELA/repository/fifa2026</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>No hay dependencias npm que instalar en el MVP actual, porque la aplicacion usa HTML, CSS y JavaScript puro.</p>
-</section>
 <section id="ejecucion-local" class="level2">
 <h2 class="anchored" data-anchor-id="ejecucion-local">Ejecucion Local</h2>
-<p>Opcion 1: abrir directamente el archivo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> index.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Opcion 2: servir la carpeta con Node.js:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> serve . <span class="at">-l</span> 8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Abrir directamente el archivo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> index.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O servir la carpeta con Node.js:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> serve . <span class="at">-l</span> 8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Luego abrir:</p>
 <pre class="text"><code>http://localhost:8080</code></pre>
-<p>Opcion 3: servir con Python:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> http.server 8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Luego abrir:</p>
-<pre class="text"><code>http://localhost:8080</code></pre>
+<p>O servir con Python:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> http.server 8080</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="publicacion-en-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="publicacion-en-github-pages">Publicacion en GitHub Pages</h2>
+<p>La app puede publicarse como sitio estatico en GitHub Pages porque no requiere servidor ni proceso de build.</p>
+<p>Pasos sugeridos:</p>
+<ol type="1">
+<li>Subir el repositorio a GitHub.</li>
+<li>En GitHub, abrir <code>Settings</code> &gt; <code>Pages</code>.</li>
+<li>En <code>Build and deployment</code>, elegir <code>Deploy from a branch</code>.</li>
+<li>Seleccionar la rama principal y la carpeta raiz <code>/</code>.</li>
+<li>Guardar la configuracion y esperar a que GitHub publique la URL.</li>
+</ol>
+<p>Notas para GitHub Pages:</p>
+<ul>
+<li>El sitio sirve archivos estaticos: <code>index.html</code>, <code>styles.css</code>, <code>app.js</code>, <code>js/</code> e <code>img/</code>.</li>
+<li>El pronostico se guarda en <code>localStorage</code> del navegador del participante.</li>
+<li>El boton <code>Generar PDF</code> abre un reporte imprimible; el participante debe elegir <code>Guardar como PDF</code> en el dialogo de impresion.</li>
+<li>GitHub Pages no puede guardar automaticamente PDFs, CSV ni pronosticos dentro del repositorio. Para almacenamiento centralizado se requeriria un backend o servicio externo.</li>
+</ul>
 </section>
 <section id="ejecucion-con-docker" class="level2">
 <h2 class="anchored" data-anchor-id="ejecucion-con-docker">Ejecucion con Docker</h2>
 <p>Construir la imagen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> fifa2026-predictor .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> fifa2026-info .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ejecutar el contenedor:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8080:80 <span class="at">--name</span> fifa2026-predictor fifa2026-predictor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8080:80 <span class="at">--name</span> fifa2026-info fifa2026-info</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Abrir en el navegador:</p>
 <pre class="text"><code>http://localhost:8080</code></pre>
-<p>Detener el contenedor:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop fifa2026-predictor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="ejecucion-con-docker-compose" class="level2">
-<h2 class="anchored" data-anchor-id="ejecucion-con-docker-compose">Ejecucion con Docker Compose</h2>
-<p>Levantar la aplicacion:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">--build</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Abrir:</p>
-<pre class="text"><code>http://localhost:8080</code></pre>
-<p>Ejecutar en segundo plano:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">--build</span> <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Ver logs:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose logs <span class="at">-f</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Detener:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose down</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="operacion-de-la-app" class="level2">
 <h2 class="anchored" data-anchor-id="operacion-de-la-app">Operacion de la App</h2>
 <p>La app se opera desde la barra lateral:</p>
 <ul>
-<li><code>Inicio</code>: muestra KPIs, cuenta regresiva, proximos partidos, ranking rapido y noticias.</li>
+<li><code>Inicio</code>: KPIs generales, cuenta regresiva, proximos partidos y selecciones con mayor proporción de nacidos en el país representado.</li>
 <li><code>Calendario</code>: lista partidos y permite filtrar por estado y fase.</li>
-<li><code>Pronosticos</code>: permite guardar pronosticos demo con marcador, clasificado y goleador bonus.</li>
-<li><code>Posiciones</code>: muestra tablas por grupo con puntos, diferencia de gol y clasificacion.</li>
-<li><code>Goleadores</code>: presenta jugadores, equipos, goles, asistencias y minutos.</li>
-<li><code>Ranking</code>: muestra participantes, puntos, aciertos, efectividad y tendencia.</li>
-<li><code>Analitica</code>: incluye KPIs, evolucion del ranking, barras por fase y mapa de calor.</li>
-<li><code>Llaves</code>: visualiza el arbol eliminatorio.</li>
-<li><code>Admin</code>: simula carga de resultados, edicion de reglas y actividad del sistema.</li>
+<li><code>Resultados</code>: permite cargar, editar y borrar marcadores finales; recalcula posiciones, clasificados y llaves con guardado local.</li>
+<li><code>Posiciones</code>: muestra tablas por grupo y resumen de rondas eliminatorias.</li>
+<li><code>Pronostico</code>: permite registrar participante, elegir gana local/empate/gana visitante en grupos, calcular clasificados, avanzar por llaves y generar campeon.</li>
+<li><code>Goleadores</code>: presenta tabla de goleadores cuando haya datos disponibles.</li>
+<li><code>Selecciones</code>: muestra cajas compactas por seleccion con grupo, Proporción de nacidos en el país representado, porcentaje en clubes del exterior, edad promedio y datos destacados.</li>
+<li><code>Jugadores</code>: muestra fichas individuales estilo Panini con imagenes, codigo, seleccion, edad, estatura, club y posicion.</li>
+<li><code>Historial</code>: resume mundiales anteriores, campeones, Colombia y marcas historicas.</li>
+<li><code>Llaves</code>: muestra un esquema visual dinámico con los 12 grupos, clasificados proyectados, rondas eliminatorias y campeón.</li>
 </ul>
 <p>Funciones disponibles:</p>
 <ul>
 <li>Navegacion responsive para escritorio y movil.</li>
-<li>Busqueda global conectada al ranking.</li>
+<li>Busqueda global por seleccion, jugador, partido o edicion historica.</li>
 <li>Filtros de calendario por estado y fase.</li>
-<li>Registro de pronosticos en memoria durante la sesion del navegador.</li>
+<li>Filtros de jugadores por seleccion y completitud de datos.</li>
+<li>Resumen por seleccion con Proporción de nacidos en el país representado, porcentaje de jugadores en clubes del exterior, edad promedio, grupo y datos destacados.</li>
+<li>Album de jugadores en tarjetas visuales con filtros por seleccion y completitud de datos.</li>
 <li>Exportacion CSV desde el boton <code>Exportar CSV</code>.</li>
-<li>Graficos renderizados con Canvas.</li>
+<li>Actualizacion local de resultados reales durante el torneo desde la vista <code>Resultados</code>.</li>
+<li>Generacion de reporte PDF del pronostico desde el navegador usando <code>Generar PDF</code>.</li>
+<li>Esquema dinámico del torneo: se recalcula al cargar, corregir o eliminar resultados.</li>
 <li>Selector de temas: clasico, claro, cancha, medianoche y dorado.</li>
 </ul>
+</section>
+<section id="proporción-de-nacidos-en-el-país-representado" class="level2">
+<h2 class="anchored" data-anchor-id="proporción-de-nacidos-en-el-país-representado">Proporción de nacidos en el país representado</h2>
+<p>La vista <code>Selecciones</code> incluye informacion para 48 selecciones. El calculo usa planteles de 26 jugadores:</p>
+<pre class="text"><code>Proporción de nacidos en el país representado = (26 - jugadores no nacidos alli) / 26</code></pre>
+<p>La base usada para la tabla es el dato reproducido por Antorcha Deporte: 1.248 jugadores, 289 no nacidos en el pais que representan y 959 nacidos en el pais representado, equivalentes a 76,85%.</p>
+</section>
+<section id="fuentes-de-jugadores" class="level2">
+<h2 class="anchored" data-anchor-id="fuentes-de-jugadores">Fuentes de Jugadores</h2>
+<p>Las fichas de jugadores combinan datos locales del album con detalles enriquecidos desde Wikidata y fotos de Wikimedia Commons. Los registros genericos como <code>Jugador por confirmar</code> se mantienen pendientes porque no tienen una identidad verificable para consultar.</p>
+<p>Fuentes usadas:</p>
+<ul>
+<li>Wikidata API: https://www.wikidata.org/w/api.php</li>
+<li>Wikimedia Commons <code>Special:FilePath</code>: https://commons.wikimedia.org/wiki/Special:FilePath</li>
+</ul>
+<p>Control de pendientes:</p>
+<ul>
+<li><code>jugadores_datos_pendientes.csv</code>: listado auditable de fichas que aun tienen campos incompletos.</li>
+<li>La edad no se captura manualmente: se calcula desde <code>birthDate</code>; si falta fecha de nacimiento, tambien queda pendiente la edad.</li>
+<li>Estado actual del control: 577 fichas incompletas; 551 sin fecha de nacimiento/edad, 562 sin estatura, 5 sin club confirmado y 0 sin posicion.</li>
+</ul>
+</section>
+<section id="pronostico-y-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="pronostico-y-pdf">Pronostico y PDF</h2>
+<p>La vista <code>Pronostico</code> esta pensada para funcionar en GitHub Pages sin backend:</p>
+<ol type="1">
+<li>Abrir <code>Pronostico</code> desde la barra lateral.</li>
+<li>Escribir participante, correo o identificador y goleador.</li>
+<li>En cada partido de grupos marcar una sola opcion: gana local, empate o gana visitante. No se ingresan marcadores.</li>
+<li>Cuando todos los partidos de grupos tienen seleccion, la app calcula clasificados y muestra las llaves.</li>
+<li>En cada cruce eliminatorio marcar solo el ganador hasta llegar al campeon.</li>
+<li>Presionar <code>Guardar pronostico</code> para dejarlo almacenado en el navegador.</li>
+<li>Presionar <code>Generar PDF</code> para abrir el reporte imprimible. En el dialogo del navegador elegir <code>Guardar como PDF</code> o la impresora PDF equivalente.</li>
+</ol>
+<p>Importante para GitHub Pages: la app es estatica y no puede escribir archivos dentro del repositorio ni guardar PDFs en el servidor. El PDF se genera y se guarda desde el navegador del participante.</p>
 </section>
 <section id="exportaciones" class="level2">
 <h2 class="anchored" data-anchor-id="exportaciones">Exportaciones</h2>
 <p>El boton <code>Exportar CSV</code> descarga datos segun la pagina activa:</p>
 <ul>
-<li>En <code>Ranking</code>, exporta usuarios, puntos, aciertos y efectividad.</li>
-<li>En las demas paginas, exporta informacion base del calendario demo.</li>
+<li>En <code>Selecciones</code>, exporta el resumen por seleccion: grupo, conteo de nacidos en el pais representado, no nacidos alli, Proporción de nacidos en el país representado, porcentaje en clubes del exterior, edad promedio, posicion mas frecuente y club mas repetido.</li>
+<li>En <code>Jugadores</code>, exporta las fichas filtradas de jugadores.</li>
+<li>En <code>Historial</code>, exporta datos historicos de mundiales.</li>
+<li>En <code>Pronostico</code>, exporta participante, identificador, campeon, goleador, selecciones de grupos, llaves y ganadores.</li>
+<li>En las demas paginas, exporta informacion base del calendario.</li>
 </ul>
-<p>Los reportes PDF y Excel estan documentados como funcionalidad futura en <code>docs/arquitectura.md</code>.</p>
+</section>
+<section id="actualizacion-continua-del-torneo" class="level2">
+<h2 class="anchored" data-anchor-id="actualizacion-continua-del-torneo">Actualizacion Continua del Torneo</h2>
+<p>En este proyecto, cuando se solicite <code>actualizar</code>, significa dejar la web al dia hasta la fecha y hora del pedido. La actualizacion debe realizarse buscando en internet los resultados reales del Mundial FIFA 2026 y contrastando la informacion con fuentes actuales, preferiblemente FIFA.com u otras fuentes deportivas confiables. La actualizacion debe cubrir cuatro frentes:</p>
+<ul>
+<li>Registrar los marcadores finales de todos los partidos ya disputados segun la programacion.</li>
+<li>Actualizar la tabla de goleadores con los goles acumulados hasta ese momento.</li>
+<li>Recalcular y actualizar la tabla de posiciones de los equipos por grupo y, cuando aplique, las llaves eliminatorias.</li>
+<li>Revisar los proximos partidos del calendario para que los pendientes aparezcan primero en Inicio y los ya finalizados sigan visibles despues de los proximos.</li>
+</ul>
+<p>La vista <code>Resultados</code> permite actualizar el torneo a medida que se juegan los partidos:</p>
+<ol type="1">
+<li>Abrir <code>Resultados</code> desde la barra lateral.</li>
+<li>Buscar o filtrar por fase, grupo o estado.</li>
+<li>Escribir goles de local y visitante.</li>
+<li>Presionar <code>Guardar</code> en el partido correspondiente.</li>
+<li>La app actualiza calendario, posiciones y llaves automaticamente.</li>
+<li>Para corregir un marcador, modificar los goles y volver a presionar <code>Guardar</code>.</li>
+<li>Para eliminar un resultado, usar <code>Limpiar</code>; para reiniciar todo, usar <code>Borrar resultados</code>.</li>
+</ol>
+<p>En eliminatorias no se aceptan empates porque la llave necesita un ganador para avanzar. En GitHub Pages estos resultados quedan guardados en <code>localStorage</code> del navegador; no se suben al repositorio ni se comparten entre dispositivos.</p>
 </section>
 <section id="datos-y-persistencia" class="level2">
 <h2 class="anchored" data-anchor-id="datos-y-persistencia">Datos y Persistencia</h2>
 <p>El MVP usa datos locales definidos en <code>app.js</code>.</p>
 <p>Actualmente:</p>
 <ul>
-<li>No hay autenticacion real.</li>
+<li>No hay autenticacion.</li>
 <li>No hay base de datos.</li>
 <li>No hay API REST conectada.</li>
-<li>Los pronosticos se pierden al recargar la pagina.</li>
+<li>Los pronosticos se guardan en <code>localStorage</code> del navegador. Si el participante cambia de equipo, navegador o borra datos del sitio, debe conservar el CSV o PDF generado.</li>
+<li>Los resultados reales cargados desde <code>Resultados</code> tambien se guardan en <code>localStorage</code> con la clave <code>fifa2026-results</code>.</li>
 </ul>
-<p>La arquitectura propuesta para produccion contempla PostgreSQL, API REST, JWT, Socket.io, workers y exportaciones asincronas.</p>
 </section>
 <section id="desarrollo" class="level2">
 <h2 class="anchored" data-anchor-id="desarrollo">Desarrollo</h2>
 <p>Editar los archivos principales:</p>
 <pre class="text"><code>index.html
 styles.css
-app.js</code></pre>
+app.js
+js/main.js
+js/pages/pronostico.js</code></pre>
 <p>Verificar sintaxis JavaScript:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--check</span> app.js</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Recomendacion para evolucionar el MVP:</p>
-<ol type="1">
-<li>Migrar el frontend a Next.js.</li>
-<li>Crear una API REST con Node.js/Express.</li>
-<li>Agregar PostgreSQL y migraciones.</li>
-<li>Implementar autenticacion JWT.</li>
-<li>Extraer el motor de puntuacion a un modulo probado.</li>
-<li>Agregar Socket.io para ranking y resultados en tiempo real.</li>
-</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--check</span> app.js</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--check</span> js/main.js</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--check</span> js/pages/pronostico.js</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Para probar el PDF localmente, servir la carpeta con HTTP, abrir <code>Pronostico</code>, completar datos de ejemplo y usar <code>Generar PDF</code>. Algunos navegadores bloquean ventanas emergentes; si ocurre, habilitarlas para el sitio local o para la URL de GitHub Pages.</p>
 </section>
 <section id="docker-en-produccion" class="level2">
 <h2 class="anchored" data-anchor-id="docker-en-produccion">Docker en Produccion</h2>
@@ -234,27 +295,6 @@ app.js</code></pre>
 <li>Usar un reverse proxy o balanceador.</li>
 <li>Agregar headers de seguridad.</li>
 <li>Versionar la imagen con tags semanticos.</li>
-<li>Externalizar futuras variables de entorno del backend.</li>
-</ul>
-<p>Ejemplo de build versionado:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> fifa2026-predictor:0.1.0 .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="documentacion-tecnica" class="level2">
-<h2 class="anchored" data-anchor-id="documentacion-tecnica">Documentacion Tecnica</h2>
-<p>Consultar:</p>
-<pre class="text"><code>docs/arquitectura.md</code></pre>
-<p>Incluye:</p>
-<ul>
-<li>Arquitectura completa.</li>
-<li>Diseno de base de datos.</li>
-<li>Wireframes.</li>
-<li>Estructura de carpetas propuesta.</li>
-<li>APIs necesarias.</li>
-<li>Flujo de usuarios.</li>
-<li>Propuesta visual.</li>
-<li>MVP inicial.</li>
-<li>Roadmap de desarrollo.</li>
-<li>Modelo de puntuacion configurable.</li>
 </ul>
 </section>
 </section>

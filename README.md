@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: actualizado el 21 de junio de 2026 a las 22:03 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Nueva Zelanda 1-3 Egipto.
+Estado de los datos deportivos: actualizado el 22 de junio de 2026 a las 17:54 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Argentina 2-0 Austria. Francia-Irak seguia en juego a la hora del corte y permanece pendiente hasta disponer de su resultado final.
 
 ## Contenido del Proyecto
 

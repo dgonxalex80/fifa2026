@@ -35,10 +35,10 @@ const groupStageMatches = [
   { id: 34, date: "2026-06-20 12:00", home: "Paises Bajos", away: "Suecia", phase: "Grupos", group: "F", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 5, awayScore: 1 },
   { id: 35, date: "2026-06-20 15:00", home: "Alemania", away: "Costa de Marfil", phase: "Grupos", group: "E", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 2, awayScore: 1 },
   { id: 36, date: "2026-06-20 19:00", home: "Ecuador", away: "Curazao", phase: "Grupos", group: "E", stadium: "Kansas City Stadium", city: "Kansas City", status: "finalizado", homeScore: 0, awayScore: 0 },
-  { id: 37, date: "2026-06-21 11:00", home: "Espana", away: "Arabia Saudita", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
-  { id: 38, date: "2026-06-21 14:00", home: "Belgica", away: "Iran", phase: "Grupos", group: "G", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
-  { id: 39, date: "2026-06-21 17:00", home: "Uruguay", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Miami Stadium", city: "Miami", status: "pendiente" },
-  { id: 40, date: "2026-06-21 20:00", home: "Nueva Zelanda", away: "Egipto", phase: "Grupos", group: "G", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
+  { id: 37, date: "2026-06-21 11:00", home: "Espana", away: "Arabia Saudita", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 4, awayScore: 0 },
+  { id: 38, date: "2026-06-21 14:00", home: "Belgica", away: "Iran", phase: "Grupos", group: "G", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "finalizado", homeScore: 0, awayScore: 0 },
+  { id: 39, date: "2026-06-21 17:00", home: "Uruguay", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Miami Stadium", city: "Miami", status: "finalizado", homeScore: 2, awayScore: 2 },
+  { id: 40, date: "2026-06-21 20:00", home: "Nueva Zelanda", away: "Egipto", phase: "Grupos", group: "G", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 1, awayScore: 3 },
   { id: 41, date: "2026-06-22 12:00", home: "Argentina", away: "Austria", phase: "Grupos", group: "J", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
   { id: 42, date: "2026-06-22 16:00", home: "Francia", away: "Irak", phase: "Grupos", group: "I", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "pendiente" },
   { id: 43, date: "2026-06-22 19:00", home: "Noruega", away: "Senegal", phase: "Grupos", group: "I", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "pendiente" },
@@ -74,19 +74,19 @@ const groupStageMatches = [
 ];
 
 const knockoutSchedule = [
-  { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["1G1", "3G1"], ["2G1", "2G3"], ["1G2", "3G2"]] },
-  { date: "2026-06-29 12:00", phase: "Dieciseisavos", matches: [["1G3", "3G3"], ["1G4", "3G4"], ["2G2", "2G6"]] },
-  { date: "2026-06-30 12:00", phase: "Dieciseisavos", matches: [["1G5", "3G5"], ["1G6", "2G5"], ["1G7", "3G6"]] },
-  { date: "2026-07-01 12:00", phase: "Dieciseisavos", matches: [["2G4", "2G8"], ["1G8", "3G7"], ["1G9", "2G10"]] },
-  { date: "2026-07-02 12:00", phase: "Dieciseisavos", matches: [["1G10", "2G9"], ["1G11", "2G12"], ["1G12", "2G11"]] },
-  { date: "2026-07-03 12:00", phase: "Dieciseisavos", matches: [["2G7", "3G8"]] },
-  { date: "2026-07-04 15:00", phase: "Octavos", matches: [["Ganador D16-1", "Ganador D16-2"], ["Ganador D16-3", "Ganador D16-4"]] },
-  { date: "2026-07-05 15:00", phase: "Octavos", matches: [["Ganador D16-5", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"]] },
-  { date: "2026-07-06 15:00", phase: "Octavos", matches: [["Ganador D16-9", "Ganador D16-10"], ["Ganador D16-11", "Ganador D16-12"]] },
-  { date: "2026-07-07 15:00", phase: "Octavos", matches: [["Ganador D16-13", "Ganador D16-14"], ["Ganador D16-15", "Ganador D16-16"]] },
-  { date: "2026-07-09 17:00", phase: "Cuartos", matches: [["Ganador OF1", "Ganador OF2"], ["Ganador OF3", "Ganador OF4"]] },
+  { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["2G1", "2G2"]] },
+  { date: "2026-06-29 12:00", phase: "Dieciseisavos", matches: [["1G5", "3G_ABCDF"], ["1G6", "2G3"], ["1G3", "2G6"]] },
+  { date: "2026-06-30 12:00", phase: "Dieciseisavos", matches: [["1G9", "3G_CDFGH"], ["2G5", "2G9"], ["1G1", "3G_CEFHI"]] },
+  { date: "2026-07-01 12:00", phase: "Dieciseisavos", matches: [["1G12", "3G_EHIJK"], ["1G4", "3G_BEFIJ"], ["1G7", "3G_AEHIJ"]] },
+  { date: "2026-07-02 12:00", phase: "Dieciseisavos", matches: [["2G11", "2G12"], ["1G8", "2G10"], ["1G2", "3G_EFGIJ"]] },
+  { date: "2026-07-03 12:00", phase: "Dieciseisavos", matches: [["1G10", "2G8"], ["1G11", "3G_DEIJL"], ["2G4", "2G7"]] },
+  { date: "2026-07-04 15:00", phase: "Octavos", matches: [["Ganador D16-2", "Ganador D16-5"], ["Ganador D16-1", "Ganador D16-3"]] },
+  { date: "2026-07-05 15:00", phase: "Octavos", matches: [["Ganador D16-4", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"]] },
+  { date: "2026-07-06 15:00", phase: "Octavos", matches: [["Ganador D16-11", "Ganador D16-12"], ["Ganador D16-9", "Ganador D16-10"]] },
+  { date: "2026-07-07 15:00", phase: "Octavos", matches: [["Ganador D16-14", "Ganador D16-16"], ["Ganador D16-13", "Ganador D16-15"]] },
+  { date: "2026-07-09 17:00", phase: "Cuartos", matches: [["Ganador OF1", "Ganador OF2"]] },
   { date: "2026-07-10 17:00", phase: "Cuartos", matches: [["Ganador OF5", "Ganador OF6"]] },
-  { date: "2026-07-11 17:00", phase: "Cuartos", matches: [["Ganador OF7", "Ganador OF8"]] },
+  { date: "2026-07-11 17:00", phase: "Cuartos", matches: [["Ganador OF3", "Ganador OF4"], ["Ganador OF7", "Ganador OF8"]] },
   { date: "2026-07-14 19:00", phase: "Semifinal", matches: [["Ganador CF1", "Ganador CF2"]] },
   { date: "2026-07-15 19:00", phase: "Semifinal", matches: [["Ganador CF3", "Ganador CF4"]] },
   { date: "2026-07-18 17:00", phase: "Tercer puesto", matches: [["Perdedor SF1", "Perdedor SF2"]] },
@@ -150,6 +150,12 @@ const flags = {
 
 
 const scorers = [
+  ["Finn Surman", "Nueva Zelanda", 1, 0, 90],
+  ["Mostafa Zico", "Egipto", 1, 0, 90],
+  ["Mohamed Salah", "Egipto", 1, 0, 90],
+  ["Trezeguet", "Egipto", 1, 0, 90],
+  ["Mikel Oyarzabal", "Espana", 2, 1, 45],
+  ["Lamine Yamal", "Espana", 1, 0, 45],
   ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
   ["Kai Havertz", "Alemania", 2, 0, 90],
   ["Yasin Ayari", "Suecia", 2, 0, 96],
@@ -166,7 +172,10 @@ const scorers = [
   ["Iliman Ndiaye", "Senegal", 0, 1, 14],
   ["Emam Ashour", "Egipto", 1, 0, 19],
   ["Abdulelah Al-Amri", "Arabia Saudita", 1, 0, 90],
-  ["Maxi Araujo", "Uruguay", 1, 0, 90],
+  ["Maxi Araujo", "Uruguay", 2, 1, 180],
+  ["Agustin Canobbio", "Uruguay", 1, 0, 90],
+  ["Kevin Pina", "Cabo Verde", 1, 0, 90],
+  ["Helio Varela", "Cabo Verde", 1, 0, 90],
   ["Ramin Rezaeian", "Iran", 1, 0, 90],
   ["Mohammad Mohebi", "Iran", 1, 0, 90],
   ["Chris Wood", "Nueva Zelanda", 0, 1, 90],
@@ -177,7 +186,7 @@ const scorers = [
   ["Virgil van Dijk", "Paises Bajos", 1, 0, 90],
   ["Amad Diallo", "Costa de Marfil", 1, 0, 90],
   ["Keito Nakamura", "Japon", 1, 0, 90],
-  ["Crysencio Summerville", "Paises Bajos", 2, 0, 135],
+  ["Crysencio Summerville", "Paises Bajos", 2, 1, 135],
   ["Brian Brobbey", "Paises Bajos", 2, 0, 72],
   ["Cody Gakpo", "Paises Bajos", 2, 1, 180],
   ["Anthony Elanga", "Suecia", 1, 0, 36],
@@ -22174,17 +22183,7 @@ function getSeedLabel(seed) {
 function resolveKnockoutSeed(seed, qualifiers) {
   if (qualifiers[seed]) return qualifiers[seed];
 
-  // Mapeo de placeholders de mejores terceros (3G_ABC, etc) a la posicion en el ranking
-  const thirdPlaceMapping = {
-    "3G_ABC": "3G1",
-    "3G_DEF": "3G2",
-    "3G_GHI": "3G3",
-    "3G_JKL": "3G4",
-    "3G_MNO": "3G5" // Expandible segun necesites en data.js
-  };
 
-  const effectiveSeed = thirdPlaceMapping[seed] || seed;
-  if (qualifiers[effectiveSeed]) return qualifiers[effectiveSeed];
   if (/^[123]G\d+$/.test(seed) || /^3G_[A-Z]+$/.test(seed)) return getSeedLabel(seed);
 
   const winnerMatch = seed.match(/^Ganador (D16|OF|CF|SF)-?(\d+)$/);

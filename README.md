@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: actualizado el 21 de junio de 2026 a las 09:10 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Tunez 0-4 Japon. Los partidos del 21 de junio aun no iniciados permanecen pendientes.
+Estado de los datos deportivos: actualizado el 21 de junio de 2026 a las 22:03 (hora Colombia), con todos los marcadores y goleadores confirmados hasta Nueva Zelanda 1-3 Egipto.
 
 ## Contenido del Proyecto
 
@@ -135,7 +135,7 @@ Funciones disponibles:
 - Exportacion CSV desde el boton `Exportar CSV`.
 - Actualizacion local de resultados reales durante el torneo desde la vista `Resultados`.
 - Generacion de reporte PDF del pronostico desde el navegador usando `Generar PDF`.
-- Esquema dinámico del torneo: se recalcula al cargar, corregir o eliminar resultados.
+- Esquema dinamico del torneo: usa los cruces oficiales FIFA de los partidos 73 a 104 y recalcula las proyecciones al cargar, corregir o eliminar resultados. Mientras la fase de grupos siga abierta, los cruces contra mejores terceros muestran los grupos de origen permitidos en lugar de asignar un rival definitivo.
 - Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
 ## Proporción de nacidos en el país representado

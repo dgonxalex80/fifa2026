@@ -59,7 +59,7 @@ function renderAllTimeScorers() {
 }
 
 function renderScorers() {
-  const orderedScorers = [...scorers].sort((a, b) =>
+  const orderedScorers = scorers.filter((row) => row[2] > 0).sort((a, b) =>
     b[2] - a[2] ||
     b[3] - a[3] ||
     a[4] - b[4] ||

@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: actualizado el 23 de junio de 2026 a las 00:05 (hora Colombia), con marcadores y goleadores confirmados hasta Francia 3-0 Irak y Noruega 3-2 Senegal. Jordania-Argelia seguia en vivo a la hora del corte, con Jordania 1-0 al descanso, y permanece pendiente hasta disponer de su resultado final.
+Estado de los datos deportivos: actualizado el 23 de junio de 2026 a las 17:30 (hora Colombia), con marcadores y goleadores confirmados hasta Jordania 1-2 Argelia, Portugal 5-0 Uzbekistan e Inglaterra 0-0 Ghana. Panama-Croacia y Colombia-RD Congo permanecen pendientes hasta disponer de resultado final confirmado.
 
 ## Contenido del Proyecto
 

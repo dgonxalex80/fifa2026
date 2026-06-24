@@ -47,8 +47,8 @@ const groupStageMatches = [
   { id: 46, date: "2026-06-23 15:00", home: "Inglaterra", away: "Ghana", phase: "Grupos", group: "L", stadium: "Boston Stadium", city: "Boston", status: "finalizado", homeScore: 0, awayScore: 0 },
   { id: 47, date: "2026-06-23 18:00", home: "Panama", away: "Croacia", phase: "Grupos", group: "L", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 0, awayScore: 1 },
   { id: 48, date: "2026-06-23 21:00", home: "Colombia", away: "Republica Democratica del Congo", phase: "Grupos", group: "K", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "finalizado", homeScore: 1, awayScore: 0 },
-  { id: 49, date: "2026-06-24 14:00", home: "Suiza", away: "Canada", phase: "Grupos", group: "B", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
-  { id: 50, date: "2026-06-24 14:00", home: "Bosnia y Herzegovina", away: "Catar", phase: "Grupos", group: "B", stadium: "Seattle Stadium", city: "Seattle", status: "pendiente" },
+  { id: 49, date: "2026-06-24 14:00", home: "Suiza", away: "Canada", phase: "Grupos", group: "B", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 2, awayScore: 1 },
+  { id: 50, date: "2026-06-24 14:00", home: "Bosnia y Herzegovina", away: "Catar", phase: "Grupos", group: "B", stadium: "Seattle Stadium", city: "Seattle", status: "finalizado", homeScore: 3, awayScore: 1 },
   { id: 51, date: "2026-06-24 17:00", home: "Escocia", away: "Brasil", phase: "Grupos", group: "C", stadium: "Miami Stadium", city: "Miami", status: "pendiente" },
   { id: 52, date: "2026-06-24 17:00", home: "Marruecos", away: "Haiti", phase: "Grupos", group: "C", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
   { id: 53, date: "2026-06-24 20:00", home: "Republica Checa", away: "Mexico", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "pendiente" },
@@ -253,10 +253,13 @@ const scorers = [
   ["Goleador Colombia por confirmar", "Colombia", 1, 0, 90],
   ["Lukas Sadilek", "Republica Checa", 1, 0, 90],
   ["Teboho Mokoena", "Sudafrica", 1, 0, 90],
-  ["Johan Manzambi", "Suiza", 2, 0, 90],
-  ["Ruben Vargas", "Suiza", 1, 0, 90],
+  ["Johan Manzambi", "Suiza", 3, 0, 90],
+  ["Ruben Vargas", "Suiza", 2, 0, 90],
   ["Granit Xhaka", "Suiza", 1, 0, 90],
-  ["Mahmic", "Bosnia y Herzegovina", 1, 0, 90]
+  ["Promise David", "Canada", 1, 0, 90],
+  ["Kerim Alajbegovic", "Bosnia y Herzegovina", 1, 0, 90],
+  ["Mahmic", "Bosnia y Herzegovina", 2, 0, 90],
+  ["Hassan Al Haydos", "Catar", 1, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

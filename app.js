@@ -1,3 +1,5 @@
+const tournamentDataCutoffLabel = "25 de junio de 2026, 18:07 (hora Colombia)";
+
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
   { id: 2, date: "2026-06-11 21:00", home: "Corea del Sur", away: "Republica Checa", phase: "Grupos", group: "A", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "finalizado", homeScore: 2, awayScore: 1 },
@@ -53,8 +55,8 @@ const groupStageMatches = [
   { id: 52, date: "2026-06-24 17:00", home: "Marruecos", away: "Haiti", phase: "Grupos", group: "C", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 4, awayScore: 2 },
   { id: 53, date: "2026-06-24 20:00", home: "Republica Checa", away: "Mexico", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 0, awayScore: 3 },
   { id: 54, date: "2026-06-24 20:00", home: "Sudafrica", away: "Corea del Sur", phase: "Grupos", group: "A", stadium: "Estadio Monterrey", city: "Monterrey", status: "finalizado", homeScore: 1, awayScore: 0 },
-  { id: 55, date: "2026-06-25 15:00", home: "Ecuador", away: "Alemania", phase: "Grupos", group: "E", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "pendiente" },
-  { id: 56, date: "2026-06-25 15:00", home: "Curazao", away: "Costa de Marfil", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "pendiente" },
+  { id: 55, date: "2026-06-25 15:00", home: "Ecuador", away: "Alemania", phase: "Grupos", group: "E", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 2, awayScore: 1 },
+  { id: 56, date: "2026-06-25 15:00", home: "Curazao", away: "Costa de Marfil", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 0, awayScore: 2 },
   { id: 57, date: "2026-06-25 18:00", home: "Tunez", away: "Paises Bajos", phase: "Grupos", group: "F", stadium: "Kansas City Stadium", city: "Kansas City", status: "pendiente" },
   { id: 58, date: "2026-06-25 18:00", home: "Japon", away: "Suecia", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
   { id: 59, date: "2026-06-25 21:00", home: "Turquia", away: "Estados Unidos", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
@@ -266,7 +268,11 @@ const scorers = [
   ["Wilson Isidor", "Haiti", 1, 0, 90],
   ["Mateo Chavez", "Mexico", 1, 0, 90],
   ["Alvaro Fidalgo", "Mexico", 1, 0, 90],
-  ["Thapelo Maseko", "Sudafrica", 1, 0, 90]
+  ["Thapelo Maseko", "Sudafrica", 1, 0, 90],
+  ["Leroy Sane", "Alemania", 1, 0, 90],
+  ["Nilson Angulo", "Ecuador", 1, 0, 90],
+  ["Gonzalo Plata", "Ecuador", 1, 0, 90],
+  ["Nicolas Pépé", "Costa de Marfil", 2, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

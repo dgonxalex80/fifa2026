@@ -58,11 +58,7 @@ function renderBracket() {
   const champion = finalMatch ? getWinner(finalMatch) : "Campeon por definir";
   const startedGroups = Object.values(standings).filter((rows) => rows.some((row) => row.played > 0)).length;
   const closedGroups = Object.values(standings).filter(isGroupComplete).length;
-  const updatedAt = new Intl.DateTimeFormat("es-CO", {
-    dateStyle: "long",
-    timeStyle: "short",
-    timeZone: "America/Bogota"
-  }).format(new Date());
+  const updatedAt = typeof tournamentDataCutoffLabel === "string" ? tournamentDataCutoffLabel : "corte de datos no disponible";
 
   document.querySelector("#bracket").innerHTML = `
     <section class="bracket-poster" aria-label="Esquema dinámico del Mundial 2026">

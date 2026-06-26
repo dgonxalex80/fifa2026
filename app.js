@@ -22179,8 +22179,7 @@ function getQualifiedTeams(standings = getGroupStandings()) {
   return qualifiers;
 }
 
-function getThirdsRanking() {
-  const standings = getGroupStandings();
+function getThirdsRanking(standings = getGroupStandings()) {
   const allThirds = [];
   Object.entries(standings).forEach(([groupCode, table]) => {
     if (table[2]?.played > 0) {
@@ -22188,6 +22187,17 @@ function getThirdsRanking() {
     }
   });
   return allThirds.sort(compareStandingRows);
+}
+
+function resolveThirdPlaceGroupSeed(seed, standings = getGroupStandings(), usedThirdGroups = new Set()) {
+  const thirdPlaceGroupSeed = seed.match(/^3G_([A-Z]+)$/);
+  if (!thirdPlaceGroupSeed) return "";
+  const allowedGroups = new Set(thirdPlaceGroupSeed[1].split(""));
+  const candidate = getThirdsRanking(standings)
+    .filter((row) => allowedGroups.has(row.groupCode) && !usedThirdGroups.has(row.groupCode))[0];
+  if (!candidate) return "";
+  usedThirdGroups.add(candidate.groupCode);
+  return candidate.team;
 }
 
 function getSeedLabel(seed) {
@@ -22206,9 +22216,11 @@ function getSeedLabel(seed) {
   return seed;
 }
 
-function resolveKnockoutSeed(seed, qualifiers) {
+function resolveKnockoutSeed(seed, qualifiers, usedThirdGroups = new Set(), standings = getGroupStandings()) {
   if (qualifiers[seed]) return qualifiers[seed];
 
+  const thirdPlaceTeam = resolveThirdPlaceGroupSeed(seed, standings, usedThirdGroups);
+  if (thirdPlaceTeam) return thirdPlaceTeam;
 
   if (/^[123]G\d+$/.test(seed) || /^3G_[A-Z]+$/.test(seed)) return getSeedLabel(seed);
 
@@ -22237,10 +22249,12 @@ function findKnockoutMatch(roundCode, roundMatchNumber) {
 }
 
 function updateKnockoutCalendar() {
-  const qualifiers = getQualifiedTeams();
+  const standings = getGroupStandings();
+  const qualifiers = getQualifiedTeams(standings);
+  const usedThirdGroups = new Set();
   knockoutMatches.forEach((match) => {
-    const nextHome = resolveKnockoutSeed(match.seedHome, qualifiers);
-    const nextAway = resolveKnockoutSeed(match.seedAway, qualifiers);
+    const nextHome = resolveKnockoutSeed(match.seedHome, qualifiers, usedThirdGroups, standings);
+    const nextAway = resolveKnockoutSeed(match.seedAway, qualifiers, usedThirdGroups, standings);
     const participantsChanged = match.home !== nextHome || match.away !== nextAway;
 
     match.home = nextHome;

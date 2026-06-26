@@ -136,18 +136,7 @@ function renderPredictions() {
 function renderPredictionBoard(prediction = readPrediction()) {
   const container = $("#predictionFixtures");
   if (!container) return;
-  const selectedGroup = $("#predictionGroupFilter")?.value || "todos";
-  const filtered = getPredictionMatches().filter((match) => selectedGroup === "todos" || match.group === selectedGroup);
-
-  container.innerHTML = `
-    <section class="prediction-section">
-      <div class="prediction-fixture-list">
-        ${filtered.map((match) => renderPredictionGroupMatch(match, prediction)).join("")}
-      </div>
-    </section>
-    ${renderPredictionStandings(prediction)}
-    ${renderPredictionKnockout(prediction)}
-  `;
+  container.innerHTML = renderPredictionKnockout(prediction);
 }
 
 function renderPredictionGroupMatch(match, prediction) {
@@ -180,93 +169,8 @@ function renderPredictionChoice(stage, key, outcome, label, selected) {
   `;
 }
 
-function getPredictionStandings(prediction = readPrediction()) {
-  const standings = Object.fromEntries(Object.entries(groups).map(([groupCode, rows]) => [
-    groupCode,
-    rows.map(([team]) => ({ team, played: 0, won: 0, drawn: 0, lost: 0, points: 0 }))
-  ]));
-
-  getPredictionMatches().forEach((match) => {
-    const outcome = prediction.matches[String(match.id)]?.outcome;
-    if (!predictionOutcomes.includes(outcome)) return;
-    const table = standings[match.group];
-    const home = table?.find((row) => row.team === match.home);
-    const away = table?.find((row) => row.team === match.away);
-    if (!home || !away) return;
-
-    home.played += 1;
-    away.played += 1;
-    if (outcome === "home") {
-      home.won += 1;
-      away.lost += 1;
-      home.points += 3;
-    } else if (outcome === "away") {
-      away.won += 1;
-      home.lost += 1;
-      away.points += 3;
-    } else {
-      home.drawn += 1;
-      away.drawn += 1;
-      home.points += 1;
-      away.points += 1;
-    }
-  });
-
-  Object.values(standings).forEach((table) => table.sort(comparePredictionRows));
-  return standings;
-}
-
-function comparePredictionRows(a, b) {
-  return b.points - a.points || b.won - a.won || b.drawn - a.drawn || a.team.localeCompare(b.team);
-}
-
-function getPredictionQualifiers(prediction = readPrediction()) {
-  const standings = getPredictionStandings(prediction);
-  const qualifiers = {};
-  const thirdPlaced = [];
-
-  Object.entries(standings).forEach(([groupCode, table], groupIndex) => {
-    const complete = table.every((row) => row.played === 3);
-    if (!complete) return;
-    qualifiers[`1G${groupIndex + 1}`] = table[0]?.team || "";
-    qualifiers[`2G${groupIndex + 1}`] = table[1]?.team || "";
-    if (table[2]) thirdPlaced.push({ ...table[2], groupCode });
-  });
-
-  if (thirdPlaced.length === Object.keys(groups).length) {
-    thirdPlaced
-      .sort(comparePredictionRows)
-      .slice(0, 8)
-      .forEach((row, index) => {
-        qualifiers[`3G${index + 1}`] = row.team;
-      });
-  }
-
-  return qualifiers;
-}
-
-function renderPredictionStandings(prediction = readPrediction()) {
-  const standings = getPredictionStandings(prediction);
-  return `
-    <section class="prediction-section prediction-standings-section">
-      <div class="panel-head prediction-subhead">
-        <h3>Clasificados segun pronostico</h3>
-        <span class="status-pill">Grupos</span>
-      </div>
-      <div class="prediction-standings-grid">
-        ${Object.entries(standings).map(([group, rows]) => `
-          <article class="prediction-standing-card">
-            <strong>Grupo ${group}</strong>
-            ${rows.map((row, index) => `
-              <span class="prediction-standing-row${index < 2 ? " qualified" : index === 2 ? " third-place" : ""}">
-                <b>${index + 1}</b>${teamLabel(row.team)}<small>${row.points} pts</small>
-              </span>
-            `).join("")}
-          </article>
-        `).join("")}
-      </div>
-    </section>
-  `;
+function getPredictionQualifiers() {
+  return getQualifiedTeams(getGroupStandings());
 }
 
 function phaseCode(phase) {
@@ -274,7 +178,9 @@ function phaseCode(phase) {
 }
 
 function getPredictedKnockoutRounds(prediction = readPrediction()) {
-  const qualifiers = getPredictionQualifiers(prediction);
+  const standings = getGroupStandings();
+  const qualifiers = getPredictionQualifiers();
+  const usedThirdGroups = new Set();
   const winners = {};
   const losers = {};
   const phaseOrder = ["Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final"];
@@ -286,21 +192,34 @@ function getPredictedKnockoutRounds(prediction = readPrediction()) {
       .flatMap((round) => round.matches);
     const roundMatches = scheduledMatches.map(([seedHome, seedAway], index) => {
       const key = `${code}-${index + 1}`;
-      const home = resolvePredictionSeed(seedHome, qualifiers, winners, losers);
-      const away = resolvePredictionSeed(seedAway, qualifiers, winners, losers);
+      const home = resolvePredictionSeed(seedHome, qualifiers, winners, losers, standings, usedThirdGroups);
+      const away = resolvePredictionSeed(seedAway, qualifiers, winners, losers, standings, usedThirdGroups);
       const outcome = prediction.knockout[key] || "";
       const winner = outcome === "home" ? home : outcome === "away" ? away : "";
       const loser = outcome === "home" ? away : outcome === "away" ? home : "";
-      if (winner && !winner.startsWith("Ganador") && !winner.startsWith("Clasificado") && !winner.startsWith("Perdedor")) winners[key] = winner;
-      if (loser && !loser.startsWith("Ganador") && !loser.startsWith("Clasificado") && !loser.startsWith("Perdedor")) losers[key] = loser;
+      if (winner && !isPredictionPlaceholder(winner)) winners[key] = winner;
+      if (loser && !isPredictionPlaceholder(loser)) losers[key] = loser;
       return { key, phase, home, away, outcome, winner };
     });
     return { phase, code, matches: roundMatches };
   });
 }
 
-function resolvePredictionSeed(seed, qualifiers, winners, losers) {
+function isPredictionPlaceholder(value) {
+  return !value ||
+    value.startsWith("Ganador") ||
+    value.startsWith("Clasificado") ||
+    value.startsWith("Perdedor") ||
+    /^[123]o Grupo /.test(value) ||
+    /^Mejor 3o/.test(value) ||
+    /^\d+o mejor tercero/.test(value);
+}
+
+function resolvePredictionSeed(seed, qualifiers, winners, losers, standings = getGroupStandings(), usedThirdGroups = new Set()) {
   if (qualifiers[seed]) return qualifiers[seed];
+  const thirdPlaceTeam = typeof resolveThirdPlaceGroupSeed === "function" ? resolveThirdPlaceGroupSeed(seed, standings, usedThirdGroups) : "";
+  if (thirdPlaceTeam) return thirdPlaceTeam;
+  if (/^[123]G\d+$/.test(seed) || /^3G_[A-Z]+$/.test(seed)) return getSeedLabel(seed);
   const winnerMatch = seed.match(/^Ganador (D16|OF|CF|SF)-?(\d+)$/);
   if (winnerMatch) return winners[`${winnerMatch[1]}-${Number(winnerMatch[2])}`] || seed;
   const loserMatch = seed.match(/^Perdedor (SF)-?(\d+)$/);
@@ -314,26 +233,15 @@ function getPredictedChampion(prediction = readPrediction()) {
 }
 
 function renderPredictionKnockout(prediction = readPrediction()) {
-  const totalGroupPredictions = getPredictionMatches().filter((match) => prediction.matches[String(match.id)]?.outcome).length;
-  const groupsComplete = totalGroupPredictions === getPredictionMatches().length;
-  if (!groupsComplete) {
-    return `
-      <section class="prediction-section prediction-knockout-empty">
-        <div class="panel-head prediction-subhead">
-          <h3>Llaves del pronostico</h3>
-          <span class="status-pill">Pendiente</span>
-        </div>
-        <p class="history-table-note">Completa todos los partidos de grupos para generar los clasificados y avanzar hasta el campeon.</p>
-      </section>
-    `;
-  }
-
+  const standings = getGroupStandings();
+  const closedGroups = Object.values(standings).filter(isGroupComplete).length;
+  const statusLabel = closedGroups === Object.keys(groups).length ? "Clasificados definidos" : String(closedGroups) + "/12 grupos cerrados";
   const rounds = getPredictedKnockoutRounds(prediction);
   return `
     <section class="prediction-section prediction-knockout-section">
       <div class="panel-head prediction-subhead">
         <h3>Llaves del pronostico</h3>
-        <span class="status-pill">Eliminatorias</span>
+        <span class="status-pill">${statusLabel}</span>
       </div>
       <div class="prediction-knockout-grid">
         ${rounds.map((round) => `
@@ -350,7 +258,7 @@ function renderPredictionKnockout(prediction = readPrediction()) {
 }
 
 function renderPredictionKnockoutMatch(match, prediction) {
-  const canPick = !match.home.startsWith("Ganador") && !match.home.startsWith("Clasificado") && !match.home.startsWith("Perdedor") && !match.away.startsWith("Ganador") && !match.away.startsWith("Clasificado") && !match.away.startsWith("Perdedor");
+  const canPick = !isPredictionPlaceholder(match.home) && !isPredictionPlaceholder(match.away);
   const selected = prediction.knockout[match.key] || "";
   return `
     <div class="prediction-knockout-match${canPick ? "" : " disabled"}">
@@ -370,9 +278,9 @@ function renderPredictionKnockoutMatch(match, prediction) {
 function renderPredictionSummary(prediction = readPrediction()) {
   const container = $("#predictionSummaryCards");
   if (!container) return;
-  const predictionMatches = getPredictionMatches();
-  const completed = predictionMatches.filter((match) => prediction.matches[String(match.id)]?.outcome).length;
-  const groupsWithPicks = new Set(predictionMatches.filter((match) => prediction.matches[String(match.id)]?.outcome).map((match) => match.group)).size;
+  const knockoutMatches = getPredictedKnockoutRounds(prediction).flatMap((round) => round.matches);
+  const availableKnockoutMatches = knockoutMatches.filter((match) => !isPredictionPlaceholder(match.home) && !isPredictionPlaceholder(match.away));
+  const completed = availableKnockoutMatches.filter((match) => prediction.knockout[match.key]).length;
   const champion = getPredictedChampion(prediction) || "Por definir";
   const savedLabel = prediction.savedAt
     ? new Date(prediction.savedAt).toLocaleString("es-CO", { dateStyle: "short", timeStyle: "short" })
@@ -380,7 +288,7 @@ function renderPredictionSummary(prediction = readPrediction()) {
 
   container.innerHTML = [
     ["Participante", prediction.participant || "Sin nombre", prediction.contact || "identificador pendiente"],
-    ["Pronosticos", `${completed}/${predictionMatches.length}`, `${groupsWithPicks} grupos con datos`],
+    ["Pronosticos", String(completed) + "/" + String(availableKnockoutMatches.length), "desde dieciseisavos"],
     ["Campeon", champion, prediction.topScorer ? `Goleador: ${prediction.topScorer}` : "goleador pendiente"],
     ["Ultimo guardado", savedLabel, "almacenado en este navegador"]
   ].map(([label, value, detail]) => `
@@ -411,11 +319,6 @@ function bindPredictionEvents() {
 function getPredictionExportRows() {
   const prediction = readPrediction(false);
   const header = [["participante", "identificador", "campeon", "goleador", "guardado", "fase", "partido_id", "grupo", "fecha", "local", "pronostico", "visitante", "ganador"]];
-  const groupRows = getPredictionMatches().map((match) => {
-    const outcome = prediction.matches[String(match.id)]?.outcome || "";
-    const winner = outcome === "home" ? match.home : outcome === "away" ? match.away : outcome === "draw" ? "Empate" : "";
-    return [prediction.participant, prediction.contact, getPredictedChampion(prediction), prediction.topScorer, prediction.savedAt, "Grupos", match.id, match.group, match.date, match.home, outcome || "", match.away, winner];
-  });
   const knockoutRows = getPredictedKnockoutRounds(prediction).flatMap((round) => round.matches.map((match) => [
     prediction.participant,
     prediction.contact,
@@ -431,7 +334,7 @@ function getPredictionExportRows() {
     match.away,
     match.winner || ""
   ]));
-  return [...header, ...groupRows, ...knockoutRows];
+  return [...header, ...knockoutRows];
 }
 
 function escapePredictionPdfText(value) {
@@ -462,33 +365,6 @@ function buildPredictionPdfHtml(prediction) {
     : "Pendiente de guardar";
   const champion = getPredictedChampion(prediction) || "Por definir";
   const logoUrl = new URL("./img/figuras/fifa2026.png", window.location.href).href;
-  const groupRows = getPredictionMatches().map((match) => {
-    const outcome = prediction.matches[String(match.id)]?.outcome || "";
-    return `
-      <tr>
-        <td>${escapePredictionPdfText(match.group)}</td>
-        <td>${escapePredictionPdfText(match.home)} vs ${escapePredictionPdfText(match.away)}</td>
-        <td>${escapePredictionPdfText(getPredictionOutcomeLabel(match, outcome))}</td>
-      </tr>
-    `;
-  });
-  const rowsPerTable = 18;
-  const groupTableHtml = Array.from({ length: Math.ceil(groupRows.length / rowsPerTable) }, (_, index) => groupRows.slice(index * rowsPerTable, (index + 1) * rowsPerTable))
-    .map((rows, index) => `
-      <table>
-        <caption>Bloque ${index + 1}</caption>
-        <thead><tr><th>Grupo</th><th>Partido</th><th>Pronostico</th></tr></thead>
-        <tbody>${rows.join("")}</tbody>
-      </table>
-    `).join("");
-  const standingsHtml = Object.entries(getPredictionStandings(prediction)).map(([group, rows]) => `
-    <section class="card">
-      <h3>Grupo ${escapePredictionPdfText(group)}</h3>
-      <ol>
-        ${rows.map((row) => `<li><span>${escapePredictionPdfText(row.team)}</span><strong>${row.points} pts</strong></li>`).join("")}
-      </ol>
-    </section>
-  `).join("");
   const knockoutHtml = getPredictedKnockoutRounds(prediction).map((round) => `
     <section class="card">
       <h3>${escapePredictionPdfText(round.phase)}</h3>
@@ -578,10 +454,6 @@ function buildPredictionPdfHtml(prediction) {
     </div>
   </header>
   <main>
-    <h2>Fase de grupos</h2>
-    <div class="match-columns">${groupTableHtml}</div>
-    <h2>Clasificados</h2>
-    <div class="grid">${standingsHtml}</div>
     <h2>Llaves</h2>
     <div class="grid rounds">${knockoutHtml}</div>
     <p class="footer">Generado desde FIFA 2026 Info Hub. En GitHub Pages el archivo se guarda desde el dialogo del navegador usando la opcion Guardar como PDF.</p>

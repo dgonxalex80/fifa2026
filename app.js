@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "25 de junio de 2026, 18:07 (hora Colombia)";
+const tournamentDataCutoffLabel = "26 de junio de 2026, 00:15 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -57,10 +57,10 @@ const groupStageMatches = [
   { id: 54, date: "2026-06-24 20:00", home: "Sudafrica", away: "Corea del Sur", phase: "Grupos", group: "A", stadium: "Estadio Monterrey", city: "Monterrey", status: "finalizado", homeScore: 1, awayScore: 0 },
   { id: 55, date: "2026-06-25 15:00", home: "Ecuador", away: "Alemania", phase: "Grupos", group: "E", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 2, awayScore: 1 },
   { id: 56, date: "2026-06-25 15:00", home: "Curazao", away: "Costa de Marfil", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 0, awayScore: 2 },
-  { id: 57, date: "2026-06-25 18:00", home: "Tunez", away: "Paises Bajos", phase: "Grupos", group: "F", stadium: "Kansas City Stadium", city: "Kansas City", status: "pendiente" },
-  { id: 58, date: "2026-06-25 18:00", home: "Japon", away: "Suecia", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
-  { id: 59, date: "2026-06-25 21:00", home: "Turquia", away: "Estados Unidos", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "pendiente" },
-  { id: 60, date: "2026-06-25 21:00", home: "Paraguay", away: "Australia", phase: "Grupos", group: "D", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "pendiente" },
+  { id: 57, date: "2026-06-25 18:00", home: "Tunez", away: "Paises Bajos", phase: "Grupos", group: "F", stadium: "Kansas City Stadium", city: "Kansas City", status: "finalizado", homeScore: 1, awayScore: 3 },
+  { id: 58, date: "2026-06-25 18:00", home: "Japon", away: "Suecia", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 1, awayScore: 1 },
+  { id: 59, date: "2026-06-25 21:00", home: "Turquia", away: "Estados Unidos", phase: "Grupos", group: "D", stadium: "Los Angeles Stadium", city: "Los Angeles", status: "finalizado", homeScore: 3, awayScore: 2 },
+  { id: 60, date: "2026-06-25 21:00", home: "Paraguay", away: "Australia", phase: "Grupos", group: "D", stadium: "San Francisco Bay Area Stadium", city: "San Francisco Bay Area", status: "finalizado", homeScore: 0, awayScore: 0 },
   { id: 61, date: "2026-06-26 14:00", home: "Noruega", away: "Francia", phase: "Grupos", group: "I", stadium: "Boston Stadium", city: "Boston", status: "pendiente" },
   { id: 62, date: "2026-06-26 14:00", home: "Senegal", away: "Irak", phase: "Grupos", group: "I", stadium: "Toronto Stadium", city: "Toronto", status: "pendiente" },
   { id: 63, date: "2026-06-26 19:00", home: "Uruguay", away: "Espana", phase: "Grupos", group: "H", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "pendiente" },
@@ -224,6 +224,11 @@ const scorers = [
   ["Alex Freeman", "Estados Unidos", 1, 0, 90],
   ["Mauricio Magalhães", "Paraguay", 1, 0, 45],
   ["Matias Galarza", "Paraguay", 1, 0, 90],
+  ["Auston Trusty", "Estados Unidos", 1, 0, 90],
+  ["Sebastian Berhalter", "Estados Unidos", 1, 1, 90],
+  ["Arda Guler", "Turquia", 1, 0, 90],
+  ["Orkun Kokcu", "Turquia", 1, 0, 90],
+  ["Kaan Ayhan", "Turquia", 1, 0, 90],
   ["Alexander Isak", "Suecia", 1, 1, 90],
   ["Viktor Gyokeres", "Suecia", 1, 0, 90],
   ["Mattias Svanberg", "Suecia", 1, 0, 7],

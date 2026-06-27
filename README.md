@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: verificado el 25 de junio de 2026 a las 18:07 (hora Colombia), con marcadores y goleadores confirmados hasta Ecuador 2-1 Alemania y Curazao 0-2 Costa de Marfil. Los partidos de grupos F y D programados para el 25 de junio permanecen pendientes hasta disponer de resultado final confirmado.
+Estado de los datos deportivos: verificado el 26 de junio de 2026 a las 21:45 (hora Colombia), con marcadores confirmados hasta Noruega 1-4 Francia, Senegal 5-0 Irak, Uruguay 0-1 Espana y Cabo Verde 0-0 Arabia Saudita. Los partidos del grupo G programados para el 26 de junio permanecen pendientes hasta disponer de resultado final confirmado.
 
 ## Contenido del Proyecto
 

@@ -3103,3 +3103,92 @@ body[data-theme="light"] .result-editor {
   .scheme-bracket-scroll { padding-inline: 12px; }
   .scheme-status { justify-content: flex-start; padding-inline: 12px; }
 }
+
+/* Responsive layout guard: keep panels inside the viewport when the window is resized. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app-shell,
+.main,
+.page,
+.panel,
+.kpi,
+.group-card,
+.summary-card,
+.round-match {
+  min-width: 0;
+}
+
+.main {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.kpi-grid,
+.group-summary-grid,
+.groups-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.groups-grid {
+  align-items: start;
+}
+
+.simple-standings,
+.standing-row,
+.standing-row .team-cell,
+.standing-row .team-label,
+.standing-row .team-label span,
+.standing-row .stats-cell {
+  min-width: 0;
+}
+
+.standing-row {
+  grid-template-columns: minmax(0, 1fr) max-content;
+  overflow: hidden;
+}
+
+.standing-row .team-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.standing-row .stats-cell {
+  max-width: 100%;
+}
+
+.standings-stat-grid {
+  grid-template-columns: repeat(3, minmax(34px, max-content));
+}
+
+@media (max-width: 1320px) {
+  .groups-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .main {
+    padding: 14px;
+  }
+
+  .standing-row {
+    grid-template-columns: 1fr;
+  }
+
+  .standing-row .team-cell {
+    white-space: normal;
+  }
+
+  .standings-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .standings-stat-grid span {
+    justify-items: start;
+  }
+}

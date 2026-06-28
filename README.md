@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: verificado el 26 de junio de 2026 a las 21:45 (hora Colombia), con marcadores confirmados hasta Noruega 1-4 Francia, Senegal 5-0 Irak, Uruguay 0-1 Espana y Cabo Verde 0-0 Arabia Saudita. Los partidos del grupo G programados para el 26 de junio permanecen pendientes hasta disponer de resultado final confirmado.
+Estado de los datos deportivos: verificado el 28 de junio de 2026 a las 00:15 (hora Colombia), con todos los marcadores de la fase de grupos confirmados y los dieciseisavos de final activos. Ultimos cierres de grupos: Jordania 1-3 Argentina y Argelia 3-3 Austria.
 
 ## Contenido del Proyecto
 
@@ -135,7 +135,7 @@ Funciones disponibles:
 - Exportacion CSV desde el boton `Exportar CSV`.
 - Actualizacion local de resultados reales durante el torneo desde la vista `Resultados`.
 - Generacion de reporte PDF del pronostico desde el navegador usando `Generar PDF`.
-- Esquema dinamico del torneo: usa los cruces oficiales FIFA de los partidos 73 a 104 y recalcula las proyecciones al cargar, corregir o eliminar resultados. Mientras la fase de grupos siga abierta, los cruces contra mejores terceros muestran los grupos de origen permitidos en lugar de asignar un rival definitivo.
+- Esquema dinamico del torneo: usa los cruces oficiales FIFA de los partidos 73 a 104 y recalcula las proyecciones al cargar, corregir o eliminar resultados. Con la fase de grupos cerrada, los cruces contra mejores terceros quedan resueltos con la combinacion final B/D/E/F/I/J/K/L.
 - Selector de temas: clasico, claro, cancha, medianoche y dorado.
 
 ## Proporción de nacidos en el país representado

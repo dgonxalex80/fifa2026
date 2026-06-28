@@ -43,9 +43,49 @@ function renderResultsAdmin() {
   renderResultsSummary();
 
   const filtered = getFilteredResultMatches();
-  container.innerHTML = filtered.length ? filtered.map((match) => renderResultEditor(match)).join("") : `
+  container.innerHTML = filtered.length ? renderResultsPhaseGroups(filtered) : `
     <article class="empty-card-grid">No hay partidos para los filtros seleccionados.</article>
   `;
+}
+
+function renderResultsPhaseGroups(resultMatches) {
+  const phaseOrder = ["Grupos", "Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final"];
+  const grouped = resultMatches.reduce((acc, match) => {
+    acc[match.phase] = acc[match.phase] || [];
+    acc[match.phase].push(match);
+    return acc;
+  }, {});
+
+  return Object.keys(grouped)
+    .sort((a, b) => {
+      const indexA = phaseOrder.indexOf(a);
+      const indexB = phaseOrder.indexOf(b);
+      return (indexA === -1 ? phaseOrder.length : indexA) - (indexB === -1 ? phaseOrder.length : indexB) || a.localeCompare(b);
+    })
+    .map((phase) => `
+      <section class="results-phase-block">
+        <div class="results-phase-divider">
+          <h4>${getResultsPhaseTitle(phase)}</h4>
+        </div>
+        <div class="results-phase-matches">
+          ${grouped[phase].map((match) => renderResultEditor(match)).join("")}
+        </div>
+      </section>
+    `)
+    .join("");
+}
+
+function getResultsPhaseTitle(phase) {
+  const labels = {
+    Grupos: "Grupos",
+    Dieciseisavos: "Dieciseisavos",
+    Octavos: "Octavos",
+    Cuartos: "Cuartos",
+    Semifinal: "Semifinales",
+    "Tercer puesto": "Tercer puesto",
+    Final: "Final"
+  };
+  return labels[phase] || phase;
 }
 
 function renderResultsSummary() {

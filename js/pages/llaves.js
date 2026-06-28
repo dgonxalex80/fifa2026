@@ -65,13 +65,13 @@ function renderBracket() {
       <header class="scheme-hero">
         <p>FIFA World Cup 2026</p>
         <h2>Esquema del torneo</h2>
-        <span>Clasificación y llaves al momento</span>
+        <span>Segunda fase en curso</span>
       </header>
 
       <div class="scheme-status">
-        <span><strong>${startedGroups}</strong>/12 grupos activos</span>
         <span><strong>${closedGroups}</strong>/12 grupos cerrados</span>
-        <span><strong>${qualifiedTeams.size}</strong> clasificados proyectados</span>
+        <span>Dieciseisavos definidos</span>
+        <span><strong>${qualifiedTeams.size}</strong> clasificados a segunda fase</span>
         <span>Actualizado ${updatedAt}</span>
       </div>
 

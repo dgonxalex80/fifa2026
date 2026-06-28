@@ -7,7 +7,64 @@ function renderMatches() {
     (phase === "todas" || item.phase === phase)
   );
   renderCalendarGrid(filtered);
-  $("#calendarRows").innerHTML = filtered.map(renderCalendarListItem).join("");
+  $("#calendarRows").innerHTML = renderCalendarPhaseGroups(filtered);
+}
+
+function renderCalendarPhaseGroups(items) {
+  if (!items.length) {
+    return `<div class="calendar-empty">No hay partidos para los filtros seleccionados.</div>`;
+  }
+
+  const phaseOrder = ["Ceremonias", "Grupos", "Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final"];
+  const grouped = items.reduce((acc, item) => {
+    acc[item.phase] = acc[item.phase] || [];
+    acc[item.phase].push(item);
+    return acc;
+  }, {});
+
+  return Object.keys(grouped)
+    .sort((a, b) => {
+      const indexA = phaseOrder.indexOf(a);
+      const indexB = phaseOrder.indexOf(b);
+      return (indexA === -1 ? phaseOrder.length : indexA) - (indexB === -1 ? phaseOrder.length : indexB) || a.localeCompare(b);
+    })
+    .map((phase) => renderCalendarPhaseSection(phase, grouped[phase]))
+    .join("");
+}
+
+function renderCalendarPhaseSection(phase, items) {
+  const matchCount = items.filter((item) => !isCalendarEvent(item)).length;
+  const eventCount = items.length - matchCount;
+  const summary = [
+    matchCount ? `${matchCount} partidos` : "",
+    eventCount ? `${eventCount} eventos` : ""
+  ].filter(Boolean).join(" · ");
+
+  return `
+    <section class="calendar-phase-section">
+      <div class="calendar-phase-head">
+        <h4>${getCalendarPhaseTitle(phase)}</h4>
+        <span>${summary || `${items.length} actividades`}</span>
+      </div>
+      <div class="calendar-phase-items">
+        ${items.map(renderCalendarListItem).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function getCalendarPhaseTitle(phase) {
+  const labels = {
+    Grupos: "Fase de grupos",
+    Dieciseisavos: "Dieciseisavos de final",
+    Octavos: "Octavos de final",
+    Cuartos: "Cuartos de final",
+    Semifinal: "Semifinales",
+    "Tercer puesto": "Partido por el tercer puesto",
+    Final: "Final",
+    Ceremonias: "Ceremonias"
+  };
+  return labels[phase] || phase;
 }
 
 function renderCalendarListItem(item) {

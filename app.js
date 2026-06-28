@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "26 de junio de 2026, 21:45 (hora Colombia)";
+const tournamentDataCutoffLabel = "28 de junio de 2026, 00:15 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -10,7 +10,7 @@ const groupStageMatches = [
   { id: 7, date: "2026-06-13 20:00", home: "Haiti", away: "Escocia", phase: "Grupos", group: "C", stadium: "Boston Stadium", city: "Boston", status: "finalizado", homeScore: 0, awayScore: 1 },
   { id: 8, date: "2026-06-13 23:00", home: "Australia", away: "Turquia", phase: "Grupos", group: "D", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 2, awayScore: 0 },
   { id: 9, date: "2026-06-14 12:00", home: "Alemania", away: "Curazao", phase: "Grupos", group: "E", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 7, awayScore: 1 },
-  { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 2, awayScore: 2 },
+  { id: 10, date: "2026-06-14 15:00", home: "Paises Bajos", away: "Japon", phase: "Grupos", group: "F", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 3, awayScore: 3 },
   { id: 11, date: "2026-06-14 18:00", home: "Costa de Marfil", away: "Ecuador", phase: "Grupos", group: "E", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 1, awayScore: 0 },
   { id: 12, date: "2026-06-14 21:00", home: "Suecia", away: "Tunez", phase: "Grupos", group: "F", stadium: "Estadio Monterrey", city: "Monterrey", status: "finalizado", homeScore: 5, awayScore: 1 },
   { id: 13, date: "2026-06-15 11:00", home: "Espana", away: "Cabo Verde", phase: "Grupos", group: "H", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 0, awayScore: 0 },
@@ -65,14 +65,14 @@ const groupStageMatches = [
   { id: 62, date: "2026-06-26 14:00", home: "Senegal", away: "Irak", phase: "Grupos", group: "I", stadium: "Toronto Stadium", city: "Toronto", status: "finalizado", homeScore: 5, awayScore: 0 },
   { id: 63, date: "2026-06-26 19:00", home: "Uruguay", away: "Espana", phase: "Grupos", group: "H", stadium: "Estadio Guadalajara", city: "Guadalajara", status: "finalizado", homeScore: 0, awayScore: 1 },
   { id: 64, date: "2026-06-26 19:00", home: "Cabo Verde", away: "Arabia Saudita", phase: "Grupos", group: "H", stadium: "Houston Stadium", city: "Houston", status: "finalizado", homeScore: 0, awayScore: 0 },
-  { id: 65, date: "2026-06-26 22:00", home: "Nueva Zelanda", away: "Belgica", phase: "Grupos", group: "G", stadium: "BC Place Vancouver", city: "Vancouver", status: "pendiente" },
-  { id: 66, date: "2026-06-26 22:00", home: "Egipto", away: "Iran", phase: "Grupos", group: "G", stadium: "Seattle Stadium", city: "Seattle", status: "pendiente" },
-  { id: 67, date: "2026-06-27 16:00", home: "Panama", away: "Inglaterra", phase: "Grupos", group: "L", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "pendiente" },
-  { id: 68, date: "2026-06-27 16:00", home: "Croacia", away: "Ghana", phase: "Grupos", group: "L", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "pendiente" },
-  { id: 69, date: "2026-06-27 18:30", home: "Colombia", away: "Portugal", phase: "Grupos", group: "K", stadium: "Miami Stadium", city: "Miami", status: "pendiente" },
-  { id: 70, date: "2026-06-27 18:30", home: "Republica Democratica del Congo", away: "Uzbekistan", phase: "Grupos", group: "K", stadium: "Atlanta Stadium", city: "Atlanta", status: "pendiente" },
-  { id: 71, date: "2026-06-27 21:00", home: "Jordania", away: "Argentina", phase: "Grupos", group: "J", stadium: "Dallas Stadium", city: "Dallas", status: "pendiente" },
-  { id: 72, date: "2026-06-27 21:00", home: "Argelia", away: "Austria", phase: "Grupos", group: "J", stadium: "Kansas City Stadium", city: "Kansas City", status: "pendiente" }
+  { id: 65, date: "2026-06-26 22:00", home: "Nueva Zelanda", away: "Belgica", phase: "Grupos", group: "G", stadium: "BC Place Vancouver", city: "Vancouver", status: "finalizado", homeScore: 1, awayScore: 5 },
+  { id: 66, date: "2026-06-26 22:00", home: "Egipto", away: "Iran", phase: "Grupos", group: "G", stadium: "Seattle Stadium", city: "Seattle", status: "finalizado", homeScore: 1, awayScore: 1 },
+  { id: 67, date: "2026-06-27 16:00", home: "Panama", away: "Inglaterra", phase: "Grupos", group: "L", stadium: "New York New Jersey Stadium", city: "New York/New Jersey", status: "finalizado", homeScore: 0, awayScore: 2 },
+  { id: 68, date: "2026-06-27 16:00", home: "Croacia", away: "Ghana", phase: "Grupos", group: "L", stadium: "Philadelphia Stadium", city: "Philadelphia", status: "finalizado", homeScore: 2, awayScore: 1 },
+  { id: 69, date: "2026-06-27 18:30", home: "Colombia", away: "Portugal", phase: "Grupos", group: "K", stadium: "Miami Stadium", city: "Miami", status: "finalizado", homeScore: 0, awayScore: 0 },
+  { id: 70, date: "2026-06-27 18:30", home: "Republica Democratica del Congo", away: "Uzbekistan", phase: "Grupos", group: "K", stadium: "Atlanta Stadium", city: "Atlanta", status: "finalizado", homeScore: 3, awayScore: 1 },
+  { id: 71, date: "2026-06-27 21:00", home: "Jordania", away: "Argentina", phase: "Grupos", group: "J", stadium: "Dallas Stadium", city: "Dallas", status: "finalizado", homeScore: 1, awayScore: 3 },
+  { id: 72, date: "2026-06-27 21:00", home: "Argelia", away: "Austria", phase: "Grupos", group: "J", stadium: "Kansas City Stadium", city: "Kansas City", status: "finalizado", homeScore: 3, awayScore: 3 }
 ];
 
 const knockoutSchedule = [
@@ -162,8 +162,13 @@ const scorers = [
   ["Folarin Balogun", "Estados Unidos", 2, 0, 73],
   ["Kai Havertz", "Alemania", 2, 0, 90],
   ["Yasin Ayari", "Suecia", 2, 0, 96],
-  ["Eli Just", "Nueva Zelanda", 2, 0, 90],
-  ["Lionel Messi", "Argentina", 5, 0, 168],
+  ["Eli Just", "Nueva Zelanda", 3, 0, 90],
+  ["Leandro Trossard", "Belgica", 2, 0, 90],
+  ["Kevin De Bruyne", "Belgica", 1, 0, 90],
+  ["Romelu Lukaku", "Belgica", 1, 0, 90],
+  ["Alexis Saelemaekers", "Belgica", 1, 0, 90],
+  ["Mahmoud Saber", "Egipto", 1, 0, 90],
+  ["Lionel Messi", "Argentina", 6, 0, 198],
   ["Kylian Mbappé", "Francia", 4, 0, 180],
   ["Erling Haaland", "Noruega", 4, 0, 180],
   ["Thelo Aasgaard", "Noruega", 1, 0, 90],
@@ -186,7 +191,7 @@ const scorers = [
   ["Agustin Canobbio", "Uruguay", 1, 0, 90],
   ["Kevin Pina", "Cabo Verde", 1, 0, 90],
   ["Helio Varela", "Cabo Verde", 1, 0, 90],
-  ["Ramin Rezaeian", "Iran", 1, 0, 90],
+  ["Ramin Rezaeian", "Iran", 2, 0, 90],
   ["Mohammad Mohebi", "Iran", 1, 0, 90],
   ["Chris Wood", "Nueva Zelanda", 0, 1, 90],
   ["Saman Ghoddos", "Iran", 0, 1, 90],
@@ -239,21 +244,33 @@ const scorers = [
   ["Mattias Svanberg", "Suecia", 1, 0, 7],
   ["Omar Rekik", "Tunez", 1, 0, 90],
   ["Romano Schmid", "Austria", 1, 0, 90],
-  ["Marko Arnautovic", "Austria", 1, 0, 90],
+  ["Marko Arnautovic", "Austria", 2, 0, 180],
   ["Ali Olwan", "Jordania", 1, 0, 90],
   ["Nizar Al-Rashdan", "Jordania", 1, 0, 90],
   ["Nadhir Benbouali", "Argelia", 1, 0, 90],
   ["Amine Gouiri", "Argelia", 1, 0, 90],
+  ["Giovani Lo Celso", "Argentina", 1, 0, 90],
+  ["Lautaro Martinez", "Argentina", 1, 0, 90],
+  ["Musa Al-Taamari", "Jordania", 1, 0, 90],
+  ["Hocine Belghali", "Argelia", 1, 0, 90],
+  ["Riyad Mahrez", "Argelia", 2, 0, 90],
+  ["Marcel Sabitzer", "Austria", 1, 0, 90],
+  ["Sasa Kalajdzic", "Austria", 1, 0, 90],
   ["Joao Neves", "Portugal", 1, 0, 6],
   ["Cristiano Ronaldo", "Portugal", 2, 0, 90],
   ["Nuno Mendes", "Portugal", 1, 0, 90],
   ["Rafael Leão", "Portugal", 1, 0, 90],
-  ["Yoane Wissa", "Republica Democratica del Congo", 1, 0, 45],
-  ["Harry Kane", "Inglaterra", 2, 0, 90],
-  ["Jude Bellingham", "Inglaterra", 1, 0, 90],
+  ["Yoane Wissa", "Republica Democratica del Congo", 3, 0, 225],
+  ["Harry Kane", "Inglaterra", 3, 0, 157],
+  ["Jude Bellingham", "Inglaterra", 2, 1, 152],
   ["Marcus Rashford", "Inglaterra", 1, 0, 90],
   ["Martin Baturina", "Croacia", 1, 0, 90],
   ["Petar Musa", "Croacia", 1, 0, 90],
+  ["Petar Sucic", "Croacia", 1, 0, 31],
+  ["Nikola Vlasic", "Croacia", 1, 0, 83],
+  ["Derrick Luckassen", "Ghana", 1, 0, 73],
+  ["Fiston Mayele", "Republica Democratica del Congo", 1, 0, 79],
+  ["Eldor Shomurodov", "Uzbekistan", 1, 0, 20],
   ["Ante Budimir", "Croacia", 1, 0, 54],
   ["Bukayo Saka", "Inglaterra", 0, 1, 90],
   ["Caleb Yirenkyi", "Ghana", 1, 0, 95],
@@ -287,7 +304,7 @@ const scorers = [
 
 const allTimeWorldCupScorers = [
   { rank: 1, player: "Miroslav Klose", team: "Alemania", matches: 24, goals: 16 },
-  { rank: 2, player: "Lionel Messi", team: "Argentina", matches: 27, goals: 16 },
+  { rank: 2, player: "Lionel Messi", team: "Argentina", matches: 26, goals: 13 },
   { rank: 3, player: "Ronaldo", team: "Brasil", matches: 19, goals: 15 },
   { rank: 4, player: "Gerd Muller", team: "Alemania", matches: 13, goals: 14 },
   { rank: 5, player: "Kylian Mbappé", team: "Francia", matches: 15, goals: 14 },
@@ -22199,12 +22216,39 @@ function getThirdsRanking(standings = getGroupStandings()) {
   return allThirds.sort(compareStandingRows);
 }
 
+const thirdPlaceAssignmentByQualifiedGroups = {
+  BDEFIJKL: {
+    "3G_ABCDF": "D",
+    "3G_CDFGH": "F",
+    "3G_CEFHI": "E",
+    "3G_EHIJK": "K",
+    "3G_BEFIJ": "B",
+    "3G_AEHIJ": "I",
+    "3G_EFGIJ": "J",
+    "3G_DEIJL": "L"
+  }
+};
+
+function getQualifiedThirdGroupKey(standings = getGroupStandings()) {
+  return getThirdsRanking(standings)
+    .slice(0, 8)
+    .map((row) => row.groupCode)
+    .sort()
+    .join("");
+}
+
 function resolveThirdPlaceGroupSeed(seed, standings = getGroupStandings(), usedThirdGroups = new Set()) {
   const thirdPlaceGroupSeed = seed.match(/^3G_([A-Z]+)$/);
   if (!thirdPlaceGroupSeed) return "";
+
   const allowedGroups = new Set(thirdPlaceGroupSeed[1].split(""));
-  const candidate = getThirdsRanking(standings)
-    .filter((row) => allowedGroups.has(row.groupCode) && !usedThirdGroups.has(row.groupCode))[0];
+  const thirdRows = getThirdsRanking(standings);
+  const assignedGroup = thirdPlaceAssignmentByQualifiedGroups[getQualifiedThirdGroupKey(standings)]?.[seed];
+  const assignedCandidate = assignedGroup ? thirdRows.find((row) => row.groupCode === assignedGroup) : null;
+  const candidate = assignedCandidate && allowedGroups.has(assignedCandidate.groupCode) && !usedThirdGroups.has(assignedCandidate.groupCode)
+    ? assignedCandidate
+    : thirdRows.filter((row) => allowedGroups.has(row.groupCode) && !usedThirdGroups.has(row.groupCode))[0];
+
   if (!candidate) return "";
   usedThirdGroups.add(candidate.groupCode);
   return candidate.team;

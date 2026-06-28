@@ -84,7 +84,6 @@ function renderCalendarListItem(item) {
       <strong>${formatDate(item.date)}</strong>
       <div class="fixture-label">${teamLabel(item.home)}<span>vs</span>${teamLabel(item.away)}${resultBadge(item)}${broadcastBadge(item)}</div>
       <small>${item.phase} · ${item.stadium} · ${item.city} · ${item.status}</small>
-      ${broadcastDetail(item)}
     </article>
   `;
 }

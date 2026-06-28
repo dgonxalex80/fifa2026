@@ -21840,7 +21840,8 @@ const colombiaBroadcastPlatforms = [
   { id: "rcn", label: "RCN", detail: "TV abierta", shortLabel: "RCN" },
   { id: "winsports", label: "Win Sports", detail: "TV paga", shortLabel: "WIN" },
   { id: "dsports", label: "DSports", detail: "DirecTV / DGO", shortLabel: "DSP" },
-  { id: "disney", label: "Disney+", detail: "streaming", shortLabel: "D+" }
+  { id: "disney", label: "Disney+", detail: "streaming", shortLabel: "D+" },
+  { id: "ditu", label: "Ditu / Gol Caracol", detail: "streaming gratuito por Caracol", shortLabel: "DITU" }
 ];
 const colombiaBroadcastByMatchId = {
   1: ["dsports", "caracol", "rcn", "winsports", "disney"],
@@ -21915,6 +21916,14 @@ const colombiaBroadcastByMatchId = {
   70: ["dsports"],
   71: ["dsports", "winsports", "disney"],
   72: ["dsports"],
+  77: ["dsports", "ditu"],
+  79: ["dsports", "ditu"],
+  81: ["dsports", "ditu"],
+  85: ["dsports", "ditu"],
+  89: ["dsports", "ditu"],
+  90: ["dsports", "ditu"],
+  93: ["dsports", "ditu"],
+  94: ["dsports", "ditu"],
 };
 const defaultColombiaBroadcastIds = ["dsports"];
 

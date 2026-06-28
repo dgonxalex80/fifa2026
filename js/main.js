@@ -22,7 +22,7 @@ function exportCurrentPage() {
       ? getPredictionExportRows()
       : active === "resultados"
       ? getResultsExportRows()
-      : [["fecha", "evento", "goles_local", "goles_visitante", "visitante", "fase", "estado", "transmision_colombia"], ...getCalendarItems().map((m) => isCalendarEvent(m) ? [m.date, m.title, "", "", "", m.phase, m.status, m.description] : [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status, getBroadcastSummary(m)])];
+      : [["fecha", "evento", "goles_local", "goles_visitante", "visitante", "fase", "estado"], ...getCalendarItems().map((m) => isCalendarEvent(m) ? [m.date, m.title, "", "", "", m.phase, m.status] : [m.date, m.home, m.homeScore ?? "", m.awayScore ?? "", m.away, m.phase, m.status])];
   const csv = rows.map((row) => row.join(",")).join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);

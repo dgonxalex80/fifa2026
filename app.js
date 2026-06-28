@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "28 de junio de 2026, 00:15 (hora Colombia)";
+const tournamentDataCutoffLabel = "28 de junio de 2026, 16:29 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -21841,7 +21841,7 @@ const colombiaBroadcastPlatforms = [
   { id: "winsports", label: "Win Sports", detail: "TV paga", shortLabel: "WIN" },
   { id: "dsports", label: "DSports", detail: "DirecTV / DGO", shortLabel: "DSP" },
   { id: "disney", label: "Disney+", detail: "streaming", shortLabel: "D+" },
-  { id: "ditu", label: "Ditu / Gol Caracol", detail: "streaming gratuito por Caracol", shortLabel: "DITU" }
+  { id: "youtube", label: "YouTube RCN", detail: "streaming", shortLabel: "YT" }
 ];
 const colombiaBroadcastByMatchId = {
   1: ["dsports", "caracol", "rcn", "winsports", "disney"],
@@ -21916,14 +21916,16 @@ const colombiaBroadcastByMatchId = {
   70: ["dsports"],
   71: ["dsports", "winsports", "disney"],
   72: ["dsports"],
-  77: ["dsports", "ditu"],
-  79: ["dsports", "ditu"],
-  81: ["dsports", "ditu"],
-  85: ["dsports", "ditu"],
-  89: ["dsports", "ditu"],
-  90: ["dsports", "ditu"],
-  93: ["dsports", "ditu"],
-  94: ["dsports", "ditu"],
+  77: ["dsports", "caracol", "rcn"],
+  79: ["dsports", "caracol", "rcn", "disney"],
+  81: ["dsports", "caracol", "rcn"],
+  83: ["dsports", "winsports"],
+  85: ["dsports", "caracol", "rcn"],
+  87: ["dsports", "winsports"],
+  89: ["dsports", "caracol", "rcn"],
+  90: ["dsports", "caracol", "rcn"],
+  93: ["dsports", "caracol", "rcn"],
+  94: ["dsports", "caracol", "rcn", "disney", "youtube"],
 };
 const defaultColombiaBroadcastIds = ["dsports"];
 

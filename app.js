@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "28 de junio de 2026, 16:29 (hora Colombia)";
+const tournamentDataCutoffLabel = "28 de junio de 2026, 16:32 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },

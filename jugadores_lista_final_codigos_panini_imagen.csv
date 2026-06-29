@@ -1,30 +1,30 @@
 pais,codigo_panini,nombre_jugador,tiene_imagen
-Argelia,ALG 1,Luca Zidane,no tiene imagen
-Argelia,ALG 2,Oussama Benbot,no tiene imagen
+Argelia,ALG 1,Luca Zidane,tiene imagen
+Argelia,ALG 2,Oussama Benbot,tiene imagen
 Argelia,ALG 3,Melvin Mastil,no tiene imagen
 Argelia,ALG 4,Abdelatif Ramdane,no tiene imagen
-Argelia,ALG 5,Rafik Belghali,no tiene imagen
-Argelia,ALG 6,Samir Chergui,no tiene imagen
+Argelia,ALG 5,Rafik Belghali,tiene imagen
+Argelia,ALG 6,Samir Chergui,tiene imagen
 Argelia,ALG 7,Rayan Aït-Nouri,no tiene imagen
-Argelia,ALG 8,Jaouen Hadjam,no tiene imagen
-Argelia,ALG 9,Aïssa Mandi,tiene imagen
+Argelia,ALG 8,Jaouen Hadjam,tiene imagen
+Argelia,ALG 9,Aïssa Mandi,no tiene imagen
 Argelia,ALG 10,Ramy Bensebaïni,tiene imagen
 Argelia,ALG 11,Zineddine Belaïd,no tiene imagen
 Argelia,ALG 12,Achref Abada,no tiene imagen
-Argelia,ALG 13,Mohamed Amine Tougaï,no tiene imagen
-Argelia,ALG 14,Nabil Bentaleb,tiene imagen
-Argelia,ALG 15,Hicham Boudaoui,no tiene imagen
-Argelia,ALG 16,Houssem Aouar,tiene imagen
+Argelia,ALG 13,Mohamed Amine Tougaï,tiene imagen
+Argelia,ALG 14,Nabil Bentaleb,no tiene imagen
+Argelia,ALG 15,Hicham Boudaoui,tiene imagen
+Argelia,ALG 16,Houssem Aouar,no tiene imagen
 Argelia,ALG 17,Farès Chaïbi,tiene imagen
-Argelia,ALG 18,Ibrahim Maza,no tiene imagen
+Argelia,ALG 18,Ibrahim Maza,tiene imagen
 Argelia,ALG 19,Yacine Titraoui,no tiene imagen
-Argelia,ALG 20,Ramiz Zerrouki,no tiene imagen
-Argelia,ALG 21,Mohamed Amine Amoura,no tiene imagen
+Argelia,ALG 20,Ramiz Zerrouki,tiene imagen
+Argelia,ALG 21,Mohamed Amine Amoura,tiene imagen
 Argelia,ALG 22,Nadhir Benbouali,no tiene imagen
 Argelia,ALG 23,Adil Boulbina,no tiene imagen
 Argelia,ALG 24,Farès Ghedjemis,no tiene imagen
 Argelia,ALG 25,Amine Gouiri,no tiene imagen
-Argelia,ALG 26,Anis Hadj Moussa,tiene imagen
+Argelia,ALG 26,Anis Hadj Moussa,no tiene imagen
 Argelia,ALG 27,Riyad Mahrez,tiene imagen
 Argentina,ARG 1,Dibu Martínez,tiene imagen
 Argentina,ARG 2,Gerónimo Rulli,no tiene imagen
@@ -134,7 +134,7 @@ Bosnia y Herzegovina,BIH 1,Nikola Vasilj,tiene imagen
 Bosnia y Herzegovina,BIH 2,Martin Zlomislic,no tiene imagen
 Bosnia y Herzegovina,BIH 3,Osman Hadzikic,no tiene imagen
 Bosnia y Herzegovina,BIH 4,Sead Kolasinac,tiene imagen
-Bosnia y Herzegovina,BIH 5,Amar Dedic,no tiene imagen
+Bosnia y Herzegovina,BIH 5,Amar Dedic,tiene imagen
 Bosnia y Herzegovina,BIH 6,Nihad Mujakic,tiene imagen
 Bosnia y Herzegovina,BIH 7,Nikola Katic,tiene imagen
 Bosnia y Herzegovina,BIH 8,Tarik Muharemovic,no tiene imagen
@@ -151,7 +151,7 @@ Bosnia y Herzegovina,BIH 18,Amar Memic,tiene imagen
 Bosnia y Herzegovina,BIH 19,Armin Gigovic,tiene imagen
 Bosnia y Herzegovina,BIH 20,Kerim Alajbegovic,no tiene imagen
 Bosnia y Herzegovina,BIH 21,Esmir Bajraktarevic,tiene imagen
-Bosnia y Herzegovina,BIH 22,Ermedin Demirovic,no tiene imagen
+Bosnia y Herzegovina,BIH 22,Ermedin Demirovic,tiene imagen
 Bosnia y Herzegovina,BIH 23,Jovo Lukic,no tiene imagen
 Bosnia y Herzegovina,BIH 24,Samed Bazdar,tiene imagen
 Bosnia y Herzegovina,BIH 25,Haris Tabakovic,tiene imagen
@@ -163,32 +163,30 @@ Brasil,BRA 4,Marquinhos,tiene imagen
 Brasil,BRA 5,Gabriel Magalhães,tiene imagen
 Brasil,BRA 6,Bremer,no tiene imagen
 Brasil,BRA 7,Ibáñez,tiene imagen
-Brasil,BRA 8,Léo Pereira,no tiene imagen
+Brasil,BRA 8,Léo Pereira,tiene imagen
 Brasil,BRA 9,Wesley,tiene imagen
 Brasil,BRA 10,Danilo,tiene imagen
-Brasil,BRA 10,Danilo,tiene imagen
-Brasil,BRA 16,Danilo,tiene imagen
-Brasil,BRA 16,Danilo,tiene imagen
 Brasil,BRA 11,Alex Sandro,no tiene imagen
-Brasil,BRA 12,Douglas Santos,no tiene imagen
+Brasil,BRA 12,Douglas Santos,tiene imagen
 Brasil,BRA 13,Casemiro,tiene imagen
 Brasil,BRA 14,Bruno Guimarães,tiene imagen
 Brasil,BRA 15,Fabinho,no tiene imagen
+Brasil,BRA 16,Danilo Barbosa,tiene imagen
 Brasil,BRA 17,Lucas Paquetá,tiene imagen
 Brasil,BRA 18,Vinicius Jr.,tiene imagen
 Brasil,BRA 19,Raphinha,tiene imagen
 Brasil,BRA 20,Matheus Cunha,tiene imagen
-Brasil,BRA 21,Luiz Henrique,no tiene imagen
-Brasil,BRA 22,Igor Thiago,no tiene imagen
-Brasil,BRA 23,Endrick,no tiene imagen
+Brasil,BRA 21,Luiz Henrique,tiene imagen
+Brasil,BRA 22,Igor Thiago,tiene imagen
+Brasil,BRA 23,Endrick,tiene imagen
 Brasil,BRA 24,Martinelli,tiene imagen
 Brasil,BRA 25,Rayan,tiene imagen
-Brasil,BRA 26,Neymar,no tiene imagen
+Brasil,BRA 26,Neymar,tiene imagen
 Canada,CAN 1,Maxime Crépau,no tiene imagen
 Canada,CAN 2,Owen Goodman,no tiene imagen
 Canada,CAN 3,Dayne St. Clair,tiene imagen
 Canada,CAN 4,Moïse Bombito,tiene imagen
-Canada,CAN 5,Derek Cornelius,no tiene imagen
+Canada,CAN 5,Derek Cornelius,tiene imagen
 Canada,CAN 6,Alphonso Davies,no tiene imagen
 Canada,CAN 7,Luc de Fougerolles,no tiene imagen
 Canada,CAN 8,Alistair Johnston,tiene imagen
@@ -219,7 +217,7 @@ Costa de Marfil,CIV 6,Ousmane Diomande,tiene imagen
 Costa de Marfil,CIV 7,Guéla Doué,no tiene imagen
 Costa de Marfil,CIV 8,Ghislain Konan,no tiene imagen
 Costa de Marfil,CIV 9,Odilon Kossounou,tiene imagen
-Costa de Marfil,CIV 10,Evan N’Dicka,no tiene imagen
+Costa de Marfil,CIV 10,Evan N’Dicka,tiene imagen
 Costa de Marfil,CIV 11,Wilfried Singo,tiene imagen
 Costa de Marfil,CIV 12,Seko Fofana,tiene imagen
 Costa de Marfil,CIV 13,Parfait Guiagon,no tiene imagen
@@ -318,7 +316,7 @@ Croacia,CRO 1,Dominic Livakovic,no tiene imagen
 Croacia,CRO 2,Dominik Kotarski,no tiene imagen
 Croacia,CRO 3,Ivor Pandur,no tiene imagen
 Croacia,CRO 4,Josko Gvardiol,tiene imagen
-Croacia,CRO 5,Duje Caleta-Car,no tiene imagen
+Croacia,CRO 5,Duje Caleta-Car,tiene imagen
 Croacia,CRO 6,Josip Sutalo,tiene imagen
 Croacia,CRO 7,Josip Stanisic,tiene imagen
 Croacia,CRO 8,Marin Pongracic,no tiene imagen
@@ -330,11 +328,11 @@ Croacia,CRO 13,Mario Pasalic,tiene imagen
 Croacia,CRO 14,Nikola Vlasic,no tiene imagen
 Croacia,CRO 15,Luka Sucic,no tiene imagen
 Croacia,CRO 16,Martin Baturina,tiene imagen
-Croacia,CRO 17,Kristijan Jakic,no tiene imagen
-Croacia,CRO 18,Petar Sucic,no tiene imagen
+Croacia,CRO 17,Kristijan Jakic,tiene imagen
+Croacia,CRO 18,Petar Sucic,tiene imagen
 Croacia,CRO 19,Nikola Moro,no tiene imagen
 Croacia,CRO 20,Toni Fruk,no tiene imagen
-Croacia,CRO 21,Ivan Perisic,no tiene imagen
+Croacia,CRO 21,Ivan Perisic,tiene imagen
 Croacia,CRO 22,Andrej Kramaric,tiene imagen
 Croacia,CRO 23,Ante Budimir,no tiene imagen
 Croacia,CRO 24,Marco Pasalic,tiene imagen
@@ -386,7 +384,7 @@ Republica Checa,CZE 17,Vladimir Darida,no tiene imagen
 Republica Checa,CZE 18,David Doudera,no tiene imagen
 Republica Checa,CZE 19,Pavel Sulc,tiene imagen
 Republica Checa,CZE 20,Denis Visinsky,no tiene imagen
-Republica Checa,CZE 21,Patrick Schick,no tiene imagen
+Republica Checa,CZE 21,Patrick Schick,tiene imagen
 Republica Checa,CZE 22,Lukas Provod,tiene imagen
 Republica Checa,CZE 23,Adam Hlozek,tiene imagen
 Republica Checa,CZE 24,Mojmir Chytil,no tiene imagen
@@ -410,11 +408,11 @@ Ecuador,ECU 15,Alan Franco,tiene imagen
 Ecuador,ECU 16,Kendry Páez,tiene imagen
 Ecuador,ECU 17,Nilson Angulo,tiene imagen
 Ecuador,ECU 18,Gonzalo Plata,tiene imagen
-Ecuador,ECU 19,John Yeboah,no tiene imagen
+Ecuador,ECU 19,John Yeboah,tiene imagen
 Ecuador,ECU 20,Enner Valencia,tiene imagen
 Ecuador,ECU 21,Jordy Caicedo,no tiene imagen
 Ecuador,ECU 22,Jeremy Arévalo,no tiene imagen
-Ecuador,ECU 23,Anthony Valencia,no tiene imagen
+Ecuador,ECU 23,Anthony Valencia,tiene imagen
 Ecuador,ECU 24,Kevin Rodríguez,tiene imagen
 Egipto,EGY 1,Mohamed El Shenawy,no tiene imagen
 Egipto,EGY 2,Mostafa Shobeir,no tiene imagen
@@ -473,7 +471,7 @@ Espana,ESP 1,Unai Simón,tiene imagen
 Espana,ESP 2,David Raya,no tiene imagen
 Espana,ESP 3,Joan García,no tiene imagen
 Espana,ESP 4,Pedro Porro,tiene imagen
-Espana,ESP 5,Marcos Llorente,no tiene imagen
+Espana,ESP 5,Marcos Llorente,tiene imagen
 Espana,ESP 6,Marc Cucurella,tiene imagen
 Espana,ESP 7,Alex Grimaldo,no tiene imagen
 Espana,ESP 8,Aymeric Laporte,tiene imagen
@@ -496,34 +494,34 @@ Espana,ESP 24,Yeremi Pino,no tiene imagen
 Espana,ESP 25,Victor Muñoz,no tiene imagen
 Espana,ESP 26,Borja Iglesias,no tiene imagen
 Francia,FRA 1,Mike Maignan,tiene imagen
-Francia,FRA 2,Brice Samba,no tiene imagen
-Francia,FRA 3,Robin Risser,no tiene imagen
+Francia,FRA 2,Brice Samba,tiene imagen
+Francia,FRA 3,Robin Risser,tiene imagen
 Francia,FRA 4,Jules Kounde,tiene imagen
-Francia,FRA 5,Malo Gusto,no tiene imagen
+Francia,FRA 5,Malo Gusto,tiene imagen
 Francia,FRA 6,William Saliba,tiene imagen
 Francia,FRA 7,Dayot Upamecano,tiene imagen
 Francia,FRA 8,Ibrahima Konaté,tiene imagen
-Francia,FRA 9,Lucas Hernández,no tiene imagen
+Francia,FRA 9,Lucas Hernández,tiene imagen
 Francia,FRA 10,Theo Hernández,tiene imagen
 Francia,FRA 11,Lucas Digne,tiene imagen
-Francia,FRA 12,Maxence Lacroix,no tiene imagen
+Francia,FRA 12,Maxence Lacroix,tiene imagen
 Francia,FRA 13,Aurélien Tchouaméni,tiene imagen
 Francia,FRA 14,Adrien Rabiot,tiene imagen
-Francia,FRA 15,N’Golo Kanté,no tiene imagen
-Francia,FRA 16,Warren Zaïre-Emery,no tiene imagen
+Francia,FRA 15,N’Golo Kanté,tiene imagen
+Francia,FRA 16,Warren Zaïre-Emery,tiene imagen
 Francia,FRA 17,Manu Koné,tiene imagen
 Francia,FRA 18,Kylian Mbappé,tiene imagen
 Francia,FRA 19,Michael Olise,tiene imagen
 Francia,FRA 20,Ousmane Dembélé,tiene imagen
 Francia,FRA 21,Désiré Doué,tiene imagen
 Francia,FRA 22,Bradley Barcola,tiene imagen
-Francia,FRA 23,Marcus Thuram,no tiene imagen
-Francia,FRA 24,Maghnes Akliouche,no tiene imagen
-Francia,FRA 25,Jean-Philippe Mateta,no tiene imagen
-Francia,FRA 26,Rayan Cherki,no tiene imagen
-Alemania,GER 1,Manuel Neuer,GER1.png
-Alemania,GER 2,Oliver Baumann,GER2.png
-Alemania,GER 3,Alexander Nübel,GER3.png
+Francia,FRA 23,Marcus Thuram,tiene imagen
+Francia,FRA 24,Maghnes Akliouche,tiene imagen
+Francia,FRA 25,Jean-Philippe Mateta,tiene imagen
+Francia,FRA 26,Rayan Cherki,tiene imagen
+Alemania,GER 1,Manuel Neuer,tiene imagen
+Alemania,GER 2,Oliver Baumann,tiene imagen
+Alemania,GER 3,Alexander Nübel,tiene imagen
 Alemania,GER 4,Waldemar Anton,tiene imagen
 Alemania,GER 5,Nathaniel Brown,no tiene imagen
 Alemania,GER 6,Pascal Groß,no tiene imagen
@@ -573,7 +571,7 @@ Ghana,GHA 23,Brandon Thomas-Asante,no tiene imagen
 Ghana,GHA 24,Prince Kwabena Adu,no tiene imagen
 Ghana,GHA 25,Iñaki Williams,no tiene imagen
 Ghana,GHA 26,Jordan Ayew,no tiene imagen
-Haiti,HAI 1,Johnny Placide,no tiene imagen
+Haiti,HAI 1,Johnny Placide,tiene imagen
 Haiti,HAI 2,Alexandre Pierre,no tiene imagen
 Haiti,HAI 3,Josué Duverger,no tiene imagen
 Haiti,HAI 4,Carlens Arcus,tiene imagen
@@ -688,7 +686,7 @@ Japon,JPN 8,Ayumu Seko,tiene imagen
 Japon,JPN 9,Yukinari Sugawara,no tiene imagen
 Japon,JPN 10,Hiroki Ito,no tiene imagen
 Japon,JPN 11,Junnosuke Suzuki,tiene imagen
-Japon,JPN 12,Tsuyoshi Watanabe,no tiene imagen
+Japon,JPN 12,Tsuyoshi Watanabe,tiene imagen
 Japon,JPN 13,Kaishu Sano,tiene imagen
 Japon,JPN 14,Wataru Endo,no tiene imagen
 Japon,JPN 15,Ao Tanaka,tiene imagen
@@ -705,29 +703,29 @@ Japon,JPN 25,Ritsu Doan,tiene imagen
 Japon,JPN 26,Ayase Ueda,tiene imagen
 Corea del Sur,KOR 1,Kim Seung-Gyu,tiene imagen
 Corea del Sur,KOR 2,Song Bum Keun,no tiene imagen
-Corea del Sur,KOR 3,Jo Hyeon-Woo,no tiene imagen
+Corea del Sur,KOR 3,Jo Hyeon-Woo,tiene imagen
 Corea del Sur,KOR 4,Kim Moon-Hwan,no tiene imagen
 Corea del Sur,KOR 5,Kim Min-Jae,tiene imagen
 Corea del Sur,KOR 6,Kim Tae-Hwan,no tiene imagen
 Corea del Sur,KOR 7,Park Jin-Seob,no tiene imagen
-Corea del Sur,KOR 8,Seol Young-Woo,no tiene imagen
+Corea del Sur,KOR 8,Seol Young-Woo,tiene imagen
 Corea del Sur,KOR 9,Jens Castrop,tiene imagen
 Corea del Sur,KOR 10,Lee Ki-Hyuk,no tiene imagen
-Corea del Sur,KOR 11,Lee Tae-Seok,no tiene imagen
-Corea del Sur,KOR 12,Lee Han-Beom,no tiene imagen
+Corea del Sur,KOR 11,Lee Tae-Seok,tiene imagen
+Corea del Sur,KOR 12,Lee Han-Beom,tiene imagen
 Corea del Sur,KOR 13,Cho Yumin,no tiene imagen
 Corea del Sur,KOR 14,Kim Jin-Gyu,no tiene imagen
 Corea del Sur,KOR 15,Bae Jun-Ho,no tiene imagen
-Corea del Sur,KOR 16,Paik Seung-Ho,no tiene imagen
+Corea del Sur,KOR 16,Paik Seung-Ho,tiene imagen
 Corea del Sur,KOR 17,Yang Hyun-Jun,no tiene imagen
 Corea del Sur,KOR 18,Eom Ji-Sung,no tiene imagen
-Corea del Sur,KOR 19,Lee Kang-In,no tiene imagen
+Corea del Sur,KOR 19,Lee Kang-In,tiene imagen
 Corea del Sur,KOR 20,Lee Dong-Gyeong,no tiene imagen
 Corea del Sur,KOR 21,Lee Jjae-Sung )Mainz 05),no tiene imagen
-Corea del Sur,KOR 22,Hwang In-Beom,no tiene imagen
+Corea del Sur,KOR 22,Hwang In-Beom,tiene imagen
 Corea del Sur,KOR 23,Hwang Hee-Chan,no tiene imagen
 Corea del Sur,KOR 24,Song Heung-Min,no tiene imagen
-Corea del Sur,KOR 25,Oh Hyeon-Gyu,no tiene imagen
+Corea del Sur,KOR 25,Oh Hyeon-Gyu,tiene imagen
 Corea del Sur,KOR 26,Cho Gue-Sung,no tiene imagen
 Arabia Saudita,KSA 1,Ahmed Alkassar,no tiene imagen
 Arabia Saudita,KSA 2,Mohammed Alowais,no tiene imagen
@@ -759,7 +757,7 @@ Marruecos,MAR 1,Yassine Bounou,tiene imagen
 Marruecos,MAR 2,Munir El Kajoui,tiene imagen
 Marruecos,MAR 3,Ajmed Reda Tagnaouti,no tiene imagen
 Marruecos,MAR 4,Achraf Hakimi,tiene imagen
-Marruecos,MAR 5,Nayef Aguerd,no tiene imagen
+Marruecos,MAR 5,Nayef Aguerd,tiene imagen
 Marruecos,MAR 6,Noussair Mazraoui,tiene imagen
 Marruecos,MAR 7,Anass Salah-Eddine,no tiene imagen
 Marruecos,MAR 8,Chadi Riad,no tiene imagen
@@ -771,7 +769,7 @@ Marruecos,MAR 13,Sofyan Amrabat,tiene imagen
 Marruecos,MAR 14,Ismael Saibari,no tiene imagen
 Marruecos,MAR 15,Neil El Aynaoui,no tiene imagen
 Marruecos,MAR 16,Bilal El Khannouss,tiene imagen
-Marruecos,MAR 17,Azzedine Ounahi,no tiene imagen
+Marruecos,MAR 17,Azzedine Ounahi,tiene imagen
 Marruecos,MAR 18,Bouaddi,no tiene imagen
 Marruecos,MAR 19,Samir El Mourabet,no tiene imagen
 Marruecos,MAR 20,Brahim Díaz,tiene imagen
@@ -833,11 +831,11 @@ Paises Bajos,NED 23,Cody Gakpo,tiene imagen
 Paises Bajos,NED 24,Justin Kluivert,tiene imagen
 Paises Bajos,NED 25,Donyell Malen,no tiene imagen
 Paises Bajos,NED 26,Wout Weghorst,tiene imagen
-Noruega,NOR 1,Orjan Haskjold Nyland,no tiene imagen
+Noruega,NOR 1,Orjan Haskjold Nyland,tiene imagen
 Noruega,NOR 2,Sander Tangvik,no tiene imagen
 Noruega,NOR 3,Egil Selvik,no tiene imagen
 Noruega,NOR 4,Kristoffer Ajer,tiene imagen
-Noruega,NOR 5,David Moller Wolfe,no tiene imagen
+Noruega,NOR 5,David Moller Wolfe,tiene imagen
 Noruega,NOR 6,Leo Ostigard,no tiene imagen
 Noruega,NOR 7,Fredrik Bjorkan,no tiene imagen
 Noruega,NOR 8,Marcus Pedersen,tiene imagen
@@ -858,7 +856,7 @@ Noruega,NOR 22,Oscar Bob,tiene imagen
 Noruega,NOR 23,Jens Petter Hauge,no tiene imagen
 Noruega,NOR 24,Alexander Sorloth,tiene imagen
 Noruega,NOR 25,Erling Haaland,tiene imagen
-Noruega,NOR 26,Jorgen Strand Larsen,no tiene imagen
+Noruega,NOR 26,Jorgen Strand Larsen,tiene imagen
 Nueva Zelanda,NZL 1,Max Crocombe,no tiene imagen
 Nueva Zelanda,NZL 2,Alex Paulsen,no tiene imagen
 Nueva Zelanda,NZL 3,Michael Woud,no tiene imagen
@@ -912,7 +910,7 @@ Panama,PAN 24,Cecilio Waterman,no tiene imagen
 Panama,PAN 25,José Fajardo,no tiene imagen
 Panama,PAN 26,Tomás Rodríguez,no tiene imagen
 Paraguay,PAR 1,Orlando Gill,tiene imagen
-Paraguay,PAR 2,Roberto Fernández,no tiene imagen
+Paraguay,PAR 2,Roberto Fernández,tiene imagen
 Paraguay,PAR 3,Gastón Olveira,no tiene imagen
 Paraguay,PAR 4,Juan Cáceres,tiene imagen
 Paraguay,PAR 5,Gustavo Velázquez,no tiene imagen
@@ -946,7 +944,7 @@ Portugal,POR 6,Matheus Nunes,no tiene imagen
 Portugal,POR 7,Nélson Semedo,no tiene imagen
 Portugal,POR 8,João Cancelo,tiene imagen
 Portugal,POR 9,Nuno Mendes,tiene imagen
-Portugal,POR 10,Gonçalo Inácio,no tiene imagen
+Portugal,POR 10,Gonçalo Inácio,tiene imagen
 Portugal,POR 11,Renato Veiga,no tiene imagen
 Portugal,POR 12,Rúben Dias,tiene imagen
 Portugal,POR 13,Tomás Araújo,no tiene imagen
@@ -962,7 +960,7 @@ Portugal,POR 22,Francisco Conceição,no tiene imagen
 Portugal,POR 23,Pedro Neto,tiene imagen
 Portugal,POR 24,Rafael Leão,tiene imagen
 Portugal,POR 25,Gonçalo Guedes,no tiene imagen
-Portugal,POR 26,Gonçalo Ramos,no tiene imagen
+Portugal,POR 26,Gonçalo Ramos,tiene imagen
 Portugal,POR 27,Cristiano Ronaldo,tiene imagen
 Catar,QAT 1,Mahmoud Abunada,no tiene imagen
 Catar,QAT 2,Meshaal Barsham,tiene imagen
@@ -970,23 +968,23 @@ Catar,QAT 3,Salah Zakaria,no tiene imagen
 Catar,QAT 4,Ayoub Al Alawi,no tiene imagen
 Catar,QAT 5,Boualem Khoukhi,tiene imagen
 Catar,QAT 6,Homam Al Amin,no tiene imagen
-Catar,QAT 7,Lucas Mendes,no tiene imagen
+Catar,QAT 7,Lucas Mendes,tiene imagen
 Catar,QAT 8,Issa Laye,no tiene imagen
 Catar,QAT 9,Pedro Miguel,tiene imagen
 Catar,QAT 10,Alhashmi Alhussain,no tiene imagen
-Catar,QAT 11,Sultan Al Brake,no tiene imagen
+Catar,QAT 11,Sultan Al Brake,tiene imagen
 Catar,QAT 12,Assim Madibo,tiene imagen
-Catar,QAT 13,Abdulaziz Hatem,no tiene imagen
+Catar,QAT 13,Abdulaziz Hatem,tiene imagen
 Catar,QAT 14,Ahmed Fathy,no tiene imagen
 Catar,QAT 15,Karim Boudiaf,tiene imagen
 Catar,QAT 16,Jassim Gaber,no tiene imagen
 Catar,QAT 17,Mohamed Manai,no tiene imagen
-Catar,QAT 18,Ahmed Al Janhi,no tiene imagen
+Catar,QAT 18,Ahmed Al Janhi,tiene imagen
 Catar,QAT 19,Ahmed Alaa,no tiene imagen
 Catar,QAT 20,Akram Afif,tiene imagen
 Catar,QAT 21,Almoez Ali,tiene imagen
 Catar,QAT 22,Edmilson Junior,tiene imagen
-Catar,QAT 23,Hassan Al Haydos,no tiene imagen
+Catar,QAT 23,Hassan Al Haydos,tiene imagen
 Catar,QAT 24,Mohammed Muntari,no tiene imagen
 Catar,QAT 25,Tahsin Mohammed,no tiene imagen
 Catar,QAT 26,Yusuf Abdurisag,no tiene imagen
@@ -1009,7 +1007,7 @@ Sudafrica,RSA 16,Thalente Mbatha,tiene imagen
 Sudafrica,RSA 17,Sphephelo Sithole,no tiene imagen
 Sudafrica,RSA 18,Jayden Adams,no tiene imagen
 Sudafrica,RSA 19,Oswin Appollis,tiene imagen
-Sudafrica,RSA 20,Iqraam Rayners,no tiene imagen
+Sudafrica,RSA 20,Iqraam Rayners,tiene imagen
 Sudafrica,RSA 21,Tshepang Moremi,no tiene imagen
 Sudafrica,RSA 22,Relebohile Mofokeng,no tiene imagen
 Sudafrica,RSA 23,Evidence Makgopa,no tiene imagen
@@ -1079,7 +1077,7 @@ Suiza,SUI 6,Eray Cömert,no tiene imagen
 Suiza,SUI 7,Nico Elvedi,tiene imagen
 Suiza,SUI 8,Luca Jaquez,no tiene imagen
 Suiza,SUI 9,Miro Muheim,no tiene imagen
-Suiza,SUI 10,Ricardo Rodriguez,no tiene imagen
+Suiza,SUI 10,Ricardo Rodriguez,tiene imagen
 Suiza,SUI 11,Silvan Widmer,no tiene imagen
 Suiza,SUI 12,Gran Xhaka,no tiene imagen
 Suiza,SUI 13,Denis Zakaria,tiene imagen
@@ -1112,7 +1110,7 @@ Suecia,SWE 13,Elliot Stroud,no tiene imagen
 Suecia,SWE 14,Lucas Begvall,no tiene imagen
 Suecia,SWE 15,Ken Sema,no tiene imagen
 Suecia,SWE 16,Jesper Kalström,no tiene imagen
-Suecia,SWE 17,Yasin Ayari,no tiene imagen
+Suecia,SWE 17,Yasin Ayari,tiene imagen
 Suecia,SWE 18,Mattias Svanberg,tiene imagen
 Suecia,SWE 19,Besfort Zeneli,no tiene imagen
 Suecia,SWE 20,Alexander Isak,tiene imagen
@@ -1192,7 +1190,7 @@ Uruguay,URU 15,Federico Valverde,tiene imagen
 Uruguay,URU 16,Agustín Canobbio,no tiene imagen
 Uruguay,URU 17,Juan Manuel Sanabria,no tiene imagen
 Uruguay,URU 18,Giorgian De Arrascaeta,tiene imagen
-Uruguay,URU 19,Nicolás de la Cruz,no tiene imagen
+Uruguay,URU 19,Nicolás de la Cruz,tiene imagen
 Uruguay,URU 20,Rodrigo Zalazar,no tiene imagen
 Uruguay,URU 21,Facundo Pellistri,tiene imagen
 Uruguay,URU 22,Maximiliano Araújo,no tiene imagen

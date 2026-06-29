@@ -275,7 +275,9 @@ function imagePathMatchesPlayerName(imagePath, playerNameKeys) {
     if (key.length < 4) return false;
     if (imageName.includes(key) || key.includes(imageName)) return true;
     const keyTokens = key.split(" ").filter((token) => token.length > 2);
-    return keyTokens.length > 1 && keyTokens.every((token) => imageTokens.has(token));
+    const sharedTokens = keyTokens.filter((token) => imageTokens.has(token));
+    return keyTokens.length > 1 &&
+      (keyTokens.every((token) => imageTokens.has(token)) || sharedTokens.length >= 2);
   });
 }
 
@@ -284,19 +286,26 @@ function getLocalPlayerImage(player) {
   const codeImage = localPlayerImages.byCode?.[player.code] || "";
   const expectedCodeFile = player.code.replace(/\s+/g, "").replace(/(\D)0+(\d)/g, "$1$2").toLowerCase();
   const codeImageFile = getImageComparableName(codeImage).replace(/\s+/g, "").replace(/(\D)0+(\d)/g, "$1$2").toLowerCase();
-  if (codeImage && codeImageFile === expectedCodeFile) return codeImage;
+  const rawCodeImageFile = normalizeText(String(codeImage).split("/").pop() || "")
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/[^a-z0-9]+/g, "")
+    .replace(/(\D)0+(\d)/g, "$1$2");
+  if (codeImage && (codeImageFile === expectedCodeFile || rawCodeImageFile === expectedCodeFile)) return codeImage;
 
-  const candidates = [
-    ...playerNameKeys.map((name) => localPlayerImages.byName?.[player.teamCode + ":" + name]),
-    ...playerNameKeys.map((name) => verifiedPlayerImagesByName[player.teamCode + ":" + name])
-  ].filter(Boolean);
+  const byNameCandidates = playerNameKeys
+    .map((name) => localPlayerImages.byName?.[player.teamCode + ":" + name])
+    .filter(Boolean);
+  const verifiedCandidate = playerNameKeys
+    .map((name) => verifiedPlayerImagesByName[player.teamCode + ":" + name])
+    .find(Boolean);
 
-  return candidates.find((imagePath) => imagePathMatchesPlayerName(imagePath, playerNameKeys)) ||
+  return byNameCandidates.find((imagePath) => imagePathMatchesPlayerName(imagePath, playerNameKeys)) ||
+    verifiedCandidate ||
     (codeImage.endsWith("/fifa2026.png") ? codeImage : "");
 }
 
 function getPlayerImage(player) {
-  return getLocalPlayerImage(player) || player.photo || "";
+  return getLocalPlayerImage(player) || "";
 }
 
 function renderPlayerPhoto(player) {

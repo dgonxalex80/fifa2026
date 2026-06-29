@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "28 de junio de 2026, 16:32 (hora Colombia)";
+const tournamentDataCutoffLabel = "29 de junio de 2026, 09:58 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -77,11 +77,11 @@ const groupStageMatches = [
 
 const knockoutSchedule = [
   { date: "2026-06-28 12:00", phase: "Dieciseisavos", matches: [["2G1", "2G2"]] },
-  { date: "2026-06-29 12:00", phase: "Dieciseisavos", matches: [["1G5", "3G_ABCDF"], ["1G6", "2G3"], ["1G3", "2G6"]] },
-  { date: "2026-06-30 12:00", phase: "Dieciseisavos", matches: [["1G9", "3G_CDFGH"], ["2G5", "2G9"], ["1G1", "3G_CEFHI"]] },
-  { date: "2026-07-01 12:00", phase: "Dieciseisavos", matches: [["1G12", "3G_EHIJK"], ["1G4", "3G_BEFIJ"], ["1G7", "3G_AEHIJ"]] },
-  { date: "2026-07-02 12:00", phase: "Dieciseisavos", matches: [["2G11", "2G12"], ["1G8", "2G10"], ["1G2", "3G_EFGIJ"]] },
-  { date: "2026-07-03 12:00", phase: "Dieciseisavos", matches: [["1G10", "2G8"], ["1G11", "3G_DEIJL"], ["2G4", "2G7"]] },
+  { date: "2026-06-29 12:00", phase: "Dieciseisavos", times: ["15:30", "20:00", "12:00"], matches: [["1G5", "3G_ABCDF"], ["1G6", "2G3"], ["1G3", "2G6"]] },
+  { date: "2026-06-30 12:00", phase: "Dieciseisavos", times: ["16:00", "12:00", "20:00"], matches: [["1G9", "3G_CDFGH"], ["2G5", "2G9"], ["1G1", "3G_CEFHI"]] },
+  { date: "2026-07-01 12:00", phase: "Dieciseisavos", times: ["11:00", "19:00", "15:00"], matches: [["1G12", "3G_EHIJK"], ["1G4", "3G_BEFIJ"], ["1G7", "3G_AEHIJ"]] },
+  { date: "2026-07-02 12:00", phase: "Dieciseisavos", times: ["18:00", "14:00", "22:00"], matches: [["2G11", "2G12"], ["1G8", "2G10"], ["1G2", "3G_EFGIJ"]] },
+  { date: "2026-07-03 12:00", phase: "Dieciseisavos", times: ["17:00", "20:30", "13:00"], matches: [["1G10", "2G8"], ["1G11", "3G_DEIJL"], ["2G4", "2G7"]] },
   { date: "2026-07-04 15:00", phase: "Octavos", matches: [["Ganador D16-2", "Ganador D16-5"], ["Ganador D16-1", "Ganador D16-3"]] },
   { date: "2026-07-05 15:00", phase: "Octavos", matches: [["Ganador D16-4", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"]] },
   { date: "2026-07-06 15:00", phase: "Octavos", matches: [["Ganador D16-11", "Ganador D16-12"], ["Ganador D16-9", "Ganador D16-10"]] },
@@ -94,6 +94,10 @@ const knockoutSchedule = [
   { date: "2026-07-18 17:00", phase: "Tercer puesto", matches: [["Perdedor SF1", "Perdedor SF2"]] },
   { date: "2026-07-19 14:00", phase: "Final", matches: [["Ganador SF1", "Ganador SF2"]] }
 ];
+
+const officialKnockoutResults = {
+  73: { homeScore: 0, awayScore: 1 }
+};
 
 const flags = {
   "Arabia Saudita": "sa",
@@ -230,6 +234,7 @@ const scorers = [
   ["Cyle Larin", "Canada", 2, 0, 30],
   ["Nathan Saliba", "Canada", 1, 0, 90],
   ["Jonathan David", "Canada", 3, 0, 90],
+  ["Stephen Eustáquio", "Canada", 1, 0, 90],
   ["Gio Reyna", "Estados Unidos", 1, 0, 16],
   ["Alex Freeman", "Estados Unidos", 1, 0, 90],
   ["Mauricio Magalhães", "Paraguay", 1, 0, 45],
@@ -2012,7 +2017,7 @@ const paniniAlbumTeams = [
       },
       {
         "code": "BRA 16",
-        "name": "Danilo",
+        "name": "Danilo Barbosa",
         "position": "Mediocampista",
         "club": "Botafogo"
       },
@@ -9249,7 +9254,7 @@ const localPlayerImages = {
 		"ESP 2": "img/figuras/fifa2026.png",
 		"ESP 3": "img/figuras/fifa2026.png",
 		"ESP 4": "img/figuras/ESP4.png",
-		"ESP 5": "img/figuras/fifa2026.png",
+		"ESP 5": "img/figuras/ESP-5.png",
 		"ESP 6": "img/figuras/ESP6.png",
 		"ESP 7": "img/figuras/fifa2026.png",
 		"ESP 8": "img/figuras/ESP8.png",
@@ -9272,31 +9277,31 @@ const localPlayerImages = {
 		"ESP 25": "img/figuras/fifa2026.png",
 		"ESP 26": "img/figuras/fifa2026.png",
 		"FRA 1": "img/figuras/FRA1.png",
-		"FRA 2": "img/figuras/fifa2026.png",
-		"FRA 3": "img/figuras/fifa2026.png",
+		"FRA 2": "img/figuras/FRA02.png",
+		"FRA 3": "img/figuras/FRA03.png",
 		"FRA 4": "img/figuras/FRA4.png",
-		"FRA 5": "img/figuras/fifa2026.png",
+		"FRA 5": "img/figuras/FRA05.jpg",
 		"FRA 6": "img/figuras/FRA6.png",
 		"FRA 7": "img/figuras/FRA7.png",
 		"FRA 8": "img/figuras/FRA8.png",
-		"FRA 9": "img/figuras/fifa2026.png",
+		"FRA 9": "img/figuras/FRA09.png",
 		"FRA 10": "img/figuras/FRA10.png",
 		"FRA 11": "img/figuras/FRA11.png",
-		"FRA 12": "img/figuras/fifa2026.png",
+		"FRA 12": "img/figuras/FRA12.png",
 		"FRA 13": "img/figuras/FRA13.png",
 		"FRA 14": "img/figuras/FRA14.png",
-		"FRA 15": "img/figuras/fifa2026.png",
-		"FRA 16": "img/figuras/fifa2026.png",
+		"FRA 15": "img/figuras/FRA15.png",
+		"FRA 16": "img/figuras/FRA16.png",
 		"FRA 17": "img/figuras/FRA17.png",
 		"FRA 18": "img/figuras/FRA18.png",
 		"FRA 19": "img/figuras/FRA19.png",
 		"FRA 20": "img/figuras/FRA20.png",
 		"FRA 21": "img/figuras/FRA21.png",
 		"FRA 22": "img/figuras/FRA22.png",
-		"FRA 23": "img/figuras/fifa2026.png",
-		"FRA 24": "img/figuras/fifa2026.png",
-		"FRA 25": "img/figuras/fifa2026.png",
-		"FRA 26": "img/figuras/fifa2026.png",
+		"FRA 23": "img/figuras/FRA23.png",
+		"FRA 24": "img/figuras/FRA24.jpg",
+		"FRA 25": "img/figuras/FRA25.pNg",
+		"FRA 26": "img/figuras/FRA26.png",
 		"GER 1": "img/figuras/GER1.png",
 		"GER 2": "img/figuras/GER2.png",
 		"GER 3": "img/figuras/GER3.png",
@@ -9479,15 +9484,15 @@ const localPlayerImages = {
 		"JPN 24": "img/figuras/fifa2026.png",
 		"JPN 25": "img/figuras/JPN25.png",
 		"JPN 26": "img/figuras/JPN26.png",
-		"KOR 1": "img/figuras/KOR1.png",
+		"KOR 1": "img/figuras/KOR01.png",
 		"KOR 2": "img/figuras/fifa2026.png",
 		"KOR 3": "img/figuras/fifa2026.png",
 		"KOR 4": "img/figuras/fifa2026.png",
-		"KOR 5": "img/figuras/KOR5.png",
+		"KOR 5": "img/figuras/KOR05.png",
 		"KOR 6": "img/figuras/fifa2026.png",
 		"KOR 7": "img/figuras/fifa2026.png",
 		"KOR 8": "img/figuras/fifa2026.png",
-		"KOR 9": "img/figuras/KOR9.png",
+		"KOR 9": "img/figuras/KOR09.png",
 		"KOR 10": "img/figuras/fifa2026.png",
 		"KOR 11": "img/figuras/fifa2026.png",
 		"KOR 12": "img/figuras/fifa2026.png",
@@ -10147,6 +10152,7 @@ const localPlayerImages = {
 		"CRO:marco pasalic": "img/figuras/CRO24.png",
 		"CRO:mario pasalic": "img/figuras/CRO13.png",
 		"CRO:martin baturina": "img/figuras/CRO16.png",
+		"CRO:duje caleta car": "img/figuras_no_usadas/cro_13_duje-galeta-car.png",
 		"CRO:mateo kovacic": "img/figuras/CRO12.png",
 		"CZE:adam hlozek": "img/figuras/CZE23.png",
 		"CZE:david zima 8slavia praga": "img/figuras/CZE7.png",
@@ -10251,7 +10257,7 @@ const localPlayerImages = {
 		"JPN:shogo taniguchi": "img/figuras/JPN5.png",
 		"JPN:takefusa kubo": "img/figuras/JPN21.png",
 		"JPN:zion suzuki": "img/figuras/JPN1.png",
-		"KOR:jens castrop": "img/figuras/KOR9.png",
+		"KOR:jens castrop": "img/figuras/KOR09.png",
 		"MAR:abde ezzalzouli": "img/figuras/MAR24.png",
 		"MAR:achraf hakimi": "img/figuras/MAR4.png",
 		"MAR:ayoub el kaabi": "img/figuras/MAR22.png",
@@ -10292,6 +10298,9 @@ const localPlayerImages = {
 		"NOR:oscar bob": "img/figuras/NOR22.png",
 		"NOR:patrick berg": "img/figuras/NOR14.png",
 		"NOR:sander berge": "img/figuras/NOR15.png",
+		"NOR:david moller wolfe": "img/figuras_no_usadas/nor_16_david-mooller-wolfe.png",
+		"NOR:jorgen strand larsen": "img/figuras_no_usadas/nor_03_jorgen strang larsen.png",
+		"NOR:orjan haskjold nyland": "img/figuras_no_usadas/nor_01_orjan-nyland.png",
 		"NOR:torbjorn heggem": "img/figuras/NOR9.png",
 		"PAR:alejandro romero gamarra": "img/figuras/PAR17.png",
 		"PAR:andres cubas": "img/figuras/PAR15.png",
@@ -10421,15 +10430,29 @@ const localPlayerImages = {
 };
 
 const verifiedPlayerImagesByName = {
-	"ALG:aissa mandi": "img/figuras/ALG9.png",
-	"ALG:alexis guendouz": "img/figuras/alg-21-alexis-guendouz.png",
-	"ALG:anis hadj moussa": "img/figuras/ALG26.png",
-	"ALG:anthony mandrea": "img/figuras/alg-23-anthony-mandrea.png",
+	"BIH:amar dedic": "img/figuras_no_usadas/bih_15_amar-dedig.png",
+	"BIH:ermedin demirovic": "img/figuras_no_usadas/bih_13-erimedin demirovic.png",
+	"BRA:luiz henrique": "img/figuras_no_usadas/bra_11-luiz-henrque.png",
+	"CAN:derek cornelius": "img/figuras_no_usadas/can_11_derek cornelus.png",
+	"CIV:evan ndicka": "img/figuras_no_usadas/civ_04-evan ndicka.png",
+	"CIV:evan n dicka": "img/figuras_no_usadas/civ_04-evan ndicka.png",
+	"CRO:ivan perisic": "img/figuras_no_usadas/cro_11_ivan-perisig.png",
+	"CRO:kristijan jakic": "img/figuras_no_usadas/cro_12_kristijan-jakig.png",
+	"CRO:petar sucic": "img/figuras_no_usadas/cro_10_petar-sugig.png",
+	"CZE:patrick schick": "img/figuras_no_usadas/cze_16_patrik schick.png",
+	"HAI:johnny placide": "img/figuras_no_usadas/hai_01_johny-placide.png",
+	"JPN:tsuyoshi watanabe": "img/figuras_no_usadas/jpn_18_tsuyosh-watanabe.png",
+	"MAR:azzedine ounahi": "img/figuras_no_usadas/mar_08_azedine ounaho.png",
+	"MAR:nayef aguerd": "img/figuras_no_usadas/mar_16_navef-aguerd.png",
+	"PAR:roberto fernandez": "img/figuras_no_usadas/par_12_p-foberto-fernandez.png",
+	"POR:goncalo inacio": "img/figuras_no_usadas/por_10_gongalo-inacio.png",
+	"POR:goncalo ramos": "img/figuras_no_usadas/por_18_gongalo-ramos.png",
+	"RSA:iqraam rayners": "img/figuras_no_usadas/rsa_07_ioraam-rayners.png",
+	"SUI:ricardo rodriguez": "img/figuras_no_usadas/sui_02_aicardo-rodriguez.png",
+	"SWE:yasin ayari": "img/figuras_no_usadas/swe_11_yasin-avari.png",
+	"URU:nicolas de la cruz": "img/figuras_no_usadas/uru_08_nicolas-de-la-gruz.png",
 	"ALG:fares chaibi": "img/figuras/ALG17.png",
-	"ALG:nabil bentaleb": "img/figuras/ALG14.png",
-	"ALG:said benrahma": "img/figuras/alg-14-said-benrahma.png",
-	"ALG:youcef atal": "img/figuras/alg-15-youcef-atal.png",
-	"ALG:zinedine belaid": "img/figuras/alg-18-zinedine-belaid.png",
+	"ALG:mohamed amine amoura": "img/figuras_no_usadas/alg-05-mohamed-amoura.png",
 	"ARG:cristian romero": "img/figuras/ARG4.png",
 	"ARG:emiliano martinez": "img/figuras/ARG1.png",
 	"ARG:leandro paredes": "img/figuras/ARG15.png",
@@ -10578,23 +10601,20 @@ const verifiedPlayerImagesByName = {
 	"JPN:ayumu seko": "img/figuras/JPN8.png",
 	"JPN:junya ito": "img/figuras/JPN17.png",
 	"JPN:kaishu sano": "img/figuras/JPN13.png",
-	"JPN:keito nakamura": "img/figuras/jpn_02_keito-nakamura.png",
 	"JPN:ritsu doan": "img/figuras/JPN25.png",
 	"JPN:shogo taniguchi": "img/figuras/JPN5.png",
 	"JPN:takefusa kubo": "img/figuras/JPN21.png",
 	"JPN:zion suzuki": "img/figuras/JPN1.png",
 	"KOR:dong gyeong lee": "img/figuras/kor_12_donggyeong-lee.png",
 	"KOR:han beom lee": "img/figuras/kor_05_hanbeom-lee.png",
-	"KOR:hee chan hwang": "img/figuras/kor_18_heechan-hwang.png",
-	"KOR:heung min son": "img/figuras/kor_03_heungmin-son.png",
 	"KOR:hyeon gyu oh": "img/figuras/kor_17_hyeongyu-oh.png",
 	"KOR:hyeon woo jo": "img/figuras/kor_01_hyeonwoo-jo.png",
 	"KOR:in beom hwang": "img/figuras/kor_09_inbeom-hwang.png",
 	"KOR:jae sung lee": "img/figuras/kor_08_jaesung-lee.png",
-	"KOR:jens castrop": "img/figuras/KOR9.png",
+	"KOR:jens castrop": "img/figuras/KOR09.png",
 	"KOR:kang in lee": "img/figuras/kor_10_kangin-lee.png",
-	"KOR:kim min jae": "img/figuras/KOR5.png",
-	"KOR:kim seung gyu": "img/figuras/KOR1.png",
+	"KOR:kim min jae": "img/figuras/KOR05.png",
+	"KOR:kim seung gyu": "img/figuras/KOR01.png",
 	"KOR:seung ho paik": "img/figuras/kor_16_seungho-paik.png",
 	"KOR:tae seok lee": "img/figuras/kor_06_taeseok-lee.png",
 	"KOR:young woo seol": "img/figuras/kor_14_youngwoo0-seol.png",
@@ -10675,13 +10695,8 @@ const verifiedPlayerImagesByName = {
 	"SWE:alexander isak": "img/figuras/SWE20.png",
 	"SWE:anthony elanga": "img/figuras/SWE23.png",
 	"SWE:daniel svensson": "img/figuras/SWE9.png",
-	"SWE:emil holm": "img/figuras/swe_14_emil-holm.png",
 	"SWE:gabriel gudmundsson": "img/figuras/SWE7.png",
-	"SWE:gustaf lagerbielke": "img/figuras/swe_17_gustaf-lagerbielke.png",
-	"SWE:jesper karlstrom": "img/figuras/swe_06_jesper-karlstrom.png",
-	"SWE:lucas bergvall": "img/figuras/swe_01_lucas-bergvall.png",
 	"SWE:mattias svanberg": "img/figuras/SWE18.png",
-	"SWE:victor lindelof": "img/figuras/swe_10_victor-nilsson-lindelof.png",
 	"SWE:viktor johansson": "img/figuras/SWE2.png",
 	"TUR:yunus akgun": "img/figuras/TUR23.png",
 	"URU:darwin nunez": "img/figuras/uru-11-darwin nunez.jpg",
@@ -22048,8 +22063,10 @@ function buildGeneratedGroupStageMatches() {
 function buildKnockoutMatches(startId) {
   return knockoutSchedule.flatMap((round, roundIndex) =>
     round.matches.map(([home, away], matchIndex) => {
-      const date = new Date(round.date.replace(" ", "T"));
-      date.setHours(date.getHours() + matchIndex * 3);
+      const datePart = round.date.split(" ")[0];
+      const dateValue = round.times?.[matchIndex] ? datePart + " " + round.times[matchIndex] : round.date;
+      const date = new Date(dateValue.replace(" ", "T"));
+      if (!round.times?.[matchIndex]) date.setHours(date.getHours() + matchIndex * 3);
       return {
         id: startId + roundIndex * 4 + matchIndex + 1,
         date: formatDateTime(date),
@@ -22330,6 +22347,15 @@ function updateKnockoutCalendar() {
       delete match.awayScore;
       match.status = "pendiente";
       delete matchResults[match.id];
+      localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
+    }
+
+    const officialResult = officialKnockoutResults[match.id];
+    if (officialResult) {
+      match.homeScore = officialResult.homeScore;
+      match.awayScore = officialResult.awayScore;
+      match.status = "finalizado";
+      matchResults[match.id] = officialResult;
       localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
     }
   });

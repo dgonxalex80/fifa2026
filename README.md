@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: verificado el 28 de junio de 2026 a las 16:32 (hora Colombia), con todos los marcadores de la fase de grupos confirmados y los dieciseisavos de final activos. Ultimos cierres de grupos: Jordania 1-3 Argentina y Argelia 3-3 Austria.
+Estado de los datos deportivos: verificado el 29 de junio de 2026 a las 09:58 (hora Colombia), con todos los marcadores de la fase de grupos confirmados y el primer dieciseisavo cargado. Ultima novedad: Sudafrica 0-1 Canada, con Canada clasificada a octavos de final.
 
 ## Contenido del Proyecto
 

@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "29 de junio de 2026, 09:58 (hora Colombia)";
+const tournamentDataCutoffLabel = "29 de junio de 2026, 14:10 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -96,7 +96,8 @@ const knockoutSchedule = [
 ];
 
 const officialKnockoutResults = {
-  73: { homeScore: 0, awayScore: 1 }
+  73: { homeScore: 0, awayScore: 1 },
+  79: { homeScore: 2, awayScore: 1 }
 };
 
 const flags = {
@@ -156,6 +157,9 @@ const flags = {
 
 
 const scorers = [
+  ["Casemiro", "Brasil", 1, 0, 90],
+  ["Gabriel Martinelli", "Brasil", 1, 0, 90],
+  ["Kaishu Sano", "Japon", 1, 0, 90],
   ["Finn Surman", "Nueva Zelanda", 1, 0, 90],
   ["Mostafa Zico", "Egipto", 1, 0, 90],
   ["Mohamed Salah", "Egipto", 1, 0, 90],

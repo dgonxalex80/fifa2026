@@ -3144,6 +3144,30 @@ body[data-theme="light"] .result-editor {
 .scheme-team.is-winner { color: #fff; font-weight: 800; }
 .scheme-team.is-winner strong { color: var(--scheme-gold); }
 
+.scheme-venue {
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid rgba(232, 187, 98, 0.22);
+  margin-top: 4px;
+  padding: 6px 3px 0;
+  color: #d0c7b6;
+  font-size: 0.64rem;
+  line-height: 1.25;
+}
+
+.scheme-venue span,
+.scheme-venue small {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scheme-venue small {
+  color: #85827c;
+  font-size: 0.58rem;
+}
+
 .scheme-finale {
   display: grid;
   grid-template-columns: minmax(250px, 420px) minmax(280px, 520px);

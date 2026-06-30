@@ -95,6 +95,41 @@ const knockoutSchedule = [
   { date: "2026-07-19 14:00", phase: "Final", matches: [["Ganador SF1", "Ganador SF2"]] }
 ];
 
+const knockoutVenues = [
+  ["Los Angeles Stadium", "Los Angeles"],
+  ["Boston Stadium", "Boston"],
+  ["Estadio Monterrey", "Monterrey"],
+  ["Houston Stadium", "Houston"],
+  ["New York New Jersey Stadium", "New York/New Jersey"],
+  ["Dallas Stadium", "Dallas"],
+  ["Estadio Ciudad de Mexico", "Ciudad de Mexico"],
+  ["Atlanta Stadium", "Atlanta"],
+  ["San Francisco Bay Area Stadium", "San Francisco Bay Area"],
+  ["Seattle Stadium", "Seattle"],
+  ["Toronto Stadium", "Toronto"],
+  ["Los Angeles Stadium", "Los Angeles"],
+  ["BC Place Vancouver", "Vancouver"],
+  ["Miami Stadium", "Miami"],
+  ["Kansas City Stadium", "Kansas City"],
+  ["Dallas Stadium", "Dallas"],
+  ["Philadelphia Stadium", "Philadelphia"],
+  ["Houston Stadium", "Houston"],
+  ["New York New Jersey Stadium", "New York/New Jersey"],
+  ["Estadio Ciudad de Mexico", "Ciudad de Mexico"],
+  ["Dallas Stadium", "Dallas"],
+  ["Seattle Stadium", "Seattle"],
+  ["Atlanta Stadium", "Atlanta"],
+  ["BC Place Vancouver", "Vancouver"],
+  ["Boston Stadium", "Boston"],
+  ["Los Angeles Stadium", "Los Angeles"],
+  ["Miami Stadium", "Miami"],
+  ["Kansas City Stadium", "Kansas City"],
+  ["Dallas Stadium", "Dallas"],
+  ["Atlanta Stadium", "Atlanta"],
+  ["Miami Stadium", "Miami"],
+  ["New York New Jersey Stadium", "New York/New Jersey"]
+];
+
 const officialKnockoutResults = {
   73: { homeScore: 0, awayScore: 1 },
   77: { homeScore: 1, awayScore: 1, penaltyHomeScore: 3, penaltyAwayScore: 4, winner: "Paraguay" },
@@ -22066,12 +22101,14 @@ function buildGeneratedGroupStageMatches() {
 }
 
 function buildKnockoutMatches(startId) {
+  let venueIndex = 0;
   return knockoutSchedule.flatMap((round, roundIndex) =>
     round.matches.map(([home, away], matchIndex) => {
       const datePart = round.date.split(" ")[0];
       const dateValue = round.times?.[matchIndex] ? datePart + " " + round.times[matchIndex] : round.date;
       const date = new Date(dateValue.replace(" ", "T"));
       if (!round.times?.[matchIndex]) date.setHours(date.getHours() + matchIndex * 3);
+      const [stadium, city] = knockoutVenues[venueIndex++] || ["Sede por confirmar", "Por confirmar"];
       return {
         id: startId + roundIndex * 4 + matchIndex + 1,
         date: formatDateTime(date),
@@ -22080,8 +22117,8 @@ function buildKnockoutMatches(startId) {
         seedHome: home,
         seedAway: away,
         phase: round.phase,
-        stadium: "Sede por confirmar",
-        city: "Por confirmar",
+        stadium,
+        city,
         status: "pendiente"
       };
     })

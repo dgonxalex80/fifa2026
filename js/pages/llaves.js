@@ -19,6 +19,8 @@ function renderSchemeGroup(group, rows, qualifiedTeams) {
 function renderSchemeMatch(home, away, match, index) {
   const winner = getWinner(match);
   const result = getMatchResult(match);
+  const venue = match?.stadium && match.stadium !== "Sede por confirmar" ? match.stadium : "Sede por confirmar";
+  const city = match?.city && match.city !== "Por confirmar" ? match.city : "Ciudad por confirmar";
   return `
     <article class="scheme-match ${result ? "is-finished" : ""}">
       <small>Partido ${index + 1}</small>
@@ -29,6 +31,10 @@ function renderSchemeMatch(home, away, match, index) {
       <div class="scheme-team ${winner === away ? "is-winner" : ""}">
         ${teamLabel(away)}
         <strong>${Number.isInteger(match.awayScore) ? match.awayScore : "-"}</strong>
+      </div>
+      <div class="scheme-venue">
+        <span>${venue}</span>
+        <small>${city}</small>
       </div>
     </article>
   `;

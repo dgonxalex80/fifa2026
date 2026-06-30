@@ -751,6 +751,13 @@ body[data-theme="light"] .timeline p {
   font-variant-numeric: tabular-nums;
 }
 
+.penalty-result {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+
 .broadcast-legend {
   display: flex;
   align-items: center;

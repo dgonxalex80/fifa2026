@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "29 de junio de 2026, 14:10 (hora Colombia)";
+const tournamentDataCutoffLabel = "29 de junio de 2026, 18:43 (hora Colombia)";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -97,6 +97,7 @@ const knockoutSchedule = [
 
 const officialKnockoutResults = {
   73: { homeScore: 0, awayScore: 1 },
+  77: { homeScore: 1, awayScore: 1, penaltyHomeScore: 3, penaltyAwayScore: 4, winner: "Paraguay" },
   79: { homeScore: 2, awayScore: 1 }
 };
 
@@ -22127,6 +22128,11 @@ function applyStoredMatchResults() {
     if (!result) return;
     match.homeScore = result.homeScore;
     match.awayScore = result.awayScore;
+    if (Number.isInteger(result.penaltyHomeScore) && Number.isInteger(result.penaltyAwayScore)) {
+      match.penaltyHomeScore = result.penaltyHomeScore;
+      match.penaltyAwayScore = result.penaltyAwayScore;
+    }
+    if (result.winner) match.winner = result.winner;
     match.status = "finalizado";
   });
 
@@ -22136,13 +22142,20 @@ function applyStoredMatchResults() {
 }
 
 function getWinner(match) {
-  if (!getMatchResult(match) || match.homeScore === match.awayScore) return "";
-  return match.homeScore > match.awayScore ? match.home : match.away;
+  if (!getMatchResult(match)) return "";
+  if (match.homeScore !== match.awayScore) return match.homeScore > match.awayScore ? match.home : match.away;
+  if (match.winner) return match.winner;
+  if (Number.isInteger(match.penaltyHomeScore) && Number.isInteger(match.penaltyAwayScore) && match.penaltyHomeScore !== match.penaltyAwayScore) {
+    return match.penaltyHomeScore > match.penaltyAwayScore ? match.home : match.away;
+  }
+  return "";
 }
 
 function getLoser(match) {
-  if (!getMatchResult(match) || match.homeScore === match.awayScore) return "";
-  return match.homeScore > match.awayScore ? match.away : match.home;
+  if (!getMatchResult(match)) return "";
+  const winner = getWinner(match);
+  if (winner) return winner === match.home ? match.away : match.home;
+  return "";
 }
 
 function getGroupStandings() {
@@ -22349,6 +22362,9 @@ function updateKnockoutCalendar() {
     if (participantsChanged && getMatchResult(match)) {
       delete match.homeScore;
       delete match.awayScore;
+      delete match.penaltyHomeScore;
+      delete match.penaltyAwayScore;
+      delete match.winner;
       match.status = "pendiente";
       delete matchResults[match.id];
       localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
@@ -22356,8 +22372,7 @@ function updateKnockoutCalendar() {
 
     const officialResult = officialKnockoutResults[match.id];
     if (officialResult) {
-      match.homeScore = officialResult.homeScore;
-      match.awayScore = officialResult.awayScore;
+      Object.assign(match, officialResult);
       match.status = "finalizado";
       matchResults[match.id] = officialResult;
       localStorage.setItem("fifa2026-results", JSON.stringify(matchResults));
@@ -22383,7 +22398,11 @@ function getMatchResult(match) {
 
 function resultBadge(match) {
   const result = getMatchResult(match);
-  return result ? `<strong class="final-result">${result}</strong>` : "";
+  if (!result) return "";
+  const penalties = Number.isInteger(match.penaltyHomeScore) && Number.isInteger(match.penaltyAwayScore)
+    ? ` <span class="penalty-result">Pen. ${match.penaltyHomeScore}-${match.penaltyAwayScore}</span>`
+    : "";
+  return `<strong class="final-result">${result}${penalties}</strong>`;
 }
 
 function getColombiaBroadcastPlatforms(match) {

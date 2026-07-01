@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "29 de junio de 2026, 18:43 (hora Colombia)";
+const tournamentDataCutoffLabel = "30 de junio de 2026, tras Mexico 2-0 Ecuador";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -133,7 +133,11 @@ const knockoutVenues = [
 const officialKnockoutResults = {
   73: { homeScore: 0, awayScore: 1 },
   77: { homeScore: 1, awayScore: 1, penaltyHomeScore: 3, penaltyAwayScore: 4, winner: "Paraguay" },
-  79: { homeScore: 2, awayScore: 1 }
+  78: { homeScore: 1, awayScore: 1, penaltyHomeScore: 2, penaltyAwayScore: 3, winner: "Marruecos" },
+  79: { homeScore: 2, awayScore: 1 },
+  81: { homeScore: 3, awayScore: 0 },
+  82: { homeScore: 1, awayScore: 2 },
+  83: { homeScore: 2, awayScore: 0 }
 };
 
 const flags = {
@@ -213,12 +217,12 @@ const scorers = [
   ["Alexis Saelemaekers", "Belgica", 1, 0, 90],
   ["Mahmoud Saber", "Egipto", 1, 0, 90],
   ["Lionel Messi", "Argentina", 6, 0, 198],
-  ["Kylian Mbappé", "Francia", 4, 0, 180],
-  ["Erling Haaland", "Noruega", 4, 0, 180],
+  ["Kylian Mbappé", "Francia", 6, 0, 270],
+  ["Erling Haaland", "Noruega", 5, 0, 270],
   ["Thelo Aasgaard", "Noruega", 1, 0, 90],
   ["Leo Ostigård", "Noruega", 1, 0, 90],
   ["Aymen Hussein", "Irak", 1, 0, 90],
-  ["Bradley Barcola", "Francia", 1, 0, 9],
+  ["Bradley Barcola", "Francia", 2, 0, 99],
   ["Désiré Doué", "Francia", 1, 0, 90],
   ["Ibrahim Mbaye", "Senegal", 1, 0, 14],
   ["Ousmane Dembélé", "Francia", 4, 0, 180],
@@ -226,7 +230,7 @@ const scorers = [
   ["Ismaïla Sarr", "Senegal", 3, 0, 180],
   ["Habib Diarra", "Senegal", 1, 0, 90],
   ["Pape Gueye", "Senegal", 2, 0, 90],
-  ["Michael Olise", "Francia", 0, 1, 90],
+  ["Michael Olise", "Francia", 0, 2, 180],
   ["Adrien Rabiot", "Francia", 0, 1, 90],
   ["Iliman Ndiaye", "Senegal", 1, 1, 104],
   ["Emam Ashour", "Egipto", 1, 0, 19],
@@ -243,11 +247,11 @@ const scorers = [
   ["Nico Schlotterbeck", "Alemania", 1, 0, 90],
   ["Jamal Musiala", "Alemania", 1, 0, 90],
   ["Virgil van Dijk", "Paises Bajos", 1, 0, 90],
-  ["Amad Diallo", "Costa de Marfil", 1, 0, 90],
+  ["Amad Diallo", "Costa de Marfil", 2, 0, 180],
   ["Keito Nakamura", "Japon", 1, 0, 90],
   ["Crysencio Summerville", "Paises Bajos", 2, 1, 135],
   ["Brian Brobbey", "Paises Bajos", 2, 0, 72],
-  ["Cody Gakpo", "Paises Bajos", 2, 1, 180],
+  ["Cody Gakpo", "Paises Bajos", 3, 1, 270],
   ["Anthony Elanga", "Suecia", 1, 0, 36],
   ["Daichi Kamada", "Japon", 2, 0, 180],
   ["Ayase Ueda", "Japon", 2, 1, 90],
@@ -259,13 +263,13 @@ const scorers = [
   ["John McGinn", "Escocia", 1, 0, 90],
   ["Nestory Irankunda", "Australia", 1, 0, 90],
   ["Connor Metcalfe", "Australia", 1, 0, 90],
-  ["Julian Quinones", "Mexico", 2, 0, 169],
+  ["Julian Quinones", "Mexico", 3, 0, 259],
   ["Boualem Khoukhi", "Catar", 1, 0, 95],
   ["Breel Embolo", "Suiza", 1, 0, 17],
   ["Ismael Saibari", "Marruecos", 3, 0, 180],
   ["Vinicius Junior", "Brasil", 4, 1, 180],
   ["Matheus Cunha", "Brasil", 3, 0, 180],
-  ["Raul Jimenez", "Mexico", 1, 0, 76],
+  ["Raul Jimenez", "Mexico", 2, 0, 166],
   ["Luis Romo", "Mexico", 1, 0, 90],
   ["Hwang In-beom", "Corea del Sur", 1, 1, 90],
   ["Oh Hyeon-gyu", "Corea del Sur", 1, 0, 21],
@@ -274,7 +278,7 @@ const scorers = [
   ["Cyle Larin", "Canada", 2, 0, 30],
   ["Nathan Saliba", "Canada", 1, 0, 90],
   ["Jonathan David", "Canada", 3, 0, 90],
-  ["Stephen Eustáquio", "Canada", 1, 0, 90],
+  ["Stephen Eustáquio", "Canada", 2, 0, 180],
   ["Gio Reyna", "Estados Unidos", 1, 0, 16],
   ["Alex Freeman", "Estados Unidos", 1, 0, 90],
   ["Mauricio Magalhães", "Paraguay", 1, 0, 45],
@@ -344,7 +348,9 @@ const scorers = [
   ["Leroy Sane", "Alemania", 1, 0, 90],
   ["Nilson Angulo", "Ecuador", 1, 0, 90],
   ["Gonzalo Plata", "Ecuador", 1, 0, 90],
-  ["Nicolas Pépé", "Costa de Marfil", 2, 0, 90]
+  ["Nicolas Pépé", "Costa de Marfil", 2, 0, 90],
+  ["Issa Diop", "Marruecos", 1, 0, 120],
+  ["Antonio Nusa", "Noruega", 1, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

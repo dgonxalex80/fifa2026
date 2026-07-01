@@ -4,7 +4,7 @@ Aplicacion web estatica, responsive e informativa para consultar datos del Mundi
 
 El MVP actual se ejecuta completamente en el navegador con datos locales. Tambien permite que un participante construya su pronostico, lo guarde en el navegador, lo exporte a CSV y genere un reporte PDF desde la opcion de impresion del navegador.
 
-Estado de los datos deportivos: verificado el 30 de junio de 2026 tras Mexico 2-0 Ecuador, con todos los marcadores de la fase de grupos confirmados y siete dieciseisavos cargados. Ultima novedad final: Mexico vencio 2-0 a Ecuador y clasifico a octavos; la tanda del 1 de julio queda pendiente hasta marcador final.
+Estado de los datos deportivos: verificado el 1 de julio de 2026 tras Inglaterra 2-1 Republica Democratica del Congo, con todos los marcadores de la fase de grupos confirmados y ocho dieciseisavos cargados. Ultima novedad final: Inglaterra remonto 2-1 ante Republica Democratica del Congo y clasifico a octavos; Belgica-Senegal y Estados Unidos-Bosnia y Herzegovina quedan pendientes hasta marcador final.
 
 ## Contenido del Proyecto
 

@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "30 de junio de 2026, tras Mexico 2-0 Ecuador";
+const tournamentDataCutoffLabel = "1 de julio de 2026, tras Inglaterra 2-1 Republica Democratica del Congo";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -137,7 +137,8 @@ const officialKnockoutResults = {
   79: { homeScore: 2, awayScore: 1 },
   81: { homeScore: 3, awayScore: 0 },
   82: { homeScore: 1, awayScore: 2 },
-  83: { homeScore: 2, awayScore: 0 }
+  83: { homeScore: 2, awayScore: 0 },
+  85: { homeScore: 2, awayScore: 1 }
 };
 
 const flags = {
@@ -310,7 +311,7 @@ const scorers = [
   ["Nuno Mendes", "Portugal", 1, 0, 90],
   ["Rafael Leão", "Portugal", 1, 0, 90],
   ["Yoane Wissa", "Republica Democratica del Congo", 3, 0, 225],
-  ["Harry Kane", "Inglaterra", 3, 0, 157],
+  ["Harry Kane", "Inglaterra", 5, 0, 247],
   ["Jude Bellingham", "Inglaterra", 2, 1, 152],
   ["Marcus Rashford", "Inglaterra", 1, 0, 90],
   ["Martin Baturina", "Croacia", 1, 0, 90],
@@ -350,7 +351,8 @@ const scorers = [
   ["Gonzalo Plata", "Ecuador", 1, 0, 90],
   ["Nicolas Pépé", "Costa de Marfil", 2, 0, 90],
   ["Issa Diop", "Marruecos", 1, 0, 120],
-  ["Antonio Nusa", "Noruega", 1, 0, 90]
+  ["Antonio Nusa", "Noruega", 1, 0, 90],
+  ["Aaron Cipenga", "Republica Democratica del Congo", 1, 0, 90]
 ];
 
 const allTimeWorldCupScorers = [

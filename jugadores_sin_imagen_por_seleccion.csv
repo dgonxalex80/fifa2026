@@ -1,32 +1,18 @@
 seleccion,orden,jugador
-Argelia,1,Luca Zidane
-Argelia,2,Oussama Benbot
 Argelia,3,Melvin Mastil
 Argelia,4,Abdelatif Ramdane
-Argelia,5,Rafik Belghali
-Argelia,6,Samir Chergui
 Argelia,7,Rayan Aït-Nouri
-Argelia,8,Jaouen Hadjam
+Argelia,9,Aïssa Mandi
 Argelia,11,Zineddine Belaïd
-Argelia,12,Achref Abada
-Argelia,13,Mohamed Amine Tougaï
-Argelia,15,Hicham Boudaoui
-Argelia,18,Ibrahim Maza
+Argelia,14,Nabil Bentaleb
+Argelia,16,Houssem Aouar
 Argelia,19,Yacine Titraoui
-Argelia,20,Ramiz Zerrouki
+Argelia,21,Mohamed Amine Amoura
 Argelia,22,Nadhir Benbouali
 Argelia,23,Adil Boulbina
 Argelia,24,Farès Ghedjemis
 Argelia,25,Amine Gouiri
-Argentina,2,Gerónimo Rulli
-Argentina,3,Juan Musso
-Argentina,8,Gonzalo Montiel
-Argentina,10,Lisandro Martínez
-Argentina,11,Facundo Medina
-Argentina,17,Valentín Barco
-Argentina,18,Giovani Lo Celso
-Argentina,22,José Manuel López
-Argentina,24,Thiago Almada
+Argelia,26,Anis Hadj Moussa
 Australia,1,Matthew Ryan
 Australia,2,Patrick Beach
 Australia,3,Paul Izzo
@@ -57,7 +43,6 @@ Austria,1,Patrick Pentz
 Austria,2,Alexander Schlager
 Austria,3,Florian Wiegele
 Austria,4,David Affengruber
-Austria,5,David Alaba
 Austria,6,Kevin Danso
 Austria,7,Marco Friedl
 Austria,8,Philipp Lienhart
@@ -107,25 +92,20 @@ Belgica,25,Matias Fernández-Pardo
 Belgica,26,Diego Moreira
 Bosnia y Herzegovina,2,Martin Zlomislic
 Bosnia y Herzegovina,3,Osman Hadzikic
+Bosnia y Herzegovina,5,Amar Dedic
 Bosnia y Herzegovina,8,Tarik Muharemovic
 Bosnia y Herzegovina,9,Stjepan Radeljic
 Bosnia y Herzegovina,10,Dennis Hadzikadunic
 Bosnia y Herzegovina,11,Nidal Celik
+Bosnia y Herzegovina,16,Ermin Mahmic
 Bosnia y Herzegovina,20,Kerim Alajbegovic
 Bosnia y Herzegovina,22,Ermedin Demirovic
 Bosnia y Herzegovina,23,Jovo Lukic
-Brasil,3,Weverton
-Brasil,6,Bremer
-Brasil,8,Léo Pereira
-Brasil,11,Alex Sandro
-Brasil,12,Douglas Santos
 Brasil,15,Fabinho
 Brasil,21,Luiz Henrique
-Brasil,22,Igor Thiago
-Brasil,23,Endrick
-Brasil,26,Neymar
 Canada,1,Maxime Crépau
 Canada,2,Owen Goodman
+Canada,5,Derek Cornelius
 Canada,6,Alphonso Davies
 Canada,7,Luc de Fougerolles
 Canada,9,Alfie Jones
@@ -215,7 +195,6 @@ Croacia,18,Petar Sucic
 Croacia,19,Nikola Moro
 Croacia,20,Toni Fruk
 Croacia,21,Ivan Perisic
-Croacia,23,Ante Budimir
 Croacia,25,Petar Musa
 Croacia,26,Igor Matanovic
 Curazao,1,Tyrick Bodak
@@ -264,10 +243,8 @@ Ecuador,8,Félix Torres
 Ecuador,10,Yaimar Medina
 Ecuador,13,Jordi Alcívar
 Ecuador,14,Denil Castillo
-Ecuador,19,John Yeboah
 Ecuador,21,Jordy Caicedo
 Ecuador,22,Jeremy Arévalo
-Ecuador,23,Anthony Valencia
 Egipto,1,Mohamed El Shenawy
 Egipto,2,Mostafa Shobeir
 Egipto,3,Al-Mahdy Soliman
@@ -306,46 +283,16 @@ Inglaterra,16,Kobbie Mainoo
 Inglaterra,17,Eberechi Eze
 Inglaterra,21,Noni Madueke
 Inglaterra,26,Ivan Toney
-Espana,2,David Raya
 Espana,3,Joan García
-Espana,5,Marcos Llorente
 Espana,7,Alex Grimaldo
 Espana,9,Pau Cubarsí
 Espana,10,Marc Pubill
 Espana,11,Eric García
 Espana,17,Gavi
 Espana,18,Alex Baena
-Espana,22,Mikel Oyarzabal
 Espana,24,Yeremi Pino
 Espana,25,Victor Muñoz
 Espana,26,Borja Iglesias
-Francia,2,Brice Samba
-Francia,3,Robin Risser
-Francia,5,Malo Gusto
-Francia,9,Lucas Hernández
-Francia,12,Maxence Lacroix
-Francia,15,N’Golo Kanté
-Francia,16,Warren Zaïre-Emery
-Francia,23,Marcus Thuram
-Francia,24,Maghnes Akliouche
-Francia,25,Jean-Philippe Mateta
-Francia,26,Rayan Cherki
-Alemania,1,Manuel Neuer
-Alemania,2,Oliver Baumann
-Alemania,3,Alexander Nübel
-Alemania,5,Nathaniel Brown
-Alemania,6,Pascal Groß
-Alemania,10,Nico Schlotterbeck
-Alemania,12,Malick Thiaw
-Alemania,13,Aleksandar Pavlovic
-Alemania,15,Nadiem Amiri
-Alemania,16,Jamie Leweling
-Alemania,17,Felix Nmecha
-Alemania,18,Angelo Stiller
-Alemania,20,Lennart Karl
-Alemania,22,Deniz Undav
-Alemania,23,Kai Havertz
-Alemania,24,Maximilian Beier
 Ghana,1,Benjamin Asare
 Ghana,2,Lawrence Ati-Zigi
 Ghana,3,Joseph Anang
@@ -372,10 +319,10 @@ Ghana,23,Brandon Thomas-Asante
 Ghana,24,Prince Kwabena Adu
 Ghana,25,Iñaki Williams
 Ghana,26,Jordan Ayew
+Haiti,1,Johnny Placide
 Haiti,2,Alexandre Pierre
 Haiti,3,Josué Duverger
 Haiti,5,Wilguens Paugain
-Haiti,8,JK Duverne
 Haiti,11,Keeto Thermoncy
 Haiti,13,Carl-Fred Sainthe
 Haiti,15,Jeanricner Bellegarde
@@ -471,16 +418,13 @@ Japon,9,Yukinari Sugawara
 Japon,10,Hiroki Ito
 Japon,12,Tsuyoshi Watanabe
 Japon,14,Wataru Endo
-Japon,18,Kaito Nakamura
 Japon,19,Daizen Maeda
 Japon,22,Yuito Suzuki
 Japon,23,Kento Shiogai
 Japon,24,Keisuke Goto
-Corea del Sur,1,Kim Seung-Gyu
 Corea del Sur,2,Song Bum Keun
 Corea del Sur,3,Jo Hyeon-Woo
 Corea del Sur,4,Kim Moon-Hwan
-Corea del Sur,5,Kim Min-Jae
 Corea del Sur,6,Kim Tae-Hwan
 Corea del Sur,7,Park Jin-Seob
 Corea del Sur,8,Seol Young-Woo
@@ -497,7 +441,6 @@ Corea del Sur,19,Lee Kang-In
 Corea del Sur,20,Lee Dong-Gyeong
 Corea del Sur,21,Lee Jjae-Sung )Mainz 05)
 Corea del Sur,22,Hwang In-Beom
-Corea del Sur,23,Hwang Hee-Chan
 Corea del Sur,24,Song Heung-Min
 Corea del Sur,25,Oh Hyeon-Gyu
 Corea del Sur,26,Cho Gue-Sung
@@ -536,7 +479,6 @@ Marruecos,10,Issa Diop
 Marruecos,11,Redouane Hahlal
 Marruecos,12,Zakaria El Ouahdi
 Marruecos,14,Ismael Saibari
-Marruecos,15,Neil El Aynaoui
 Marruecos,17,Azzedine Ounahi
 Marruecos,18,Bouaddi
 Marruecos,19,Samir El Mourabet
@@ -562,7 +504,6 @@ Mexico,25,Julián Quiñones
 Paises Bajos,2,Robin Roefs
 Paises Bajos,3,Mark Flekken
 Paises Bajos,6,Jorrel Hato
-Paises Bajos,9,Jurriën Timber
 Paises Bajos,13,Marten de Roon
 Paises Bajos,14,Tijjani Reijnders
 Paises Bajos,16,Noa Lang
@@ -572,6 +513,7 @@ Paises Bajos,19,Crysencio Summerville
 Paises Bajos,20,Guus Til
 Paises Bajos,21,Brian Brobbey
 Paises Bajos,25,Donyell Malen
+Noruega,1,Orjan Haskjold Nyland
 Noruega,2,Sander Tangvik
 Noruega,3,Egil Selvik
 Noruega,5,David Moller Wolfe
@@ -613,8 +555,6 @@ Nueva Zelanda,23,Jesse Randall
 Nueva Zelanda,24,Sarpreet Singh
 Nueva Zelanda,25,Ben Waine
 Nueva Zelanda,26,Chris Wood
-Panama,1,Orlando Mosquera
-Panama,2,Luis Mejía
 Panama,3,César Samudio
 Panama,4,César Blackman
 Panama,5,Jorge Gutiérrez
@@ -623,26 +563,21 @@ Panama,7,Fidel Escobar
 Panama,8,Andrés Andrade
 Panama,9,Edgardo Fariña
 Panama,10,José Córdoba
-Panama,11,Eric Davis
 Panama,12,Jiovany Ramos
 Panama,13,Roderick Miller
 Panama,14,Aníbal Godoy
 Panama,15,Adalberto Carrasquilla
 Panama,16,Carlos Harvey
-Panama,17,Cristian Martínez
-Panama,18,José Luis Rodríguez
 Panama,19,César Yanis
 Panama,20,Yoel Bárcenas
 Panama,21,Alberto Quintero
 Panama,22,Azarías Londoño
 Panama,23,Ismael Díaz
-Panama,24,Cecilio Waterman
 Panama,25,José Fajardo
 Panama,26,Tomás Rodríguez
 Paraguay,2,Roberto Fernández
 Paraguay,3,Gastón Olveira
 Paraguay,5,Gustavo Velázquez
-Paraguay,8,José Canale
 Paraguay,10,Alessandro Maidana
 Paraguay,12,Mauricio Magalhães
 Paraguay,14,Braian Ojeda
@@ -665,24 +600,18 @@ Catar,1,Mahmoud Abunada
 Catar,3,Salah Zakaria
 Catar,4,Ayoub Al Alawi
 Catar,6,Homam Al Amin
-Catar,7,Lucas Mendes
 Catar,8,Issa Laye
 Catar,10,Alhashmi Alhussain
-Catar,11,Sultan Al Brake
-Catar,13,Abdulaziz Hatem
 Catar,14,Ahmed Fathy
 Catar,16,Jassim Gaber
 Catar,17,Mohamed Manai
-Catar,18,Ahmed Al Janhi
 Catar,19,Ahmed Alaa
-Catar,23,Hassan Al Haydos
 Catar,24,Mohammed Muntari
 Catar,25,Tahsin Mohammed
 Catar,26,Yusuf Abdurisag
 Sudafrica,2,Ricardo Goss
 Sudafrica,5,Nkosinathi Sibisi
 Sudafrica,6,Ime Okon
-Sudafrica,9,Samukelo Kabini
 Sudafrica,10,Thabang Matuludi
 Sudafrica,11,Olwethu Makhanya
 Sudafrica,12,Kamogelo Sebelebele
@@ -707,7 +636,6 @@ Escocia,25,Lawrence Shankland
 Escocia,26,Ross Stewart
 Senegal,2,Mory Diaw
 Senegal,5,Antoine Mendy
-Senegal,6,Kalidou Koulibaly
 Senegal,7,El Hadji Malick Diouf
 Senegal,8,Mamadou Sarr
 Senegal,9,Moussa Niakhaté
@@ -722,7 +650,6 @@ Senegal,18,Pathé Ciss
 Senegal,19,Pape Matar Sarr
 Senegal,20,Bara Sapoko Ndiaye
 Senegal,22,Ismaïla Sarr
-Senegal,23,Iliman Ndiaye
 Senegal,24,Assane Diao
 Senegal,25,Ibrahim Mbaye
 Senegal,26,Nicolas Jackson
@@ -746,21 +673,17 @@ Suiza,25,Noah Okafor
 Suecia,1,Jacob Zetterström
 Suecia,3,Kristoffer Nordfeldt
 Suecia,4,Gustav Lagerbielke
-Suecia,5,Viktor Lindelöf
 Suecia,6,Isak Hien
 Suecia,8,Herman Johansson
 Suecia,10,Hjalmar Ekdal
 Suecia,11,Carl Starfelt
 Suecia,12,Eric Smith
 Suecia,13,Elliot Stroud
-Suecia,14,Lucas Begvall
 Suecia,15,Ken Sema
-Suecia,16,Jesper Kalström
 Suecia,17,Yasin Ayari
 Suecia,19,Besfort Zeneli
 Suecia,22,Benjamin Nygren
 Suecia,24,Alexander Bernhardsson
-Suecia,25,Gustaf Nilsson
 Suecia,26,Taha Ali
 Tunez,1,Aymen Dahmen
 Tunez,2,A. Chamakh
@@ -797,7 +720,6 @@ Turquia,12,Samet Akaydin
 Turquia,15,Orkun Kokcu
 Turquia,17,Ismail Yuksek
 Turquia,19,Salih Ozcan
-Turquia,20,Kenan Yildiz
 Turquia,24,Oguz Aydin
 Turquia,25,Deniz Gul
 Uruguay,2,Fernando Muslera

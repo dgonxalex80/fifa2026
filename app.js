@@ -22004,6 +22004,14 @@ const colombiaBroadcastByMatchId = {
   90: ["dsports", "caracol", "rcn"],
   93: ["dsports", "caracol", "rcn"],
   94: ["dsports", "caracol", "rcn", "disney", "youtube"],
+  97: ["dsports", "caracol", "rcn"],
+  98: ["dsports", "caracol", "rcn"],
+  101: ["dsports", "winsports"],
+  102: ["dsports", "winsports"],
+  105: ["dsports", "caracol", "rcn"],
+  106: ["dsports", "caracol", "rcn"],
+  109: ["dsports", "caracol", "rcn", "disney", "youtube"],
+  110: ["dsports", "caracol", "rcn"],
 };
 const defaultColombiaBroadcastIds = ["dsports"];
 

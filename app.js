@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "2 de julio de 2026, tras Portugal 2-1 Croacia y Espana 3-0 Austria";
+const tournamentDataCutoffLabel = "4 de julio de 2026, tras Colombia 1-0 Ghana";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -142,7 +142,11 @@ const officialKnockoutResults = {
   86: { homeScore: 2, awayScore: 0 },
   87: { homeScore: 3, awayScore: 2 },
   89: { homeScore: 2, awayScore: 1 },
-  90: { homeScore: 3, awayScore: 0 }
+  90: { homeScore: 3, awayScore: 0 },
+  91: { homeScore: 2, awayScore: 0 },
+  93: { homeScore: 3, awayScore: 2 },
+  94: { homeScore: 1, awayScore: 0 },
+  95: { homeScore: 1, awayScore: 1, penaltyHomeScore: 2, penaltyAwayScore: 4, winner: "Egipto" }
 };
 
 const flags = {
@@ -221,7 +225,7 @@ const scorers = [
   ["Romelu Lukaku", "Belgica", 1, 0, 90],
   ["Alexis Saelemaekers", "Belgica", 1, 0, 90],
   ["Mahmoud Saber", "Egipto", 1, 0, 90],
-  ["Lionel Messi", "Argentina", 6, 0, 198],
+  ["Lionel Messi", "Argentina", 7, 1, 318],
   ["Kylian Mbappé", "Francia", 6, 0, 270],
   ["Erling Haaland", "Noruega", 5, 0, 270],
   ["Thelo Aasgaard", "Noruega", 1, 0, 90],
@@ -238,7 +242,7 @@ const scorers = [
   ["Michael Olise", "Francia", 0, 2, 180],
   ["Adrien Rabiot", "Francia", 0, 1, 90],
   ["Iliman Ndiaye", "Senegal", 1, 1, 104],
-  ["Emam Ashour", "Egipto", 1, 0, 19],
+  ["Emam Ashour", "Egipto", 2, 0, 139],
   ["Abdulelah Al-Amri", "Arabia Saudita", 1, 0, 90],
   ["Maxi Araujo", "Uruguay", 2, 1, 180],
   ["Agustin Canobbio", "Uruguay", 1, 0, 90],
@@ -270,7 +274,8 @@ const scorers = [
   ["Connor Metcalfe", "Australia", 1, 0, 90],
   ["Julian Quinones", "Mexico", 3, 0, 259],
   ["Boualem Khoukhi", "Catar", 1, 0, 95],
-  ["Breel Embolo", "Suiza", 1, 0, 17],
+  ["Breel Embolo", "Suiza", 2, 0, 17],
+  ["Dan Ndoye", "Suiza", 1, 0, 90],
   ["Ismael Saibari", "Marruecos", 3, 0, 180],
   ["Vinicius Junior", "Brasil", 4, 1, 180],
   ["Matheus Cunha", "Brasil", 3, 0, 180],
@@ -305,6 +310,10 @@ const scorers = [
   ["Amine Gouiri", "Argelia", 1, 0, 90],
   ["Giovani Lo Celso", "Argentina", 1, 0, 90],
   ["Lautaro Martinez", "Argentina", 1, 0, 90],
+  ["Lisandro Martinez", "Argentina", 1, 0, 120],
+  ["Cristian Romero", "Argentina", 1, 0, 120],
+  ["Deroy Duarte", "Cabo Verde", 1, 0, 90],
+  ["Sidny Lopes Cabral", "Cabo Verde", 1, 0, 120],
   ["Musa Al-Taamari", "Jordania", 1, 0, 90],
   ["Hocine Belghali", "Argelia", 1, 0, 90],
   ["Riyad Mahrez", "Argelia", 2, 0, 90],
@@ -334,9 +343,11 @@ const scorers = [
   ["Abbosbek Fayzullaev", "Uzbekistan", 1, 0, 90],
   ["Luis Díaz", "Colombia", 1, 0, 90],
   ["Goleador Colombia por confirmar", "Colombia", 1, 0, 90],
+  ["Jhon Arias", "Colombia", 1, 0, 90],
+  ["Luis Suárez", "Colombia", 0, 1, 90],
   ["Lukas Sadilek", "Republica Checa", 1, 0, 90],
   ["Teboho Mokoena", "Sudafrica", 1, 0, 90],
-  ["Johan Manzambi", "Suiza", 3, 0, 90],
+  ["Johan Manzambi", "Suiza", 3, 1, 90],
   ["Ruben Vargas", "Suiza", 2, 0, 90],
   ["Granit Xhaka", "Suiza", 1, 0, 90],
   ["Promise David", "Canada", 1, 0, 90],

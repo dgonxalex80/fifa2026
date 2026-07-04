@@ -176,6 +176,7 @@ const flags = {
   Hungria: "hu",
   Haiti: "ht",
   Inglaterra: "gb-eng",
+  Italia: "it",
   Iran: "ir",
   Irak: "iq",
   Jordania: "jo",
@@ -22560,6 +22561,7 @@ function getSearchIndex() {
     ["Selecciones", "Pagina", "selecciones"],
     ["Jugadores", "Pagina", "jugadores"],
     ["Clubes", "Pagina", "clubes"],
+    ["Estadisticas", "Pagina", "estadisticas"],
     ["Historial", "Pagina", "historial"],
     ["Llaves", "Pagina", "llaves"]
   ];
@@ -22574,6 +22576,11 @@ function getSearchIndex() {
   const playerItems = selectedPlayers.flatMap((player) => [
     [player.commonName, `${player.position} · ${player.team}`, "jugadores"],
     [player.name, `${player.club} · ${player.team}`, "jugadores"]
+  ]);
+  const worldCupTeamStatsItems = typeof getSortedWorldCupTeamStats !== "function" ? [] : getSortedWorldCupTeamStats().map((item) => [
+    item.team,
+    `${item.won} victorias · ${item.played} partidos · ${item.goalsFor}-${item.goalsAgainst} goles`,
+    "estadisticas"
   ]);
   const historyItems = worldCupHistory.flatMap((item) => [
     [`Mundial ${item.year}`, `${item.host} · campeon ${item.champion}`, "historial"],
@@ -22590,7 +22597,7 @@ function getSearchIndex() {
       : base;
   });
   
-  memoizedSearchIndex = [...teams, ...fixtures, ...playerItems, ...historyItems, ...allTimeScorerItems, ...pages].map(([label, type, page]) => ({
+  memoizedSearchIndex = [...teams, ...fixtures, ...playerItems, ...worldCupTeamStatsItems, ...historyItems, ...allTimeScorerItems, ...pages].map(([label, type, page]) => ({
     label,
     type,
     page,

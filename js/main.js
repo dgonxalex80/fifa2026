@@ -6,6 +6,8 @@ function exportCurrentPage() {
     ? [["seleccion", "grupo", "nacidos_en_pais_representado", "no_nacidos_alli", "proporcion_nacidos_pais_representado", "jugadores_con_club_confirmado", "jugadores_en_exterior", "porcentaje_exterior", "edad_promedio", "muestra_edad", "posicion_mas_frecuente", "club_mas_repetido"], ...getSelectionStats().map((item) => [item.team, item.group, item.bornInRepresentedCountry, item.foreignBorn, formatPercent(item.localBirthShare), item.confirmedClubPlayers, item.abroadPlayers, formatPercent(item.abroadShare), formatNumber(item.averageAge), item.ageSample, item.positionLeader.label, item.topClub.label])]
     : active === "clubes"
       ? [["posicion", "club", "jugadores", "selecciones", "jugadores_citados"], ...getClubContributionStats().map((item, index) => [index + 1, item.club, item.count, item.teams.join(" | "), item.players.map((player) => `${player.fullName} (${player.team})`).join(" | ")])]
+    : active === "estadisticas"
+      ? [["posicion", "seleccion", "participaciones", "partidos_jugados", "partidos_ganados", "partidos_empatados", "partidos_perdidos", "goles_a_favor", "goles_en_contra", "diferencia_gol", "puntos"], ...getSortedWorldCupTeamStats().map((item, index) => [index + 1, item.team, item.appearances, item.played, item.won, item.drawn, item.lost, item.goalsFor, item.goalsAgainst, item.goalDifference, item.points])]
     : active === "reglas"
       ? [["categoria", "regla", "detalle"], ...getRulesExportRows()]
     : active === "sedes"
@@ -102,6 +104,7 @@ function init() {
   if (typeof renderPredictions === "function") renderPredictions();
   if (typeof renderResultsAdmin === "function") renderResultsAdmin();
   renderScorers();
+  renderWorldCupTeamStats();
   renderPlayerFilters();
   renderPlayers();
   renderWorldCupHistory();

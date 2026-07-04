@@ -34,6 +34,7 @@
           <button class="nav-item" data-page="goleadores">Goleadores</button>
           <button class="nav-item" data-page="jugadores">Jugadores</button>
           <button class="nav-item" data-page="clubes">Clubes</button>
+          <button class="nav-item" data-page="estadisticas">Estadisticas</button>
           <button class="nav-item" data-page="historial">Historial</button>
           <button class="nav-item" data-page="glosario">Glosario</button>
         </nav>
@@ -407,6 +408,25 @@
           </section>
         </section>
 
+        <section class="page" id="page-estadisticas">
+          <div class="kpi-grid" id="worldCupTeamStatsSummary"></div>
+          <section class="panel worldcup-team-stats-panel">
+            <div class="panel-head">
+              <h3>Selecciones con mas partidos en Mundiales</h3>
+              <span class="status-pill">Actualizada 2026</span>
+            </div>
+            <p class="history-table-note">Ordenada por partidos ganados. Parte de la tabla historica hasta Catar 2022 y suma los partidos finalizados del Mundial 2026 cargados en esta app. Criterio estadistico: los partidos decididos por penales cuentan como empate; los decididos en prorroga cuentan como victoria o derrota.</p>
+            <div class="table-wrap worldcup-team-stats-table-wrap">
+              <table>
+                <thead>
+                  <tr><th>#</th><th>Seleccion</th><th>Part.</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th></tr>
+                </thead>
+                <tbody id="worldCupTeamStatsRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
         <section class="page" id="page-historial">
           <div class="kpi-grid" id="worldCupHistorySummary"></div>
           <div class="dashboard-grid history-dashboard">
@@ -462,6 +482,7 @@
     <script src="./js/pages/resultados.js?v=info-hub-pages-202606272130"></script>
     <script src="./js/pages/pronostico.js?v=info-hub-pages-202606261200"></script>
     <script src="./js/pages/goleadores.js?v=info-hub-pages-202606272045"></script>
+    <script src="./js/pages/estadisticas.js?v=info-hub-pages-202607040001"></script>
     <script src="./js/pages/historial.js?v=info-hub-pages-202606171930"></script>
     <script src="./js/pages/llaves.js?v=info-hub-pages-202606272045"></script>
     <script src="./js/main.js?v=info-hub-main-202606172329"></script>

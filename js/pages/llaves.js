@@ -72,13 +72,13 @@ function renderPosterColumn(matches, side) {
   `;
 }
 
-function renderPosterAdvanceRound(round, code, side) {
+function renderPosterAdvanceRound(round, code, side, labelOffset = 0) {
   if (!round) return "";
   return `
     <section class="poster-advance poster-advance-${side}">
       <h3>${round.name}</h3>
       <div class="poster-advance-list">
-        ${round.matches.map(([home, away, match], index) => renderPosterMatch(match, index, { label: `${code}-${index + 1}` })).join("")}
+        ${round.matches.map(([home, away, match], index) => renderPosterMatch(match, index + labelOffset, { label: `${code}-${index + labelOffset + 1}` })).join("")}
       </div>
     </section>
   `;
@@ -144,9 +144,9 @@ function renderBracket() {
               ${thirdPlace?.matches[0] ? `<div class="poster-third"><span>Tercer puesto</span>${renderPosterMatch(thirdPlace.matches[0][2], 0, { label: "3P" })}</div>` : ""}
             </div>
             <div class="poster-side-rounds">
-              ${renderPosterAdvanceRound({ ...octavos, matches: octavos?.matches.slice(4, 8) || [] }, "OF", "right")}
-              ${renderPosterAdvanceRound({ ...cuartos, matches: cuartos?.matches.slice(2, 4) || [] }, "CF", "right")}
-              ${renderPosterAdvanceRound({ ...semifinales, matches: semifinales?.matches.slice(1, 2) || [] }, "SF", "right")}
+              ${renderPosterAdvanceRound({ ...octavos, matches: octavos?.matches.slice(4, 8) || [] }, "OF", "right", 4)}
+              ${renderPosterAdvanceRound({ ...cuartos, matches: cuartos?.matches.slice(2, 4) || [] }, "CF", "right", 2)}
+              ${renderPosterAdvanceRound({ ...semifinales, matches: semifinales?.matches.slice(1, 2) || [] }, "SF", "right", 1)}
             </div>
           </div>
         </div>

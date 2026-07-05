@@ -146,7 +146,9 @@ const officialKnockoutResults = {
   91: { homeScore: 2, awayScore: 0 },
   93: { homeScore: 3, awayScore: 2 },
   94: { homeScore: 1, awayScore: 0 },
-  95: { homeScore: 1, awayScore: 1, penaltyHomeScore: 2, penaltyAwayScore: 4, winner: "Egipto" }
+  95: { homeScore: 1, awayScore: 1, penaltyHomeScore: 2, penaltyAwayScore: 4, winner: "Egipto" },
+  97: { homeScore: 0, awayScore: 1 },
+  98: { homeScore: 0, awayScore: 1 }
 };
 
 const flags = {
@@ -22024,13 +22026,13 @@ const knockoutRounds = [
   {
     name: "Octavos de final",
     matches: [
-      ["Ganador D16-1", "Ganador D16-2"], ["Ganador D16-3", "Ganador D16-4"], ["Ganador D16-5", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"],
-      ["Ganador D16-9", "Ganador D16-10"], ["Ganador D16-11", "Ganador D16-12"], ["Ganador D16-13", "Ganador D16-14"], ["Ganador D16-15", "Ganador D16-16"]
+      ["Ganador D16-2", "Ganador D16-5"], ["Ganador D16-1", "Ganador D16-3"], ["Ganador D16-4", "Ganador D16-6"], ["Ganador D16-7", "Ganador D16-8"],
+      ["Ganador D16-11", "Ganador D16-12"], ["Ganador D16-9", "Ganador D16-10"], ["Ganador D16-14", "Ganador D16-16"], ["Ganador D16-13", "Ganador D16-15"]
     ]
   },
   {
     name: "Cuartos de final",
-    matches: [["Ganador OF1", "Ganador OF2"], ["Ganador OF3", "Ganador OF4"], ["Ganador OF5", "Ganador OF6"], ["Ganador OF7", "Ganador OF8"]]
+    matches: [["Ganador OF1", "Ganador OF2"], ["Ganador OF5", "Ganador OF6"], ["Ganador OF3", "Ganador OF4"], ["Ganador OF7", "Ganador OF8"]]
   },
   {
     name: "Semifinales",

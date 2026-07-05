@@ -49,7 +49,7 @@ function renderResultsAdmin() {
 }
 
 function renderResultsPhaseGroups(resultMatches) {
-  const phaseOrder = ["Dieciseisavos", "Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final", "Grupos"];
+  const phaseOrder = ["Octavos", "Cuartos", "Semifinal", "Tercer puesto", "Final", "Grupos", "Dieciseisavos"];
   const grouped = resultMatches.reduce((acc, match) => {
     acc[match.phase] = acc[match.phase] || [];
     acc[match.phase].push(match);

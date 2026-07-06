@@ -1,4 +1,4 @@
-const tournamentDataCutoffLabel = "4 de julio de 2026, tras Colombia 1-0 Ghana";
+const tournamentDataCutoffLabel = "5 de julio de 2026, tras Mexico 2-3 Inglaterra";
 
 const groupStageMatches = [
   { id: 1, date: "2026-06-11 14:00", home: "Mexico", away: "Sudafrica", phase: "Grupos", group: "A", stadium: "Estadio Ciudad de Mexico", city: "Ciudad de Mexico", status: "finalizado", homeScore: 2, awayScore: 0 },
@@ -148,7 +148,9 @@ const officialKnockoutResults = {
   94: { homeScore: 1, awayScore: 0 },
   95: { homeScore: 1, awayScore: 1, penaltyHomeScore: 2, penaltyAwayScore: 4, winner: "Egipto" },
   97: { homeScore: 0, awayScore: 1 },
-  98: { homeScore: 0, awayScore: 1 }
+  98: { homeScore: 0, awayScore: 1 },
+  101: { homeScore: 0, awayScore: 2 },
+  102: { homeScore: 2, awayScore: 3 }
 };
 
 const flags = {
